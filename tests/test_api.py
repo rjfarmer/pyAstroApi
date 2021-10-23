@@ -2,5 +2,6 @@
 
 from pyadsapi.api import *
 
+
 def test_slap():
     return True

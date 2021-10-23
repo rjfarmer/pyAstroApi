@@ -27,7 +27,6 @@ class libraries(object):
             return False
 
     def __iter__(self):
-        x = 'asd'
         for i in self._data:
             yield self.get(i)
 
