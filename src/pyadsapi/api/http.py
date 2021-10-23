@@ -11,17 +11,16 @@ from . import limits
 from . import utils
 from . import exceptions as e
 
-_TEST_LOGGING = os.environ.get('ADS_TEST_LOG', False)
+_TEST_LOGGING = os.environ.get("ADS_TEST_LOG", False)
 
-HttpResponseResponse_t = t.Union[str,t.Dict[t.Any, t.Any]]
-Payload_t = t.Union[t.Dict[str, t.List[str]],t.Dict[str, str]]
+HttpResponseResponse_t = t.Union[str, t.Dict[t.Any, t.Any]]
+Payload_t = t.Union[t.Dict[str, t.List[str]], t.Dict[str, str]]
+
 
 @dataclass
 class HttpResponse:
     response: HttpResponseResponse_t
     status: int
-
-
 
 
 class _BearerAuth(requests.auth.AuthBase):
@@ -38,7 +37,7 @@ def get(url: str, token: str, data: Payload_t, json: bool = True) -> HttpRespons
         url,
         auth=_BearerAuth(token),
         params=data,
-        hooks={'response': _log_http},
+        hooks={"response": _log_http},
     )
 
     response_code = r.status_code
@@ -55,10 +54,9 @@ def post(url: str, token: str, data: Payload_t, json: bool = True) -> HttpRespon
     r = requests.post(
         url,
         auth=_BearerAuth(token),
-        headers={'Content-Type': 'application/json',
-                 'Accept': 'application/json'},
+        headers={"Content-Type": "application/json", "Accept": "application/json"},
         json=data,
-        hooks={'response': _log_http},
+        hooks={"response": _log_http},
     )
 
     response_code = r.status_code
@@ -66,18 +64,18 @@ def post(url: str, token: str, data: Payload_t, json: bool = True) -> HttpRespon
     limits.update_limits(r.headers)
 
     if json:
-        return  HttpResponse(r.json(), response_code)
+        return HttpResponse(r.json(), response_code)
     else:
-        return  HttpResponse(r.text, response_code)
+        return HttpResponse(r.text, response_code)
 
 
-def put(url: str, token: str, data:Payload_t) -> HttpResponse:
+def put(url: str, token: str, data: Payload_t) -> HttpResponse:
     r = requests.put(
         url,
         auth=_BearerAuth(token),
-        headers={'Content-Type': 'application/json'},
+        headers={"Content-Type": "application/json"},
         json=data,
-        hooks={'response': _log_http},
+        hooks={"response": _log_http},
     )
 
     response_code = r.status_code
@@ -91,34 +89,34 @@ def delete(url: str, token: str) -> HttpResponse:
     r = requests.delete(
         url,
         auth=_BearerAuth(token),
-        hooks={'response': _log_http},
+        hooks={"response": _log_http},
     )
 
     response_code = r.status_code
 
     limits.update_limits(r.headers)
 
-    return HttpResponse('', response_code)
+    return HttpResponse("", response_code)
 
 
-def post_bibcodes(url: str, bibcodes: t.Union[str, t.List[str]],
-                  token: str) -> HttpResponse:
-    data = {
-        'bibcodes': utils.ensure_list(bibcodes)
-    }
+def post_bibcodes(
+    url: str, bibcodes: t.Union[str, t.List[str]], token: str
+) -> HttpResponse:
+    data = {"bibcodes": utils.ensure_list(bibcodes)}
 
     return post(url, token, data)
 
 
-def get_bibcodes(url: str, bibcodes: t.Union[str, t.List[str]],
-                 token: str) -> HttpResponse:
+def get_bibcodes(
+    url: str, bibcodes: t.Union[str, t.List[str]], token: str
+) -> HttpResponse:
     pass
 
 
 def _log_http(r, *args, **kwargs):
-    print('Here')
+    print("Here")
     if _TEST_LOGGING:
-        with open('http.log', 'a') as f:
+        with open("http.log", "a") as f:
             print(r.url, r.text, file=f)
     else:
         pass

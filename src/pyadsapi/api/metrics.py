@@ -7,12 +7,12 @@ from . import utils
 
 
 def detail(bibcode: str, token: str) -> http.HttpResponse:
-    url = urls.make_url(urls.urls['metrics']['detail'])
+    url = urls.make_url(urls.urls["metrics"]["detail"])
     return http.post_bibcodes(url, bibcode, token)
 
 
 def metrics(bibcode: str, token: str):
-    url = urls.make_url(urls.urls['metrics']['metrics'], bibcode)
+    url = urls.make_url(urls.urls["metrics"]["metrics"], bibcode)
 
     data = http.get(url, token, {})
 
@@ -24,18 +24,15 @@ def metrics(bibcode: str, token: str):
         elif data.status == 500:
             raise e.MetricsBlewUp
         else:
-            raise e.AdsApiError('Unknown error code {}'.format(data.status))
+            raise e.AdsApiError("Unknown error code {}".format(data.status))
 
     return data.response
 
 
 def _metric(bibcode: str, token: str, format: str) -> str:
 
-    url = urls.make_url(urls.urls['metrics']['metrics'])
-    payload = {
-        'bibcodes': utils.ensure_list(bibcode),
-        'types': [format]
-    }
+    url = urls.make_url(urls.urls["metrics"]["metrics"])
+    payload = {"bibcodes": utils.ensure_list(bibcode), "types": [format]}
     data = http.post(url, token, payload)
 
     if data.status != 200:
@@ -44,7 +41,7 @@ def _metric(bibcode: str, token: str, format: str) -> str:
         elif data.status == 500:
             raise e.MetricsBlewUp
         else:
-            raise e.AdsApiError('Unknown error code {}'.format(data.status))
+            raise e.AdsApiError("Unknown error code {}".format(data.status))
 
     # if isinstance(bibcode, list):
     #     split = d['export'].split('\n\n\n')
@@ -59,20 +56,20 @@ def _metric(bibcode: str, token: str, format: str) -> str:
 
 
 def basic(bibcode: str, token: str) -> str:
-    return _metric(bibcode, token, 'basic')
+    return _metric(bibcode, token, "basic")
 
 
 def citations(bibcode: str, token: str) -> str:
-    return _metric(bibcode, token, 'citations')
+    return _metric(bibcode, token, "citations")
 
 
 def indicators(bibcode: str, token: str) -> str:
-    return _metric(bibcode, token, 'indicators')
+    return _metric(bibcode, token, "indicators")
 
 
 def histograms(bibcode: str, token: str) -> str:
-    return _metric(bibcode, token, 'histograms')
+    return _metric(bibcode, token, "histograms")
 
 
 def timeseries(bibcode: str, token: str) -> str:
-    return _metric(bibcode, token, 'timeseries')
+    return _metric(bibcode, token, "timeseries")

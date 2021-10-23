@@ -4,14 +4,16 @@ from . import articles
 
 from .api import libraries as lib
 
+
 class libraries(object):
-    '''
+    """
     This is a collection of ADS libraries that supports iteration
-    '''
+    """
+
     def __init__(self, token):
         self.token = token
         self._data = None
-        
+
     def __len__(self):
         if self._data is not None:
             return len(self._data)
@@ -25,6 +27,7 @@ class libraries(object):
             return False
 
     def __iter__(self):
+        x = 'asd'
         for i in self._data:
             yield self.get(i)
 
@@ -35,13 +38,13 @@ class libraries(object):
         if self._data is None:
             self.update()
         if key in self._data.keys():
-            return library(self.token,self._data[key]['id'])
+            return library(self.token, self._data[key]["id"])
 
     def __getattr__(self, key):
         if self._data is None:
             self.update()
         if key in self._data.keys():
-            return library(self.token,self._data[key]['id'])
+            return library(self.token, self._data[key]["id"])
 
     def keys(self):
         if self._data is None:
@@ -55,30 +58,31 @@ class libraries(object):
         return self._data.items()
 
     def get(self, name):
-        return library(self.token,self._data[name]['id'])
+        return library(self.token, self._data[name]["id"])
 
     def update(self):
         data = lib.list_all(self.token)
         self._data = {}
         for value in data:
-            self._data[value['name']] = value
+            self._data[value["name"]] = value
 
-    def add(self, name, description='', public=False, bibcodes=None):
+    def add(self, name, description="", public=False, bibcodes=None):
         lib.new(name, description, public, bibcodes)
 
     def remove(self, name):
         if name not in self._data.keys():
-            raise KeyError('Library does not exit')
+            raise KeyError("Library does not exit")
 
-        lid = self._data[name]['id']
+        lid = self._data[name]["id"]
         lib.delete(lid, self.token)
-        self._data.pop(name,None)
+        self._data.pop(name, None)
 
 
 class library(object):
-    '''
+    """
     An instance of a single ADS library
-    '''
+    """
+
     def __init__(self, token, lid):
         self.token = token
         self.lid = lid

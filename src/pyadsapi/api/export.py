@@ -8,23 +8,23 @@ import typing as t
 
 def _export(bibcode: t.Union[str, list], token: str, format: str) -> str:
     if isinstance(bibcode, list):
-        url = urls.make_url(urls.urls['export'][format])
-        payload = {'bibcode': bibcode}
+        url = urls.make_url(urls.urls["export"][format])
+        payload = {"bibcode": bibcode}
         data = http.post(url, token, payload)
 
     else:
-        url = urls.make_url(urls.urls['export'][format], bibcode)
+        url = urls.make_url(urls.urls["export"][format], bibcode)
         data = http.get(url, token, {}, json=False)
 
     if data.status != 200:
         if data.status == 404:
             raise e.NoRecordsFound
         else:
-            raise e.AdsApiError('Unknown error code {}'.format(data.status))
+            raise e.AdsApiError("Unknown error code {}".format(data.status))
 
-    result = {} 
+    result = {}
     if isinstance(bibcode, list):
-        split = data.response['export'].split('\n\n\n')
+        split = data.response["export"].split("\n\n\n")
         for i, j in zip(bibcode, split):
             result[i] = j
     else:
@@ -34,72 +34,72 @@ def _export(bibcode: t.Union[str, list], token: str, format: str) -> str:
 
 
 def ads(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'ads')
+    return _export(bibcode, token, "ads")
 
 
 def bibtexabs(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'bibtexabs')
+    return _export(bibcode, token, "bibtexabs")
 
 
 def bibtex(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'bibtex')
+    return _export(bibcode, token, "bibtex")
 
 
 def endnote(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'endnote')
+    return _export(bibcode, token, "endnote")
 
 
 def medlars(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'medlars')
+    return _export(bibcode, token, "medlars")
 
 
 def procite(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'procite')
+    return _export(bibcode, token, "procite")
 
 
 def refworks(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'refworks')
+    return _export(bibcode, token, "refworks")
 
 
 def ris(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'ris')
+    return _export(bibcode, token, "ris")
 
 
 def aastex(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'aastex')
+    return _export(bibcode, token, "aastex")
 
 
 def icarus(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'icarus')
+    return _export(bibcode, token, "icarus")
 
 
 def mnras(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'mnras')
+    return _export(bibcode, token, "mnras")
 
 
 def soph(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'soph')
+    return _export(bibcode, token, "soph")
 
 
 def dcxml(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'dcxml')
+    return _export(bibcode, token, "dcxml")
 
 
 def refxml(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'refxml')
+    return _export(bibcode, token, "refxml")
 
 
 def refabsxml(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'refabsxml')
+    return _export(bibcode, token, "refabsxml")
 
 
 def rss(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'rss')
+    return _export(bibcode, token, "rss")
 
 
 def votable(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'votable')
+    return _export(bibcode, token, "votable")
 
 
 def ieee(bibcode: t.Union[str, t.List[str]], token: str) -> str:
-    return _export(bibcode, token, 'ieee')
+    return _export(bibcode, token, "ieee")

@@ -7,11 +7,11 @@ remaining = 5000
 reset = -1
 
 
-def update_limits(header: t.MutableMapping[str,str]) -> None:
+def update_limits(header: t.MutableMapping[str, str]) -> None:
     try:
-        limit = header['X-RateLimit-Limit']
-        remaining = header['X-RateLimit-Remaining']
-        reset = header['X-RateLimit-Reset']
+        limit = header["X-RateLimit-Limit"]
+        remaining = header["X-RateLimit-Remaining"]
+        reset = header["X-RateLimit-Reset"]
     except KeyError:
         pass
 

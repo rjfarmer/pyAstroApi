@@ -8,5 +8,5 @@ import typing as t
 
 
 def citations(bibcode: t.Union[str, t.List[str]], token: str) -> http.HttpResponse:
-    url = urls.make_url(urls.urls['citations']['helper'])
+    url = urls.make_url(urls.urls["citations"]["helper"])
     return http.post_bibcodes(url, bibcode, token)
