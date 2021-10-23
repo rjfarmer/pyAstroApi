@@ -12,7 +12,7 @@ def list_all(token: str):
 
     url = urls.make_url(urls.urls["libraries"]["view"])
 
-    data = http.get(url, token, {})
+    data = http.get(url, token)
 
     if data.status != 200:
         if data.status == 400:
@@ -26,7 +26,7 @@ def list_all(token: str):
 def get_permissions(lib: str, token: str):
     url = urls.make_url(urls.urls["libraries"]["permission"], lib)
 
-    data = http.get(url, token, {})
+    data = http.get(url, token)
 
     if data.status != 200:
         if data.status == 400:
@@ -47,7 +47,7 @@ def get(lib: str, token: str):
             urls.urls["libraries"]["view"], lib, "?start=" + str(start) + "&rows=20"
         )
 
-        data = http.get(url, token, {})
+        data = http.get(url, token)
 
         if data.status != 200:
             raise e.AdsApiError("Unknown error code {}".format(data.status))
@@ -120,10 +120,10 @@ def new(
     name: t.Optional[str] = None,
     description: t.Optional[str] = None,
     public: t.Optional[bool] = None,
-    bibcode: t.Optional[str] = None,
+    bibcode: t.Optional[t.Union[str, t.List[str]]] = None,
 ):
 
-    params = {}
+    params: t.Dict[t.Any, t.Any] = {}
     if name is not None:
         params["name"] = name
     if description is not None:

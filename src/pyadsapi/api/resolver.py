@@ -8,7 +8,7 @@ from . import http
 def resolve(bibcode: str, token: str) -> http.HttpResponseResponse_t:
     url = urls.make_url(urls.urls["resolve"]["search"], bibcode)
 
-    data = http.get(url, token, {})
+    data = http.get(url, token)
 
     if data.status != 200:
         if data.status == 400:
@@ -24,7 +24,7 @@ def resolve(bibcode: str, token: str) -> http.HttpResponseResponse_t:
 def _get(bibcode: str, token: str, format: str) -> str:
     url = urls.make_url(urls.urls["resolve"]["search"], bibcode, format)
 
-    data = http.get(url, token, {})
+    data = http.get(url, token)
 
     if data.status != 200:
         if data.status == 403:

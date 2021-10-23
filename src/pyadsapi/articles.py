@@ -1,305 +1,301 @@
-# SPDX-License-Identifier: BSD-3-Clause
+# # SPDX-License-Identifier: BSD-3-Clause
 
-import os
-import re
-import requests
-import datetime
-from pathlib import Path
+# import os
+# import re
+# import requests
+# import datetime
+# from pathlib import Path
 
-import bibtexparser
-from bibtexparser.bparser import BibTexParser
-
-from . import utils
+# import bibtexparser
+# from bibtexparser.bparser import BibTexParser
 
 
-# Default ADS search fields
-_fields = [
-    "bibcode",
-    "title",
-    "author",
-    "year",
-    "abstract",
-    "pubdate",
-    "bibstem",
-    "alternate_bibcode",
-    "citation_count",
-    "identifier",
-    "reference",
-]
-
-search_words = """abs abstract ack aff aff_id alternate_bibcode alternative_title arXiv arxiv_class author author_count
-                 bibcode bigroup bibstem body 
-                 citation_count copyright 
-                 data database pubdate doctype doi
-                 full
-                 grant
-                 identifier inst issue 
-                 keyword
-                 lang
-                 object orcid orcid_user orcid_other
-                 page property
-                 read_count
-                 title
-                 vizier volume
-                 year
-                """.split()
+# from .api import http as utils
+# from .api import urls
 
 
-class journal(object):
-    """
-    This is a collection of articles that supports iterating over.
+# # Default ADS search fields
+# _fields = [
+#     "bibcode",
+#     "title",
+#     "author",
+#     "year",
+#     "abstract",
+#     "pubdate",
+#     "bibstem",
+#     "alternate_bibcode",
+#     "citation_count",
+#     "identifier",
+#     "reference",
+# ]
 
-    We defer as much as possible actualy accessing data untill its needed
-    """
-
-    def __init__(self, adsdata, bibcodes, data=None):
-        self.adsdata = adsdata
-        self._set_bibcodes = set(bibcodes)
-        self._bibcodes = bibcodes
-        self._data = {}
-
-        if data is not None:
-            for i in data:
-                self._data[i["bibcode"]] = article(self.adsdata, i["bibcode"], data=i)
-
-    def __len__(self):
-        return len(self._set_bibcodes)
-
-    def __contains__(self, key):
-        return key in self._set_bibcodes
-
-    def __getitem__(self, key):
-        if key in self._set_bibcodes:
-            if key not in self._data:
-                self._data[key] = article(self.adsdata, bibcode=key)
-            return self._data[key]
-        else:
-            return self.__getitem__(self._bibcodes[key])
-
-    def __iter__(self):
-        for i in self._bibcodes:
-            yield self.__getitem__(i)
-
-    def keys(self):
-        return self._set_bibcodes
-
-    def bibcodes(self):
-        return self.keys()
-
-    def values(self):
-        return self._data.values()
-
-    def items(self):
-        return self._data.items()
+# search_words = """abs abstract ack aff aff_id alternate_bibcode alternative_title arXiv arxiv_class author author_count
+#                  bibcode bigroup bibstem body
+#                  citation_count copyright
+#                  data database pubdate doctype doi
+#                  full
+#                  grant
+#                  identifier inst issue
+#                  keyword
+#                  lang
+#                  object orcid orcid_user orcid_other
+#                  page property
+#                  read_count
+#                  title
+#                  vizier volume
+#                  year
+#                 """.split()
 
 
-class article(object):
-    """
-    A single article that is given by either a bibcode, arxic id, or doi.
-    Bibcodes are allways the prefered ID as the doi or arxiv id we query  ADS for its bibcode.
+# class journal(object):
+#     """
+#     This is a collection of articles that supports iterating over.
 
-    We defer actually searching the ads untill the user asks for a field.
-    Thus we can make as many article as we want (if we allready know the bibcode)
-    without hitting the ADS api limits.
-    """
+#     We defer as much as possible actualy accessing data untill its needed
+#     """
 
-    def __init__(self, adsdata, bibcode=None, data=None):
-        self.adsdata = adsdata
-        self._bibcode = bibcode
-        self._data = None
-        self._citations = None
-        self._references = None
-        self.which_file = None
+#     def __init__(self, adsdata, bibcodes, data=None):
+#         self.adsdata = adsdata
+#         self._set_bibcodes = set(bibcodes)
+#         self._bibcodes = bibcodes
+#         self._data = {}
 
-        if data is not None:
-            self.data = data
-            self.bibcode = self.data["bibcode"]
+#         if data is not None:
+#             for i in data:
+#                 self._data[i["bibcode"]] = article(self.adsdata, i["bibcode"], data=i)
 
-    def search(self, force=False):
-        if self.data is None or force:
-            self.data = self.adsdata.search.bibcode_single(self.bibcode)
+#     def __len__(self):
+#         return len(self._set_bibcodes)
 
-    @property
-    def bibcode(self):
-        return self._bibcode
+#     def __contains__(self, key):
+#         return key in self._set_bibcodes
 
-    @property.setter
-    def bibcode(self, bibcode):
-        self._bibcode = bibcode
+#     def __getitem__(self, key):
+#         if key in self._set_bibcodes:
+#             if key not in self._data:
+#                 self._data[key] = article(self.adsdata, bibcode=key)
+#             return self._data[key]
+#         else:
+#             return self.__getitem__(self._bibcodes[key])
 
-    @property
-    def data(self):
-        if self._data is None:
-            self.search()
+#     def __iter__(self):
+#         for i in self._bibcodes:
+#             yield self.__getitem__(i)
 
-        return self._data
+#     def keys(self):
+#         return self._set_bibcodes
 
-    @property.setter
-    def data(self, new_data):
-        self._data = new_data
+#     def bibcodes(self):
+#         return self.keys()
 
-    def __gettattr__(self, key):
-        return self.data[key]
+#     def values(self):
+#         return self._data.values()
 
-    def __getitem__(self, key):
-        return self.data[key]
+#     def items(self):
+#         return self._data.items()
 
-    @property
-    def title(self):
-        return self.data["title"][0]
 
-    @property
-    def authors(self):
-        return "; ".join(self.data["author"])
+# class article(object):
+#     """
+#     A single article that is given by either a bibcode, arxic id, or doi.
+#     Bibcodes are allways the prefered ID as the doi or arxiv id we query  ADS for its bibcode.
 
-    @property
-    def author(self):
-        return self.authors
+#     We defer actually searching the ads untill the user asks for a field.
+#     Thus we can make as many article as we want (if we allready know the bibcode)
+#     without hitting the ADS api limits.
+#     """
 
-    @property
-    def first_author(self):
-        return self.data["author"][0]
+#     def __init__(self, adsdata, bibcode=None, data=None):
+#         self.adsdata = adsdata
+#         self._bibcode = bibcode
+#         self._data = None
+#         self._citations = None
+#         self._references = None
+#         self.which_file = None
 
-    @property
-    def journal(self):
-        return self.data["bibstem"][0]
+#         if data is not None:
+#             self.data = data
+#             self.bibcode = self.data["bibcode"]
 
-    def filename(self, full=False):
-        if full:
-            return os.path.join(
-                utils.read_key_file(utils.settings["PDFFOLDER_FILE"]),
-                self.bibcode + ".pdf",
-            )
-        else:
-            return self.bibcode + ".pdf"
+#     def search(self, force=False):
+#         if self.data is None or force:
+#             self.data = self.adsdata.search.bibcode_single(self.bibcode)
 
-    @property
-    def year(self):
-        return self.data["year"]
+#     @property
+#     def bibcode(self):
+#         return self._bibcode
 
-    @property
-    def abstract(self):
-        if "abstract" in self.data:
-            return self.data["abstract"]
-        else:
-            return ""
+#     @property.setter
+#     def bibcode(self, bibcode):
+#         self._bibcode = bibcode
 
-    @property
-    def name(self):
-        return self.first_author + " " + self.year
+#     @property
+#     def data(self):
+#         if self._data is None:
+#             self.search()
 
-    @property
-    def ads_url(self):
-        return "https://ui.adsabs.harvard.edu/abs/" + self.bibcode
+#         return self._data
 
-    @property
-    def arxiv_url(self):
-        arxiv_id = None
-        for i in self.data["identifier"]:
-            if i.startswith("arXiv:"):
-                arxiv_id = i.replace("arXiv:", "")
+#     @property.setter
+#     def data(self, new_data):
+#         self._data = new_data
 
-        if arxiv_id is not None:
-            return "https://arxiv.org/abs/" + arxiv_id
-        else:
-            return ""
+#     def __gettattr__(self, key):
+#         return self.data[key]
 
-    @property
-    def journal_url(self):
-        doi = None
-        for i in self.data["identifier"]:
-            if i.startswith("10."):
-                doi = i
-        if doi is not None:
-            return "https://doi.org/" + doi
-        else:
-            return ""
+#     def __getitem__(self, key):
+#         return self.data[key]
 
-    @property
-    def citation_count(self):
-        if "citation_count" not in self.data:
-            return 0
-        else:
-            return self.data["citation_count"]
+#     @property
+#     def title(self):
+#         return self.data["title"][0]
 
-    @property
-    def reference_count(self):
-        if "reference" not in self.data:
-            return 0
-        else:
-            return len(self.data["reference"])
+#     @property
+#     def authors(self):
+#         return "; ".join(self.data["author"])
 
-    def pdf(self, filename):
-        # There are multiple possible locations for the pdf
-        # Try to avoid the journal links as that usally needs a
-        # vpn working to use a university ip address
-        strs = ["/PUB_PDF", "/EPRINT_PDF", "/ADS_PDF"]
+#     @property
+#     def author(self):
+#         return self.authors
 
-        if os.path.exists(filename):
-            return
+#     @property
+#     def first_author(self):
+#         return self.data["author"][0]
 
-        got_file = False
-        for i in strs:
-            url = utils.urls["pdfs"] + str(self.bibcode) + i
+#     @property
+#     def journal(self):
+#         return self.data["bibstem"][0]
 
-            # Pretend to be Firefox otherwise we hit captchas
-            headers = {"user-agent": "Mozilla /5.0 (Windows NT 10.0; Win64; x64)"}
-            try:
-                r = requests.get(url, allow_redirects=True, headers=headers)
-            except requests.exceptions.RequestException:
-                continue
+#     def filename(self):
+#         return self.bibcode + ".pdf"
 
-            if r.content.startswith(b"<!DOCTYPE html"):
-                continue
+#     @property
+#     def year(self):
+#         return self.data["year"]
 
-            with open(filename, "wb") as f:
-                f.write(r.content)
-                self.which_file = i
-                got_file = True
-                break
+#     @property
+#     def abstract(self):
+#         if "abstract" in self.data:
+#             return self.data["abstract"]
+#         else:
+#             return ""
 
-        if not os.path.exists(filename):
-            raise utils.FileDonwnloadFailed("Couldn't download file")
+#     @property
+#     def name(self):
+#         return self.first_author + " " + self.year
 
-    def citations(self):
-        if self._citations is None:
-            self._citations = self.adsdata.search(
-                'citations(bibcode:"' + self.bibcode + '")'
-            )
-        return self._citations
+#     @property
+#     def ads_url(self):
+#         return "https://ui.adsabs.harvard.edu/abs/" + self.bibcode
 
-    def references(self):
-        if self._references is None:
-            self._references = self.adsdata.search(
-                'references(bibcode:"' + self.bibcode + '")'
-            )
-        return self._references
+#     @property
+#     def arxiv_url(self):
+#         arxiv_id = None
+#         for i in self.data["identifier"]:
+#             if i.startswith("arXiv:"):
+#                 arxiv_id = i.replace("arXiv:", "")
 
-    def bibtex(self):
-        data = {"bibcode": [self.bibcode]}
-        r = requests.post(
-            utils.urls["bibtex"],
-            auth=utils.BearerAuth(self.adsdata.token),
-            headers={"Content-Type": "application/json"},
-            json=data,
-        ).json()
+#         if arxiv_id is not None:
+#             return "https://arxiv.org/abs/" + arxiv_id
+#         else:
+#             return ""
 
-        if "error" in r:
-            raise ValueError(r["error"])
+#     @property
+#     def journal_url(self):
+#         doi = None
+#         for i in self.data["identifier"]:
+#             if i.startswith("10."):
+#                 doi = i
+#         if doi is not None:
+#             return "https://doi.org/" + doi
+#         else:
+#             return ""
 
-        return r["export"]
+#     @property
+#     def citation_count(self):
+#         if "citation_count" not in self.data:
+#             return 0
+#         else:
+#             return self.data["citation_count"]
 
-    def __str__(self):
-        return self.name
+#     @property
+#     def reference_count(self):
+#         if "reference" not in self.data:
+#             return 0
+#         else:
+#             return len(self.data["reference"])
 
-    def __reduce__(self):
-        return (article, (self.adsdata, self.bibcode))
+#     def pdf(self, filename):
+#         # There are multiple possible locations for the pdf
+#         # Try to avoid the journal links as that usally needs a
+#         # vpn working to use a university ip address
+#         strs = ["/PUB_PDF", "/EPRINT_PDF", "/ADS_PDF"]
 
-    def __hash__(self):
-        return hash(self.bibcode)
+#         if os.path.exists(filename):
+#             return
 
-    def __eq__(self, value):
-        if isinstance(value, article):
-            if value.bibcode == self.bibcode:
-                return True
-        return False
+#         got_file = False
+#         for i in strs:
+#             url = urls.urls["pdfs"] + str(self.bibcode) + i
+
+#             # Pretend to be Firefox otherwise we hit captchas
+#             headers = {"user-agent": "Mozilla /5.0 (Windows NT 10.0; Win64; x64)"}
+#             try:
+#                 r = requests.get(url, allow_redirects=True, headers=headers)
+#             except requests.exceptions.RequestException:
+#                 continue
+
+#             if r.content.startswith(b"<!DOCTYPE html"):
+#                 continue
+
+#             with open(filename, "wb") as f:
+#                 f.write(r.content)
+#                 self.which_file = i
+#                 got_file = True
+#                 break
+
+#         if not os.path.exists(filename):
+#             raise utils.FileDonwnloadFailed("Couldn't download file")
+
+#     def citations(self):
+#         if self._citations is None:
+#             self._citations = self.adsdata.search(
+#                 'citations(bibcode:"' + self.bibcode + '")'
+#             )
+#         return self._citations
+
+#     def references(self):
+#         if self._references is None:
+#             self._references = self.adsdata.search(
+#                 'references(bibcode:"' + self.bibcode + '")'
+#             )
+#         return self._references
+
+#     def bibtex(self):
+#         data = {"bibcode": [self.bibcode]}
+#         r = requests.post(
+#             urls.urls["bibtex"],
+#             auth=utils._BearerAuth(self.adsdata.token),
+#             headers={"Content-Type": "application/json"},
+#             json=data,
+#         ).json()
+
+#         if "error" in r:
+#             raise ValueError(r["error"])
+
+#         return r["export"]
+
+#     def __str__(self):
+#         return self.name
+
+#     def __reduce__(self):
+#         return (article, (self.adsdata, self.bibcode))
+
+#     def __hash__(self):
+#         return hash(self.bibcode)
+
+#     def __eq__(self, value):
+#         if isinstance(value, article):
+#             if value.bibcode == self.bibcode:
+#                 return True
+#         return False

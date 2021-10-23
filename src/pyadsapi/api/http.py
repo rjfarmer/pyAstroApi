@@ -13,8 +13,10 @@ from . import exceptions as e
 
 _TEST_LOGGING = os.environ.get("ADS_TEST_LOG", False)
 
-HttpResponseResponse_t = t.Union[str, t.Dict[t.Any, t.Any]]
-Payload_t = t.Union[t.Dict[str, t.List[str]], t.Dict[str, str]]
+HttpResponseResponse_t = t.Any
+Payload_t = t.Union[
+    t.Dict[str, t.List[str]], t.Dict[str, str], t.Dict[str, t.Sequence[str]], None
+]
 
 
 @dataclass
@@ -32,7 +34,12 @@ class _BearerAuth(requests.auth.AuthBase):
         return r
 
 
-def get(url: str, token: str, data: Payload_t, json: bool = True) -> HttpResponse:
+def get(
+    url: str, token: str, data: Payload_t = None, json: bool = True
+) -> HttpResponse:
+    if data is None:
+        data = {}  # type:ignore
+
     r = requests.get(
         url,
         auth=_BearerAuth(token),

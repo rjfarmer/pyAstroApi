@@ -37,7 +37,8 @@ def search(
     query: str = "*:*",
     fields: str = _short_fl,
     fq: str = "",
-) -> t.Generator:
+) -> t.Generator[t.Dict[t.Any, t.Any], None, None]:
+
     start = 0
     count = 0
     while True:
@@ -47,7 +48,7 @@ def search(
 
         url = urls.make_url(urls.urls["search"]["search"], search_term)
         print(url)
-        data = http.get(url, token, {})
+        data = http.get(url, token)
 
         if data.status != 200:
             if data.status == 400:

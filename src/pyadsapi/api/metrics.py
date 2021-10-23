@@ -1,5 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
+import typing as t
+
 from . import exceptions as e
 from . import urls
 from . import http
@@ -14,7 +16,7 @@ def detail(bibcode: str, token: str) -> http.HttpResponse:
 def metrics(bibcode: str, token: str):
     url = urls.make_url(urls.urls["metrics"]["metrics"], bibcode)
 
-    data = http.get(url, token, {})
+    data = http.get(url, token)
 
     if data.status != 200:
         if data.status == 400:
@@ -52,7 +54,7 @@ def _metric(bibcode: str, token: str, format: str) -> str:
     #     data = {}
     #     data[bibcode] = d
 
-    return data.response
+    return str(data.response)
 
 
 def basic(bibcode: str, token: str) -> str:
