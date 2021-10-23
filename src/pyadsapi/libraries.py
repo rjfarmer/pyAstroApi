@@ -1,7 +1,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
-from . import articles
+import typing as t
 
+from . import articles
 from .api import libraries as lib
 
 
@@ -14,67 +15,58 @@ class libraries(object):
         self.token = token
         self._data = None
 
+    @property
+    def data(self):
+        if self._data is None:
+            data = lib.list_all(self.token)
+            self._data = {}
+            for value in data:
+                self._data[value["name"]] = value
+        return self._data
+
     def __len__(self):
-        if self._data is not None:
-            return len(self._data)
-        else:
-            return 0
+        return len(self.data)
 
     def __contains__(self, key):
-        if self._data is not None:
-            return key in self._data
-        else:
-            return False
+        return key in self.data
 
     def __iter__(self):
-        for i in self._data:
+        for i in self.data:
             yield self.get(i)
 
     def __dir__(self):
-        return self.__dict__.keys() + list(self.keys())
+        return list(self.__dict__.keys()) + list(self.keys())
 
     def __getitem__(self, key):
-        if self._data is None:
-            self.update()
-        if key in self._data.keys():
-            return library(self.token, self._data[key]["id"])
+        if key in self.data.keys():
+            return library(self.token, self.data[key]["id"])
 
     def __getattr__(self, key):
-        if self._data is None:
-            self.update()
-        if key in self._data.keys():
-            return library(self.token, self._data[key]["id"])
+        if key in self.data.keys():
+            return library(self.token, self.data[key]["id"])
 
     def keys(self):
-        if self._data is None:
-            self.update()
-        return self._data.keys()
+        return self.data.keys()
 
     def values(self):
-        return self._data.values()
+        return self.data.values()
 
     def items(self):
-        return self._data.items()
+        return self.data.items()
 
     def get(self, name):
-        return library(self.token, self._data[name]["id"])
-
-    def update(self):
-        data = lib.list_all(self.token)
-        self._data = {}
-        for value in data:
-            self._data[value["name"]] = value
+        return library(self.token, self.data[name]["id"])
 
     def add(self, name, description="", public=False, bibcodes=None):
         lib.new(name, description, public, bibcodes)
 
     def remove(self, name):
-        if name not in self._data.keys():
+        if name not in self.data.keys():
             raise KeyError("Library does not exit")
 
-        lid = self._data[name]["id"]
+        lid = self.data[name]["id"]
         lib.delete(lid, self.token)
-        self._data.pop(name, None)
+        self.data.pop(name, None)
 
 
 class library(object):
@@ -85,27 +77,31 @@ class library(object):
     def __init__(self, token, lid):
         self.token = token
         self.lid = lid
-        self._data = {}
+        self._data = None
 
-    def keys(self):
+    @property
+    def data(self):
         if self._data is None:
             self.update()
-        return self._data.keys()
+        return self._data
+
+    def keys(self):
+        return self.data.keys()
 
     def values(self):
-        return self._data.values()
+        return self.data.values()
 
     def items(self):
-        return self._data.items()
+        return self.data.items()
 
     def __len__(self):
-        return len(self._data)
+        return len(self.data)
 
     def __contains__(self, key):
-        return key in self._data
+        return key in self.data
 
     def __iter__(self):
-        for i in self._data:
+        for i in self.data:
             yield self.get(i)
 
     def __hash__(self):

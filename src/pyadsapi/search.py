@@ -1,5 +1,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
+import bibtexparser
+import requests
+
 
 class search(object):
     def __init__(self, adsdata):
@@ -212,7 +215,7 @@ class parseSearch(object):
     def search_bibtex(self):
         res = {}
         if self._query.startswith("@"):
-            bp = BibTexParser(interpolate_strings=False)
+            bp = bibtexparser.BibTexParser(interpolate_strings=False)
             bib = bibtexparser.loads(self._query, filter=bp)
             bib = bib.entries[0]
             # What is in the bib?

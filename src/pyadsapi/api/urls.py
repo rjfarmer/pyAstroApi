@@ -98,7 +98,7 @@ urls = {
 }
 
 
-def make_url(endpoint: str, *args: t.Iterable[str]) -> str:
+def make_url(endpoint: str, *args: str) -> str:
     u = [base_url, endpoint]
     u.extend(args)
 

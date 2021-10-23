@@ -112,44 +112,45 @@ class article(object):
         self.which_file = None
 
         if data is not None:
-            self._data = data
-            self._bibcode = self._data["bibcode"]
+            self.data = data
+            self.bibcode = self.data["bibcode"]
 
     def search(self, force=False):
-        if self._data is None or force:
-            self._data = self.adsdata.search.bibcode_single(self.bibcode)
+        if self.data is None or force:
+            self.data = self.adsdata.search.bibcode_single(self.bibcode)
 
     @property
     def bibcode(self):
         return self._bibcode
 
-    def __gettattr__(self, key):
+    @property.setter
+    def bibcode(self, bibcode):
+        self._bibcode = bibcode
+
+    @property
+    def data(self):
         if self._data is None:
             self.search()
 
-        if self._data is not None:
-            if key in self._data:
-                return self._data[key]
+        return self._data
+
+    @property.setter
+    def data(self, new_data):
+        self._data = new_data
+
+    def __gettattr__(self, key):
+        return self.data[key]
 
     def __getitem__(self, key):
-        if self._data is None:
-            self.search()
-
-        if self._data is not None:
-            if key in self._data:
-                return self._data[key]
+        return self.data[key]
 
     @property
     def title(self):
-        if self._data is None:
-            self.search()
-        return self._data["title"][0]
+        return self.data["title"][0]
 
     @property
     def authors(self):
-        if self._data is None:
-            self.search()
-        return "; ".join(self._data["author"])
+        return "; ".join(self.data["author"])
 
     @property
     def author(self):
@@ -157,15 +158,11 @@ class article(object):
 
     @property
     def first_author(self):
-        if self._data is None:
-            self.search()
-        return self._data["author"][0]
+        return self.data["author"][0]
 
     @property
     def journal(self):
-        if self._data is None:
-            self.search()
-        return self._data["bibstem"][0]
+        return self.data["bibstem"][0]
 
     def filename(self, full=False):
         if full:
@@ -178,37 +175,27 @@ class article(object):
 
     @property
     def year(self):
-        if self._data is None:
-            self.search()
-        return self._data["year"]
+        return self.data["year"]
 
     @property
     def abstract(self):
-        if self._data is None:
-            self.search()
-        if "abstract" in self._data:
-            return self._data["abstract"]
+        if "abstract" in self.data:
+            return self.data["abstract"]
         else:
             return ""
 
     @property
     def name(self):
-        if self._data is None:
-            self.search()
         return self.first_author + " " + self.year
 
     @property
     def ads_url(self):
-        if self._data is None:
-            self.search()
         return "https://ui.adsabs.harvard.edu/abs/" + self.bibcode
 
     @property
     def arxiv_url(self):
-        if self._data is None:
-            self.search()
         arxiv_id = None
-        for i in self._data["identifier"]:
+        for i in self.data["identifier"]:
             if i.startswith("arXiv:"):
                 arxiv_id = i.replace("arXiv:", "")
 
@@ -219,10 +206,8 @@ class article(object):
 
     @property
     def journal_url(self):
-        if self._data is None:
-            self.search()
         doi = None
-        for i in self._data["identifier"]:
+        for i in self.data["identifier"]:
             if i.startswith("10."):
                 doi = i
         if doi is not None:
@@ -232,21 +217,17 @@ class article(object):
 
     @property
     def citation_count(self):
-        if self._data is None:
-            self.search()
-        if "citation_count" not in self._data:
+        if "citation_count" not in self.data:
             return 0
         else:
-            return self._data["citation_count"]
+            return self.data["citation_count"]
 
     @property
     def reference_count(self):
-        if self._data is None:
-            self.search()
-        if "reference" not in self._data:
+        if "reference" not in self.data:
             return 0
         else:
-            return len(self._data["reference"])
+            return len(self.data["reference"])
 
     def pdf(self, filename):
         # There are multiple possible locations for the pdf
@@ -283,14 +264,14 @@ class article(object):
     def citations(self):
         if self._citations is None:
             self._citations = self.adsdata.search(
-                'citations(bibcode:"' + self._bibcode + '")'
+                'citations(bibcode:"' + self.bibcode + '")'
             )
         return self._citations
 
     def references(self):
         if self._references is None:
             self._references = self.adsdata.search(
-                'references(bibcode:"' + self._bibcode + '")'
+                'references(bibcode:"' + self.bibcode + '")'
             )
         return self._references
 
