@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+#Virtualenv
+adsdev
+
 # Distribution / packaging
 .Python
 build/

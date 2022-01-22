@@ -42,7 +42,12 @@ def search(
     start = 0
     count = 0
     while True:
-        terms = ["?q=" + query, "fl=" + fields, "fq=" + fq, "start=" + str(start)]
+        terms = [
+            "?q=" + query,
+            "fl=" + utils.ensure_str(fields),
+            "fq=" + fq,
+            "start=" + str(start),
+        ]
 
         search_term = "&".join(terms)
 

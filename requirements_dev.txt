@@ -4,3 +4,5 @@ mypy>=0.910
 tox>=3.24
 pre-commit
 types-requests
+vcrpy
+pytest-vcr

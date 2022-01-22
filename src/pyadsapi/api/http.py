@@ -3,26 +3,38 @@
 import requests
 import os
 import typing as t
-import pickle
 
 from dataclasses import dataclass
 
-from . import limits
 from . import utils
 from . import exceptions as e
 
 _TEST_LOGGING = os.environ.get("ADS_TEST_LOG", False)
 
 HttpResponseResponse_t = t.Any
+
 Payload_t = t.Union[
     t.Dict[str, t.List[str]], t.Dict[str, str], t.Dict[str, t.Sequence[str]], None
 ]
 
 
 @dataclass
+class ADSLimits:
+    limit = int
+    remaining = int
+    reset = int
+
+    def __init__(self, header):
+        self.limit = header["X-RateLimit-Limit"]
+        self.remaining = header["X-RateLimit-Remaining"]
+        self.reset = header["X-RateLimit-Reset"]
+
+
+@dataclass
 class HttpResponse:
     response: HttpResponseResponse_t
     status: int
+    limits: ADSLimits
 
 
 class _BearerAuth(requests.auth.AuthBase):
@@ -44,17 +56,14 @@ def get(
         url,
         auth=_BearerAuth(token),
         params=data,
-        hooks={"response": _log_http},
     )
 
     response_code = r.status_code
 
-    limits.update_limits(r.headers)
-
     if json:
-        return HttpResponse(r.json(), response_code)
+        return HttpResponse(r.json(), response_code, ADSLimits(r.headers))
     else:
-        return HttpResponse(r.text, response_code)
+        return HttpResponse(r.text, response_code, ADSLimits(r.headers))
 
 
 def post(url: str, token: str, data: Payload_t, json: bool = True) -> HttpResponse:
@@ -63,17 +72,14 @@ def post(url: str, token: str, data: Payload_t, json: bool = True) -> HttpRespon
         auth=_BearerAuth(token),
         headers={"Content-Type": "application/json", "Accept": "application/json"},
         json=data,
-        hooks={"response": _log_http},
     )
 
     response_code = r.status_code
 
-    limits.update_limits(r.headers)
-
     if json:
-        return HttpResponse(r.json(), response_code)
+        return HttpResponse(r.json(), response_code, ADSLimits(r.headers))
     else:
-        return HttpResponse(r.text, response_code)
+        return HttpResponse(r.text, response_code, ADSLimits(r.headers))
 
 
 def put(url: str, token: str, data: Payload_t) -> HttpResponse:
@@ -82,28 +88,22 @@ def put(url: str, token: str, data: Payload_t) -> HttpResponse:
         auth=_BearerAuth(token),
         headers={"Content-Type": "application/json"},
         json=data,
-        hooks={"response": _log_http},
     )
 
     response_code = r.status_code
 
-    limits.update_limits(r.headers)
-
-    return HttpResponse(r.json(), response_code)
+    return HttpResponse(r.json(), response_code, ADSLimits(r.headers))
 
 
 def delete(url: str, token: str) -> HttpResponse:
     r = requests.delete(
         url,
         auth=_BearerAuth(token),
-        hooks={"response": _log_http},
     )
 
     response_code = r.status_code
 
-    limits.update_limits(r.headers)
-
-    return HttpResponse("", response_code)
+    return HttpResponse("", response_code, ADSLimits(r.headers))
 
 
 def post_bibcodes(
@@ -118,12 +118,3 @@ def get_bibcodes(
     url: str, bibcodes: t.Union[str, t.List[str]], token: str
 ) -> HttpResponse:
     pass
-
-
-def _log_http(r, *args, **kwargs):
-    print("Here")
-    if _TEST_LOGGING:
-        with open("http.log", "a") as f:
-            print(r.url, r.text, file=f)
-    else:
-        pass

@@ -1,0 +1,67 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.27.1
+      authorization:
+      - DUMMY
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:2020&fl=page,volume&fq=&start=0
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA01QTUvEMBS8768o75xC+mG7BvbgRRS8KHsQlnXJJq+l0iY1aV205L+bauP2OPOG
+        mXkzbaIIDNpeK4sPyCUaYJMnPW0HPowWGCV/+HnfdAgszxfcc8M7G+Se+AAGbxU3HRpioi/khqU0
+        pUCCoGq9ouc1kk/djt7s/+KzzOCPK3GjBjSKt6dW13Wj6lPIg9f4rvtW8d5wgfGj3L1oPeySuEhQ
+        5Fkh4kTyZFucb7KqEpjTsiyxLMRWrIrMVa/Q6Mvsm6zSL3Obd6sVOEfWI/l/QY3dvR6VBJaSUJ0S
+        kFp4m8NiMblgFgb63az2Dgd4ygo4kiu/7MHglqbgjv7g3OYHJU2RSJ0BAAA=
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 22 Jan 2022 17:48:28 GMT
+      Retry-After:
+      - '84026'
+      Server:
+      - openresty/1.15.8.1
+      Set-Cookie: DUMMY
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4942'
+      X-RateLimit-Reset:
+      - '1642957735'
+    status:
+      code: 200
+      message: OK
+version: 1

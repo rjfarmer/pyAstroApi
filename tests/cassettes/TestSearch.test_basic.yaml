@@ -1,0 +1,88 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.27.1
+      authorization:
+      - DUMMY
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:2020&fl=abstract,author,bibcode,pubdate,title,pub&fq=&start=0
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 22 Jan 2022 17:48:27 GMT
+      Retry-After:
+      - '84026'
+      Server:
+      - openresty/1.15.8.1
+      Set-Cookie: DUMMY
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4943'
+      X-RateLimit-Reset:
+      - '1642957734'
+    status:
+      code: 200
+      message: OK
+version: 1
