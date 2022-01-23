@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 
+from argparse import ArgumentError
 import typing as t
 from urllib.parse import urlencode, quote_plus
 
@@ -10,7 +11,8 @@ from . import urls
 from . import http
 from . import utils
 
-_fields = """abs abstract ack aff aff_id alternate_bibcode 
+_fields = set(
+    """abs abstract ack aff aff_id alternate_bibcode 
             alternative_title arXiv arxiv_class author 
             author_count
             bibcode bigroup bibstem body 
@@ -22,12 +24,13 @@ _fields = """abs abstract ack aff aff_id alternate_bibcode
             keyword
             lang
             object orcid orcid_user orcid_other
-            page property
+            page property pubdata pub
             read_count
             title
             vizier volume
             year
         """.split()
+)
 
 _short_fl = "abstract,author,bibcode,pubdate,title,pub"
 
@@ -37,17 +40,25 @@ def search(
     query: str = "*:*",
     fields: str = _short_fl,
     fq: str = "",
+    limit: int = -1,
 ) -> t.Generator[t.Dict[t.Any, t.Any], None, None]:
+
+    for f in fields.split(","):
+        if f not in _fields:
+            raise ValueError(f"Field {f} not valid in search")
 
     start = 0
     count = 0
     while True:
         terms = [
-            "?q=" + query,
-            "fl=" + utils.ensure_str(fields),
-            "fq=" + fq,
-            "start=" + str(start),
+            f"?q={query}",
+            f"fl={fields}",
+            f"fq={fq}",
+            f"start={start}",
         ]
+
+        if limit > 0:
+            terms.append(f"rows={limit}")
 
         search_term = "&".join(terms)
 
@@ -65,19 +76,48 @@ def search(
             elif data.status == 500:
                 raise e.SeverError
             else:
-                raise e.AdsApiError("Unknown error code {}".format(data.status))
+                raise e.AdsApiError(f"Unknown error code {data.status}")
 
         total_num = int(data.response["response"]["numFound"])
 
         count += len(data.response["response"]["docs"])
 
+        # print(count,total_num,start)
+
         yield from data.response["response"]["docs"]
 
-        if count == total_num:
+        if count == total_num or count >= limit:
             break
         else:
             start = count - 1
 
 
-def bigquery(bibcodes: str, token: str):
-    pass
+def bigquery(token: str, bibcodes: t.List[str], limit: int = -1):
+    # Broken for now
+    terms = {
+        "q": "*:*",
+        "fl": "id,bibcode,title",
+    }
+
+    if limit > 0:
+        terms["rows"] = str(limit)
+
+    url = urls.make_url(urls.urls["search"]["bigquery"])
+
+    bib = {"bibcode": utils.ensure_list(bibcodes)}
+
+    data = http.post(url, token, data=bib, params=terms, json=True)
+
+    if data.status != 200:
+        if data.status == 400:
+            raise e.MalformedRequest
+        elif data.status == 404:
+            raise e.NoRecordsFound
+        elif data.status == 499:
+            raise e.ServerTooBusy
+        elif data.status == 500:
+            raise e.SeverError
+        else:
+            raise e.AdsApiError(f"Unknown error code {data.status}")
+
+    return data

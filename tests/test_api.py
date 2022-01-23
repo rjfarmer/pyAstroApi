@@ -37,7 +37,7 @@ class TestSearch:
         assert expected == actual
 
     def test_fields(self):
-        res = list(s.search(token, "^farmer,r year:2020", fields=["page", "volume"]))
+        res = list(s.search(token, "^farmer,r year:2020", fields="page,volume"))
 
         assert len(res) == 2
 
@@ -46,3 +46,23 @@ class TestSearch:
                 assert i["page"] == ["L36"]
             if "volume" in i:
                 assert i["volume"] == "902"
+
+    def test_bad_field(self):
+        with pytest.raises(ValueError):
+            res = list(s.search(token, "^farmer,r year:2020", fields="safdsgfdsg"))
+
+    def test_no_results(self):
+        res = list(s.search(token, "^farmer,r year:1600"))
+        assert len(res) == 0
+
+    def test_limit(self):
+        res = list(s.search(token, "^farmer,r year:2020", limit=1))
+        assert len(res) == 1
+
+    def test_large(self):
+        res = list(s.search(token, "^farmer", fields="bibcode", limit=100))
+        assert len(res) == 100
+
+    @pytest.mark.skip(reason="Broken")
+    def test_bigquery(self):
+        res = list(s.bigquery(token, ["2020zndo...3678482F", "2020ApJ...902L..36F"]))

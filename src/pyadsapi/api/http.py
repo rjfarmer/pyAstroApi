@@ -20,14 +20,17 @@ Payload_t = t.Union[
 
 @dataclass
 class ADSLimits:
-    limit = int
-    remaining = int
-    reset = int
+    limit: int = -1
+    remaining: int = -1
+    reset: int = -1
 
     def __init__(self, header):
-        self.limit = header["X-RateLimit-Limit"]
-        self.remaining = header["X-RateLimit-Remaining"]
-        self.reset = header["X-RateLimit-Reset"]
+        try:
+            self.limit = header["X-RateLimit-Limit"]
+            self.remaining = header["X-RateLimit-Remaining"]
+            self.reset = header["X-RateLimit-Reset"]
+        except KeyError:
+            pass
 
 
 @dataclass
@@ -66,13 +69,25 @@ def get(
         return HttpResponse(r.text, response_code, ADSLimits(r.headers))
 
 
-def post(url: str, token: str, data: Payload_t, json: bool = True) -> HttpResponse:
-    r = requests.post(
-        url,
-        auth=_BearerAuth(token),
-        headers={"Content-Type": "application/json", "Accept": "application/json"},
-        json=data,
-    )
+def post(
+    url: str, token: str, data: Payload_t, params: t.Any = None, json: bool = True
+) -> HttpResponse:
+
+    args = {
+        "params": params,
+        "auth": _BearerAuth(token),
+        "headers": {"Content-Type": "application/json", "Accept": "application/json"},
+    }
+
+    if json:
+        args["json"] = data
+    else:
+        args["data"] = data
+
+    if params is not None:
+        args["params"] = params
+
+    r = requests.post(url, **args)
 
     response_code = r.status_code
 
