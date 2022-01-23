@@ -5,6 +5,8 @@ import pyadsapi.api.libraries as lib
 import pyadsapi.api.metrics as metrics
 import pyadsapi.api.author as author
 import pyadsapi.api.citation_helper as cites
+import pyadsapi.api.solr as solr
+
 
 import pyadsapi.api.urls as urls
 import pyadsapi.api.http as http
@@ -231,3 +233,24 @@ class TestCitations:
         assert len(r) == 10
 
         assert "bibcode" in r[0]
+
+
+@pytest.mark.vcr()
+class TestSolr:
+    def test_query(self):
+        r = solr.query(token, "M31")
+
+        assert (
+            r
+            == "((=abs:M31 OR simbid:1575544 OR nedid:MESSIER_031) database:astronomy)"
+        )
+
+    def test_simbad(self):
+        r = solr.simbad(token, "1575544")
+
+        assert r == {"1575544": {"canonical": "M  31", "id": "1575544"}}
+
+    def test_objects(self):
+        r = solr.objects(token, "M31")
+
+        assert r == {"M31": {"canonical": "M  31", "id": "1575544"}}
