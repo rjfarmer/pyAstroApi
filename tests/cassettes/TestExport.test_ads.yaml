@@ -1,0 +1,93 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.27.1
+      authorization:
+      - DUMMY
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//export/ads/2020ApJ...902L..36F
+  response:
+    body:
+      string: !!binary |
+        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
+        A0L2T85+DgAA
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/plain
+      Date:
+      - Sun, 23 Jan 2022 11:59:15 GMT
+      Retry-After:
+      - '18578'
+      Server:
+      - openresty/1.15.8.1
+      Set-Cookie: DUMMY
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4900'
+      X-RateLimit-Reset:
+      - '1642957734'
+    status:
+      code: 200
+      message: OK
+version: 1

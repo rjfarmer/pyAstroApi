@@ -1,0 +1,80 @@
+interactions:
+- request:
+    body: '{"bibcode": ["2020ApJ...902L..36F", "2020zndo...3678482F"]}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.27.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://api.adsabs.harvard.edu/v1//export/bibtex
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA61UbW/TMBD+K6dqH0Bq3SQdXTdpEl3ZGGiFqeUDQhXSJbk23hI7sp2MLiq/nXMY
+        LBsDPkAVVfZzL37u7rGbXmE3vSPoLcgZSTWlEAHG1hlMnO2DdWicVBu4kS4DVRUxGQhFrw89+lJq
+        43zsy+niw5vZxWkTBVEwLd8KIQ6D6EKI0fisv1Lw/YeVy7SBY2iaMzQFmV0fFgJQpdAsSN1q3s/v
+        9inBXKprRpbi6+kdeCZtFmOSdfzeVtZlWLR+u/ujwEmXEx+16jUzrXw1UjkLa6MLeG2wlg6d1Arz
+        wQ3WBK/IUeIBC3oNJ1Kh2cJJjsk1nGtONCezIcNGBS4j2PvchNFub/asWa1I2cpQgS7jDeZlhjtm
+        89iwwaJgw3MfOd7tvYcFOtqtej8pX+nKMB3fHU5TXuU/q7mm7Y02qfWmpaM8RwNU67zyfLnuqiSj
+        dI3Uh5k2NEg0u5SWwHYs76okJw5EboUus62VCQ/3R7oCrYW4LTfjctkyvfdjUg9Mc3aW3DOvDN5e
+        cCG8/oVX+OLwkP/H40kfRsE+L8OoBcKwD4cMHowiXvhd5zALAziXmwxOFbd8+4jHZUZKF6SwO2rY
+        +sKOwWuvAxdasWCPQSfuHvX0Cq+LhvXZSXKna8ajB6mBZOrRi9G4i5e4IfsEDpBq6fEwEKPJ/sEw
+        CvbDwSQKR0OMY0xT74wmybh/l4bW8ot3RvNR1p00VBoWa0smCMYiGI8PJq2Z8YKFOcv9uHygb86g
+        zMT5aSccU9ZdK6TMudIeDYeVFAzypRYZmhpNKiitmJEdPnFf7zNxjNKu7dal0bVM+W2It+0FWE7f
+        D99Nl9OHo3uFDmG5ZTEUu5Xib6Vezt8sZ+2zcKtSLfwJB5P9SfS3Z0HzONxvLrS5Wrd+w4Islrl2
+        R3BSbYC7SbZ7peBv0lhT/NSweXgvokk4vGWxMec7xr+b8x9da340+DZ41zoUgZj8MJVVnPNr9l1z
+        n9rofxjho97+3xH2dt8ARIn0HCQGAAA=
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Jan 2022 12:00:04 GMT
+      Retry-After:
+      - '18530'
+      Server:
+      - openresty/1.15.8.1
+      Set-Cookie: DUMMY
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4898'
+      X-RateLimit-Reset:
+      - '1642957735'
+    status:
+      code: 200
+      message: OK
+version: 1

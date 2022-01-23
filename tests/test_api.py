@@ -1,6 +1,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 import pyadsapi.api.search as s
+import pyadsapi.api.export as export
 import pyadsapi.api.token as t
+
 
 import pytest
 
@@ -66,3 +68,23 @@ class TestSearch:
     @pytest.mark.skip(reason="Broken")
     def test_bigquery(self):
         res = list(s.bigquery(token, ["2020zndo...3678482F", "2020ApJ...902L..36F"]))
+
+
+@pytest.mark.vcr()
+class TestExport:
+    def test_ads(self):
+        res = export.ads(token, "2020ApJ...902L..36F")
+
+        assert "2020ApJ...902L..36F" in res
+
+    def test_bibtex(self):
+        res = export.bibtex(token, "2020ApJ...902L..36F")
+
+        assert "2020ApJ...902L..36F" in res
+
+        assert res["2020ApJ...902L..36F"].startswith("@ARTICLE{2020ApJ...902L..36F")
+
+    def test_several(self):
+        res = export.bibtex(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+
+        assert len(res) == 2

@@ -74,7 +74,6 @@ def post(
 ) -> HttpResponse:
 
     args = {
-        "params": params,
         "auth": _BearerAuth(token),
         "headers": {"Content-Type": "application/json", "Accept": "application/json"},
     }
@@ -87,7 +86,7 @@ def post(
     if params is not None:
         args["params"] = params
 
-    r = requests.post(url, **args)
+    r = requests.post(url, **args)  # type:ignore
 
     response_code = r.status_code
 

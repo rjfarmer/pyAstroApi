@@ -8,7 +8,7 @@ import typing as t
 _exportType = t.Dict[str, t.Any]
 
 
-def _export(bibcode: t.Union[str, t.List[str]], token: str, format: str) -> _exportType:
+def _export(token: str, bibcode: t.Union[str, t.List[str]], format: str) -> _exportType:
     if isinstance(bibcode, list):
         url = urls.make_url(urls.urls["export"][format])
         payload = {"bibcode": bibcode}
@@ -26,82 +26,82 @@ def _export(bibcode: t.Union[str, t.List[str]], token: str, format: str) -> _exp
 
     result = {}
     if isinstance(bibcode, list):
-        split = data.response["export"].split("\n\n\n")
+        split = data.response["export"].split("\n}\n\n")
         for i, j in zip(bibcode, split):
-            result[i] = j
+            result[i] = j + "}"
     else:
         result[bibcode] = data.response
 
     return result
 
 
-def ads(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "ads")
+def ads(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "ads")
 
 
-def bibtexabs(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "bibtexabs")
+def bibtexabs(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "bibtexabs")
 
 
-def bibtex(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "bibtex")
+def bibtex(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "bibtex")
 
 
-def endnote(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "endnote")
+def endnote(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "endnote")
 
 
-def medlars(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "medlars")
+def medlars(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "medlars")
 
 
-def procite(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "procite")
+def procite(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "procite")
 
 
-def refworks(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "refworks")
+def refworks(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "refworks")
 
 
-def ris(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "ris")
+def ris(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "ris")
 
 
-def aastex(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "aastex")
+def aastex(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "aastex")
 
 
-def icarus(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "icarus")
+def icarus(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "icarus")
 
 
-def mnras(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "mnras")
+def mnras(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "mnras")
 
 
-def soph(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "soph")
+def soph(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "soph")
 
 
-def dcxml(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "dcxml")
+def dcxml(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "dcxml")
 
 
-def refxml(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "refxml")
+def refxml(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "refxml")
 
 
-def refabsxml(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "refabsxml")
+def refabsxml(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "refabsxml")
 
 
-def rss(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "rss")
+def rss(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "rss")
 
 
-def votable(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "votable")
+def votable(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "votable")
 
 
-def ieee(bibcode: t.Union[str, t.List[str]], token: str) -> _exportType:
-    return _export(bibcode, token, "ieee")
+def ieee(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
+    return _export(token, bibcode, "ieee")
