@@ -5,6 +5,9 @@ import typing as t
 
 
 def get_token(filename: str = "~/.ads/dev_key") -> t.Union[str, None]:
+    if "ADS_DEV_KEY" in os.environ:
+        return os.environ["ADS_DEV_KEY"]
+
     filename = os.path.expanduser(filename)
     if os.path.exists(filename):
         with open(filename, "r") as f:
