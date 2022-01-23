@@ -43,9 +43,7 @@ def get(token: str, lib: str):
     start = 0
     count = 0
     while True:
-        url = urls.make_url(
-            urls.urls["libraries"]["view"], lib, "?start=" + str(start) + "&rows=20"
-        )
+        url = urls.make_url(urls.urls["libraries"]["view"], lib, "?start=" + str(start))
 
         data = http.get(token, url)
 
@@ -53,6 +51,10 @@ def get(token: str, lib: str):
             raise e.AdsApiError("Unknown error code {}".format(data.status))
 
         total_num = int(data.response["metadata"]["num_documents"])
+
+        if len(data.response["documents"]) == 0:
+            # Total_num lies sometimes so track when we stop getting new papers
+            break
 
         count += len(data.response["documents"])
 
@@ -181,9 +183,7 @@ def add(token: str, lib: str, bibcode: str):
 
     if len(bibs) != data.response["number_added"]:
         raise e.AdsApiError(
-            "Bad number of bibcodes added tried {} got {}".format(
-                len(bibs), data.response["number_added"]
-            )
+            f"Bad number of bibcodes added tried {len(bibs)} got {data.response['number_added']}"
         )
 
 
@@ -201,9 +201,7 @@ def remove(token: str, lib: str, bibcode: str):
         else:
             raise e.AdsApiError("Unknown error code {}".format(data.status))
 
-    if len(bibs) != data.response["number_added"]:
+    if len(bibs) != data.response["number_removed"]:
         raise e.AdsApiError(
-            "Bad number of bibcodes removed tried {} got {}".format(
-                len(bibs), data.response["number_added"]
-            )
+            f"Bad number of bibcodes removed tried {len(bibs)} got {data.response['number_removed']}"
         )

@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 import pyadsapi.api.search as search
 import pyadsapi.api.export as export
+import pyadsapi.api.libraries as lib
 import pyadsapi.api.token as t
 
 
@@ -93,3 +94,41 @@ class TestExport:
 
         assert res[0].startswith("@ARTICLE{2020ApJ...902L..36F")
         assert res[1].startswith("@MISC{2020zndo...3678482F")
+
+
+@pytest.mark.vcr()
+class TestLib:
+    def test_list_all(self):
+        r = lib.list_all(token)
+        assert "libraries" in r
+
+        assert len(r["libraries"]) > 0
+
+        assert "id" in r["libraries"][0]
+
+    def test_permissions(self):
+        r = lib.get_permissions(token, "qf-C6Zi-Tyad2vqJPS-I4g")
+
+        assert r == [{"robert.j.farmer37@gmail.com": ["owner"]}]
+
+    def test_get(self):
+        r = list(lib.get(token, "qf-C6Zi-Tyad2vqJPS-I4g"))
+
+        assert len(r) > 0
+
+        assert len(r[0]) == 19  # Got a bibcode like string
+
+    def test_add_remove(self):
+        r = list(lib.get(token, "qf-C6Zi-Tyad2vqJPS-I4g"))
+
+        lib.add(token, "qf-C6Zi-Tyad2vqJPS-I4g", "2021ApJ...923..214F")
+
+        r2 = list(lib.get(token, "qf-C6Zi-Tyad2vqJPS-I4g"))
+
+        lib.remove(token, "qf-C6Zi-Tyad2vqJPS-I4g", "2021ApJ...923..214F")
+
+        r3 = list(lib.get(token, "qf-C6Zi-Tyad2vqJPS-I4g"))
+
+        assert len(r) == len(r2) - 1  # We added one new bibcode
+
+        assert len(r) == len(r3)  # Then we removed it
