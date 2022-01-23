@@ -125,10 +125,37 @@ class TestLib:
 
         r2 = list(lib.get(token, "qf-C6Zi-Tyad2vqJPS-I4g"))
 
+        assert len(r) == len(r2) - 1  # We added one new bibcode
+
         lib.remove(token, "qf-C6Zi-Tyad2vqJPS-I4g", "2021ApJ...923..214F")
 
         r3 = list(lib.get(token, "qf-C6Zi-Tyad2vqJPS-I4g"))
 
-        assert len(r) == len(r2) - 1  # We added one new bibcode
-
         assert len(r) == len(r3)  # Then we removed it
+
+    def test_make_new_and_del(self):
+        r = lib.list_all(token)
+
+        lib_new = lib.new(token, "test_123465789")
+
+        r2 = lib.list_all(token)
+
+        assert len(r2["libraries"]) - 1 == len(r["libraries"])  # Added new library
+
+        # Check its there
+        in_lib = False
+        check_name = False
+        for i in r2["libraries"]:
+            if i["id"] == lib_new["id"]:
+                in_lib = True
+            if i["name"] == "test_123465789":
+                check_name = True
+
+        assert in_lib
+        assert check_name
+
+        lib.delete(token, lib_new["id"])
+
+        r2 = lib.list_all(token)
+
+        assert len(r2["libraries"]) == len(r["libraries"])  # Removed library

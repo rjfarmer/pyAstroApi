@@ -18,7 +18,7 @@ def list_all(token: str):
         if data.status == 400:
             raise e.NoADSAccount()
         else:
-            raise e.AdsApiError("Unknown error code {}".format(data.status))
+            raise e.AdsApiError(f"Unknown error code {data.status}")
 
     return data.response
 
@@ -34,7 +34,7 @@ def get_permissions(token: str, lib: str):
         elif data.status == 403:
             raise e.InsufficentPermisions
         else:
-            raise e.AdsApiError("Unknown error code {}".format(data.status))
+            raise e.AdsApiError(f"Unknown error code {data.status}")
 
     return data.response
 
@@ -48,7 +48,7 @@ def get(token: str, lib: str):
         data = http.get(token, url)
 
         if data.status != 200:
-            raise e.AdsApiError("Unknown error code {}".format(data.status))
+            raise e.AdsApiError(f"Unknown error code {data.status}")
 
         total_num = int(data.response["metadata"]["num_documents"])
 
@@ -71,7 +71,7 @@ def update_metadata(
     lib: str,
     name: t.Optional[str] = None,
     description: t.Optional[str] = None,
-    public: t.Optional[bool] = None,
+    public: t.Optional[bool] = False,
 ):
 
     params = {}
@@ -80,9 +80,7 @@ def update_metadata(
     if description is not None:
         params["description"] = description
     if public is not None:
-        params["public"] = "false"
-        if public:
-            params["public"] = "true"
+        params["public"] = bool(public)
 
     url = urls.make_url(urls.urls["libraries"]["change"], lib)
 
@@ -98,7 +96,7 @@ def update_metadata(
         elif data.status == 410:
             raise e.LibraryDoesNotExist
         else:
-            raise e.AdsApiError("Unknown error code {}".format(data.status))
+            raise e.AdsApiError(f"Unknown error code {data.status}")
 
 
 def transfer(token: str, lib: str, email: str):
@@ -114,7 +112,7 @@ def transfer(token: str, lib: str, email: str):
         elif data.status == 404:
             raise e.NoADSAccount
         else:
-            raise e.AdsApiError("Unknown error code {}".format(data.status))
+            raise e.AdsApiError(f"Unknown error code {data.status}")
 
 
 def new(
@@ -139,7 +137,7 @@ def new(
 
     url = urls.make_url(urls.urls["libraries"]["view"])
 
-    data = http.post(token, url, params)
+    data = http.post(token, url, data=params, json=True)
 
     if data.status != 200:
         if data.status == 400:
@@ -147,7 +145,9 @@ def new(
         elif data.status == 409:
             raise e.LibraryAllreadyExists
         else:
-            raise e.AdsApiError("Unknown error code {}".format(data.status))
+            raise e.AdsApiError(f"Unknown error code {data.status}")
+
+    return data.response
 
 
 def delete(token: str, lib: str):
@@ -163,7 +163,7 @@ def delete(token: str, lib: str):
         elif data.status == 410:
             raise e.LibraryDoesNotExist
         else:
-            raise e.AdsApiError("Unknown error code {}".format(data.status))
+            raise e.AdsApiError(f"Unknown error code {data.status}")
 
 
 def add(token: str, lib: str, bibcode: str):
@@ -179,7 +179,7 @@ def add(token: str, lib: str, bibcode: str):
         elif data.status == 403:
             raise e.InsufficentPermisions
         else:
-            raise e.AdsApiError("Unknown error code {}".format(data.status))
+            raise e.AdsApiError(f"Unknown error code {data.status}")
 
     if len(bibs) != data.response["number_added"]:
         raise e.AdsApiError(
@@ -199,7 +199,7 @@ def remove(token: str, lib: str, bibcode: str):
         elif data.status == 403:
             raise e.InsufficentPermisions
         else:
-            raise e.AdsApiError("Unknown error code {}".format(data.status))
+            raise e.AdsApiError(f"Unknown error code {data.status}")
 
     if len(bibs) != data.response["number_removed"]:
         raise e.AdsApiError(

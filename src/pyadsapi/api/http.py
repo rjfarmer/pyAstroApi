@@ -9,12 +9,25 @@ from dataclasses import dataclass
 from . import utils
 from . import exceptions as e
 
-_TEST_LOGGING = os.environ.get("ADS_TEST_LOG", False)
+
+class _BearerAuth(requests.auth.AuthBase):
+    def __init__(self, token: str) -> None:
+        self.token = token
+
+    def __call__(self, r):
+        r.headers["authorization"] = "Bearer " + str(self.token)
+        return r
+
 
 HttpResponseResponse_t = t.Any
 
 Payload_t = t.Union[
-    t.Dict[str, t.List[str]], t.Dict[str, str], t.Dict[str, t.Sequence[str]], None
+    t.Dict[str, t.List[str]],
+    t.Dict[str, str],
+    t.Dict[str, t.Sequence[str]],
+    t.Dict[str, bool],
+    t.Dict[str, _BearerAuth],
+    None,
 ]
 
 
@@ -40,15 +53,6 @@ class HttpResponse:
     limits: ADSLimits
 
 
-class _BearerAuth(requests.auth.AuthBase):
-    def __init__(self, token: str) -> None:
-        self.token = token
-
-    def __call__(self, r):
-        r.headers["authorization"] = "Bearer " + str(self.token)
-        return r
-
-
 def get(
     token: str, url: str, data: Payload_t = None, json: bool = True
 ) -> HttpResponse:
@@ -70,18 +74,22 @@ def get(
 
 
 def post(
-    token: str, url: str, data: Payload_t, params: t.Any = None, json: bool = True
+    token: str,
+    url: str,
+    data: Payload_t = None,
+    params: t.Any = None,
+    json: bool = True,
 ) -> HttpResponse:
 
-    args = {
-        "auth": _BearerAuth(token),
-        "headers": {"Content-Type": "application/json", "Accept": "application/json"},
-    }
+    args = {}  # type:ignore
+    args["auth"] = _BearerAuth(token)
 
-    if json:
+    if data is not None:
         args["json"] = data
-    else:
-        args["data"] = data
+        args["headers"] = {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        }
 
     if params is not None:
         args["params"] = params
