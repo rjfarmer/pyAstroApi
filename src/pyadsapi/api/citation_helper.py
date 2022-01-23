@@ -7,6 +7,12 @@ from . import utils
 import typing as t
 
 
-def citations(token: str, bibcode: t.Union[str, t.List[str]]) -> http.HttpResponse:
+def citations(token: str, bibcode: t.List[str]):
     url = urls.make_url(urls.urls["citations"]["helper"])
-    return http.post_bibcodes(token, url, bibcode)
+
+    if not isinstance(bibcode, list):
+        raise TypeError("Must pass a list of more than one bibcode")
+
+    data = http.post_bibcodes(token, url, bibcode)
+
+    return data.response

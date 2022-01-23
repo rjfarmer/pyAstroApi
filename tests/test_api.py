@@ -4,6 +4,7 @@ import pyadsapi.api.export as export
 import pyadsapi.api.libraries as lib
 import pyadsapi.api.metrics as metrics
 import pyadsapi.api.author as author
+import pyadsapi.api.citation_helper as cites
 
 import pyadsapi.api.urls as urls
 import pyadsapi.api.http as http
@@ -216,3 +217,17 @@ class TestAuthor:
         assert len(r) == 10
 
         assert "authorName" in r[0]
+
+
+@pytest.mark.vcr()
+class TestCitations:
+    def test_one(self):
+        with pytest.raises(TypeError):
+            r = cites.citations(token, "2019ApJ...887...53F")
+
+    def test_multi(self):
+        r = cites.citations(token, ["2019ApJ...887...53F", "2020ApJ...902L..36F"])
+
+        assert len(r) == 10
+
+        assert "bibcode" in r[0]
