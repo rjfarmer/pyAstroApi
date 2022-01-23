@@ -6,8 +6,8 @@ from . import http
 import typing as t
 
 
-def search(bibcode: t.Union[str, t.List[str]], token: str) -> http.HttpResponse:
+def search(token: str, bibcode: t.Union[str, t.List[str]]) -> http.HttpResponse:
 
     url = urls.make_url(urls.urls["authors"]["search"])
 
-    return http.post_bibcodes(url, bibcode, token)
+    return http.post_bibcodes(token, url, bibcode)

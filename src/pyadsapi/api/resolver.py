@@ -5,10 +5,10 @@ from . import urls
 from . import http
 
 
-def resolve(bibcode: str, token: str) -> http.HttpResponseResponse_t:
+def resolve(token: str, bibcode: str) -> http.HttpResponseResponse_t:
     url = urls.make_url(urls.urls["resolve"]["search"], bibcode)
 
-    data = http.get(url, token)
+    data = http.get(token, url)
 
     if data.status != 200:
         if data.status == 400:
@@ -21,10 +21,10 @@ def resolve(bibcode: str, token: str) -> http.HttpResponseResponse_t:
     return data.response
 
 
-def _get(bibcode: str, token: str, format: str) -> str:
+def _get(token: str, bibcode: str, format: str) -> str:
     url = urls.make_url(urls.urls["resolve"]["search"], bibcode, format)
 
-    data = http.get(url, token)
+    data = http.get(token, url)
 
     if data.status != 200:
         if data.status == 403:
@@ -39,57 +39,57 @@ def _get(bibcode: str, token: str, format: str) -> str:
     return str(data.response)
 
 
-def abstract(bibcode: str, token: str) -> str:
-    return _get(bibcode, token, "abstract")
+def abstract(token: str, bibcode: str) -> str:
+    return _get(token, bibcode, "abstract")
 
 
-def citations(bibcode: str, token: str) -> str:
-    return _get(bibcode, token, "citations")
+def citations(token: str, bibcode: str) -> str:
+    return _get(token, bibcode, "citations")
 
 
-def references(bibcode: str, token: str) -> str:
-    return _get(bibcode, token, "references")
+def references(token: str, bibcode: str) -> str:
+    return _get(token, bibcode, "references")
 
 
-def coreads(bibcode: str, token: str) -> str:
-    return _get(bibcode, token, "coreads")
+def coreads(token: str, bibcode: str) -> str:
+    return _get(token, bibcode, "coreads")
 
 
-def toc(bibcode: str, token: str) -> str:
-    return _get(bibcode, token, "toc")
+def toc(token: str, bibcode: str) -> str:
+    return _get(token, bibcode, "toc")
 
 
-def openurl(bibcode: str, token: str) -> str:
-    return _get(bibcode, token, "openurl")
+def openurl(token: str, bibcode: str) -> str:
+    return _get(token, bibcode, "openurl")
 
 
-def metrics(bibcode: str, token: str) -> str:
-    return _get(bibcode, token, "metrics")
+def metrics(token: str, bibcode: str) -> str:
+    return _get(token, bibcode, "metrics")
 
 
-def graphics(bibcode: str, token: str) -> str:
-    return _get(bibcode, token, "graphics")
+def graphics(token: str, bibcode: str) -> str:
+    return _get(token, bibcode, "graphics")
 
 
-def data(bibcode: str, token: str) -> str:
-    return _get(bibcode, token, "data")
+def data(token: str, bibcode: str) -> str:
+    return _get(token, bibcode, "data")
 
 
-def inspire(bibcode: str, token: str) -> str:
-    return _get(bibcode, token, "inspire")
+def inspire(token: str, bibcode: str) -> str:
+    return _get(token, bibcode, "inspire")
 
 
-def esource(bibcode: str, token: str) -> str:
-    return _get(bibcode, token, "esource")
+def esource(token: str, bibcode: str) -> str:
+    return _get(token, bibcode, "esource")
 
 
-def librarycatalog(bibcode: str, token: str) -> str:
-    return _get(bibcode, token, "librarycatalog")
+def librarycatalog(token: str, bibcode: str) -> str:
+    return _get(token, bibcode, "librarycatalog")
 
 
-def presentation(bibcode: str, token: str) -> str:
-    return _get(bibcode, token, "presentation")
+def presentation(token: str, bibcode: str) -> str:
+    return _get(token, bibcode, "presentation")
 
 
-def associated(bibcode: str, token: str) -> str:
-    return _get(bibcode, token, "associated")
+def associated(token: str, bibcode: str) -> str:
+    return _get(token, bibcode, "associated")

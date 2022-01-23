@@ -12,11 +12,11 @@ def _export(token: str, bibcode: t.Union[str, t.List[str]], format: str):
     if isinstance(bibcode, list):
         url = urls.make_url(urls.urls["export"][format])
         payload = {"bibcode": bibcode}
-        data = http.post(url, token, payload)
+        data = http.post(token, url, payload)
 
     else:
         url = urls.make_url(urls.urls["export"][format], bibcode)
-        data = http.get(url, token, json=False)
+        data = http.get(token, url, json=False)
 
     if data.status != 200:
         if data.status == 404:

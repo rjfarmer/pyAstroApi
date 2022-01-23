@@ -12,7 +12,7 @@ def list_all(token: str):
 
     url = urls.make_url(urls.urls["libraries"]["view"])
 
-    data = http.get(url, token)
+    data = http.get(token, url)
 
     if data.status != 200:
         if data.status == 400:
@@ -23,10 +23,10 @@ def list_all(token: str):
     return data.response
 
 
-def get_permissions(lib: str, token: str):
+def get_permissions(token: str, lib: str):
     url = urls.make_url(urls.urls["libraries"]["permission"], lib)
 
-    data = http.get(url, token)
+    data = http.get(token, url)
 
     if data.status != 200:
         if data.status == 400:
@@ -39,7 +39,7 @@ def get_permissions(lib: str, token: str):
     return data.response
 
 
-def get(lib: str, token: str):
+def get(token: str, lib: str):
     start = 0
     count = 0
     while True:
@@ -47,7 +47,7 @@ def get(lib: str, token: str):
             urls.urls["libraries"]["view"], lib, "?start=" + str(start) + "&rows=20"
         )
 
-        data = http.get(url, token)
+        data = http.get(token, url)
 
         if data.status != 200:
             raise e.AdsApiError("Unknown error code {}".format(data.status))
@@ -65,8 +65,8 @@ def get(lib: str, token: str):
 
 
 def update_metadata(
-    lib: str,
     token: str,
+    lib: str,
     name: t.Optional[str] = None,
     description: t.Optional[str] = None,
     public: t.Optional[bool] = None,
@@ -84,7 +84,7 @@ def update_metadata(
 
     url = urls.make_url(urls.urls["libraries"]["change"], lib)
 
-    data = http.put(url, token, params)
+    data = http.put(token, url, params)
 
     if data.status != 200:
         if data.status == 400:
@@ -99,10 +99,10 @@ def update_metadata(
             raise e.AdsApiError("Unknown error code {}".format(data.status))
 
 
-def transfer(lib: str, token: str, email: str):
+def transfer(token: str, lib: str, email: str):
     url = urls.make_url(urls.urls["libraries"]["transfer"], lib)
 
-    data = http.post(url, token, {"email": email})
+    data = http.post(token, url, {"email": email})
 
     if data.status != 200:
         if data.status == 400:
@@ -137,7 +137,7 @@ def new(
 
     url = urls.make_url(urls.urls["libraries"]["view"])
 
-    data = http.post(url, token, params)
+    data = http.post(token, url, params)
 
     if data.status != 200:
         if data.status == 400:
@@ -148,10 +148,10 @@ def new(
             raise e.AdsApiError("Unknown error code {}".format(data.status))
 
 
-def delete(lib: str, token: str):
+def delete(token: str, lib: str):
     url = urls.make_url(urls.urls["libraries"]["change"], lib)
 
-    data = http.delete(url, token)
+    data = http.delete(token, url)
 
     if data.status != 200:
         if data.status == 400:
@@ -164,12 +164,12 @@ def delete(lib: str, token: str):
             raise e.AdsApiError("Unknown error code {}".format(data.status))
 
 
-def add(lib: str, bibcode: str, token: str):
+def add(token: str, lib: str, bibcode: str):
     url = urls.make_url(urls.urls["libraries"]["change"], lib)
 
     bibs = utils.ensure_list(bibcode)
 
-    data = http.post(url, token, {"action": "add", "bibcode": bibs})
+    data = http.post(token, url, {"action": "add", "bibcode": bibs})
 
     if data.status != 200:
         if data.status == 400:
@@ -187,11 +187,11 @@ def add(lib: str, bibcode: str, token: str):
         )
 
 
-def remove(lib: str, bibcode: str, token: str):
+def remove(token: str, lib: str, bibcode: str):
     url = urls.make_url(urls.urls["libraries"]["change"], lib)
 
     bibs = utils.ensure_list(bibcode)
-    data = http.post(url, token, {"action": "remove", "bibcode": bibs})
+    data = http.post(token, url, {"action": "remove", "bibcode": bibs})
 
     if data.status != 200:
         if data.status == 400:

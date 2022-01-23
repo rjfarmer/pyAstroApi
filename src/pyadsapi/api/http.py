@@ -50,7 +50,7 @@ class _BearerAuth(requests.auth.AuthBase):
 
 
 def get(
-    url: str, token: str, data: Payload_t = None, json: bool = True
+    token: str, url: str, data: Payload_t = None, json: bool = True
 ) -> HttpResponse:
     if data is None:
         data = {}  # type:ignore
@@ -70,7 +70,7 @@ def get(
 
 
 def post(
-    url: str, token: str, data: Payload_t, params: t.Any = None, json: bool = True
+    token: str, url: str, data: Payload_t, params: t.Any = None, json: bool = True
 ) -> HttpResponse:
 
     args = {
@@ -109,7 +109,7 @@ def put(url: str, token: str, data: Payload_t) -> HttpResponse:
     return HttpResponse(r.json(), response_code, ADSLimits(r.headers))
 
 
-def delete(url: str, token: str) -> HttpResponse:
+def delete(token: str, url: str) -> HttpResponse:
     r = requests.delete(
         url,
         auth=_BearerAuth(token),
@@ -121,14 +121,14 @@ def delete(url: str, token: str) -> HttpResponse:
 
 
 def post_bibcodes(
-    url: str, bibcodes: t.Union[str, t.List[str]], token: str
+    token: str, url: str, bibcodes: t.Union[str, t.List[str]]
 ) -> HttpResponse:
     data = {"bibcodes": utils.ensure_list(bibcodes)}
 
-    return post(url, token, data)
+    return post(token, url, data)
 
 
 def get_bibcodes(
-    url: str, bibcodes: t.Union[str, t.List[str]], token: str
+    token: str, url: str, bibcodes: t.Union[str, t.List[str]]
 ) -> HttpResponse:
     pass

@@ -6,11 +6,11 @@ from . import http
 from . import utils
 
 
-def author(bibcode: str, token: str) -> http.HttpResponseResponse_t:
+def author(token: str, bibcode: str) -> http.HttpResponseResponse_t:
 
     url = urls.make_url(urls.urls["visual"]["author"])
     payload = {"bibcodes": utils.ensure_list(bibcode)}
-    data = http.post(url, token, payload)
+    data = http.post(token, url, payload)
 
     if data.status != 200:
         if data.status == 400:
@@ -24,11 +24,11 @@ def author(bibcode: str, token: str) -> http.HttpResponseResponse_t:
     return data.response
 
 
-def paper(bibcode: str, token: str) -> http.HttpResponseResponse_t:
+def paper(token: str, bibcode: str) -> http.HttpResponseResponse_t:
 
     url = urls.make_url(urls.urls["visual"]["paper"])
     payload = {"bibcodes": utils.ensure_list(bibcode)}
-    data = http.post(url, token, payload)
+    data = http.post(token, url, payload)
 
     if data.status != 200:
         if data.status == 400:
@@ -51,7 +51,7 @@ def word_cloud(query: str, rows: str, token: str) -> http.HttpResponseResponse_t
         "rows": rows,
     }
 
-    data = http.post(url, token, payload)
+    data = http.post(token, url, payload)
 
     if data.status != 200:
         if data.status == 400:
