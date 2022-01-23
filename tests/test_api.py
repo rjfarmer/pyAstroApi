@@ -2,6 +2,12 @@
 import pyadsapi.api.search as search
 import pyadsapi.api.export as export
 import pyadsapi.api.libraries as lib
+import pyadsapi.api.metrics as metrics
+import pyadsapi.api.author as author
+
+import pyadsapi.api.urls as urls
+import pyadsapi.api.http as http
+
 import pyadsapi.api.token as t
 
 
@@ -159,3 +165,54 @@ class TestLib:
         r2 = lib.list_all(token)
 
         assert len(r2["libraries"]) == len(r["libraries"])  # Removed library
+
+
+@pytest.mark.vcr()
+class TestMetrics:
+    def test_basic(self):
+        r = metrics.basic(token, "2020ApJ...902L..36F")
+
+        assert len(r["skipped bibcodes"]) == 0
+
+        assert r["basic stats"]["number of papers"] == 1
+
+    def test_citations(self):
+        r = metrics.citations(token, "2020ApJ...902L..36F")
+
+        assert len(r["skipped bibcodes"]) == 0
+
+        assert r["citation stats"]["number of citing papers"] > 0
+
+    def test_histograms(self):
+        r = metrics.histograms(token, "2020ApJ...902L..36F")
+
+        assert len(r["skipped bibcodes"]) == 0
+
+        assert r["histograms"]["reads"]["all reads"]["1996"] == 0
+
+    def test_skip(self):
+        r = metrics.citations(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+
+        assert r["skipped bibcodes"][0] == "2020zndo...3678482F"
+
+    def test_multi(self):
+        r = metrics.basic(token, ["2020ApJ...902L..36F", "2019ApJ...887...53F"])
+
+        assert r["basic stats"]["number of papers"] == 2
+
+
+@pytest.mark.vcr()
+class TestAuthor:
+    def test_one(self):
+        r = author.search(token, "2020ApJ...902L..36F")
+
+        assert len(r) == 5
+
+        assert "authorName" in r[0]
+
+    def test_multi(self):
+        r = author.search(token, ["2019ApJ...887...53F", "2020ApJ...902L..36F"])
+
+        assert len(r) == 10
+
+        assert "authorName" in r[0]

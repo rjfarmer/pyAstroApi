@@ -45,16 +45,7 @@ def _metric(token: str, bibcode: str, format: str) -> str:
         else:
             raise e.AdsApiError("Unknown error code {}".format(data.status))
 
-    # if isinstance(bibcode, list):
-    #     split = d['export'].split('\n\n\n')
-    #     data = {}
-    #     for i,j in zip(bibcode,split):
-    #         data[i] = j
-    # else:
-    #     data = {}
-    #     data[bibcode] = d
-
-    return str(data.response)
+    return data.response
 
 
 def basic(token: str, bibcode: str) -> str:
