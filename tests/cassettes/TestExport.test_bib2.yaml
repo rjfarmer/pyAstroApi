@@ -57,9 +57,9 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 Jan 2022 12:00:04 GMT
+      - Sun, 23 Jan 2022 13:34:20 GMT
       Retry-After:
-      - '18530'
+      - '12873'
       Server:
       - openresty/1.15.8.1
       Set-Cookie: DUMMY
@@ -71,9 +71,9 @@ interactions:
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4898'
+      - '4869'
       X-RateLimit-Reset:
-      - '1642957735'
+      - '1642957734'
     status:
       code: 200
       message: OK

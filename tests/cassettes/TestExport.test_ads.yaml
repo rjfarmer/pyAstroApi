@@ -70,9 +70,9 @@ interactions:
       Content-Type:
       - text/plain
       Date:
-      - Sun, 23 Jan 2022 11:59:15 GMT
+      - Sun, 23 Jan 2022 13:34:19 GMT
       Retry-After:
-      - '18578'
+      - '12874'
       Server:
       - openresty/1.15.8.1
       Set-Cookie: DUMMY
@@ -84,7 +84,7 @@ interactions:
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4900'
+      - '4871'
       X-RateLimit-Reset:
       - '1642957734'
     status:

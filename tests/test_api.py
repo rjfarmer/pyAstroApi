@@ -75,16 +75,19 @@ class TestExport:
     def test_ads(self):
         res = export.ads(token, "2020ApJ...902L..36F")
 
-        assert "2020ApJ...902L..36F" in res
+        assert len(res) == 1
 
     def test_bibtex(self):
         res = export.bibtex(token, "2020ApJ...902L..36F")
 
-        assert "2020ApJ...902L..36F" in res
+        assert len(res) == 1
 
-        assert res["2020ApJ...902L..36F"].startswith("@ARTICLE{2020ApJ...902L..36F")
+        assert res[0].startswith("@ARTICLE{2020ApJ...902L..36F")
 
-    def test_several(self):
+    def test_bib2(self):
         res = export.bibtex(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
 
         assert len(res) == 2
+
+        assert res[0].startswith("@ARTICLE{2020ApJ...902L..36F")
+        assert res[1].startswith("@MISC{2020zndo...3678482F")
