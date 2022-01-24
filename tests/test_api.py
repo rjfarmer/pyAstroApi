@@ -8,7 +8,7 @@ import pyadsapi.api.citation_helper as cites
 import pyadsapi.api.solr as solr
 import pyadsapi.api.reference as ref
 import pyadsapi.api.resolver as resolve
-
+import pyadsapi.api.visualization as visual
 
 import pyadsapi.api.urls as urls
 import pyadsapi.api.http as http
@@ -294,3 +294,19 @@ class TestResolve:
         assert "links" in r
         assert "count" in r["links"]
         assert r["links"]["count"] == 4
+
+
+@pytest.mark.vcr()
+class TestVisual:
+    def test_author(self):
+        r = visual.author(token, ["2020ApJ...902L..36F", "2019ApJ...887...53F"])
+
+        assert "data" in r
+        assert len(r["data"]["fullGraph"]["nodes"]) == 6
+
+    def test_paper(self):
+        r = visual.paper(token, ["2020ApJ...902L..36F", "2019ApJ...887...53F"])
+
+        assert "data" in r
+
+        assert len(r["data"]["fullGraph"]["nodes"]) == 2
