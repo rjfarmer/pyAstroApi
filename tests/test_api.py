@@ -7,6 +7,7 @@ import pyadsapi.api.author as author
 import pyadsapi.api.citation_helper as cites
 import pyadsapi.api.solr as solr
 import pyadsapi.api.reference as ref
+import pyadsapi.api.resolver as resolve
 
 
 import pyadsapi.api.urls as urls
@@ -272,3 +273,24 @@ class TestRef:
         r = ref.resolve(token, "farmer,r et al 2020")
 
         assert r[0]["score"] == "0.0"
+
+
+@pytest.mark.vcr()
+class TestResolve:
+    def test_one(self):
+        r = resolve.resolve(token, "2019ApJ...887...53F")
+
+        assert "links" in r
+
+        assert r["links"]["count"] == 17
+
+    def test_multi(self):
+        with pytest.raises(TypeError):
+            r = resolve.resolve(token, ["2019ApJ...887...53F", "2020ApJ...902L..36F"])
+
+    def test_esource(self):
+        r = resolve.esource(token, "2020ApJ...902L..36F")
+
+        assert "links" in r
+        assert "count" in r["links"]
+        assert r["links"]["count"] == 4

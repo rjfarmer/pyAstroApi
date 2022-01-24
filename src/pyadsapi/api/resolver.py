@@ -6,6 +6,10 @@ from . import http
 
 
 def resolve(token: str, bibcode: str) -> http.HttpResponseResponse_t:
+
+    if isinstance(bibcode, list):
+        raise TypeError("One bibcode at a time")
+
     url = urls.make_url(urls.urls["resolve"]["search"], bibcode)
 
     data = http.get(token, url)
@@ -36,7 +40,7 @@ def _get(token: str, bibcode: str, format: str) -> str:
         else:
             raise e.AdsApiError("Unknown error code {}".format(data.status))
 
-    return str(data.response)
+    return data.response
 
 
 def abstract(token: str, bibcode: str) -> str:
