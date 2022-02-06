@@ -8,7 +8,7 @@ import typing as t
 
 
 def matchdoc(token, metadata):
-    raise NotImplemented
+    raise NotImplementedError
 
 
 def recommend(

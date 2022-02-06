@@ -22,7 +22,7 @@ def _export(token: str, bibcode: t.Union[str, t.List[str]], format: str):
         if data.status == 404:
             raise e.NoRecordsFound
         else:
-            raise e.AdsApiError("Unknown error code {}".format(data.status))
+            raise e.AdsApiError(f"Unknown error code {data.status}")
 
     if isinstance(bibcode, list):
         result = data.response["export"]

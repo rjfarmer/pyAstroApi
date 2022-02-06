@@ -129,9 +129,9 @@ def new(
     if description is not None:
         params["description"] = description
     if public is not None:
-        params["public"] = "false"
+        params["public"] = False
         if public:
-            params["public"] = "true"
+            params["public"] = True
     if bibcode is not None:
         params["bibcode"] = utils.ensure_list(bibcode)
 

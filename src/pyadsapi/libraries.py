@@ -1,120 +1,135 @@
 # # SPDX-License-Identifier: BSD-3-Clause
 
-# import typing as t
+import typing as t
 
-# from . import articles
-# from .api import libraries as lib
-
-
-# class libraries(object):
-#     """
-#     This is a collection of ADS libraries that supports iteration
-#     """
-
-#     def __init__(self, token):
-#         self.token = token
-#         self._data = None
-
-#     @property
-#     def data(self):
-#         if self._data is None:
-#             data = lib.list_all(self.token)
-#             self._data = {}
-#             for value in data:
-#                 self._data[value["name"]] = value
-#         return self._data
-
-#     def __len__(self):
-#         return len(self.data)
-
-#     def __contains__(self, key):
-#         return key in self.data
-
-#     def __iter__(self):
-#         for i in self.data:
-#             yield self.get(i)
-
-#     def __dir__(self):
-#         return list(self.__dict__.keys()) + list(self.keys())
-
-#     def __getitem__(self, key):
-#         if key in self.data.keys():
-#             return library(self.token, self.data[key]["id"])
-
-#     def __getattr__(self, key):
-#         if key in self.data.keys():
-#             return library(self.token, self.data[key]["id"])
-
-#     def keys(self):
-#         return self.data.keys()
-
-#     def values(self):
-#         return self.data.values()
-
-#     def items(self):
-#         return self.data.items()
-
-#     def get(self, name):
-#         return library(self.token, self.data[name]["id"])
-
-#     def add(self, name, description="", public=False, bibcodes=None):
-#         lib.new(name, description, public, bibcodes)
-
-#     def remove(self, name):
-#         if name not in self.data.keys():
-#             raise KeyError("Library does not exit")
-
-#         lid = self.data[name]["id"]
-#         lib.delete(lid, self.token)
-#         self.data.pop(name, None)
+import pyadsapi.articles as articles
+import pyadsapi.api.token as token
+import pyadsapi.api.libraries as lib
+import pyadsapi.api.utils as utils
 
 
-# class library(object):
-#     """
-#     An instance of a single ADS library
-#     """
+class libraries(object):
+    """
+    This is a collection of ADS libraries that supports iteration
+    """
 
-#     def __init__(self, token, lid):
-#         self.token = token
-#         self.lid = lid
-#         self._data = None
+    def __init__(self):
+        self._data = {}
 
-#     @property
-#     def data(self):
-#         if self._data is None:
-#             self.update()
-#         return self._data
+    def __len__(self):
+        return len(self._data)
 
-#     def update(self):
-#         pass
+    def __contains__(self, key):
+        return key in self._data
 
-#     def get(self, bibcode):
-#         pass
+    def __iter__(self):
+        yield from self._data
 
-#     def keys(self):
-#         return self.data.keys()
+    def __dir__(self):
+        return list(self.keys())
 
-#     def values(self):
-#         return self.data.values()
+    def __getitem__(self, key):
+        return self._data[key]
 
-#     def items(self):
-#         return self.data.items()
+    def names(self):
+        return list(self.keys())
 
-#     def __len__(self):
-#         return len(self.data)
+    def keys(self):
+        return self._data.keys()
 
-#     def __contains__(self, key):
-#         return key in self.data
+    def values(self):
+        return self._data.values()
 
-#     def __iter__(self):
-#         for i in self.data:
-#             yield self.get(i)
+    def items(self):
+        return self._data.items()
 
-#     def __hash__(self):
-#         return hash(self.lid)
+    def new(self, name, description="", public=False, bibcodes=None):
+        lib.new(token.get_token(), name, description, public, bibcodes)
+        self.update()
 
-#     def __eq__(self, value):
-#         if isinstance(value, library):
-#             if value.lid == self.lid:
-#                 return True
-#         return False
+    def pop(self, name):
+        self.update()
+        if name not in self._data.keys():
+            raise KeyError("Library does not exit")
+
+        lid = self._data[name].lid
+        lib.delete(token.get_token(), lid)
+        self.update()
+
+    def update(self):
+        all_libs = lib.list_all(token.get_token())
+
+        self._data = {}
+
+        for l in all_libs["libraries"]:
+            self._data[l["name"]] = library(l["id"])
+
+
+class library(object):
+    """
+    An instance of a single ADS library
+    """
+
+    def __init__(self, lid):
+        self.lid = lid
+        self._data = articles.journal()
+
+    def update_all(self):
+        bibcodes = list(lib.get(token.get_token(), self.lid))
+        self._data = articles.journal(bibcodes=bibcodes)
+
+    def update_iter(self):
+        iter = lib.get(token.get_token(), self.lid)
+        for bibcode in iter:
+            self._data.add_bibcode(bibcode)
+
+    def get(self, bibcode):
+        return self._data[bibcode]
+
+    def keys(self):
+        return self._data.keys()
+
+    def values(self):
+        return self._data.values()
+
+    def items(self):
+        return self._data.items()
+
+    def __len__(self):
+        return len(self._data)
+
+    def __contains__(self, key):
+        return key in self._data
+
+    def __iter__(self):
+        yield from self._data
+
+    def __hash__(self):
+        return hash(self.lid)
+
+    def __str__(self):
+        return self._data["name"]
+
+    def __eq__(self, value):
+        if isinstance(value, library):
+            if value.lid == self.lid:
+                return True
+        return False
+
+    def add_bibcode(self, bibcodes):
+        bibcodes = utils.ensure_list(bibcodes)
+        lib.add(token.get_token(), self.lib, bibcodes)
+
+        self._data.add_bibcode(bibcodes)
+
+    def add_from_bibtex(self, bibtex):
+        bibcodes = self._data.add_bibtex(bibtex)
+        lib.add(token.get_token(), self.lib, bibcodes)
+
+    def pop(self, bibcodes):
+        bibcodes = utils.ensure_list(bibcodes)
+        lib.remove(token.get_token(), self.lib, bibcodes)
+        self._data.pop(bibcodes)
+
+    def edit(self, name="", description="", public=False):
+        raise NotImplementedError

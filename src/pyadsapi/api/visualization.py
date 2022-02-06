@@ -43,7 +43,7 @@ def paper(token: str, bibcode: str) -> http.HttpResponseResponse_t:
 
 
 def word_cloud(token: str, query: str, rows: str = 50) -> http.HttpResponseResponse_t:
-    raise NotImplemented
+    raise NotImplementedError
 
     # url = urls.make_url(urls.urls["visual"]["word-cloud"])
 

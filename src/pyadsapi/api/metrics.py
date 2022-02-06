@@ -7,6 +7,16 @@ from . import urls
 from . import http
 from . import utils
 
+__all__ = [
+    "detail",
+    "metrics",
+    "basic",
+    "citations",
+    "indicators",
+    "histograms",
+    "timeseries",
+]
+
 
 def detail(token: str, bibcode: str) -> http.HttpResponse:
     url = urls.make_url(urls.urls["metrics"]["detail"])

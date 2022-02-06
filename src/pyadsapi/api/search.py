@@ -44,7 +44,7 @@ def search(
 ) -> t.Generator[t.Dict[t.Any, t.Any], None, None]:
 
     for f in fields.split(","):
-        if f not in _fields:
+        if f and f not in _fields:
             raise ValueError(f"Field {f} not valid in search")
 
     start = 0

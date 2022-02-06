@@ -247,3 +247,15 @@
 #             a2, year = a2.split()
 #             return 'author:"^{}" author:"{}" year:{}'.format(a1, a2, year)
 #         return False
+
+
+import pyadsapi.api.search as search
+import pyadsapi.api.token as token
+
+
+def first_author(author):
+    return search.search(token, query=f'author:"{author}"')
+
+
+def author_year(author, year):
+    return search.search(token, query=f'author:"{author}" year:{year}')
