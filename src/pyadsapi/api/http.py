@@ -19,6 +19,10 @@ class _BearerAuth(requests.auth.AuthBase):
         return r
 
 
+class FileDownloadFailed(Exception):
+    pass
+
+
 HttpResponseResponse_t = t.Any
 
 Payload_t = t.Union[
@@ -140,3 +144,26 @@ def get_bibcodes(
     token: str, url: str, bibcodes: t.Union[str, t.List[str]]
 ) -> HttpResponse:
     pass
+
+
+def download_file(url, filename):
+    headers = {
+        "User-Agent": "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Langauge": "en-GB,en;q=0.5",
+        "DNT": "1",
+    }
+
+    r = requests.get(url, stream=True, headers=headers, allow_redirects=True)
+    with open(filename, "wb") as fd:
+        for chunk in r.iter_content(chunk_size=1024):
+            fd.write(chunk)
+
+    # Check if a pdf file was downloaded
+    with open(filename, "rb") as fd:
+        line = fd.readline()
+
+    if line.startswith(b"<!DOCTYPE html"):
+        os.remove(filename)
+        raise FileDownloadFailed("Annoying site gave us a html file and not a pdf")

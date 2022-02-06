@@ -217,6 +217,8 @@ import pyadsapi.api.utils as utils
 import pyadsapi.api.export as _export
 import pyadsapi.api.metrics as _metrics
 import pyadsapi.api.visualization as _visualization
+import pyadsapi.api.resolver as _resolve
+import pyadsapi.api.http as _http
 
 import typing as t
 
@@ -255,13 +257,52 @@ class Visualization:
 
 
 class PDF:
-    pass
+    def __init__(self, bibcode):
+        if isinstance(bibcode, list):
+            raise TypeError("Can only handle one pdf at a time")
+
+        self.bibcode = bibcode
+        links = _resolve.esource(token.get_token(), bibcode)
+        self.links = {}
+        if "links" not in links:
+            raise ValueError("No pdf links available")
+
+        for i in links["links"]["records"]:
+            self.links[i["link_type"]] = i["url"]
+
+    def filename(self):
+        return f"{self.bibcode}.pdf"
+
+    def _download(self, source, name, filename=None):
+        if source not in self.links:
+            raise ValueError(f"No {name} pdf available for {self.bibcode}")
+
+        if filename is None:
+            filename = self.filename()
+
+        print(self.links[source], filename)
+        _http.download_file(self.links[source], filename)
+
+    def arxiv(self, filename=None):
+        self._download("ESOURCE|EPRINT_PDF", "Arxiv", filename)
+        return filename
+
+    def publisher(self, filename=None):
+        self._download("ESOURCE|PUB_PDF", "Publisher", filename)
+        return filename
+
+    def ads(self, filename=None):
+        self._download("ESOURCE|ADS_PDF", "ADSABS", filename)
+        return filename
 
 
 class article:
     def __init__(self, bibcode: str = None, data: t.Dict = None, bibtex: str = None):
         self.bibcode = None
         self._data = {}
+
+        self._refs = None
+        self._cites = None
 
         if bibcode is not None:
             self.from_bibcode(bibcode)
@@ -382,6 +423,36 @@ class article:
 
     def as_dict(self):
         return self._data
+
+    def references(self):
+        if self._refs is not None:
+            return self._refs
+
+        data = search.search(
+            token.get_token(),
+            query=f"references:({self.bibcode})",
+        )
+
+        self._refs = journal()
+        for bib in data:
+            self._refs.add_data(bib)
+
+        return self._refs
+
+    def citations(self):
+        if self._cites is not None:
+            return self._cites
+
+        data = search.search(
+            token.get_token(),
+            query=f"citations({self.bibcode})",
+        )
+
+        self._cites = journal()
+        for bib in data:
+            self._cites.add_data(bib)
+
+        return self._cites
 
 
 class journal:
