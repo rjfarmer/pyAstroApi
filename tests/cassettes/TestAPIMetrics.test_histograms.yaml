@@ -71,16 +71,16 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:35 GMT
+      - Sat, 26 Mar 2022 15:41:37 GMT
       Retry-After:
-      - '86397'
+      - '84115'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '997'
+      - '990'
       X-RateLimit-Reset:
       - '1648393413'
     status:

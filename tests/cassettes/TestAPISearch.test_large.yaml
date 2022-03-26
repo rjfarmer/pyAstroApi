@@ -16,9 +16,9 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer&fl=bibcode&fq=&start=0&rows=100
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":29,\n    \"params\":{\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":11,\n    \"params\":{\n
         \     \"q\":\"^farmer\",\n      \"fl\":\"bibcode\",\n      \"start\":\"0\",\n
-        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-623f2b2a-0472f21c542004042bdb5c45\",\n
+        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-623f341e-074f3d0d2a631c427f50a435\",\n
         \     \"fq\":\"\",\n      \"rows\":\"100\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":982,\"start\":0,\"docs\":[\n
         \     {\n        \"bibcode\":\"1987PhRvL..59..845F\"},\n      {\n        \"bibcode\":\"1983PhyD....7..153F\"},\n
         \     {\n        \"bibcode\":\"2019ApJ...887...53F\"},\n      {\n        \"bibcode\":\"2020ApJ...902L..36F\"},\n
@@ -93,16 +93,16 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:06 GMT
+      - Sat, 26 Mar 2022 15:41:18 GMT
       Retry-After:
-      - '86398'
+      - '84106'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4995'
+      - '4957'
       X-RateLimit-Reset:
       - '1648393385'
     status:

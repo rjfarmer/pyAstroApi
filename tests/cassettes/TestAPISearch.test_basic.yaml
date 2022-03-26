@@ -13,13 +13,13 @@ interactions:
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:2020&fl=abstract,author,bibcode,pubdate,title,pub&fq=&start=0&rows=1
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:2020&fl=abstract,author,bibcode,pubdate,title,pub&fq=&start=0
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":10,\n    \"params\":{\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":19,\n    \"params\":{\n
         \     \"q\":\"^farmer,r year:2020\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-623f2b29-1ba6e50832d23d925e1eda28\",\n
-        \     \"fq\":\"\",\n      \"rows\":\"1\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-623f341b-69fcbddc18c28cb858a7ce52\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
         \     {\n        \"bibcode\":\"2020ApJ...902L..36F\",\n        \"abstract\":\"Gravitational-wave
         detections are starting to allow us to probe the physical processes in the
         evolution of very massive stars through the imprints they leave on their final
@@ -48,8 +48,13 @@ interactions:
         M.\",\n          \"de Mink, S. E.\",\n          \"Fishbach, M.\",\n          \"Justham,
         S.\"],\n        \"pub\":\"The Astrophysical Journal\",\n        \"pubdate\":\"2020-10-00\",\n
         \       \"title\":[\"Constraints from Gravitational-wave Detections of Binary
-        Black Hole Mergers on the <SUP>12</SUP>C(\u03B1, \u03B3)<SUP>16</SUP>O Rate\"]}]\n
-        \ }}\n"
+        Black Hole Mergers on the <SUP>12</SUP>C(\u03B1, \u03B3)<SUP>16</SUP>O Rate\"]},\n
+        \     {\n        \"bibcode\":\"2020zndo...3678482F\",\n        \"abstract\":\"history
+        and profile data are saved saved after the first time they are loaded as a
+        python pickle file. This allows much faster re-reading in of the file and
+        takes up much less space. Kippenhan plots have had some bug fixes for colorbars\",\n
+        \       \"author\":[\"Farmer, Robert\"],\n        \"pub\":\"Zenodo\",\n        \"pubdate\":\"2020-02-21\",\n
+        \       \"title\":[\"rjfarmer/mesaplot: Bug fixes\"]}]\n  }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -68,20 +73,20 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '2620'
+      - '3073'
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:05 GMT
+      - Sat, 26 Mar 2022 15:41:15 GMT
       Retry-After:
-      - '86398'
+      - '84108'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4996'
+      - '4961'
       X-RateLimit-Reset:
       - '1648393384'
     status:

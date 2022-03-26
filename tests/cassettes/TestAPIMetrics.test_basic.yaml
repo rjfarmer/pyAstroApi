@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"source": "SIMBAD", "identifiers": ["1575544"]}'
+    body: '{"bibcodes": ["2020ApJ...902L..36F"], "types": ["basic"]}'
     headers:
       Accept:
       - application/json
@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '48'
+      - '57'
       Content-Type:
       - application/json
       User-Agent:
@@ -17,10 +17,19 @@ interactions:
       authorization:
       - DUMMY
     method: POST
-    uri: https://api.adsabs.harvard.edu/v1//objects
+    uri: https://api.adsabs.harvard.edu/v1//metrics
   response:
     body:
-      string: '{"1575544": {"canonical": "M  31", "id": "1575544"}}
+      string: '{"skipped bibcodes": [], "basic stats": {"number of papers": 1, "normalized
+        paper count": 0.2, "total number of reads": 627, "average number of reads":
+        627, "median number of reads": 627.0, "recent number of reads": 34, "total
+        number of downloads": 323, "average number of downloads": 323.0, "median number
+        of downloads": 323.0, "recent number of downloads": 19}, "basic stats refereed":
+        {"number of papers": 1, "normalized paper count": 0.2, "total number of reads":
+        627, "average number of reads": 627, "median number of reads": 627.0, "recent
+        number of reads": 34, "total number of downloads": 323, "average number of
+        downloads": 323.0, "median number of downloads": 323.0, "recent number of
+        downloads": 19}}
 
         '
     headers:
@@ -41,22 +50,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '53'
+      - '712'
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:41 GMT
+      - Sat, 26 Mar 2022 15:41:36 GMT
       Retry-After:
-      - '86362'
+      - '84116'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
-      - '5000'
+      - '1000'
       X-RateLimit-Remaining:
-      - '4971'
+      - '992'
       X-RateLimit-Reset:
-      - '1648393384'
+      - '1648393413'
     status:
       code: 200
       message: OK

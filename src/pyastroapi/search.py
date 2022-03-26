@@ -254,12 +254,12 @@ import pyastroapi.api.token as _token
 
 
 def first_author(author):
-    return _search.search(_token, query=f'author:"^{author}"')
+    return _search.search(_token.get_token(), query=f"^{author}")
 
 
 def author_year(author, year):
-    return _search.search(_token, query=f'author:"^{author}" year:{year}')
+    return _search.search(_token.get_token(), query=f"^{author} year:{year}")
 
 
 def search(query, fields=None):
-    return _search.search(_token, query=query, fields=fields)
+    return _search.search(_token.get_token(), query=query, fields=fields)

@@ -1,6 +1,7 @@
 interactions:
 - request:
-    body: '{"bibcodes": ["2020ApJ...902L..36F", "2020zndo...3678482F"], "types": ["citations"]}'
+    body: '{"reference": ["Farmer, R., Fields, C. E., Petermann, I., et al. 2016,
+      ApJS,227, 22"]}'
     headers:
       Accept:
       - application/json
@@ -9,7 +10,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '84'
+      - '86'
       Content-Type:
       - application/json
       User-Agent:
@@ -17,23 +18,11 @@ interactions:
       authorization:
       - DUMMY
     method: POST
-    uri: https://api.adsabs.harvard.edu/v1//metrics
+    uri: https://api.adsabs.harvard.edu/v1//reference/text
   response:
     body:
-      string: '{"skipped bibcodes": ["2020zndo...3678482F"], "citation stats": {"number
-        of citing papers": 78, "number of self-citations": 0, "self-citations": [],
-        "total number of citations": 78, "average number of citations": 78.0, "median
-        number of citations": 78.0, "normalized number of citations": 15.6, "total
-        number of refereed citations": 54, "average number of refereed citations":
-        54.0, "median number of refereed citations": 54.0, "normalized number of refereed
-        citations": 10.8}, "citation stats refereed": {"number of citing papers":
-        78, "number of self-citations": 0, "total number of citations": 78, "average
-        number of citations": 78.0, "median number of citations": 78.0, "normalized
-        number of citations": 15.6, "total number of refereed citations": 54, "average
-        number of refereed citations": 54.0, "median number of refereed citations":
-        54.0, "normalized number of refereed citations": 10.8}}
-
-        '
+      string: '{"resolved": [{"refstring": "Farmer, R., Fields, C. E., Petermann,
+        I., et al. 2016, ApJS,227, 22", "score": "1.0", "bibcode": "2016ApJS..227...22F"}]}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -52,22 +41,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '897'
+      - '150'
       Content-Type:
-      - application/json
+      - application/json; charset=UTF8
       Date:
-      - Sat, 26 Mar 2022 15:03:36 GMT
+      - Sat, 26 Mar 2022 15:41:45 GMT
       Retry-After:
-      - '86396'
+      - '84117'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
-      - '1000'
+      - '100'
       X-RateLimit-Remaining:
-      - '996'
+      - '97'
       X-RateLimit-Reset:
-      - '1648393413'
+      - '1648393423'
     status:
       code: 200
       message: OK

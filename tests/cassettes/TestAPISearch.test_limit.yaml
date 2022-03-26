@@ -1,0 +1,90 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.27.1
+      authorization:
+      - DUMMY
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:2020&fl=abstract,author,bibcode,pubdate,title,pub&fq=&start=0&rows=1
+  response:
+    body:
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":9,\n    \"params\":{\n
+        \     \"q\":\"^farmer,r year:2020\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-623f341d-2d9b7026249f51890e881347\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"1\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
+        \     {\n        \"bibcode\":\"2020ApJ...902L..36F\",\n        \"abstract\":\"Gravitational-wave
+        detections are starting to allow us to probe the physical processes in the
+        evolution of very massive stars through the imprints they leave on their final
+        remnants. Stellar evolution theory predicts the existence of a gap in the
+        black hole mass distribution at high mass due to the effects of pair instability.
+        Previously, we showed that the location of the gap is robust against model
+        uncertainties, but it does depend sensitively on the uncertain ${}^{12}{\\\\rm{C}}{(\\\\alpha
+        ,\\\\gamma )}^{16}{\\\\rm{O}}$ rate. This rate is of great astrophysical significance
+        and governs the production of oxygen at the expense of carbon. We use the
+        open-source MESA stellar evolution code to evolve massive helium stars to
+        probe the location of the mass gap. We find that the maximum black hole mass
+        below the gap varies between $40\\\\,{M}_{\\\\odot }$ and $90\\\\,{M}_{\\\\odot
+        }$ , depending on the strength of the uncertain ${}^{12}{\\\\rm{C}}{(\\\\alpha
+        ,\\\\gamma )}^{16}{\\\\rm{O}}$ reaction rate. With the first 10 gravitational-wave
+        detections of black holes, we constrain the astrophysical S-factor for ${}^{12}{\\\\rm{C}}{(\\\\alpha
+        ,\\\\gamma )}^{16}{\\\\rm{O}}$ , at $300\\\\,\\\\mathrm{keV}$ , to ${S}_{300}\\\\gt
+        175\\\\,\\\\,{\\\\rm{keV}}\\\\,{\\\\rm{b}}$ at 68% confidence. With ${ \\\\mathcal
+        O }(50)$ detected binary black hole mergers, we expect to constrain the S-factor
+        to within \xB110-30 ${\\\\rm{keV}}\\\\,{\\\\rm{b}}$ . We also highlight a
+        role for independent constraints from electromagnetic transient surveys. The
+        unambiguous detection of pulsational pair-instability supernovae would imply
+        that ${S}_{300}\\\\gt 79\\\\,{\\\\rm{keV}}\\\\,{\\\\rm{b}}$ . Degeneracies
+        with other model uncertainties need to be investigated further, but probing
+        nuclear stellar astrophysics poses a promising science case for the future
+        gravitational-wave detectors.\",\n        \"author\":[\"Farmer, R.\",\n          \"Renzo,
+        M.\",\n          \"de Mink, S. E.\",\n          \"Fishbach, M.\",\n          \"Justham,
+        S.\"],\n        \"pub\":\"The Astrophysical Journal\",\n        \"pubdate\":\"2020-10-00\",\n
+        \       \"title\":[\"Constraints from Gravitational-wave Detections of Binary
+        Black Hole Mergers on the <SUP>12</SUP>C(\u03B1, \u03B3)<SUP>16</SUP>O Rate\"]}]\n
+        \ }}\n"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2619'
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 26 Mar 2022 15:41:17 GMT
+      Retry-After:
+      - '84106'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4958'
+      X-RateLimit-Reset:
+      - '1648393384'
+    status:
+      code: 200
+      message: OK
+version: 1

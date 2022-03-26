@@ -1,37 +1,27 @@
 interactions:
 - request:
-    body: '{"bibcodes": ["2020ApJ...902L..36F"], "types": ["basic"]}'
+    body: null
     headers:
       Accept:
-      - application/json
+      - '*/*'
       Accept-Encoding:
       - gzip, deflate, br
       Connection:
       - keep-alive
-      Content-Length:
-      - '57'
-      Content-Type:
-      - application/json
       User-Agent:
       - python-requests/2.27.1
       authorization:
       - DUMMY
-    method: POST
-    uri: https://api.adsabs.harvard.edu/v1//metrics
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:2020&fl=page,volume&fq=&start=0
   response:
     body:
-      string: '{"skipped bibcodes": [], "basic stats": {"number of papers": 1, "normalized
-        paper count": 0.2, "total number of reads": 627, "average number of reads":
-        627, "median number of reads": 627.0, "recent number of reads": 34, "total
-        number of downloads": 323, "average number of downloads": 323.0, "median number
-        of downloads": 323.0, "recent number of downloads": 19}, "basic stats refereed":
-        {"number of papers": 1, "normalized paper count": 0.2, "total number of reads":
-        627, "average number of reads": 627, "median number of reads": 627.0, "recent
-        number of reads": 34, "total number of downloads": 323, "average number of
-        downloads": 323.0, "median number of downloads": 323.0, "recent number of
-        downloads": 19}}
-
-        '
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":9,\n    \"params\":{\n
+        \     \"q\":\"^farmer,r year:2020\",\n      \"fl\":\"page,volume\",\n      \"start\":\"0\",\n
+        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-623f341c-35bd0c5e26ee560c473c0489\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
+        \     {\n        \"page\":[\"L36\"],\n        \"volume\":\"902\"},\n      {}]\n
+        \ }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -50,22 +40,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '712'
+      - '412'
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:32 GMT
+      - Sat, 26 Mar 2022 15:41:16 GMT
       Retry-After:
-      - '86400'
+      - '84107'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
-      - '1000'
+      - '5000'
       X-RateLimit-Remaining:
-      - '999'
+      - '4960'
       X-RateLimit-Reset:
-      - '1648393413'
+      - '1648393384'
     status:
       code: 200
       message: OK

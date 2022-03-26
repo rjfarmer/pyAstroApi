@@ -17,24 +17,18 @@ interactions:
       authorization:
       - DUMMY
     method: POST
-    uri: https://api.adsabs.harvard.edu/v1//vis/author-network
+    uri: https://api.adsabs.harvard.edu/v1//vis/paper-network
   response:
     body:
       string: '{"msg": {"start": 0, "rows": 2, "numFound": 2}, "data": {"fullGraph":
-        {"nodes": [{"nodeName": "Farmer, R", "nodeWeight": 150.0}, {"nodeName": "Renzo,
-        M", "nodeWeight": 150.0}, {"nodeName": "Justham, S", "nodeWeight": 150.0},
-        {"nodeName": "Marchant, P", "nodeWeight": 5.0}, {"nodeName": "de Mink, S",
-        "nodeWeight": 150.0}, {"nodeName": "Fishbach, M", "nodeWeight": 5.0}], "links":
-        [{"source": 0, "target": 4, "value": 40.00000000000003}, {"source": 5, "target":
-        1, "value": 1.0000000000000284}, {"source": 0, "target": 1, "value": 40.00000000000003},
-        {"source": 2, "target": 3, "value": 1.0000000000000284}, {"source": 2, "target":
-        4, "value": 40.00000000000003}, {"source": 0, "target": 5, "value": 1.0000000000000284},
-        {"source": 1, "target": 4, "value": 40.00000000000003}, {"source": 5, "target":
-        4, "value": 1.0000000000000284}, {"source": 0, "target": 3, "value": 1.0000000000000284},
-        {"source": 3, "target": 1, "value": 1.0000000000000284}, {"source": 0, "target":
-        2, "value": 40.00000000000003}, {"source": 5, "target": 2, "value": 1.0000000000000284},
-        {"source": 2, "target": 1, "value": 40.00000000000003}, {"source": 3, "target":
-        4, "value": 1.0000000000000284}]}}}
+        {"nodes": [{"read_count": 80, "nodeName": "2019ApJ...887...53F", "title":
+        "Mind the Gap: The Location of the Lower Edge of the Pair-instability Supernova
+        Black Hole Mass Gap", "first_author": "Farmer, R.", "citation_count": 144,
+        "year": "2019", "nodeWeight": 144}, {"read_count": 59, "nodeName": "2020ApJ...902L..36F",
+        "title": "Constraints from Gravitational-wave Detections of Binary Black Hole
+        Mergers on the <SUP>12</SUP>C(\u03b1, \u03b3)<SUP>16</SUP>O Rate", "first_author":
+        "Farmer, R.", "citation_count": 78, "year": "2020", "nodeWeight": 78}], "links":
+        []}}}
 
         '
     headers:
@@ -55,20 +49,20 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '1176'
+      - '637'
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:45 GMT
+      - Sat, 26 Mar 2022 15:41:48 GMT
       Retry-After:
-      - '86387'
+      - '84104'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '994'
+      - '986'
       X-RateLimit-Reset:
       - '1648393413'
     status:

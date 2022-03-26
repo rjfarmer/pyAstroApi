@@ -13,12 +13,18 @@ interactions:
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//biblib/permissions/qf-C6Zi-Tyad2vqJPS-I4g
+    uri: https://api.adsabs.harvard.edu/v1//resolver/2020ApJ...902L..36F/esource
   response:
     body:
-      string: '[{"robert.j.farmer37@gmail.com": ["owner"]}]
-
-        '
+      string: '{"service": "", "action": "display", "links": {"count": 4, "bibcode":
+        "2020ApJ...902L..36F", "link_type": "ESOURCE", "records": [{"title": "https://arxiv.org/abs/2006.06678",
+        "url": "https://arxiv.org/abs/2006.06678", "link_type": "ESOURCE|EPRINT_HTML"},
+        {"title": "https://arxiv.org/pdf/2006.06678", "url": "https://arxiv.org/pdf/2006.06678",
+        "link_type": "ESOURCE|EPRINT_PDF"}, {"title": "https://doi.org/10.3847%2F2041-8213%2Fabbadd",
+        "url": "https://doi.org/10.3847%2F2041-8213%2Fabbadd", "link_type": "ESOURCE|PUB_HTML"},
+        {"title": "http://iopscience.iop.org/article/10.3847/2041-8213/abbadd/pdf",
+        "url": "http://iopscience.iop.org/article/10.3847/2041-8213/abbadd/pdf", "link_type":
+        "ESOURCE|PUB_PDF"}]}}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -37,14 +43,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '45'
+      - '710'
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:10 GMT
+      - Sat, 26 Mar 2022 15:41:47 GMT
+      Retry-After:
+      - '84076'
       Set-Cookie: DUMMY
       Vary:
       - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4932'
+      X-RateLimit-Reset:
+      - '1648393384'
     status:
       code: 200
       message: OK

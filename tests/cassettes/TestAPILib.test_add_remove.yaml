@@ -23,7 +23,7 @@ interactions:
         "2019A&A...624A..66R", "2019yCat..36240066R", "2018ApJS..234...34P", "2018ApJS..234...19F",
         "2017ApJ...851....6P"], "solr": {"responseHeader": {"status": 0, "QTime":
         1, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start": "0",
-        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f2b31-249def050ed002da7b5f240b",
+        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f3424-6130e3e7463112095b5717f4",
         "fq": "{!bitset}", "sort": "date desc", "rows": "20", "wt": "json"}}, "response":
         {"numFound": 38, "start": 0, "docs": [{"bibcode": "2021A&A...656A..58L", "alternate_bibcode":
         ["2021arXiv210205036L"]}, {"bibcode": "2021MNRAS.507..385H", "alternate_bibcode":
@@ -46,7 +46,7 @@ interactions:
         ["2017arXiv171206057F"]}, {"bibcode": "2017ApJ...851....6P", "alternate_bibcode":
         ["2017arXiv170901877P"]}]}}, "metadata": {"name": "Untitled Library 1", "id":
         "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library", "num_documents":
-        52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified": "2022-01-23T14:16:34.386170",
+        52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified": "2022-03-26T15:03:18.448052",
         "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
         "updates": {"num_updated": 0, "duplicates_removed": 0, "update_list": []}}
 
@@ -73,16 +73,16 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:13 GMT
+      - Sat, 26 Mar 2022 15:41:24 GMT
       Retry-After:
-      - '86390'
+      - '84099'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4987'
+      - '4949'
       X-RateLimit-Reset:
       - '1648393384'
     status:
@@ -112,7 +112,7 @@ interactions:
         "2014PhDT.......182F", "2013EPSC....8..161F", "2013MNRAS.433.1133F", "1974Natur.248...30H"],
         "solr": {"responseHeader": {"status": 0, "QTime": 1, "params": {"q": "*:*",
         "fl": "bibcode,alternate_bibcode", "start": "19", "internal_logging_params":
-        "X-Amzn-Trace-Id=Root=1-623f2b32-038eb2fa7d5198f81a54ed16", "fq": "{!bitset}",
+        "X-Amzn-Trace-Id=Root=1-623f3425-6892a06f60e2f6c1585f7621", "fq": "{!bitset}",
         "sort": "date desc", "rows": "20", "wt": "json"}}, "response": {"numFound":
         38, "start": 19, "docs": [{"bibcode": "2017ApJ...851....6P", "alternate_bibcode":
         ["2017arXiv170901877P"]}, {"bibcode": "2017ApJ...840....2P"}, {"bibcode":
@@ -129,7 +129,7 @@ interactions:
         "2013MNRAS.433.1133F", "alternate_bibcode": ["2013arXiv1302.2867F", "2013MNRAS.tmp.1474F"]},
         {"bibcode": "1974Natur.248...30H"}]}}, "metadata": {"name": "Untitled Library
         1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library", "num_documents":
-        52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified": "2022-01-23T14:16:34.386170",
+        52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified": "2022-03-26T15:03:18.448052",
         "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
         "updates": {"num_updated": 0, "duplicates_removed": 0, "update_list": []}}
 
@@ -156,18 +156,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:14 GMT
+      - Sat, 26 Mar 2022 15:41:25 GMT
       Retry-After:
-      - '86389'
+      - '84099'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4986'
+      - '4948'
       X-RateLimit-Reset:
-      - '1648393384'
+      - '1648393385'
     status:
       code: 200
       message: OK
@@ -190,12 +190,12 @@ interactions:
     body:
       string: '{"documents": [], "solr": {"responseHeader": {"status": 0, "QTime":
         1, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start": "38",
-        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f2b32-2c4835485287aa9c2681819e",
+        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f3425-594935b40678afe930aac9e4",
         "fq": "{!bitset}", "sort": "date desc", "rows": "20", "wt": "json"}}, "response":
         {"numFound": 38, "start": 38, "docs": []}}, "metadata": {"name": "Untitled
         Library 1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library",
         "num_documents": 52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified":
-        "2022-01-23T14:16:34.386170", "permission": "owner", "public": false, "num_users":
+        "2022-03-26T15:03:18.448052", "permission": "owner", "public": false, "num_users":
         1, "owner": "robert.j.farmer37"}, "updates": {"num_updated": 0, "duplicates_removed":
         0, "update_list": []}}
 
@@ -222,16 +222,16 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:15 GMT
+      - Sat, 26 Mar 2022 15:41:26 GMT
       Retry-After:
-      - '86389'
+      - '84098'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4985'
+      - '4947'
       X-RateLimit-Reset:
       - '1648393385'
     status:
@@ -283,7 +283,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:15 GMT
+      - Sat, 26 Mar 2022 15:41:26 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -313,8 +313,8 @@ interactions:
         "2020zndo...3678482F", "2019ApJ...887...53F", "2019A&A...631A...5Z", "2019ApJ...882...36M",
         "2019ApJS..243...10P", "2019A&A...624A..66R", "2019yCat..36240066R", "2018ApJS..234...34P",
         "2018ApJS..234...19F"], "solr": {"responseHeader": {"status": 0, "QTime":
-        49, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start": "0",
-        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f2b34-1828394b12c5d8ba4ed3b371",
+        47, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start": "0",
+        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f3427-55b762fc7874a44067a778ed",
         "fq": "{!bitset}", "sort": "date desc", "rows": "20", "wt": "json"}}, "response":
         {"numFound": 39, "start": 0, "docs": [{"bibcode": "2021ApJ...923..214F", "alternate_bibcode":
         ["2021arXiv211004131F"]}, {"bibcode": "2021A&A...656A..58L", "alternate_bibcode":
@@ -337,7 +337,7 @@ interactions:
         ["2017arXiv171008424P"]}, {"bibcode": "2018ApJS..234...19F", "alternate_bibcode":
         ["2017arXiv171206057F"]}]}}, "metadata": {"name": "Untitled Library 1", "id":
         "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library", "num_documents":
-        53, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified": "2022-03-26T15:03:15.689971",
+        53, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified": "2022-03-26T15:41:26.615900",
         "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
         "updates": {"num_updated": 0, "duplicates_removed": 0, "update_list": []}}
 
@@ -364,18 +364,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:16 GMT
+      - Sat, 26 Mar 2022 15:41:27 GMT
       Retry-After:
-      - '86387'
+      - '84097'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4984'
+      - '4946'
       X-RateLimit-Reset:
-      - '1648393384'
+      - '1648393385'
     status:
       code: 200
       message: OK
@@ -402,8 +402,8 @@ interactions:
         "2015ApJS..220...15P", "2015ApJ...807..184F", "2015APS..MAR.V1288F", "2014ExA....38..249R",
         "2014ApJ...784L...3M", "2014PhDT.......182F", "2013EPSC....8..161F", "2013MNRAS.433.1133F",
         "1974Natur.248...30H"], "solr": {"responseHeader": {"status": 0, "QTime":
-        2, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start": "19",
-        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f2b34-1a6caa5f5a9d38737fe163dc",
+        1, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start": "19",
+        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f3427-55bfbfd128dd2fad201079d0",
         "fq": "{!bitset}", "sort": "date desc", "rows": "20", "wt": "json"}}, "response":
         {"numFound": 39, "start": 19, "docs": [{"bibcode": "2018ApJS..234...19F",
         "alternate_bibcode": ["2017arXiv171206057F"]}, {"bibcode": "2017ApJ...851....6P",
@@ -421,7 +421,7 @@ interactions:
         "2013MNRAS.433.1133F", "alternate_bibcode": ["2013arXiv1302.2867F", "2013MNRAS.tmp.1474F"]},
         {"bibcode": "1974Natur.248...30H"}]}}, "metadata": {"name": "Untitled Library
         1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library", "num_documents":
-        53, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified": "2022-03-26T15:03:15.689971",
+        53, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified": "2022-03-26T15:41:26.615900",
         "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
         "updates": {"num_updated": 0, "duplicates_removed": 0, "update_list": []}}
 
@@ -448,16 +448,16 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:17 GMT
+      - Sat, 26 Mar 2022 15:41:28 GMT
       Retry-After:
-      - '86387'
+      - '84096'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4983'
+      - '4945'
       X-RateLimit-Reset:
       - '1648393385'
     status:
@@ -482,12 +482,12 @@ interactions:
     body:
       string: '{"documents": [], "solr": {"responseHeader": {"status": 0, "QTime":
         2, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start": "39",
-        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f2b35-501609562a3bdbb85a514bf9",
+        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f3428-42d3b28079d9bacb59c028f9",
         "fq": "{!bitset}", "sort": "date desc", "rows": "20", "wt": "json"}}, "response":
         {"numFound": 39, "start": 39, "docs": []}}, "metadata": {"name": "Untitled
         Library 1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library",
         "num_documents": 53, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified":
-        "2022-03-26T15:03:15.689971", "permission": "owner", "public": false, "num_users":
+        "2022-03-26T15:41:26.615900", "permission": "owner", "public": false, "num_users":
         1, "owner": "robert.j.farmer37"}, "updates": {"num_updated": 0, "duplicates_removed":
         0, "update_list": []}}
 
@@ -514,16 +514,16 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:17 GMT
+      - Sat, 26 Mar 2022 15:41:28 GMT
       Retry-After:
-      - '86386'
+      - '84095'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4982'
+      - '4944'
       X-RateLimit-Reset:
       - '1648393384'
     status:
@@ -575,7 +575,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:18 GMT
+      - Sat, 26 Mar 2022 15:41:29 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -606,7 +606,7 @@ interactions:
         "2019A&A...624A..66R", "2019yCat..36240066R", "2018ApJS..234...34P", "2018ApJS..234...19F",
         "2017ApJ...851....6P"], "solr": {"responseHeader": {"status": 0, "QTime":
         2, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start": "0",
-        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f2b36-1206a62c6556023453a12204",
+        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f3429-24475d55658882a328b158a9",
         "fq": "{!bitset}", "sort": "date desc", "rows": "20", "wt": "json"}}, "response":
         {"numFound": 38, "start": 0, "docs": [{"bibcode": "2021A&A...656A..58L", "alternate_bibcode":
         ["2021arXiv210205036L"]}, {"bibcode": "2021MNRAS.507..385H", "alternate_bibcode":
@@ -629,7 +629,7 @@ interactions:
         ["2017arXiv171206057F"]}, {"bibcode": "2017ApJ...851....6P", "alternate_bibcode":
         ["2017arXiv170901877P"]}]}}, "metadata": {"name": "Untitled Library 1", "id":
         "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library", "num_documents":
-        52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified": "2022-03-26T15:03:18.448052",
+        52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified": "2022-03-26T15:41:29.370754",
         "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
         "updates": {"num_updated": 0, "duplicates_removed": 0, "update_list": []}}
 
@@ -656,16 +656,16 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:19 GMT
+      - Sat, 26 Mar 2022 15:41:30 GMT
       Retry-After:
-      - '86385'
+      - '84094'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4981'
+      - '4943'
       X-RateLimit-Reset:
       - '1648393385'
     status:
@@ -695,7 +695,7 @@ interactions:
         "2014PhDT.......182F", "2013EPSC....8..161F", "2013MNRAS.433.1133F", "1974Natur.248...30H"],
         "solr": {"responseHeader": {"status": 0, "QTime": 2, "params": {"q": "*:*",
         "fl": "bibcode,alternate_bibcode", "start": "19", "internal_logging_params":
-        "X-Amzn-Trace-Id=Root=1-623f2b37-36d0e9634065733770043fe2", "fq": "{!bitset}",
+        "X-Amzn-Trace-Id=Root=1-623f342a-7c4ef7c345c4ef7224a8abfc", "fq": "{!bitset}",
         "sort": "date desc", "rows": "20", "wt": "json"}}, "response": {"numFound":
         38, "start": 19, "docs": [{"bibcode": "2017ApJ...851....6P", "alternate_bibcode":
         ["2017arXiv170901877P"]}, {"bibcode": "2017ApJ...840....2P"}, {"bibcode":
@@ -712,7 +712,7 @@ interactions:
         "2013MNRAS.433.1133F", "alternate_bibcode": ["2013arXiv1302.2867F", "2013MNRAS.tmp.1474F"]},
         {"bibcode": "1974Natur.248...30H"}]}}, "metadata": {"name": "Untitled Library
         1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library", "num_documents":
-        52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified": "2022-03-26T15:03:18.448052",
+        52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified": "2022-03-26T15:41:29.370754",
         "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
         "updates": {"num_updated": 0, "duplicates_removed": 0, "update_list": []}}
 
@@ -739,16 +739,16 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:19 GMT
+      - Sat, 26 Mar 2022 15:41:30 GMT
       Retry-After:
-      - '86384'
+      - '84093'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4980'
+      - '4942'
       X-RateLimit-Reset:
       - '1648393384'
     status:
@@ -773,12 +773,12 @@ interactions:
     body:
       string: '{"documents": [], "solr": {"responseHeader": {"status": 0, "QTime":
         1, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start": "38",
-        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f2b38-355e9aa91c4632183c6ec7e5",
+        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f342b-56fbf9f7657dd088474b3117",
         "fq": "{!bitset}", "sort": "date desc", "rows": "20", "wt": "json"}}, "response":
         {"numFound": 38, "start": 38, "docs": []}}, "metadata": {"name": "Untitled
         Library 1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library",
         "num_documents": 52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified":
-        "2022-03-26T15:03:18.448052", "permission": "owner", "public": false, "num_users":
+        "2022-03-26T15:41:29.370754", "permission": "owner", "public": false, "num_users":
         1, "owner": "robert.j.farmer37"}, "updates": {"num_updated": 0, "duplicates_removed":
         0, "update_list": []}}
 
@@ -805,16 +805,16 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:20 GMT
+      - Sat, 26 Mar 2022 15:41:31 GMT
       Retry-After:
-      - '86383'
+      - '84092'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4979'
+      - '4941'
       X-RateLimit-Reset:
       - '1648393384'
     status:

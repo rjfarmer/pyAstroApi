@@ -38,14 +38,17 @@ _short_fl = "abstract,author,bibcode,pubdate,title,pub"
 def search(
     token: str,
     query: str = "*:*",
-    fields: str = _short_fl,
+    fields: str = None,
     fq: str = "",
     limit: int = -1,
 ) -> t.Generator[t.Dict[t.Any, t.Any], None, None]:
 
-    for f in fields.split(","):
-        if f and f not in _fields:
-            raise ValueError(f"Field {f} not valid in search")
+    if fields is not None:
+        for f in fields.split(","):
+            if f and f not in _fields:
+                raise ValueError(f"Field {f} not valid in search")
+    else:
+        fields = _short_fl
 
     start = 0
     count = 0

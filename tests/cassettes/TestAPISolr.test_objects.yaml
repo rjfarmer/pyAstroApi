@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"query": ["object:M31"]}'
+    body: '{"source": "SIMBAD", "objects": ["M31"]}'
     headers:
       Accept:
       - application/json
@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '25'
+      - '40'
       Content-Type:
       - application/json
       User-Agent:
@@ -17,10 +17,10 @@ interactions:
       authorization:
       - DUMMY
     method: POST
-    uri: https://api.adsabs.harvard.edu/v1//objects/query
+    uri: https://api.adsabs.harvard.edu/v1//objects
   response:
     body:
-      string: '{"query": "((=abs:M31 OR simbid:1575544 OR nedid:MESSIER_031) database:astronomy)"}
+      string: '{"M31": {"canonical": "M  31", "id": "1575544"}}
 
         '
     headers:
@@ -41,22 +41,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '84'
+      - '49'
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:40 GMT
+      - Sat, 26 Mar 2022 15:41:45 GMT
       Retry-After:
-      - '86363'
+      - '84079'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4972'
+      - '4934'
       X-RateLimit-Reset:
-      - '1648393384'
+      - '1648393385'
     status:
       code: 200
       message: OK

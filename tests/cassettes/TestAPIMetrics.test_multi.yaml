@@ -1,30 +1,37 @@
 interactions:
 - request:
-    body: null
+    body: '{"bibcodes": ["2020ApJ...902L..36F", "2019ApJ...887...53F"], "types": ["basic"]}'
     headers:
       Accept:
-      - '*/*'
+      - application/json
       Accept-Encoding:
       - gzip, deflate, br
       Connection:
       - keep-alive
+      Content-Length:
+      - '80'
+      Content-Type:
+      - application/json
       User-Agent:
       - python-requests/2.27.1
       authorization:
       - DUMMY
-    method: GET
-    uri: https://api.adsabs.harvard.edu/v1//resolver/2020ApJ...902L..36F/esource
+    method: POST
+    uri: https://api.adsabs.harvard.edu/v1//metrics
   response:
     body:
-      string: '{"service": "", "action": "display", "links": {"count": 4, "bibcode":
-        "2020ApJ...902L..36F", "link_type": "ESOURCE", "records": [{"title": "https://arxiv.org/abs/2006.06678",
-        "url": "https://arxiv.org/abs/2006.06678", "link_type": "ESOURCE|EPRINT_HTML"},
-        {"title": "https://arxiv.org/pdf/2006.06678", "url": "https://arxiv.org/pdf/2006.06678",
-        "link_type": "ESOURCE|EPRINT_PDF"}, {"title": "https://doi.org/10.3847%2F2041-8213%2Fabbadd",
-        "url": "https://doi.org/10.3847%2F2041-8213%2Fabbadd", "link_type": "ESOURCE|PUB_HTML"},
-        {"title": "http://iopscience.iop.org/article/10.3847/2041-8213/abbadd/pdf",
-        "url": "http://iopscience.iop.org/article/10.3847/2041-8213/abbadd/pdf", "link_type":
-        "ESOURCE|PUB_PDF"}]}}'
+      string: '{"skipped bibcodes": [], "basic stats": {"number of papers": 2, "normalized
+        paper count": 0.4, "total number of reads": 1671, "average number of reads":
+        835, "median number of reads": 835.5, "recent number of reads": 82, "total
+        number of downloads": 752, "average number of downloads": 376.0, "median number
+        of downloads": 376.0, "recent number of downloads": 46}, "basic stats refereed":
+        {"number of papers": 2, "normalized paper count": 0.4, "total number of reads":
+        1671, "average number of reads": 835, "median number of reads": 835.5, "recent
+        number of reads": 82, "total number of downloads": 752, "average number of
+        downloads": 376.0, "median number of downloads": 376.0, "recent number of
+        downloads": 46}}
+
+        '
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -43,22 +50,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '710'
+      - '714'
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:03:44 GMT
+      - Sat, 26 Mar 2022 15:41:38 GMT
       Retry-After:
-      - '86359'
+      - '84114'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
-      - '5000'
+      - '1000'
       X-RateLimit-Remaining:
-      - '4968'
+      - '988'
       X-RateLimit-Reset:
-      - '1648393384'
+      - '1648393413'
     status:
       code: 200
       message: OK

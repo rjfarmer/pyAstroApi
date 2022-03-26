@@ -40,7 +40,7 @@ def vcr_config():
 
 
 @pytest.mark.vcr()
-class TestSearch:
+class TestAPISearch:
     def test_basic(self):
         res = list(search.search(token, "^farmer,r year:2020"))
         assert len(res) == 2
@@ -85,7 +85,7 @@ class TestSearch:
 
 
 @pytest.mark.vcr()
-class TestExport:
+class TestAPIExport:
     def test_ads(self):
         res = export.ads(token, "2020ApJ...902L..36F")
 
@@ -108,7 +108,7 @@ class TestExport:
 
 
 @pytest.mark.vcr()
-class TestLib:
+class TestAPILib:
     def test_list_all(self):
         r = lib.list_all(token)
         assert "libraries" in r
@@ -173,7 +173,7 @@ class TestLib:
 
 
 @pytest.mark.vcr()
-class TestMetrics:
+class TestAPIMetrics:
     def test_basic(self):
         r = metrics.basic(token, "2020ApJ...902L..36F")
 
@@ -207,7 +207,7 @@ class TestMetrics:
 
 
 @pytest.mark.vcr()
-class TestAuthor:
+class TestAPIAuthor:
     def test_one(self):
         r = author.search(token, "2020ApJ...902L..36F")
 
@@ -224,7 +224,7 @@ class TestAuthor:
 
 
 @pytest.mark.vcr()
-class TestCitations:
+class TestAPICitations:
     def test_one(self):
         with pytest.raises(TypeError):
             r = cites.citations(token, "2019ApJ...887...53F")
@@ -238,7 +238,7 @@ class TestCitations:
 
 
 @pytest.mark.vcr()
-class TestSolr:
+class TestAPISolr:
     def test_query(self):
         r = solr.query(token, "M31")
 
@@ -259,7 +259,7 @@ class TestSolr:
 
 
 @pytest.mark.vcr()
-class TestRef:
+class TestAPIRef:
     def test_one(self):
         r = ref.resolve(
             token, "Farmer, R., Fields, C. E., Petermann, I., et al. 2016, ApJS,227, 22"
@@ -276,7 +276,7 @@ class TestRef:
 
 
 @pytest.mark.vcr()
-class TestResolve:
+class TestAPIResolve:
     def test_one(self):
         r = resolve.resolve(token, "2019ApJ...887...53F")
 
@@ -297,7 +297,7 @@ class TestResolve:
 
 
 @pytest.mark.vcr()
-class TestVisual:
+class TestAPIVisual:
     def test_author(self):
         r = visual.author(token, ["2020ApJ...902L..36F", "2019ApJ...887...53F"])
 
