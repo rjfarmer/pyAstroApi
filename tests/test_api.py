@@ -1,19 +1,19 @@
 # SPDX-License-Identifier: BSD-3-Clause
-import pyadsapi.api.search as search
-import pyadsapi.api.export as export
-import pyadsapi.api.libraries as lib
-import pyadsapi.api.metrics as metrics
-import pyadsapi.api.author as author
-import pyadsapi.api.citation_helper as cites
-import pyadsapi.api.solr as solr
-import pyadsapi.api.reference as ref
-import pyadsapi.api.resolver as resolve
-import pyadsapi.api.visualization as visual
+import pyastroapi.api.search as search
+import pyastroapi.api.export as export
+import pyastroapi.api.libraries as lib
+import pyastroapi.api.metrics as metrics
+import pyastroapi.api.author as author
+import pyastroapi.api.citation_helper as cites
+import pyastroapi.api.solr as solr
+import pyastroapi.api.reference as ref
+import pyastroapi.api.resolver as resolve
+import pyastroapi.api.visualization as visual
 
-import pyadsapi.api.urls as urls
-import pyadsapi.api.http as http
+import pyastroapi.api.urls as urls
+import pyastroapi.api.http as http
 
-import pyadsapi.api.token as t
+import pyastroapi.api.token as t
 
 
 import pytest

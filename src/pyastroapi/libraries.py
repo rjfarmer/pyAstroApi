@@ -2,10 +2,10 @@
 
 import typing as t
 
-import pyadsapi.articles as articles
-import pyadsapi.api.token as token
-import pyadsapi.api.libraries as lib
-import pyadsapi.api.utils as utils
+import pyastroapi.articles as articles
+import pyastroapi.api.token as token
+import pyastroapi.api.libraries as lib
+import pyastroapi.api.utils as utils
 
 
 class libraries(object):

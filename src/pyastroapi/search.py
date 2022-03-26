@@ -249,8 +249,8 @@
 #         return False
 
 
-import pyadsapi.api.search as _search
-import pyadsapi.api.token as _token
+import pyastroapi.api.search as _search
+import pyastroapi.api.token as _token
 
 
 def first_author(author):

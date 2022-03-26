@@ -209,16 +209,16 @@
 import inspect
 
 
-import pyadsapi.api.search as search
-import pyadsapi.api.token as token
-import pyadsapi.api.utils as utils
+import pyastroapi.api.search as search
+import pyastroapi.api.token as token
+import pyastroapi.api.utils as utils
 
 
-import pyadsapi.api.export as _export
-import pyadsapi.api.metrics as _metrics
-import pyadsapi.api.visualization as _visualization
-import pyadsapi.api.resolver as _resolve
-import pyadsapi.api.http as _http
+import pyastroapi.api.export as _export
+import pyastroapi.api.metrics as _metrics
+import pyastroapi.api.visualization as _visualization
+import pyastroapi.api.resolver as _resolve
+import pyastroapi.api.http as _http
 
 import typing as t
 

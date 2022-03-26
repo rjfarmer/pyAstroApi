@@ -1,6 +1,6 @@
 
 
-# pyAdsApi
+# pyAstroApi
 
 
 Low level library interfacing with NASA's ADSABS api

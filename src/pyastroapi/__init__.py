@@ -4,7 +4,7 @@ except ImportError:  # for Python<3.8
     import importlib_metadata as metadata  # type: ignore
 
 try:
-    __version__ = metadata.version("pyadsapi")
+    __version__ = metadata.version("pyastroapi")
 except metadata.PackageNotFoundError:
     # package is not installed
     pass
