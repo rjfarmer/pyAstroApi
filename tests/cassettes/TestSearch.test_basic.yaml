@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -16,33 +16,45 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:2020&fl=abstract,author,bibcode,pubdate,title,pub&fq=&start=0
   response:
     body:
-      string: !!binary |
-        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
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":83,\n    \"params\":{\n
+        \     \"q\":\"^farmer,r year:2020\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-623f2b27-677f6d2477d5587531031ea6\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
+        \     {\n        \"bibcode\":\"2020ApJ...902L..36F\",\n        \"abstract\":\"Gravitational-wave
+        detections are starting to allow us to probe the physical processes in the
+        evolution of very massive stars through the imprints they leave on their final
+        remnants. Stellar evolution theory predicts the existence of a gap in the
+        black hole mass distribution at high mass due to the effects of pair instability.
+        Previously, we showed that the location of the gap is robust against model
+        uncertainties, but it does depend sensitively on the uncertain ${}^{12}{\\\\rm{C}}{(\\\\alpha
+        ,\\\\gamma )}^{16}{\\\\rm{O}}$ rate. This rate is of great astrophysical significance
+        and governs the production of oxygen at the expense of carbon. We use the
+        open-source MESA stellar evolution code to evolve massive helium stars to
+        probe the location of the mass gap. We find that the maximum black hole mass
+        below the gap varies between $40\\\\,{M}_{\\\\odot }$ and $90\\\\,{M}_{\\\\odot
+        }$ , depending on the strength of the uncertain ${}^{12}{\\\\rm{C}}{(\\\\alpha
+        ,\\\\gamma )}^{16}{\\\\rm{O}}$ reaction rate. With the first 10 gravitational-wave
+        detections of black holes, we constrain the astrophysical S-factor for ${}^{12}{\\\\rm{C}}{(\\\\alpha
+        ,\\\\gamma )}^{16}{\\\\rm{O}}$ , at $300\\\\,\\\\mathrm{keV}$ , to ${S}_{300}\\\\gt
+        175\\\\,\\\\,{\\\\rm{keV}}\\\\,{\\\\rm{b}}$ at 68% confidence. With ${ \\\\mathcal
+        O }(50)$ detected binary black hole mergers, we expect to constrain the S-factor
+        to within \xB110-30 ${\\\\rm{keV}}\\\\,{\\\\rm{b}}$ . We also highlight a
+        role for independent constraints from electromagnetic transient surveys. The
+        unambiguous detection of pulsational pair-instability supernovae would imply
+        that ${S}_{300}\\\\gt 79\\\\,{\\\\rm{keV}}\\\\,{\\\\rm{b}}$ . Degeneracies
+        with other model uncertainties need to be investigated further, but probing
+        nuclear stellar astrophysics poses a promising science case for the future
+        gravitational-wave detectors.\",\n        \"author\":[\"Farmer, R.\",\n          \"Renzo,
+        M.\",\n          \"de Mink, S. E.\",\n          \"Fishbach, M.\",\n          \"Justham,
+        S.\"],\n        \"pub\":\"The Astrophysical Journal\",\n        \"pubdate\":\"2020-10-00\",\n
+        \       \"title\":[\"Constraints from Gravitational-wave Detections of Binary
+        Black Hole Mergers on the <SUP>12</SUP>C(\u03B1, \u03B3)<SUP>16</SUP>O Rate\"]},\n
+        \     {\n        \"bibcode\":\"2020zndo...3678482F\",\n        \"abstract\":\"history
+        and profile data are saved saved after the first time they are loaded as a
+        python pickle file. This allows much faster re-reading in of the file and
+        takes up much less space. Kippenhan plots have had some bug fixes for colorbars\",\n
+        \       \"author\":[\"Farmer, Robert\"],\n        \"pub\":\"Zenodo\",\n        \"pubdate\":\"2020-02-21\",\n
+        \       \"title\":[\"rjfarmer/mesaplot: Bug fixes\"]}]\n  }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -60,28 +72,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '3073'
       Content-Type:
       - application/json
       Date:
-      - Sat, 22 Jan 2022 17:48:27 GMT
+      - Sat, 26 Mar 2022 15:03:03 GMT
       Retry-After:
-      - '84026'
-      Server:
-      - openresty/1.15.8.1
+      - '86400'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4943'
+      - '4999'
       X-RateLimit-Reset:
-      - '1642957734'
+      - '1648393384'
     status:
       code: 200
       message: OK

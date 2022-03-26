@@ -5,7 +5,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -20,16 +20,26 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//author-affiliation/search
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA81US2/aQBD+KyMf2ovbro2UPji55NFUCUXQHqI0h8Ee2C3eXWt3nIog/nvHCAVI
-        pfbCgdvufKuZ+R72KqmQMfkE96sEW9Y+DNGS3JNLDJZCCuO3SQoJzmamNsjGuyjoKnHbZ4Vj72CE
-        ztHC0wKuXWTDLRPMfIAicvDO2yWgq+BqXIxGRQo/nHmkEA0vwc+gsJEpVGhTGN68ydRHBVcX+9Xv
-        mmBIrCnU0iX2YUBOsN2ARi+jKSP8bPM878EXDI8YKniFtunDxBrW0TuDLoUz6S0QOZhwIOIUBmin
-        wVRzSuG2AJVnvQ+y4KToSC8JQ8f2PslVrpIHKdUYuShZ9j9H3gjQQe8ylazXKfyloYl6iqWW3v9W
-        8ZwaDGyF10aRA9X2Kb7UbqBNiXOf7g7XN0LyrPf+eCS+tpF158Pk9JIwKbX39aFmW9sbLElwQ66k
-        l4OkQ6eYo0hQlFiR3ZS3r0Xlz2R+GTeHTCmV5SmMyDc1vY4wpqad1qbciu+wD8ONFlg/ryBO1PBt
-        GkliyD6YruGRph3F0DG5J//fSO59ZANvm5YPaD7n8bKWutDe2S3m0W+482Ehp7uOVKaOl8aK4Na4
-        RZdGuDi9QJ7or+lh/QcLJTjo6QUAAA==
+      string: '{"data": [{"authorName": "Farmer, R.", "affiliations": {"name": "Anton
+        Pannekoek Institute for Astronomy and GRAPPA, University of Amsterdam, NL-1090
+        GE Amsterdam, The Netherlands; Center for Astrophysics \u2223 Harvard &amp;
+        Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA", "years": ["2020"],
+        "lastActiveDate": "2020/10"}}, {"authorName": "Fishbach, M.", "affiliations":
+        {"name": "Department of Astronomy and Astrophysics, University of Chicago,
+        Chicago, IL 60637, USA", "years": ["2020"], "lastActiveDate": "2020/10"}},
+        {"authorName": "Justham, S.", "affiliations": {"name": "Anton Pannekoek Institute
+        for Astronomy and GRAPPA, University of Amsterdam, NL-1090 GE Amsterdam, The
+        Netherlands; School of Astronomy &amp; Space Science, University of the Chinese
+        Academy of Sciences, Beijing 100012, People''s Republic of China; National
+        Astronomical Observatories, Chinese Academy of Sciences, Beijing 100012, People''s
+        Republic of China", "years": ["2020"], "lastActiveDate": "2020/10"}}, {"authorName":
+        "Renzo, M.", "affiliations": {"name": "Center for Computational Astrophysics,
+        Flatiron Institute, New York, NY 10010, USA", "years": ["2020"], "lastActiveDate":
+        "2020/10"}}, {"authorName": "de Mink, S. E.", "affiliations": {"name": "Anton
+        Pannekoek Institute for Astronomy and GRAPPA, University of Amsterdam, NL-1090
+        GE Amsterdam, The Netherlands; Center for Astrophysics \u2223 Harvard &amp;
+        Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA", "years": ["2020"],
+        "lastActiveDate": "2020/10"}}]}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -47,28 +57,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '1513'
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 Jan 2022 16:12:40 GMT
+      - Sat, 26 Mar 2022 15:09:57 GMT
       Retry-After:
-      - '69564'
-      Server:
-      - openresty/1.15.8.1
+      - '86020'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '100'
       X-RateLimit-Remaining:
-      - '88'
+      - '93'
       X-RateLimit-Reset:
-      - '1643023925'
+      - '1648393418'
     status:
       code: 200
       message: OK

@@ -5,7 +5,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -20,11 +20,20 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//metrics
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA+2RwQ6CMBBE737FpmclGg0Bf8V4WGBLGqFt2upBwr/bkogaCieOnprsvJ3OZjpm
-        b0JrqqAQRakqsuwMl+sWWCkcOqEkWP+GacfkvS3IgOLgRSFr0KjJBC3N/cZHttTw3dsg6HsvT4bD
-        N045bODHeQQGV3yQwZpmkSR4t1QJlMuMVKbFRjz9rXHucEyySCJDnAz5rW/2lEWjzbDxjEtwNGx0
-        IU/SflLXiK7Q27+hFRrqNy+OtMUkagMAAA==
+      string: '{"skipped bibcodes": [], "citation stats": {"number of citing papers":
+        78, "number of self-citations": 0, "self-citations": [], "total number of
+        citations": 78, "average number of citations": 78.0, "median number of citations":
+        78.0, "normalized number of citations": 15.6, "total number of refereed citations":
+        54, "average number of refereed citations": 54.0, "median number of refereed
+        citations": 54.0, "normalized number of refereed citations": 10.8}, "citation
+        stats refereed": {"number of citing papers": 78, "number of self-citations":
+        0, "total number of citations": 78, "average number of citations": 78.0, "median
+        number of citations": 78.0, "normalized number of citations": 15.6, "total
+        number of refereed citations": 54, "average number of refereed citations":
+        54.0, "median number of refereed citations": 54.0, "normalized number of refereed
+        citations": 10.8}}
+
+        '
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -42,28 +51,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '876'
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 Jan 2022 15:56:03 GMT
+      - Sat, 26 Mar 2022 15:03:33 GMT
       Retry-After:
-      - '86036'
-      Server:
-      - openresty/1.15.8.1
+      - '86399'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '984'
+      - '998'
       X-RateLimit-Reset:
-      - '1643039400'
+      - '1648393413'
     status:
       code: 200
       message: OK

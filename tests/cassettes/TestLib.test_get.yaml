@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -16,24 +16,41 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//biblib/libraries/qf-C6Zi-Tyad2vqJPS-I4g/?start=0
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA41Wy27bOhDd9ytcLe6iiAS+JFIGujB6YaRFcpHGvkWRIjBoiw5U6OFQcoI0yL93
-        SEmOa1FRN6Y5OjozQ87M0bOXlJt9roq68qaTHx5BBM/+mQVBEIURLKG48M4m1nz53/VsEYSIBwEV
-        4XlrRrPdF0DHiFyAPZofzA0JQ4Ykuv4TLWIgwQh9O0FTbpfOJXr6JGvDSjlC6NXcRMJiGjBKaY+b
-        Ajel81Mzht8gXHTmX0VSBoacCyZIi8ZxixbcgOmruQ0QmyW8OUUTy3R5ZF4EAWEQCaR5dUJCGCxR
-        dyY47rIkDJI8mEVLQpkhiecuM2UdN28jCW2W0ZV3C/aqzDTc6rOnVbUri0qdK5moxlTVst6bO0cA
-        /LpMcwX/CYHNTmqZVxZ0D7/eh+kH42Sbmc06XW/KRJ3JrFa6kLVatRYDAU5dGxQyu7SwkGyVlXd3
-        aXG3OhB73/1Z/qvwl1pulP85+XhdlvVH7EdYJRGl0qdiS6NYhhjH23ATcrLZJkJtiY3DBvX8fp3W
-        lapfrN+ycZtAPJNEVRtj1OWj9UVsMI8W8LMqC+/lxTxtT8SmWezzebkvEthQcZSHORpoD9sZz13q
-        DaezS/qH0rWU1N/TB4Kh7EJEoZBvIYYeo6PBxhk5xkygrhtbjjrfQckQcu505GrZQUeocQSVCbXJ
-        xXyAsd/t44zmMDi/fivGPwbFOCNDIRb825sxHs+YcUaKMCbIfWG98eTCOGbVsNfX24PZww+D7fXA
-        BPyOHNjR9Pub9ELB2NCl9gfnOCNUJKd04WY8nbl9jHMAD3nFsfWKY4wwEdydh3N2jzIiDuUu+M0A
-        Y3/sDzKKhlFAjJRhcjnIeKoY4zFCcTJiZv0bWR+LzWiM0EAxjpizwvo65cC4RGvQK2+8cmiwCIXc
-        fXsuvRtnREgwwtwn05PKv2FEMYTCuWG8tQKSq1qC3kjPCoi08un9X9RpnalkcpGutdRPE2yF0AiL
-        d7/1P0U3qb98kgl5uP9ytfA/szvz3CiWTnd1CuIEwMunyezfxSRrKAwA9Gl1/JkWGpk2YrfaaAVL
-        0vYX9hHzEVliOsV8iuKAhzxkVjUtOpNVvcrLJN2mh3eIj7BP6BKzKbxG4yDCMWfMvLNTOk+rqg2r
-        fCzg08GY9+ss3YBpK7NKteHtK6VNaPisQ06NBK+VroOfwVbqXGnKTcl4+50JpvnAsK/avYnH6u1+
-        B+wGsNIqLx8ODxrYKksrI80/4Bbe/QawkBQtvQoAAA==
+      string: '{"documents": ["2021A&A...656A..58L", "2021MNRAS.507..385H", "2020ApJ...902L..36F",
+        "2020A&A...640A..56R", "2020ApJ...897..100V", "2020A&A...637A...6L", "2020yCat..36370006L",
+        "2020MNRAS.493.4333R", "2020ApJ...893..133F", "2020ApJ...891....5S", "2020zndo...3678482F",
+        "2019ApJ...887...53F", "2019A&A...631A...5Z", "2019ApJ...882...36M", "2019ApJS..243...10P",
+        "2019A&A...624A..66R", "2019yCat..36240066R", "2018ApJS..234...34P", "2018ApJS..234...19F",
+        "2017ApJ...851....6P"], "solr": {"responseHeader": {"status": 0, "QTime":
+        71, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start": "0",
+        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f2b2f-3361e4535ce229834e09ec7f",
+        "fq": "{!bitset}", "sort": "date desc", "rows": "20", "wt": "json"}}, "response":
+        {"numFound": 38, "start": 0, "docs": [{"bibcode": "2021A&A...656A..58L", "alternate_bibcode":
+        ["2021arXiv210205036L"]}, {"bibcode": "2021MNRAS.507..385H", "alternate_bibcode":
+        ["2021arXiv210711480H", "2021MNRAS.tmp.1922H"]}, {"bibcode": "2020ApJ...902L..36F",
+        "alternate_bibcode": ["2020arXiv200606678F"]}, {"bibcode": "2020A&A...640A..56R",
+        "alternate_bibcode": ["2020arXiv200205077R"]}, {"bibcode": "2020ApJ...897..100V",
+        "alternate_bibcode": ["2020arXiv200405187V"]}, {"bibcode": "2020A&A...637A...6L",
+        "alternate_bibcode": ["2020arXiv200301120L"]}, {"bibcode": "2020yCat..36370006L"},
+        {"bibcode": "2020MNRAS.493.4333R", "alternate_bibcode": ["2020MNRAS.tmp..537R",
+        "2020arXiv200208200R"]}, {"bibcode": "2020ApJ...893..133F", "alternate_bibcode":
+        ["2020arXiv200305844F"]}, {"bibcode": "2020ApJ...891....5S", "alternate_bibcode":
+        ["2020arXiv200107733S"]}, {"bibcode": "2020zndo...3678482F"}, {"bibcode":
+        "2019ApJ...887...53F", "alternate_bibcode": ["2019arXiv191012874F"]}, {"bibcode":
+        "2019A&A...631A...5Z", "alternate_bibcode": ["2019arXiv190706687Z"]}, {"bibcode":
+        "2019ApJ...882...36M", "alternate_bibcode": ["2018arXiv181013412M"]}, {"bibcode":
+        "2019ApJS..243...10P", "alternate_bibcode": ["2019arXiv190301426P"]}, {"bibcode":
+        "2019A&A...624A..66R", "alternate_bibcode": ["2018arXiv180409164R"]}, {"bibcode":
+        "2019yCat..36240066R"}, {"bibcode": "2018ApJS..234...34P", "alternate_bibcode":
+        ["2017arXiv171008424P"]}, {"bibcode": "2018ApJS..234...19F", "alternate_bibcode":
+        ["2017arXiv171206057F"]}, {"bibcode": "2017ApJ...851....6P", "alternate_bibcode":
+        ["2017arXiv170901877P"]}]}}, "metadata": {"name": "Untitled Library 1", "id":
+        "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library", "num_documents":
+        52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified": "2022-01-23T14:16:34.386170",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
+        "updates": {"num_updated": 0, "duplicates_removed": 0, "update_list": []}}
+
+        '
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -51,28 +68,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '2749'
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 Jan 2022 14:16:27 GMT
+      - Sat, 26 Mar 2022 15:03:11 GMT
       Retry-After:
-      - '10347'
-      Server:
-      - openresty/1.15.8.1
+      - '86392'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4796'
+      - '4990'
       X-RateLimit-Reset:
-      - '1642957735'
+      - '1648393384'
     status:
       code: 200
       message: OK
@@ -82,7 +94,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -93,23 +105,35 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//biblib/libraries/qf-C6Zi-Tyad2vqJPS-I4g/?start=19
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA41VXW/TMBR951eUPKIl8rWdOKnEQ7VRAaKotAUhpqlyG3cE5aNz0o0x7b/j6zRZ
-        6VygD2nvyfG599q9xw9eWq13hSqb2hsOLj1KQIy274MgiEMwzyCaemeDQ5gThOkTPJpjTBNGYgLj
-        Hp4aeDSdBeeckF4kMiJzZAu7ZnwAozZl5smj8TEbYYifRPYpBXD+lPIJZjwkYQeHUn/NbiEEIDSm
-        pBMJO21sB8JDGCshAjPyXsS2MxnNgi9A47iD+ZufI9wNFhslnsw6uBURMf+ALycdPP1+sQjaD8R9
-        8+zNdH6OmBGBqG+HTT7OTEOcsQCAMQtDIvhH2ey0yRajNHnrXRm8rnJtju/B06reVmWt3iqZqhaq
-        G7MAD5cY4qdFVijzGzDYSi2L2pJuzNN7NXyFSTY5Bqtsta5SdSbzRulSNmq5R5BiNHWDLEgwzErL
-        yZd5dX2dldfLXtn76o+KX6W/0HKt/Hfp61lVNa/Bj0ClEWMrH5IkijdcCsJiwdYcwpXYEM5sIbaq
-        h5errKlV82gTV23e1BQ0SFW9RlBXdzYXJRjdWcKPuiq9x0d8u98S22e5K8bVrkxNwOKDRiAxgZkE
-        OwQPXfOtqHMgnm9LNz3t302QhEAsxNS7MkWcUuxnyck5Giwn52jKHBzXyJ2sPmqrj8ywACVi7Kze
-        Na3/VCSMROZzWvGPQXdyjqb+r5y9BTg4z/zAxXGYw8kOO0FiegQeuU/c5Sv/owgkYe49e2ZJDo7L
-        n05m3ZObYovHCp2ZsbYYBiQgURLNnMW4HO90olaRE4o2RiZuxWOzdHCeOaeL47DRk5V1vWJlcSSO
-        rBh3BrjgjvNwGfPjlfWfQjXS2JVs/Uda+/U+l03W5CodfMhWWur7AVgfRV/ybjb+efQt8xf3MqW3
-        N++nc/8dv8b3aHg62zaZ8TZDnNwPRhfzQd5KIMHY2/LwPg/pWeuVy7VW5ittN4WCT7hP6ALYEMSQ
-        JIEIRcip17FzWTfLokqzTdavoT4Bn7IF8KFZxpIgwqY5rtkqXWR1vS+ruivN1YPwbpVnawNtZF6r
-        fXm7WmksDc465hAdfKV0E/wINlIXSjOBJ+nttlhMe0HZpTbGevD2Sndbo46EpVZFddu/aGnLPKvR
-        2S/NKbz4DRnqEurmCAAA
+      string: '{"documents": ["2017ApJ...851....6P", "2017ApJ...840....2P", "2017APS..APR.C4006P",
+        "2017AAS...22930801F", "2016ApJS..227...22F", "2016ApJ...823...46F", "2016ApJS..223...18P",
+        "2016AAS...22734505F", "2016AAS...22714401F", "2015arXiv151102820P", "2015ApJS..220...15P",
+        "2015ApJ...807..184F", "2015APS..MAR.V1288F", "2014ExA....38..249R", "2014ApJ...784L...3M",
+        "2014PhDT.......182F", "2013EPSC....8..161F", "2013MNRAS.433.1133F", "1974Natur.248...30H"],
+        "solr": {"responseHeader": {"status": 0, "QTime": 29, "params": {"q": "*:*",
+        "fl": "bibcode,alternate_bibcode", "start": "19", "internal_logging_params":
+        "X-Amzn-Trace-Id=Root=1-623f2b2f-6ca5d0e82011897803166901", "fq": "{!bitset}",
+        "sort": "date desc", "rows": "20", "wt": "json"}}, "response": {"numFound":
+        38, "start": 19, "docs": [{"bibcode": "2017ApJ...851....6P", "alternate_bibcode":
+        ["2017arXiv170901877P"]}, {"bibcode": "2017ApJ...840....2P"}, {"bibcode":
+        "2017APS..APR.C4006P"}, {"bibcode": "2017AAS...22930801F"}, {"bibcode": "2016ApJS..227...22F",
+        "alternate_bibcode": ["2016arXiv161101207F"]}, {"bibcode": "2016ApJ...823...46F",
+        "alternate_bibcode": ["2016arXiv160306666F"]}, {"bibcode": "2016ApJS..223...18P"},
+        {"bibcode": "2016AAS...22734505F"}, {"bibcode": "2016AAS...22714401F"}, {"bibcode":
+        "2015arXiv151102820P"}, {"bibcode": "2015ApJS..220...15P", "alternate_bibcode":
+        ["2015arXiv150603146P"]}, {"bibcode": "2015ApJ...807..184F", "alternate_bibcode":
+        ["2015arXiv150601093F"]}, {"bibcode": "2015APS..MAR.V1288F"}, {"bibcode":
+        "2014ExA....38..249R", "alternate_bibcode": ["2014ExA...tmp...41R", "2013arXiv1310.0696R"]},
+        {"bibcode": "2014ApJ...784L...3M", "alternate_bibcode": ["2014arXiv1402.2480M"]},
+        {"bibcode": "2014PhDT.......182F"}, {"bibcode": "2013EPSC....8..161F"}, {"bibcode":
+        "2013MNRAS.433.1133F", "alternate_bibcode": ["2013arXiv1302.2867F", "2013MNRAS.tmp.1474F"]},
+        {"bibcode": "1974Natur.248...30H"}]}}, "metadata": {"name": "Untitled Library
+        1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library", "num_documents":
+        52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified": "2022-01-23T14:16:34.386170",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
+        "updates": {"num_updated": 0, "duplicates_removed": 0, "update_list": []}}
+
+        '
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -127,28 +151,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '2278'
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 Jan 2022 14:16:27 GMT
+      - Sat, 26 Mar 2022 15:03:12 GMT
       Retry-After:
-      - '10346'
-      Server:
-      - openresty/1.15.8.1
+      - '86392'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4795'
+      - '4989'
       X-RateLimit-Reset:
-      - '1642957734'
+      - '1648393385'
     status:
       code: 200
       message: OK
@@ -158,7 +177,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -169,16 +188,18 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//biblib/libraries/qf-C6Zi-Tyad2vqJPS-I4g/?start=38
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA01S32vbMBB+31/h6bFEwbKd2DH0oWyMdWywtR6MlWJk6xxU9MOR5IYs5H+fJLuh
-        fpDvTt/dfffpzojpfpKgnEV18vS8SpDVwnj7jAzYUSsLX4EymEPWUTcFZOqBvxouwdvE2yM1VNqI
-        OfgT3dQ3yIcHEZyOd71msKLCgVHUQbtEAsSXNC6g8iq4XEWMaIXe77nat9fK6A++k/8UbgztAd+z
-        2wet3S3BWwJsm+c9zoqq21U5JbTflFXpv7QadkMZiURW548ddxbcJTbWc1/mCSUMbB+CRh9jrywN
-        3jECXqxW6HIJt4sicU41yS96Usw7efVukOh4VWdBY54ER30bOufRqBr6rRx3AljynXeGmlNC4vyh
-        HjoM+NP2L8fNibLs9fDt5yO+L/bhPhA1fHTcc/LAH6fk7vNjIuYSAeBpte/fdJOt5hnb3oD/sXm8
-        jOC0wGnWkLwmZZ3u1uWm3BQZekMLal0rNeMDv+ZkOCU4yxtS1D4t3623ZFcWRcgZwUhu7UJLH5Xf
-        mBCeOsF7HxqosLDQmywYuyzOjKyD8h0Yt35ZD9RIMHmJgnLTGMjYN8Hb2WfLBrJp9NUDoDUg9ev1
-        Yoa1glu3vMKH/3mPmeLqAgAA
+      string: '{"documents": [], "solr": {"responseHeader": {"status": 0, "QTime":
+        1, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start": "38",
+        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-623f2b30-52ee419d3e4cf9c16b3246cb",
+        "fq": "{!bitset}", "sort": "date desc", "rows": "20", "wt": "json"}}, "response":
+        {"numFound": 38, "start": 38, "docs": []}}, "metadata": {"name": "Untitled
+        Library 1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library",
+        "num_documents": 52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified":
+        "2022-01-23T14:16:34.386170", "permission": "owner", "public": false, "num_users":
+        1, "owner": "robert.j.farmer37"}, "updates": {"num_updated": 0, "duplicates_removed":
+        0, "update_list": []}}
+
+        '
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -196,28 +217,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '746'
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 Jan 2022 14:16:28 GMT
+      - Sat, 26 Mar 2022 15:03:12 GMT
       Retry-After:
-      - '10345'
-      Server:
-      - openresty/1.15.8.1
+      - '86391'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4794'
+      - '4988'
       X-RateLimit-Reset:
-      - '1642957734'
+      - '1648393384'
     status:
       code: 200
       message: OK

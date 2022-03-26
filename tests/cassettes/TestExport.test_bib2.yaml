@@ -5,7 +5,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -20,21 +20,25 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//export/bibtex
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA61UbW/TMBD+K6dqH0Bq3SQdXTdpEl3ZGGiFqeUDQhXSJbk23hI7sp2MLiq/nXMY
-        LBsDPkAVVfZzL37u7rGbXmE3vSPoLcgZSTWlEAHG1hlMnO2DdWicVBu4kS4DVRUxGQhFrw89+lJq
-        43zsy+niw5vZxWkTBVEwLd8KIQ6D6EKI0fisv1Lw/YeVy7SBY2iaMzQFmV0fFgJQpdAsSN1q3s/v
-        9inBXKprRpbi6+kdeCZtFmOSdfzeVtZlWLR+u/ujwEmXEx+16jUzrXw1UjkLa6MLeG2wlg6d1Arz
-        wQ3WBK/IUeIBC3oNJ1Kh2cJJjsk1nGtONCezIcNGBS4j2PvchNFub/asWa1I2cpQgS7jDeZlhjtm
-        89iwwaJgw3MfOd7tvYcFOtqtej8pX+nKMB3fHU5TXuU/q7mm7Y02qfWmpaM8RwNU67zyfLnuqiSj
-        dI3Uh5k2NEg0u5SWwHYs76okJw5EboUus62VCQ/3R7oCrYW4LTfjctkyvfdjUg9Mc3aW3DOvDN5e
-        cCG8/oVX+OLwkP/H40kfRsE+L8OoBcKwD4cMHowiXvhd5zALAziXmwxOFbd8+4jHZUZKF6SwO2rY
-        +sKOwWuvAxdasWCPQSfuHvX0Cq+LhvXZSXKna8ajB6mBZOrRi9G4i5e4IfsEDpBq6fEwEKPJ/sEw
-        CvbDwSQKR0OMY0xT74wmybh/l4bW8ot3RvNR1p00VBoWa0smCMYiGI8PJq2Z8YKFOcv9uHygb86g
-        zMT5aSccU9ZdK6TMudIeDYeVFAzypRYZmhpNKiitmJEdPnFf7zNxjNKu7dal0bVM+W2It+0FWE7f
-        D99Nl9OHo3uFDmG5ZTEUu5Xib6Vezt8sZ+2zcKtSLfwJB5P9SfS3Z0HzONxvLrS5Wrd+w4Islrl2
-        R3BSbYC7SbZ7peBv0lhT/NSweXgvokk4vGWxMec7xr+b8x9da340+DZ41zoUgZj8MJVVnPNr9l1z
-        n9rofxjho97+3xH2dt8ARIn0HCQGAAA=
+      string: '{"msg": "Retrieved 2 abstracts, starting with number 1.", "export":
+        "@ARTICLE{2020ApJ...902L..36F,\n       author = {{Farmer}, R. and {Renzo},
+        M. and {de Mink}, S.~E. and {Fishbach}, M. and {Justham}, S.},\n        title
+        = \"{Constraints from Gravitational-wave Detections of Binary Black Hole Mergers
+        on the $^{12}$C({\\ensuremath{\\alpha}}, {\\ensuremath{\\gamma}})$^{16}$O
+        Rate}\",\n      journal = {\\apjl},\n     keywords = {Stellar evolution, Supernovae,
+        Core-collapse supernovae, Nuclear astrophysics, Stellar mass black holes,
+        Astrophysical black holes, Massive stars, Late stellar evolution, 1599, 1668,
+        304, 1129, 1611, 98, 732, 911, Astrophysics - High Energy Astrophysical Phenomena},\n         year
+        = 2020,\n        month = oct,\n       volume = {902},\n       number = {2},\n          eid
+        = {L36},\n        pages = {L36},\n          doi = {10.3847/2041-8213/abbadd},\narchivePrefix
+        = {arXiv},\n       eprint = {2006.06678},\n primaryClass = {astro-ph.HE},\n       adsurl
+        = {https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F},\n      adsnote
+        = {Provided by the SAO/NASA Astrophysics Data System}\n}\n\n@MISC{2020zndo...3678482F,\n       author
+        = {{Farmer}, Robert},\n        title = \"{rjfarmer/mesaplot: Bug fixes}\",\n         year
+        = 2020,\n        month = feb,\n          eid = {10.5281/zenodo.3678482},\n          doi
+        = {10.5281/zenodo.3678482},\n      version = {v1.0.8},\n    publisher = {Zenodo},\n       adsurl
+        = {https://ui.adsabs.harvard.edu/abs/2020zndo...3678482F},\n      adsnote
+        = {Provided by the SAO/NASA Astrophysics Data System}\n}\n\n"}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -52,28 +56,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '1572'
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 Jan 2022 13:34:20 GMT
+      - Sat, 26 Mar 2022 15:03:08 GMT
       Retry-After:
-      - '12873'
-      Server:
-      - openresty/1.15.8.1
+      - '86396'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4869'
+      - '4992'
       X-RateLimit-Reset:
-      - '1642957734'
+      - '1648393385'
     status:
       code: 200
       message: OK

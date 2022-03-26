@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -16,12 +16,11 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:1600&fl=abstract,author,bibcode,pubdate,title,pub&fq=&start=0
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA01QwU6DQBC99yvInpeErZQASQ9ejB41PZgYbYbugBjYxdkhjTb8u4NKym3ey5s3
-        b95lE0WKMAzeBbxHsEiqvAgpdGDgMagy0X/48dD2qEqT/+MBCPqwyIX4VKV6q4F6JE3RFwKVJksS
-        pRdB3YkCqsAEJ9Yw8rsnXbXVyVvUw1hZYNTccveLrnuShFhWV1atYyQH3bHzTdO65rikUc/xbf/t
-        4oPcwPjB7p+8572JM4P2BtNdbHYFIGa4zW2Rp2mSbcHYorarmPMjV0j+PPua1fXznOYjeKemSa8r
-        lDaUG/s7Pzo7N7dEl8n6k9i8vIp8mjY/I1Vqs3kBAAA=
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":96,\n    \"params\":{\n
+        \     \"q\":\"^farmer,r year:1600\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-623f2b29-735a98f837e1ff5873439ac0\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":0,\"start\":0,\"docs\":[]\n
+        \ }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -39,28 +38,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '377'
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 Jan 2022 11:38:45 GMT
+      - Sat, 26 Mar 2022 15:03:05 GMT
       Retry-After:
-      - '19808'
-      Server:
-      - openresty/1.15.8.1
+      - '86399'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4906'
+      - '4997'
       X-RateLimit-Reset:
-      - '1642957734'
+      - '1648393385'
     status:
       code: 200
       message: OK

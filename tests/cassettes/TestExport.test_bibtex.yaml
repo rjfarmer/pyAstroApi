@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -16,18 +16,19 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//export/bibtex/2020ApJ...902L..36F
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA21TTU/bQBC951eMEIdWShzboSaphNQQQgElgJIeekCVJvaQXbB3rd11aGq5v72z
-        LpBQmkO08+Zj37x9/jJefLuczKZ1HMbhuLwKgmAUxrMgGCTn3Q78/WHlhDZwAnV9jqYg03RhEQCq
-        DOoFqV+a4/lznBHMpXpkZBn8nj6D59KKFaZir+6qsk5g0dY1rzeBky4nvumgnmhlnUGpnIV7owv4
-        anAjHTqpFea9J9wQnJGj1AMW9D2cSoVmC6c5po9woXnOnMyaDCcVOEFw+KOO4uZw8qG+I2UrQwU6
-        Ud9hXgpsmMlbeI1FwfBH35U0hzewQEfNwQvXB10ZJuJVucPyIX9Z4pG2T9pk1ieWjvIcDdBG55Xn
-        ydtWJRmlN0hdmGhDvVRzSWkJ7F7mukpz4kZkCXQptlamlnufxxVoLazaNQWvyZnxro4pvUnNuViy
-        Vtah4XDGS/D5Ha/o02jE/0ky7MIgPOJjFLdAFHVhxODxIOaDj/Yus9CDC7kWMFUs9fYfHreClC5I
-        4d4Dw9bvdQLebzu00MoJRnXqXkHPrfBeqNmRuwmqKlbUmjHeHwskMw/OBskeXOKa7HsYINPSw1EY
-        DIZHx/04PIp6wzga9HG1wizjWjSpYN1uDd3Ln74WzXe52Q2h0rA3Wx5hmARhkhwPfZbhgm04yf0j
-        +TYvSa8UwcV014wZ+6z1jnCutJ/7/UoGDOLKBgLNBk0WUFYxG9v/z5f5OohblHatSLdGb2RGGay2
-        rdmX45v+9Xg5fvtcZ+gQlls2QNF0mk7nD41yxw0ABAAA
+      string: "@ARTICLE{2020ApJ...902L..36F,\n       author = {{Farmer}, R. and {Renzo},
+        M. and {de Mink}, S.~E. and {Fishbach}, M. and {Justham}, S.},\n        title
+        = \"{Constraints from Gravitational-wave Detections of Binary Black Hole Mergers
+        on the $^{12}$C({\\ensuremath{\\alpha}}, {\\ensuremath{\\gamma}})$^{16}$O
+        Rate}\",\n      journal = {\\apjl},\n     keywords = {Stellar evolution, Supernovae,
+        Core-collapse supernovae, Nuclear astrophysics, Stellar mass black holes,
+        Astrophysical black holes, Massive stars, Late stellar evolution, 1599, 1668,
+        304, 1129, 1611, 98, 732, 911, Astrophysics - High Energy Astrophysical Phenomena},\n
+        \        year = 2020,\n        month = oct,\n       volume = {902},\n       number
+        = {2},\n          eid = {L36},\n        pages = {L36},\n          doi = {10.3847/2041-8213/abbadd},\narchivePrefix
+        = {arXiv},\n       eprint = {2006.06678},\n primaryClass = {astro-ph.HE},\n
+        \      adsurl = {https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F},\n
+        \     adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}\n\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -45,28 +46,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '1024'
       Content-Type:
       - text/plain
       Date:
-      - Sun, 23 Jan 2022 13:34:20 GMT
+      - Sat, 26 Mar 2022 15:03:07 GMT
       Retry-After:
-      - '12874'
-      Server:
-      - openresty/1.15.8.1
+      - '86396'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4870'
+      - '4993'
       X-RateLimit-Reset:
-      - '1642957735'
+      - '1648393384'
     status:
       code: 200
       message: OK

@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -16,14 +16,28 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//resolver/2019ApJ...887...53F
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA6XUQU/CMBQH8K+y7KQJAVEM6K2OojXASDeMiTGmdBUbx7q0BSWE7+66DCyJl9rL
-        sr33/t1v77BdqJjccMrC2yAMW0FIqOaiME8ZV2VOtqaY8+JTVbVdSMW60NVdt9+U3/S2rMMkz82o
-        ZFTIzAy/7MIFX1CR1e3Li+4NKB/b7fZg0K+u11cjM665zus+uEtSDKI0OOuem8Za5qbcqd+xJJp9
-        kW3nj0M6h2B92sGyUFpWX2JqR/G+FTiJIpSCFMXTxJl0TNomyjUxq1VeKAxHEMNpBN1Vv1GbJdk7
-        k6ygzM8VxRiCoTuqyZ0sSkhGMj9OPIPTOR47c5qczRElK0zeh3OPwewBRe7rOQRt0FKS8oNTvwVN
-        YIr/A2pytmfFtPTlJGiCxgA7c5qczVF8xXMivTgwiec4gsFZz43T5GwOU2Itq9+rxem5coYgBc6r
-        MSEbkhFNvJYyjJE7IkYnBsG9CAA/oydnRJ2yGUR+880p5HW//wF4pupPCwcAAA==
+      string: '{"service": "", "action": "display", "links": {"count": 17, "link_type":
+        "all", "records": [{"bibcode": "2019ApJ...887...53F", "title": "ABSTRACT (1)",
+        "url": "/link_gateway/2019ApJ...887...53F/ABSTRACT", "type": "abstract", "count":
+        1}, {"bibcode": "2019ApJ...887...53F", "title": "CITATIONS (1)", "url": "/link_gateway/2019ApJ...887...53F/CITATIONS",
+        "type": "citations", "count": 1}, {"bibcode": "2019ApJ...887...53F", "title":
+        "REFERENCES (1)", "url": "/link_gateway/2019ApJ...887...53F/REFERENCES", "type":
+        "references", "count": 1}, {"bibcode": "2019ApJ...887...53F", "title": "COREADS
+        (1)", "url": "/link_gateway/2019ApJ...887...53F/COREADS", "type": "coreads",
+        "count": 1}, {"bibcode": "2019ApJ...887...53F", "title": "OPENURL (1)", "url":
+        "/link_gateway/2019ApJ...887...53F/OPENURL", "type": "openurl", "count": 1},
+        {"bibcode": "2019ApJ...887...53F", "title": "GRAPHICS (1)", "url": "/link_gateway/2019ApJ...887...53F/GRAPHICS",
+        "type": "graphics", "count": 1}, {"bibcode": "2019ApJ...887...53F", "title":
+        "METRICS (1)", "url": "/link_gateway/2019ApJ...887...53F/METRICS", "type":
+        "metrics", "count": 1}, {"bibcode": "2019ApJ...887...53F", "title": "SIMILAR
+        (1)", "url": "/link_gateway/2019ApJ...887...53F/SIMILAR", "type": "similar",
+        "count": 1}, {"bibcode": "2019ApJ...887...53F", "title": "ESOURCE (4)", "url":
+        "/link_gateway/2019ApJ...887...53F/ESOURCE", "type": "esource", "count": 4},
+        {"bibcode": "2019ApJ...887...53F", "title": "DATA (1)", "url": "/link_gateway/2019ApJ...887...53F/DATA",
+        "type": "data", "count": 1}, {"bibcode": "2019ApJ...887...53F", "title": "DOI
+        (1)", "url": "/link_gateway/2019ApJ...887...53F/DOI", "type": "doi", "count":
+        1}, {"bibcode": "2019ApJ...887...53F", "title": "ARXIV (1)", "url": "/link_gateway/2019ApJ...887...53F/ARXIV",
+        "type": "arxiv", "count": 1}]}}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -41,28 +55,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '1803'
       Content-Type:
       - application/json
       Date:
-      - Mon, 24 Jan 2022 18:30:31 GMT
+      - Sat, 26 Mar 2022 15:03:44 GMT
       Retry-After:
-      - '85992'
-      Server:
-      - openresty/1.15.8.1
+      - '86359'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4994'
+      - '4969'
       X-RateLimit-Reset:
-      - '1643135024'
+      - '1648393384'
     status:
       code: 200
       message: OK

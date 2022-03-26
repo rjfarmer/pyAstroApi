@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -16,31 +16,61 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer&fl=bibcode&fq=&start=0&rows=100
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA5VYyW4bRxC9+ysMHnKSGr0vAnyY0JYiQpRojgBnQWKMyLHJRJphKCpGbOjf82o4
-        DetWHYEHcTSvq17Vq6X17dXr15N9+7jru8f2p7ZZt/vJ2Tc8xOPHQ3N4epycyZPj9/e324d2cubD
-        +H3X7JuHx/w6Hvw9OZv88anZP+CQk/zw0z2e3m3vVv26/f4UZ+8P+IP8/mjbHdp919x/vO8/f952
-        nz/m8yc/n1YPX7vT232zak8v12+WfX94o069atemtf7UuXTXWO/1nffWrqRu8UtrzAsnyLXvX/f9
-        FzpXyRfmv5A7fz723eT5+eRlVEBw0j09nPdP3XpylkI6yd7Lk8m6X+Gk38ZDciSAzoxhJcWw2Cz/
-        uRLCJSGideeT5xMGYRabf98K/AQhlDMcQkslF9dVjZdlEN4HWYCIX7t1DxNKS6eD4hFajgjjQ7RR
-        FyDUiLBBp6gKbKgwIhAobyQbq5c8rFVGpwJEyjycctp6HiHN/HqJ8BrrhVIpcAi8kmYXyyMNoWMs
-        YC7dNeptL6yxQiRVYCOabCMKYwLLHAg/O59TqDxsCF5XQMTF/mbVCqEVWWJ5qJRG5kpa7VNgeYB5
-        um66HvUhUB8mxv+HsDZYDgEe8m29rADQqChtSmJlRuZKk7ZYHsh5yPnQwmrNalclb6tVvaPoSujK
-        lnilf4VMQMQEoYxkmVNnqFdbErtGdJNhc47o2mo3A8JLqMSXdAbKx6BdL4GILHOqwaONGEOpEtNm
-        32hx1/d/UYwFh6Cq/bAc8mES1GhYr6g+xr6rKeexIOcpLetFXQnrHCKs2VhBJf6YD5UsMlikxHCM
-        7pBBpdl+BYTLE8cNXa4AkfsVvAqRzyCYm9Erj87gdcHEkT5XrccnlTC3uaKSksoW8Ej+XVffUs4l
-        PpH16uV0jki7Y5mTrt79sKivULSJlFKgkuAv2n5JzA1lvkDtQVe7m90BLyuhvWQRND/yBqCJR0Fn
-        0PJYg0nqKxrqHIJ4XK6aPdVHpE5akkHwWGxwvFXwzJfwCIvm/mY11KDR/AaAnIcPVb0g5ug+mu8l
-        sKEvZ9fzc3glSY0sguZHVqLD9Cyp85iquhpaHHaGyO8M6Ike+agHSQ0tiEOQV9e/wApKHAjLM6e9
-        5KKd9pgf1mColWwZSU37+RDdVNqpX3ZR4dgaHLQ75lwK2ug4BGyosWotbchFSrSzxQ1lUKHvBl8Q
-        3TTu1AIzKoSiqo2jDRGLdEVKzP3K06bPekWzdqyoZJ8MSopDgIcbvdLQri2ZHylO7+fbDl4ZWgNY
-        tdOWkb0KDbximSNW7v1sOa+hK0U1wmYQNty4M0jKeSzocNKh765bDE2qqJJNRqlquhhUotAcSuZg
-        1LkzBIwpw9rA1hem0/lgw9E8L0BEl6ezxKdonpsxgypSZ2CjSzmfzeudGHPO9yu6G4w5dxoVVbK9
-        JpfvBlJEw28AyGC8uLgYKirhnsrf7mhyzqohg+hwVidWiaSSenX7rhtud2X5CAqxpRSaWIrQs/f1
-        8vZ4m/AlOwPyUR1ubgeVKFxseYT3+TahyTM2VmCu8vYaMNJLvIo2z3NHDYWtQTC302Y23RxV4mwB
-        IoZqNd/Slm9IvyU8wjHn6CX31pV0H+fh02JDFGDGshOHlHi1PWz6Yb8q3H38OGsdTbWiGrTVZUVL
-        g0GsVGC7D/UrmoM/0v8ZDq5onkeV5yA2MqeKpkGuWqMjpMIjgj3eDTRNZx0K8nG8sdC9VmGb4W8T
-        8Eqjt8+poOhWNPyH5Xe8+fz86j/Al/0s1RQAAA==
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":29,\n    \"params\":{\n
+        \     \"q\":\"^farmer\",\n      \"fl\":\"bibcode\",\n      \"start\":\"0\",\n
+        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-623f2b2a-0472f21c542004042bdb5c45\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"100\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":982,\"start\":0,\"docs\":[\n
+        \     {\n        \"bibcode\":\"1987PhRvL..59..845F\"},\n      {\n        \"bibcode\":\"1983PhyD....7..153F\"},\n
+        \     {\n        \"bibcode\":\"2019ApJ...887...53F\"},\n      {\n        \"bibcode\":\"2020ApJ...902L..36F\"},\n
+        \     {\n        \"bibcode\":\"2003MNRAS.346.1197F\"},\n      {\n        \"bibcode\":\"2010PNAS..107.6670F\"},\n
+        \     {\n        \"bibcode\":\"2016ApJS..227...22F\"},\n      {\n        \"bibcode\":\"2020zndo...3678482F\"},\n
+        \     {\n        \"bibcode\":\"2019zndo...3515246F\"},\n      {\n        \"bibcode\":\"2017zndo....846305F\"},\n
+        \     {\n        \"bibcode\":\"2021zndo...4729811F\"},\n      {\n        \"bibcode\":\"2018zndo...1441329F\"},\n
+        \     {\n        \"bibcode\":\"2018zndo...1205271F\"},\n      {\n        \"bibcode\":\"1983JGR....88.3379F\"},\n
+        \     {\n        \"bibcode\":\"2005Natur.434..917F\"},\n      {\n        \"bibcode\":\"1979JGR....84.2881F\"},\n
+        \     {\n        \"bibcode\":\"2004ApJ...604..671F\"},\n      {\n        \"bibcode\":\"2015ApJ...807..184F\"},\n
+        \     {\n        \"bibcode\":\"1986JFM...164...53F\"},\n      {\n        \"bibcode\":\"1999JGR...10426977F\"},\n
+        \     {\n        \"bibcode\":\"1980DSRA...27..239F\"},\n      {\n        \"bibcode\":\"1988PrOce..21....1F\"},\n
+        \     {\n        \"bibcode\":\"2009NanoL...9..388F\"},\n      {\n        \"bibcode\":\"2009NanoL...9.4474F\"},\n
+        \     {\n        \"bibcode\":\"1964AcSpe..20.1149F\"},\n      {\n        \"bibcode\":\"1977JGR....82.4225F\"},\n
+        \     {\n        \"bibcode\":\"2009Natur.460..685F\"},\n      {\n        \"bibcode\":\"1983PrOce..12..147F\"},\n
+        \     {\n        \"bibcode\":\"1982ZNatA..37.1304F\"},\n      {\n        \"bibcode\":\"2010Sci...329..933F\"},\n
+        \     {\n        \"bibcode\":\"2003TrGeo...3...85F\"},\n      {\n        \"bibcode\":\"1989hra2.book.....F\"},\n
+        \     {\n        \"bibcode\":\"2003WRR....39.1035F\"},\n      {\n        \"bibcode\":\"1999RSPSA.455.3221F\"},\n
+        \     {\n        \"bibcode\":\"1976Sci...194.1339F\"},\n      {\n        \"bibcode\":\"1986PhyD...22..187F\"},\n
+        \     {\n        \"bibcode\":\"1985PhRvL..55..351F\"},\n      {\n        \"bibcode\":\"1987Natur.329..126F\"},\n
+        \     {\n        \"bibcode\":\"1989JGR....94.7885F\"},\n      {\n        \"bibcode\":\"2006NanoL...6..699F\"},\n
+        \     {\n        \"bibcode\":\"2003E&PSL.209..227F\"},\n      {\n        \"bibcode\":\"1984JGR....8910141F\"},\n
+        \     {\n        \"bibcode\":\"1996EnST...30.3080F\"},\n      {\n        \"bibcode\":\"1993Natur.361..620F\"},\n
+        \     {\n        \"bibcode\":\"1987PhRvL..58.2255F\"},\n      {\n        \"bibcode\":\"2005PNAS..102.2254F\"},\n
+        \     {\n        \"bibcode\":\"2017EGUGA..1912022F\"},\n      {\n        \"bibcode\":\"1972ApOpt..11.2603F\"},\n
+        \     {\n        \"bibcode\":\"1976GeoRL...3...13F\"},\n      {\n        \"bibcode\":\"1980NYASA.357..453F\"},\n
+        \     {\n        \"bibcode\":\"1976Icar...28..279F\"},\n      {\n        \"bibcode\":\"1980JGR....85.1621F\"},\n
+        \     {\n        \"bibcode\":\"2005PalOc..20.2018F\"},\n      {\n        \"bibcode\":\"2007PalOc..22.3205F\"},\n
+        \     {\n        \"bibcode\":\"1982ApPhL..41.1063F\"},\n      {\n        \"bibcode\":\"2002IJNMF..40...63F\"},\n
+        \     {\n        \"bibcode\":\"1989ASAJ...86.1897F\"},\n      {\n        \"bibcode\":\"1979GeCoA..43.1417F\"},\n
+        \     {\n        \"bibcode\":\"1986PhyD...22...50F\"},\n      {\n        \"bibcode\":\"1981PhRvL..47..179F\"},\n
+        \     {\n        \"bibcode\":\"1984JPO....14.1762F\"},\n      {\n        \"bibcode\":\"1991CoMP..109...53F\"},\n
+        \     {\n        \"bibcode\":\"1997WASP..100..253F\"},\n      {\n        \"bibcode\":\"1990PNAS...87.7713F\"},\n
+        \     {\n        \"bibcode\":\"1982JGR....87.8931F\"},\n      {\n        \"bibcode\":\"2002EnST...36..152F\"},\n
+        \     {\n        \"bibcode\":\"2009ApPhL..94u3106F\"},\n      {\n        \"bibcode\":\"1978JPO.....8...63F\"},\n
+        \     {\n        \"bibcode\":\"1995JPO....25.1426F\"},\n      {\n        \"bibcode\":\"1998ClMin..33..601F\"},\n
+        \     {\n        \"bibcode\":\"2013MNRAS.433.1133F\"},\n      {\n        \"bibcode\":\"1975QJRMS.101..869F\"},\n
+        \     {\n        \"bibcode\":\"2011ACP....11.4085F\"},\n      {\n        \"bibcode\":\"2005Geode.127...71F\"},\n
+        \     {\n        \"bibcode\":\"2010ApPhL..97a3103F\"},\n      {\n        \"bibcode\":\"1967CCM....15..121F\"},\n
+        \     {\n        \"bibcode\":\"1972JAP....43.4293F\"},\n      {\n        \"bibcode\":\"1995JGR...100.8399F\"},\n
+        \     {\n        \"bibcode\":\"2021ApJ...923..214F\"},\n      {\n        \"bibcode\":\"1985JGR....90.9051F\"},\n
+        \     {\n        \"bibcode\":\"2008Litho.102..279F\"},\n      {\n        \"bibcode\":\"1998JAtOT..15.1132F\"},\n
+        \     {\n        \"bibcode\":\"1988ApPhL..52.1749F\"},\n      {\n        \"bibcode\":\"1998JMSp...33..697F\"},\n
+        \     {\n        \"bibcode\":\"1983ClMin..18..459F\"},\n      {\n        \"bibcode\":\"1971MinM...38..121F\"},\n
+        \     {\n        \"bibcode\":\"2005ScTEn.346..121F\"},\n      {\n        \"bibcode\":\"1972JQSRT..12..627F\"},\n
+        \     {\n        \"bibcode\":\"2008GGG.....912029F\"},\n      {\n        \"bibcode\":\"2011PhRvB..84t5417F\"},\n
+        \     {\n        \"bibcode\":\"2017PhPl...24e2703F\"},\n      {\n        \"bibcode\":\"1987AcMik...3..189F\"},\n
+        \     {\n        \"bibcode\":\"1974CaJCh..52.1544F\"},\n      {\n        \"bibcode\":\"2015AGUFM.V21B3039F\"},\n
+        \     {\n        \"bibcode\":\"2010Sci...327..338F\"},\n      {\n        \"bibcode\":\"1966AcSpe..22..389F\"},\n
+        \     {\n        \"bibcode\":\"2007JAP...101l4503F\"},\n      {\n        \"bibcode\":\"2001RSPSA.457.2827F\"},\n
+        \     {\n        \"bibcode\":\"1956JChPh..24..348F\"},\n      {\n        \"bibcode\":\"1984ApPhL..45...24F\"}]\n
+        \ }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -58,28 +88,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '5333'
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 Jan 2022 11:38:46 GMT
+      - Sat, 26 Mar 2022 15:03:06 GMT
       Retry-After:
-      - '19807'
-      Server:
-      - openresty/1.15.8.1
+      - '86398'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4904'
+      - '4995'
       X-RateLimit-Reset:
-      - '1642957734'
+      - '1648393385'
     status:
       code: 200
       message: OK

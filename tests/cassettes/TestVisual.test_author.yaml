@@ -5,7 +5,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -20,13 +20,23 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//vis/author-network
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA62RzWqEMBCA732KkLMUjQqlD2ChYFl2Dz2UPUw1NVITS2Ja6OK7d2KXYuiKP6yn
-        GTPffJnJiUpT0XtyoqYD3WEUBoTq9stgyDBUVmatVaVLe8xL6GCof7NN86DhQwyZakvukJff8Akk
-        x4xmoCXXAdlT1woPnnldCaeJ0vA2xIZ+/Z6r7zYg+cLyR2s6ATIgh4VADroQoLqA7P4R6YX6kpO8
-        Vu/LBVltxCsU4tIMTnDEnw12PO/KtFYX/Lx1fICKu8IEk09orDtI0DL+4kH5x6VjLhpxkY+xu8QH
-        wylwRsjGXLxCyDZO6F00XSGMNgrTKW5O6N10zWriqzwi2zgiWyFkUzedEXoTzuz02Pf9zQ8oiZoT
-        mAQAAA==
+      string: '{"msg": {"start": 0, "rows": 2, "numFound": 2}, "data": {"fullGraph":
+        {"nodes": [{"nodeName": "Farmer, R", "nodeWeight": 150.0}, {"nodeName": "Renzo,
+        M", "nodeWeight": 150.0}, {"nodeName": "Justham, S", "nodeWeight": 150.0},
+        {"nodeName": "Marchant, P", "nodeWeight": 5.0}, {"nodeName": "de Mink, S",
+        "nodeWeight": 150.0}, {"nodeName": "Fishbach, M", "nodeWeight": 5.0}], "links":
+        [{"source": 0, "target": 4, "value": 40.00000000000003}, {"source": 5, "target":
+        1, "value": 1.0000000000000284}, {"source": 0, "target": 1, "value": 40.00000000000003},
+        {"source": 2, "target": 3, "value": 1.0000000000000284}, {"source": 2, "target":
+        4, "value": 40.00000000000003}, {"source": 0, "target": 5, "value": 1.0000000000000284},
+        {"source": 1, "target": 4, "value": 40.00000000000003}, {"source": 5, "target":
+        4, "value": 1.0000000000000284}, {"source": 0, "target": 3, "value": 1.0000000000000284},
+        {"source": 3, "target": 1, "value": 1.0000000000000284}, {"source": 0, "target":
+        2, "value": 40.00000000000003}, {"source": 5, "target": 2, "value": 1.0000000000000284},
+        {"source": 2, "target": 1, "value": 40.00000000000003}, {"source": 3, "target":
+        4, "value": 1.0000000000000284}]}}}
+
+        '
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -44,28 +54,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '1176'
       Content-Type:
       - application/json
       Date:
-      - Mon, 24 Jan 2022 19:06:21 GMT
+      - Sat, 26 Mar 2022 15:03:45 GMT
       Retry-After:
-      - '85978'
-      Server:
-      - openresty/1.15.8.1
+      - '86387'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '993'
+      - '994'
       X-RateLimit-Reset:
-      - '1643137160'
+      - '1648393413'
     status:
       code: 200
       message: OK

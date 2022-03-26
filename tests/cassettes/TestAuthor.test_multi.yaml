@@ -5,7 +5,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -20,19 +20,45 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//author-affiliation/search
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA+1WTU/bQBD9KyMf+iG5xTaUNs3JDYEGkTRy2gOiHCb2BG9jz1q7m9AU8d87tiJI
-        EKUIBRWk3tY749l5743f+sLL0KH3EU4uPJy5XJsBliTP3j6akowPyVvPBw8nE1UodEqzleiFx8u0
-        mJ1mGCIzTTVNocfWKTdzBBNtILbOaNblApAzOEji4TD24RurORmr3AL0BOLSOjIZlj4Mjt6EQSuA
-        g+7q7tecYEAuJ1NIFduGDrHErg+o8oVVqYXvsyiKtuEzmjmaDF5gWbVhVCqXW80K2YddqS0hYhg5
-        Q+R86GA5Nio7Ix/6MQRRuP1BGhzFNegFoanRnnhREAXeqWwVaF2cOul/D11DQB3aCgPv8tKHZ8Ph
-        TXRh64/owtZWGN2OTtl8jGkuzN2Nb48qNK4U1Zpe1/CsCngTVSdXKZ5p/3rROxIJd7ffb06iw5l1
-        ec3Q6KlpJKOb5loX65wth7rClCSuiFO6eZBUqBljsgRxihmVzfYyW1j+ROqH4jMIgyAIIx+GpKuC
-        XlpIqJqNC5UuyWdsw6DhAourFkSJAr6MLclH5rRRdcENnfZf0EcXFP6tog/ymT6aNEcWsx7eLenK
-        vdCrV5myqaoK6cMsoPuzKrRp3mo0TQReXRgUr98irzq9bhK/bpLWnWu4zLjyrVpAEV8bl59TLTuv
-        KOdDFO68g5HIrzJkSDRmPnTnKIOmeellUXD7dfMgohLiX/qvbrzCUkeX1cytzcOVFe8Xsi8Qrz8M
-        QUrncKzNVFbHtfphsDkjvmfzj9Pxg+jOCPqKp7XTQPfpmc2z+Ut6njwKjUG48ygs3mMaTy9/A/5V
-        oVG6CwAA
+      string: '{"data": [{"authorName": "Farmer, R.", "affiliations": {"name": "Anton
+        Pannekoek Institute for Astronomy and GRAPPA, University of Amsterdam, NL-1090
+        GE Amsterdam, The Netherlands; Center for Astrophysics \u2223 Harvard &amp;
+        Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA", "years": ["2020"],
+        "lastActiveDate": "2020/10"}}, {"authorName": "Farmer, R.", "affiliations":
+        {"name": "Anton Pannekoek Institute for Astronomy and GRAPPA, University of
+        Amsterdam, NL-1090 GE Amsterdam, The Netherlands", "years": ["2019"], "lastActiveDate":
+        "2019/12"}}, {"authorName": "Fishbach, M.", "affiliations": {"name": "Department
+        of Astronomy and Astrophysics, University of Chicago, Chicago, IL 60637, USA",
+        "years": ["2020"], "lastActiveDate": "2020/10"}}, {"authorName": "Justham,
+        S.", "affiliations": {"name": "Anton Pannekoek Institute for Astronomy and
+        GRAPPA, University of Amsterdam, NL-1090 GE Amsterdam, The Netherlands; School
+        of Astronomy &amp; Space Science, University of the Chinese Academy of Sciences,
+        Beijing 100012, People''s Republic of China; National Astronomical Observatories,
+        Chinese Academy of Sciences, Beijing 100012, People''s Republic of China",
+        "years": ["2020"], "lastActiveDate": "2020/10"}}, {"authorName": "Justham,
+        S.", "affiliations": {"name": "Anton Pannekoek Institute for Astronomy and
+        GRAPPA, University of Amsterdam, NL-1090 GE Amsterdam, The Netherlands; School
+        of Astronomy &amp; Space Science, University of the Chinese Academy of Sciences,
+        Beijing 100012, People''s Republic of China ; National Astronomical Observatories,
+        Chinese Academy of Sciences, Beijing 100012, People''s Republic of China",
+        "years": ["2019"], "lastActiveDate": "2019/12"}}, {"authorName": "Marchant,
+        P.", "affiliations": {"name": "Center for Interdisciplinary Exploration and
+        Research in Astrophysics (CIERA) and Department of Physics and Astronomy,
+        Northwestern University, 2145 Sheridan Road, Evanston, IL 60208, USA", "years":
+        ["2019"], "lastActiveDate": "2019/12"}}, {"authorName": "Renzo, M.", "affiliations":
+        {"name": "Center for Computational Astrophysics, Flatiron Institute, New York,
+        NY 10010, USA", "years": ["2020"], "lastActiveDate": "2020/10"}}, {"authorName":
+        "Renzo, M.", "affiliations": {"name": "Computational Astrophysics, Flatiron
+        Institute, New York, NY 10010, USA", "years": ["2019"], "lastActiveDate":
+        "2019/12"}}, {"authorName": "de Mink, S. E.", "affiliations": {"name": "Anton
+        Pannekoek Institute for Astronomy and GRAPPA, University of Amsterdam, NL-1090
+        GE Amsterdam, The Netherlands; Center for Astrophysics \u2223 Harvard &amp;
+        Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA", "years": ["2020"],
+        "lastActiveDate": "2020/10"}}, {"authorName": "de Mink, S. E.", "affiliations":
+        {"name": "Anton Pannekoek Institute for Astronomy and GRAPPA, University of
+        Amsterdam, NL-1090 GE Amsterdam, The Netherlands; Center for Astrophysics\u2014Harvard
+        &amp; Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA", "years": ["2019"],
+        "lastActiveDate": "2019/12"}}]}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -50,28 +76,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '3002'
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 Jan 2022 16:12:41 GMT
+      - Sat, 26 Mar 2022 15:09:57 GMT
       Retry-After:
-      - '69563'
-      Server:
-      - openresty/1.15.8.1
+      - '86020'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '100'
       X-RateLimit-Remaining:
-      - '87'
+      - '92'
       X-RateLimit-Reset:
-      - '1643023925'
+      - '1648393418'
     status:
       code: 200
       message: OK

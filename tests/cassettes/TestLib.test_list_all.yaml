@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -16,27 +16,63 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//biblib/libraries
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA72Xb2+qSBjF3++nML4uZOaZGWaGd7Xa1v6RqrSabjYGcWyxggrY1t7c774z9vZK
-        slU3ZJfERAMcYX4558zDj/o8GqdBGqms7tb+/FFPgljpX/U4yLLoVY2yPEhHm0jNJ1n9pFaPJubk
-        VTzuPyXPo57cNGYf3AtWD3DaNecnKgvTaJlHi8RceLupnTb7tc97bMwFyToeTRbhOlZJbm4pjCjI
-        1ShMlf7a/j0g7FiIWJj7gFyCXYpsgSSjvP519TzI8lG8mETTqKihFmY+EJdSF5CNHAekNJqlSuNI
-        L+jzqRZviUq3h9fjeRTqQ9NgnqlfT7fOVGqeDJ98Xakl6WKs0tye2dMgjVVKeP3nSW1HK8jjxQ5P
-        6/y9vR4mwp958sXzLs8GXp68lcLD9+KhFsI+YJcxl3GbSsmcg3gAW1h/wMeaDdFUbQFIclIFnlhl
-        wQ4PiOZisL73+91gLq/UJFS9njgthYcdwkN9LFyyxYM4YZwed88vjeMibmNJHYSqwJMlOzgfs7Qz
-        7Xab3WQ1WaK3d3WlHs+fSsHBci8dYQHxAVwsXSS1eQRz8DE6XxqgLqG2wyiVrAo6+UchWqh5Tm5X
-        sfTPVnKYCbRqWo2wnHck3ocHIwtrI0iXGkK2cMCBg3hMtkA3lskW4y7DNuZUkErMky700+iy3jZ1
-        oaPH+eVd3mC9bt9TnpWHnU6s4nIlxOj3pLiFwAJNimtH6M61mfYROVzSRQ1zsWMDowJBFaSWy6iY
-        NPpCRJt11l0C2bP1anU2y9ugHCDq7AUkdXB8DC5zXCpsTtGRmsbCQkwz8jFzibafsMFxGMFVAArj
-        6ZMqEGoh1FfhatF7vx5LHIrh/RJ55QjBni7i2+BgH5vKdTGxKZYCi2OEtEYazVZmc+zQasKWxYWE
-        XbLHu1H22O0t+hf3YzpO04C9l5uCyPd0hJmCkGNqhWg6zAbCADnH6GgN9zFxmXRB2hIE8EoCpheo
-        EvW2I3T73Lx/ElngB97LJvN77Yf2dbukgb5va928JmLMLNf4QdgUJAd2pK1/a0CazQykENSpAtFN
-        +8Lb8Zl1Ti8a6Vz01oOW1fUHL8Pn88dyDoJ9eIpDn97MdOR0Wo7gKWpAtxbigKtpoLDY0G3BB5Nu
-        69IPvTmVg2ny0HiF/3QWAqSjYhoaSfPOoBPGMEHi2CBtJkXY2gcby0nOiFPJIG34wA7Q+m5+tRGd
-        t/4wwKx3no0DmPRL+uf7UdosVmg/bM2gdyRdQRTAOVjQYBrdwtJse8S0kK3nS4xoFYDukzzK52pS
-        u/lcag3vaK2m1pnzGFn+JpjA6+rqrm+1aTk7sb1x+20NPeDo0ZozzigcpwXb2VHLiLQdLDmthJYu
-        64Kb8vCjFWTrob+Mg8asOV/N2PtFOTehI3io2ZuQY0tMyOGBcVfWyCXIxWDKmoKoCI9ZZAHR8GbT
-        ue7GY/8lvum0hJekMD0v9/rxrxARYSP9IsGOIvqn5v8rpL9+/vE3HH471TcSAAA=
+      string: '{"libraries": [{"name": "massive_star_yields", "id": "JmbSgnh_R9yBjz7OaqV2AQ",
+        "description": "My ADS library", "num_documents": 8, "date_created": "2016-03-17T20:31:40.809547",
+        "date_last_modified": "2016-04-15T23:44:20.066299", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "atmo",
+        "id": "EFxIuXn8TjO9kOOHCWOtnw", "description": "My ADS library", "num_documents":
+        7, "date_created": "2016-04-01T21:55:57.499567", "date_last_modified": "2021-11-12T14:23:31.820973",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
+        {"name": "mesa", "id": "28DoWuUTSQal9JedceRR8A", "description": "My ADS library",
+        "num_documents": 5, "date_created": "2016-04-04T18:35:57.073574", "date_last_modified":
+        "2016-04-04T18:36:07.194600", "permission": "owner", "public": false, "num_users":
+        1, "owner": "robert.j.farmer37"}, {"name": "sn", "id": "zjrNfQQDQnqdp0wxeJeZFg",
+        "description": "My ADS library", "num_documents": 19, "date_created": "2016-08-23T22:19:09.498561",
+        "date_last_modified": "2016-08-23T22:24:34.654495", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "tzo",
+        "id": "0DF3Mqm9TCq9Xs80qD-BcA", "description": "My ADS library", "num_documents":
+        91, "date_created": "2016-10-14T19:42:19.862621", "date_last_modified": "2022-02-10T19:45:46.054336",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
+        {"name": "rot_mass_stars", "id": "btHPtB5RQSOeO-tcNNmemw", "description":
+        "My ADS library", "num_documents": 54, "date_created": "2017-02-24T17:34:44.585637",
+        "date_last_modified": "2017-02-24T17:35:16.254802", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "ppisn",
+        "id": "4k38I5NuQ32sh-v-NypMaw", "description": "My ADS library", "num_documents":
+        46, "date_created": "2017-09-08T12:56:48.740567", "date_last_modified": "2018-05-02T15:32:18.266531",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
+        {"name": "cmfgen", "id": "E00SecqoRxKb91c8XUp0Ow", "description": "My ADS
+        library", "num_documents": 29, "date_created": "2017-12-01T16:07:13.419818",
+        "date_last_modified": "2018-02-09T16:16:07.716430", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "sms",
+        "id": "H5ZP_sZQRoSGUb4brra5xQ", "description": "My ADS library", "num_documents":
+        3, "date_created": "2018-03-06T14:37:15.235206", "date_last_modified": "2018-03-07T13:59:29.928272",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
+        {"name": "libenew", "id": "MhDUg8saTaOkysTRIVIKIw", "description": "My ADS
+        library", "num_documents": 21, "date_created": "2021-09-05T13:16:18.429725",
+        "date_last_modified": "2021-09-05T13:29:34.298846", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "LIGO",
+        "id": "jNAGBrl8RuWE-QTWkXhFZQ", "description": "My ADS library", "num_documents":
+        2, "date_created": "2021-11-12T14:23:19.017164", "date_last_modified": "2021-11-12T14:23:28.707211",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
+        {"name": "ccsn", "id": "I87WdQEHTcOl49WfnVBv2g", "description": "My ADS library",
+        "num_documents": 19, "date_created": "2020-07-08T09:44:15.513087", "date_last_modified":
+        "2021-04-02T13:21:18.975363", "permission": "owner", "public": false, "num_users":
+        1, "owner": "robert.j.farmer37"}, {"name": "ccsn2", "id": "uPlJy8NwSXa15RFsba2dSQ",
+        "description": "My ADS library", "num_documents": 25, "date_created": "2021-08-11T14:25:35.242268",
+        "date_last_modified": "2022-01-19T12:33:59.985104", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "Untitled
+        Library 1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library",
+        "num_documents": 52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified":
+        "2022-01-23T14:16:34.386170", "permission": "owner", "public": false, "num_users":
+        1, "owner": "robert.j.farmer37"}, {"name": "new2", "id": "tczEasuXTpmaBjDlqj5xGQ",
+        "description": "My ADS library", "num_documents": 0, "date_created": "2021-04-02T14:59:06.913337",
+        "date_last_modified": "2021-09-05T10:30:12.298428", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "new
+        lib2", "id": "XLyNKQmbTkmLNE8Onr2fFA", "description": "My ADS library", "num_documents":
+        0, "date_created": "2021-04-02T14:59:38.048357", "date_last_modified": "2021-04-02T14:59:38.048363",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"}]}
+
+        '
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -54,19 +90,14 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '4663'
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 Jan 2022 14:16:25 GMT
-      Server:
-      - openresty/1.15.8.1
+      - Sat, 26 Mar 2022 15:03:10 GMT
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
     status:
       code: 200

@@ -249,13 +249,17 @@
 #         return False
 
 
-import pyadsapi.api.search as search
-import pyadsapi.api.token as token
+import pyadsapi.api.search as _search
+import pyadsapi.api.token as _token
 
 
 def first_author(author):
-    return search.search(token, query=f'author:"{author}"')
+    return _search.search(_token, query=f'author:"^{author}"')
 
 
 def author_year(author, year):
-    return search.search(token, query=f'author:"{author}" year:{year}')
+    return _search.search(_token, query=f'author:"^{author}" year:{year}')
+
+
+def search(query, fields=None):
+    return _search.search(_token, query=query, fields=fields)

@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -16,38 +16,54 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//export/ads/2020ApJ...902L..36F
   response:
     body:
-      string: !!binary |
-        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
-        A0L2T85+DgAA
+      string: "%R 2020ApJ...902L..36F\n%T Constraints from Gravitational-wave Detections
+        of Binary Black Hole Mergers on the <SUP>12</SUP>C(\u03B1, \u03B3)<SUP>16</SUP>O
+        Rate\n%A Farmer, R.; Renzo, M.; de Mink, S. E.; Fishbach, M.; Justham, S.\n%F
+        AA(Anton Pannekoek Institute for Astronomy and GRAPPA, University of\nAmsterdam,
+        NL-1090 GE Amsterdam, The Netherlands; Center for\nAstrophysics \u2223 Harvard
+        &amp; Smithsonian, 60 Garden Street, Cambridge,\nMA 02138, USA), AB(Center
+        for Computational Astrophysics, Flatiron\nInstitute, New York, NY 10010, USA),
+        AC(Anton Pannekoek Institute for\nAstronomy and GRAPPA, University of Amsterdam,
+        NL-1090 GE Amsterdam, The\nNetherlands; Center for Astrophysics \u2223 Harvard
+        &amp; Smithsonian, 60\nGarden Street, Cambridge, MA 02138, USA), AD(Department
+        of Astronomy and\nAstrophysics, University of Chicago, Chicago, IL 60637,
+        USA), AE(Anton\nPannekoek Institute for Astronomy and GRAPPA, University of
+        Amsterdam,\nNL-1090 GE Amsterdam, The Netherlands; School of Astronomy &amp;
+        Space\nScience, University of the Chinese Academy of Sciences, Beijing 100012,\nPeople's
+        Republic of China; National Astronomical Observatories, Chinese\nAcademy of
+        Sciences, Beijing 100012, People's Republic of China)\n%J The Astrophysical
+        Journal\n%V 902\n%D 10/2020\n%P L36\n%K Stellar evolution, Supernovae, Core-collapse
+        supernovae, Nuclear\nastrophysics, Stellar mass black holes, Astrophysical
+        black holes,\nMassive stars, Late stellar evolution, 1599, 1668, 304, 1129,
+        1611, 98,\n732, 911, Astrophysics - High Energy Astrophysical Phenomena\n%I
+        ABSTRACT: Abstract;\n%I CITATIONS: Citations to the Article;\n%I REFERENCES:
+        References in the Article;\n%I Co-Reads: Co-Reads;\n%I EPRINT_HTML: arXiv
+        Article;\n%I PUB_HTML: Publisher Article;\n%I EPRINT_PDF: arXiv PDF;\n%I PUB_PDF:
+        Publisher PDF;\n%I SIMBAD: SIMBAD Database at the CDS;\n%U https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F\n%B
+        Gravitational-wave detections are starting to allow us to probe the physical
+        processes in the evolution of very massive stars through the imprints they
+        leave on their final remnants. Stellar evolution theory predicts the existence
+        of a gap in the black hole mass distribution at high mass due to the effects
+        of pair instability. Previously, we showed that the location of the gap is
+        robust against model uncertainties, but it does depend sensitively on the
+        uncertain ${}^{12}{\\rm{C}}{(\\alpha ,\\gamma )}^{16}{\\rm{O}}$ rate. This
+        rate is of great astrophysical significance and governs the production of
+        oxygen at the expense of carbon. We use the open-source MESA stellar evolution
+        code to evolve massive helium stars to probe the location of the mass gap.
+        We find that the maximum black hole mass below the gap varies between $40\\,{M}_{\\odot
+        }$ and $90\\,{M}_{\\odot }$ , depending on the strength of the uncertain ${}^{12}{\\rm{C}}{(\\alpha
+        ,\\gamma )}^{16}{\\rm{O}}$ reaction rate. With the first 10 gravitational-wave
+        detections of black holes, we constrain the astrophysical S-factor for ${}^{12}{\\rm{C}}{(\\alpha
+        ,\\gamma )}^{16}{\\rm{O}}$ , at $300\\,\\mathrm{keV}$ , to ${S}_{300} 175\\,\\,{\\rm{keV}}\\,{\\rm{b}}$
+        at 68% confidence. With ${ \\mathcal O }(50)$ detected binary black hole mergers,
+        we expect to constrain the S-factor to within \xB110-30 ${\\rm{keV}}\\,{\\rm{b}}$
+        . We also highlight a role for independent constraints from electromagnetic
+        transient surveys. The unambiguous detection of pulsational pair-instability
+        supernovae would imply that ${S}_{300} 79\\,{\\rm{keV}}\\,{\\rm{b}}$ . Degeneracies
+        with other model uncertainties need to be investigated further, but probing
+        nuclear stellar astrophysics poses a promising science case for the future
+        gravitational-wave detectors.\n%Y DOI: 10.3847/2041-8213/abbadd\n%Y eprintid:
+        arXiv:2006.06678\n\n\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -65,28 +81,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '3710'
       Content-Type:
       - text/plain
       Date:
-      - Sun, 23 Jan 2022 13:34:19 GMT
+      - Sat, 26 Mar 2022 15:03:06 GMT
       Retry-After:
-      - '12874'
-      Server:
-      - openresty/1.15.8.1
+      - '86397'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4871'
+      - '4994'
       X-RateLimit-Reset:
-      - '1642957734'
+      - '1648393384'
     status:
       code: 200
       message: OK

@@ -5,7 +5,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -21,7 +21,8 @@ interactions:
   response:
     body:
       string: '{"resolved": [{"refstring": "farmer,r et al 2020", "score": "0.0",
-        "bibcode": "..................."}]}'
+        "bibcode": "...................", "comment": "Exception: (''Not enough information
+        to resolve the record.'', ''farmer,r et al 2020'')"}]}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -40,24 +41,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '102'
+      - '200'
       Content-Type:
       - application/json; charset=UTF8
       Date:
-      - Sun, 23 Jan 2022 17:02:01 GMT
+      - Sat, 26 Mar 2022 15:03:43 GMT
       Retry-After:
-      - '85845'
-      Server:
-      - openresty/1.15.8.1
+      - '86399'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '100'
       X-RateLimit-Remaining:
-      - '93'
+      - '98'
       X-RateLimit-Reset:
-      - '1643043167'
+      - '1648393423'
     status:
       code: 200
       message: OK

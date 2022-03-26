@@ -6,7 +6,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -45,20 +45,18 @@ interactions:
       Content-Type:
       - application/json; charset=UTF8
       Date:
-      - Sun, 23 Jan 2022 17:02:01 GMT
+      - Sat, 26 Mar 2022 15:03:43 GMT
       Retry-After:
-      - '85846'
-      Server:
-      - openresty/1.15.8.1
+      - '86400'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '100'
       X-RateLimit-Remaining:
-      - '94'
+      - '99'
       X-RateLimit-Reset:
-      - '1643043168'
+      - '1648393424'
     status:
       code: 200
       message: OK

@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -16,12 +16,15 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//resolver/2020ApJ...902L..36F/esource
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA6VQW0vDMBj9KyXg20zStHR1b15aVKaWXZ5ERptEDZamJNlw1P53k475oO0o+PZ9
-        h3PjNEBztROUg5kHwMQDOTVCVu5jQtdlvndgKaoPbbEGULmtjL1CixaioJJ1SoIJvqzvIYQXmMwh
-        DKL0qNuYfd1xkuXTenGdOFxxKhVzjs8NMMKUHeHdmFrPEMrVp9hBqd5QXmhEMI4gjqJp7JRbVY6l
-        9oV/Jdni7nG1uV09zEE78U6m1+x1bPpf6qn07CYdCGdSdH4+hkEcTs9ISnDon8fED+ydF0XOWE+R
-        sbLeUtn6amgPay1krangFeXQnoeplRG05Mc09JOFDklujV8l/2c0WLsb8qVtvwH4MJ22xgIAAA==
+      string: '{"service": "", "action": "display", "links": {"count": 4, "bibcode":
+        "2020ApJ...902L..36F", "link_type": "ESOURCE", "records": [{"title": "https://arxiv.org/abs/2006.06678",
+        "url": "https://arxiv.org/abs/2006.06678", "link_type": "ESOURCE|EPRINT_HTML"},
+        {"title": "https://arxiv.org/pdf/2006.06678", "url": "https://arxiv.org/pdf/2006.06678",
+        "link_type": "ESOURCE|EPRINT_PDF"}, {"title": "https://doi.org/10.3847%2F2041-8213%2Fabbadd",
+        "url": "https://doi.org/10.3847%2F2041-8213%2Fabbadd", "link_type": "ESOURCE|PUB_HTML"},
+        {"title": "http://iopscience.iop.org/article/10.3847/2041-8213/abbadd/pdf",
+        "url": "http://iopscience.iop.org/article/10.3847/2041-8213/abbadd/pdf", "link_type":
+        "ESOURCE|PUB_PDF"}]}}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -39,28 +42,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '710'
       Content-Type:
       - application/json
       Date:
-      - Mon, 24 Jan 2022 18:30:15 GMT
+      - Sat, 26 Mar 2022 15:03:44 GMT
       Retry-After:
-      - '86008'
-      Server:
-      - openresty/1.15.8.1
+      - '86359'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4995'
+      - '4968'
       X-RateLimit-Reset:
-      - '1643135024'
+      - '1648393384'
     status:
       code: 200
       message: OK

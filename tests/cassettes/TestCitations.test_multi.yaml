@@ -5,7 +5,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -20,20 +20,29 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//citation_helper
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA32USW/bMBBG7/0VAx9ycghJTm2nN9tZnC5GYAUt0KKHsTSxiFCkQFJKnKL/vUOp
-        WWxAvnnR8uZ93/DXn8FGbjKT0+ATDJIoiWbVZyHE9HwiRBxF3wdDGLjM2PD/iD976VV77a1RqvZS
-        b8EXBLco7anUzuNGKul38A2dg2us4N5YmEuNdgdzhdkDLI0ixzdZU28LSOuK7OllnvOTvNEwyzJL
-        XvInqeHGGYWe8u4BklygwdoXxgaEBjWkRg/hq4CZgIUA8oBKDP4OYW+u+Hx8xnOlPJg4FyKJ4qv3
-        cyXv51pR7a3UBm6tycg5ZkWdtwPClbElvsCFCWVDkHq03TXtLNo0SGIf9Mo8KrJD+CGVklgG2H7S
-        SZdAfDblGKLRupf05lU3mwlES7kt1A4uG6MalpZ6UgotfONnqwN1a3zAZjeE66Mkt8W6+cooTDKa
-        nM97SS52GkuZOTD3bxLg8qlSxgVba3K1artyb0154HIfbI72Af0Qfh4Dm86qkzSkmYRAx/1hviXy
-        RuPgRud1xoI2u663nDT/0Ob65nR3EKFFRUFYKHJ6BG4y7vJL4kiIs7Oo39rClFWovMvQe7JBj6kw
-        e40ToULrJSrONKctabK8DECKMm/5vkqhKxHQQ8HBg6eyClfUltxB/+Z1VrQF/CxgfYR9Gv0XO+Yt
-        ieOPq36xpuTmU2Z0HoSwUZm1abYduLbYSN9+RwULPimwcrTPtMKcngvJ23sh4MsxqGR2MgsLEY/Z
-        6mS07IVqzxwO2XU1oydviTELUrIuwYU9PRCzxBI1I/wQcHpUzHgVxIpRMuJViKO0fxWIoyylfjkY
-        l/VmowhYFL9f+45su+fnEfkUMRtHtukU7jOmWVH75yHMBVwdQ5zOLlYXd9w57l0yHS16Ee8KJjS6
-        zhTx6bAm7Kq/5nI5+L7/8gXyIa2QFV2TsVtiW+8b9PvDP+XlurdBBgAA
+      string: '[{"bibcode": "2020ApJ...897..100V", "score": 3, "title": "Polluting
+        the Pair-instability Mass Gap for Binary Black Holes through Super-Eddington
+        Accretion in Isolated Binaries", "author": "van Son, L. A. C. et al."}, {"bibcode":
+        "1964ApJS....9..201F", "score": 2, "title": "Neutrino Processes and Pair Formation
+        in Massive Stars and Supernovae.", "author": "Fowler, William A. et al."},
+        {"bibcode": "1967ApJ...148..803R", "score": 2, "title": "Instabilities in
+        Highly Evolved Stellar Models", "author": "Rakavy, G. et al."}, {"bibcode":
+        "1967PhRvL..18..379B", "score": 2, "title": "Dynamics of Supernova Explosion
+        Resulting from Pair Formation", "author": "Barkat, Z. et al."}, {"bibcode":
+        "1968Ap&SS...2...96F", "score": 2, "title": "Supernovae Explosions Induced
+        by Pair-Production Instability", "author": "Fraley, Gary S. et al."}, {"bibcode":
+        "1976ApJ...210..440B", "score": 2, "title": "Compton scattering opacities
+        in a partially degenerate electron plasma at high temperatures.", "author":
+        "Buchler, J. R. et al."}, {"bibcode": "1980Ap&SS..69..115N", "score": 2, "title":
+        "Some Secondary Indications of Gravitational Collapse", "author": "Nadezhin,
+        D. K. et al."}, {"bibcode": "1982A&A...116..273H", "score": 2, "title": "Mass
+        loss from extreme helium stars.", "author": "Hamann, W. -R. et al."}, {"bibcode":
+        "1986Natur.323..310S", "score": 2, "title": "Determining the Hubble constant
+        from gravitational wave observations", "author": "Schutz, B. F. et al."},
+        {"bibcode": "1988ADNDT..40..283C", "score": 2, "title": "Thermonuclear Reaction
+        Rates V", "author": "Caughlan, Georgeann R. et al."}]
+
+        '
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -51,28 +60,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '1601'
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 Jan 2022 16:19:42 GMT
+      - Sat, 26 Mar 2022 15:03:38 GMT
       Retry-After:
-      - '2951'
-      Server:
-      - openresty/1.15.8.1
+      - '86365'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4747'
+      - '4973'
       X-RateLimit-Reset:
-      - '1642957734'
+      - '1648393384'
     status:
       code: 200
       message: OK

@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -16,16 +16,40 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:2020&fl=abstract,author,bibcode,pubdate,title,pub&fq=&start=0&rows=1
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA1VSTW+bQBC951eM9gwuxp9CyqE9WK16auRD1cqNBhgMybJDd5emTuT/3lkbanJB
-        muG9N2/fzNsdgLLkOjaOPhOWZFX2Jk1pO4++dypLomv9bd+0pLL5Zqg7tNi6ES6N3ypTvyq0LdnI
-        wonQZmmSJioaAZUWBObOWyx8hL2v2UZ5kxdcUtT1eYmeIt94faluPHFivVAnUo3xZA3qR83HY2OO
-        j6Mb9T3+2L6aeC8zKP5S3j8w+/t5vJ5TuaDlKl6s0nyzwGq1Sorldpusl1ukVT61GR5yKy2/BN35
-        rfMSzDw5Nup8jqYJShjK9O2Oe1OqLI1G50mkSi5E5ecgMWYm3OH9ohjCejUlz2azxXqzXW7T3f+Z
-        AhyDE2TdOM/2BGhK6CxXjSaQ8BDQEjj8Q+XwxUpiAl8TVI11HrysMJSnC1KzLFxADhC6k2zDQNcU
-        zzqgNc1gL3MAtZYAoO2LGip0Qc9SbOVWJHZoDHA1DBBeMOTxmRz03ZWiyTlwnSxjBl+briNTo4zR
-        7B3U4lE+YpbFVt4fReSvcCu2ULBmm6N17yK4nIzEqHbXM4MHzkkSPkxA4XQy9YMMl6ze98OBDUHH
-        SRqn8+n/y+EFbft0PeIPLTkMTjP4NHpTh/NBKOfz3T9sDKuROwMAAA==
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":10,\n    \"params\":{\n
+        \     \"q\":\"^farmer,r year:2020\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-623f2b29-1ba6e50832d23d925e1eda28\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"1\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
+        \     {\n        \"bibcode\":\"2020ApJ...902L..36F\",\n        \"abstract\":\"Gravitational-wave
+        detections are starting to allow us to probe the physical processes in the
+        evolution of very massive stars through the imprints they leave on their final
+        remnants. Stellar evolution theory predicts the existence of a gap in the
+        black hole mass distribution at high mass due to the effects of pair instability.
+        Previously, we showed that the location of the gap is robust against model
+        uncertainties, but it does depend sensitively on the uncertain ${}^{12}{\\\\rm{C}}{(\\\\alpha
+        ,\\\\gamma )}^{16}{\\\\rm{O}}$ rate. This rate is of great astrophysical significance
+        and governs the production of oxygen at the expense of carbon. We use the
+        open-source MESA stellar evolution code to evolve massive helium stars to
+        probe the location of the mass gap. We find that the maximum black hole mass
+        below the gap varies between $40\\\\,{M}_{\\\\odot }$ and $90\\\\,{M}_{\\\\odot
+        }$ , depending on the strength of the uncertain ${}^{12}{\\\\rm{C}}{(\\\\alpha
+        ,\\\\gamma )}^{16}{\\\\rm{O}}$ reaction rate. With the first 10 gravitational-wave
+        detections of black holes, we constrain the astrophysical S-factor for ${}^{12}{\\\\rm{C}}{(\\\\alpha
+        ,\\\\gamma )}^{16}{\\\\rm{O}}$ , at $300\\\\,\\\\mathrm{keV}$ , to ${S}_{300}\\\\gt
+        175\\\\,\\\\,{\\\\rm{keV}}\\\\,{\\\\rm{b}}$ at 68% confidence. With ${ \\\\mathcal
+        O }(50)$ detected binary black hole mergers, we expect to constrain the S-factor
+        to within \xB110-30 ${\\\\rm{keV}}\\\\,{\\\\rm{b}}$ . We also highlight a
+        role for independent constraints from electromagnetic transient surveys. The
+        unambiguous detection of pulsational pair-instability supernovae would imply
+        that ${S}_{300}\\\\gt 79\\\\,{\\\\rm{keV}}\\\\,{\\\\rm{b}}$ . Degeneracies
+        with other model uncertainties need to be investigated further, but probing
+        nuclear stellar astrophysics poses a promising science case for the future
+        gravitational-wave detectors.\",\n        \"author\":[\"Farmer, R.\",\n          \"Renzo,
+        M.\",\n          \"de Mink, S. E.\",\n          \"Fishbach, M.\",\n          \"Justham,
+        S.\"],\n        \"pub\":\"The Astrophysical Journal\",\n        \"pubdate\":\"2020-10-00\",\n
+        \       \"title\":[\"Constraints from Gravitational-wave Detections of Binary
+        Black Hole Mergers on the <SUP>12</SUP>C(\u03B1, \u03B3)<SUP>16</SUP>O Rate\"]}]\n
+        \ }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -43,28 +67,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '2620'
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 Jan 2022 11:38:45 GMT
+      - Sat, 26 Mar 2022 15:03:05 GMT
       Retry-After:
-      - '19808'
-      Server:
-      - openresty/1.15.8.1
+      - '86398'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4905'
+      - '4996'
       X-RateLimit-Reset:
-      - '1642957734'
+      - '1648393384'
     status:
       code: 200
       message: OK

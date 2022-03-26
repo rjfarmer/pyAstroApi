@@ -5,7 +5,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -20,11 +20,18 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//metrics
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA+2QzQ7CIBCE7z7FhrNpikZNfBXjYYGtIbZAgGpi03cX6sGf4smr15lvdiczsHDW
-        zpECoYW0igLbw+G4BCYwaAkhYszSwEzfCfJgG3DoyGeRJ8xY32Grb+nCpIO0vYnJrKtVsqON2MIz
-        6wlVjm7rTXLxQh5P9NXvSGk0ZbuqE+BJkokFgJeeK3s1rX0Aa86LBT6Y6cusRgmaVXmFduP7oqln
-        Q55I/af9fdpxcQc3DvUHxgIAAA==
+      string: '{"skipped bibcodes": [], "basic stats": {"number of papers": 1, "normalized
+        paper count": 0.2, "total number of reads": 627, "average number of reads":
+        627, "median number of reads": 627.0, "recent number of reads": 34, "total
+        number of downloads": 323, "average number of downloads": 323.0, "median number
+        of downloads": 323.0, "recent number of downloads": 19}, "basic stats refereed":
+        {"number of papers": 1, "normalized paper count": 0.2, "total number of reads":
+        627, "average number of reads": 627, "median number of reads": 627.0, "recent
+        number of reads": 34, "total number of downloads": 323, "average number of
+        downloads": 323.0, "median number of downloads": 323.0, "recent number of
+        downloads": 19}}
+
+        '
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -42,28 +49,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '712'
       Content-Type:
       - application/json
       Date:
-      - Sun, 23 Jan 2022 15:56:03 GMT
+      - Sat, 26 Mar 2022 15:03:32 GMT
       Retry-After:
-      - '86036'
-      Server:
-      - openresty/1.15.8.1
+      - '86400'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '985'
+      - '999'
       X-RateLimit-Reset:
-      - '1643039400'
+      - '1648393413'
     status:
       code: 200
       message: OK

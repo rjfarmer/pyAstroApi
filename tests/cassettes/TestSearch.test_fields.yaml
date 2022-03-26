@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
@@ -16,12 +16,12 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:2020&fl=page,volume&fq=&start=0
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA01QTUvEMBS8768o75xC+mG7BvbgRRS8KHsQlnXJJq+l0iY1aV205L+bauP2OPOG
-        mXkzbaIIDNpeK4sPyCUaYJMnPW0HPowWGCV/+HnfdAgszxfcc8M7G+Se+AAGbxU3HRpioi/khqU0
-        pUCCoGq9ouc1kk/djt7s/+KzzOCPK3GjBjSKt6dW13Wj6lPIg9f4rvtW8d5wgfGj3L1oPeySuEhQ
-        5Fkh4kTyZFucb7KqEpjTsiyxLMRWrIrMVa/Q6Mvsm6zSL3Obd6sVOEfWI/l/QY3dvR6VBJaSUJ0S
-        kFp4m8NiMblgFgb63az2Dgd4ygo4kiu/7MHglqbgjv7g3OYHJU2RSJ0BAAA=
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":15,\n    \"params\":{\n
+        \     \"q\":\"^farmer,r year:2020\",\n      \"fl\":\"page,volume\",\n      \"start\":\"0\",\n
+        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-623f2b28-7c7ee1dd2a1ddfce17c62ed0\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
+        \     {\n        \"page\":[\"L36\"],\n        \"volume\":\"902\"},\n      {}]\n
+        \ }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -39,28 +39,23 @@ interactions:
         https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
+      Content-Length:
+      - '413'
       Content-Type:
       - application/json
       Date:
-      - Sat, 22 Jan 2022 17:48:28 GMT
+      - Sat, 26 Mar 2022 15:03:04 GMT
       Retry-After:
-      - '84026'
-      Server:
-      - openresty/1.15.8.1
+      - '86399'
       Set-Cookie: DUMMY
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Accept-Encoding
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4942'
+      - '4998'
       X-RateLimit-Reset:
-      - '1642957735'
+      - '1648393384'
     status:
       code: 200
       message: OK
