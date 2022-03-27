@@ -105,7 +105,7 @@ class article:
         # Look to see if we have a cached version already
         if bibcode is not None:
             if bibcode in _bookcase:
-                self.from_data(_bookcase[bibcode]._data)
+                self.from_data(_bookcase[bibcode].as_dict())
 
         if bibcode is not None:
             self.from_bibcode(bibcode)
@@ -142,7 +142,7 @@ class article:
 
             if self.bibcode in _bookcase:
                 if attr in _bookcase[self.bibcode]:
-                    x = _bookcase[self.bibcode]._data
+                    x = _bookcase[self.bibcode].as_dict()
             else:
                 fields = ""
                 if len(self._data) == 1:  # Load basic data
