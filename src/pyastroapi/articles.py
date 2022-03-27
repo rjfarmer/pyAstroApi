@@ -9,7 +9,7 @@ import pyastroapi.api.visualization as _visualization
 import pyastroapi.api.resolver as _resolve
 import pyastroapi.api.http as _http
 
-import pyastroapi.search as search
+import pyastroapi.search as s
 import pyastroapi.bibtex as bib
 
 import typing as t
@@ -89,12 +89,23 @@ class PDF:
 
 
 class article:
-    def __init__(self, bibcode: str = None, data: t.Dict = None, bibtex: str = None):
+    def __init__(
+        self,
+        bibcode: str = None,
+        data: t.Dict = None,
+        bibtex: str = None,
+        search: str = None,
+    ):
         self.bibcode = None
         self._data = {}
 
         self._refs = None
         self._cites = None
+
+        # Look to see if we have a cached version already
+        if bibcode is not None:
+            if bibcode in _bookcase:
+                self.from_data(_bookcase[bibcode]._data)
 
         if bibcode is not None:
             self.from_bibcode(bibcode)
@@ -102,22 +113,24 @@ class article:
             self.from_data(data)
         elif bibtex is not None:
             self.from_bibtex(bibtex)
+        elif search is not None:
+            self.from_search(search)
 
     def from_bibcode(self, bibcode: str):
         self.bibcode = bibcode
-        self._data = {}
         self._data["bibcode"] = self.bibcode
 
     def from_data(self, data: t.Dict):
         self._data = data
-        if "bibcode" in self._data:
+        if "bibcode" in data:
             self.bibcode = self._data["bibcode"]
 
     def from_bibtex(self, bibtex: str):
-        self._data = {}
         bd = bib.parse_bibtex(bibtex)
-        self._data = list(search.search(bd[0], limit=1))[0]
-        self.bibcode = self._data["bibcode"]
+        self.from_data(list(s.search(bd[0], limit=1))[0])
+
+    def from_search(self, search: str):
+        self.from_data(list(s.search(search, limit=1))[0])
 
     def add_to_lib(self, libaray: str):
         raise NotImplementedError
@@ -127,24 +140,33 @@ class article:
             if "bibcode" not in self._data:
                 raise ValueError("Bibcode must be set first")
 
-            fields = ""
-            if len(self._data) == 1:  # Load basic data
-                fields = _search._short_fl
+            if self.bibcode in _bookcase:
+                if attr in _bookcase[self.bibcode]:
+                    x = _bookcase[self.bibcode]._data
+            else:
+                fields = ""
+                if len(self._data) == 1:  # Load basic data
+                    fields = _search._short_fl
 
-            if (
-                attr not in self._data and attr not in fields
-            ):  # Add field if we dont have it allready
-                fields = f"{attr}," + fields
+                if (
+                    attr not in self._data and attr not in fields
+                ):  # Add field if we dont have it allready
+                    fields = f"{attr}," + fields
 
-            x = list(
-                search.search(
-                    query=f"bibcode:{self.bibcode}",
-                    limit=1,
-                    fields=fields,
-                )
-            )[0]
+                x = list(
+                    s.search(
+                        query=f"bibcode:{self.bibcode}",
+                        limit=1,
+                        fields=fields,
+                    )
+                )[0]
 
-            self._data = {**self._data, **x}
+            self._data.update(x)
+
+            if self.bibcode not in _bookcase:
+                _bookcase.add_data([self._data])
+            else:
+                _bookcase[self.bibcode].update(self._data)
 
         return self._data[attr]
 
@@ -189,7 +211,7 @@ class article:
         return self.bibcode
 
     def __reduce__(self):
-        return (article, (None, self._data, None))
+        return (article, (None, self._data, None, None))
 
     def __dir__(self):
         return (
@@ -221,7 +243,7 @@ class article:
         if self._refs is not None:
             return self._refs
 
-        data = search.references(self.bibcode)
+        data = s.references(self.bibcode)
 
         self._refs = journal()
         for bib in data:
@@ -233,7 +255,7 @@ class article:
         if self._cites is not None:
             return self._cites
 
-        data = search.citations(self.bibcode)
+        data = s.citations(self.bibcode)
 
         self._cites = journal()
         for bib in data:
@@ -244,7 +266,11 @@ class article:
 
 class journal:
     def __init__(
-        self, bibcodes: t.List = None, data: t.List = None, bibtex: str = None
+        self,
+        bibcodes: t.List = None,
+        data: t.List = None,
+        bibtex: str = None,
+        search: str = None,
     ):
         self._data = {}
 
@@ -254,24 +280,26 @@ class journal:
             self.from_data(data)
         elif bibtex is not None:
             self.from_bibtex(bibtex)
+        elif search is not None:
+            self.from_search(search)
 
     def from_bibcodes(self, bibcodes: t.List):
-        self._data = {}
         for bib in bibcodes:
             self.add_bibcode(bib)
 
     def from_data(self, data: t.List):
-        self._data = {}
         self.add_data(data)
 
     def from_bibtex(self, bibtex: str):
-        self._data = {}
         bd = bib.parse_bibtex(bibtex)
         for b in bd:
-            self.add_data(search.search(b, limit=1))
+            self.add_data(s.search(b, limit=1))
 
     def add_bibcode(self, bibcode: t.List):
         self._data[bibcode] = article(bibcode=bibcode)
+
+    def from_search(self, search: str):
+        self.add_data(s.search(search))
 
     def add_data(self, data: t.List):
         for dd in data:
@@ -280,6 +308,9 @@ class journal:
 
     def add_bibtex(self, bibtex: str):
         raise NotImplementedError
+
+    def add_search(self, search: str):
+        self.from_search(search)
 
     def bibcodes(self):
         return list(self.keys())
@@ -306,7 +337,7 @@ class journal:
         yield from self._data
 
     def __reduce__(self):
-        return (journal, (None, self._data, None))
+        return (journal, (None, self._data, None, None))
 
     def __dir__(self):
         return list(self.keys()) + list(self.__dict__.keys()) + _search._fields
@@ -340,207 +371,5 @@ class journal:
                 self._data.pop(bib)
 
 
-# class article(object):
-#     """
-#     A single article that is given by either a bibcode, arxic id, or doi.
-#     Bibcodes are allways the prefered ID as the doi or arxiv id we query  ADS for its bibcode.
-
-#     We defer actually searching the ads untill the user asks for a field.
-#     Thus we can make as many article as we want (if we allready know the bibcode)
-#     without hitting the ADS api limits.
-#     """
-
-#     def __init__(self, adsdata, bibcode=None, data=None):
-#         self.adsdata = adsdata
-#         self._bibcode = bibcode
-#         self._data = None
-#         self._citations = None
-#         self._references = None
-#         self.which_file = None
-
-#         if data is not None:
-#             self.data = data
-#             self.bibcode = self.data["bibcode"]
-
-#     def search(self, force=False):
-#         if self.data is None or force:
-#             self.data = self.adsdata.search.bibcode_single(self.bibcode)
-
-#     @property
-#     def bibcode(self):
-#         return self._bibcode
-
-#     @property.setter
-#     def bibcode(self, bibcode):
-#         self._bibcode = bibcode
-
-#     @property
-#     def data(self):
-#         if self._data is None:
-#             self.search()
-
-#         return self._data
-
-#     @property.setter
-#     def data(self, new_data):
-#         self._data = new_data
-
-#     def __gettattr__(self, key):
-#         return self.data[key]
-
-#     def __getitem__(self, key):
-#         return self.data[key]
-
-#     @property
-#     def title(self):
-#         return self.data["title"][0]
-
-#     @property
-#     def authors(self):
-#         return "; ".join(self.data["author"])
-
-#     @property
-#     def author(self):
-#         return self.authors
-
-#     @property
-#     def first_author(self):
-#         return self.data["author"][0]
-
-#     @property
-#     def journal(self):
-#         return self.data["bibstem"][0]
-
-#     def filename(self):
-#         return self.bibcode + ".pdf"
-
-#     @property
-#     def year(self):
-#         return self.data["year"]
-
-#     @property
-#     def abstract(self):
-#         if "abstract" in self.data:
-#             return self.data["abstract"]
-#         else:
-#             return ""
-
-#     @property
-#     def name(self):
-#         return self.first_author + " " + self.year
-
-#     @property
-#     def ads_url(self):
-#         return "https://ui.adsabs.harvard.edu/abs/" + self.bibcode
-
-#     @property
-#     def arxiv_url(self):
-#         arxiv_id = None
-#         for i in self.data["identifier"]:
-#             if i.startswith("arXiv:"):
-#                 arxiv_id = i.replace("arXiv:", "")
-
-#         if arxiv_id is not None:
-#             return "https://arxiv.org/abs/" + arxiv_id
-#         else:
-#             return ""
-
-#     @property
-#     def journal_url(self):
-#         doi = None
-#         for i in self.data["identifier"]:
-#             if i.startswith("10."):
-#                 doi = i
-#         if doi is not None:
-#             return "https://doi.org/" + doi
-#         else:
-#             return ""
-
-#     @property
-#     def citation_count(self):
-#         if "citation_count" not in self.data:
-#             return 0
-#         else:
-#             return self.data["citation_count"]
-
-#     @property
-#     def reference_count(self):
-#         if "reference" not in self.data:
-#             return 0
-#         else:
-#             return len(self.data["reference"])
-
-#     def pdf(self, filename):
-#         # There are multiple possible locations for the pdf
-#         # Try to avoid the journal links as that usally needs a
-#         # vpn working to use a university ip address
-#         strs = ["/PUB_PDF", "/EPRINT_PDF", "/ADS_PDF"]
-
-#         if os.path.exists(filename):
-#             return
-
-#         got_file = False
-#         for i in strs:
-#             url = urls.urls["pdfs"] + str(self.bibcode) + i
-
-#             # Pretend to be Firefox otherwise we hit captchas
-#             headers = {"user-agent": "Mozilla /5.0 (Windows NT 10.0; Win64; x64)"}
-#             try:
-#                 r = requests.get(url, allow_redirects=True, headers=headers)
-#             except requests.exceptions.RequestException:
-#                 continue
-
-#             if r.content.startswith(b"<!DOCTYPE html"):
-#                 continue
-
-#             with open(filename, "wb") as f:
-#                 f.write(r.content)
-#                 self.which_file = i
-#                 got_file = True
-#                 break
-
-#         if not os.path.exists(filename):
-#             raise utils.FileDonwnloadFailed("Couldn't download file")
-
-#     def citations(self):
-#         if self._citations is None:
-#             self._citations = self.adsdata.search(
-#                 'citations(bibcode:"' + self.bibcode + '")'
-#             )
-#         return self._citations
-
-#     def references(self):
-#         if self._references is None:
-#             self._references = self.adsdata.search(
-#                 'references(bibcode:"' + self.bibcode + '")'
-#             )
-#         return self._references
-
-#     def bibtex(self):
-#         data = {"bibcode": [self.bibcode]}
-#         r = requests.post(
-#             urls.urls["bibtex"],
-#             auth=utils._BearerAuth(self.adsdata.token),
-#             headers={"Content-Type": "application/json"},
-#             json=data,
-#         ).json()
-
-#         if "error" in r:
-#             raise ValueError(r["error"])
-
-#         return r["export"]
-
-#     def __str__(self):
-#         return self.name
-
-#     def __reduce__(self):
-#         return (article, (self.adsdata, self.bibcode))
-
-#     def __hash__(self):
-#         return hash(self.bibcode)
-
-#     def __eq__(self, value):
-#         if isinstance(value, article):
-#             if value.bibcode == self.bibcode:
-#                 return True
-#         return False
+# In-memory storage so repeated lookups on same bibcode dont generate more API calls
+_bookcase = journal()
