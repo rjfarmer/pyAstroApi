@@ -1,4 +1,35 @@
 # # SPDX-License-Identifier: BSD-3-Clause
+import pyastroapi.api.search as _search
+import pyastroapi.api.token as _token
+
+
+def search(query, limit=-1, fields=None):
+    return _search.search(_token.get_token(), query=query, limit=limit, fields=fields)
+
+
+def first_author(author, fields=None):
+    return search(query=f"^{author}", fields=fields)
+
+
+def author_year(author, year, fields=None):
+    return search(query=f"^{author} year:{year}", fields=fields)
+
+
+def orcid(orcid, fields=None):
+    return search(query=f"orcid:{orcid}", fields=fields)
+
+
+def bibcdoe(bibcode, fields=None):
+    return search(query=f"bibcode:{bibcode}", fields=fields)
+
+
+def citations(bibcode, fields=None):
+    return search(query=f"bibcode:({bibcode})", fields=fields)
+
+
+def references(bibcode, fields=None):
+    return search(query=f"references({bibcode})", fields=fields)
+
 
 # import bibtexparser
 # from bibtexparser.bparser import BibTexParser
@@ -247,19 +278,3 @@
 #             a2, year = a2.split()
 #             return 'author:"^{}" author:"{}" year:{}'.format(a1, a2, year)
 #         return False
-
-
-import pyastroapi.api.search as _search
-import pyastroapi.api.token as _token
-
-
-def first_author(author):
-    return _search.search(_token.get_token(), query=f"^{author}")
-
-
-def author_year(author, year):
-    return _search.search(_token.get_token(), query=f"^{author} year:{year}")
-
-
-def search(query, fields=None):
-    return _search.search(_token.get_token(), query=query, fields=fields)
