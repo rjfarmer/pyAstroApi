@@ -102,11 +102,6 @@ class article:
         self._refs = None
         self._cites = None
 
-        # Look to see if we have a cached version already
-        if bibcode is not None:
-            if bibcode in _bookcase:
-                self.from_data(_bookcase[bibcode].as_dict())
-
         if bibcode is not None:
             self.from_bibcode(bibcode)
         elif data is not None:
@@ -140,9 +135,6 @@ class article:
             if "bibcode" not in self._data:
                 raise ValueError("Bibcode must be set first")
 
-            if self.bibcode in _bookcase:
-                if attr in _bookcase[self.bibcode]:
-                    x = _bookcase[self.bibcode].as_dict()
             else:
                 fields = ""
                 if len(self._data) == 1:  # Load basic data
@@ -162,11 +154,6 @@ class article:
                 )[0]
 
             self._data.update(x)
-
-            if self.bibcode not in _bookcase:
-                _bookcase.add_data([self._data])
-            else:
-                _bookcase[self.bibcode].update(self._data)
 
         return self._data[attr]
 
@@ -210,8 +197,14 @@ class article:
     def __str__(self):
         return self.bibcode
 
-    def __reduce__(self):
-        return (article, (None, self._data, None, None))
+    def __repr__(self):
+        return self.bibcode
+
+    def __getstate__(self):
+        return self._data
+
+    def __setstate__(self, state):
+        self.from_data(state)
 
     def __dir__(self):
         return (
@@ -284,22 +277,26 @@ class journal:
             self.from_search(search)
 
     def from_bibcodes(self, bibcodes: t.List):
+        self._data = {}
         for bib in bibcodes:
             self.add_bibcode(bib)
 
     def from_data(self, data: t.List):
+        self._data = {}
         self.add_data(data)
 
     def from_bibtex(self, bibtex: str):
+        self._data = {}
         bd = bib.parse_bibtex(bibtex)
         for b in bd:
             self.add_data(s.search(b, limit=1))
 
+    def from_search(self, search: str):
+        self._data = {}
+        self.add_data(s.search(search))
+
     def add_bibcode(self, bibcode: t.List):
         self._data[bibcode] = article(bibcode=bibcode)
-
-    def from_search(self, search: str):
-        self.add_data(s.search(search))
 
     def add_data(self, data: t.List):
         for dd in data:
@@ -308,9 +305,6 @@ class journal:
 
     def add_bibtex(self, bibtex: str):
         raise NotImplementedError
-
-    def add_search(self, search: str):
-        self.from_search(search)
 
     def bibcodes(self):
         return list(self.keys())
@@ -336,8 +330,13 @@ class journal:
     def __iter__(self):
         yield from self._data
 
-    def __reduce__(self):
-        return (journal, (None, self._data, None, None))
+    def __getstate__(self):
+        return self._data
+
+    def __setstate__(self, state):
+        self._data = {}
+        for key, value in state.items():
+            self.add_bibcode(key)
 
     def __dir__(self):
         return list(self.keys()) + list(self.__dict__.keys()) + _search._fields
@@ -370,6 +369,5 @@ class journal:
             if bib in self:
                 self._data.pop(bib)
 
-
-# In-memory storage so repeated lookups on same bibcode dont generate more API calls
-_bookcase = journal()
+    def __str__(self):
+        return f"Journal with {len(self.keys)} articles"
