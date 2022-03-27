@@ -3,6 +3,8 @@
 import requests
 import os
 import typing as t
+import webbrowser
+import shutil
 
 from dataclasses import dataclass
 
@@ -153,6 +155,9 @@ def download_file(url, filename):
     headers = {
         "User-Agent": "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0",
         "DNT": "1",
+        "Accept": "*/*",
+        "Host": "www.google.com",
+        "Connection": "keep-alive",
     }
 
     r = requests.get(url, stream=True, headers=headers, allow_redirects=True)
@@ -166,4 +171,7 @@ def download_file(url, filename):
 
     if line.startswith(b"<!DOCTYPE html"):
         os.remove(filename)
+        # html = os.path.abspath(filename.replace('.pdf','.html'))
+        # shutil.move(filename,html)
+        # webbrowser.open(f'file://{html}')
         raise FileDownloadFailed("Annoying site gave us a html file and not a pdf")

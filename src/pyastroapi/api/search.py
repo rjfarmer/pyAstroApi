@@ -66,7 +66,7 @@ def search(
         search_term = "&".join(terms)
 
         url = urls.make_url(urls.urls["search"]["search"], search_term)
-        print(url)
+        # print(url)
         data = http.get(token, url)
 
         if data.status != 200:
@@ -107,7 +107,7 @@ def bigquery(token: str, bibcodes: t.List[str], limit: int = -1):
 
     url = urls.make_url(urls.urls["search"]["bigquery"])
 
-    bib = {"bibcode": utils.ensure_list(bibcodes)}
+    bib = {"bibcodes": utils.ensure_list(bibcodes)}
 
     data = http.post(token, url, data=bib, params=terms, json=True)
 
