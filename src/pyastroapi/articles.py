@@ -238,9 +238,7 @@ class article:
 
         data = s.references(self.bibcode)
 
-        self._refs = journal()
-        for bib in data:
-            self._refs.add_data(bib)
+        self._refs = journal(data=data)
 
         return self._refs
 
@@ -250,9 +248,7 @@ class article:
 
         data = s.citations(self.bibcode)
 
-        self._cites = journal()
-        for bib in data:
-            self._cites.add_data(bib)
+        self._cites = journal(data=data)
 
         return self._cites
 
@@ -335,7 +331,7 @@ class journal:
 
     def __setstate__(self, state):
         self._data = {}
-        for key, value in state.items():
+        for key in state.keys():
             self.add_bibcode(key)
 
     def __dir__(self):

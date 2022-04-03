@@ -1,15 +1,7 @@
 fail_fast: true
 repos:
   - repo: https://github.com/psf/black
-    rev: 21.9b0
+    rev: 22.3.0
     hooks:
       - id: black
         language_version: python3 # Should be a command that runs python3.6+
-  - repo: local
-    hooks:
-      - id: tox
-        name: tox
-        entry: tox
-        language: python
-        args: [-p]
-        pass_filenames: false

@@ -16,26 +16,27 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//search/query/?q=Farmer,r%20year:2021&fl=title&fq=&start=0
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":55,\n    \"params\":{\n
-        \     \"q\":\"Farmer,r year:2021\",\n      \"fl\":\"title\",\n      \"start\":\"0\",\n
-        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-623f347e-31df38373a598272158456a1\",\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":1209,\n
+        \   \"params\":{\n      \"q\":\"Farmer,r year:2021\",\n      \"fl\":\"title\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6249b051-230951ba1bcfc6bc37285ed9\",\n
         \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":154,\"start\":0,\"docs\":[\n
-        \     {\n        \"title\":[\"rjfarmer/mesaplot: Release v1.1.0\"]},\n      {\n
-        \       \"title\":[\"The Cosmic Carbon Footprint of Massive Stars Stripped
-        in Binary Systems\"]},\n      {\n        \"title\":[\"Different to the core:
-        The pre-supernova structures of massive single and binary-stripped stars\"]},\n
+        \     {\n        \"title\":[\"The Cosmic Carbon Footprint of Massive Stars
+        Stripped in Binary Systems\"]},\n      {\n        \"title\":[\"Different to
+        the core: The pre-supernova structures of massive single and binary-stripped
+        stars\"]},\n      {\n        \"title\":[\"rjfarmer/mesaplot: Release v1.1.0\"]},\n
         \     {\n        \"title\":[\"Prevention Is Better Than Cure: Experimental
         Evidence From Milk Fever Incidence in Dairy Animals of Haryana, India\"]},\n
         \     {\n        \"title\":[\"Is organic farming environmentally more friendly?\"]},\n
-        \     {\n        \"title\":[\"Profitability and income analysis of a rice
-        seed cultivation partnership\"]},\n      {\n        \"title\":[\"The efficiency
-        of dryland farming in Panggang Forest KPH Yogyakarta\"]},\n      {\n        \"title\":[\"Implications
-        of model selection: a comparison of publicly available, conterminous US-extent
-        hydrologic component estimates\"]},\n      {\n        \"title\":[\"Soil trace
-        gas fluxes from secondary forest converted to small-scale vegetable farms
-        on an Andosol soil\"]},\n      {\n        \"title\":[\"Comparison of shallot
-        and tobacco farm income in Selopamioro Village, Imogiri Sub District, Bantul
-        District, Yogyakarta\"]}]\n  }}\n"
+        \     {\n        \"title\":[\"The efficiency of dryland farming in Panggang
+        Forest KPH Yogyakarta\"]},\n      {\n        \"title\":[\"Soil trace gas fluxes
+        from secondary forest converted to small-scale vegetable farms on an Andosol
+        soil\"]},\n      {\n        \"title\":[\"The role of cooperatives in marketing
+        arabica coffee: A case study of the Benteng Alla Farmers\u2019 cooperative
+        in Enrekang Regency, South Sulawesi, Indonesia\"]},\n      {\n        \"title\":[\"Chili
+        double fold production technology as promising innovation for increasing farmer
+        income in Gorontalo, Indonesia\"]},\n      {\n        \"title\":[\"Nutrient
+        balances and nutrient availability of organic cash crop farms in Austria\"]}]\n
+        \ }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -54,22 +55,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '1496'
+      - '1538'
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:42:54 GMT
+      - Sun, 03 Apr 2022 14:33:54 GMT
       Retry-After:
-      - '84009'
+      - '85874'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4930'
+      - '4986'
       X-RateLimit-Reset:
-      - '1648393384'
+      - '1649082309'
     status:
       code: 200
       message: OK

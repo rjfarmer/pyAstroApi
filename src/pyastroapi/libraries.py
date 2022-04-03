@@ -83,9 +83,6 @@ class library(object):
         for bibcode in iter:
             self._data.add_bibcode(bibcode)
 
-    def get(self, bibcode):
-        return self._data[bibcode]
-
     def keys(self):
         return self._data.keys()
 
@@ -115,6 +112,9 @@ class library(object):
             if value.lid == self.lid:
                 return True
         return False
+
+    def __getitem__(self, value):
+        return self._data[value]
 
     def add_bibcode(self, bibcodes):
         bibcodes = utils.ensure_list(bibcodes)

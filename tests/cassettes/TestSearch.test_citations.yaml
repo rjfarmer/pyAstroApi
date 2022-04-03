@@ -1,0 +1,92 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.27.1
+      authorization:
+      - DUMMY
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=citations(2021ApJ...923..214F)&fl=abstract,author,bibcode,pubdate,title,pub&fq=&start=0
+  response:
+    body:
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":27,\n    \"params\":{\n
+        \     \"q\":\"citations(2021ApJ...923..214F)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6249b053-647d7b2e3dc1cfc522182f6d\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":1,\"start\":0,\"docs\":[\n
+        \     {\n        \"bibcode\":\"2021A&A...656A..58L\",\n        \"abstract\":\"The
+        majority of massive stars live in binary or multiple systems and will interact
+        with a companion during their lifetimes, which helps to explain the observed
+        diversity of core-collapse supernovae. Donor stars in binary systems can lose
+        most of their hydrogen-rich envelopes through mass transfer. As a result,
+        not only are the surface properties affected, but so is the core structure.
+        However, most calculations of the core-collapse properties of massive stars
+        rely on single-star models. We present a systematic study of the difference
+        between the pre-supernova structures of single stars and stars of the same
+        initial mass (11-21 M<SUB>\u2299</SUB>) that have been stripped due to stable
+        post-main-sequence mass transfer at solar metallicity. We present the pre-supernova
+        core composition with novel diagrams that give an intuitive representation
+        of the isotope distribution. As shown in previous studies, at the edge of
+        the carbon-oxygen core, the binary-stripped star models contain an extended
+        gradient of carbon, oxygen, and neon. This layer remains until core collapse
+        and is more extended in mass for higher initial stellar masses. It originates
+        from the receding of the convective helium core during core helium burning
+        in binary-stripped stars, which does not occur in single-star models. We find
+        that this same evolutionary phase leads to systematic differences in the final
+        density and nuclear energy generation profiles. Binary-stripped star models
+        have systematically higher total masses of carbon at the moment of core collapse
+        compared to single-star models, which likely results in systematically different
+        supernova yields. In about half of our models, the silicon-burning and oxygen-rich
+        layers merge after core silicon burning. We discuss the implications of our
+        findings for the \\\"explodability\\\", supernova observations, and nucleosynthesis
+        of these stars. Our models are publicly available and can be readily used
+        as input for detailed supernova simulations.\",\n        \"author\":[\"Laplace,
+        E.\",\n          \"Justham, S.\",\n          \"Renzo, M.\",\n          \"G\xF6tberg,
+        Y.\",\n          \"Farmer, R.\",\n          \"Vartanyan, D.\",\n          \"de
+        Mink, S. E.\"],\n        \"pub\":\"Astronomy and Astrophysics\",\n        \"pubdate\":\"2021-12-00\",\n
+        \       \"title\":[\"Different to the core: The pre-supernova structures of
+        massive single and binary-stripped stars\"]}]\n  }}\n"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2821'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 03 Apr 2022 14:33:55 GMT
+      Retry-After:
+      - '85873'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4985'
+      X-RateLimit-Reset:
+      - '1649082309'
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,405 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.27.1
+      authorization:
+      - DUMMY
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=citations(2021ApJ...923..214F)&fl=abstract,author,bibcode,pubdate,title,pub&fq=&start=0
+  response:
+    body:
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":10,\n    \"params\":{\n
+        \     \"q\":\"citations(2021ApJ...923..214F)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6249b070-0b79a1eb542d7eb075290c81\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":1,\"start\":0,\"docs\":[\n
+        \     {\n        \"bibcode\":\"2021A&A...656A..58L\",\n        \"abstract\":\"The
+        majority of massive stars live in binary or multiple systems and will interact
+        with a companion during their lifetimes, which helps to explain the observed
+        diversity of core-collapse supernovae. Donor stars in binary systems can lose
+        most of their hydrogen-rich envelopes through mass transfer. As a result,
+        not only are the surface properties affected, but so is the core structure.
+        However, most calculations of the core-collapse properties of massive stars
+        rely on single-star models. We present a systematic study of the difference
+        between the pre-supernova structures of single stars and stars of the same
+        initial mass (11-21 M<SUB>\u2299</SUB>) that have been stripped due to stable
+        post-main-sequence mass transfer at solar metallicity. We present the pre-supernova
+        core composition with novel diagrams that give an intuitive representation
+        of the isotope distribution. As shown in previous studies, at the edge of
+        the carbon-oxygen core, the binary-stripped star models contain an extended
+        gradient of carbon, oxygen, and neon. This layer remains until core collapse
+        and is more extended in mass for higher initial stellar masses. It originates
+        from the receding of the convective helium core during core helium burning
+        in binary-stripped stars, which does not occur in single-star models. We find
+        that this same evolutionary phase leads to systematic differences in the final
+        density and nuclear energy generation profiles. Binary-stripped star models
+        have systematically higher total masses of carbon at the moment of core collapse
+        compared to single-star models, which likely results in systematically different
+        supernova yields. In about half of our models, the silicon-burning and oxygen-rich
+        layers merge after core silicon burning. We discuss the implications of our
+        findings for the \\\"explodability\\\", supernova observations, and nucleosynthesis
+        of these stars. Our models are publicly available and can be readily used
+        as input for detailed supernova simulations.\",\n        \"author\":[\"Laplace,
+        E.\",\n          \"Justham, S.\",\n          \"Renzo, M.\",\n          \"G\xF6tberg,
+        Y.\",\n          \"Farmer, R.\",\n          \"Vartanyan, D.\",\n          \"de
+        Mink, S. E.\"],\n        \"pub\":\"Astronomy and Astrophysics\",\n        \"pubdate\":\"2021-12-00\",\n
+        \       \"title\":[\"Different to the core: The pre-supernova structures of
+        massive single and binary-stripped stars\"]}]\n  }}\n"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2821'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 03 Apr 2022 14:34:25 GMT
+      Retry-After:
+      - '85843'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4978'
+      X-RateLimit-Reset:
+      - '1649082309'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.27.1
+      authorization:
+      - DUMMY
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=references(2021ApJ...923..214F)&fl=abstract,author,bibcode,pubdate,title,pub&fq=&start=0
+  response:
+    body:
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":25,\n    \"params\":{\n
+        \     \"q\":\"references(2021ApJ...923..214F)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6249b071-33bab56f338cb31c6eee20fd\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":139,\"start\":0,\"docs\":[\n
+        \     {\n        \"bibcode\":\"2007CSE.....9...90H\",\n        \"abstract\":\"Matplotlib
+        is a 2D graphics package for Python for application development, interactive
+        scripting, and publication-quality image generation across user interfaces
+        and operating systems.\",\n        \"author\":[\"Hunter, John D.\"],\n        \"pub\":\"Computing
+        in Science and Engineering\",\n        \"pubdate\":\"2007-05-00\",\n        \"title\":[\"Matplotlib:
+        A 2D Graphics Environment\"]},\n      {\n        \"bibcode\":\"2011ApJS..192....3P\",\n
+        \       \"abstract\":\"Stellar physics and evolution calculations enable a
+        broad range of research in astrophysics. Modules for Experiments in Stellar
+        Astrophysics (MESA) is a suite of open source, robust, efficient, thread-safe
+        libraries for a wide range of applications in computational stellar astrophysics.
+        A one-dimensional stellar evolution module, MESAstar, combines many of the
+        numerical and physics modules for simulations of a wide range of stellar evolution
+        scenarios ranging from very low mass to massive stars, including advanced
+        evolutionary phases. MESAstar solves the fully coupled structure and composition
+        equations simultaneously. It uses adaptive mesh refinement and sophisticated
+        timestep controls, and supports shared memory parallelism based on OpenMP.
+        State-of-the-art modules provide equation of state, opacity, nuclear reaction
+        rates, element diffusion data, and atmosphere boundary conditions. Each module
+        is constructed as a separate Fortran 95 library with its own explicitly defined
+        public interface to facilitate independent development. Several detailed examples
+        indicate the extensive verification and testing that is continuously performed
+        and demonstrate the wide range of capabilities that MESA possesses. These
+        examples include evolutionary tracks of very low mass stars, brown dwarfs,
+        and gas giant planets to very old ages; the complete evolutionary track of
+        a 1 M <SUB>sun</SUB> star from the pre-main sequence (PMS) to a cooling white
+        dwarf; the solar sound speed profile; the evolution of intermediate-mass stars
+        through the He-core burning phase and thermal pulses on the He-shell burning
+        asymptotic giant branch phase; the interior structure of slowly pulsating
+        B Stars and Beta Cepheids; the complete evolutionary tracks of massive stars
+        from the PMS to the onset of core collapse; mass transfer from stars undergoing
+        Roche lobe overflow; and the evolution of helium accretion onto a neutron
+        star. MESA can be downloaded from the project Web site (<A href=\\\"http://mesa.sourceforge.net/\\\">http://mesa.sourceforge.net/</A>).\",\n
+        \       \"author\":[\"Paxton, Bill\",\n          \"Bildsten, Lars\",\n          \"Dotter,
+        Aaron\",\n          \"Herwig, Falk\",\n          \"Lesaffre, Pierre\",\n          \"Timmes,
+        Frank\"],\n        \"pub\":\"The Astrophysical Journal Supplement Series\",\n
+        \       \"pubdate\":\"2011-01-00\",\n        \"title\":[\"Modules for Experiments
+        in Stellar Astrophysics (MESA)\"]},\n      {\n        \"bibcode\":\"2013ApJS..208....4P\",\n
+        \       \"abstract\":\"We substantially update the capabilities of the open
+        source software package Modules for Experiments in Stellar Astrophysics (MESA),
+        and its one-dimensional stellar evolution module, MESA star. Improvements
+        in MESA star's ability to model the evolution of giant planets now extends
+        its applicability down to masses as low as one-tenth that of Jupiter. The
+        dramatic improvement in asteroseismology enabled by the space-based Kepler
+        and CoRoT missions motivates our full coupling of the ADIPLS adiabatic pulsation
+        code with MESA star. This also motivates a numerical recasting of the Ledoux
+        criterion that is more easily implemented when many nuclei are present at
+        non-negligible abundances. This impacts the way in which MESA star calculates
+        semi-convective and thermohaline mixing. We exhibit the evolution of 3-8 M
+        <SUB>\u2299</SUB> stars through the end of core He burning, the onset of He
+        thermal pulses, and arrival on the white dwarf cooling sequence. We implement
+        diffusion of angular momentum and chemical abundances that enable calculations
+        of rotating-star models, which we compare thoroughly with earlier work. We
+        introduce a new treatment of radiation-dominated envelopes that allows the
+        uninterrupted evolution of massive stars to core collapse. This enables the
+        generation of new sets of supernovae, long gamma-ray burst, and pair-instability
+        progenitor models. We substantially modify the way in which MESA star solves
+        the fully coupled stellar structure and composition equations, and we show
+        how this has improved the scaling of MESA's calculational speed on multi-core
+        processors. Updates to the modules for equation of state, opacity, nuclear
+        reaction rates, and atmospheric boundary conditions are also provided. We
+        describe the MESA Software Development Kit that packages all the required
+        components needed to form a unified, maintained, and well-validated build
+        environment for MESA. We also highlight a few tools developed by the community
+        for rapid visualization of MESA star results.\",\n        \"author\":[\"Paxton,
+        Bill\",\n          \"Cantiello, Matteo\",\n          \"Arras, Phil\",\n          \"Bildsten,
+        Lars\",\n          \"Brown, Edward F.\",\n          \"Dotter, Aaron\",\n          \"Mankovich,
+        Christopher\",\n          \"Montgomery, M. H.\",\n          \"Stello, Dennis\",\n
+        \         \"Timmes, F. X.\",\n          \"Townsend, Richard\"],\n        \"pub\":\"The
+        Astrophysical Journal Supplement Series\",\n        \"pubdate\":\"2013-09-00\",\n
+        \       \"title\":[\"Modules for Experiments in Stellar Astrophysics (MESA):
+        Planets, Oscillations, Rotation, and Massive Stars\"]},\n      {\n        \"bibcode\":\"1957RvMP...29..547B\",\n
+        \       \"author\":[\"Burbidge, E. Margaret\",\n          \"Burbidge, G. R.\",\n
+        \         \"Fowler, William A.\",\n          \"Hoyle, F.\"],\n        \"pub\":\"Reviews
+        of Modern Physics\",\n        \"pubdate\":\"1957-00-00\",\n        \"title\":[\"Synthesis
+        of the Elements in Stars\"]},\n      {\n        \"bibcode\":\"2015ApJS..220...15P\",\n
+        \       \"abstract\":\"We substantially update the capabilities of the open-source
+        software instrument Modules for Experiments in Stellar Astrophysics (MESA).
+        MESA can now simultaneously evolve an interacting pair of differentially rotating
+        stars undergoing transfer and loss of mass and angular momentum, greatly enhancing
+        the prior ability to model binary evolution. New MESA capabilities in fully
+        coupled calculation of nuclear networks with hundreds of isotopes now allow
+        MESA to accurately simulate the advanced burning stages needed to construct
+        supernova progenitor models. Implicit hydrodynamics with shocks can now be
+        treated with MESA, enabling modeling of the entire massive star lifecycle,
+        from pre-main-sequence evolution to the onset of core collapse and nucleosynthesis
+        from the resulting explosion. Coupling of the GYRE non-adiabatic pulsation
+        instrument with MESA allows for new explorations of the instability strips
+        for massive stars while also accelerating the astrophysical use of asteroseismology
+        data. We improve the treatment of mass accretion, giving more accurate and
+        robust near-surface profiles. A new MESA capability to calculate weak reaction
+        rates \u201Con-the-fly\u201D from input nuclear data allows better simulation
+        of accretion induced collapse of massive white dwarfs and the fate of some
+        massive stars. We discuss the ongoing challenge of chemical diffusion in the
+        strongly coupled plasma regime, and exhibit improvements in MESA that now
+        allow for the simulation of radiative levitation of heavy elements in hot
+        stars. We close by noting that the MESA software infrastructure provides bit-for-bit
+        consistency for all results across all the supported platforms, a profound
+        enabling capability for accelerating MESA's development.\",\n        \"author\":[\"Paxton,
+        Bill\",\n          \"Marchant, Pablo\",\n          \"Schwab, Josiah\",\n          \"Bauer,
+        Evan B.\",\n          \"Bildsten, Lars\",\n          \"Cantiello, Matteo\",\n
+        \         \"Dessart, Luc\",\n          \"Farmer, R.\",\n          \"Hu, H.\",\n
+        \         \"Langer, N.\",\n          \"Townsend, R. H. D.\",\n          \"Townsley,
+        Dean M.\",\n          \"Timmes, F. X.\"],\n        \"pub\":\"The Astrophysical
+        Journal Supplement Series\",\n        \"pubdate\":\"2015-09-00\",\n        \"title\":[\"Modules
+        for Experiments in Stellar Astrophysics (MESA): Binaries, Pulsations, and
+        Explosions\"]},\n      {\n        \"bibcode\":\"1995ApJS..101..181W\",\n        \"abstract\":\"The
+        nucleosynthetic yield of isotopes lighter than A = 66 (zinc) is determined
+        for a grid of stellar masses and metallicities including stars of 11, 12,
+        13, 15, 18, 19, 20, 22, 25, 30, 35, and 40 M<SUB>sun</SUB> and metallicities
+        Z = 0, l0<SUP>-4</SUP>, 0.01, 0.1, and 1 times solar (a slightly reduced mass
+        grid is employed for nonsolar metallicities). Altogether 78 different model
+        supernova explosions are calculated. In each case nucleosynthesis has already
+        been determined for 200 isotopes in each of 600 to 1200 zones of the presupernova
+        star, including the effects of time dependent convection. Here each star is
+        exploded using a piston to give a specified final kinetic energy at infinity
+        (typically 1.2 \xD7 10<SUP>51</SUP> ergs), and the explosive modifications
+        to the nucleosynthesis, including the effects of neutrino irradiation, determined.
+        A single value of the critical <SUP>12</SUP>C(\u03B1,\u03B3) <SUP>16</SUP>O
+        reaction rate corresponding to 8(300 keV) = 170 keV barns is used in all calculations.
+        The synthesis of each isotope is discussed along with its sensitivity to model
+        parameters. In each case, the final mass of the collapsed remnant is also
+        determined and often found not to correspond to the location of the piston
+        (typically the edge of the iron core), but to a \\\"mass cut\\\" farther out.
+        This mass cut is sensitive not only to the explosion energy, but also to the
+        presupernova structure, stellar mass, and the metallicity. Unless the explosion
+        mechanism, for unknown reasons, provides a much larger characteristic energy
+        in more massive stars, it appears likely that stars larger than about 30 M<SUB>sun</SUB>
+        will experience considerable reimplosion of heavy elements following the initial
+        launch of a successful shock. While such explosions will produce a viable,
+        bright Type II supernova light curve, lacking perhaps the radioactive tail,
+        they will have dramatically reduced yields of heavy elements and may leave
+        black hole remnants of up to 10 and more solar masses. The production of black
+        holes may be particularly favored for stars of low metallicity, both because
+        of their more compact structure and reduced mass loss.\",\n        \"author\":[\"Woosley,
+        S. E.\",\n          \"Weaver, Thomas A.\"],\n        \"pub\":\"The Astrophysical
+        Journal Supplement Series\",\n        \"pubdate\":\"1995-11-00\",\n        \"title\":[\"The
+        Evolution and Explosion of Massive Stars. II. Explosive Hydrodynamics and
+        Nucleosynthesis\"]},\n      {\n        \"bibcode\":\"1998SSRv...85..161G\",\n
+        \       \"abstract\":\"We review the current status of our knowledge of the
+        chemical composition of the Sun, essentially derived from the analysis of
+        the solar photospheric spectrum. The comparison of solar and meteoritic abundances
+        confirms that there is a very good agreement between the two sets of abundances.
+        They are used to construct a Standard Abundance Distribution.\",\n        \"author\":[\"Grevesse,
+        N.\",\n          \"Sauval, A. J.\"],\n        \"pub\":\"Space Science Reviews\",\n
+        \       \"pubdate\":\"1998-05-00\",\n        \"title\":[\"Standard Solar Composition\"]},\n
+        \     {\n        \"bibcode\":\"2011CSE....13b..22V\",\n        \"abstract\":\"In
+        the Python world, NumPy arrays are the standard representation for numerical
+        data. Here, we show how these arrays enable efficient implementation of numerical
+        computations in a high-level language. Overall, three techniques are applied
+        to improve performance: vectorizing calculations, avoiding copying data in
+        memory, and minimizing operation counts. We first present the NumPy array
+        structure, then show how to use it for efficient computation, and finally
+        how to share array data with other libraries.\",\n        \"author\":[\"van
+        der Walt, St\xE9fan\",\n          \"Colbert, S. Chris\",\n          \"Varoquaux,
+        Ga\xEBl\"],\n        \"pub\":\"Computing in Science and Engineering\",\n        \"pubdate\":\"2011-03-00\",\n
+        \       \"title\":[\"The NumPy Array: A Structure for Efficient Numerical
+        Computation\"]},\n      {\n        \"bibcode\":\"1983ApJ...268..368E\",\n
+        \       \"abstract\":\"Effective radii of Roche lobes were computed and are
+        compared with the results of Kopal and of Pacy\u0144ski. A convenient approximation
+        is given, whose derivative is smooth and fairly accurate.\",\n        \"author\":[\"Eggleton,
+        P. P.\"],\n        \"pub\":\"The Astrophysical Journal\",\n        \"pubdate\":\"1983-05-00\",\n
+        \       \"title\":[\"Aproximations to the radii of Roche lobes.\"]},\n      {\n
+        \       \"bibcode\":\"2019ApJS..243...10P\",\n        \"abstract\":\"We update
+        the capabilities of the open-knowledge software instrument Modules for Experiments
+        in Stellar Astrophysics (MESA). RSP is a new functionality in MESAstar that
+        models the nonlinear radial stellar pulsations that characterize RR Lyrae,
+        Cepheids, and other classes of variable stars. We significantly enhance numerical
+        energy conservation capabilities, including during mass changes. For example,
+        this enables calculations through the He flash that conserve energy to better
+        than 0.001%. To improve the modeling of rotating stars in MESA, we introduce
+        a new approach to modifying the pressure and temperature equations of stellar
+        structure, as well as a formulation of the projection effects of gravity darkening.
+        A new scheme for tracking convective boundaries yields reliable values of
+        the convective core mass and allows the natural emergence of adiabatic semiconvection
+        regions during both core hydrogen- and helium-burning phases. We quantify
+        the parallel performance of MESA on current-generation multicore architectures
+        and demonstrate improvements in the computational efficiency of radiative
+        levitation. We report updates to the equation of state and nuclear reaction
+        physics modules. We briefly discuss the current treatment of fallback in core-collapse
+        supernova models and the thermodynamic evolution of supernova explosions.
+        We close by discussing the new MESA Testhub software infrastructure to enhance
+        source code development.\",\n        \"author\":[\"Paxton, Bill\",\n          \"Smolec,
+        R.\",\n          \"Schwab, Josiah\",\n          \"Gautschy, A.\",\n          \"Bildsten,
+        Lars\",\n          \"Cantiello, Matteo\",\n          \"Dotter, Aaron\",\n
+        \         \"Farmer, R.\",\n          \"Goldberg, Jared A.\",\n          \"Jermyn,
+        Adam S.\",\n          \"Kanbur, S. M.\",\n          \"Marchant, Pablo\",\n
+        \         \"Thoul, Anne\",\n          \"Townsend, Richard H. D.\",\n          \"Wolf,
+        William M.\",\n          \"Zhang, Michael\",\n          \"Timmes, F. X.\"],\n
+        \       \"pub\":\"The Astrophysical Journal Supplement Series\",\n        \"pubdate\":\"2019-07-00\",\n
+        \       \"title\":[\"Modules for Experiments in Stellar Astrophysics (MESA):
+        Pulsating Variable Stars, Rotation, Convective Boundaries, and Energy Conservation\"]}]\n
+        \ }}\n"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '15271'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 03 Apr 2022 14:34:25 GMT
+      Retry-After:
+      - '85843'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4977'
+      X-RateLimit-Reset:
+      - '1649082309'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.27.1
+      authorization:
+      - DUMMY
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//resolver/2021ApJ...923..214F/esource
+  response:
+    body:
+      string: '{"service": "", "action": "display", "links": {"count": 4, "bibcode":
+        "2021ApJ...923..214F", "link_type": "ESOURCE", "records": [{"title": "https://arxiv.org/abs/2110.04131",
+        "url": "https://arxiv.org/abs/2110.04131", "link_type": "ESOURCE|EPRINT_HTML"},
+        {"title": "https://arxiv.org/pdf/2110.04131", "url": "https://arxiv.org/pdf/2110.04131",
+        "link_type": "ESOURCE|EPRINT_PDF"}, {"title": "https://doi.org/10.3847%2F1538-4357%2Fac2f44",
+        "url": "https://doi.org/10.3847%2F1538-4357%2Fac2f44", "link_type": "ESOURCE|PUB_HTML"},
+        {"title": "http://iopscience.iop.org/article/10.3847/1538-4357/ac2f44/pdf",
+        "url": "http://iopscience.iop.org/article/10.3847/1538-4357/ac2f44/pdf", "link_type":
+        "ESOURCE|PUB_PDF"}]}}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '710'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 03 Apr 2022 14:34:26 GMT
+      Retry-After:
+      - '85842'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4976'
+      X-RateLimit-Reset:
+      - '1649082309'
+    status:
+      code: 200
+      message: OK
+version: 1

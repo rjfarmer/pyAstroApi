@@ -19,12 +19,12 @@ def orcid(orcid, fields=None):
     return search(query=f"orcid:{orcid}", fields=fields)
 
 
-def bibcdoe(bibcode, fields=None):
+def bibcode(bibcode, fields=None):
     return search(query=f"bibcode:{bibcode}", fields=fields)
 
 
 def citations(bibcode, fields=None):
-    return search(query=f"bibcode:({bibcode})", fields=fields)
+    return search(query=f"citations({bibcode})", fields=fields)
 
 
 def references(bibcode, fields=None):
