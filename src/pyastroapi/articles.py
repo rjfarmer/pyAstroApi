@@ -315,7 +315,10 @@ class journal:
         return list(self.keys())
 
     def __getitem__(self, bibcode):
-        return self._data[bibcode]
+        if isinstance(bibcode, int):
+            return self._data[list(self.keys())[bibcode]]
+        else:
+            return self._data[bibcode]
 
     def __len__(self):
         return len(self._data)
