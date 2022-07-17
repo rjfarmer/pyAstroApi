@@ -47,6 +47,9 @@ class libraries(object):
         lib.new(token.get_token(), name, description, public, bibcodes)
         self.update()
 
+    def edit(self, name, description="", public=False, bibcodes=None):
+        pass
+
     def pop(self, name):
         self.update()
         if name not in self._data.keys():
