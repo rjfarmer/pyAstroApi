@@ -101,6 +101,7 @@ class article:
 
         self._refs = None
         self._cites = None
+        self._query = None
 
         if bibcode is not None:
             self.from_bibcode(bibcode)
@@ -125,6 +126,7 @@ class article:
         self.from_data(list(s.search(bd[0], limit=1))[0])
 
     def from_search(self, search: str):
+        self._query = search
         self.from_data(list(s.search(search, limit=1))[0])
 
     def add_to_lib(self, libaray: str):
@@ -233,14 +235,11 @@ class article:
         return self._data
 
     def references(self):
-        if self._refs is not None:
+        if "reference" in self._data:
+            self._refs = journal(bibcodes=self._data["reference"])
             return self._refs
-
-        data = s.references(self.bibcode)
-
-        self._refs = journal(data=data)
-
-        return self._refs
+        else:
+            return journal()
 
     def citations(self):
         if self._cites is not None:
@@ -251,6 +250,12 @@ class article:
         self._cites = journal(data=data)
 
         return self._cites
+
+    def first_author(self):
+        return self.author[0]
+
+    def authors(self):
+        return self.author
 
 
 class journal:
@@ -276,20 +281,24 @@ class journal:
         self._data = {}
         for bib in bibcodes:
             self.add_bibcode(bib)
+        return self
 
     def from_data(self, data: t.List):
         self._data = {}
         self.add_data(data)
+        return self
 
     def from_bibtex(self, bibtex: str):
         self._data = {}
         bd = bib.parse_bibtex(bibtex)
         for b in bd:
             self.add_data(s.search(b, limit=1))
+        return self
 
     def from_search(self, search: str):
         self._data = {}
         self.add_data(s.search(search))
+        return self
 
     def add_bibcode(self, bibcode: t.List):
         self._data[bibcode] = article(bibcode=bibcode)
@@ -366,4 +375,4 @@ class journal:
                 self._data.pop(bib)
 
     def __str__(self):
-        return f"Journal with {len(self.keys)} articles"
+        return f"Journal with {len(self.keys())} articles"

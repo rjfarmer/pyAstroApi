@@ -32,7 +32,7 @@ _fields = set(
         """.split()
 )
 
-_short_fl = "abstract,author,bibcode,pubdate,title,pub"
+_short_fl = "abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference"
 
 
 def search(
