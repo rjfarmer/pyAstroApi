@@ -237,9 +237,12 @@ class article:
     def references(self):
         if "reference" in self._data:
             self._refs = journal(bibcodes=self._data["reference"])
-            return self._refs
         else:
-            return journal()
+            data = s.references(self.bibcode)
+            self._refs = journal(data=data)
+
+        return self._refs
+
 
     def citations(self):
         if self._cites is not None:
@@ -286,19 +289,20 @@ class journal:
     def from_data(self, data: t.List):
         self._data = {}
         self.add_data(data)
-        return self
 
     def from_bibtex(self, bibtex: str):
         self._data = {}
         bd = bib.parse_bibtex(bibtex)
         for b in bd:
             self.add_data(s.search(b, limit=1))
-        return self
 
     def from_search(self, search: str):
         self._data = {}
         self.add_data(s.search(search))
-        return self
+
+    def from_articles(self, data: t.List):
+        self._data = {}
+        self.add_articles(data)
 
     def add_bibcode(self, bibcode: t.List):
         self._data[bibcode] = article(bibcode=bibcode)
@@ -307,6 +311,12 @@ class journal:
         for dd in data:
             d = article(data=dd)
             self._data[d.bibcode] = d
+
+    def add_articles(self, data: t.List):
+        for dd in data:
+            if isinstance(dd,article):
+                self._data[dd.bibcode] = dd
+    
 
     def add_bibtex(self, bibtex: str):
         raise NotImplementedError

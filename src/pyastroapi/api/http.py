@@ -135,10 +135,15 @@ def delete(token: str, url: str) -> HttpResponse:
 
 
 def post_bibcodes(
-    token: str, url: str, bibcodes: t.Union[str, t.List[str]]
+    token: str, url: str, bibcodes: t.Union[str, t.List[str]],
+    multi_bibs: bool = True
 ) -> HttpResponse:
     if isinstance(bibcodes, list):
-        data = {"bibcodes": bibcodes}
+        if multi_bibs:
+            data = {"bibcodes": bibcodes}
+        else:
+            # Some end points want bibcode even with plural bibcodes
+            data = {"bibcode": bibcodes}
     else:
         data = {"bibcode": utils.ensure_list(bibcodes)}
 

@@ -16,9 +16,9 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:2020&fl=page,volume&fq=&start=0
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":9,\n    \"params\":{\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":10,\n    \"params\":{\n
         \     \"q\":\"^farmer,r year:2020\",\n      \"fl\":\"page,volume\",\n      \"start\":\"0\",\n
-        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-623f341c-35bd0c5e26ee560c473c0489\",\n
+        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62d5ba26-2ba02b2410807f1d26eb3c78\",\n
         \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
         \     {\n        \"page\":[\"L36\"],\n        \"volume\":\"902\"},\n      {}]\n
         \ }}\n"
@@ -40,22 +40,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '412'
+      - '413'
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:41:16 GMT
+      - Mon, 18 Jul 2022 19:53:10 GMT
       Retry-After:
-      - '84107'
+      - '83877'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4960'
+      - '4797'
       X-RateLimit-Reset:
-      - '1648393384'
+      - '1658257868'
     status:
       code: 200
       message: OK

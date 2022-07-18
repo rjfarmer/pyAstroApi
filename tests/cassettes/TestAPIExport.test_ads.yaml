@@ -19,27 +19,21 @@ interactions:
       string: "%R 2020ApJ...902L..36F\n%T Constraints from Gravitational-wave Detections
         of Binary Black Hole Mergers on the <SUP>12</SUP>C(\u03B1, \u03B3)<SUP>16</SUP>O
         Rate\n%A Farmer, R.; Renzo, M.; de Mink, S. E.; Fishbach, M.; Justham, S.\n%F
-        AA(Anton Pannekoek Institute for Astronomy and GRAPPA, University of\nAmsterdam,
-        NL-1090 GE Amsterdam, The Netherlands; Center for\nAstrophysics \u2223 Harvard
-        &amp; Smithsonian, 60 Garden Street, Cambridge,\nMA 02138, USA), AB(Center
-        for Computational Astrophysics, Flatiron\nInstitute, New York, NY 10010, USA),
-        AC(Anton Pannekoek Institute for\nAstronomy and GRAPPA, University of Amsterdam,
-        NL-1090 GE Amsterdam, The\nNetherlands; Center for Astrophysics \u2223 Harvard
-        &amp; Smithsonian, 60\nGarden Street, Cambridge, MA 02138, USA), AD(Department
-        of Astronomy and\nAstrophysics, University of Chicago, Chicago, IL 60637,
-        USA), AE(Anton\nPannekoek Institute for Astronomy and GRAPPA, University of
-        Amsterdam,\nNL-1090 GE Amsterdam, The Netherlands; School of Astronomy &amp;
-        Space\nScience, University of the Chinese Academy of Sciences, Beijing 100012,\nPeople's
-        Republic of China; National Astronomical Observatories, Chinese\nAcademy of
-        Sciences, Beijing 100012, People's Republic of China)\n%J The Astrophysical
-        Journal\n%V 902\n%D 10/2020\n%P L36\n%K Stellar evolution, Supernovae, Core-collapse
-        supernovae, Nuclear\nastrophysics, Stellar mass black holes, Astrophysical
-        black holes,\nMassive stars, Late stellar evolution, 1599, 1668, 304, 1129,
-        1611, 98,\n732, 911, Astrophysics - High Energy Astrophysical Phenomena\n%I
-        ABSTRACT: Abstract;\n%I CITATIONS: Citations to the Article;\n%I REFERENCES:
-        References in the Article;\n%I Co-Reads: Co-Reads;\n%I EPRINT_HTML: arXiv
-        Article;\n%I PUB_HTML: Publisher Article;\n%I EPRINT_PDF: arXiv PDF;\n%I PUB_PDF:
-        Publisher PDF;\n%I SIMBAD: SIMBAD Database at the CDS;\n%U https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F\n%B
+        AA(University of Amsterdam, Anton Pannekoek Institute for Astronomy;\nHarvard
+        Smithsonian Center for Astrophysics), AB(Center for\nComputational Astrophysics,
+        Flatiron Institute, New York), AC(University\nof Amsterdam, Anton Pannekoek
+        Institute for Astronomy; Harvard\nSmithsonian Center for Astrophysics), AD(University
+        of Chicago,\nDepartment of Astronomy and Astrophysics), AE(University of Amsterdam,\nAnton
+        Pannekoek Institute for Astronomy; University of the Chinese\nAcademy of Sciences,
+        Beijing; CAS, National Astronomical Observatories)\n%J The Astrophysical Journal\n%V
+        902\n%D 10/2020\n%P L36\n%K Stellar evolution, Supernovae, Core-collapse supernovae,
+        Nuclear\nastrophysics, Stellar mass black holes, Astrophysical black holes,\nMassive
+        stars, Late stellar evolution, 1599, 1668, 304, 1129, 1611, 98,\n732, 911,
+        Astrophysics - High Energy Astrophysical Phenomena\n%I ABSTRACT: Abstract;\n%I
+        CITATIONS: Citations to the Article;\n%I REFERENCES: References in the Article;\n%I
+        Co-Reads: Co-Reads;\n%I EPRINT_HTML: arXiv Article;\n%I PUB_HTML: Publisher
+        Article;\n%I EPRINT_PDF: arXiv PDF;\n%I PUB_PDF: Publisher PDF;\n%I SIMBAD:
+        SIMBAD Database at the CDS;\n%U https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F\n%B
         Gravitational-wave detections are starting to allow us to probe the physical
         processes in the evolution of very massive stars through the imprints they
         leave on their final remnants. Stellar evolution theory predicts the existence
@@ -82,22 +76,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '3710'
+      - '3269'
       Content-Type:
       - text/plain
       Date:
-      - Sat, 26 Mar 2022 15:41:18 GMT
+      - Mon, 18 Jul 2022 19:53:14 GMT
       Retry-After:
-      - '84105'
+      - '83873'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4956'
+      - '4793'
       X-RateLimit-Reset:
-      - '1648393384'
+      - '1658257868'
     status:
       code: 200
       message: OK

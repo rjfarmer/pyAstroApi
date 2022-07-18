@@ -21,15 +21,15 @@ interactions:
   response:
     body:
       string: '{"skipped bibcodes": [], "basic stats": {"number of papers": 2, "normalized
-        paper count": 0.4, "total number of reads": 1671, "average number of reads":
-        835, "median number of reads": 835.5, "recent number of reads": 82, "total
-        number of downloads": 752, "average number of downloads": 376.0, "median number
-        of downloads": 376.0, "recent number of downloads": 46}, "basic stats refereed":
+        paper count": 0.4, "total number of reads": 1803, "average number of reads":
+        901.5, "median number of reads": 901.5, "recent number of reads": 214, "total
+        number of downloads": 817, "average number of downloads": 408.5, "median number
+        of downloads": 408.5, "recent number of downloads": 111}, "basic stats refereed":
         {"number of papers": 2, "normalized paper count": 0.4, "total number of reads":
-        1671, "average number of reads": 835, "median number of reads": 835.5, "recent
-        number of reads": 82, "total number of downloads": 752, "average number of
-        downloads": 376.0, "median number of downloads": 376.0, "recent number of
-        downloads": 46}}
+        1803, "average number of reads": 901.5, "median number of reads": 901.5, "recent
+        number of reads": 214, "total number of downloads": 817, "average number of
+        downloads": 408.5, "median number of downloads": 408.5, "recent number of
+        downloads": 111}}
 
         '
     headers:
@@ -50,22 +50,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '714'
+      - '722'
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:41:38 GMT
+      - Mon, 18 Jul 2022 19:53:41 GMT
       Retry-After:
-      - '84114'
+      - '83882'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '988'
+      - '960'
       X-RateLimit-Reset:
-      - '1648393413'
+      - '1658257904'
     status:
       code: 200
       message: OK

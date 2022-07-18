@@ -11,6 +11,6 @@ def search(token: str, bibcode: t.Union[str, t.List[str]]):
 
     url = urls.make_url(urls.urls["authors"]["search"])
 
-    data = http.post_bibcodes(token, url, bibcode)
+    data = http.post_bibcodes(token, url, bibcode, False)
 
     return data.response["data"]

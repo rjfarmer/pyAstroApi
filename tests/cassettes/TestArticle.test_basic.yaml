@@ -13,12 +13,12 @@ interactions:
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=bibcode:2021ApJ...923..214F&fl=year,abstract,author,bibcode,pubdate,title,pub&fq=&start=0&rows=1
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=bibcode:2021ApJ...923..214F&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0&rows=1
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":13,\n    \"params\":{\n
-        \     \"q\":\"bibcode:2021ApJ...923..214F\",\n      \"fl\":\"year,abstract,author,bibcode,pubdate,title,pub\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6249b054-43781c3c77d4949f62b62f86\",\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":57,\n    \"params\":{\n
+        \     \"q\":\"bibcode:2021ApJ...923..214F\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62d5ba57-523cfa3141866ae3010405f8\",\n
         \     \"fq\":\"\",\n      \"rows\":\"1\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":1,\"start\":0,\"docs\":[\n
         \     {\n        \"bibcode\":\"2021ApJ...923..214F\",\n        \"abstract\":\"The
         cosmic origin of carbon, a fundamental building block of life, is still uncertain.
@@ -46,7 +46,53 @@ interactions:
         R.\",\n          \"Laplace, E.\",\n          \"de Mink, S. E.\",\n          \"Justham,
         S.\"],\n        \"pub\":\"The Astrophysical Journal\",\n        \"pubdate\":\"2021-12-00\",\n
         \       \"title\":[\"The Cosmic Carbon Footprint of Massive Stars Stripped
-        in Binary Systems\"],\n        \"year\":\"2021\"}]\n  }}\n"
+        in Binary Systems\"],\n        \"year\":\"2021\",\n        \"reference\":[\"1957RvMP...29..547B\",\n
+        \         \"1959ApJ...130..429C\",\n          \"1967AcA....17..355P\",\n          \"1967ZA.....65..251K\",\n
+        \         \"1969ApJ...157..339A\",\n          \"1976ApJ...210..440B\",\n          \"1978A&A....63....7B\",\n
+        \         \"1982ApJ...262..590F\",\n          \"1983A&A...120..113M\",\n          \"1983ARA&A..21..343A\",\n
+        \         \"1983ApJ...268..368E\",\n          \"1985ApJ...293....1F\",\n          \"1986A&A...165...95H\",\n
+        \         \"1987ApJ...319..730S\",\n          \"1988A&A...202...93R\",\n          \"1988A&AS...72..259D\",\n
+        \         \"1989A&A...210...93L\",\n          \"1991A&A...248..531L\",\n          \"1991ApJ...370..630A\",\n
+        \         \"1992A&A...264..105M\",\n          \"1992ApJ...391..246P\",\n          \"1993ApJ...411..823W\",\n
+        \         \"1993ApJ...412..752I\",\n          \"1993JPhGS..19..183W\",\n          \"1993PhR...227...65W\",\n
+        \         \"1994ADNDT..56..231O\",\n          \"1995ApJ...443..152W\",\n          \"1995ApJS...99..713S\",\n
+        \         \"1995ApJS..101..181W\",\n          \"1995IAUS..163..305B\",\n          \"1995MNRAS.274..964P\",\n
+        \         \"1995SSRv...74..343L\",\n          \"1996ApJ...457..834T\",\n          \"1996ApJ...460..408T\",\n
+        \         \"1996ApJ...464..943I\",\n          \"1996ApJS..102..411I\",\n          \"1996MNRAS.281..257T\",\n
+        \         \"1998SSRv...85..161G\",\n          \"1999A&A...350..148W\",\n          \"1999NewA....4..313B\",\n
+        \         \"1999NuPhA.656....3A\",\n          \"2000A&A...360..227N\",\n          \"2000A&A...361..101M\",\n
+        \         \"2000ApJ...541..660H\",\n          \"2000ApJS..126..501T\",\n          \"2000NuPhA.673..481L\",\n
+        \         \"2001A&A...369..574V\",\n          \"2001ApJ...548..296W\",\n          \"2001ApJ...554..778L\",\n
+        \         \"2001NewA....6..457B\",\n          \"2002ApJ...576.1064R\",\n          \"2003ApJ...587..278W\",\n
+        \         \"2003MNRAS.338..973D\",\n          \"2003MNRAS.341..299D\",\n          \"2004A&A...414..931A\",\n
+        \         \"2004A&A...425..649H\",\n          \"2004MNRAS.353...87E\",\n          \"2004NewAR..48..861D\",\n
+        \         \"2004PhDT........45I\",\n          \"2005A&A...433.1013H\",\n          \"2005ApJ...623..213C\",\n
+        \         \"2005ApJ...623..585F\",\n          \"2006A&A...447..623M\",\n          \"2006A&A...452..295E\",\n
+        \         \"2006A&A...460..565I\",\n          \"2006ApJ...653.1145K\",\n          \"2006MNRAS.367.1181B\",\n
+        \         \"2006NuPhA.777..424N\",\n          \"2007A&A...466..277H\",\n          \"2007ApJ...661.1094C\",\n
+        \         \"2007ApJ...664.1033Y\",\n          \"2007CSE.....9...90H\",\n          \"2007CSE.....9c..21P\",\n
+        \         \"2007PhRvD..76b5028C\",\n          \"2008ApJ...676L..29H\",\n          \"2009A&A...496..841H\",\n
+        \         \"2009A&A...505..605C\",\n          \"2009A&A...507L...1D\",\n          \"2009AJ....137.3358M\",\n
+        \         \"2009ARA&A..47..427H\",\n          \"2010ApJ...725..940Y\",\n          \"2010ApJS..189..240C\",\n
+        \         \"2010CoPP...50...82P\",\n          \"2011A&A...530A.115B\",\n          \"2011ApJ...730...70O\",\n
+        \         \"2011ApJS..192....3P\",\n          \"2011CSE....13b..22V\",\n          \"2012A&A...537A.146E\",\n
+        \         \"2012ARA&A..50..107L\",\n          \"2012Sci...337..444S\",\n          \"2013ARA&A..51..105C\",\n
+        \         \"2013ApJ...769...99B\",\n          \"2013ApJS..208....4P\",\n          \"2014A&A...565A..39M\",\n
+        \         \"2014A&A...568A..25N\",\n          \"2014ApJ...783...10S\",\n          \"2015ApJS..220...15P\",\n
+        \         \"2016ApJ...821...38S\",\n          \"2016ApJ...825...26K\",\n          \"2016ApJS..225...24P\",\n
+        \         \"2016ApJS..227...22F\",\n          \"2017A&A...603A.118R\",\n          \"2017A&A...608A..11G\",\n
+        \         \"2017ApJ...840...10Y\",\n          \"2017ApJS..230...15M\",\n          \"2017MNRAS.465.4044B\",\n
+        \         \"2017MNRAS.470..401R\",\n          \"2017MNRAS.471..279C\",\n          \"2018ApJ...859...12G\",\n
+        \         \"2018ApJS..234...19F\",\n          \"2018ApJS..234...34P\",\n          \"2018ApJS..237...13L\",\n
+        \         \"2018MNRAS.476.3432P\",\n          \"2018SSRv..214...63S\",\n          \"2018Sci...359...69S\",\n
+        \         \"2019A&A...627A..24G\",\n          \"2019ApJ...870....2C\",\n          \"2019ApJ...878...49W\",\n
+        \         \"2019ApJ...884...38B\",\n          \"2019ApJ...886...47S\",\n          \"2019ApJS..243...10P\",\n
+        \         \"2019MNRAS.483.3607S\",\n          \"2020A&A...637A...6L\",\n          \"2020A&A...639A..37R\",\n
+        \         \"2020ApJ...888...55F\",\n          \"2020ApJ...888...80L\",\n          \"2020ApJ...898...74L\",\n
+        \         \"2020MNRAS.492.2578S\",\n          \"2020MNRAS.499..873S\",\n          \"2021A&A...645A...5S\",\n
+        \         \"2021A&A...656A..58L\",\n          \"2021A&A...656L..19Z\",\n          \"2021ApJ...916L...5V\",\n
+        \         \"2021ApJ...921...73G\",\n          \"2021MNRAS.501.2745M\",\n          \"2022ApJ...931...85B\"],\n
+        \       \"citation_count\":2}]\n  }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -65,22 +111,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '2453'
+      - '7006'
       Content-Type:
       - application/json
       Date:
-      - Sun, 03 Apr 2022 14:33:56 GMT
+      - Mon, 18 Jul 2022 19:53:59 GMT
       Retry-After:
-      - '85872'
+      - '83827'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4983'
+      - '4762'
       X-RateLimit-Reset:
-      - '1649082309'
+      - '1658257867'
     status:
       code: 200
       message: OK

@@ -21,17 +21,17 @@ interactions:
   response:
     body:
       string: '{"skipped bibcodes": [], "citation stats": {"number of citing papers":
-        78, "number of self-citations": 0, "self-citations": [], "total number of
-        citations": 78, "average number of citations": 78.0, "median number of citations":
-        78.0, "normalized number of citations": 15.6, "total number of refereed citations":
-        54, "average number of refereed citations": 54.0, "median number of refereed
-        citations": 54.0, "normalized number of refereed citations": 10.8}, "citation
-        stats refereed": {"number of citing papers": 78, "number of self-citations":
-        0, "total number of citations": 78, "average number of citations": 78.0, "median
-        number of citations": 78.0, "normalized number of citations": 15.6, "total
-        number of refereed citations": 54, "average number of refereed citations":
-        54.0, "median number of refereed citations": 54.0, "normalized number of refereed
-        citations": 10.8}}
+        96, "number of self-citations": 0, "self-citations": [], "total number of
+        citations": 96, "average number of citations": 96.0, "median number of citations":
+        96.0, "normalized number of citations": 19.2, "total number of refereed citations":
+        69, "average number of refereed citations": 69.0, "median number of refereed
+        citations": 69.0, "normalized number of refereed citations": 13.8}, "citation
+        stats refereed": {"number of citing papers": 96, "number of self-citations":
+        0, "total number of citations": 96, "average number of citations": 96.0, "median
+        number of citations": 96.0, "normalized number of citations": 19.2, "total
+        number of refereed citations": 69, "average number of refereed citations":
+        69.0, "median number of refereed citations": 69.0, "normalized number of refereed
+        citations": 13.8}}
 
         '
     headers:
@@ -56,18 +56,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:41:36 GMT
+      - Mon, 18 Jul 2022 19:53:39 GMT
       Retry-After:
-      - '84116'
+      - '83884'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '991'
+      - '963'
       X-RateLimit-Reset:
-      - '1648393413'
+      - '1658257904'
     status:
       code: 200
       message: OK

@@ -13,12 +13,12 @@ interactions:
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:1600&fl=abstract,author,bibcode,pubdate,title,pub&fq=&start=0
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:1600&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":83,\n    \"params\":{\n
-        \     \"q\":\"^farmer,r year:1600\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-623f341d-3e451ebb154ae818248c6396\",\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":263,\n
+        \   \"params\":{\n      \"q\":\"^farmer,r year:1600\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62d5ba26-2bfdbd286c0e332933b69f0e\",\n
         \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":0,\"start\":0,\"docs\":[]\n
         \ }}\n"
     headers:
@@ -39,22 +39,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '377'
+      - '408'
       Content-Type:
       - application/json
       Date:
-      - Sat, 26 Mar 2022 15:41:17 GMT
+      - Mon, 18 Jul 2022 19:53:11 GMT
       Retry-After:
-      - '84107'
+      - '83876'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4959'
+      - '4796'
       X-RateLimit-Reset:
-      - '1648393385'
+      - '1658257868'
     status:
       code: 200
       message: OK

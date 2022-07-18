@@ -13,6 +13,6 @@ def citations(token: str, bibcode: t.List[str]):
     if not isinstance(bibcode, list):
         raise TypeError("Must pass a list of more than one bibcode")
 
-    data = http.post_bibcodes(token, url, bibcode)
+    data = http.post_bibcodes(token, url, bibcode, True)
 
     return data.response

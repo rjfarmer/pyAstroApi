@@ -13,13 +13,13 @@ interactions:
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=citations(2021ApJ...923..214F)&fl=abstract,author,bibcode,pubdate,title,pub&fq=&start=0
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=citations(2021ApJ...923..214F)&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":27,\n    \"params\":{\n
-        \     \"q\":\"citations(2021ApJ...923..214F)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6249b053-647d7b2e3dc1cfc522182f6d\",\n
-        \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":1,\"start\":0,\"docs\":[\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":49,\n    \"params\":{\n
+        \     \"q\":\"citations(2021ApJ...923..214F)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62d5ba55-11f1735662fdc6e22cdf428b\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
         \     {\n        \"bibcode\":\"2021A&A...656A..58L\",\n        \"abstract\":\"The
         majority of massive stars live in binary or multiple systems and will interact
         with a companion during their lifetimes, which helps to explain the observed
@@ -51,7 +51,112 @@ interactions:
         Y.\",\n          \"Farmer, R.\",\n          \"Vartanyan, D.\",\n          \"de
         Mink, S. E.\"],\n        \"pub\":\"Astronomy and Astrophysics\",\n        \"pubdate\":\"2021-12-00\",\n
         \       \"title\":[\"Different to the core: The pre-supernova structures of
-        massive single and binary-stripped stars\"]}]\n  }}\n"
+        massive single and binary-stripped stars\"],\n        \"year\":\"2021\",\n
+        \       \"reference\":[\"1957RvMP...29..547B\",\n          \"1958ZA.....46..108B\",\n
+        \         \"1967ZA.....65..251K\",\n          \"1968Ap&SS...2...96F\",\n          \"1968pss..book.....C\",\n
+        \         \"1973NInfo..27....3T\",\n          \"1985ApJ...294L..17W\",\n          \"1985ApJ...295..604T\",\n
+        \         \"1986A&A...165...95H\",\n          \"1987A&A...188...49R\",\n          \"1988A&AS...72..259D\",\n
+        \         \"1989A&A...210...93L\",\n          \"1989A&A...220..135L\",\n          \"1991A&A...248..531L\",\n
+        \         \"1991A&A...252..669L\",\n          \"1991PhR...203....1B\",\n          \"1992ApJ...391..246P\",\n
+        \         \"1993ApJ...411..823W\",\n          \"1993ApJ...412..752I\",\n          \"1993PhR...227...65W\",\n
+        \         \"1994ApJ...433L..41B\",\n          \"1995ApJ...448..315W\",\n          \"1995MNRAS.274..964P\",\n
+        \         \"1996ApJ...460..869H\",\n          \"1996ApJ...463..297B\",\n          \"1996ApJ...464..943I\",\n
+        \         \"1996MNRAS.281..257T\",\n          \"1998ApJ...496..316B\",\n          \"1998MNRAS.298..525P\",\n
+        \         \"1999A&A...350..148W\",\n          \"1999ApJS..124..241T\",\n          \"1999NewA....4..313B\",\n
+        \         \"1999NuPhA.656....3A\",\n          \"2000A&A...360..227N\",\n          \"2000ApJS..129..377T\",\n
+        \         \"2000MNRAS.315..543H\",\n          \"2001A&A...369..574V\",\n          \"2001NewA....6..457B\",\n
+        \         \"2002ApJ...576..323R\",\n          \"2002MNRAS.329..897H\",\n          \"2002PASA...19..233P\",\n
+        \         \"2002RvMP...74.1015W\",\n          \"2003MNRAS.344..629D\",\n          \"2004ApJ...612.1044P\",\n
+        \         \"2005ApJ...623..585F\",\n          \"2006A&A...452..295E\",\n          \"2006MNRAS.368.1742D\",\n
+        \         \"2007PhR...442..269W\",\n          \"2008A&A...485..245G\",\n          \"2008AIPC..990..230D\",\n
+        \         \"2008ApJ...675..614P\",\n          \"2008SerAJ.176....1I\",\n          \"2009ARA&A..47..481A\",\n
+        \         \"2010ApJ...725..940Y\",\n          \"2011A&A...530A.115B\",\n          \"2011ApJ...730...70O\",\n
+        \         \"2011ApJS..192....3P\",\n          \"2012ApJ...749...91F\",\n          \"2012ApJ...749...98T\",\n
+        \         \"2012ApJ...757...69U\",\n          \"2012MNRAS.423.3397S\",\n          \"2012Sci...337..444S\",\n
+        \         \"2013ApJ...772..150J\",\n          \"2013ApJ...778L...7C\",\n          \"2013ApJS..208....4P\",\n
+        \         \"2014ARA&A..52..487S\",\n          \"2014ApJ...783...10S\",\n          \"2015ApJ...801L..24M\",\n
+        \         \"2015ApJ...807L..31L\",\n          \"2015ApJ...809...30A\",\n          \"2015ApJ...813...74J\",\n
+        \         \"2015ApJS..220...15P\",\n          \"2015MNRAS.451.2123T\",\n          \"2015MNRAS.453..287M\",\n
+        \         \"2015PASA...32...15Y\",\n          \"2016ApJ...818....3K\",\n          \"2016ApJ...818..124E\",\n
+        \         \"2016ApJ...831...98R\",\n          \"2016ApJ...833..133T\",\n          \"2016ApJS..227...22F\",\n
+        \         \"2016PhRvL.116f1102A\",\n          \"2017A&A...603A.118R\",\n          \"2017A&A...607L...8V\",\n
+        \         \"2017A&A...608A..11G\",\n          \"2017ApJ...840...10Y\",\n          \"2017MNRAS.470.1642F\",\n
+        \         \"2017PASP..129j4502K\",\n          \"2017PhRvL.119p1101A\",\n          \"2018ApJ...852...28S\",\n
+        \         \"2018ApJ...853...62T\",\n          \"2018ApJ...855L...3O\",\n          \"2018ApJ...860...93S\",\n
+        \         \"2018ApJS..234...34P\",\n          \"2018MNRAS.473.1695C\",\n          \"2018MNRAS.474L...1R\",\n
+        \         \"2018MNRAS.476.1853F\",\n          \"2018MNRAS.477.3091V\",\n          \"2018MNRAS.477L..80K\",\n
+        \         \"2018MNRAS.481.1908K\",\n          \"2018Natur.561..498J\",\n          \"2018PASA...35...49E\",\n
+        \         \"2019A&A...625A.132S\",\n          \"2019ApJ...878...49W\",\n          \"2019ApJ...881...16Y\",\n
+        \         \"2019ApJ...882...36M\",\n          \"2019ApJ...887...53F\",\n          \"2019ApJS..243...10P\",\n
+        \         \"2019MNRAS.482..351V\",\n          \"2019MNRAS.484.3307M\",\n          \"2019MNRAS.486.4451G\",\n
+        \         \"2019NatAs...3..717M\",\n          \"2019PASP..131a8002B\",\n          \"2020A&A...637A...6L\",\n
+        \         \"2020A&A...642A..33D\",\n          \"2020ApJ...890...43C\",\n          \"2020ApJ...890...51E\",\n
+        \         \"2020ApJ...890...94Y\",\n          \"2020ApJ...901...33F\",\n          \"2020ApJ...901..114A\",\n
+        \         \"2020ApJ...902L..36F\",\n          \"2020MNRAS.491..972A\",\n          \"2020MNRAS.491.2715B\",\n
+        \         \"2020MNRAS.497.4644M\",\n          \"2020MNRAS.499..873S\",\n          \"2020MNRAS.499.2803P\",\n
+        \         \"2020MNRAS.499.3214M\",\n          \"2021A&A...645A...5S\",\n          \"2021ApJ...908...44Y\",\n
+        \         \"2021ApJ...916L...5V\",\n          \"2021ApJ...923..214F\",\n          \"2021MNRAS.500.1380M\",\n
+        \         \"2021Natur.589...29B\",\n          \"2022A&C....3800516L\"],\n
+        \       \"citation_count\":28},\n      {\n        \"bibcode\":\"2022ApJ...932...26T\",\n
+        \       \"abstract\":\"We present a study of the Galactic supernova remnant
+        (SNR) G292.0+1.8, a classic example of a core-collapse SNR that contains oxygen-rich
+        ejecta, circumstellar material, a rapidly moving pulsar, and a pulsar wind
+        nebula (PWN). We use hydrodynamic simulations of the remnant's evolution to
+        show that the SNR reverse shock is interacting with the PWN and has most likely
+        shocked the majority of the supernova ejecta. In our models, such a scenario
+        requires a total ejecta mass of \u22723 M <SUB>\u2299</SUB> and implies that
+        there is no significant quantity of cold ejecta in the interior of the reverse
+        shock. In light of these results, we compare the estimated elemental masses
+        and abundance ratios in the reverse-shocked ejecta to nucleosynthesis models,
+        and further conclude that they are consistent with a progenitor star with
+        an initial mass of 12-16 M <SUB>\u2299</SUB>. We conclude that the progenitor
+        of G292.0+1.8 was likely a relatively low-mass star that experienced significant
+        mass loss through a binary interaction and would have produced a stripped-envelope
+        supernova explosion. We also argue that the region known as the \\\"spur\\\"
+        in G292.0+1.8 arises as a result of the pulsar's motion through the supernova
+        ejecta, and that its dynamical properties may suggest a line-of-sight component
+        to the pulsar's velocity, leading to a total space velocity of ~600 km s<SUP>-1</SUP>
+        and implying a significant natal kick. Finally, we discuss binary mass-loss
+        scenarios relevant to G292.0+1.8 and their implications for the binary companion
+        properties and future searches.\",\n        \"author\":[\"Temim, Tea\",\n
+        \         \"Slane, Patrick\",\n          \"Raymond, John C.\",\n          \"Patnaude,
+        Daniel\",\n          \"Murray, Emily\",\n          \"Ghavamian, Parviz\",\n
+        \         \"Renzo, Mathieu\",\n          \"Jacovich, Taylor\"],\n        \"pub\":\"The
+        Astrophysical Journal\",\n        \"pubdate\":\"2022-06-00\",\n        \"title\":[\"SNR
+        G292.0+1.8: A Remnant of a Low-mass Progenitor Stripped-envelope Supernova\"],\n
+        \       \"year\":\"2022\",\n        \"reference\":[\"1979MNRAS.188..357G\",\n
+        \         \"1979MNRAS.189..501M\",\n          \"1981PASJ...33....1I\",\n          \"1981PASJ...33..521I\",\n
+        \         \"1984ApJ...282..142D\",\n          \"1986PASJ...38..717I\",\n          \"1990ApJ...348..169B\",\n
+        \         \"1993ApJS...88..589B\",\n          \"1994ApJ...420..213K\",\n          \"1994ApJ...422..126H\",\n
+        \         \"1995ApJ...439..381S\",\n          \"1996ApJ...460..869H\",\n          \"1996ApJ...471..352K\",\n
+        \         \"1998A&A...330.1047T\",\n          \"1999ApJS..120..299T\",\n          \"2000ApJ...537..667B\",\n
+        \         \"2000ApJS..126..501T\",\n          \"2001ApJ...559L.153H\",\n          \"2001ApJ...563..806B\",\n
+        \         \"2002ApJ...567..314P\",\n          \"2002ApJ...567L..71C\",\n          \"2003ApJ...583L..91G\",\n
+        \         \"2003ApJ...594..326G\",\n          \"2004ApJ...610..275P\",\n          \"2004ApJ...612.1044P\",\n
+        \         \"2005ApJ...619..839C\",\n          \"2005ApJ...635..365G\",\n          \"2006AJ....132..360W\",\n
+        \         \"2006ApJ...640..891Y\",\n          \"2006NuPhA.777..424N\",\n          \"2007ApJ...670L.121P\",\n
+        \         \"2007Sci...315.1103M\",\n          \"2008Sci...320.1195K\",\n          \"2009ApJ...692.1489W\",\n
+        \         \"2009ApJ...696.1307G\",\n          \"2009ApJ...703.2051G\",\n          \"2009ApJ...706..441L\",\n
+        \         \"2009MNRAS.399..515M\",\n          \"2009PhDT.........1E\",\n          \"2010A&A...509A..59D\",\n
+        \         \"2010ApJ...711..861L\",\n          \"2011ApJ...741...97D\",\n          \"2012ApJ...750...39G\",\n
+        \         \"2012Sci...337..444S\",\n          \"2013MNRAS.429.1324S\",\n          \"2013Sci...342.1346K\",\n
+        \         \"2014ARA&A..52..487S\",\n          \"2014PASJ...66...64K\",\n          \"2014RAA....14.1279Y\",\n
+        \         \"2015A&A...574A..60T\",\n          \"2015A&A...582A..56D\",\n          \"2015ApJ...800...65B\",\n
+        \         \"2015ApJ...803..101P\",\n          \"2015ApJ...806..153Y\",\n          \"2015ApJ...808..100T\",\n
+        \         \"2015ApJ...814...63M\",\n          \"2015MNRAS.448L...6T\",\n          \"2015MNRAS.453..287M\",\n
+        \         \"2016ApJ...819..160B\",\n          \"2016ApJ...821...38S\",\n          \"2016ApJ...831..188G\",\n
+        \         \"2016ApJS..227...22F\",\n          \"2016JKAS...49..109K\",\n          \"2016MNRAS.457..328L\",\n
+        \         \"2016MNRAS.461.3747B\",\n          \"2017A&A...603A.118R\",\n          \"2017ApJ...837...84J\",\n
+        \         \"2017ApJ...842..125Z\",\n          \"2017ApJ...844....1K\",\n          \"2017ApJ...844...84H\",\n
+        \         \"2017ApJ...849..109P\",\n          \"2018A&A...609A.136T\",\n          \"2018ApJ...856...18K\",\n
+        \         \"2018ApJ...861...92D\",\n          \"2018ApJ...863..127K\",\n          \"2018SSRv..214...28R\",\n
+        \         \"2019A&A...623A..34K\",\n          \"2019A&A...624A..66R\",\n          \"2019ApJ...871...64A\",\n
+        \         \"2019ApJ...872...31B\",\n          \"2019ApJ...878L..19T\",\n          \"2019ApJ...881...54W\",\n
+        \         \"2019MNRAS.484.3307M\",\n          \"2019MNRAS.485.1559P\",\n          \"2019MNRAS.485.5394K\",\n
+        \         \"2020MNRAS.497.5344E\",\n          \"2020MNRAS.499.3214M\",\n          \"2021A&A...645A...5S\",\n
+        \         \"2021A&A...656A..58L\",\n          \"2021A&A...656L..19Z\",\n          \"2021ApJ...914...41J\",\n
+        \         \"2021ApJ...916L...5V\",\n          \"2021ApJ...923..214F\",\n          \"2021Natur.589...29B\",\n
+        \         \"2022ApJ...932..117L\"],\n        \"citation_count\":3}]\n  }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -70,22 +175,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '2821'
+      - '12555'
       Content-Type:
       - application/json
       Date:
-      - Sun, 03 Apr 2022 14:33:55 GMT
+      - Mon, 18 Jul 2022 19:53:57 GMT
       Retry-After:
-      - '85873'
+      - '83829'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4985'
+      - '4764'
       X-RateLimit-Reset:
-      - '1649082309'
+      - '1658257867'
     status:
       code: 200
       message: OK
