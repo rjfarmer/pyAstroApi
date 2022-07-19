@@ -87,6 +87,44 @@ class PDF:
         self._download("ESOURCE|ADS_PDF", "ADSABS", filename)
         return filename
 
+class Urls:
+    def __init__(self, bibcode):
+        if isinstance(bibcode, list):
+            raise TypeError("Can only handle one pdf at a time")
+
+        self.bibcode = bibcode
+        links = _resolve.esource(token.get_token(), bibcode)
+        self.links = {}
+        if "links" not in links:
+            raise ValueError("No pdf links available")
+
+        for i in links["links"]["records"]:
+            self.links[i["link_type"]] = i["url"]
+
+    def _get(self, source, name):
+        if source not in self.links:
+            raise ValueError(f"No {name} html available for {self.bibcode}")
+
+        if filename is None:
+            filename = self.filename()
+
+    @property
+    def ads(self):
+        return f"https://ui.adsabs.harvard.edu/abs/{self.bibcode}"
+
+    @property
+    def arixv(self):
+        return self._get("ESOURCE|EPRINT_HTML", "Arxiv")
+        
+    @property
+    def journal(self):
+        tries =  ['ESOURCE',"ESOURCE|HTML","PUB_HTML","AUTHOR_HTML"]
+
+        for link in tries:
+            if link in self.links:
+                return self._get(link, "Journal")
+
+
 
 class article:
     def __init__(
@@ -231,6 +269,10 @@ class article:
     def pdf(self):
         return PDF(self.bibcode)
 
+    @property
+    def url(self):
+        return Urls(self.bibcode)
+
     def as_dict(self):
         return self._data
 
@@ -254,12 +296,21 @@ class article:
 
         return self._cites
 
+    @property
     def first_author(self):
         return self.author[0]
 
+    @property
     def authors(self):
         return self.author
 
+    @property
+    def name(self):
+        return f"{self.first_author} {self.year}"
+
+    @property
+    def title(self):
+        return self._data['title'][0]
 
 class journal:
     def __init__(
@@ -380,6 +431,10 @@ class journal:
     @property
     def pdf(self):
         return PDF(self.bibcodes())
+
+    @property
+    def url(self):
+        return Urls(self.bibcodes())
 
     def pop(self, bibcodes):
         bibcodes = utils.ensure_list(bibcodes)
