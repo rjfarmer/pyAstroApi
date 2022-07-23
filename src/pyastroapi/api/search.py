@@ -30,7 +30,7 @@ _fields = set(
     title 
     vizier volume
     year
-        """.split()
+    """.split()
 )
 
 _short_fl = "abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference"
@@ -42,6 +42,10 @@ def search(
     fields: str = None,
     fq: str = "",
     limit: int = -1,
+    callback_start: t.Callable = None,  # Before search runs
+    callback_num_results: t.Callable = None,  # Returns the number of rows found
+    callback_search: t.Callable = None,  # Called with each result
+    callback_end: t.Callable = None,  # Called once all results returned
 ) -> t.Generator[t.Dict[t.Any, t.Any], None, None]:
 
     if fields is not None:
@@ -50,6 +54,9 @@ def search(
                 raise ValueError(f"Field {f} not valid in search")
     else:
         fields = _short_fl
+
+    if callback_start is not None:
+        callback_start(query, fields, fq, limit)
 
     start = 0
     count = 0
@@ -84,16 +91,24 @@ def search(
 
         total_num = int(data.response["response"]["numFound"])
 
+        if count == 0 and callback_num_results is not None:
+            callback_num_results(total_num)
+
         count += len(data.response["response"]["docs"])
 
         # print(count,total_num,start)
-
-        yield from data.response["response"]["docs"]
+        if callback_search is None:
+            yield from data.response["response"]["docs"]
+        else:
+            callback_search(data.response["response"]["docs"])
 
         if count == total_num or count >= limit:
             break
         else:
             start = count - 1
+
+        if callback_end is not None:
+            callback_end(query, fields, fq, limit, total_num)
 
 
 def bigquery(token: str, bibcodes: t.List[str], limit: int = -1):

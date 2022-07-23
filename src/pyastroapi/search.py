@@ -31,6 +31,27 @@ def references(bibcode, fields=None):
     return search(query=f"references({bibcode})", fields=fields)
 
 
+def search_with_callbacks(
+    query,
+    limit=-1,
+    fields=None,
+    callback_start=None,  # Before search runs
+    callback_num_results=None,  # Returns the number of rows found
+    callback_search=None,  # Called with each result
+    callback_end=None,  # Called once all results returned
+):
+    return _search.search(
+        _token.get_token(),
+        query=query,
+        limit=limit,
+        fields=fields,
+        callback_start=callback_start,
+        callback_num_results=callback_num_results,
+        callback_search=callback_search,
+        callback_end=callback_end,
+    )
+
+
 # import bibtexparser
 # from bibtexparser.bparser import BibTexParser
 # import requests
