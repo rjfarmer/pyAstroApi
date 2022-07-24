@@ -3,8 +3,10 @@ import pyastroapi.api.search as _search
 import pyastroapi.api.token as _token
 
 
-def search(query, limit=-1, fields=None):
-    return _search.search(_token.get_token(), query=query, limit=limit, fields=fields)
+def search(query, limit=-1, fields=None, dbg=False):
+    return _search.search(
+        _token.get_token(), query=query, limit=limit, fields=fields, dbg=dbg
+    )
 
 
 def first_author(author, fields=None):

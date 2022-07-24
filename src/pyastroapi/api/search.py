@@ -46,6 +46,7 @@ def search(
     callback_num_results: t.Callable = None,  # Returns the number of rows found
     callback_search: t.Callable = None,  # Called with each result
     callback_end: t.Callable = None,  # Called once all results returned
+    dbg: bool = False,
 ) -> t.Generator[t.Dict[t.Any, t.Any], None, None]:
 
     if fields is not None:
@@ -54,6 +55,8 @@ def search(
                 raise ValueError(f"Field {f} not valid in search")
     else:
         fields = _short_fl
+
+    split_f = fields.split(",")
 
     if callback_start is not None:
         callback_start(query, fields, fq, limit)
@@ -70,11 +73,15 @@ def search(
 
         if limit > 0:
             terms.append(f"rows={limit}")
+        else:
+            terms.append(f"rows=50")
 
         search_term = "&".join(terms)
 
         url = urls.make_url(urls.urls["search"]["search"], search_term)
-        # print(url)
+
+        if dbg:
+            print(url)
         data = http.get(token, url)
 
         if data.status != 200:
@@ -94,7 +101,15 @@ def search(
         if count == 0 and callback_num_results is not None:
             callback_num_results(total_num)
 
+        if not len(data.response["response"]["docs"]):
+            break
+
         count += len(data.response["response"]["docs"])
+
+        for index, doc in enumerate(data.response["response"]["docs"]):
+            for f in split_f:
+                if f not in doc:
+                    data.response["response"]["docs"][index][f] = None
 
         # print(count,total_num,start)
         if callback_search is None:
@@ -102,10 +117,10 @@ def search(
         else:
             callback_search(data.response["response"]["docs"])
 
-        if count == total_num or count >= limit:
+        if count >= total_num or (count >= limit and limit > 0):
             break
         else:
-            start = count - 1
+            start += count - 1
 
         if callback_end is not None:
             callback_end(query, fields, fq, limit, total_num)

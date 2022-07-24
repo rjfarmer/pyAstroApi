@@ -87,6 +87,7 @@ class PDF:
         self._download("ESOURCE|ADS_PDF", "ADSABS", filename)
         return filename
 
+
 class Urls:
     def __init__(self, bibcode):
         if isinstance(bibcode, list):
@@ -115,15 +116,14 @@ class Urls:
     @property
     def arixv(self):
         return self._get("ESOURCE|EPRINT_HTML", "Arxiv")
-        
+
     @property
     def journal(self):
-        tries =  ['ESOURCE',"ESOURCE|HTML","PUB_HTML","AUTHOR_HTML"]
+        tries = ["ESOURCE", "ESOURCE|HTML", "PUB_HTML", "AUTHOR_HTML"]
 
         for link in tries:
             if link in self.links:
                 return self._get(link, "Journal")
-
 
 
 class article:
@@ -136,10 +136,9 @@ class article:
     ):
         self.bibcode = None
         self._data = {}
-
-        self._refs = None
-        self._cites = None
         self._query = None
+        self._refs = []
+        self._cites = []
 
         if bibcode is not None:
             self.from_bibcode(bibcode)
@@ -156,7 +155,7 @@ class article:
 
     def from_data(self, data: t.Dict):
         self._data = data
-        if "bibcode" in data:
+        if "bibcode" in self._data.keys():
             self.bibcode = self._data["bibcode"]
 
     def from_bibtex(self, bibtex: str):
@@ -278,13 +277,24 @@ class article:
 
     def references(self):
         if "reference" in self._data:
-            self._refs = journal(bibcodes=self._data["reference"])
+            if self._data["reference"] is None:
+                self._refs = journal()
+            if not isinstance(self._refs, journal):
+                self._refs = journal(bibcodes=self._data["reference"])
         else:
             data = s.references(self.bibcode)
             self._refs = journal(data=data)
 
         return self._refs
 
+    def reference_count(self):
+        if "reference" not in self._data:
+            return len(self.references())
+        else:
+            if self._data["reference"] is None:
+                return 0
+            else:
+                return len(self._data["reference"])
 
     def citations(self):
         if self._cites is not None:
@@ -310,7 +320,8 @@ class article:
 
     @property
     def title(self):
-        return self._data['title'][0]
+        return self._data["title"][0]
+
 
 class journal:
     def __init__(
@@ -365,9 +376,8 @@ class journal:
 
     def add_articles(self, data: t.List):
         for dd in data:
-            if isinstance(dd,article):
+            if isinstance(dd, article):
                 self._data[dd.bibcode] = dd
-    
 
     def add_bibtex(self, bibtex: str):
         raise NotImplementedError
