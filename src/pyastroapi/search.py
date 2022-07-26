@@ -2,6 +2,17 @@
 import pyastroapi.api.search as _search
 import pyastroapi.api.token as _token
 
+__all__ = [
+    "search",
+    "first_author",
+    "author_year",
+    "orcid",
+    "bibcode",
+    "citations",
+    "references",
+    "search_with_callbacks",
+]
+
 
 def search(query, limit=-1, fields=None, dbg=False):
     return _search.search(

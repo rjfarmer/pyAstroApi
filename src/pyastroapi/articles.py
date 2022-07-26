@@ -14,6 +14,8 @@ import pyastroapi.bibtex as bib
 
 import typing as t
 
+__all__ = ["article", "journal"]
+
 
 class Export:
     def __init__(self, bibcodes):
@@ -239,12 +241,6 @@ class article:
     def __repr__(self):
         return self.bibcode
 
-    def __getstate__(self):
-        return self._data
-
-    def __setstate__(self, state):
-        self.from_data(state)
-
     def __dir__(self):
         return (
             list(self.keys())
@@ -308,10 +304,14 @@ class article:
 
     @property
     def first_author(self):
+        if "author" not in self._data:
+            self.__getattr__("author")
         return self.author[0]
 
     @property
     def authors(self):
+        if "author" not in self._data:
+            self.__getattr__("author")
         return self.author
 
     @property
@@ -320,7 +320,15 @@ class article:
 
     @property
     def title(self):
+        if "title" not in self._data:
+            self.__getattr__("title")
         return self._data["title"][0]
+
+    def __getstate__(self):
+        return self.__dict__.copy()
+
+    def __setstate__(self, state):
+        self.__dict__.update(state)
 
 
 class journal:
@@ -409,14 +417,6 @@ class journal:
     def __iter__(self):
         yield from self._data
 
-    def __getstate__(self):
-        return self._data
-
-    def __setstate__(self, state):
-        self._data = {}
-        for key in state.keys():
-            self.add_bibcode(key)
-
     def __dir__(self):
         return list(self.keys()) + list(self.__dict__.keys()) + _search._fields
 
@@ -454,3 +454,11 @@ class journal:
 
     def __str__(self):
         return f"Journal with {len(self.keys())} articles"
+
+    def __getstate__(self):
+        state = self.__dict__.copy()
+
+        return state
+
+    def __setstate__(self, state):
+        self.__dict__.update(state)
