@@ -5,11 +5,11 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
@@ -41,7 +41,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 18 Jul 2022 19:53:17 GMT
+      - Tue, 26 Jul 2022 16:37:56 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin

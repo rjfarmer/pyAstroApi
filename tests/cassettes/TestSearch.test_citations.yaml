@@ -5,21 +5,21 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=citations(2021ApJ...923..214F)&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=citations(2021ApJ...923..214F)&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0&rows=50
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":49,\n    \"params\":{\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":8,\n    \"params\":{\n
         \     \"q\":\"citations(2021ApJ...923..214F)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62d5ba55-11f1735662fdc6e22cdf428b\",\n
-        \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62e0187f-0679713f05e2fb29104777a7\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"50\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
         \     {\n        \"bibcode\":\"2021A&A...656A..58L\",\n        \"abstract\":\"The
         majority of massive stars live in binary or multiple systems and will interact
         with a companion during their lifetimes, which helps to explain the observed
@@ -175,22 +175,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '12555'
+      - '12554'
       Content-Type:
       - application/json
       Date:
-      - Mon, 18 Jul 2022 19:53:57 GMT
+      - Tue, 26 Jul 2022 16:38:23 GMT
       Retry-After:
-      - '83829'
+      - '6'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4764'
+      - '4622'
       X-RateLimit-Reset:
-      - '1658257867'
+      - '1658853510'
     status:
       code: 200
       message: OK

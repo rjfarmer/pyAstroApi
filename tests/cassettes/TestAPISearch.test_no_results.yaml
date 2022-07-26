@@ -5,21 +5,21 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:1600&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:1600&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0&rows=50
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":263,\n
-        \   \"params\":{\n      \"q\":\"^farmer,r year:1600\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62d5ba26-2bfdbd286c0e332933b69f0e\",\n
-        \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":0,\"start\":0,\"docs\":[]\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":10,\n    \"params\":{\n
+        \     \"q\":\"^farmer,r year:1600\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62e01860-34ed429c79b039123c9f2c31\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"50\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":0,\"start\":0,\"docs\":[]\n
         \ }}\n"
     headers:
       Access-Control-Allow-Credentials:
@@ -39,22 +39,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '408'
+      - '407'
       Content-Type:
       - application/json
       Date:
-      - Mon, 18 Jul 2022 19:53:11 GMT
+      - Tue, 26 Jul 2022 16:37:52 GMT
       Retry-After:
-      - '83876'
+      - '36'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4796'
+      - '4654'
       X-RateLimit-Reset:
-      - '1658257868'
+      - '1658853509'
     status:
       code: 200
       message: OK

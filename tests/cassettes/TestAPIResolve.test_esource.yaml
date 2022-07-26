@@ -5,11 +5,11 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
@@ -47,18 +47,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 18 Jul 2022 19:53:52 GMT
+      - Tue, 26 Jul 2022 16:38:21 GMT
       Retry-After:
-      - '83835'
+      - '8'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4766'
+      - '4624'
       X-RateLimit-Reset:
-      - '1658257868'
+      - '1658853510'
     status:
       code: 200
       message: OK

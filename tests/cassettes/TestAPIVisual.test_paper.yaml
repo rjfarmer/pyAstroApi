@@ -5,7 +5,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
@@ -13,7 +13,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: POST
@@ -21,10 +21,10 @@ interactions:
   response:
     body:
       string: '{"msg": {"start": 0, "rows": 2, "numFound": 2}, "data": {"fullGraph":
-        {"nodes": [{"read_count": 64, "nodeName": "2019ApJ...887...53F", "title":
+        {"nodes": [{"read_count": 65, "nodeName": "2019ApJ...887...53F", "title":
         "Mind the Gap: The Location of the Lower Edge of the Pair-instability Supernova
-        Black Hole Mass Gap", "first_author": "Farmer, R.", "citation_count": 164,
-        "year": "2019", "nodeWeight": 164}, {"read_count": 38, "nodeName": "2020ApJ...902L..36F",
+        Black Hole Mass Gap", "first_author": "Farmer, R.", "citation_count": 167,
+        "year": "2019", "nodeWeight": 167}, {"read_count": 44, "nodeName": "2020ApJ...902L..36F",
         "title": "Constraints from Gravitational-wave Detections of Binary Black Hole
         Mergers on the <SUP>12</SUP>C(\u03b1, \u03b3)<SUP>16</SUP>O Rate", "first_author":
         "Farmer, R.", "citation_count": 96, "year": "2020", "nodeWeight": 96}], "links":
@@ -53,18 +53,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 18 Jul 2022 19:53:53 GMT
+      - Tue, 26 Jul 2022 16:38:22 GMT
       Retry-After:
-      - '83869'
+      - '84898'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '958'
+      - '944'
       X-RateLimit-Reset:
-      - '1658257903'
+      - '1658938401'
     status:
       code: 200
       message: OK

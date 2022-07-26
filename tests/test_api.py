@@ -56,9 +56,9 @@ class TestAPISearch:
         assert len(res) == 2
 
         for i in res:
-            if "page" in i:
+            if "page" in i and i["page"] is not None:
                 assert i["page"] == ["L36"]
-            if "volume" in i:
+            if "volume" in i and i["volume"] is not None:
                 assert i["volume"] == "902"
 
     def test_bad_field(self):

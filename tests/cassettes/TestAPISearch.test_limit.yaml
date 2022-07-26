@@ -5,20 +5,20 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
     uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:2020&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0&rows=1
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":11,\n    \"params\":{\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":9,\n    \"params\":{\n
         \     \"q\":\"^farmer,r year:2020\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62d5ba27-5611bc7c33d1997c1098640c\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62e01860-70d22e0a11364a365413380c\",\n
         \     \"fq\":\"\",\n      \"rows\":\"1\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
         \     {\n        \"bibcode\":\"2020ApJ...902L..36F\",\n        \"abstract\":\"Gravitational-wave
         detections are starting to allow us to probe the physical processes in the
@@ -125,22 +125,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '8291'
+      - '8290'
       Content-Type:
       - application/json
       Date:
-      - Mon, 18 Jul 2022 19:53:12 GMT
+      - Tue, 26 Jul 2022 16:37:53 GMT
       Retry-After:
-      - '83875'
+      - '36'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4795'
+      - '4653'
       X-RateLimit-Reset:
-      - '1658257868'
+      - '1658853510'
     status:
       code: 200
       message: OK

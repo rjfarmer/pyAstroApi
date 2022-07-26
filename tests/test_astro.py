@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-from pyastroapi import search, articles
+import pyastroapi
 
 import pytest
 
@@ -25,24 +25,26 @@ def vcr_config():
 @pytest.mark.vcr()
 class TestSearch:
     def test_basic(self):
-        res = list(search.search("Farmer,r year:2021", fields="title"))
+        res = list(pyastroapi.search("Farmer,r year:2021", fields="title", limit=10))
         assert len(res) == 10
 
         found = False
         for i in res:
-            if i["title"] == ["rjfarmer/mesaplot: Release v1.1.0"]:
+            if i["title"] == [
+                "The Cosmic Carbon Footprint of Massive Stars Stripped in Binary Systems"
+            ]:
                 found = True
                 break
 
         assert found
 
     def test_citations(self):
-        res = list(search.citations("2021ApJ...923..214F"))
+        res = list(pyastroapi.citations("2021ApJ...923..214F"))
 
         assert len(res)
 
     def test_references(self):
-        res = list(search.references("2021ApJ...923..214F"))
+        res = list(pyastroapi.references("2021ApJ...923..214F"))
 
         assert len(res)
 
@@ -50,22 +52,27 @@ class TestSearch:
 @pytest.mark.vcr()
 class TestArticle:
     def test_basic(self):
-        a = articles.article("2021ApJ...923..214F")
+        a = pyastroapi.article("2021ApJ...923..214F")
 
         assert a.bibcode == "2021ApJ...923..214F"
         assert a.year == "2021"
 
     def test_misc(self):
-        a = articles.article("2021ApJ...923..214F")
+        a = pyastroapi.article("2021ApJ...923..214F")
 
+        assert a.citation_count > 0
         assert len(a.citations())
+        assert a.citation_count == len(a.citations())
+
+        assert a.reference_count() == 136
         assert len(a.references())
+        assert len(a.references()) == a.reference_count()
         assert a.pdf.filename() == "2021ApJ...923..214F.pdf"
 
     def test_eq(self):
-        a = articles.article("2021ApJ...923..214F")
-        b = articles.article("2021ApJ...923..9999")
-        c = articles.article("2021ApJ...923..214F")
+        a = pyastroapi.article("2021ApJ...923..214F")
+        b = pyastroapi.article("2021ApJ...923..9999")
+        c = pyastroapi.article("2021ApJ...923..214F")
 
         assert a != b
         assert a == c
@@ -82,6 +89,6 @@ class TestArticle:
        eprint = {2110.04131},
         }"""
 
-        a = articles.article(bibtex=bib)
+        a = pyastroapi.article(bibtex=bib)
 
         assert a.bibcode == "2021ApJ...923..214F"

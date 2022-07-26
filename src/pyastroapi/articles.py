@@ -9,10 +9,10 @@ import pyastroapi.api.visualization as _visualization
 import pyastroapi.api.resolver as _resolve
 import pyastroapi.api.http as _http
 
-import pyastroapi.search as s
-import pyastroapi.bibtex as bib
-
 import typing as t
+
+import pyastroapi
+import pyastroapi.bibtex as bib
 
 __all__ = ["article", "journal"]
 
@@ -139,8 +139,8 @@ class article:
         self.bibcode = None
         self._data = {}
         self._query = None
-        self._refs = []
-        self._cites = []
+        self._refs = None
+        self._cites = None
 
         if bibcode is not None:
             self.from_bibcode(bibcode)
@@ -162,11 +162,11 @@ class article:
 
     def from_bibtex(self, bibtex: str):
         bd = bib.parse_bibtex(bibtex)
-        self.from_data(list(s.search(bd[0], limit=1))[0])
+        self.from_data(list(pyastroapi.search(bd[0], limit=1))[0])
 
     def from_search(self, search: str):
         self._query = search
-        self.from_data(list(s.search(search, limit=1))[0])
+        self.from_data(list(pyastroapi.search(search, limit=1))[0])
 
     def add_to_lib(self, libaray: str):
         raise NotImplementedError
@@ -187,7 +187,7 @@ class article:
                     fields = f"{attr}," + fields
 
                 x = list(
-                    s.search(
+                    pyastroapi.search(
                         query=f"bibcode:{self.bibcode}",
                         limit=1,
                         fields=fields,
@@ -278,7 +278,7 @@ class article:
             if not isinstance(self._refs, journal):
                 self._refs = journal(bibcodes=self._data["reference"])
         else:
-            data = s.references(self.bibcode)
+            data = pyastroapi.references(self.bibcode)
             self._refs = journal(data=data)
 
         return self._refs
@@ -296,7 +296,7 @@ class article:
         if self._cites is not None:
             return self._cites
 
-        data = s.citations(self.bibcode)
+        data = pyastroapi.citations(self.bibcode)
 
         self._cites = journal(data=data)
 
@@ -364,11 +364,11 @@ class journal:
         self._data = {}
         bd = bib.parse_bibtex(bibtex)
         for b in bd:
-            self.add_data(s.search(b, limit=1))
+            self.add_data(pyastroapi.search(b, limit=1))
 
     def from_search(self, search: str):
         self._data = {}
-        self.add_data(s.search(search))
+        self.add_data(pyastroapi.search(search))
 
     def from_articles(self, data: t.List):
         self._data = {}

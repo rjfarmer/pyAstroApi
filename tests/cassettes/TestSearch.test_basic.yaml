@@ -5,20 +5,20 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=Farmer,r%20year:2021&fl=title&fq=&start=0
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=Farmer,r%20year:2021&fl=title&fq=&start=0&rows=10
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":2010,\n
-        \   \"params\":{\n      \"q\":\"Farmer,r year:2021\",\n      \"fl\":\"title\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62d5ba52-48695e746a10033e044e9315\",\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":57,\n    \"params\":{\n
+        \     \"q\":\"Farmer,r year:2021\",\n      \"fl\":\"title\",\n      \"start\":\"0\",\n
+        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62e0187e-4f81f1381ecc5bc474e653d3\",\n
         \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":162,\"start\":0,\"docs\":[\n
         \     {\n        \"title\":[\"The Cosmic Carbon Footprint of Massive Stars
         Stripped in Binary Systems\"]},\n      {\n        \"title\":[\"Different to
@@ -52,22 +52,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '1409'
+      - '1407'
       Content-Type:
       - application/json
       Date:
-      - Mon, 18 Jul 2022 19:53:56 GMT
+      - Tue, 26 Jul 2022 16:38:22 GMT
       Retry-After:
-      - '83830'
+      - '6'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4765'
+      - '4623'
       X-RateLimit-Reset:
-      - '1658257867'
+      - '1658853509'
     status:
       code: 200
       message: OK

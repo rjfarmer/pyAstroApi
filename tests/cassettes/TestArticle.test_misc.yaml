@@ -5,21 +5,152 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=citations(2021ApJ...923..214F)&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=bibcode:2021ApJ...923..214F&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0&rows=1
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":9,\n    \"params\":{\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":1,\n    \"params\":{\n
+        \     \"q\":\"bibcode:2021ApJ...923..214F\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62e01882-6c2c1dbe0914acc914cbf4fe\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"1\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":1,\"start\":0,\"docs\":[\n
+        \     {\n        \"bibcode\":\"2021ApJ...923..214F\",\n        \"abstract\":\"The
+        cosmic origin of carbon, a fundamental building block of life, is still uncertain.
+        Yield predictions for massive stars are almost exclusively based on single-star
+        models, even though a large fraction interact with a binary companion. Using
+        the MESA stellar evolution code, we predict the amount of carbon ejected in
+        the winds and supernovae of single and binary-stripped stars at solar metallicity.
+        We find that binary-stripped stars are twice as efficient at producing carbon
+        (1.5-2.6 times, depending on choices regarding the slope of the initial mass
+        function and black hole formation). We confirm that this is because the convective
+        helium core recedes in stars that have lost their hydrogen envelope, as noted
+        previously. The shrinking of the core disconnects the outermost carbon-rich
+        layers created during the early phase of helium burning from the more central
+        burning regions. The same effect prevents carbon destruction, even when the
+        supernova shock wave passes. The yields are sensitive to the treatment of
+        mixing at convective boundaries, specifically during carbon-shell burning
+        (variations up to 40%), and improving upon this should be a central priority
+        for more reliable yield predictions. The yields are robust (variations less
+        than 0.5%) across our range of explosion assumptions. Black hole formation
+        assumptions are also important, implying that the stellar graveyard now explored
+        by gravitational-wave detections may yield clues to better understand the
+        cosmic carbon production. Our findings also highlight the importance of accounting
+        for binary-stripped stars in chemical yield predictions and motivates further
+        studies of other products of binary interactions.\",\n        \"author\":[\"Farmer,
+        R.\",\n          \"Laplace, E.\",\n          \"de Mink, S. E.\",\n          \"Justham,
+        S.\"],\n        \"pub\":\"The Astrophysical Journal\",\n        \"pubdate\":\"2021-12-00\",\n
+        \       \"title\":[\"The Cosmic Carbon Footprint of Massive Stars Stripped
+        in Binary Systems\"],\n        \"year\":\"2021\",\n        \"reference\":[\"1957RvMP...29..547B\",\n
+        \         \"1959ApJ...130..429C\",\n          \"1967AcA....17..355P\",\n          \"1967ZA.....65..251K\",\n
+        \         \"1969ApJ...157..339A\",\n          \"1976ApJ...210..440B\",\n          \"1978A&A....63....7B\",\n
+        \         \"1982ApJ...262..590F\",\n          \"1983A&A...120..113M\",\n          \"1983ARA&A..21..343A\",\n
+        \         \"1983ApJ...268..368E\",\n          \"1985ApJ...293....1F\",\n          \"1986A&A...165...95H\",\n
+        \         \"1987ApJ...319..730S\",\n          \"1988A&A...202...93R\",\n          \"1988A&AS...72..259D\",\n
+        \         \"1989A&A...210...93L\",\n          \"1991A&A...248..531L\",\n          \"1991ApJ...370..630A\",\n
+        \         \"1992A&A...264..105M\",\n          \"1992ApJ...391..246P\",\n          \"1993ApJ...411..823W\",\n
+        \         \"1993ApJ...412..752I\",\n          \"1993JPhGS..19..183W\",\n          \"1993PhR...227...65W\",\n
+        \         \"1994ADNDT..56..231O\",\n          \"1995ApJ...443..152W\",\n          \"1995ApJS...99..713S\",\n
+        \         \"1995ApJS..101..181W\",\n          \"1995IAUS..163..305B\",\n          \"1995MNRAS.274..964P\",\n
+        \         \"1995SSRv...74..343L\",\n          \"1996ApJ...457..834T\",\n          \"1996ApJ...460..408T\",\n
+        \         \"1996ApJ...464..943I\",\n          \"1996ApJS..102..411I\",\n          \"1996MNRAS.281..257T\",\n
+        \         \"1998SSRv...85..161G\",\n          \"1999A&A...350..148W\",\n          \"1999NewA....4..313B\",\n
+        \         \"1999NuPhA.656....3A\",\n          \"2000A&A...360..227N\",\n          \"2000A&A...361..101M\",\n
+        \         \"2000ApJ...541..660H\",\n          \"2000ApJS..126..501T\",\n          \"2000NuPhA.673..481L\",\n
+        \         \"2001A&A...369..574V\",\n          \"2001ApJ...548..296W\",\n          \"2001ApJ...554..778L\",\n
+        \         \"2001NewA....6..457B\",\n          \"2002ApJ...576.1064R\",\n          \"2003ApJ...587..278W\",\n
+        \         \"2003MNRAS.338..973D\",\n          \"2003MNRAS.341..299D\",\n          \"2004A&A...414..931A\",\n
+        \         \"2004A&A...425..649H\",\n          \"2004MNRAS.353...87E\",\n          \"2004NewAR..48..861D\",\n
+        \         \"2004PhDT........45I\",\n          \"2005A&A...433.1013H\",\n          \"2005ApJ...623..213C\",\n
+        \         \"2005ApJ...623..585F\",\n          \"2006A&A...447..623M\",\n          \"2006A&A...452..295E\",\n
+        \         \"2006A&A...460..565I\",\n          \"2006ApJ...653.1145K\",\n          \"2006MNRAS.367.1181B\",\n
+        \         \"2006NuPhA.777..424N\",\n          \"2007A&A...466..277H\",\n          \"2007ApJ...661.1094C\",\n
+        \         \"2007ApJ...664.1033Y\",\n          \"2007CSE.....9...90H\",\n          \"2007CSE.....9c..21P\",\n
+        \         \"2007PhRvD..76b5028C\",\n          \"2008ApJ...676L..29H\",\n          \"2009A&A...496..841H\",\n
+        \         \"2009A&A...505..605C\",\n          \"2009A&A...507L...1D\",\n          \"2009AJ....137.3358M\",\n
+        \         \"2009ARA&A..47..427H\",\n          \"2010ApJ...725..940Y\",\n          \"2010ApJS..189..240C\",\n
+        \         \"2010CoPP...50...82P\",\n          \"2011A&A...530A.115B\",\n          \"2011ApJ...730...70O\",\n
+        \         \"2011ApJS..192....3P\",\n          \"2011CSE....13b..22V\",\n          \"2012A&A...537A.146E\",\n
+        \         \"2012ARA&A..50..107L\",\n          \"2012Sci...337..444S\",\n          \"2013ARA&A..51..105C\",\n
+        \         \"2013ApJ...769...99B\",\n          \"2013ApJS..208....4P\",\n          \"2014A&A...565A..39M\",\n
+        \         \"2014A&A...568A..25N\",\n          \"2014ApJ...783...10S\",\n          \"2015ApJS..220...15P\",\n
+        \         \"2016ApJ...821...38S\",\n          \"2016ApJ...825...26K\",\n          \"2016ApJS..225...24P\",\n
+        \         \"2016ApJS..227...22F\",\n          \"2017A&A...603A.118R\",\n          \"2017A&A...608A..11G\",\n
+        \         \"2017ApJ...840...10Y\",\n          \"2017ApJS..230...15M\",\n          \"2017MNRAS.465.4044B\",\n
+        \         \"2017MNRAS.470..401R\",\n          \"2017MNRAS.471..279C\",\n          \"2018ApJ...859...12G\",\n
+        \         \"2018ApJS..234...19F\",\n          \"2018ApJS..234...34P\",\n          \"2018ApJS..237...13L\",\n
+        \         \"2018MNRAS.476.3432P\",\n          \"2018SSRv..214...63S\",\n          \"2018Sci...359...69S\",\n
+        \         \"2019A&A...627A..24G\",\n          \"2019ApJ...870....2C\",\n          \"2019ApJ...878...49W\",\n
+        \         \"2019ApJ...884...38B\",\n          \"2019ApJ...886...47S\",\n          \"2019ApJS..243...10P\",\n
+        \         \"2019MNRAS.483.3607S\",\n          \"2020A&A...637A...6L\",\n          \"2020A&A...639A..37R\",\n
+        \         \"2020ApJ...888...55F\",\n          \"2020ApJ...888...80L\",\n          \"2020ApJ...898...74L\",\n
+        \         \"2020MNRAS.492.2578S\",\n          \"2020MNRAS.499..873S\",\n          \"2021A&A...645A...5S\",\n
+        \         \"2021A&A...656A..58L\",\n          \"2021A&A...656L..19Z\",\n          \"2021ApJ...916L...5V\",\n
+        \         \"2021ApJ...921...73G\",\n          \"2021MNRAS.501.2745M\",\n          \"2022ApJ...931...85B\"],\n
+        \       \"citation_count\":2}]\n  }}\n"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7005'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 26 Jul 2022 16:38:26 GMT
+      Retry-After:
+      - '2'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4617'
+      X-RateLimit-Reset:
+      - '1658853509'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+      authorization:
+      - DUMMY
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=citations(2021ApJ...923..214F)&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0&rows=50
+  response:
+    body:
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":10,\n    \"params\":{\n
         \     \"q\":\"citations(2021ApJ...923..214F)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62d5ba58-2383b567188999c422c448a0\",\n
-        \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62e01883-0cd6bced6f076f3f468e41a6\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"50\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
         \     {\n        \"bibcode\":\"2021A&A...656A..58L\",\n        \"abstract\":\"The
         majority of massive stars live in binary or multiple systems and will interact
         with a companion during their lifetimes, which helps to explain the observed
@@ -175,22 +306,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '12554'
+      - '12555'
       Content-Type:
       - application/json
       Date:
-      - Mon, 18 Jul 2022 19:54:00 GMT
+      - Tue, 26 Jul 2022 16:38:27 GMT
       Retry-After:
-      - '83827'
+      - '1'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4761'
+      - '4616'
       X-RateLimit-Reset:
-      - '1658257868'
+      - '1658853509'
     status:
       code: 200
       message: OK
@@ -200,572 +331,11 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
-      authorization:
-      - DUMMY
-    method: GET
-    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=references(2021ApJ...923..214F)&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0
-  response:
-    body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":9,\n    \"params\":{\n
-        \     \"q\":\"references(2021ApJ...923..214F)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62d5ba59-51fd5b38577a9cd3146d8969\",\n
-        \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":139,\"start\":0,\"docs\":[\n
-        \     {\n        \"bibcode\":\"2007CSE.....9...90H\",\n        \"abstract\":\"Matplotlib
-        is a 2D graphics package for Python for application development, interactive
-        scripting, and publication-quality image generation across user interfaces
-        and operating systems.\",\n        \"author\":[\"Hunter, John D.\"],\n        \"pub\":\"Computing
-        in Science and Engineering\",\n        \"pubdate\":\"2007-05-00\",\n        \"title\":[\"Matplotlib:
-        A 2D Graphics Environment\"],\n        \"year\":\"2007\",\n        \"citation_count\":7945},\n
-        \     {\n        \"bibcode\":\"2011ApJS..192....3P\",\n        \"abstract\":\"Stellar
-        physics and evolution calculations enable a broad range of research in astrophysics.
-        Modules for Experiments in Stellar Astrophysics (MESA) is a suite of open
-        source, robust, efficient, thread-safe libraries for a wide range of applications
-        in computational stellar astrophysics. A one-dimensional stellar evolution
-        module, MESAstar, combines many of the numerical and physics modules for simulations
-        of a wide range of stellar evolution scenarios ranging from very low mass
-        to massive stars, including advanced evolutionary phases. MESAstar solves
-        the fully coupled structure and composition equations simultaneously. It uses
-        adaptive mesh refinement and sophisticated timestep controls, and supports
-        shared memory parallelism based on OpenMP. State-of-the-art modules provide
-        equation of state, opacity, nuclear reaction rates, element diffusion data,
-        and atmosphere boundary conditions. Each module is constructed as a separate
-        Fortran 95 library with its own explicitly defined public interface to facilitate
-        independent development. Several detailed examples indicate the extensive
-        verification and testing that is continuously performed and demonstrate the
-        wide range of capabilities that MESA possesses. These examples include evolutionary
-        tracks of very low mass stars, brown dwarfs, and gas giant planets to very
-        old ages; the complete evolutionary track of a 1 M <SUB>sun</SUB> star from
-        the pre-main sequence (PMS) to a cooling white dwarf; the solar sound speed
-        profile; the evolution of intermediate-mass stars through the He-core burning
-        phase and thermal pulses on the He-shell burning asymptotic giant branch phase;
-        the interior structure of slowly pulsating B Stars and Beta Cepheids; the
-        complete evolutionary tracks of massive stars from the PMS to the onset of
-        core collapse; mass transfer from stars undergoing Roche lobe overflow; and
-        the evolution of helium accretion onto a neutron star. MESA can be downloaded
-        from the project Web site (<A href=\\\"http://mesa.sourceforge.net/\\\">http://mesa.sourceforge.net/</A>).\",\n
-        \       \"author\":[\"Paxton, Bill\",\n          \"Bildsten, Lars\",\n          \"Dotter,
-        Aaron\",\n          \"Herwig, Falk\",\n          \"Lesaffre, Pierre\",\n          \"Timmes,
-        Frank\"],\n        \"pub\":\"The Astrophysical Journal Supplement Series\",\n
-        \       \"pubdate\":\"2011-01-00\",\n        \"title\":[\"Modules for Experiments
-        in Stellar Astrophysics (MESA)\"],\n        \"year\":\"2011\",\n        \"reference\":[\"1926ics..book.....E\",\n
-        \         \"1939isss.book.....C\",\n          \"1957RvMP...29..547B\",\n          \"1958ZA.....46..108B\",\n
-        \         \"1958ses..book.....S\",\n          \"1959ApJ...129..628H\",\n          \"1962ApJ...135..770I\",\n
-        \         \"1964ApJ...139..306H\",\n          \"1964ZA.....59..215H\",\n          \"1965ApJ...142..841H\",\n
-        \         \"1966ApJ...145..174K\",\n          \"1967ZA.....67..420T\",\n          \"1968pss..book.....C\",\n
-        \         \"1969ApJS...18..297H\",\n          \"1970ApJ...159..619S\",\n          \"1971MNRAS.151..351E\",\n
-        \         \"1973ApJ...181..439D\",\n          \"1973ApJ...181..457G\",\n          \"1975ApJ...196..525I\",\n
-        \         \"1975MSRSL...8..369R\",\n          \"1976ApJ...210..440B\",\n          \"1978ApJ...225.1021W\",\n
-        \         \"1978ApJ...226.1034A\",\n          \"1979ApJ...234.1079I\",\n          \"1980A&A....91..175K\",\n
-        \         \"1980SvA....24..303Y\",\n          \"1981PThPS..70..115S\",\n          \"1984psen.book.....C\",\n
-        \         \"1985ApJ...293....1F\",\n          \"1985ApJ...296..540I\",\n          \"1986ApJ...302..519P\",\n
-        \         \"1986ApJS...61..197P\",\n          \"1988A&AS...72..259D\",\n          \"1988ADNDT..40..283C\",\n
-        \         \"1989ApJ...345..939B\",\n          \"1989GeCoA..53..197A\",\n          \"1990A&A...231..134N\",\n
-        \         \"1990A&A...239..443S\",\n          \"1991ApJS...76...55I\",\n          \"1992nrfa.book.....P\",\n
-        \         \"1993ApJ...412..752I\",\n          \"1993MNRAS.265..588D\",\n          \"1993PhST...47..133G\",\n
-        \         \"1994ADNDT..56..231O\",\n          \"1994ApJ...421..828T\",\n          \"1994ApJ...437..879A\",\n
-        \         \"1994ApJS...90..467D\",\n          \"1994ApJS...95..107W\",\n          \"1994PhyD...77..320G\",\n
-        \         \"1995A&A...297..727B\",\n          \"1995ApJ...445..789P\",\n          \"1995ApJS...98..617T\",\n
-        \         \"1995ApJS...99..713S\",\n          \"1995MNRAS.274..964P\",\n          \"1996ApJ...459L..91C\",\n
-        \         \"1996ApJ...464..943I\",\n          \"1996ApJS..102..411I\",\n          \"1996snih.book.....A\",\n
-        \         \"1997ApJ...482..442B\",\n          \"1997ApJ...491..856B\",\n          \"1997JCoPh.136...83S\",\n
-        \         \"1997PhRvC..56.3391B\",\n          \"1998A&A...337..403B\",\n          \"1998PASP..110.1132P\",\n
-        \         \"1998PhLB..433....1B\",\n          \"1998SSRv...85..161G\",\n          \"1999ApJ...512..377H\",\n
-        \         \"1999ApJ...525..871H\",\n          \"1999ApJS..124..241T\",\n          \"1999MNRAS.309.1034K\",\n
-        \         \"1999NuPhA.656....3A\",\n          \"2000A&A...360..227N\",\n          \"2000A&A...360..952H\",\n
-        \         \"2000ADNDT..75....1R\",\n          \"2000ARA&A..38..337C\",\n          \"2000ApJ...528..368H\",\n
-        \         \"2000ApJ...529L..25F\",\n          \"2000ApJ...542L.119C\",\n          \"2000ApJS..126..501T\",\n
-        \         \"2000ApJS..127..485S\",\n          \"2000ApJS..129..315V\",\n          \"2000ApJS..129..625L\",\n
-        \         \"2000NuPhA.673..481L\",\n          \"2000PhRvC..62e5801G\",\n          \"2001A&A...369..574V\",\n
-        \         \"2001ApJ...556..357A\",\n          \"2001RvMP...73..719B\",\n          \"2002ApJ...567..643K\",\n
-        \         \"2002ApJ...576..323R\",\n          \"2002ApJ...576.1064R\",\n          \"2002ApJS..143..201C\",\n
-        \         \"2002PhRvC..65b5801B\",\n          \"2002RvMP...74.1015W\",\n          \"2003A&A...402..701B\",\n
-        \         \"2003ApJ...586.1305L\",\n          \"2003ApJ...591.1220L\",\n          \"2003ApJ...595.1077C\",\n
-        \         \"2004A&A...425..649H\",\n          \"2004ApJ...605..425H\",\n          \"2004ApJ...612..168P\",\n
-        \         \"2004ApJ...613L..73H\",\n          \"2004ApJS..151...75W\",\n          \"2004MNRAS.350.1022P\",\n
-        \         \"2004PASP..116..699P\",\n          \"2005A&A...442.1041S\",\n          \"2005ARA&A..43..435H\",\n
-        \         \"2005ASPC..336...25A\",\n          \"2005ApJ...618..908Y\",\n          \"2005ApJ...618.1049B\",\n
-        \         \"2005ApJ...623..585F\",\n          \"2005EPJA...25..455I\",\n          \"2005MNRAS.362L...1S\",\n
-        \         \"2005Natur.433..136F\",\n          \"2006AIPC..819..118S\",\n          \"2006ApJ...639.1018W\",\n
-        \         \"2006ApJ...640..918M\",\n          \"2006ApJ...641.1102B\",\n          \"2006ApJ...647..483L\",\n
-        \         \"2006MNRAS.368..187L\",\n          \"2006csxs.book..113S\",\n          \"2007AJ....134..376D\",\n
-        \         \"2007ApJ...661.1094C\",\n          \"2007ApJ...671L.141H\",\n          \"2007IAUS..241...28W\",\n
-        \         \"2007MNRAS.382..498C\",\n          \"2008ARep...52..760G\",\n          \"2008Ap&SS.316....1L\",\n
-        \         \"2008Ap&SS.316...13C\",\n          \"2008Ap&SS.316...25D\",\n          \"2008Ap&SS.316...31D\",\n
-        \         \"2008Ap&SS.316...43E\",\n          \"2008Ap&SS.316...55H\",\n          \"2008Ap&SS.316...61M\",\n
-        \         \"2008Ap&SS.316...75R\",\n          \"2008Ap&SS.316...83S\",\n          \"2008Ap&SS.316...93V\",\n
-        \         \"2008Ap&SS.316...99W\",\n          \"2008PhR...457..217B\",\n          \"2008RvMP...80..633M\",\n
-        \         \"2009A&A...494..403L\",\n          \"2009A&A...497..255G\",\n          \"2009A&A...501..659M\",\n
-        \         \"2009A&A...506..471D\",\n          \"2009ApJ...699.1365S\",\n          \"2009ApJ...704..196Z\",\n
-        \         \"2009ApJ...705L.123S\",\n          \"2009MNRAS.397.2170G\",\n          \"2010A&A...509A..14M\",\n
-        \         \"2010ApJ...708..698D\",\n          \"2010ApJS..189..240C\",\n          \"2010CoPP...50...82P\",\n
-        \         \"2010Natur.464..259D\",\n          \"2010PASP..122..131G\"],\n
-        \       \"citation_count\":2401},\n      {\n        \"bibcode\":\"2013ApJS..208....4P\",\n
-        \       \"abstract\":\"We substantially update the capabilities of the open
-        source software package Modules for Experiments in Stellar Astrophysics (MESA),
-        and its one-dimensional stellar evolution module, MESA star. Improvements
-        in MESA star's ability to model the evolution of giant planets now extends
-        its applicability down to masses as low as one-tenth that of Jupiter. The
-        dramatic improvement in asteroseismology enabled by the space-based Kepler
-        and CoRoT missions motivates our full coupling of the ADIPLS adiabatic pulsation
-        code with MESA star. This also motivates a numerical recasting of the Ledoux
-        criterion that is more easily implemented when many nuclei are present at
-        non-negligible abundances. This impacts the way in which MESA star calculates
-        semi-convective and thermohaline mixing. We exhibit the evolution of 3-8 M
-        <SUB>\u2299</SUB> stars through the end of core He burning, the onset of He
-        thermal pulses, and arrival on the white dwarf cooling sequence. We implement
-        diffusion of angular momentum and chemical abundances that enable calculations
-        of rotating-star models, which we compare thoroughly with earlier work. We
-        introduce a new treatment of radiation-dominated envelopes that allows the
-        uninterrupted evolution of massive stars to core collapse. This enables the
-        generation of new sets of supernovae, long gamma-ray burst, and pair-instability
-        progenitor models. We substantially modify the way in which MESA star solves
-        the fully coupled stellar structure and composition equations, and we show
-        how this has improved the scaling of MESA's calculational speed on multi-core
-        processors. Updates to the modules for equation of state, opacity, nuclear
-        reaction rates, and atmospheric boundary conditions are also provided. We
-        describe the MESA Software Development Kit that packages all the required
-        components needed to form a unified, maintained, and well-validated build
-        environment for MESA. We also highlight a few tools developed by the community
-        for rapid visualization of MESA star results.\",\n        \"author\":[\"Paxton,
-        Bill\",\n          \"Cantiello, Matteo\",\n          \"Arras, Phil\",\n          \"Bildsten,
-        Lars\",\n          \"Brown, Edward F.\",\n          \"Dotter, Aaron\",\n          \"Mankovich,
-        Christopher\",\n          \"Montgomery, M. H.\",\n          \"Stello, Dennis\",\n
-        \         \"Timmes, F. X.\",\n          \"Townsend, Richard\"],\n        \"pub\":\"The
-        Astrophysical Journal Supplement Series\",\n        \"pubdate\":\"2013-09-00\",\n
-        \       \"title\":[\"Modules for Experiments in Stellar Astrophysics (MESA):
-        Planets, Oscillations, Rotation, and Massive Stars\"],\n        \"year\":\"2013\",\n
-        \       \"reference\":[\"1924MNRAS..84..665V\",\n          \"1958ZA.....46..108B\",\n
-        \         \"1962AnAp...25...18S\",\n          \"1965ApJ...142..841H\",\n          \"1967ApJ...148..217W\",\n
-        \         \"1968pss..book.....C\",\n          \"1969AcA....19....1P\",\n          \"1969ApJ...158..809Z\",\n
-        \         \"1970AcA....20...47P\",\n          \"1970stro.coll...20K\",\n          \"1971A&A....12...21B\",\n
-        \         \"1972ApJ...172..165U\",\n          \"1973ApJ...181..429J\",\n          \"1975psae.book..229R\",\n
-        \         \"1976ApJ...210..184E\",\n          \"1977PASJ...29..765N\",\n          \"1978ApJ...220..279E\",\n
-        \         \"1978stat.book.....M\",\n          \"1980A&A....91..175K\",\n          \"1980ApJ...242.1208A\",\n
-        \         \"1980ApJS...43..469T\",\n          \"1981PThPS..70..115S\",\n          \"1982ApJ...253..798N\",\n
-        \         \"1983A&A...126..207L\",\n          \"1986ApJ...311..701F\",\n          \"1986hmps.conf..117G\",\n
-        \         \"1987A&A...173..247M\",\n          \"1987A&A...178..159M\",\n          \"1987A&A...182..243M\",\n
-        \         \"1988A&AS...72..259D\",\n          \"1988ApJ...333..236K\",\n          \"1989ApJ...338..424P\",\n
-        \         \"1989ApJ...343..526B\",\n          \"1989nos..book.....U\",\n          \"1990A&A...239..443S\",\n
-        \         \"1991A&A...252..669L\",\n          \"1991ApJ...367..601B\",\n          \"1991ApJ...368..599B\",\n
-        \         \"1991ApJS...76...55I\",\n          \"1992A&A...265..115Z\",\n          \"1992ApJ...397..717I\",\n
-        \         \"1993ApJ...405..273W\",\n          \"1993ApJ...412..752I\",\n          \"1993oee..conf...15G\",\n
-        \         \"1994A&A...289..449L\",\n          \"1994PASP..106.1025H\",\n          \"1995A&A...293...87K\",\n
-        \         \"1995A&A...297..727B\",\n          \"1995A&AS..109..109G\",\n          \"1995ApJ...449..258B\",\n
-        \         \"1995ApJS...99..713S\",\n          \"1996ApJ...464..943I\",\n          \"1996ApJ...466..359D\",\n
-        \         \"1996Icar..124...62P\",\n          \"1996Sci...272.1286C\",\n          \"1996Sci...272.1300T\",\n
-        \         \"1997A&A...321..465M\",\n          \"1997A&A...324L..81H\",\n          \"1997A&A...327..224H\",\n
-        \         \"1997ASPC..120...83L\",\n          \"1997MNRAS.284..527C\",\n          \"1998A&A...329..551L\",\n
-        \         \"1998A&A...334..210H\",\n          \"1998A&A...334.1000M\",\n          \"1998ApJ...494..691R\",\n
-        \         \"1998ApJ...497..253U\",\n          \"1998ApJ...505..390S\",\n          \"1998PhLB..433....1B\",\n
-        \         \"1998SSRv...85..161G\",\n          \"1999A&A...344..647B\",\n          \"1999A&A...346L..37L\",\n
-        \         \"1999AcA....49..119P\",\n          \"1999ApJS..124..241T\",\n          \"1999NuPhA.656....3A\",\n
-        \         \"2000A&A...360..227N\",\n          \"2000A&A...360..952H\",\n          \"2000A&A...361..101M\",\n
-        \         \"2000A&A...361..159M\",\n          \"2000ADNDT..75....1R\",\n          \"2000AJ....120.1579Y\",\n
-        \         \"2000ARA&A..38..143M\",\n          \"2000ApJ...528..368H\",\n          \"2000ApJ...544.1016H\",\n
-        \         \"2000ApJS..126..501T\",\n          \"2001A&A...369..574V\",\n          \"2001AJ....122.1602W\",\n
-        \         \"2001ApJ...556..357A\",\n          \"2001MNRAS.323..699R\",\n          \"2002A&A...381..923S\",\n
-        \         \"2002ApJ...567..643K\",\n          \"2002ApJ...576..413U\",\n          \"2002ApJ...576.1064R\",\n
-        \         \"2002ApJ...581..654P\",\n          \"2003A&A...404..593A\",\n          \"2003A&A...411..215R\",\n
-        \         \"2003A&A...411..543M\",\n          \"2003ARA&A..41..599T\",\n          \"2003ApJ...583..878S\",\n
-        \         \"2003ApJ...591.1220L\",\n          \"2003JFM...483..287K\",\n          \"2004A&A...415..251D\",\n
-        \         \"2004A&A...420..625I\",\n          \"2004A&A...422..225M\",\n          \"2004A&A...425..649H\",\n
-        \         \"2004ApJ...600..390T\",\n          \"2004ApJ...612L..73L\",\n          \"2004ApJ...616..525O\",\n
-        \         \"2004ApJS..155..651H\",\n          \"2004Natur.431..819B\",\n          \"2005A&A...435..247P\",\n
-        \         \"2005A&A...443..643Y\",\n          \"2005AREPS..33..493G\",\n          \"2005ApJ...622.1102F\",\n
-        \         \"2005ApJ...623..585F\",\n          \"2005ApJ...626..350H\",\n          \"2005ApJ...629.1075S\",\n
-        \         \"2005ApJ...633..465S\",\n          \"2005Icar..179..415H\",\n          \"2005PhR...417....1B\",\n
-        \         \"2005Sci...309.2189C\",\n          \"2006A&A...449..451B\",\n          \"2006A&A...460..199Y\",\n
-        \         \"2006ApJ...637..914W\",\n          \"2006ApJ...642..495F\",\n          \"2006ApJS..162..375V\",\n
-        \         \"2006JCoAM.185..225S\",\n          \"2006MNRAS.368..187L\",\n          \"2007A&A...462.1031B\",\n
-        \         \"2007A&A...466..277H\",\n          \"2007A&A...467L..15C\",\n          \"2007A&A...474..145Z\",\n
-        \         \"2007A&A...475.1019C\",\n          \"2007ARA&A..45..397U\",\n          \"2007ApJ...655..541M\",\n
-        \         \"2007ApJ...655.1157D\",\n          \"2007ApJ...656..313C\",\n          \"2007ApJ...661.1094C\",\n
-        \         \"2007ApJ...667..448M\",\n          \"2007MNRAS.381.1482B\",\n          \"2008A&A...481L..87S\",\n
-        \         \"2008Ap&SS.316...13C\",\n          \"2008Ap&SS.316...43E\",\n          \"2008Ap&SS.316..113C\",\n
-        \         \"2008ApJ...683L.175K\",\n          \"2008ApJ...684..626D\",\n          \"2008ApJS..174..504F\",\n
-        \         \"2008ApJS..178...89D\",\n          \"2008RvMP...80..633M\",\n          \"2009A&A...494..373M\",\n
-        \         \"2009A&A...497..255G\",\n          \"2009A&A...499..279C\",\n          \"2009ApJ...700.1589S\",\n
-        \         \"2009IAUS..253...71B\",\n          \"2009IAUS..253..289B\",\n          \"2009MNRAS.398.1011T\",\n
-        \         \"2009PASP..121.1395L\",\n          \"2009ests.book.....M\",\n          \"2009pfer.book.....M\",\n
-        \         \"2010A&A...515A..87D\",\n          \"2010A&A...520A..27G\",\n          \"2010A&A...521A...9C\",\n
-        \         \"2010A&ARv..18...67T\",\n          \"2010ARA&A..48..631S\",\n          \"2010ApJ...710.1619A\",\n
-        \         \"2010ApJ...713L..79K\",\n          \"2010ApJ...714L.318T\",\n          \"2010ApJ...716.1269D\",\n
-        \         \"2010ApJ...717L..62Y\",\n          \"2010ApJ...723..563D\",\n          \"2010ApJ...725..940Y\",\n
-        \         \"2010ApJS..189..240C\",\n          \"2010CoPP...50...82P\",\n          \"2010JCoPh.229.6392H\",\n
-        \         \"2010MNRAS.403..505S\",\n          \"2010MolPh.108.2265F\",\n          \"2010PhRvE..81c6107M\",\n
-        \         \"2010SPIE.7733E..0EK\",\n          \"2011A&A...525L..11M\",\n          \"2011A&A...526A..63A\",\n
-        \         \"2011A&A...527A..52G\",\n          \"2011A&A...530A..48K\",\n          \"2011A&A...530A.108E\",\n
-        \         \"2011A&A...530A.115B\",\n          \"2011A&A...533A.139W\",\n          \"2011A&A...534A.140C\",\n
-        \         \"2011A&A...535A..91D\",\n          \"2011ApJ...728L..29T\",\n          \"2011ApJ...731...74B\",\n
-        \         \"2011ApJ...732...25C\",\n          \"2011ApJ...739L..49L\",\n          \"2011ApJ...742..123I\",\n
-        \         \"2011ApJS..192....3P\",\n          \"2011MNRAS.413.1828Y\",\n          \"2011Sci...331..562C\",\n
-        \         \"2012A&A...537A.146E\",\n          \"2012A&A...542A..29G\",\n          \"2012A&A...542A..92R\",\n
-        \         \"2012A&A...544L...4E\",\n          \"2012A&A...546A.119R\",\n          \"2012A&A...548A..10M\",\n
-        \         \"2012AJ....144...92Y\",\n          \"2012ARA&A..50..107L\",\n          \"2012Ap&SS.341...31D\",\n
-        \         \"2012ApJ...744L...6B\",\n          \"2012ApJ...748...42C\",\n          \"2012ApJ...748L..10M\",\n
-        \         \"2012ApJ...749...74M\",\n          \"2012ApJ...749..152M\",\n          \"2012ApJ...751...98V\",\n
-        \         \"2012ApJ...753L...3D\",\n          \"2012ApJ...755...95C\",\n          \"2012ApJ...755L..31Y\",\n
-        \         \"2012ApJ...756L..17F\",\n          \"2012ApJ...757...47H\",\n          \"2012ApJ...757..109C\",\n
-        \         \"2012ApJ...759L..30P\",\n          \"2012ApJ...761..157B\",\n          \"2012MNRAS.419..748P\",\n
-        \         \"2012MNRAS.420.2457B\",\n          \"2012MNRAS.421..983B\",\n          \"2012MNRAS.421.3084M\",\n
-        \         \"2012MNRAS.423.1221P\",\n          \"2012MNRAS.426.2463L\",\n          \"2012Natur.481...55B\",\n
-        \         \"2012PhRvD..85l3006D\",\n          \"2012PhRvE..85f6405S\",\n          \"2013A&A...552A..76S\",\n
-        \         \"2013ApJ...762....8D\",\n          \"2013ApJ...768...34B\",\n          \"2013ApJ...768..157W\",\n
-        \         \"2013ApJ...769..141S\",\n          \"2013ApJ...775..105O\",\n          \"2013CoPhC.184.1333G\",\n
-        \         \"2013arXiv1304.2317S\",\n          \"2019ApJ...873..111I\"],\n
-        \       \"citation_count\":1829},\n      {\n        \"bibcode\":\"1995ApJS..101..181W\",\n
-        \       \"abstract\":\"The nucleosynthetic yield of isotopes lighter than
-        A = 66 (zinc) is determined for a grid of stellar masses and metallicities
-        including stars of 11, 12, 13, 15, 18, 19, 20, 22, 25, 30, 35, and 40 M<SUB>sun</SUB>
-        and metallicities Z = 0, l0<SUP>-4</SUP>, 0.01, 0.1, and 1 times solar (a
-        slightly reduced mass grid is employed for nonsolar metallicities). Altogether
-        78 different model supernova explosions are calculated. In each case nucleosynthesis
-        has already been determined for 200 isotopes in each of 600 to 1200 zones
-        of the presupernova star, including the effects of time dependent convection.
-        Here each star is exploded using a piston to give a specified final kinetic
-        energy at infinity (typically 1.2 \xD7 10<SUP>51</SUP> ergs), and the explosive
-        modifications to the nucleosynthesis, including the effects of neutrino irradiation,
-        determined. A single value of the critical <SUP>12</SUP>C(\u03B1,\u03B3) <SUP>16</SUP>O
-        reaction rate corresponding to 8(300 keV) = 170 keV barns is used in all calculations.
-        The synthesis of each isotope is discussed along with its sensitivity to model
-        parameters. In each case, the final mass of the collapsed remnant is also
-        determined and often found not to correspond to the location of the piston
-        (typically the edge of the iron core), but to a \\\"mass cut\\\" farther out.
-        This mass cut is sensitive not only to the explosion energy, but also to the
-        presupernova structure, stellar mass, and the metallicity. Unless the explosion
-        mechanism, for unknown reasons, provides a much larger characteristic energy
-        in more massive stars, it appears likely that stars larger than about 30 M<SUB>sun</SUB>
-        will experience considerable reimplosion of heavy elements following the initial
-        launch of a successful shock. While such explosions will produce a viable,
-        bright Type II supernova light curve, lacking perhaps the radioactive tail,
-        they will have dramatically reduced yields of heavy elements and may leave
-        black hole remnants of up to 10 and more solar masses. The production of black
-        holes may be particularly favored for stars of low metallicity, both because
-        of their more compact structure and reduced mass loss.\",\n        \"author\":[\"Woosley,
-        S. E.\",\n          \"Weaver, Thomas A.\"],\n        \"pub\":\"The Astrophysical
-        Journal Supplement Series\",\n        \"pubdate\":\"1995-11-00\",\n        \"title\":[\"The
-        Evolution and Explosion of Massive Stars. II. Explosive Hydrodynamics and
-        Nucleosynthesis\"],\n        \"year\":\"1995\",\n        \"reference\":[\"1946MNRAS.106..343H\",\n
-        \         \"1957RvMP...29..547B\",\n          \"1964ApJS....9..201F\",\n          \"1969ApJ...157..339A\",\n
-        \         \"1971Natur.234..291C\",\n          \"1973ApJS...26..231W\",\n          \"1974ApJ...193..169A\",\n
-        \         \"1976A&A....46..117A\",\n          \"1978ADNDT..22..371W\",\n          \"1978ApJ...219..994C\",\n
-        \         \"1978ApJ...225.1021W\",\n          \"1978ApJS...36..285W\",\n          \"1980ApJS...42..447F\",\n
-        \         \"1980NYASA.336..335W\",\n          \"1981A&A....94..175R\",\n          \"1982ApJ...261..636T\",\n
-        \         \"1982ApJS...48..279F\",\n          \"1982PhR....93...61S\",\n          \"1982ena..conf..377W\",\n
-        \         \"1983ApJ...269..281B\",\n          \"1984ApJ...286..644N\",\n          \"1984Natur.307..215H\",\n
-        \         \"1985ADNDT..32..197C\",\n          \"1985ApJ...293....1F\",\n          \"1985ApJ...295..589A\",\n
-        \         \"1985ApJ...295..604T\",\n          \"1985ApJ...297..837H\",\n          \"1986ARA&A..24..205W\",\n
-        \         \"1986ApJ...301..601W\",\n          \"1987ADNDT..36..411B\",\n          \"1987ApJ...316..153T\",\n
-        \         \"1988ADNDT..40..283C\",\n          \"1988ApJ...330..218W\",\n          \"1988Natur.334...45W\",\n
-        \         \"1988Natur.336..519B\",\n          \"1988PhR...163...13N\",\n          \"1988PhR...163...79W\",\n
-        \         \"1989ARA&A..27..279W\",\n          \"1989ApJ...345L...5M\",\n          \"1989ApJ...347..455D\",\n
-        \         \"1989GeCoA..53..197A\",\n          \"1990A&A...227..271R\",\n          \"1990A&A...238..455P\",\n
-        \         \"1990ApJ...349..222T\",\n          \"1990ApJ...356..272W\",\n          \"1990ApJ...358L..57H\",\n
-        \         \"1990RvMP...62..801B\",\n          \"1991ApJ...367..619F\",\n          \"1991ApJ...376...51W\",\n
-        \         \"1992A&A...258..357B\",\n          \"1992A&A...264..105M\",\n          \"1992ApJ...387..294H\",\n
-        \         \"1992ApJ...390..230H\",\n          \"1992ApJ...392L..71S\",\n          \"1992ApJ...395..202W\",\n
-        \         \"1992ApJ...398L..45M\",\n          \"1992ComAp..16..153B\",\n          \"1993A&A...268..833M\",\n
-        \         \"1993ApJ...403..630P\",\n          \"1993ApJ...411..823W\",\n          \"1993PhR...227...65W\",\n
-        \         \"1993nuco.conf..503M\",\n          \"1993oee..conf..297T\",\n          \"1994ApJ...423..371W\",\n
-        \         \"1994ApJ...423..659B\",\n          \"1994ApJ...424..666O\",\n          \"1994ApJ...425..814H\",\n
-        \         \"1994ApJ...427..932A\",\n          \"1994ApJ...428..713K\",\n          \"1994ApJ...433..229W\",\n
-        \         \"1994ApJ...433L..41B\",\n          \"1994PhRvC..50.1194A\",\n          \"1994RvMP...66..193R\",\n
-        \         \"1995ApJ...448..315W\",\n          \"1995ApJ...449..204T\",\n          \"1995ApJS...98..617T\"],\n
-        \       \"citation_count\":3250},\n      {\n        \"bibcode\":\"1998SSRv...85..161G\",\n
-        \       \"abstract\":\"We review the current status of our knowledge of the
-        chemical composition of the Sun, essentially derived from the analysis of
-        the solar photospheric spectrum. The comparison of solar and meteoritic abundances
-        confirms that there is a very good agreement between the two sets of abundances.
-        They are used to construct a Standard Abundance Distribution.\",\n        \"author\":[\"Grevesse,
-        N.\",\n          \"Sauval, A. J.\"],\n        \"pub\":\"Space Science Reviews\",\n
-        \       \"pubdate\":\"1998-05-00\",\n        \"title\":[\"Standard Solar Composition\"],\n
-        \       \"year\":\"1998\",\n        \"reference\":[\"1929ApJ....70...11R\",\n
-        \         \"1931ZA......2..165M\",\n          \"1939ApJ....89..295W\",\n          \"1948ZA.....24..306U\",\n
-        \         \"1956RvMP...28...53S\",\n          \"1957PASP...69..201C\",\n          \"1957RvMP...29..547B\",\n
-        \         \"1967ZA.....65..365H\",\n          \"1973SSRv...15....1P\",\n          \"1974SoPh...39...19H\",\n
-        \         \"1975RvMP...47..877T\",\n          \"1988ApGC....3..385S\",\n          \"1989GeCoA..53..197A\",\n
-        \         \"1991A&ARv...3....1T\",\n          \"1994A&A...288..860C\",\n          \"1995ASPC...81...17K\",\n
-        \         \"1995ASPC...81...74G\",\n          \"1995AdSpR..15g..63G\",\n          \"1995AdSpR..15g..85T\",\n
-        \         \"1995MNRAS.276..859A\",\n          \"1995inco.conf.....C\",\n          \"1996A&A...305..325K\",\n
-        \         \"1996A&A...311..680K\",\n          \"1996ASPC...99....3T\",\n          \"1996ASPC...99..117G\",\n
-        \         \"1996ASPC...99..377R\",\n          \"1996Sci...272..849V\",\n          \"1997A&A...327..771G\",\n
-        \         \"1997ApJ...480..400W\",\n          \"1997MNRAS.284..202A\",\n          \"1997MNRAS.290..102B\",\n
-        \         \"1997nceg.book.....P\",\n          \"1998SSRv...85..133T\",\n          \"1998SSRv...85..175S\",\n
-        \         \"1998SSRv...85..327R\",\n          \"1998SSRv...85..397Z\",\n          \"1998SSRv...85..419G\",\n
-        \         \"1998SoPh..178..221B\",\n          \"1998SoPh..178..239D\"],\n
-        \       \"citation_count\":3098},\n      {\n        \"bibcode\":\"1957RvMP...29..547B\",\n
-        \       \"author\":[\"Burbidge, E. Margaret\",\n          \"Burbidge, G. R.\",\n
-        \         \"Fowler, William A.\",\n          \"Hoyle, F.\"],\n        \"pub\":\"Reviews
-        of Modern Physics\",\n        \"pubdate\":\"1957-00-00\",\n        \"title\":[\"Synthesis
-        of the Elements in Stars\"],\n        \"year\":\"1957\",\n        \"reference\":[\"1929ApJ....70...11R\",\n
-        \         \"1935ApJ....81..369B\",\n          \"1939JaJAG..17...17F\",\n          \"1939PhRv...55..103B\",\n
-        \         \"1939PhRv...56..426B\",\n          \"1939PhRv...56.1066O\",\n          \"1940ApJ....91..438G\",\n
-        \         \"1940PASP...52..203S\",\n          \"1940PASP...52..407M\",\n          \"1941ApJ....94..501K\",\n
-        \         \"1941JaJAG..18...45F\",\n          \"1941JaJAG..18..177F\",\n          \"1941NW.....29..686W\",\n
-        \         \"1941Obs....64....4M\",\n          \"1941PhRv...59...27W\",\n          \"1941PhRv...59..539G\",\n
-        \         \"1942ApJ....96..101K\",\n          \"1942PASP...54...95M\",\n          \"1943ApJ....97..119B\",\n
-        \         \"1943ApJ....97..135A\",\n          \"1943ApJ....98..500G\",\n          \"1944ApJ....99..145S\",\n
-        \         \"1944JRASC..38..237M\",\n          \"1945ApJ...102..309B\",\n          \"1946MNRAS.106..343H\",\n
-        \         \"1946Obs....66..208S\",\n          \"1947ApJ...105..360M\",\n          \"1947ApJ...106..339G\",\n
-        \         \"1947PASP...59..320P\",\n          \"1948MNRAS.108..252B\",\n          \"1948PDAO....7..395M\",\n
-        \         \"1948PhRv...73..806H\",\n          \"1948PhRv...74.1882S\",\n          \"1949ApJ...109..548S\",\n
-        \         \"1949ApJ...110..143H\",\n          \"1949MNRAS.109..365H\",\n          \"1949PhRv...75.1267H\",\n
-        \         \"1949PhRv...75.1379S\",\n          \"1949PhRv...76..428T\",\n          \"1949PhRv...76.1226M\",\n
-        \         \"1949RvMP...21..625B\",\n          \"1950ApJ...111..333B\",\n          \"1950ApJ...112..196W\",\n
-        \         \"1950ApJ...112..554R\",\n          \"1950PhRv...77..194B\",\n          \"1950PhRv...77..197H\",\n
-        \         \"1950RvMP...22..153A\",\n          \"1951ApJ...113...72A\",\n          \"1951ApJ...113..536G\",\n
-        \         \"1951ApJ...114...52C\",\n          \"1951ApJ...114..165V\",\n          \"1951ApJ...114..473B\",\n
-        \         \"1951PhRv...81..898H\",\n          \"1951PhRv...82..809D\",\n          \"1952AnAp...15..290S\",\n
-        \         \"1952ApJ...115..326S\",\n          \"1952ApJ...116..122R\",\n          \"1952ApJ...116..227B\",\n
-        \         \"1952ApJ...116..525B\",\n          \"1952PhRv...85...51W\",\n          \"1952PhRv...88..547S\",\n
-        \         \"1952PhRv...88.1109T\",\n          \"1953AJ.....58....4A\",\n          \"1953ARNPS...2....1A\",\n
-        \         \"1953ARNPS...2...41S\",\n          \"1953ARNPS...2..305C\",\n          \"1953ApJ...117...25B\",\n
-        \         \"1953ApJ...117..241K\",\n          \"1953ApJ...117..377B\",\n          \"1953ApJ...118..459B\",\n
-        \         \"1953JRASC..47...65N\",\n          \"1953PASP...65..210C\",\n          \"1953PhRv...92..830R\",\n
-        \         \"1953PhRv...92.1234P\",\n          \"1954AJ.....59..273S\",\n          \"1954AnAp...17..104B\",\n
-        \         \"1954ApJ...119..113G\",\n          \"1954ApJ...120..325J\",\n          \"1954ApJS....1..121H\",\n
-        \         \"1954AuJPh...7..373S\",\n          \"1954LIACo...5...88F\",\n          \"1954LIACo...5..131O\",\n
-        \         \"1954LIACo...5..307G\",\n          \"1954LIACo...5..337A\",\n          \"1954LIACo...5..402B\",\n
-        \         \"1954MNRAS.114...93T\",\n          \"1954PASP...66..308B\",\n          \"1954PhRv...94...87G\",\n
-        \         \"1954PhRv...95.1006G\",\n          \"1954PhRv...96..448F\",\n          \"1954PhRv...96.1408K\",\n
-        \         \"1954Phy....21..367W\",\n          \"1954Phy....21..410H\",\n          \"1955AJ.....60..401E\",\n
-        \         \"1955ApJ...121..144C\",\n          \"1955ApJ...121..161S\",\n          \"1955ApJ...121..300S\",\n
-        \         \"1955ApJ...122..271F\",\n          \"1955ApJ...122..396B\",\n          \"1955ApJS....1..431B\",\n
-        \         \"1955ApJS....2....1H\",\n          \"1955ApJS....2..167F\",\n          \"1955GeCoA...7..151P\",\n
-        \         \"1955Natur.176..130W\",\n          \"1955PASP...67..154H\",\n          \"1955PPSA...68..781G\",\n
-        \         \"1955PhRv...97..769N\",\n          \"1955PhRv...97.1237S\",\n          \"1955PhRv...99.1503F\",\n
-        \         \"1955Sci...121...69P\",\n          \"1955ZA.....36....1T\",\n          \"1956AJ.....61...97H\",\n
-        \         \"1956AJ.....61..360E\",\n          \"1956ApJ...123..210D\",\n          \"1956ApJ...124..116B\",\n
-        \         \"1956ApJ...124..130B\",\n          \"1956ApJ...124..155F\",\n          \"1956ApJ...124..379J\",\n
-        \         \"1956ApJ...124..482H\",\n          \"1956ApJ...124..499K\",\n          \"1956ApJ...124..655B\",\n
-        \         \"1956ApJS....2..225M\",\n          \"1956BAN....13...15S\",\n          \"1956MNRAS.116...77K\",\n
-        \         \"1956MNRAS.116..527H\",\n          \"1956Natur.177.1221S\",\n          \"1956PASP...68...70M\",\n
-        \         \"1956PASP...68..296B\",\n          \"1956PASP...68..501G\",\n          \"1956PASP...68..520T\",\n
-        \         \"1956PNAS...42..173F\",\n          \"1956PNAS...42..889U\",\n          \"1956PThPh..16..389N\",\n
-        \         \"1956PThPh..16..507H\",\n          \"1956PThPh..16..613H\",\n          \"1956PhRv..101.1041A\",\n
-        \         \"1956PhRv..102..180F\",\n          \"1956PhRv..102..237R\",\n          \"1956PhRv..102..926H\",\n
-        \         \"1956PhRv..103.1145B\",\n          \"1956PhRv..104..115H\",\n          \"1956PhRv..104..225F\",\n
-        \         \"1956PhRv..104..254L\",\n          \"1956RvMP...28...53S\",\n          \"1956RvMP...28..214H\",\n
-        \         \"1956Sci...124..103C\",\n          \"1956Sci...124..611H\",\n          \"1957AJ.....62...45E\",\n
-        \         \"1957ApJ...125...84A\",\n          \"1957ApJ...125..123S\",\n          \"1957ApJ...125..221M\",\n
-        \         \"1957ApJ...125..233S\",\n          \"1957ApJ...125..435S\",\n          \"1957ApJ...126..341H\",\n
-        \         \"1957ApJ...126..357B\",\n          \"1957ApJS....3....1A\",\n          \"1957Natur.179...91N\",\n
-        \         \"1957Natur.179..370A\",\n          \"1957PASP...69..227O\",\n          \"1957PASP...69..347H\",\n
-        \         \"1957PhRv..105..219H\",\n          \"1957PhRv..105..957B\",\n          \"1957PhRv..105.1332M\",\n
-        \         \"1957PhRv..105.1335W\",\n          \"1957PhRv..105.1413W\",\n          \"1957PhRv..105.1563H\",\n
-        \         \"1957PhRv..106...90H\",\n          \"1957PhRv..107..269B\",\n          \"1957PhRv..107..508C\",\n
-        \         \"1957PhRv..107..516S\",\n          \"1957PhRv..107..550L\",\n          \"1957PhRv..107..728A\",\n
-        \         \"1957PhRv..107.1087H\",\n          \"1957PhRv..107.1203T\",\n          \"1957PhRv..107.1609C\",\n
-        \         \"1957PhRv..107.1669J\",\n          \"1957RvMP...29..174W\",\n          \"1957S&T....16..262S\",\n
-        \         \"1957ZA.....41..215T\"],\n        \"citation_count\":2711},\n      {\n
-        \       \"bibcode\":\"2011CSE....13b..22V\",\n        \"abstract\":\"In the
-        Python world, NumPy arrays are the standard representation for numerical data.
-        Here, we show how these arrays enable efficient implementation of numerical
-        computations in a high-level language. Overall, three techniques are applied
-        to improve performance: vectorizing calculations, avoiding copying data in
-        memory, and minimizing operation counts. We first present the NumPy array
-        structure, then show how to use it for efficient computation, and finally
-        how to share array data with other libraries.\",\n        \"author\":[\"van
-        der Walt, St\xE9fan\",\n          \"Colbert, S. Chris\",\n          \"Varoquaux,
-        Ga\xEBl\"],\n        \"pub\":\"Computing in Science and Engineering\",\n        \"pubdate\":\"2011-03-00\",\n
-        \       \"title\":[\"The NumPy Array: A Structure for Efficient Numerical
-        Computation\"],\n        \"year\":\"2011\",\n        \"reference\":[\"2007CSE.....9c..21P\"],\n
-        \       \"citation_count\":2995},\n      {\n        \"bibcode\":\"2015ApJS..220...15P\",\n
-        \       \"abstract\":\"We substantially update the capabilities of the open-source
-        software instrument Modules for Experiments in Stellar Astrophysics (MESA).
-        MESA can now simultaneously evolve an interacting pair of differentially rotating
-        stars undergoing transfer and loss of mass and angular momentum, greatly enhancing
-        the prior ability to model binary evolution. New MESA capabilities in fully
-        coupled calculation of nuclear networks with hundreds of isotopes now allow
-        MESA to accurately simulate the advanced burning stages needed to construct
-        supernova progenitor models. Implicit hydrodynamics with shocks can now be
-        treated with MESA, enabling modeling of the entire massive star lifecycle,
-        from pre-main-sequence evolution to the onset of core collapse and nucleosynthesis
-        from the resulting explosion. Coupling of the GYRE non-adiabatic pulsation
-        instrument with MESA allows for new explorations of the instability strips
-        for massive stars while also accelerating the astrophysical use of asteroseismology
-        data. We improve the treatment of mass accretion, giving more accurate and
-        robust near-surface profiles. A new MESA capability to calculate weak reaction
-        rates \u201Con-the-fly\u201D from input nuclear data allows better simulation
-        of accretion induced collapse of massive white dwarfs and the fate of some
-        massive stars. We discuss the ongoing challenge of chemical diffusion in the
-        strongly coupled plasma regime, and exhibit improvements in MESA that now
-        allow for the simulation of radiative levitation of heavy elements in hot
-        stars. We close by noting that the MESA software infrastructure provides bit-for-bit
-        consistency for all results across all the supported platforms, a profound
-        enabling capability for accelerating MESA's development.\",\n        \"author\":[\"Paxton,
-        Bill\",\n          \"Marchant, Pablo\",\n          \"Schwab, Josiah\",\n          \"Bauer,
-        Evan B.\",\n          \"Bildsten, Lars\",\n          \"Cantiello, Matteo\",\n
-        \         \"Dessart, Luc\",\n          \"Farmer, R.\",\n          \"Hu, H.\",\n
-        \         \"Langer, N.\",\n          \"Townsend, R. H. D.\",\n          \"Townsley,
-        Dean M.\",\n          \"Timmes, F. X.\"],\n        \"pub\":\"The Astrophysical
-        Journal Supplement Series\",\n        \"pubdate\":\"2015-09-00\",\n        \"title\":[\"Modules
-        for Experiments in Stellar Astrophysics (MESA): Binaries, Pulsations, and
-        Explosions\"],\n        \"year\":\"2015\",\n        \"reference\":[\"1802RSPT...92..477H\",\n
-        \         \"1964PhRv..136.1224P\",\n          \"1965MmRAS..69...21C\",\n          \"1967ZA.....65..251K\",\n
-        \         \"1968Ap&SS...2...96F\",\n          \"1968MNRAS.138..359M\",\n          \"1969Ap&SS...5..180A\",\n
-        \         \"1969fecg.book.....B\",\n          \"1970Ap&SS...7..374T\",\n          \"1970ApJ...159..619S\",\n
-        \         \"1971MNRAS.151..351E\",\n          \"1972ApJ...171..565S\",\n          \"1974ApJ...190..609W\",\n
-        \         \"1975ApJ...198..383L\",\n          \"1975PASJ...27..197S\",\n          \"1976ApJ...206..509U\",\n
-        \         \"1977A&A....57..383Z\",\n          \"1977A&A....57..407N\",\n          \"1977PASJ...29..765N\",\n
-        \         \"1978ApJ...225.1021W\",\n          \"1978ApJS...36..259N\",\n          \"1979wdvd.coll..192F\",\n
-        \         \"1980A&A....91..175K\",\n          \"1980MNRAS.190..801W\",\n          \"1980PASJ...32..303M\",\n
-        \         \"1981A&A....99..126H\",\n          \"1981A&A...100L...7V\",\n          \"1981ApJ...243..329R\",\n
-        \         \"1981ApJS...45..389W\",\n          \"1982ApJ...253..798N\",\n          \"1982ApJ...254..616R\",\n
-        \         \"1983ApJ...268..368E\",\n          \"1983ApJ...275..713R\",\n          \"1985ApJ...293....1F\",\n
-        \         \"1985ApJ...296..540I\",\n          \"1985ApJ...297..837H\",\n          \"1986ApJS...61..177P\",\n
-        \         \"1987ApJ...318..307M\",\n          \"1988A&A...202...93R\",\n          \"1989ESASP.296....3T\",\n
-        \         \"1990A&A...236..385K\",\n          \"1990ApJ...360L..47P\",\n          \"1991A&A...245..114K\",\n
-        \         \"1992ApJ...393..272C\",\n          \"1992nrfa.book.....P\",\n          \"1993ApJ...412..634L\",\n
-        \         \"1993MNRAS.262..204D\",\n          \"1993MNRAS.265..588D\",\n          \"1994ADNDT..56..231O\",\n
-        \         \"1994ApJ...421..828T\",\n          \"1995ApJ...438..852B\",\n          \"1995ApJS..101..181W\",\n
-        \         \"1995MNRAS.274..964P\",\n          \"1996ApJ...472..440M\",\n          \"1997A&A...327..620S\",\n
-        \         \"1997ApJ...491..312C\",\n          \"1997MNRAS.291..732T\",\n          \"1998ApJ...498..808M\",\n
-        \         \"1998NuPhA.636..249T\",\n          \"1998cmaf.conf..263D\",\n          \"1999AcA....49..119P\",\n
-        \         \"1999ApJ...514L..27U\",\n          \"1999ApJ...524..262M\",\n          \"1999ApJ...524.1014S\",\n
-        \         \"1999ApJS..124..241T\",\n          \"2000ARA&A..38..143M\",\n          \"2000ApJ...528..368H\",\n
-        \         \"2000NuPhA.673..481L\",\n          \"2001A&A...369..939W\",\n          \"2001ApJ...549L.219B\",\n
-        \         \"2001ApJ...550..897H\",\n          \"2001ApJ...559L.127C\",\n          \"2001ApJ...560..307H\",\n
-        \         \"2001PhRvL..86.3471S\",\n          \"2002ApJ...579..380I\",\n          \"2002MNRAS.329..897H\",\n
-        \         \"2002MNRAS.332..392C\",\n          \"2002RvMP...74.1015W\",\n          \"2003IAUS..212..275L\",\n
-        \         \"2004A&A...414L..17D\",\n          \"2004ApJ...600..390T\",\n          \"2004ApJ...601..466G\",\n
-        \         \"2004ApJS..151...75W\",\n          \"2004AstL...30..634N\",\n          \"2004MNRAS.350..113M\",\n
-        \         \"2005A&A...435.1013P\",\n          \"2005ASPC..328...25W\",\n          \"2005ApJ...626..350H\",\n
-        \         \"2005ApJ...628..401P\",\n          \"2005MNRAS.360.1532G\",\n          \"2005PhRvE..71c6408D\",\n
-        \         \"2006ARA&A..44..507W\",\n          \"2006ApJ...639.1018W\",\n          \"2006ApJ...639.1033G\",\n
-        \         \"2006ApJ...640..918M\",\n          \"2006ApJ...650..332F\",\n          \"2006ApJ...650.1111S\",\n
-        \         \"2006NuPhA.777..188H\",\n          \"2006Sci...314...97K\",\n          \"2006csxs.book..623T\",\n
-        \         \"2007A&A...465L..29C\",\n          \"2007ApJ...656..313C\",\n          \"2007ApJ...660.1444S\",\n
-        \         \"2007ApJ...663.1252P\",\n          \"2007ApJ...663.1269N\",\n          \"2007ApJ...671L.141H\",\n
-        \         \"2007NDS...108....1F\",\n          \"2007NDS...108.2319F\",\n          \"2008A&A...484..831D\",\n
-        \         \"2008AcA....58..193S\",\n          \"2008Ap&SS.316..113C\",\n          \"2008ApJ...683L.175K\",\n
-        \         \"2008ApJ...685L.129S\",\n          \"2008ApJS..174..261F\",\n          \"2008ApJS..179..360G\",\n
-        \         \"2008JPhCS.118a2079Z\",\n          \"2009A&A...502..871K\",\n          \"2009A&A...506..411A\",\n
-        \         \"2009ARA&A..47...63S\",\n          \"2009ARA&A..47..333D\",\n          \"2009ARA&A..47..481A\",\n
-        \         \"2009ARA&A..47..567G\",\n          \"2009ApJ...693.1007T\",\n          \"2009ApJ...701.1582T\",\n
-        \         \"2009IAUS..253...71B\",\n          \"2009MNRAS.396.1699S\",\n          \"2009MNRAS.396.1833G\",\n
-        \         \"2009MNRAS.397.2170G\",\n          \"2009NDS...110.1691F\",\n          \"2009Natur.459..398D\",\n
-        \         \"2009PASP..121.1395L\",\n          \"2009PhRvE..79a6411P\",\n          \"2009RvMA...21...97M\",\n
-        \         \"2010A&A...515A..87D\",\n          \"2010A&A...521A...9C\",\n          \"2010A&A...522A..25A\",\n
-        \         \"2010A&ARv..18...67T\",\n          \"2010AN....331..989G\",\n          \"2010ApJ...713L.176B\",\n
-        \         \"2010ApJS..189..240C\",\n          \"2010ApJS..190....1R\",\n          \"2010JCoPh.229.6392H\",\n
-        \         \"2010MNRAS.405.2113D\",\n          \"2010MNRAS.408..827D\",\n          \"2010NuPhA.848..454J\",\n
-        \         \"2010Sci...327..977B\",\n          \"2010aste.book.....A\",\n          \"2011ApJ...732...70L\",\n
-        \         \"2011ApJS..192....3P\",\n          \"2011IAUS..271...32C\",\n          \"2011MNRAS.412.1814S\",\n
-        \         \"2011MNRAS.418..195H\",\n          \"2011NDS...112.1875S\",\n          \"2011Natur.471..608B\",\n
-        \         \"2012ADNDT..98..852O\",\n          \"2012AJ....144....9O\",\n          \"2012ARA&A..50..107L\",\n
-        \         \"2012ApJ...749...69Z\",\n          \"2012Natur.481...55B\",\n          \"2013ARA&A..51..353C\",\n
-        \         \"2013ARA&A..51..457N\",\n          \"2013ApJ...764..166D\",\n          \"2013ApJ...772..150J\",\n
-        \         \"2013ApJ...777..136W\",\n          \"2013ApJS..208....4P\",\n          \"2013CS&D....6a5003G\",\n
-        \         \"2013MNRAS.432.3153D\",\n          \"2013MNRAS.435.3406T\",\n          \"2013PhRvC..88a5806T\",\n
-        \         \"2013PhRvL.110w5001B\",\n          \"2014A&A...563A..67L\",\n          \"2014A&A...568A.123B\",\n
-        \         \"2014A&A...570A...8P\",\n          \"2014ARA&A..52..487S\",\n          \"2014ApJ...788L..10S\",\n
-        \         \"2014ApJ...789..104O\",\n          \"2014ApJ...797...24V\",\n          \"2014ApJ...797...83J\",\n
-        \         \"2014ApJS..213...34K\",\n          \"2014JHEP...11..136C\",\n          \"2014PhPl...21e5707B\",\n
-        \         \"2014PhRvC..89d5806M\",\n          \"2014PhRvE..90c3102B\",\n          \"2015A&A...574L...7S\",\n
-        \         \"2015A&A...575A..26C\",\n          \"2015A&A...579A..49V\",\n          \"2015ApJ...799...85W\",\n
-        \         \"2015ApJ...803...49Q\",\n          \"2015ApJ...805..127C\",\n          \"2015ApJ...808L..21C\",\n
-        \         \"2015JATIS...1a4003R\",\n          \"2015MNRAS.449.1215P\",\n          \"2015MNRAS.449.4415P\",\n
-        \         \"2015MNRAS.452.3047Y\",\n          \"2015MNRAS.453.1910S\",\n          \"2015PhRvD..92f3016A\"],\n
-        \       \"citation_count\":1538},\n      {\n        \"bibcode\":\"1983ApJ...268..368E\",\n
-        \       \"abstract\":\"Effective radii of Roche lobes were computed and are
-        compared with the results of Kopal and of Pacy\u0144ski. A convenient approximation
-        is given, whose derivative is smooth and fairly accurate.\",\n        \"author\":[\"Eggleton,
-        P. P.\"],\n        \"pub\":\"The Astrophysical Journal\",\n        \"pubdate\":\"1983-05-00\",\n
-        \       \"title\":[\"Aproximations to the radii of Roche lobes.\"],\n        \"year\":\"1983\",\n
-        \       \"reference\":[\"1959cbs..book.....K\",\n          \"1971ARA&A...9..183P\"],\n
-        \       \"citation_count\":1854},\n      {\n        \"bibcode\":\"1996ApJ...464..943I\",\n
-        \       \"abstract\":\"The reexamination of astrophysical opacities has eliminated
-        gross discrepancies between a variety of observations and theoretical calculations;
-        thus allowing for more detailed tests of stellar models. A number of such
-        studies indicate that model results are sensitive to modest changes in the
-        opacity. Consequently, it is desirable to update available opacity databases
-        with recent improvements in physics, refinements of element abundance, and
-        other such factors affecting the results. <P />Updated OPAL Rosseland mean
-        opacities are presented. The new results have incorporated improvements in
-        the physics and numerical procedures as well as corrections. The main opacity
-        changes are increases of as much as 20% for Population I stars due to the
-        explicit inclusion of 19 metals (compared to 12 metals in the earlier calculations)
-        with the other modifications introducing opacity changes smaller than 10%.
-        In addition, the temperature and density range covered by the updated opacity
-        tables has been extended. As before, the tables allow accurate interpolation
-        in density and temperature as well as hydrogen, helium, carbon, oxygen, and
-        metal mass fractions. Although a specific metal composition is emphasized,
-        opacity tables for different metal distributions can be made readily available.
-        The updated opacities are compared to other work.\",\n        \"author\":[\"Iglesias,
-        Carlos A.\",\n          \"Rogers, Forrest J.\"],\n        \"pub\":\"The Astrophysical
-        Journal\",\n        \"pubdate\":\"1996-06-00\",\n        \"title\":[\"Updated
-        Opal Opacities\"],\n        \"year\":\"1996\",\n        \"reference\":[\"1954qtr..book.....H\",\n
-        \         \"1955psmb.book.....U\",\n          \"1959ApJ...129..734S\",\n          \"1959RvMP...31..920K\",\n
-        \         \"1965PPS....85..685D\",\n          \"1968pss..book.....C\",\n          \"1972PhRvA...5.1630M\",\n
-        \         \"1973bppp.book.....I\",\n          \"1976A&AS...23..147D\",\n          \"1980JPhB...13.1859B\",\n
-        \         \"1980SoPh...68...17G\",\n          \"1981PhRvA..24.1531R\",\n          \"1984PhST....8...49G\",\n
-        \         \"1985ApJ...294...17I\",\n          \"1986psun....1...33H\",\n          \"1987A&A...178..292H\",\n
-        \         \"1987ApJ...316L..95B\",\n          \"1987ApJ...322L..45I\",\n          \"1988PhRvA..38.5007R\",\n
-        \         \"1990ApJ...360..221I\",\n          \"1990ApJS...74..291I\",\n          \"1991A&A...242..488G\",\n
-        \         \"1991ApJ...371..408I\",\n          \"1991ApJ...371L..73I\",\n          \"1991ApJS...76..759L\",\n
-        \         \"1992A&A...256L...5M\",\n          \"1992ApJ...393..272C\",\n          \"1992ApJ...393..409R\",\n
-        \         \"1992ApJ...397..717I\",\n          \"1992ApJ...401..361R\",\n          \"1992ApJS...79..507R\",\n
-        \         \"1992MNRAS.255P...1K\",\n          \"1992PhRvL..69..438D\",\n          \"1993ApJ...412..752I\",\n
-        \         \"1993MNRAS.262..204D\",\n          \"1993MNRAS.262..213G\",\n          \"1993MNRAS.265L..25S\",\n
-        \         \"1993npsp.conf..221R\",\n          \"1993oee..conf...15G\",\n          \"1994A&A...281..561L\",\n
-        \         \"1994ApJ...430..360S\",\n          \"1994ApJ...437..879A\",\n          \"1994MNRAS.266..805S\",\n
-        \         \"1994Sci...263...50R\",\n          \"1995ASPC...78.....A\",\n          \"1995ASPC...78..275D\",\n
-        \         \"1995ApJ...443..460I\",\n          \"1995ApJ...445..855I\"],\n
-        \       \"citation_count\":2438}]\n  }}\n"
-    headers:
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Headers:
-      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
-        X-CSRFToken
-      Access-Control-Allow-Methods:
-      - DELETE, GET, OPTIONS, POST, PUT
-      Access-Control-Allow-Origin:
-      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
-        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
-        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
-        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
-        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
-        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '45951'
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 18 Jul 2022 19:54:01 GMT
-      Retry-After:
-      - '83826'
-      Set-Cookie: DUMMY
-      Vary:
-      - Origin
-      X-RateLimit-Limit:
-      - '5000'
-      X-RateLimit-Remaining:
-      - '4760'
-      X-RateLimit-Reset:
-      - '1658257868'
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate, br
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
@@ -803,18 +373,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 18 Jul 2022 19:54:02 GMT
+      - Tue, 26 Jul 2022 16:38:27 GMT
       Retry-After:
-      - '83824'
+      - '1'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4759'
+      - '4615'
       X-RateLimit-Reset:
-      - '1658257867'
+      - '1658853509'
     status:
       code: 200
       message: OK

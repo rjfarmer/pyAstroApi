@@ -5,11 +5,11 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
@@ -66,7 +66,7 @@ interactions:
         "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
         {"name": "Untitled Library 1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description":
         "My ADS library", "num_documents": 52, "date_created": "2021-04-02T13:17:09.757542",
-        "date_last_modified": "2022-07-18T19:47:52.253523", "permission": "owner",
+        "date_last_modified": "2022-07-26T16:36:56.195056", "permission": "owner",
         "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "new2",
         "id": "tczEasuXTpmaBjDlqj5xGQ", "description": "My ADS library", "num_documents":
         0, "date_created": "2021-04-02T14:59:06.913337", "date_last_modified": "2021-09-05T10:30:12.298428",
@@ -99,7 +99,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 18 Jul 2022 19:53:16 GMT
+      - Tue, 26 Jul 2022 16:37:56 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
