@@ -8,6 +8,7 @@ import pyastroapi.api.metrics as _metrics
 import pyastroapi.api.visualization as _visualization
 import pyastroapi.api.resolver as _resolve
 import pyastroapi.api.http as _http
+import pyastroapi.api.exceptions as _e
 
 import typing as t
 
@@ -55,9 +56,16 @@ class PDF:
         if isinstance(bibcode, list):
             raise TypeError("Can only handle one pdf at a time")
 
+        self.links = None
+
         self.bibcode = bibcode
-        links = _resolve.esource(token.get_token(), bibcode)
-        self.links = {}
+
+    def _get(self):
+        try:
+            links = _resolve.esource(token.get_token(), self.bibcode)
+        except _e.NoRecordsFound:
+            raise ValueError("No pdf links available")
+
         if "links" not in links:
             raise ValueError("No pdf links available")
 
@@ -68,6 +76,9 @@ class PDF:
         return f"{self.bibcode}.pdf"
 
     def _download(self, source, name, filename=None):
+        if self.links is None:
+            self._get()
+
         if source not in self.links:
             raise ValueError(f"No {name} pdf available for {self.bibcode}")
 
