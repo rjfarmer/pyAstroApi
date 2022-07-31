@@ -20,27 +20,27 @@ def search(query, limit=-1, fields=None, dbg=False):
     )
 
 
-def first_author(author, fields=None):
+def first_author(author, limit=-1, fields=None, dbg=False):
     return search(query=f"^{author}", fields=fields)
 
 
-def author_year(author, year, fields=None):
+def author_year(author, year, limit=-1, fields=None, dbg=False):
     return search(query=f"^{author} year:{year}", fields=fields)
 
 
-def orcid(orcid, fields=None):
+def orcid(orcid, limit=-1, fields=None, dbg=False):
     return search(query=f"orcid:{orcid}", fields=fields)
 
 
-def bibcode(bibcode, fields=None):
+def bibcode(bibcode, limit=-1, fields=None, dbg=False):
     return search(query=f"bibcode:{bibcode}", fields=fields)
 
 
-def citations(bibcode, fields=None):
+def citations(bibcode, limit=-1, fields=None, dbg=False):
     return search(query=f"citations({bibcode})", fields=fields)
 
 
-def references(bibcode, fields=None):
+def references(bibcode, limit=-1, fields=None, dbg=False):
     return search(query=f"references({bibcode})", fields=fields)
 
 
