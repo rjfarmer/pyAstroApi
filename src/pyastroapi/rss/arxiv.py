@@ -1,6 +1,8 @@
 import feedparser
 from html.parser import HTMLParser
 
+__all__ = ["astro_ph"]
+
 
 class _getNames(HTMLParser):
     def handle_data(self, data):
@@ -31,7 +33,7 @@ def get_feed(cat):
             {
                 "title": entry["title"],
                 "abstract": parserA.abs,
-                "arixv_id": entry["id"].split("/")[-1],
+                "arXiv": entry["id"].split("/")[-1],
                 "authors": parserN.names,
                 "pubdate": entries["headers"]["date"],
             }

@@ -1,4 +1,7 @@
 # # SPDX-License-Identifier: BSD-3-Clause
+
+import datetime
+
 import pyastroapi.api.search as _search
 import pyastroapi.api.token as _token
 
@@ -11,6 +14,7 @@ __all__ = [
     "citations",
     "references",
     "search_with_callbacks",
+    "astro_ph",
 ]
 
 
@@ -63,6 +67,19 @@ def search_with_callbacks(
         callback_search=callback_search,
         callback_end=callback_end,
     )
+
+
+def astro_ph(limit=-1, fields=None, dbg=False):
+    day = datetime.datetime.today().weekday()
+
+    if day <= 4:  # Monday to Friday get the last days arxiv:
+        q = "[NOW-1DAYS TO *]"
+    elif day == 5:  # Saturday
+        q = "[NOW-2DAYS TO *]"
+    elif day == 6:  # Sunday
+        q = "[NOW-3DAYS TO *]"
+
+    return search(f'arxiv_class:"astro-ph.*" entdate:{q}', limit, fields, dbg)
 
 
 # import bibtexparser
