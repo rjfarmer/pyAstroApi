@@ -1,11 +1,11 @@
-name: Example workflow for Codecov
+name: Codecov
 on: [push]
 jobs:
   run:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest]
     env:
       OS: ${{ matrix.os }}
       PYTHON: '3.7'
@@ -19,6 +19,7 @@ jobs:
       run: |
         pip install pytest
         pip install pytest-cov
+        pip install .
         pytest --cov=pyastroapi --cov-report=xml
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
