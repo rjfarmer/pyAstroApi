@@ -1,6 +1,6 @@
 ![Test suite status](https://github.com/rfarmer/pyAstroApi/actions/workflows/test.yml/badge.svg?branch=main)
-![codecov](https://codecov.io/gh/rjfarmer/pyAstroApi/branch/main/graph/badge.svg?token=4VQNTPZYMZ)]
-![Documentation Status](https://readthedocs.org/projects/pyastroapi/badge/?version=latest)]
+![codecov](https://codecov.io/gh/rjfarmer/pyAstroApi/branch/main/graph/badge.svg?token=4VQNTPZYMZ)
+![Documentation Status](https://readthedocs.org/projects/pyastroapi/badge/?version=latest)
 
 # pyAstroApi
 
