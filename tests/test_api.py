@@ -312,6 +312,14 @@ class TestAPIVisual:
 
         assert len(r["data"]["fullGraph"]["nodes"]) == 2
 
+    def test_word_cloud(self):
+        r = visual.word_cloud(token, query="author:\"huchra, john\"",
+                                rows=1)
+
+        assert 'available' in r
+        assert 'record_count' in r['available']
+
+
 @pytest.mark.vcr()
 class TestAPIRecommend:
     def test_matchdoc(self):
