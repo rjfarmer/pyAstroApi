@@ -1,0 +1,180 @@
+interactions:
+- request:
+    body: '{"abstract": "The nucleus of our nearest, large galactic neighbour, M31,
+      contains an eccentric nuclear disc - a disc of stars on eccentric, apsidally
+      aligned orbits around a supermassive black hole (SMBH). Previous studies of
+      eccentric nuclear discs considered only an isolated disc, and did not study
+      their dynamics under galaxy mergers (particularly a perturbing SMBH). Here,
+      we present the first study of how eccentric discs are affected by a galactic
+      merger. We perform N-body simulations to study the disc under a range of different
+      possible SMBH initial conditions. A second SMBH in the disc always disrupts
+      it, but more distant SMBHs can shut off differential precession and stabilize
+      the disc. This results in a more aligned disc, nearly uniform eccentricity profile,
+      and suppression of tidal disruption events compared to the isolated disc. We
+      also discuss implications of our work for the presence of a secondary SMBH in
+      M31.", "title": "Galactic merger implications for eccentric nuclear discs: a
+      mechanism for disc alignment", "author": "Rodriguez, Alexander; Generozov, Aleksey;
+      Madigan, Ann-Marie", "year": 2021, "doctype": "article", "match_doctype": ["article"],
+      "mustmatch": false}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1198'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.27.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://api.adsabs.harvard.edu/v1//oracle/matchdoc
+  response:
+    body:
+      string: '{"query": "topn(10, similar(\"The nucleus of our nearest, large galactic
+        neighbour, M31, contains an eccentric nuclear disc - a disc of stars on eccentric,
+        apsidally aligned orbits around a supermassive black hole (SMBH). Previous
+        studies of eccentric nuclear discs considered only an isolated disc, and did
+        not study their dynamics under galaxy mergers (particularly a perturbing SMBH).
+        Here, we present the first study of how eccentric discs are affected by a
+        galactic merger. We perform N-body simulations to study the disc under a range
+        of different possible SMBH initial conditions. A second SMBH in the disc always
+        disrupts it, but more distant SMBHs can shut off differential precession and
+        stabilize the disc. This results in a more aligned disc, nearly uniform eccentricity
+        profile, and suppression of tidal disruption events compared to the isolated
+        disc. We also discuss implications of our work for the presence of a secondary
+        SMBH in M31.\", input abstract, 43, 1, 1)) doctype:(article) property:REFEREED",
+        "comment": "Matching doctype `article`.", "match": [{"bibcode": "2021MNRAS.503.2713R",
+        "confidence": 1, "scores": {"abstract": 1.0, "title": 1.0, "author": 1, "year":
+        1}}]}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1192'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Aug 2022 23:42:40 GMT
+      Retry-After:
+      - '81631'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '100'
+      X-RateLimit-Remaining:
+      - '81'
+      X-RateLimit-Reset:
+      - '1659565392'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"abstract": "The nucleus of our nearest, large galactic neighbour, M31,
+      contains an eccentric nuclear disc - a disc of stars on eccentric, apsidally
+      aligned orbits around a supermassive black hole (SMBH). Previous studies of
+      eccentric nuclear discs considered only an isolated disc, and did not study
+      their dynamics under galaxy mergers (particularly a perturbing SMBH). Here,
+      we present the first study of how eccentric discs are affected by a galactic
+      merger. We perform N-body simulations to study the disc under a range of different
+      possible SMBH initial conditions. A second SMBH in the disc always disrupts
+      it, but more distant SMBHs can shut off differential precession and stabilize
+      the disc. This results in a more aligned disc, nearly uniform eccentricity profile,
+      and suppression of tidal disruption events compared to the isolated disc. We
+      also discuss implications of our work for the presence of a secondary SMBH in
+      M31.", "title": "Galactic merger implications for eccentric nuclear discs: a
+      mechanism for disc alignment", "author": "Rodriguez, Alexander; Generozov, Aleksey;
+      Madigan, Ann-Marie", "year": 2019, "doctype": "article", "match_doctype": ["article"],
+      "mustmatch": false}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1198'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.27.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://api.adsabs.harvard.edu/v1//oracle/matchdoc
+  response:
+    body:
+      string: '{"query": "topn(10, similar(\"The nucleus of our nearest, large galactic
+        neighbour, M31, contains an eccentric nuclear disc - a disc of stars on eccentric,
+        apsidally aligned orbits around a supermassive black hole (SMBH). Previous
+        studies of eccentric nuclear discs considered only an isolated disc, and did
+        not study their dynamics under galaxy mergers (particularly a perturbing SMBH).
+        Here, we present the first study of how eccentric discs are affected by a
+        galactic merger. We perform N-body simulations to study the disc under a range
+        of different possible SMBH initial conditions. A second SMBH in the disc always
+        disrupts it, but more distant SMBHs can shut off differential precession and
+        stabilize the disc. This results in a more aligned disc, nearly uniform eccentricity
+        profile, and suppression of tidal disruption events compared to the isolated
+        disc. We also discuss implications of our work for the presence of a secondary
+        SMBH in M31.\", input abstract, 43, 1, 1)) doctype:(article) property:REFEREED",
+        "comment": "Matching doctype `article`.", "match": [{"bibcode": "2021MNRAS.503.2713R",
+        "confidence": 1, "scores": {"abstract": 1.0, "title": 1.0, "author": 1, "year":
+        0.75}}]}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1195'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Aug 2022 23:42:42 GMT
+      Retry-After:
+      - '81630'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '100'
+      X-RateLimit-Remaining:
+      - '80'
+      X-RateLimit-Reset:
+      - '1659565393'
+    status:
+      code: 200
+      message: OK
+version: 1

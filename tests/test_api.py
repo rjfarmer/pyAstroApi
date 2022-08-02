@@ -9,6 +9,7 @@ import pyastroapi.api.solr as solr
 import pyastroapi.api.reference as ref
 import pyastroapi.api.resolver as resolve
 import pyastroapi.api.visualization as visual
+import pyastroapi.api.recommender as recommend
 
 import pyastroapi.api.urls as urls
 import pyastroapi.api.http as http
@@ -310,3 +311,31 @@ class TestAPIVisual:
         assert "data" in r
 
         assert len(r["data"]["fullGraph"]["nodes"]) == 2
+
+@pytest.mark.vcr()
+class TestAPIRecommend:
+    def test_matchdoc(self):
+
+        r = recommend.matchdoc(token,
+                            abstract = "The nucleus of our nearest, large galactic neighbour, M31, contains an eccentric nuclear disc - a disc of stars on eccentric, apsidally aligned orbits around a supermassive black hole (SMBH). Previous studies of eccentric nuclear discs considered only an isolated disc, and did not study their dynamics under galaxy mergers (particularly a perturbing SMBH). Here, we present the first study of how eccentric discs are affected by a galactic merger. We perform N-body simulations to study the disc under a range of different possible SMBH initial conditions. A second SMBH in the disc always disrupts it, but more distant SMBHs can shut off differential precession and stabilize the disc. This results in a more aligned disc, nearly uniform eccentricity profile, and suppression of tidal disruption events compared to the isolated disc. We also discuss implications of our work for the presence of a secondary SMBH in M31." ,
+                            title = "Galactic merger implications for eccentric nuclear discs: a mechanism for disc alignment",
+                            year = 2021,
+                            author =  "Rodriguez, Alexander; Generozov, Aleksey; Madigan, Ann-Marie",
+                            doctype = "article",
+        )
+
+        assert r == [{'bibcode': '2021MNRAS.503.2713R',
+                        'confidence': 1,
+                         'scores': {'abstract': 1.0, 'title': 1.0, 'author': 1, 'year': 1}}]
+
+        r = recommend.matchdoc(token,
+                        abstract = "The nucleus of our nearest, large galactic neighbour, M31, contains an eccentric nuclear disc - a disc of stars on eccentric, apsidally aligned orbits around a supermassive black hole (SMBH). Previous studies of eccentric nuclear discs considered only an isolated disc, and did not study their dynamics under galaxy mergers (particularly a perturbing SMBH). Here, we present the first study of how eccentric discs are affected by a galactic merger. We perform N-body simulations to study the disc under a range of different possible SMBH initial conditions. A second SMBH in the disc always disrupts it, but more distant SMBHs can shut off differential precession and stabilize the disc. This results in a more aligned disc, nearly uniform eccentricity profile, and suppression of tidal disruption events compared to the isolated disc. We also discuss implications of our work for the presence of a secondary SMBH in M31." ,
+                        title = "Galactic merger implications for eccentric nuclear discs: a mechanism for disc alignment",
+                        year = 2019, # Wrong year
+                        author =  "Rodriguez, Alexander; Generozov, Aleksey; Madigan, Ann-Marie",
+                        doctype = "article",
+        )
+
+        assert r == [{'bibcode': '2021MNRAS.503.2713R',
+                    'confidence': 1,
+                        'scores': {'abstract': 1.0, 'title': 1.0, 'author': 1, 'year': 0.75}}]
