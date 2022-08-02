@@ -1,6 +1,6 @@
-![Test suite status](https://github.com/github/docs/actions/workflows/test.yml/badge.svg?branch=feature-1)
-[codecov](https://codecov.io/gh/rjfarmer/pyAstroApi/branch/main/graph/badge.svg?token=4VQNTPZYMZ)](https://codecov.io/gh/rjfarmer/pyAstroApi)
-[Documentation Status](https://readthedocs.org/projects/pyastroapi/badge/?version=latest)](https://pyastroapi.readthedocs.io/en/latest/?badge=latest)
+![Test suite status](https://github.com/github/docs/actions/workflows/test.yml/badge.svg?branch=main)
+![codecov](https://codecov.io/gh/rjfarmer/pyAstroApi/branch/main/graph/badge.svg?token=4VQNTPZYMZ)](https://codecov.io/gh/rjfarmer/pyAstroApi)
+![Documentation Status](https://readthedocs.org/projects/pyastroapi/badge/?version=latest)](https://pyastroapi.readthedocs.io/en/latest/?badge=latest)
 
 # pyAstroApi
 
