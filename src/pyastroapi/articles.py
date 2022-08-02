@@ -18,11 +18,18 @@ import pyastroapi.bibtex as bib
 __all__ = ["article", "journal"]
 
 
+_t_bibcode = t.Union[str, t.List[str]]
+
 class Export:
-    def __init__(self, bibcodes):
+    """ Class handles accessing various citation methods (bibtex, refworks, etc)
+
+    The full list is generated dynamically
+
+    """
+    def __init__(self, bibcodes: _t_bibcode):
         self.bibcodes = utils.ensure_list(bibcodes)
 
-    def __getattr__(self, attr):
+    def __getattr__(self, attr: str):
         return getattr(_export, attr)(token.get_token(), self.bibcodes)
 
     def __dir__(self):
@@ -30,10 +37,12 @@ class Export:
 
 
 class Metrics:
-    def __init__(self, bibcodes):
+    """Class handles various metrics (citations per year, etc)
+    """
+    def __init__(self, bibcodes:_t_bibcode):
         self.bibcodes = utils.ensure_list(bibcodes)
 
-    def __getattr__(self, attr):
+    def __getattr__(self, attr: str):
         return getattr(_metrics, attr)(token.get_token(), self.bibcodes)
 
     def __dir__(self):
@@ -41,10 +50,12 @@ class Metrics:
 
 
 class Visualization:
-    def __init__(self, bibcodes):
+    """Class handles visulization of a list of bibcodes
+    """
+    def __init__(self, bibcodes:_t_bibcode ):
         self.bibcodes = utils.ensure_list(bibcodes)
 
-    def __getattr__(self, attr):
+    def __getattr__(self, attr: str):
         return getattr(_visualization, attr)(token.get_token(), self.bibcodes)
 
     def __dir__(self):
@@ -52,7 +63,11 @@ class Visualization:
 
 
 class PDF:
-    def __init__(self, bibcode):
+    """Class handles getting the url for pdf downloads
+
+    Not every bibcode has all possible download options
+    """
+    def __init__(self, bibcode: str):
         if isinstance(bibcode, list):
             raise TypeError("Can only handle one pdf at a time")
 
@@ -72,10 +87,25 @@ class PDF:
         for i in links["links"]["records"]:
             self.links[i["link_type"]] = i["url"]
 
-    def filename(self):
+    def filename(self) -> str:
+        """Gets the filename for a bibcode
+
+        Returns:
+            str : bibcode.pdf
+        """
         return f"{self.bibcode}.pdf"
 
-    def _download(self, source, name, filename=None):
+    def _download(self, source: str, name:str, filename:str =None):
+        """Downloads a file
+
+        Args:
+            source (str): Which version of the file to download
+            name (str): Bibcode
+            filename (str, optional): The filename to save to, Defaults to self.filename()
+
+        Raises:
+            ValueError: If requested url does not exist for this paper
+        """
         if self.links is None:
             self._get()
 
@@ -88,21 +118,52 @@ class PDF:
         print(self.links[source], filename)
         _http.download_file(self.links[source], filename)
 
-    def arxiv(self, filename=None):
+    def arxiv(self, filename:str =None) -> str:
+        """Try to download from the arxiv
+
+        Args:
+            filename (str, optional): Filename to save pdf to. Defaults to self.filename()
+
+        Returns:
+            str: Filename used for saving
+        """
         self._download("ESOURCE|EPRINT_PDF", "Arxiv", filename)
         return filename
 
-    def publisher(self, filename=None):
+    def publisher(self, filename: str=None) -> str:
+        """Try to download from the journal
+
+        Many journals will return a html captcha page instead. So be prepared to handle 
+        the download failing
+
+        Args:
+            filename (str, optional): Filename to save pdf to. Defaults to self.filename()
+
+        Returns:
+            str: Filename used for saving
+        """
         self._download("ESOURCE|PUB_PDF", "Publisher", filename)
         return filename
 
-    def ads(self, filename=None):
+    def ads(self, filename: str=None) -> str:
+        """Try to download from ADS
+
+        Some (mostly older) papers are stored only with ADS
+
+        Args:
+            filename (str, optional): Filename to save pdf to. Defaults to self.filename()
+
+        Returns:
+            str: Filename used for saving
+        """
         self._download("ESOURCE|ADS_PDF", "ADSABS", filename)
         return filename
 
 
 class Urls:
-    def __init__(self, bibcode):
+    """ Class handles accessing the URL's to a paper
+    """
+    def __init__(self, bibcode: str):
         if isinstance(bibcode, list):
             raise TypeError("Can only handle one pdf at a time")
 
@@ -115,7 +176,7 @@ class Urls:
         for i in links["links"]["records"]:
             self.links[i["link_type"]] = i["url"]
 
-    def _get(self, source, name):
+    def _get(self, source:str, name: str):
         if source not in self.links:
             raise ValueError(f"No {name} html available for {self.bibcode}")
 
@@ -123,15 +184,30 @@ class Urls:
             filename = self.filename()
 
     @property
-    def ads(self):
+    def ads(self) -> str:
+        """Get the ADSABS URL
+
+        Returns:
+            str: ADS URL
+        """
         return f"https://ui.adsabs.harvard.edu/abs/{self.bibcode}"
 
     @property
-    def arixv(self):
+    def arixv(self) -> str:
+        """Get the arxiv URL
+
+        Returns:
+            str: _Arxiv URL
+        """
         return self._get("ESOURCE|EPRINT_HTML", "Arxiv")
 
     @property
-    def journal(self):
+    def journal(self)-> str:
+        """Get the journal URL
+
+        Returns:
+            str: Journal URL
+        """
         tries = ["ESOURCE", "ESOURCE|HTML", "PUB_HTML", "AUTHOR_HTML"]
 
         for link in tries:
@@ -147,6 +223,17 @@ class article:
         bibtex: str = None,
         search: str = None,
     ):
+        """Creates an article
+
+        This is the base class foe interacting with a single paper
+
+        Args:
+            bibcode (str, optional): Point to paper given by a bibcode. Defaults to None.
+            data (t.Dict, optional): Initialize the article from a dict containing at least a "bibcode" key . Defaults to None.
+            bibtex (str, optional): Initialize given a bibtex string. Must contain only one document. Defaults to None.
+            search (str, optional): Initialize after performing a query of ADS with the search string. We only return the first result from the search. Defaults to None.
+        """
+
         self.bibcode = None
         self._data = {}
         self._query = None
@@ -163,23 +250,51 @@ class article:
             self.from_search(search)
 
     def from_bibcode(self, bibcode: str):
+        """Set the article to point to the paper given by bibcode
+
+        Args:
+            bibcode (str): ADS bibcode
+        """
         self.bibcode = bibcode
         self._data["bibcode"] = self.bibcode
 
     def from_data(self, data: t.Dict):
+        """Initialize given a dict containing atleast a bibcode key
+
+        Args:
+            data (t.Dict): Dictionary of data
+        """
         self._data = data
         if "bibcode" in self._data.keys():
             self.bibcode = self._data["bibcode"]
 
     def from_bibtex(self, bibtex: str):
+        """Initialize given a bibtex fragment
+
+        Args:
+            bibtex (str): A bibtex document as astring
+        """
         bd = bib.parse_bibtex(bibtex)
         self.from_data(list(pyastroapi.search(bd[0], limit=1))[0])
 
     def from_search(self, search: str):
+        """Perform a search of ADS and return only the first result
+
+        Args:
+            search (str): An ADS search query
+        """
         self._query = search
         self.from_data(list(pyastroapi.search(search, limit=1))[0])
 
-    def add_to_lib(self, libaray: str):
+    def add_to_lib(self, library: str):
+        """Add article to the ADS library
+
+        Args:
+            library (str): An exisiting ADS library
+
+        Raises:
+            NotImplementedError: _description_
+        """
         raise NotImplementedError
 
     def __getattr__(self, attr: str):
@@ -294,7 +409,7 @@ class article:
 
         return self._refs
 
-    def reference_count(self):
+    def reference_count(self) -> int:
         if "reference" not in self._data:
             return len(self.references())
         else:
@@ -314,23 +429,23 @@ class article:
         return self._cites
 
     @property
-    def first_author(self):
+    def first_author(self) -> str:
         if "author" not in self._data:
             self.__getattr__("author")
         return self.author[0]
 
     @property
-    def authors(self):
+    def authors(self) -> t.List[str]:
         if "author" not in self._data:
             self.__getattr__("author")
         return self.author
 
     @property
-    def name(self):
+    def name(self) -> str:
         return f"{self.first_author} {self.year}"
 
     @property
-    def title(self):
+    def title(self) -> str:
         if "title" not in self._data:
             self.__getattr__("title")
         return self._data["title"][0]
@@ -350,6 +465,19 @@ class journal:
         bibtex: str = None,
         search: str = None,
     ):
+        """Creates an journal
+
+        This is the base class foe interacting with one or more papers
+
+        The from_ functions will reset the data stored, while add_ adds any new entries.
+
+        Args:
+            bibcodes (list, optional): List of bibcodes. Defaults to None.
+            data (t.Dict, optional): Initialize the journal from a list of dicts. Each dict must have at least a "bibcode" key . Defaults to None.
+            bibtex (str, optional): Initialize given a bibtex string. Must contain only one document. Defaults to None.
+            search (str, optional): Initialize after performing a query of ADS with the search string. Defaults to None.
+        """
+
         self._data = {}
 
         if bibcodes is not None:

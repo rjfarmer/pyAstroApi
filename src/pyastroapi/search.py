@@ -1,6 +1,7 @@
 # # SPDX-License-Identifier: BSD-3-Clause
 
 import datetime
+import typing as t
 
 import pyastroapi.api.search as _search
 import pyastroapi.api.token as _token
@@ -13,63 +14,129 @@ __all__ = [
     "bibcode",
     "citations",
     "references",
-    "search_with_callbacks",
     "astro_ph",
 ]
 
 
-def search(query, limit=-1, fields=None, dbg=False):
+def search(query: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+    """Performs a ADS search
+
+    Args:
+        query (str): Search query
+        limit (int, optional): Number of rows to limit to (-1 is no limit). Defaults to -1.
+        fields (t.List[str], optional): ADS fields to return, if None returns a default set of fields.
+        dbg (bool, optional): Debugging flag. Defaults to False.
+
+    Returns:
+        generator: Returns a generator where each element is a dict for each ADS record, with keys given by the fields
+    """
     return _search.search(
         _token.get_token(), query=query, limit=limit, fields=fields, dbg=dbg
     )
 
 
-def first_author(author, limit=-1, fields=None, dbg=False):
+def first_author(author: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+    """Performs an ads search equivalent to: ^author
+
+    Args:
+        author (str): Author to search for
+        limit (int, optional): Number of rows to limit to (-1 is no limit). Defaults to -1.
+        fields (t.List[str], optional): ADS fields to return, if None returns a default set of fields.
+        dbg (bool, optional): Debugging flag. Defaults to False.
+
+    Returns:
+        generator: Returns a generator where each element is a dict for each ADS record, with keys given by the fields
+    """
     return search(query=f"^{author}", fields=fields)
 
 
-def author_year(author, year, limit=-1, fields=None, dbg=False):
+def author_year(author, year, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+    """Performs an ads search equivalent to: ^author year:year
+
+    Args:
+        author (str): Author to search for
+        year (int): Year to limit to
+        limit (int, optional): Number of rows to limit to (-1 is no limit). Defaults to -1.
+        fields (t.List[str], optional): ADS fields to return, if None returns a default set of fields.
+        dbg (bool, optional): Debugging flag. Defaults to False.
+
+    Returns:
+        generator: Returns a generator where each element is a dict for each ADS record, with keys given by the fields
+    """
     return search(query=f"^{author} year:{year}", fields=fields)
 
 
-def orcid(orcid, limit=-1, fields=None, dbg=False):
+def orcid(orcid: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+    """Performs an ads search equivalent to: orcid:orcid
+
+    Args:
+        orcid (str): ORCID
+        limit (int, optional): Number of rows to limit to (-1 is no limit). Defaults to -1.
+        fields (t.List[str], optional): ADS fields to return, if None returns a default set of fields.
+        dbg (bool, optional): Debugging flag. Defaults to False.
+
+    Returns:
+        generator: Returns a generator where each element is a dict for each ADS record, with keys given by the fields
+    """
     return search(query=f"orcid:{orcid}", fields=fields)
 
 
-def bibcode(bibcode, limit=-1, fields=None, dbg=False):
+def bibcode(bibcode: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+    """Searchs for a given bibcode
+
+    Args:
+        bibcode (str): Bibcode
+        limit (int, optional): Number of rows to limit to (-1 is no limit). Defaults to -1.
+        fields (t.List[str], optional): ADS fields to return, if None returns a default set of fields.
+        dbg (bool, optional): Debugging flag. Defaults to False.
+
+    Returns:
+        generator: Returns a generator where each element is a dict for each ADS record, with keys given by the fields
+    """
     return search(query=f"bibcode:{bibcode}", fields=fields)
 
 
-def citations(bibcode, limit=-1, fields=None, dbg=False):
+def citations(bibcode: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+    """Gets citations to paper given by bibcode
+
+    Args:
+        bibcode (str): Bibcode
+        limit (int, optional): Number of rows to limit to (-1 is no limit). Defaults to -1.
+        fields (t.List[str], optional): ADS fields to return, if None returns a default set of fields.
+        dbg (bool, optional): Debugging flag. Defaults to False.
+
+    Returns:
+        generator: Returns a generator where each element is a dict for each ADS record, with keys given by the fields
+    """
     return search(query=f"citations({bibcode})", fields=fields)
 
 
-def references(bibcode, limit=-1, fields=None, dbg=False):
+def references(bibcode: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+    """Get the papers referenced by paper given by bibcode
+
+     Args:
+        bibcode (str): Bibcode
+        limit (int, optional): Number of rows to limit to (-1 is no limit). Defaults to -1.
+        fields (t.List[str], optional): ADS fields to return, if None returns a default set of fields.
+        dbg (bool, optional): Debugging flag. Defaults to False.
+
+    Returns:
+        generator: Returns a generator where each element is a dict for each ADS record, with keys given by the fields
+    """
     return search(query=f"references({bibcode})", fields=fields)
 
 
-def search_with_callbacks(
-    query,
-    limit=-1,
-    fields=None,
-    callback_start=None,  # Before search runs
-    callback_num_results=None,  # Returns the number of rows found
-    callback_search=None,  # Called with each result
-    callback_end=None,  # Called once all results returned
-):
-    return _search.search(
-        _token.get_token(),
-        query=query,
-        limit=limit,
-        fields=fields,
-        callback_start=callback_start,
-        callback_num_results=callback_num_results,
-        callback_search=callback_search,
-        callback_end=callback_end,
-    )
+def astro_ph(limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+    """Gets the previous (working) days Arxiv postings
 
+    Args:
+        limit (int, optional): Number of rows to limit to (-1 is no limit). Defaults to -1.
+        fields (t.List[str], optional): ADS fields to return, if None returns a default set of fields.
+        dbg (bool, optional): Debugging flag. Defaults to False.
 
-def astro_ph(limit=-1, fields=None, dbg=False):
+    Returns:
+        generator: Returns a generator where each element is a dict for each ADS record, with keys given by the fields
+    """
     day = datetime.datetime.today().weekday()
 
     if day <= 4:  # Monday to Friday get the last days arxiv:

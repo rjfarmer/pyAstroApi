@@ -8,6 +8,17 @@ import typing as t
 
 
 def search(token: str, bibcode: t.Union[str, t.List[str]]):
+    """Create an author-affiliations report.
+
+    https://ui.adsabs.harvard.edu/help/api/api-docs.html#tag--author-affiliation
+
+    Args:
+        token (str): ADSABS token
+        bibcode (t.Union[str, t.List[str]]): Either a single bibcode or a list of bibcodes
+
+    Returns:
+        list[dicts] : List of dicts. Each entry contains the author and affiliation
+    """
 
     url = urls.make_url(urls.urls["authors"]["search"])
 

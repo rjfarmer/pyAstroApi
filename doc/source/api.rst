@@ -1,0 +1,4 @@
+API
+===
+.. autosummary::
+:toctree: generated

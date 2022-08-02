@@ -8,6 +8,20 @@ import typing as t
 
 
 def citations(token: str, bibcode: t.List[str]):
+    """Given a set of bibcodes, suggest additional citations.
+
+    https://ui.adsabs.harvard.edu/help/api/api-docs.html#tag--citation-helperc
+
+    Args:
+        token (str): ADSABS token
+        bibcode (t.List[str]): List of bibcodes
+
+    Raises:
+        TypeError: Must pass a list of bibcodes
+
+    Returns:
+        _type_: _description_
+    """
     url = urls.make_url(urls.urls["citations"]["helper"])
 
     if not isinstance(bibcode, list):
