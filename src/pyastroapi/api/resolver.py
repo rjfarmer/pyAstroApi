@@ -5,7 +5,7 @@ from . import urls
 from . import http
 
 
-def resolve(token: str, bibcode: str) -> http.HttpResponseResponse_t:
+def resolve(token: str, bibcode: str):
 
     if isinstance(bibcode, list):
         raise TypeError("One bibcode at a time")
