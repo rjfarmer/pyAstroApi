@@ -1,0 +1,4 @@
+prune tests
+prune doc
+prune .github
+exclude .gitignore .pre-commit*
