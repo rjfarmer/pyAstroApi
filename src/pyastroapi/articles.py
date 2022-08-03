@@ -20,12 +20,14 @@ __all__ = ["article", "journal"]
 
 _t_bibcode = t.Union[str, t.List[str]]
 
+
 class Export:
-    """ Class handles accessing various citation methods (bibtex, refworks, etc)
+    """Class handles accessing various citation methods (bibtex, refworks, etc)
 
     The full list is generated dynamically
 
     """
+
     def __init__(self, bibcodes: _t_bibcode):
         self.bibcodes = utils.ensure_list(bibcodes)
 
@@ -37,9 +39,9 @@ class Export:
 
 
 class Metrics:
-    """Class handles various metrics (citations per year, etc)
-    """
-    def __init__(self, bibcodes:_t_bibcode):
+    """Class handles various metrics (citations per year, etc)"""
+
+    def __init__(self, bibcodes: _t_bibcode):
         self.bibcodes = utils.ensure_list(bibcodes)
 
     def __getattr__(self, attr: str):
@@ -50,9 +52,9 @@ class Metrics:
 
 
 class Visualization:
-    """Class handles visulization of a list of bibcodes
-    """
-    def __init__(self, bibcodes:_t_bibcode ):
+    """Class handles visulization of a list of bibcodes"""
+
+    def __init__(self, bibcodes: _t_bibcode):
         self.bibcodes = utils.ensure_list(bibcodes)
 
     def __getattr__(self, attr: str):
@@ -67,6 +69,7 @@ class PDF:
 
     Not every bibcode has all possible download options
     """
+
     def __init__(self, bibcode: str):
         if isinstance(bibcode, list):
             raise TypeError("Can only handle one pdf at a time")
@@ -95,7 +98,7 @@ class PDF:
         """
         return f"{self.bibcode}.pdf"
 
-    def _download(self, source: str, name:str, filename:str =None):
+    def _download(self, source: str, name: str, filename: str = None):
         """Downloads a file
 
         Args:
@@ -118,7 +121,7 @@ class PDF:
         print(self.links[source], filename)
         _http.download_file(self.links[source], filename)
 
-    def arxiv(self, filename:str =None) -> str:
+    def arxiv(self, filename: str = None) -> str:
         """Try to download from the arxiv
 
         Args:
@@ -130,10 +133,10 @@ class PDF:
         self._download("ESOURCE|EPRINT_PDF", "Arxiv", filename)
         return filename
 
-    def publisher(self, filename: str=None) -> str:
+    def publisher(self, filename: str = None) -> str:
         """Try to download from the journal
 
-        Many journals will return a html captcha page instead. So be prepared to handle 
+        Many journals will return a html captcha page instead. So be prepared to handle
         the download failing
 
         Args:
@@ -145,7 +148,7 @@ class PDF:
         self._download("ESOURCE|PUB_PDF", "Publisher", filename)
         return filename
 
-    def ads(self, filename: str=None) -> str:
+    def ads(self, filename: str = None) -> str:
         """Try to download from ADS
 
         Some (mostly older) papers are stored only with ADS
@@ -161,8 +164,8 @@ class PDF:
 
 
 class Urls:
-    """ Class handles accessing the URL's to a paper
-    """
+    """Class handles accessing the URL's to a paper"""
+
     def __init__(self, bibcode: str):
         if isinstance(bibcode, list):
             raise TypeError("Can only handle one pdf at a time")
@@ -176,7 +179,7 @@ class Urls:
         for i in links["links"]["records"]:
             self.links[i["link_type"]] = i["url"]
 
-    def _get(self, source:str, name: str):
+    def _get(self, source: str, name: str):
         if source not in self.links:
             raise ValueError(f"No {name} html available for {self.bibcode}")
 
@@ -202,7 +205,7 @@ class Urls:
         return self._get("ESOURCE|EPRINT_HTML", "Arxiv")
 
     @property
-    def journal(self)-> str:
+    def journal(self) -> str:
         """Get the journal URL
 
         Returns:

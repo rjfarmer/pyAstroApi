@@ -135,8 +135,7 @@ def delete(token: str, url: str) -> HttpResponse:
 
 
 def post_bibcodes(
-    token: str, url: str, bibcodes: t.Union[str, t.List[str]],
-    multi_bibs: bool = True
+    token: str, url: str, bibcodes: t.Union[str, t.List[str]], multi_bibs: bool = True
 ) -> HttpResponse:
     if isinstance(bibcodes, list):
         if multi_bibs:

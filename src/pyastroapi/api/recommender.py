@@ -7,23 +7,30 @@ from . import search
 import typing as t
 
 
-def matchdoc(token:str, abstract:str='', title: str='',
-                author:str='', year:int='',doctype:str='article',
-                match_doctype =['article'], must_match=False):
+def matchdoc(
+    token: str,
+    abstract: str = "",
+    title: str = "",
+    author: str = "",
+    year: int = "",
+    doctype: str = "article",
+    match_doctype=["article"],
+    must_match=False,
+):
     url = urls.make_url(urls.urls["oracle"]["match"])
 
     data = {}
-    data['abstract'] = abstract
-    data['title'] = title
-    data['author'] = author
-    data['year'] = year
-    data['doctype'] = doctype
-    data['match_doctype'] = match_doctype
-    data['mustmatch'] = must_match
+    data["abstract"] = abstract
+    data["title"] = title
+    data["author"] = author
+    data["year"] = year
+    data["doctype"] = doctype
+    data["match_doctype"] = match_doctype
+    data["mustmatch"] = must_match
 
     r = http.post(token, url, data=data)
     print(r)
-    return r.response['match']
+    return r.response["match"]
 
 
 def recommend(
@@ -47,38 +54,44 @@ def recommend(
     r = http.post(token, url, data=data)
 
     return r
-    #return r.response['bibcpdes']
+    # return r.response['bibcpdes']
 
-def similar(token,
+
+def similar(
+    token,
     sort="first_author desc",
     num_docs=20,
     top_n_reads=50,
     cutoff_days=7,
 ):
-    return recommend(token,'similar',sort,num_docs,top_n_reads,cutoff_days)
+    return recommend(token, "similar", sort, num_docs, top_n_reads, cutoff_days)
 
-def trending(token,
+
+def trending(
+    token,
     sort="first_author desc",
     num_docs=20,
     top_n_reads=50,
     cutoff_days=7,
 ):
-    return recommend(token,'trending',sort,num_docs,top_n_reads,cutoff_days)
+    return recommend(token, "trending", sort, num_docs, top_n_reads, cutoff_days)
 
-def reviews(token,
+
+def reviews(
+    token,
     sort="first_author desc",
     num_docs=20,
     top_n_reads=50,
     cutoff_days=7,
 ):
-    return recommend(token,'reviews',sort,num_docs,top_n_reads,cutoff_days)
+    return recommend(token, "reviews", sort, num_docs, top_n_reads, cutoff_days)
 
 
-def useful(token,
+def useful(
+    token,
     sort="first_author desc",
     num_docs=20,
     top_n_reads=50,
     cutoff_days=7,
 ):
-    return recommend(token,'useful',sort,num_docs,top_n_reads,cutoff_days)
-
+    return recommend(token, "useful", sort, num_docs, top_n_reads, cutoff_days)

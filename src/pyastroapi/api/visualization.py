@@ -45,7 +45,6 @@ def paper(token: str, bibcode: str):
 def word_cloud(token: str, query: str, rows: str = 50):
     url = urls.make_url(urls.urls["visual"]["word-cloud"])
 
-
     payload = {
         "q": [query],
         "rows": [rows],

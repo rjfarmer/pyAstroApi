@@ -18,7 +18,7 @@ __all__ = [
 ]
 
 
-def search(query: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+def search(query: str, limit: int = -1, fields: t.List[str] = None, dbg: bool = False):
     """Performs a ADS search
 
     Args:
@@ -35,7 +35,9 @@ def search(query: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=False)
     )
 
 
-def first_author(author: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+def first_author(
+    author: str, limit: int = -1, fields: t.List[str] = None, dbg: bool = False
+):
     """Performs an ads search equivalent to: ^author
 
     Args:
@@ -50,7 +52,9 @@ def first_author(author: str, limit: int=-1, fields: t.List[str]=None, dbg: bool
     return search(query=f"^{author}", fields=fields)
 
 
-def author_year(author, year, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+def author_year(
+    author, year, limit: int = -1, fields: t.List[str] = None, dbg: bool = False
+):
     """Performs an ads search equivalent to: ^author year:year
 
     Args:
@@ -66,7 +70,7 @@ def author_year(author, year, limit: int=-1, fields: t.List[str]=None, dbg: bool
     return search(query=f"^{author} year:{year}", fields=fields)
 
 
-def orcid(orcid: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+def orcid(orcid: str, limit: int = -1, fields: t.List[str] = None, dbg: bool = False):
     """Performs an ads search equivalent to: orcid:orcid
 
     Args:
@@ -81,7 +85,9 @@ def orcid(orcid: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
     return search(query=f"orcid:{orcid}", fields=fields)
 
 
-def bibcode(bibcode: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+def bibcode(
+    bibcode: str, limit: int = -1, fields: t.List[str] = None, dbg: bool = False
+):
     """Searchs for a given bibcode
 
     Args:
@@ -96,7 +102,9 @@ def bibcode(bibcode: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=Fal
     return search(query=f"bibcode:{bibcode}", fields=fields)
 
 
-def citations(bibcode: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+def citations(
+    bibcode: str, limit: int = -1, fields: t.List[str] = None, dbg: bool = False
+):
     """Gets citations to paper given by bibcode
 
     Args:
@@ -111,7 +119,9 @@ def citations(bibcode: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=F
     return search(query=f"citations({bibcode})", fields=fields)
 
 
-def references(bibcode: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+def references(
+    bibcode: str, limit: int = -1, fields: t.List[str] = None, dbg: bool = False
+):
     """Get the papers referenced by paper given by bibcode
 
      Args:
@@ -126,7 +136,7 @@ def references(bibcode: str, limit: int=-1, fields: t.List[str]=None, dbg: bool=
     return search(query=f"references({bibcode})", fields=fields)
 
 
-def astro_ph(limit: int=-1, fields: t.List[str]=None, dbg: bool=False):
+def astro_ph(limit: int = -1, fields: t.List[str] = None, dbg: bool = False):
     """Gets the previous (working) days Arxiv postings
 
     Args:
