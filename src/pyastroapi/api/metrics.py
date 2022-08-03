@@ -20,7 +20,9 @@ __all__ = [
 
 def detail(token: str, bibcode: str) -> http.HttpResponse:
     url = urls.make_url(urls.urls["metrics"]["detail"])
-    return http.post_bibcodes(url, token, bibcode)
+    r = http.post_bibcodes(token, url, bibcode)
+
+    return r.response
 
 
 def metrics(token: str, bibcode: str):
