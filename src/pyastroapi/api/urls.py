@@ -28,7 +28,7 @@ urls = {
     # Export
     "export": {
         "ads": "/export/ads",
-        "bibtextads": "/export/bibtexabs",
+        "bibtexabs": "/export/bibtexabs",
         "bibtex": "/export/bibtex",
         "endnote": "/export/endnote",
         "medlars": "/export/medlars",

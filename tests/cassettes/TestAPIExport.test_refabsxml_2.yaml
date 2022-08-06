@@ -1,0 +1,121 @@
+interactions:
+- request:
+    body: '{"bibcode": ["2020ApJ...902L..36F", "2020zndo...3678482F"]}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.27.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://api.adsabs.harvard.edu/v1//export/refabsxml
+  response:
+    body:
+      string: '{"msg": "Retrieved 2 abstracts, starting with number 1.", "export":
+        "<?xml version=''1.0'' encoding=''utf8''?>\n<records xmlns=\"http://ads.harvard.edu/schema/abs/1.1/abstracts\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://ads.harvard.edu/schema/abs/1.1/abstracts
+        http://ads.harvard.edu/schema/abs/1.1/abstracts.xsd\" retrieved=\"2\" start=\"1\"
+        selected=\"2\" citations=\"99\">\n<record refereed=\"true\" article=\"true\"
+        type=\"article\">\n<bibcode>2020ApJ...902L..36F</bibcode>\n<title>Constraints
+        from Gravitational-wave Detections of Binary Black Hole Mergers on the &lt;SUP&gt;12&lt;/SUP&gt;C(\u03b1,
+        \u03b3)&lt;SUP&gt;16&lt;/SUP&gt;O Rate</title>\n<author>Farmer, R.</author>\n<author>Renzo,
+        M.</author>\n<author>de Mink, S. E.</author>\n<author>Fishbach, M.</author>\n<author>Justham,
+        S.</author>\n<affiliation>AA(University of Amsterdam, Anton Pannekoek Institute
+        for Astronomy; Harvard Smithsonian Center for Astrophysics), AB(Center for
+        Computational Astrophysics, Flatiron Institute, New York), AC(University of
+        Amsterdam, Anton Pannekoek Institute for Astronomy; Harvard Smithsonian Center
+        for Astrophysics), AD(University of Chicago, Department of Astronomy and Astrophysics),
+        AE(University of Amsterdam, Anton Pannekoek Institute for Astronomy; University
+        of the Chinese Academy of Sciences, Beijing; CAS, National Astronomical Observatories)</affiliation>\n<journal>The
+        Astrophysical Journal Letters, Volume 902, Issue 2, id.L36, 14 pp.</journal>\n<volume>902</volume>\n<pubdate>Oct
+        2020</pubdate>\n<keywords>\n<keyword>Stellar evolution</keyword>\n<keyword>Supernovae</keyword>\n<keyword>Core-collapse
+        supernovae</keyword>\n<keyword>Nuclear astrophysics</keyword>\n<keyword>Stellar
+        mass black holes</keyword>\n<keyword>Astrophysical black holes</keyword>\n<keyword>Massive
+        stars</keyword>\n<keyword>Late stellar evolution</keyword>\n<keyword>1599</keyword>\n<keyword>1668</keyword>\n<keyword>304</keyword>\n<keyword>1129</keyword>\n<keyword>1611</keyword>\n<keyword>98</keyword>\n<keyword>732</keyword>\n<keyword>911</keyword>\n<keyword>Astrophysics
+        - High Energy Astrophysical Phenomena</keyword>\n</keywords>\n<link type=\"abstract\">\n<name>abstract</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/abstract</url>\n</link>\n<link
+        type=\"citations\">\n<name>Citations to the Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/citations</url>\n<count>97</count>\n</link>\n<link
+        type=\"reference\">\n<name>References in the Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/reference</url>\n<count>172</count>\n</link>\n<link
+        type=\"coreads\">\n<name>Co-Reads</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/coreads</url>\n</link>\n<link
+        type=\"EPRINT_HTML\">\n<name>arXiv Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/EPRINT_HTML</url>\n</link>\n<link
+        type=\"PUB_HTML\">\n<name>Publisher Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/PUB_HTML</url>\n</link>\n<link
+        type=\"EPRINT_PDF\" access=\"open\">\n<name>arXiv PDF</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/EPRINT_PDF</url>\n</link>\n<link
+        type=\"PUB_PDF\" access=\"open\">\n<name>Publisher PDF</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/PUB_PDF</url>\n</link>\n<link
+        type=\"SIMBAD\">\n<name>SIMBAD Database at the CDS</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/SIMBAD</url>\n<count>10</count>\n</link>\n<url>https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F</url>\n<citations>97</citations>\n<abstract>Gravitational-wave
+        detections are starting to allow us to probe the physical processes in the
+        evolution of very massive stars through the imprints they leave on their final
+        remnants. Stellar evolution theory predicts the existence of a gap in the
+        black hole mass distribution at high mass due to the effects of pair instability.
+        Previously, we showed that the location of the gap is robust against model
+        uncertainties, but it does depend sensitively on the uncertain ${}^{12}{\\rm{C}}{(\\alpha
+        ,\\gamma )}^{16}{\\rm{O}}$ rate. This rate is of great astrophysical significance
+        and governs the production of oxygen at the expense of carbon. We use the
+        open-source MESA stellar evolution code to evolve massive helium stars to
+        probe the location of the mass gap. We find that the maximum black hole mass
+        below the gap varies between $40\\,{M}_{\\odot }$ and $90\\,{M}_{\\odot }$
+        , depending on the strength of the uncertain ${}^{12}{\\rm{C}}{(\\alpha ,\\gamma
+        )}^{16}{\\rm{O}}$ reaction rate. With the first 10 gravitational-wave detections
+        of black holes, we constrain the astrophysical S-factor for ${}^{12}{\\rm{C}}{(\\alpha
+        ,\\gamma )}^{16}{\\rm{O}}$ , at $300\\,\\mathrm{keV}$ , to ${S}_{300} 175\\,\\,{\\rm{keV}}\\,{\\rm{b}}$
+        at 68% confidence. With ${ \\mathcal O }(50)$ detected binary black hole mergers,
+        we expect to constrain the S-factor to within \u00b110-30 ${\\rm{keV}}\\,{\\rm{b}}$
+        . We also highlight a role for independent constraints from electromagnetic
+        transient surveys. The unambiguous detection of pulsational pair-instability
+        supernovae would imply that ${S}_{300} 79\\,{\\rm{keV}}\\,{\\rm{b}}$ . Degeneracies
+        with other model uncertainties need to be investigated further, but probing
+        nuclear stellar astrophysics poses a promising science case for the future
+        gravitational-wave detectors.</abstract>\n<DOI>10.3847/2041-8213/abbadd</DOI>\n<eprintid>arXiv:2006.06678</eprintid>\n</record>\n\n<record
+        type=\"software\">\n<bibcode>2020zndo...3678482F</bibcode>\n<title>rjfarmer/mesaplot:
+        Bug fixes</title>\n<author>Farmer, Robert</author>\n<journal>Zenodo</journal>\n<pubdate>Feb
+        2020</pubdate>\n<link type=\"abstract\">\n<name>abstract</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020zndo...3678482F/abstract</url>\n</link>\n<link
+        type=\"citations\">\n<name>Citations to the Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020zndo...3678482F/citations</url>\n<count>2</count>\n</link>\n<link
+        type=\"PUB_HTML\">\n<name>Publisher Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020zndo...3678482F/PUB_HTML</url>\n</link>\n<url>https://ui.adsabs.harvard.edu/abs/2020zndo...3678482F</url>\n<citations>2</citations>\n<abstract>history
+        and profile data are saved saved after the first time they are loaded as a
+        python pickle file. This allows much faster re-reading in of the file and
+        takes up much less space. Kippenhan plots have had some bug fixes for colorbars</abstract>\n<DOI>10.5281/zenodo.3678482</DOI>\n</record>\n\n</records>"}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6711'
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 06 Aug 2022 23:52:26 GMT
+      Retry-After:
+      - '84673'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4965'
+      X-RateLimit-Reset:
+      - '1659914620'
+    status:
+      code: 200
+      message: OK
+version: 1

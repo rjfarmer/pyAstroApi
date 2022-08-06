@@ -1,0 +1,101 @@
+interactions:
+- request:
+    body: '{"bibcode": ["2020ApJ...902L..36F", "2020zndo...3678482F"]}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.27.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://api.adsabs.harvard.edu/v1//export/dcxml
+  response:
+    body:
+      string: '{"msg": "Retrieved 2 abstracts, starting with number 1.", "export":
+        "<?xml version=''1.0'' encoding=''utf8''?>\n<records xmlns=\"http://ads.harvard.edu/schema/abs/1.1/dc\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
+        xsi:schemaLocation=\"http://ads.harvard.edu/schema/abs/1.1/dc http://ads.harvard.edu/schema/abs/1.1/dc.xsd\"
+        retrieved=\"2\" start=\"1\" selected=\"2\" citations=\"99\">\n<record>\n<dc:identifier>2020ApJ...902L..36F</dc:identifier>\n<dc:title>Constraints
+        from Gravitational-wave Detections of Binary Black Hole Mergers on the &lt;SUP&gt;12&lt;/SUP&gt;C(\u03b1,
+        \u03b3)&lt;SUP&gt;16&lt;/SUP&gt;O Rate</dc:title>\n<dc:creator>Farmer, R.</dc:creator>\n<dc:creator>Renzo,
+        M.</dc:creator>\n<dc:creator>de Mink, S. E.</dc:creator>\n<dc:creator>Fishbach,
+        M.</dc:creator>\n<dc:creator>Justham, S.</dc:creator>\n<dc:source>The Astrophysical
+        Journal Letters, Volume 902, Issue 2, id.L36, 14 pp.</dc:source>\n<dc:date>2020-10-01</dc:date>\n<dc:subject>Stellar
+        evolution, Supernovae, Core-collapse supernovae, Nuclear astrophysics, Stellar
+        mass black holes, Astrophysical black holes, Massive stars, Late stellar evolution,
+        1599, 1668, 304, 1129, 1611, 98, 732, 911, Astrophysics - High Energy Astrophysical
+        Phenomena</dc:subject>\n<dc:relation>https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F</dc:relation>\n<dc:relation>citations:97</dc:relation>\n<dc:description>Gravitational-wave
+        detections are starting to allow us to probe the physical processes in the
+        evolution of very massive stars through the imprints they leave on their final
+        remnants. Stellar evolution theory predicts the existence of a gap in the
+        black hole mass distribution at high mass due to the effects of pair instability.
+        Previously, we showed that the location of the gap is robust against model
+        uncertainties, but it does depend sensitively on the uncertain ${}^{12}{\\rm{C}}{(\\alpha
+        ,\\gamma )}^{16}{\\rm{O}}$ rate. This rate is of great astrophysical significance
+        and governs the production of oxygen at the expense of carbon. We use the
+        open-source MESA stellar evolution code to evolve massive helium stars to
+        probe the location of the mass gap. We find that the maximum black hole mass
+        below the gap varies between $40\\,{M}_{\\odot }$ and $90\\,{M}_{\\odot }$
+        , depending on the strength of the uncertain ${}^{12}{\\rm{C}}{(\\alpha ,\\gamma
+        )}^{16}{\\rm{O}}$ reaction rate. With the first 10 gravitational-wave detections
+        of black holes, we constrain the astrophysical S-factor for ${}^{12}{\\rm{C}}{(\\alpha
+        ,\\gamma )}^{16}{\\rm{O}}$ , at $300\\,\\mathrm{keV}$ , to ${S}_{300} 175\\,\\,{\\rm{keV}}\\,{\\rm{b}}$
+        at 68% confidence. With ${ \\mathcal O }(50)$ detected binary black hole mergers,
+        we expect to constrain the S-factor to within \u00b110-30 ${\\rm{keV}}\\,{\\rm{b}}$
+        . We also highlight a role for independent constraints from electromagnetic
+        transient surveys. The unambiguous detection of pulsational pair-instability
+        supernovae would imply that ${S}_{300} 79\\,{\\rm{keV}}\\,{\\rm{b}}$ . Degeneracies
+        with other model uncertainties need to be investigated further, but probing
+        nuclear stellar astrophysics poses a promising science case for the future
+        gravitational-wave detectors.</dc:description>\n<dc:identifier>doi:10.3847/2041-8213/abbadd</dc:identifier>\n</record>\n\n<record>\n<dc:identifier>2020zndo...3678482F</dc:identifier>\n<dc:title>rjfarmer/mesaplot:
+        Bug fixes</dc:title>\n<dc:creator>Farmer, Robert</dc:creator>\n<dc:source>Zenodo</dc:source>\n<dc:date>2020-02-21</dc:date>\n<dc:relation>https://ui.adsabs.harvard.edu/abs/2020zndo...3678482F</dc:relation>\n<dc:relation>citations:2</dc:relation>\n<dc:description>history
+        and profile data are saved saved after the first time they are loaded as a
+        python pickle file. This allows much faster re-reading in of the file and
+        takes up much less space. Kippenhan plots have had some bug fixes for colorbars</dc:description>\n<dc:identifier>doi:10.5281/zenodo.3678482</dc:identifier>\n</record>\n\n</records>"}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4027'
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 06 Aug 2022 23:52:24 GMT
+      Retry-After:
+      - '84674'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4969'
+      X-RateLimit-Reset:
+      - '1659914619'
+    status:
+      code: 200
+      message: OK
+version: 1

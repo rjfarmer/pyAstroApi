@@ -89,25 +89,159 @@ class TestAPISearch:
 
 @pytest.mark.vcr()
 class TestAPIExport:
-    def test_ads(self):
+    def test_ads_1(self):
         res = export.ads(token, "2020ApJ...902L..36F")
-
         assert len(res) == 1
 
-    def test_bibtex(self):
-        res = export.bibtex(token, "2020ApJ...902L..36F")
-
-        assert len(res) == 1
-
-        assert res[0].startswith("@ARTICLE{2020ApJ...902L..36F")
-
-    def test_bib2(self):
-        res = export.bibtex(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
-
+    def test_ads_2(self):
+        res = export.ads(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
         assert len(res) == 2
 
-        assert res[0].startswith("@ARTICLE{2020ApJ...902L..36F")
-        assert res[1].startswith("@MISC{2020zndo...3678482F")
+    def test_bibtexabs_1(self):
+        res = export.bibtexabs(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_bibtexabs_2(self):
+        res = export.bibtexabs(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 2
+
+    def test_bibtex_1(self):
+        res = export.bibtex(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_bibtex_2(self):
+        res = export.bibtex(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 2
+
+    def test_endnote_1(self):
+        res = export.endnote(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_endnote_2(self):
+        res = export.endnote(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 2
+
+    def test_medlars_1(self):
+        res = export.medlars(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_medlars_2(self):
+        res = export.medlars(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 2
+
+    def test_procite_1(self):
+        res = export.procite(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_procite_2(self):
+        res = export.procite(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 2
+
+    def test_refworks_1(self):
+        res = export.refworks(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_refworks_2(self):
+        res = export.refworks(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 2
+
+    def test_ris_1(self):
+        res = export.ris(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_ris_2(self):
+        res = export.ris(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 2
+
+    def test_aastex_1(self):
+        res = export.aastex(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_aastex_2(self):
+        res = export.aastex(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 2
+
+    def test_icarus_1(self):
+        res = export.icarus(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_icarus_2(self):
+        res = export.icarus(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 2
+
+    def test_mnras_1(self):
+        res = export.mnras(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_mnras_2(self):
+        res = export.mnras(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 2
+
+    def test_soph_1(self):
+        res = export.soph(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_soph_2(self):
+        res = export.soph(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 2
+
+    def test_dcxml_1(self):
+        res = export.dcxml(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_dcxml_2(self):
+        res = export.dcxml(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 1  # Can't split output
+
+    def test_refxml_1(self):
+        res = export.refxml(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_refxml_2(self):
+        res = export.refxml(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 1  # Can't split output
+
+    def test_refabsxml_1(self):
+        res = export.refabsxml(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_refabsxml_2(self):
+        res = export.refabsxml(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 1  # Can't split output
+
+    def test_rss_1(self):
+        res = export.rss(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_rss_2(self):
+        res = export.rss(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 1  # Can't split output
+
+    def test_votable_1(self):
+        res = export.votable(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_votable_2(self):
+        res = export.votable(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 1  # Can't split output
+
+    def test_ieee_1(self):
+        res = export.ieee(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    def test_ieee_2(self):
+        res = export.ieee(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 2
+
+    @pytest.mark.skip(reason="Broken")
+    def test_csl_1(self):
+        res = export.csl(token, "2020ApJ...902L..36F")
+        assert len(res) == 1
+
+    @pytest.mark.skip(reason="Broken")
+    def test_csl_2(self):
+        res = export.csl(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
+        assert len(res) == 2
 
 
 @pytest.mark.vcr()

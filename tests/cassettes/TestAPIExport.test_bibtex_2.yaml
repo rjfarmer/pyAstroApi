@@ -1,34 +1,44 @@
 interactions:
 - request:
-    body: null
+    body: '{"bibcode": ["2020ApJ...902L..36F", "2020zndo...3678482F"]}'
     headers:
       Accept:
-      - '*/*'
+      - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.27.1
       authorization:
       - DUMMY
-    method: GET
-    uri: https://api.adsabs.harvard.edu/v1//export/bibtex/2020ApJ...902L..36F
+    method: POST
+    uri: https://api.adsabs.harvard.edu/v1//export/bibtex
   response:
     body:
-      string: "@ARTICLE{2020ApJ...902L..36F,\n       author = {{Farmer}, R. and {Renzo},
+      string: '{"msg": "Retrieved 2 abstracts, starting with number 1.", "export":
+        "@ARTICLE{2020ApJ...902L..36F,\n       author = {{Farmer}, R. and {Renzo},
         M. and {de Mink}, S.~E. and {Fishbach}, M. and {Justham}, S.},\n        title
         = \"{Constraints from Gravitational-wave Detections of Binary Black Hole Mergers
         on the $^{12}$C({\\ensuremath{\\alpha}}, {\\ensuremath{\\gamma}})$^{16}$O
         Rate}\",\n      journal = {\\apjl},\n     keywords = {Stellar evolution, Supernovae,
         Core-collapse supernovae, Nuclear astrophysics, Stellar mass black holes,
         Astrophysical black holes, Massive stars, Late stellar evolution, 1599, 1668,
-        304, 1129, 1611, 98, 732, 911, Astrophysics - High Energy Astrophysical Phenomena},\n
-        \        year = 2020,\n        month = oct,\n       volume = {902},\n       number
-        = {2},\n          eid = {L36},\n        pages = {L36},\n          doi = {10.3847/2041-8213/abbadd},\narchivePrefix
-        = {arXiv},\n       eprint = {2006.06678},\n primaryClass = {astro-ph.HE},\n
-        \      adsurl = {https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F},\n
-        \     adsnote = {Provided by the SAO/NASA Astrophysics Data System}\n}\n\n"
+        304, 1129, 1611, 98, 732, 911, Astrophysics - High Energy Astrophysical Phenomena},\n         year
+        = 2020,\n        month = oct,\n       volume = {902},\n       number = {2},\n          eid
+        = {L36},\n        pages = {L36},\n          doi = {10.3847/2041-8213/abbadd},\narchivePrefix
+        = {arXiv},\n       eprint = {2006.06678},\n primaryClass = {astro-ph.HE},\n       adsurl
+        = {https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F},\n      adsnote
+        = {Provided by the SAO/NASA Astrophysics Data System}\n}\n\n@MISC{2020zndo...3678482F,\n       author
+        = {{Farmer}, Robert},\n        title = \"{rjfarmer/mesaplot: Bug fixes}\",\n
+        howpublished = {Zenodo},\n         year = 2020,\n        month = feb,\n          eid
+        = {10.5281/zenodo.3678482},\n          doi = {10.5281/zenodo.3678482},\n      version
+        = {v1.0.8},\n    publisher = {Zenodo},\n       adsurl = {https://ui.adsabs.harvard.edu/abs/2020zndo...3678482F},\n      adsnote
+        = {Provided by the SAO/NASA Astrophysics Data System}\n}\n\n"}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -47,22 +57,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '1024'
+      - '1599'
       Content-Type:
-      - text/plain
+      - application/json
       Date:
-      - Tue, 26 Jul 2022 16:37:54 GMT
+      - Sat, 06 Aug 2022 23:52:14 GMT
       Retry-After:
-      - '34'
+      - '84685'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4650'
+      - '4989'
       X-RateLimit-Reset:
-      - '1658853509'
+      - '1659914620'
     status:
       code: 200
       message: OK

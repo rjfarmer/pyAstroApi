@@ -1,0 +1,82 @@
+interactions:
+- request:
+    body: '{"bibcode": ["2020ApJ...902L..36F", "2020zndo...3678482F"]}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '59'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.27.1
+      authorization:
+      - DUMMY
+    method: POST
+    uri: https://api.adsabs.harvard.edu/v1//export/refxml
+  response:
+    body:
+      string: '{"msg": "Retrieved 2 abstracts, starting with number 1.", "export":
+        "<?xml version=''1.0'' encoding=''utf8''?>\n<records xmlns=\"http://ads.harvard.edu/schema/abs/1.1/references\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://ads.harvard.edu/schema/abs/1.1/references
+        http://ads.harvard.edu/schema/abs/1.1/references.xsd\" retrieved=\"2\" start=\"1\"
+        selected=\"2\" citations=\"99\">\n<record>\n<bibcode>2020ApJ...902L..36F</bibcode>\n<title>Constraints
+        from Gravitational-wave Detections of Binary Black Hole Mergers on the &lt;SUP&gt;12&lt;/SUP&gt;C(\u03b1,
+        \u03b3)&lt;SUP&gt;16&lt;/SUP&gt;O Rate</title>\n<author>Farmer, R.</author>\n<author>Renzo,
+        M.</author>\n<author>de Mink, S. E.</author>\n<author>Fishbach, M.</author>\n<author>Justham,
+        S.</author>\n<journal>The Astrophysical Journal Letters, Volume 902, Issue
+        2, id.L36, 14 pp.</journal>\n<pubdate>Oct 2020</pubdate>\n<link type=\"abstract\">\n<name>abstract</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/abstract</url>\n</link>\n<link
+        type=\"citations\">\n<name>Citations to the Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/citations</url>\n<count>97</count>\n</link>\n<link
+        type=\"reference\">\n<name>References in the Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/reference</url>\n<count>172</count>\n</link>\n<link
+        type=\"coreads\">\n<name>Co-Reads</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/coreads</url>\n</link>\n<link
+        type=\"EPRINT_HTML\">\n<name>arXiv Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/EPRINT_HTML</url>\n</link>\n<link
+        type=\"PUB_HTML\">\n<name>Publisher Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/PUB_HTML</url>\n</link>\n<link
+        type=\"EPRINT_PDF\" access=\"open\">\n<name>arXiv PDF</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/EPRINT_PDF</url>\n</link>\n<link
+        type=\"PUB_PDF\" access=\"open\">\n<name>Publisher PDF</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/PUB_PDF</url>\n</link>\n<link
+        type=\"SIMBAD\">\n<name>SIMBAD Database at the CDS</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/SIMBAD</url>\n<count>10</count>\n</link>\n<url>https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F</url>\n<citations>97</citations>\n<DOI>10.3847/2041-8213/abbadd</DOI>\n<eprintid>arXiv:2006.06678</eprintid>\n</record>\n\n<record>\n<bibcode>2020zndo...3678482F</bibcode>\n<title>rjfarmer/mesaplot:
+        Bug fixes</title>\n<author>Farmer, Robert</author>\n<journal>Zenodo</journal>\n<pubdate>Feb
+        2020</pubdate>\n<link type=\"abstract\">\n<name>abstract</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020zndo...3678482F/abstract</url>\n</link>\n<link
+        type=\"citations\">\n<name>Citations to the Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020zndo...3678482F/citations</url>\n<count>2</count>\n</link>\n<link
+        type=\"PUB_HTML\">\n<name>Publisher Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020zndo...3678482F/PUB_HTML</url>\n</link>\n<url>https://ui.adsabs.harvard.edu/abs/2020zndo...3678482F</url>\n<citations>2</citations>\n<DOI>10.5281/zenodo.3678482</DOI>\n</record>\n\n</records>"}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3347'
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 06 Aug 2022 23:52:25 GMT
+      Retry-After:
+      - '84673'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4967'
+      X-RateLimit-Reset:
+      - '1659914619'
+    status:
+      code: 200
+      message: OK
+version: 1
