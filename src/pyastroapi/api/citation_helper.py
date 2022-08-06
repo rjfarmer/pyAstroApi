@@ -22,11 +22,12 @@ def citations(token: str, bibcode: t.List[str]):
     Returns:
         _type_: _description_
     """
+
     url = urls.make_url(urls.urls["citations"]["helper"])
 
     if not isinstance(bibcode, list):
         raise TypeError("Must pass a list of more than one bibcode")
 
-    data = http.post_bibcodes(token, url, bibcode, True)
+    r = http.post_bibcodes(token, url, bibcode, True)
 
-    return data.response
+    return r.response

@@ -10,36 +10,36 @@ def author(token: str, bibcode: str):
 
     url = urls.make_url(urls.urls["visual"]["author"])
     payload = {"bibcodes": utils.ensure_list(bibcode)}
-    data = http.post(token, url, payload)
+    r = http.post(token, url, payload)
 
-    if data.status != 200:
-        if data.status == 400:
+    if r.status != 200:
+        if r.status == 400:
             raise e.MalformedRequest
-        elif data.status == 403:
+        elif r.status == 403:
             raise e.UnableToGetResults
-        elif data.status == 404:
+        elif r.status == 404:
             raise e.NoRecordsFound
         else:
-            raise e.AdsApiError(f"Unknown error code {data.status}")
-    return data.response
+            raise e.AdsApiError(f"Unknown error code {r.status}")
+    return r.response
 
 
 def paper(token: str, bibcode: str):
 
     url = urls.make_url(urls.urls["visual"]["paper"])
     payload = {"bibcodes": utils.ensure_list(bibcode)}
-    data = http.post(token, url, payload)
+    r = http.post(token, url, payload)
 
-    if data.status != 200:
-        if data.status == 400:
+    if r.status != 200:
+        if r.status == 400:
             raise e.MalformedRequest
-        elif data.status == 403:
+        elif r.status == 403:
             raise e.UnableToGetResults
-        elif data.status == 404:
+        elif r.status == 404:
             raise e.NoRecordsFound
         else:
-            raise e.AdsApiError(f"Unknown error code {data.status}")
-    return data.response
+            raise e.AdsApiError(f"Unknown error code {r.status}")
+    return r.response
 
 
 def word_cloud(token: str, query: str, rows: str = 50):
@@ -51,13 +51,13 @@ def word_cloud(token: str, query: str, rows: str = 50):
         "sort": ["date desc, bibcode desc"],
     }
 
-    data = http.post(token, url, payload)
+    r = http.post(token, url, payload)
 
-    if data.status != 200:
-        if data.status == 400:
+    if r.status != 200:
+        if r.status == 400:
             raise e.MalformedRequest
-        elif data.status == 403:
+        elif r.status == 403:
             raise e.UnableToGetResults
         else:
-            raise e.AdsApiError(f"Unknown error code {data.status}")
-    return data.response
+            raise e.AdsApiError(f"Unknown error code {r.status}")
+    return r.response

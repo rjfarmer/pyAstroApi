@@ -12,35 +12,35 @@ def resolve(token: str, bibcode: str):
 
     url = urls.make_url(urls.urls["resolve"]["search"], bibcode)
 
-    data = http.get(token, url)
+    r = http.get(token, url)
 
-    if data.status != 200:
-        if data.status == 400:
+    if r.status != 200:
+        if r.status == 400:
             raise e.MalformedRequest
-        elif data.status == 404:
+        elif r.status == 404:
             raise e.NoRecordsFound
         else:
-            raise e.AdsApiError("Unknown error code {}".format(data.status))
+            raise e.AdsApiError(f"Unknown error code {r.status}")
 
-    return data.response
+    return r.response
 
 
 def _get(token: str, bibcode: str, format: str) -> str:
     url = urls.make_url(urls.urls["resolve"]["search"], bibcode, format)
 
-    data = http.get(token, url)
+    r = http.get(token, url)
 
-    if data.status != 200:
-        if data.status == 403:
+    if r.status != 200:
+        if r.status == 403:
             raise e.UnableToGetResults
-        if data.status == 404:
+        if r.status == 404:
             raise e.NoRecordsFound
-        elif data.status == 500:
+        elif r.status == 500:
             raise e.MetricsBlewUp
         else:
-            raise e.AdsApiError("Unknown error code {}".format(data.status))
+            raise e.AdsApiError(f"Unknown error code {r.status}")
 
-    return data.response
+    return r.response
 
 
 def abstract(token: str, bibcode: str) -> str:

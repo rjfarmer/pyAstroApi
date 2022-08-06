@@ -10,8 +10,8 @@ import typing as t
 
 def query(token, object):
     url = urls.make_url(urls.urls["objects"]["solr"])
-    data = http.post(token, url, data={"query": [f"object:{object}"]})
-    return data.response["query"]
+    r = http.post(token, url, data={"query": [f"object:{object}"]})
+    return r.response["query"]
 
 
 def simbad(token, identifiers):

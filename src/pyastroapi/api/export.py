@@ -12,22 +12,22 @@ def _export(token: str, bibcode: t.Union[str, t.List[str]], format: str):
     if isinstance(bibcode, list):
         url = urls.make_url(urls.urls["export"][format])
         payload = {"bibcode": bibcode}
-        data = http.post(token, url, payload)
+        r = http.post(token, url, payload)
 
     else:
         url = urls.make_url(urls.urls["export"][format], bibcode)
-        data = http.get(token, url, json=False)
+        r = http.get(token, url, json=False)
 
-    if data.status != 200:
-        if data.status == 404:
+    if r.status != 200:
+        if r.status == 404:
             raise e.NoRecordsFound
         else:
-            raise e.AdsApiError(f"Unknown error code {data.status}")
+            raise e.AdsApiError(f"Unknown error code {r.status}")
 
     if isinstance(bibcode, list):
-        result = data.response["export"]
+        result = r.response["export"]
     else:
-        result = data.response
+        result = r.response
 
     return result
 

@@ -25,11 +25,11 @@ class QIDNotFound(AdsApiError):
     pass
 
 
-class InsufficentPermisions(AdsApiError):
+class InsufficientPermissions(AdsApiError):
     pass
 
 
-class LibraryAllreadyExists(AdsApiError):
+class LibraryAlreadyExists(AdsApiError):
     pass
 
 
@@ -49,7 +49,7 @@ class UnableToGetResults(AdsApiError):
     pass
 
 
-class AuthictationFailed(AdsApiError):
+class AuthenticationFailed(AdsApiError):
     pass
 
 
@@ -58,6 +58,10 @@ class ClassicNoCookie(AdsApiError):
 
 
 class ClassicTimeOut(AdsApiError):
+    pass
+
+
+class ClassicUserDidNotMakeAccount(AdsApiError):
     pass
 
 

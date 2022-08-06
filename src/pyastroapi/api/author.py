@@ -22,6 +22,14 @@ def search(token: str, bibcode: t.Union[str, t.List[str]]):
 
     url = urls.make_url(urls.urls["authors"]["search"])
 
-    data = http.post_bibcodes(token, url, bibcode, False)
+    r = http.post_bibcodes(token, url, bibcode, False)
 
-    return data.response["data"]
+    if r.status != 200:
+        if r.status == 400:
+            raise e.MalformedRequest
+        if r.status == 404:
+            raise e.NoRecordsFound
+        else:
+            raise e.AdsApiError(f"Unknown error code {r.status}")
+
+    return r.response["data"]

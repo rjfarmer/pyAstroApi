@@ -82,40 +82,40 @@ def search(
 
         if dbg:
             print(url)
-        data = http.get(token, url)
+        r = http.get(token, url)
 
-        if data.status != 200:
-            if data.status == 400:
+        if r.status != 200:
+            if r.status == 400:
                 raise e.MalformedRequest
-            elif data.status == 404:
+            elif r.status == 404:
                 raise e.NoRecordsFound
-            elif data.status == 499:
+            elif r.status == 499:
                 raise e.ServerTooBusy
-            elif data.status == 500:
+            elif r.status == 500:
                 raise e.SeverError
             else:
-                raise e.AdsApiError(f"Unknown error code {data.status}")
+                raise e.AdsApiError(f"Unknown error code {r.status}")
 
-        total_num = int(data.response["response"]["numFound"])
+        total_num = int(r.response["response"]["numFound"])
 
         if count == 0 and callback_num_results is not None:
             callback_num_results(total_num)
 
-        if not len(data.response["response"]["docs"]):
+        if not len(r.response["response"]["docs"]):
             break
 
-        count += len(data.response["response"]["docs"])
+        count += len(r.response["response"]["docs"])
 
-        for index, doc in enumerate(data.response["response"]["docs"]):
+        for index, doc in enumerate(r.response["response"]["docs"]):
             for f in split_f:
                 if f not in doc:
-                    data.response["response"]["docs"][index][f] = None
+                    r.response["response"]["docs"][index][f] = None
 
         # print(count,total_num,start)
         if callback_search is None:
-            yield from data.response["response"]["docs"]
+            yield from r.response["response"]["docs"]
         else:
-            callback_search(data.response["response"]["docs"])
+            callback_search(r.response["response"]["docs"])
 
         if count >= total_num or (count >= limit and limit > 0):
             break
@@ -140,18 +140,18 @@ def bigquery(token: str, bibcodes: t.List[str], limit: int = -1):
 
     bib = {"bibcodes": utils.ensure_list(bibcodes)}
 
-    data = http.post(token, url, data=bib, params=terms, json=True)
+    r = http.post(token, url, data=bib, params=terms, json=True)
 
-    if data.status != 200:
-        if data.status == 400:
+    if r.status != 200:
+        if r.status == 400:
             raise e.MalformedRequest
-        elif data.status == 404:
+        elif r.status == 404:
             raise e.NoRecordsFound
-        elif data.status == 499:
+        elif r.status == 499:
             raise e.ServerTooBusy
-        elif data.status == 500:
+        elif r.status == 500:
             raise e.SeverError
         else:
-            raise e.AdsApiError(f"Unknown error code {data.status}")
+            raise e.AdsApiError(f"Unknown error code {r.status}")
 
-    return data
+    return r

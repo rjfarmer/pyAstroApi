@@ -12,31 +12,31 @@ def list_all(token: str):
 
     url = urls.make_url(urls.urls["libraries"]["view"])
 
-    data = http.get(token, url)
+    r = http.get(token, url)
 
-    if data.status != 200:
-        if data.status == 400:
+    if r.status != 200:
+        if r.status == 400:
             raise e.NoADSAccount()
         else:
-            raise e.AdsApiError(f"Unknown error code {data.status}")
+            raise e.AdsApiError(f"Unknown error code {r.status}")
 
-    return data.response
+    return r.response
 
 
 def get_permissions(token: str, lib: str):
     url = urls.make_url(urls.urls["libraries"]["permission"], lib)
 
-    data = http.get(token, url)
+    r = http.get(token, url)
 
-    if data.status != 200:
-        if data.status == 400:
+    if r.status != 200:
+        if r.status == 400:
             raise e.MalformedRequest
-        elif data.status == 403:
+        elif r.status == 403:
             raise e.InsufficentPermisions
         else:
-            raise e.AdsApiError(f"Unknown error code {data.status}")
+            raise e.AdsApiError(f"Unknown error code {r.status}")
 
-    return data.response
+    return r.response
 
 
 def get(token: str, lib: str):
@@ -45,20 +45,20 @@ def get(token: str, lib: str):
     while True:
         url = urls.make_url(urls.urls["libraries"]["view"], lib, "?start=" + str(start))
 
-        data = http.get(token, url)
+        r = http.get(token, url)
 
-        if data.status != 200:
-            raise e.AdsApiError(f"Unknown error code {data.status}")
+        if r.status != 200:
+            raise e.AdsApiError(f"Unknown error code {r.status}")
 
-        total_num = int(data.response["metadata"]["num_documents"])
+        total_num = int(r.response["metadata"]["num_documents"])
 
-        if len(data.response["documents"]) == 0:
+        if len(r.response["documents"]) == 0:
             # Total_num lies sometimes so track when we stop getting new papers
             break
 
-        count += len(data.response["documents"])
+        count += len(r.response["documents"])
 
-        yield from data.response["documents"]
+        yield from r.response["documents"]
 
         if count == total_num:
             break
@@ -84,35 +84,35 @@ def update_metadata(
 
     url = urls.make_url(urls.urls["libraries"]["change"], lib)
 
-    data = http.put(token, url, params)
+    r = http.put(token, url, params)
 
-    if data.status != 200:
-        if data.status == 400:
+    if r.status != 200:
+        if r.status == 400:
             raise e.MalformedRequest
-        elif data.status == 403:
+        elif r.status == 403:
             raise e.InsufficentPermisions
-        elif data.status == 409:
+        elif r.status == 409:
             raise e.LibraryAllreadyExists
-        elif data.status == 410:
+        elif r.status == 410:
             raise e.LibraryDoesNotExist
         else:
-            raise e.AdsApiError(f"Unknown error code {data.status}")
+            raise e.AdsApiError(f"Unknown error code {r.status}")
 
 
 def transfer(token: str, lib: str, email: str):
     url = urls.make_url(urls.urls["libraries"]["transfer"], lib)
 
-    data = http.post(token, url, {"email": email})
+    r = http.post(token, url, {"email": email})
 
-    if data.status != 200:
-        if data.status == 400:
+    if r.status != 200:
+        if r.status == 400:
             raise e.MalformedRequest
-        elif data.status == 403:
+        elif r.status == 403:
             raise e.InsufficentPermisions
-        elif data.status == 404:
+        elif r.status == 404:
             raise e.NoADSAccount
         else:
-            raise e.AdsApiError(f"Unknown error code {data.status}")
+            raise e.AdsApiError(f"Unknown error code {r.status}")
 
 
 def new(
@@ -137,33 +137,33 @@ def new(
 
     url = urls.make_url(urls.urls["libraries"]["view"])
 
-    data = http.post(token, url, data=params, json=True)
+    r = http.post(token, url, data=params, json=True)
 
-    if data.status != 200:
-        if data.status == 400:
+    if r.status != 200:
+        if r.status == 400:
             raise e.MalformedRequest
-        elif data.status == 409:
+        elif r.status == 409:
             raise e.LibraryAllreadyExists
         else:
-            raise e.AdsApiError(f"Unknown error code {data.status}")
+            raise e.AdsApiError(f"Unknown error code {r.status}")
 
-    return data.response
+    return r.response
 
 
 def delete(token: str, lib: str):
     url = urls.make_url(urls.urls["libraries"]["change"], lib)
 
-    data = http.delete(token, url)
+    r = http.delete(token, url)
 
-    if data.status != 200:
-        if data.status == 400:
+    if r.status != 200:
+        if r.status == 400:
             raise e.MalformedRequest
-        elif data.status == 403:
+        elif r.status == 403:
             raise e.InsufficentPermisions
-        elif data.status == 410:
+        elif r.status == 410:
             raise e.LibraryDoesNotExist
         else:
-            raise e.AdsApiError(f"Unknown error code {data.status}")
+            raise e.AdsApiError(f"Unknown error code {r.status}")
 
 
 def add(token: str, lib: str, bibcode: str):
@@ -171,19 +171,19 @@ def add(token: str, lib: str, bibcode: str):
 
     bibs = utils.ensure_list(bibcode)
 
-    data = http.post(token, url, {"action": "add", "bibcode": bibs})
+    r = http.post(token, url, {"action": "add", "bibcode": bibs})
 
-    if data.status != 200:
-        if data.status == 400:
+    if r.status != 200:
+        if r.status == 400:
             raise e.MalformedRequest
-        elif data.status == 403:
-            raise e.InsufficentPermisions
+        elif r.status == 403:
+            raise e.InsufficientPermissions
         else:
-            raise e.AdsApiError(f"Unknown error code {data.status}")
+            raise e.AdsApiError(f"Unknown error code {r.status}")
 
-    if len(bibs) != data.response["number_added"]:
+    if len(bibs) != r.response["number_added"]:
         raise e.AdsApiError(
-            f"Bad number of bibcodes added tried {len(bibs)} got {data.response['number_added']}"
+            f"Bad number of bibcodes added tried {len(bibs)} got {r.response['number_added']}"
         )
 
 
@@ -191,17 +191,17 @@ def remove(token: str, lib: str, bibcode: str):
     url = urls.make_url(urls.urls["libraries"]["change"], lib)
 
     bibs = utils.ensure_list(bibcode)
-    data = http.post(token, url, {"action": "remove", "bibcode": bibs})
+    r = http.post(token, url, {"action": "remove", "bibcode": bibs})
 
-    if data.status != 200:
-        if data.status == 400:
+    if r.status != 200:
+        if r.status == 400:
             raise e.MalformedRequest
-        elif data.status == 403:
+        elif r.status == 403:
             raise e.InsufficentPermisions
         else:
-            raise e.AdsApiError(f"Unknown error code {data.status}")
+            raise e.AdsApiError(f"Unknown error code {r.status}")
 
-    if len(bibs) != data.response["number_removed"]:
+    if len(bibs) != r.response["number_removed"]:
         raise e.AdsApiError(
-            f"Bad number of bibcodes removed tried {len(bibs)} got {data.response['number_removed']}"
+            f"Bad number of bibcodes removed tried {len(bibs)} got {r.response['number_removed']}"
         )
