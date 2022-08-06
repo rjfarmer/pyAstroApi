@@ -10,12 +10,14 @@ import pyastroapi.api.reference as ref
 import pyastroapi.api.resolver as resolve
 import pyastroapi.api.visualization as visual
 import pyastroapi.api.recommender as recommend
+import pyastroapi.api.classic as classic
+
 
 import pyastroapi.api.urls as urls
 import pyastroapi.api.http as http
 
 import pyastroapi.api.token as t
-
+import pyastroapi.api.exceptions as e
 
 import pytest
 
@@ -388,3 +390,15 @@ class TestAPIRecommend:
                 "scores": {"abstract": 1.0, "title": 1.0, "author": 1, "year": 0.75},
             }
         ]
+
+
+@pytest.mark.vcr()
+class TestAPIClassic:
+    def test_mirrors(self):
+        res = classic.mirrors(token)
+
+        assert "adsabs.harvard.edu" in res
+
+    def test_user(self):
+        with pytest.raises(e.ClassicUserDidNotMakeAccount):
+            res = classic.user(token)
