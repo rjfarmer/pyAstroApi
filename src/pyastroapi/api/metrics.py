@@ -22,6 +22,9 @@ def detail(token: str, bibcode: str) -> http.HttpResponse:
     url = urls.make_url(urls.urls["metrics"]["detail"])
     r = http.post_bibcodes(token, url, bibcode)
 
+    if r.status != 200:
+        raise e.AdsApiError(r.response["error"])
+
     return r.response
 
 
@@ -31,14 +34,7 @@ def metrics(token: str, bibcode: str):
     r = http.get(token, url)
 
     if r.status != 200:
-        if r.status == 400:
-            raise e.MalformedRequest
-        elif r.status == 403:
-            raise e.UnableToGetResults
-        elif r.status == 500:
-            raise e.MetricsBlewUp
-        else:
-            raise e.AdsApiError(f"Unknown error code {r.status}")
+        raise e.AdsApiError(r.response["error"])
 
     return r.response
 
@@ -50,12 +46,7 @@ def _metric(token: str, bibcode: str, format: str) -> str:
     r = http.post(token, url, payload)
 
     if r.status != 200:
-        if r.status == 403:
-            raise e.UnableToGetResults
-        elif r.status == 500:
-            raise e.MetricsBlewUp
-        else:
-            raise e.AdsApiError(f"Unknown error code {r.status}")
+        raise e.AdsApiError(r.response["error"])
 
     return r.response
 

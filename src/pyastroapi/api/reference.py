@@ -14,4 +14,7 @@ def resolve(token, reference):
 
     r = http.post(token, url, data=data)
 
+    if r.status != 200:
+        raise e.AdsApiError(r.response["error"])
+
     return r.response["resolved"]

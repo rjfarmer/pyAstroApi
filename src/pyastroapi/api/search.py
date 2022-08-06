@@ -85,16 +85,7 @@ def search(
         r = http.get(token, url)
 
         if r.status != 200:
-            if r.status == 400:
-                raise e.MalformedRequest
-            elif r.status == 404:
-                raise e.NoRecordsFound
-            elif r.status == 499:
-                raise e.ServerTooBusy
-            elif r.status == 500:
-                raise e.SeverError
-            else:
-                raise e.AdsApiError(f"Unknown error code {r.status}")
+            raise e.AdsApiError(r.response["error"])
 
         total_num = int(r.response["response"]["numFound"])
 
@@ -143,15 +134,6 @@ def bigquery(token: str, bibcodes: t.List[str], limit: int = -1):
     r = http.post(token, url, data=bib, params=terms, json=True)
 
     if r.status != 200:
-        if r.status == 400:
-            raise e.MalformedRequest
-        elif r.status == 404:
-            raise e.NoRecordsFound
-        elif r.status == 499:
-            raise e.ServerTooBusy
-        elif r.status == 500:
-            raise e.SeverError
-        else:
-            raise e.AdsApiError(f"Unknown error code {r.status}")
+        raise e.AdsApiError(r.response["error"])
 
     return r

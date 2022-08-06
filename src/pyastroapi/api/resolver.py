@@ -15,12 +15,7 @@ def resolve(token: str, bibcode: str):
     r = http.get(token, url)
 
     if r.status != 200:
-        if r.status == 400:
-            raise e.MalformedRequest
-        elif r.status == 404:
-            raise e.NoRecordsFound
-        else:
-            raise e.AdsApiError(f"Unknown error code {r.status}")
+        raise e.AdsApiError(r.response["error"])
 
     return r.response
 
@@ -31,14 +26,7 @@ def _get(token: str, bibcode: str, format: str) -> str:
     r = http.get(token, url)
 
     if r.status != 200:
-        if r.status == 403:
-            raise e.UnableToGetResults
-        if r.status == 404:
-            raise e.NoRecordsFound
-        elif r.status == 500:
-            raise e.MetricsBlewUp
-        else:
-            raise e.AdsApiError(f"Unknown error code {r.status}")
+        raise e.AdsApiError(r.response["error"])
 
     return r.response
 

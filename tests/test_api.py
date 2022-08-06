@@ -400,5 +400,5 @@ class TestAPIClassic:
         assert "adsabs.harvard.edu" in res
 
     def test_user(self):
-        with pytest.raises(e.ClassicUserDidNotMakeAccount):
+        with pytest.raises(e.AdsApiError):
             res = classic.user(token)

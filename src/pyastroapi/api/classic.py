@@ -23,6 +23,9 @@ def mirrors(token: str):
 
     r = http.get(token, url, {}, True)
 
+    if r.status != 200:
+        raise e.AdsApiError(r.response["error"])
+
     return r.response
 
 
@@ -46,10 +49,7 @@ def user(token: str):
     r = http.get(token, url, {}, True)
 
     if r.status != 200:
-        if r.status == 400:
-            raise e.ClassicUserDidNotMakeAccount
-        else:
-            raise e.AdsApiError(f"Unknown error code {r.status}")
+        raise e.AdsApiError(r.response["error"])
 
     return r.response
 
@@ -82,15 +82,6 @@ def signin(token: str, email: str, password: str, mirror: str):
     r = http.post(token, url, data, True)
 
     if r.status != 200:
-        if r.status == 400:
-            raise e.MalformedRequest
-        elif r.status == 404:
-            raise e.AuthenticationFailed
-        elif r.status == 500:
-            raise e.ClassicNoCookie
-        elif r.status == 504:
-            raise e.ClassicTimeOut
-        else:
-            raise e.AdsApiError(f"Unknown error code {r.status}")
+        raise e.AdsApiError(r.response["error"])
 
     return r.response

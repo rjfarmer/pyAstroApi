@@ -25,11 +25,6 @@ def search(token: str, bibcode: t.Union[str, t.List[str]]):
     r = http.post_bibcodes(token, url, bibcode, False)
 
     if r.status != 200:
-        if r.status == 400:
-            raise e.MalformedRequest
-        elif r.status == 404:
-            raise e.NoRecordsFound
-        else:
-            raise e.AdsApiError(f"Unknown error code {r.status}")
+        raise e.AdsApiError(r.response["error"])
 
     return r.response["data"]

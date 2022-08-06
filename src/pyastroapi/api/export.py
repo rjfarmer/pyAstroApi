@@ -38,10 +38,7 @@ def _export(token: str, bibcode: t.Union[str, t.List[str]], format: str) -> str:
         r = http.get(token, url, json=False)
 
     if r.status != 200:
-        if r.status == 404:
-            raise e.NoRecordsFound
-        else:
-            raise e.AdsApiError(f"Unknown error code {r.status}")
+        raise e.AdsApiError(r.response["error"])
 
     if isinstance(bibcode, list):
         result = r.response["export"]
@@ -372,7 +369,7 @@ def csl(
 
     if r.status != 200:
         if r.status == 404:
-            raise e.NoRecordsFound(r.error)
+            raise e.NoRecordsFound(r.response["error"])
         else:
             raise e.AdsApiError(f"Unknown error code {r.status}")
 

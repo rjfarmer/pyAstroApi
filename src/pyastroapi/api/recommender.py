@@ -29,7 +29,10 @@ def matchdoc(
     data["mustmatch"] = must_match
 
     r = http.post(token, url, data=data)
-    print(r)
+
+    if r.status != 200:
+        raise e.AdsApiError(r.response["error"])
+
     return r.response["match"]
 
 
@@ -52,6 +55,9 @@ def recommend(
     }
 
     r = http.post(token, url, data=data)
+
+    if r.status != 200:
+        raise e.AdsApiError(r.response["error"])
 
     return r
     # return r.response['bibcpdes']

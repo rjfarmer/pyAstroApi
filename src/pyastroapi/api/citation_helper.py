@@ -30,4 +30,7 @@ def citations(token: str, bibcode: t.List[str]):
 
     r = http.post_bibcodes(token, url, bibcode, True)
 
+    if r.status != 200:
+        raise e.AdsApiError(r.response["error"])
+
     return r.response
