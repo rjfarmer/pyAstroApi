@@ -27,7 +27,7 @@ def search(token: str, bibcode: t.Union[str, t.List[str]]):
     if r.status != 200:
         if r.status == 400:
             raise e.MalformedRequest
-        if r.status == 404:
+        elif r.status == 404:
             raise e.NoRecordsFound
         else:
             raise e.AdsApiError(f"Unknown error code {r.status}")
