@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
-import pyastroapi.urls as urls
+import pyastroapi.extras.urls as urls
 
 import pytest
 

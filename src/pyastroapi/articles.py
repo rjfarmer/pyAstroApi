@@ -13,7 +13,7 @@ import pyastroapi.api.exceptions as _e
 import typing as t
 
 import pyastroapi
-import pyastroapi.bibtex as bib
+import pyastroapi.extras.bibtex as bib
 
 __all__ = ["article", "journal"]
 
