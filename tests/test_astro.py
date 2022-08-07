@@ -2,6 +2,9 @@
 import pyastroapi
 
 import pytest
+import pickle
+import tempfile
+import os
 
 
 @pytest.fixture(scope="module")
@@ -92,3 +95,19 @@ class TestArticle:
         a = pyastroapi.article(bibtex=bib)
 
         assert a.bibcode == "2021ApJ...923..214F"
+
+    def test_pickle(self):
+        a = pyastroapi.article("2021ApJ...923..214F")
+
+        x = a.title
+
+        tp = tempfile.mktemp(dir="./")
+        with open(tp, "wb") as f:
+            pickle.dump(a, f)
+
+        with open(tp, "rb") as f:
+            b = pickle.load(f)
+
+        assert a.bibcode == b.bibcode
+        assert x == b.title
+        os.remove(tp)
