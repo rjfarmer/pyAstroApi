@@ -1,8 +1,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 import pyastroapi
 
-import pyastroapi.urls as urls
-
 import pytest
 
 
@@ -94,28 +92,3 @@ class TestArticle:
         a = pyastroapi.article(bibtex=bib)
 
         assert a.bibcode == "2021ApJ...923..214F"
-
-
-@pytest.mark.vcr()
-class TestUrls:
-    def test_ads(self):
-        assert urls.parse_url(
-            "https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F/abstract"
-        ) == {"identifier": "2020ApJ...902L..36F"}
-        assert urls.parse_url(
-            "https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/PUB_PDF"
-        ) == {"identifier": "2020ApJ...902L..36F"}
-        assert urls.parse_url(
-            "https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F"
-        ) == {"identifier": "2020ApJ...902L..36F"}
-
-    def test_arxiv(self):
-        assert urls.parse_url("https://arxiv.org/abs/2006.06678") == {
-            "identifier": "2006.06678"
-        }
-        assert urls.parse_url("https://arxiv.org/pdf/2006.06678") == {
-            "identifier": "2006.06678"
-        }
-        assert urls.parse_url("https://arxiv.org/pdf/2006.06678v1") == {
-            "identifier": "2006.06678"
-        }
