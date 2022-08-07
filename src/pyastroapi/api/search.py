@@ -11,6 +11,8 @@ from . import urls
 from . import http
 from . import utils
 
+__all__ = ["search", "bigquery"]
+
 _fields = set(
     """abstract ack aff aff_id alternate_bibcode alternate_title arxiv_class author author_count author_norm 
     bibcode bibgroup bibstem 

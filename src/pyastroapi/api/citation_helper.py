@@ -6,6 +6,8 @@ from . import http
 from . import utils
 import typing as t
 
+__all__ = ["citations"]
+
 
 def citations(token: str, bibcode: t.List[str]):
     """Given a set of bibcodes, suggest additional citations.

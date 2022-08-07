@@ -6,6 +6,8 @@ from . import utils
 from . import search
 import typing as t
 
+__all__ = ["resolve"]
+
 
 def resolve(token, reference):
     url = urls.make_url(urls.urls["ref"]["text"])

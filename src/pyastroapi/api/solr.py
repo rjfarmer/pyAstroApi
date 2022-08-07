@@ -7,6 +7,8 @@ from . import utils
 from . import search
 import typing as t
 
+__all__ = ["query", "simbad", "objects"]
+
 
 def query(token, object):
     url = urls.make_url(urls.urls["objects"]["solr"])

@@ -6,6 +6,8 @@ from . import http
 from . import utils
 import typing as t
 
+__all__ = ["search"]
+
 
 def search(token: str, bibcode: t.Union[str, t.List[str]]):
     """Create an author-affiliations report.

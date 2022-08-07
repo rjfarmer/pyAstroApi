@@ -6,6 +6,8 @@ from . import utils
 from . import search
 import typing as t
 
+__all__ = ["matchdoc", "recommend", "similar", "trending", "reviews", "useful"]
+
 
 def matchdoc(
     token: str,

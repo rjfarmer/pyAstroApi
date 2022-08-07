@@ -11,6 +11,16 @@ from dataclasses import dataclass
 from . import utils
 from . import exceptions as e
 
+__all__ = [
+    "get",
+    "post",
+    "put",
+    "delete",
+    "post_bibcodes",
+    "get_bibcodes",
+    "download_file",
+]
+
 
 class _BearerAuth(requests.auth.AuthBase):
     def __init__(self, token: str) -> None:
