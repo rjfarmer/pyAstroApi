@@ -21,6 +21,7 @@ import pyastroapi.api.exceptions as e
 
 import pytest
 import tempfile
+import os
 
 token = t.get_token()
 
@@ -542,17 +543,20 @@ class TestAPIClassic:
 class TestAPIToken:
     def test_token(self):
         t2 = "AAAA"
-        with tempfile.NamedTemporaryFile() as tp:
-            t.save_token(t2, tp.name)
-            t3 = t.get_token(tp.name)
+
+        tp = tempfile.mktemp(dir="./")
+        t.save_token(t2, tp)
+        t3 = t.get_token(tp)
+        os.remove(tp)
 
         assert t3 == t2
 
     def test_orcid(self):
         t2 = "AAAA"
 
-        with tempfile.NamedTemporaryFile() as tp:
-            t.save_orcid(t2, tp.name)
-            t3 = t.get_orcid(tp.name)
+        tp = tempfile.mktemp(dir="./")
+        t.save_orcid(t2, tp)
+        t3 = t.get_orcid(tp)
+        os.remove(tp)
 
         assert t3 == t2
