@@ -111,3 +111,19 @@ class TestArticle:
         assert a.bibcode == b.bibcode
         assert x == b.title
         os.remove(tp)
+
+    def test_pickle_journal(self):
+        a = pyastroapi.journal(["2021ApJ...923..214F", "2021ApJ...923..9999"])
+
+        x = a["2021ApJ...923..214F"].title
+
+        tp = tempfile.mktemp(dir="./")
+        with open(tp, "wb") as f:
+            pickle.dump(a, f)
+
+        with open(tp, "rb") as f:
+            b = pickle.load(f)
+
+        assert len(a) == len(b)
+        assert x == b["2021ApJ...923..214F"].title
+        os.remove(tp)
