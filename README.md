@@ -76,8 +76,8 @@ import pyastroapi.articles
 a = articles.journal(search="^farmer year:2020")
 ````
 
-The `search` field can be any standard ADS query. The object `a` is now a `journal` which is a dict-like object of `article`.
-A `journal` can be accessed either by bibcode key:
+The `search` field can be any standard ADS query. The object `a` is now a `journal` which is a dict-like object of `article`'s.
+A `journal` can be accessed either by specifying the bibcode:
 
 ````python
 paper = a["2020ApJ...902L..36F"]
@@ -90,10 +90,10 @@ for paper in a:
     print(a.title)
 ````
 
-The object `paper` is an `article` which encapsulates accessing ADS. The initial search will fetch a set of standard fields,
-however non-standard fields will require additional fetch's to ADS servers.
+The object `paper` is an `article` which encapsulates all the methods needed to access the information ADS has on a paper. The initial search (Either via access through a `journal` or by creating an article with: `articles.article("2020ApJ...902L..36F")`) will fetch a set of standard fields from ADS.
+Non-standard fields will require additional fetch's to ADS servers, but this is wrapped so all you need to do is try to access the field and the data will be fetched for you.
 
-Fields can be accessed as properties:
+Most fields can be accessed as properties:
 
 ````python
 paper.title
@@ -101,7 +101,7 @@ paper.author
 paper.abstract
 ````
 
-Some properites are function calls:
+Though some fields are function calls:
 
 ````python
 paper.citations()
