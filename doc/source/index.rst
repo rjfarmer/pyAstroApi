@@ -8,4 +8,6 @@ Welcome to pyAstroApi's documentation!
 
 .. toctree::
 
-   api
+   modules
+   pyastroapi
+   pyastroapi.api
