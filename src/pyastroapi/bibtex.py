@@ -1,22 +1,24 @@
 import bibtexparser
 from bibtexparser.bparser import BibTexParser
 
+__all__ = ["parse_file", "parse_bibtex"]
+
 _parser = BibTexParser(common_strings=True)
 
 
 def parse_file(filename):
     with open(filename) as f:
         bd = bibtexparser.load(f, _parser)
-    return extract_from(bd)
+    return _extract_from(bd)
 
 
 def parse_bibtex(bibtex):
     bd = bibtexparser.loads(bibtex, _parser)
-    return extract_from(bd)
+    return _extract_from(bd)
 
 
-def extract_from(bibtex_db):
-    """Get indentifer(s) from bibtex data
+def _extract_from(bibtex_db):
+    """Get identifier(s) from bibtex data
 
     Returns a list of adsabs queries
     """

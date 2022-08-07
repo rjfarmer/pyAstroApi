@@ -1,13 +1,29 @@
 # # SPDX-License-Identifier: BSD-3-Clause
 
 import urllib.parse as parse
+import typing as t
 
 __all__ = ["parse_url"]
 
 _headers = {"user-agent": "Mozilla /5.0 (Windows NT 10.0; Win64; x64)"}
 
 
-def parse_url(url):
+def parse_url(url: str) -> t.Dict[str, str]:
+    """Attempt to determine what article is referenced by url
+
+    Currently handles:
+        ADS, Arxiv, IOP journals
+
+    Args:
+        url (_type_): URL to article
+
+    Raises:
+        ValueError: Raised if URL can't be matched
+
+    Returns:
+        t.Dict[str,str]: Dict containing either and identifier or other identifying information
+                         that can be feed into a search() query
+    """
 
     purl = parse.urlparse(url)
 
@@ -30,21 +46,21 @@ def parse_url(url):
 def _parse_ads(purl):
     for i in purl.path.split("/"):
         if len(i) == 19:
-            return {"bibcode": i}
+            return {"identifier": i}
 
 
 def _parse_arxiv(purl):
     for i in purl.path.split("/"):
         try:
             x = float(i.split("v")[0])
-            return {"arxiv": str(x)}
+            return {"identifier": str(x)}
         except ValueError:
             pass
 
 
 def _parse_iop(purl):
     doi = purl.path.partition("article/")[-1].replace("/meta", "")
-    return {"doi": doi}
+    return {"identifier": doi}
 
 
 def _parse_mnras(purl):

@@ -101,21 +101,21 @@ class TestUrls:
     def test_ads(self):
         assert urls.parse_url(
             "https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F/abstract"
-        ) == {"bibcode": "2020ApJ...902L..36F"}
+        ) == {"identifier": "2020ApJ...902L..36F"}
         assert urls.parse_url(
             "https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/PUB_PDF"
-        ) == {"bibcode": "2020ApJ...902L..36F"}
+        ) == {"identifier": "2020ApJ...902L..36F"}
         assert urls.parse_url(
             "https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F"
-        ) == {"bibcode": "2020ApJ...902L..36F"}
+        ) == {"identifier": "2020ApJ...902L..36F"}
 
     def test_arxiv(self):
         assert urls.parse_url("https://arxiv.org/abs/2006.06678") == {
-            "arxiv": "2006.06678"
+            "identifier": "2006.06678"
         }
         assert urls.parse_url("https://arxiv.org/pdf/2006.06678") == {
-            "arxiv": "2006.06678"
+            "identifier": "2006.06678"
         }
         assert urls.parse_url("https://arxiv.org/pdf/2006.06678v1") == {
-            "arxiv": "2006.06678"
+            "identifier": "2006.06678"
         }
