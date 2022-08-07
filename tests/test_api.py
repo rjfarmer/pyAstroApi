@@ -12,7 +12,6 @@ import pyastroapi.api.visualization as visual
 import pyastroapi.api.recommender as recommend
 import pyastroapi.api.classic as classic
 
-
 import pyastroapi.api.urls as urls
 import pyastroapi.api.http as http
 

@@ -12,44 +12,46 @@ def parse_url(url):
     purl = parse.urlparse(url)
 
     if purl.netloc == "ui.adsabs.harvard.edu":
-        r = parse_ads(purl)
+        r = _parse_ads(purl)
     elif purl.netloc == "arxiv.org":
-        r = parse_arxiv(purl)
+        r = _parse_arxiv(purl)
     elif purl.netloc == "iopscience.iop.org":
-        r = parse_iop(purl)
+        r = _parse_iop(purl)
     elif purl.netloc == "academic.oup.com":
-        r = parse_mnras(purl)
+        r = _parse_mnras(purl)
     elif purl.netloc == "www.aanda.org":
-        r = parse_aa(purl)
+        r = _parse_aa(purl)
     else:
         raise ValueError(f"Can't match {url}")
 
+    return r
 
-def parse_ads(purl):
+
+def _parse_ads(purl):
     for i in purl.path.split("/"):
         if len(i) == 19:
             return {"bibcode": i}
 
 
-def parse_arxiv(purl):
+def _parse_arxiv(purl):
     for i in purl.path.split("/"):
         try:
-            x = float(i)
-            return {"arxiv": i}
+            x = float(i.split("v")[0])
+            return {"arxiv": str(x)}
         except ValueError:
             pass
 
 
-def parse_iop(purl):
+def _parse_iop(purl):
     doi = purl.path.partition("article/")[-1].replace("/meta", "")
     return {"doi": doi}
 
 
-def parse_mnras(purl):
+def _parse_mnras(purl):
     raise NotImplementedError
 
 
-def parse_aa(purl):
+def _parse_aa(purl):
     raise NotImplementedError
 
 
