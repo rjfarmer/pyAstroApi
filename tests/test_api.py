@@ -20,6 +20,7 @@ import pyastroapi.api.token as t
 import pyastroapi.api.exceptions as e
 
 import pytest
+import tempfile
 
 token = t.get_token()
 
@@ -536,3 +537,22 @@ class TestAPIClassic:
     def test_user(self):
         with pytest.raises(e.AdsApiError):
             res = classic.user(token)
+
+
+class TestAPIToken:
+    def test_token(self):
+        t2 = "AAAA"
+        with tempfile.NamedTemporaryFile() as tp:
+            t.save_token(t2, tp.name)
+            t3 = t.get_token(tp.name)
+
+        assert t3 == t2
+
+    def test_orcid(self):
+        t2 = "AAAA"
+
+        with tempfile.NamedTemporaryFile() as tp:
+            t.save_orcid(t2, tp.name)
+            t3 = t.get_orcid(tp.name)
+
+        assert t3 == t2
