@@ -21,203 +21,6 @@ __all__ = ["article", "journal"]
 _t_bibcode = t.Union[str, t.List[str]]
 
 
-class Export:
-    """Class handles accessing various citation methods (bibtex, refworks, etc)
-
-    The full list is generated dynamically
-
-    """
-
-    def __init__(self, bibcodes: _t_bibcode):
-        self.bibcodes = utils.ensure_list(bibcodes)
-
-    def __getattr__(self, attr: str):
-        return getattr(_export, attr)(token.get_token(), self.bibcodes)
-
-    def __dir__(self):
-        return dir(_export)
-
-
-class Metrics:
-    """Class handles various metrics (citations per year, etc)"""
-
-    def __init__(self, bibcodes: _t_bibcode):
-        self.bibcodes = utils.ensure_list(bibcodes)
-
-    def __getattr__(self, attr: str):
-        return getattr(_metrics, attr)(token.get_token(), self.bibcodes)
-
-    def __dir__(self):
-        return dir(_metrics)
-
-
-class Visualization:
-    """Class handles visulization of a list of bibcodes"""
-
-    def __init__(self, bibcodes: _t_bibcode):
-        self.bibcodes = utils.ensure_list(bibcodes)
-
-    def __getattr__(self, attr: str):
-        return getattr(_visualization, attr)(token.get_token(), self.bibcodes)
-
-    def __dir__(self):
-        return dir(_visualization)
-
-
-class PDF:
-    """Class handles getting the url for pdf downloads
-
-    Not every bibcode has all possible download options
-    """
-
-    def __init__(self, bibcode: str):
-        if isinstance(bibcode, list):
-            raise TypeError("Can only handle one pdf at a time")
-
-        self.links = None
-
-        self.bibcode = bibcode
-
-    def _get(self):
-        try:
-            links = _resolve.esource(token.get_token(), self.bibcode)
-        except _e.NoRecordsFound:
-            raise ValueError("No pdf links available")
-
-        if "links" not in links:
-            raise ValueError("No pdf links available")
-
-        for i in links["links"]["records"]:
-            self.links[i["link_type"]] = i["url"]
-
-    def filename(self) -> str:
-        """Gets the filename for a bibcode
-
-        Returns:
-            str : bibcode.pdf
-        """
-        return f"{self.bibcode}.pdf"
-
-    def _download(self, source: str, name: str, filename: str = None):
-        """Downloads a file
-
-        Args:
-            source (str): Which version of the file to download
-            name (str): Bibcode
-            filename (str, optional): The filename to save to, Defaults to self.filename()
-
-        Raises:
-            ValueError: If requested url does not exist for this paper
-        """
-        if self.links is None:
-            self._get()
-
-        if source not in self.links:
-            raise ValueError(f"No {name} pdf available for {self.bibcode}")
-
-        if filename is None:
-            filename = self.filename()
-
-        print(self.links[source], filename)
-        _http.download_file(self.links[source], filename)
-
-    def arxiv(self, filename: str = None) -> str:
-        """Try to download from the arxiv
-
-        Args:
-            filename (str, optional): Filename to save pdf to. Defaults to self.filename()
-
-        Returns:
-            str: Filename used for saving
-        """
-        self._download("ESOURCE|EPRINT_PDF", "Arxiv", filename)
-        return filename
-
-    def publisher(self, filename: str = None) -> str:
-        """Try to download from the journal
-
-        Many journals will return a html captcha page instead. So be prepared to handle
-        the download failing
-
-        Args:
-            filename (str, optional): Filename to save pdf to. Defaults to self.filename()
-
-        Returns:
-            str: Filename used for saving
-        """
-        self._download("ESOURCE|PUB_PDF", "Publisher", filename)
-        return filename
-
-    def ads(self, filename: str = None) -> str:
-        """Try to download from ADS
-
-        Some (mostly older) papers are stored only with ADS
-
-        Args:
-            filename (str, optional): Filename to save pdf to. Defaults to self.filename()
-
-        Returns:
-            str: Filename used for saving
-        """
-        self._download("ESOURCE|ADS_PDF", "ADSABS", filename)
-        return filename
-
-
-class Urls:
-    """Class handles accessing the URL's to a paper"""
-
-    def __init__(self, bibcode: str):
-        if isinstance(bibcode, list):
-            raise TypeError("Can only handle one pdf at a time")
-
-        self.bibcode = bibcode
-        links = _resolve.esource(token.get_token(), bibcode)
-        self.links = {}
-        if "links" not in links:
-            raise ValueError("No pdf links available")
-
-        for i in links["links"]["records"]:
-            self.links[i["link_type"]] = i["url"]
-
-    def _get(self, source: str, name: str):
-        if source not in self.links:
-            raise ValueError(f"No {name} html available for {self.bibcode}")
-
-        if filename is None:
-            filename = self.filename()
-
-    @property
-    def ads(self) -> str:
-        """Get the ADSABS URL
-
-        Returns:
-            str: ADS URL
-        """
-        return f"https://ui.adsabs.harvard.edu/abs/{self.bibcode}"
-
-    @property
-    def arixv(self) -> str:
-        """Get the arxiv URL
-
-        Returns:
-            str: _Arxiv URL
-        """
-        return self._get("ESOURCE|EPRINT_HTML", "Arxiv")
-
-    @property
-    def journal(self) -> str:
-        """Get the journal URL
-
-        Returns:
-            str: Journal URL
-        """
-        tries = ["ESOURCE", "ESOURCE|HTML", "PUB_HTML", "AUTHOR_HTML"]
-
-        for link in tries:
-            if link in self.links:
-                return self._get(link, "Journal")
-
-
 class article:
     def __init__(
         self,
@@ -604,3 +407,240 @@ class journal:
 
     def __setstate__(self, state):
         self.__dict__.update(state)
+
+    def citations(self):
+        data = {}
+        for paper in self:
+            data[paper.bibcode] = paper.citations
+
+        return data
+
+    def references(self):
+        data = {}
+        for paper in self:
+            data[paper.references] = paper.references
+
+        return data
+
+    def citation_count(self, uniq=False):
+        res = 0
+        res_uniq = []
+        for paper in self:
+            res += paper.citation_count()
+            if uniq:
+                res_uniq.extend(paper.citations)
+
+        if uniq:
+            return len(set(res_uniq))
+        else:
+            return res
+
+    def reference_count(self, uniq=False):
+        res = 0
+        res_uniq = []
+        for paper in self:
+            res += paper.reference_count()
+            if uniq:
+                res_uniq.extend(paper.references)
+
+        if uniq:
+            return len(set(res_uniq))
+        else:
+            return res
+
+
+class Export:
+    """Class handles accessing various citation methods (bibtex, refworks, etc)
+
+    The full list is generated dynamically
+
+    """
+
+    def __init__(self, bibcodes: _t_bibcode):
+        self.bibcodes = utils.ensure_list(bibcodes)
+
+    def __getattr__(self, attr: str):
+        return getattr(_export, attr)(token.get_token(), self.bibcodes)
+
+    def __dir__(self):
+        return dir(_export)
+
+
+class Metrics:
+    """Class handles various metrics (citations per year, etc)"""
+
+    def __init__(self, bibcodes: _t_bibcode):
+        self.bibcodes = utils.ensure_list(bibcodes)
+
+    def __getattr__(self, attr: str):
+        return getattr(_metrics, attr)(token.get_token(), self.bibcodes)
+
+    def __dir__(self):
+        return dir(_metrics)
+
+
+class Visualization:
+    """Class handles visulization of a list of bibcodes"""
+
+    def __init__(self, bibcodes: _t_bibcode):
+        self.bibcodes = utils.ensure_list(bibcodes)
+
+    def __getattr__(self, attr: str):
+        return getattr(_visualization, attr)(token.get_token(), self.bibcodes)
+
+    def __dir__(self):
+        return dir(_visualization)
+
+
+class PDF:
+    """Class handles getting the url for pdf downloads
+
+    Not every bibcode has all possible download options
+    """
+
+    def __init__(self, bibcode: str):
+        if isinstance(bibcode, list):
+            raise TypeError("Can only handle one pdf at a time")
+
+        self.links = None
+
+        self.bibcode = bibcode
+
+    def _get(self):
+        try:
+            links = _resolve.esource(token.get_token(), self.bibcode)
+        except _e.NoRecordsFound:
+            raise ValueError("No pdf links available")
+
+        if "links" not in links:
+            raise ValueError("No pdf links available")
+
+        for i in links["links"]["records"]:
+            self.links[i["link_type"]] = i["url"]
+
+    def filename(self) -> str:
+        """Gets the filename for a bibcode
+
+        Returns:
+            str : bibcode.pdf
+        """
+        return f"{self.bibcode}.pdf"
+
+    def _download(self, source: str, name: str, filename: str = None):
+        """Downloads a file
+
+        Args:
+            source (str): Which version of the file to download
+            name (str): Bibcode
+            filename (str, optional): The filename to save to, Defaults to self.filename()
+
+        Raises:
+            ValueError: If requested url does not exist for this paper
+        """
+        if self.links is None:
+            self._get()
+
+        if source not in self.links:
+            raise ValueError(f"No {name} pdf available for {self.bibcode}")
+
+        if filename is None:
+            filename = self.filename()
+
+        print(self.links[source], filename)
+        _http.download_file(self.links[source], filename)
+
+    def arxiv(self, filename: str = None) -> str:
+        """Try to download from the arxiv
+
+        Args:
+            filename (str, optional): Filename to save pdf to. Defaults to self.filename()
+
+        Returns:
+            str: Filename used for saving
+        """
+        self._download("ESOURCE|EPRINT_PDF", "Arxiv", filename)
+        return filename
+
+    def publisher(self, filename: str = None) -> str:
+        """Try to download from the journal
+
+        Many journals will return a html captcha page instead. So be prepared to handle
+        the download failing
+
+        Args:
+            filename (str, optional): Filename to save pdf to. Defaults to self.filename()
+
+        Returns:
+            str: Filename used for saving
+        """
+        self._download("ESOURCE|PUB_PDF", "Publisher", filename)
+        return filename
+
+    def ads(self, filename: str = None) -> str:
+        """Try to download from ADS
+
+        Some (mostly older) papers are stored only with ADS
+
+        Args:
+            filename (str, optional): Filename to save pdf to. Defaults to self.filename()
+
+        Returns:
+            str: Filename used for saving
+        """
+        self._download("ESOURCE|ADS_PDF", "ADSABS", filename)
+        return filename
+
+
+class Urls:
+    """Class handles accessing the URL's to a paper"""
+
+    def __init__(self, bibcode: str):
+        if isinstance(bibcode, list):
+            raise TypeError("Can only handle one pdf at a time")
+
+        self.bibcode = bibcode
+        links = _resolve.esource(token.get_token(), bibcode)
+        self.links = {}
+        if "links" not in links:
+            raise ValueError("No pdf links available")
+
+        for i in links["links"]["records"]:
+            self.links[i["link_type"]] = i["url"]
+
+    def _get(self, source: str, name: str):
+        if source not in self.links:
+            raise ValueError(f"No {name} html available for {self.bibcode}")
+
+        if filename is None:
+            filename = self.filename()
+
+    @property
+    def ads(self) -> str:
+        """Get the ADSABS URL
+
+        Returns:
+            str: ADS URL
+        """
+        return f"https://ui.adsabs.harvard.edu/abs/{self.bibcode}"
+
+    @property
+    def arixv(self) -> str:
+        """Get the arxiv URL
+
+        Returns:
+            str: _Arxiv URL
+        """
+        return self._get("ESOURCE|EPRINT_HTML", "Arxiv")
+
+    @property
+    def journal(self) -> str:
+        """Get the journal URL
+
+        Returns:
+            str: Journal URL
+        """
+        tries = ["ESOURCE", "ESOURCE|HTML", "PUB_HTML", "AUTHOR_HTML"]
+
+        for link in tries:
+            if link in self.links:
+                return self._get(link, "Journal")
