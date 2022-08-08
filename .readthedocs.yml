@@ -6,7 +6,7 @@
 version: 2
 
 # Build all formats
-formats: all
+formats: html
 
 # Set the version of Python and other tools you might need
 build:
