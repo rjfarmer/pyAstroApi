@@ -35,4 +35,4 @@ python:
         - docs
     - method: setuptools
       path: pyAstroApi
-    system_packages: true
+   system_packages: true
