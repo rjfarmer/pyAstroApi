@@ -11,6 +11,7 @@ Welcome to pyAstroApi's documentation!
    These docs are under active development. Some sections are more complete than others.
 
 .. toctree::
+   :maxdepth: 1
    :caption: Contents
 
    installation
