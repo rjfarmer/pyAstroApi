@@ -11,5 +11,10 @@ Welcome to pyAstroApi's documentation!
    These docs are under active development. Some sections are more complete than others.
 
 .. toctree::
+   :caption: Contents
 
-   modules
+   installation
+   quickstart
+   highlevelref
+   lowlevelref
+   extrasref
