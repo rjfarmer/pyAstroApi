@@ -6,6 +6,10 @@
 Welcome to pyAstroApi's documentation!
 ======================================
 
+.. warning::
+
+   These docs are under active development. Some sections are more complete than others.
+
 .. toctree::
 
    modules
