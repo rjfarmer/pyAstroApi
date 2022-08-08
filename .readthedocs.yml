@@ -5,6 +5,9 @@
 # Required
 version: 2
 
+# Build all formats
+formats: all
+
 # Set the version of Python and other tools you might need
 build:
   os: ubuntu-20.04
@@ -24,6 +27,11 @@ sphinx:
 #    - pdf
 
 # Optionally declare the Python requirements required to build your docs
-# python:
-#    install:
-#    - requirements: docs/requirements.txt
+python:
+   install:
+    - method: pip
+      path: .
+      extra_requirements:
+        - docs
+    - method: setuptools
+      path: pyAstroApi
