@@ -34,5 +34,5 @@ python:
       extra_requirements:
         - docs
     - method: setuptools
-      path: pyAstroApi
+      path: ./
    system_packages: true
