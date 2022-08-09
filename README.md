@@ -158,7 +158,7 @@ Which of the [ADSABS API's](https://ui.adsabs.harvard.edu/help/api/api-docs.html
 - [X] Citation Helper
 - [X] Classic import (Caveat: I don't have a classic account to test with)
 - [X] Objects
-- [X] Recommender
+- [] Recommender
 - [X] Reference
 - [] Notifications
 - [X] Visualizations

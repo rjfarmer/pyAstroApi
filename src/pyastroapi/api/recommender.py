@@ -3,7 +3,7 @@ from . import exceptions as e
 from . import urls
 from . import http
 
-__all__ = ["matchdoc", "recommend", "similar", "trending", "reviews", "useful"]
+__all__ = ["matchdoc", "similar", "trending", "reviews", "useful"]
 
 
 def matchdoc(
@@ -35,7 +35,7 @@ def matchdoc(
     return r.response["match"]
 
 
-def recommend(
+def _recommend(
     token,
     function="similar",
     sort="first_author desc",
@@ -53,13 +53,12 @@ def recommend(
         "cutoff_days": cutoff_days,
     }
 
-    r = http.post(token, url, data=data)
+    r = http.post(token, url, data=data, json=True)
 
     if r.status != 200:
         raise e.AdsApiError(r.response["error"])
 
-    return r
-    # return r.response['bibcpdes']
+    return r.response["bibcodes"]
 
 
 def similar(
@@ -69,7 +68,7 @@ def similar(
     top_n_reads=50,
     cutoff_days=7,
 ):
-    return recommend(token, "similar", sort, num_docs, top_n_reads, cutoff_days)
+    return _recommend(token, "similar", sort, num_docs, top_n_reads, cutoff_days)
 
 
 def trending(
@@ -79,7 +78,7 @@ def trending(
     top_n_reads=50,
     cutoff_days=7,
 ):
-    return recommend(token, "trending", sort, num_docs, top_n_reads, cutoff_days)
+    return _recommend(token, "trending", sort, num_docs, top_n_reads, cutoff_days)
 
 
 def reviews(
@@ -89,7 +88,7 @@ def reviews(
     top_n_reads=50,
     cutoff_days=7,
 ):
-    return recommend(token, "reviews", sort, num_docs, top_n_reads, cutoff_days)
+    return _recommend(token, "reviews", sort, num_docs, top_n_reads, cutoff_days)
 
 
 def useful(
@@ -99,4 +98,4 @@ def useful(
     top_n_reads=50,
     cutoff_days=7,
 ):
-    return recommend(token, "useful", sort, num_docs, top_n_reads, cutoff_days)
+    return _recommend(token, "useful", sort, num_docs, top_n_reads, cutoff_days)

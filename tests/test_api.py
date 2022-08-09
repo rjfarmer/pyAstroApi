@@ -470,6 +470,62 @@ class TestAPIResolve:
         assert "count" in r["links"]
         assert r["links"]["count"] == 4
 
+    def test_abstract(self):
+        res = resolve.abstract(token, "2020ApJ...902L..36F")
+        assert "link_type" in res
+
+    def test_associated(self):
+        with pytest.raises(e.AdsApiError):
+            res = resolve.associated(token, "2020ApJ...902L..36F")
+
+    def test_citations(self):
+        res = resolve.citations(token, "2020ApJ...902L..36F")
+        assert "link_type" in res
+
+    def test_coreads(self):
+        res = resolve.coreads(token, "2020ApJ...902L..36F")
+        assert "link_type" in res
+
+    def test_data(self):
+        res = resolve.data(token, "2020ApJ...902L..36F")
+        assert "link_type" in res
+
+    def test_graphics(self):
+        res = resolve.graphics(token, "2020ApJ...902L..36F")
+        assert "link_type" in res
+
+    def test_inspire(self):
+        with pytest.raises(e.AdsApiError):
+            res = resolve.inspire(token, "2020ApJ...902L..36F")
+
+    def test_librarycatalog(self):
+        with pytest.raises(e.AdsApiError):
+            res = resolve.librarycatalog(token, "2020ApJ...902L..36F")
+
+    def test_metrics(self):
+        res = resolve.metrics(token, "2020ApJ...902L..36F")
+        assert "link_type" in res
+
+    def test_openurl(self):
+        res = resolve.openurl(token, "2020ApJ...902L..36F")
+        assert "link_type" in res
+
+    def test_presentation(self):
+        with pytest.raises(e.AdsApiError):
+            res = resolve.presentation(token, "2020ApJ...902L..36F")
+
+    def test_references(self):
+        res = resolve.references(token, "2020ApJ...902L..36F")
+        assert "link_type" in res
+
+    def test_resolve(self):
+        res = resolve.resolve(token, "2020ApJ...902L..36F")
+        assert "action" in res
+
+    def test_toc(self):
+        with pytest.raises(e.AdsApiError):
+            res = resolve.toc(token, "2020ApJ...902L..36F")
+
 
 @pytest.mark.vcr()
 class TestAPIVisual:
