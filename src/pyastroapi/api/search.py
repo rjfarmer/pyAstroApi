@@ -1,10 +1,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
-
-from argparse import ArgumentError
 import typing as t
-from urllib.parse import urlencode, quote_plus
-
 
 from . import exceptions as e
 from . import urls
@@ -44,10 +40,6 @@ def search(
     fields: str = None,
     fq: str = "",
     limit: int = -1,
-    callback_start: t.Callable = None,  # Before search runs
-    callback_num_results: t.Callable = None,  # Returns the number of rows found
-    callback_search: t.Callable = None,  # Called with each result
-    callback_end: t.Callable = None,  # Called once all results returned
     dbg: bool = False,
 ) -> t.Generator[t.Dict[t.Any, t.Any], None, None]:
 
@@ -59,9 +51,6 @@ def search(
         fields = _short_fl
 
     split_f = fields.split(",")
-
-    if callback_start is not None:
-        callback_start(query, fields, fq, limit)
 
     start = 0
     count = 0
@@ -91,9 +80,6 @@ def search(
 
         total_num = int(r.response["response"]["numFound"])
 
-        if count == 0 and callback_num_results is not None:
-            callback_num_results(total_num)
-
         if not len(r.response["response"]["docs"]):
             break
 
@@ -105,37 +91,27 @@ def search(
                     r.response["response"]["docs"][index][f] = None
 
         # print(count,total_num,start)
-        if callback_search is None:
-            yield from r.response["response"]["docs"]
-        else:
-            callback_search(r.response["response"]["docs"])
+        yield from r.response["response"]["docs"]
 
         if count >= total_num or (count >= limit and limit > 0):
             break
         else:
             start += count - 1
 
-        if callback_end is not None:
-            callback_end(query, fields, fq, limit, total_num)
 
+def bigquery(token: str, bibcodes: t.List[str], limit: int = 10, q="*:*", fields=None):
 
-def bigquery(token: str, bibcodes: t.List[str], limit: int = -1):
+    if fields is None:
+        fields = "id,bibcode,title"
+
     # Broken for now
-    terms = {
-        "q": "*:*",
-        "fl": "id,bibcode,title",
-    }
-
-    if limit > 0:
-        terms["rows"] = str(limit)
+    terms = {"q": q, "fl": fields, "rows": limit}
 
     url = urls.make_url(urls.urls["search"]["bigquery"])
 
-    bib = {"bibcodes": utils.ensure_list(bibcodes)}
-
-    r = http.post(token, url, data=bib, params=terms, json=True)
+    r = http.bigquery_bibcodes(token, url, bibcodes=bibcodes, params=terms)
 
     if r.status != 200:
         raise e.AdsApiError(r.response["error"])
 
-    return r
+    return r.response

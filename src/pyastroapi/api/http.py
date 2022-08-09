@@ -14,7 +14,7 @@ __all__ = [
     "put",
     "delete",
     "post_bibcodes",
-    "get_bibcodes",
+    "bigquery_bibcodes",
     "download_file",
 ]
 
@@ -156,10 +156,24 @@ def post_bibcodes(
     return post(token, url, data)
 
 
-def get_bibcodes(
-    token: str, url: str, bibcodes: t.Union[str, t.List[str]]
+def bigquery_bibcodes(
+    token: str,
+    url: str,
+    bibcodes: t.Union[str, t.List[str]],
+    params: t.Any,
 ) -> HttpResponse:
-    pass
+    data = "bibcode\n" + "\n".join(utils.ensure_list(bibcodes))
+
+    r = requests.post(
+        url,
+        params=params,
+        auth=_BearerAuth(token),
+        data=data,
+    )
+
+    response_code = r.status_code
+
+    return HttpResponse(r.json()["response"], response_code, ADSLimits(r.headers))
 
 
 def download_file(url, filename):

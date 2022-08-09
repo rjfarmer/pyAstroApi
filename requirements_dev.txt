@@ -6,3 +6,4 @@ pre-commit
 types-requests
 vcrpy
 pytest-vcr
+black

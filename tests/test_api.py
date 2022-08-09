@@ -81,10 +81,15 @@ class TestAPISearch:
         res = list(search.search(token, "^farmer", fields="bibcode", limit=100))
         assert len(res) == 100
 
-    @pytest.mark.skip(reason="Broken")
     def test_bigquery(self):
-        res = list(
-            search.bigquery(token, ["2020zndo...3678482F", "2020ApJ...902L..36F"])
+        res = search.bigquery(token, ["2020zndo...3678482F", "2020ApJ...902L..36F"])
+
+        docs = res["docs"]
+
+        assert res["numFound"] == 2
+        assert (
+            "2020zndo...3678482F" == docs[0]["bibcode"]
+            or "2020zndo...3678482F" == docs[1]["bibcode"]
         )
 
 
