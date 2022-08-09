@@ -145,6 +145,24 @@ paper.visual.author()
 Return the author network visualization for the paper.
 
 
+## Implemented end points
+
+Which of the [ADSABS API's](https://ui.adsabs.harvard.edu/help/api/api-docs.html#overview) are currently implemented inside the pyastroapi.api namespace
+
+- [X] Search
+- [] Stored Search
+- [X] Libraries
+- [X] Export
+- [X] Metrics
+- [X] Author Affiliation
+- [X] Citation Helper
+- [X] Classic import (Caveat: I don't have a classic account to test with)
+- [X] Objects
+- [X] Recommender
+- [X] Reference
+- [] Notifications
+- [X] Visualizations
+
 
 ## Acknowledgements
 
