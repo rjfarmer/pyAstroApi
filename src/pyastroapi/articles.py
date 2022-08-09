@@ -611,9 +611,6 @@ class Urls:
         if source not in self.links:
             raise ValueError(f"No {name} html available for {self.bibcode}")
 
-        if filename is None:
-            filename = self.filename()
-
     @property
     def ads(self) -> str:
         """Get the ADSABS URL
