@@ -19,8 +19,8 @@ def create_template(
 
 def create_query(
     token: str,
-    name: str = "",
-    qid: str = "",
+    name: str,
+    qid: str,
     active: bool = True,
     frequnecy="daily",
     data: str = "",
