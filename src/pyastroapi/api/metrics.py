@@ -1,7 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
-import typing as t
-
 from . import exceptions as e
 from . import urls
 from . import http

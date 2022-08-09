@@ -1,7 +1,5 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
-import typing as t
-
 # https://ui.adsabs.harvard.edu/help/api/api-docs.html
 
 base_url = "https://api.adsabs.harvard.edu/v1"

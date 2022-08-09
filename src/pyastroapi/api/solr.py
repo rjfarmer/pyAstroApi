@@ -4,8 +4,6 @@ from . import exceptions as e
 from . import urls
 from . import http
 from . import utils
-from . import search
-import typing as t
 
 __all__ = ["query", "simbad", "objects"]
 

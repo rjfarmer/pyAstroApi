@@ -1,7 +1,5 @@
 # # SPDX-License-Identifier: BSD-3-Clause
 
-import typing as t
-
 import pyastroapi.articles as articles
 import pyastroapi.api.token as token
 import pyastroapi.api.libraries as lib

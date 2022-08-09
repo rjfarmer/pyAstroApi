@@ -3,13 +3,10 @@
 import requests
 import os
 import typing as t
-import webbrowser
-import shutil
 
 from dataclasses import dataclass
 
 from . import utils
-from . import exceptions as e
 
 __all__ = [
     "get",

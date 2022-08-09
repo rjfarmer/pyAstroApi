@@ -3,7 +3,6 @@
 from . import exceptions as e
 from . import urls
 from . import http
-from . import utils
 import typing as t
 
 __all__ = ["citations"]
