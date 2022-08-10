@@ -97,6 +97,15 @@ urls = {
 
 
 def make_url(endpoint: str, *args: str) -> str:
+    """Make a URL that points to ADS
+
+    Args:
+        endpoint (str): An ADS end point
+        *args (str): Additional URL fragments to be '/' separated in the url.
+
+    Returns:
+        str: A full URL
+    """
     u = [base_url, endpoint]
     u.extend([str(i) for i in args])
 
