@@ -113,4 +113,4 @@ def bigquery(token: str, bibcodes: t.List[str], limit: int = 10, q="*:*", fields
     if r.status != 200:
         raise e.AdsApiError(r.response["error"])
 
-    return r.response
+    return r.response["response"]

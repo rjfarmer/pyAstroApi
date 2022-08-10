@@ -24,7 +24,7 @@ interactions:
     body:
       string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":2,\n    \"params\":{\n
         \     \"q\":\"*:*\",\n      \"fl\":\"id,bibcode,title\",\n      \"start\":\"0\",\n
-        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62f2d729-5e6a33c84bb25dda4cb58a43\",\n
+        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62f3e6b8-7803402170bfb73e6646132e\",\n
         \     \"fq\":\"{!bitset}\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n
         \ \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n      {\n        \"bibcode\":\"2020ApJ...902L..36F\",\n
         \       \"id\":\"19493342\",\n        \"title\":[\"Constraints from Gravitational-wave
@@ -53,7 +53,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 09 Aug 2022 21:52:41 GMT
+      - Wed, 10 Aug 2022 17:11:20 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin

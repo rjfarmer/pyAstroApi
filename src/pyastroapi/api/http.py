@@ -173,7 +173,7 @@ def bigquery_bibcodes(
 
     response_code = r.status_code
 
-    return HttpResponse(r.json()["response"], response_code, ADSLimits(r.headers))
+    return HttpResponse(r.json(), response_code, ADSLimits(r.headers))
 
 
 def download_file(url, filename):
