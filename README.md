@@ -160,7 +160,7 @@ Which of the [ADSABS API's](https://ui.adsabs.harvard.edu/help/api/api-docs.html
 - [X] Objects
 - [] Recommender
 - [X] Reference
-- [] Notifications
+- [X] Notifications
 - [X] Visualizations
 
 
