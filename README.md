@@ -150,7 +150,7 @@ Return the author network visualization for the paper.
 Which of the [ADSABS API's](https://ui.adsabs.harvard.edu/help/api/api-docs.html#overview) are currently implemented inside the pyastroapi.api namespace
 
 - [X] Search
-- [] Stored Search
+- [X] Stored Search
 - [X] Libraries
 - [X] Export
 - [X] Metrics
