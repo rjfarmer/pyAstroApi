@@ -98,6 +98,6 @@ urls = {
 
 def make_url(endpoint: str, *args: str) -> str:
     u = [base_url, endpoint]
-    u.extend(args)
+    u.extend([str(i) for i in args])
 
     return "/".join(u)

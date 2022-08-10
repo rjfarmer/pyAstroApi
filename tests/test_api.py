@@ -12,7 +12,7 @@ import pyastroapi.api.visualization as visual
 import pyastroapi.api.recommender as recommend
 import pyastroapi.api.classic as classic
 import pyastroapi.api.stored as stored
-
+import pyastroapi.api.notifications as notif
 
 import pyastroapi.api.urls as urls
 import pyastroapi.api.http as http
@@ -647,3 +647,26 @@ class TestAPIStored:
 
         assert "numFound" in res
         assert "docs" in res
+
+
+@pytest.mark.vcr()
+class TestAPINotifications:
+    def test_template(self):
+        res = notif.create_template(token, name="test")
+
+        assert "id" in res
+
+        id = res["id"]
+
+        res = notif.view_all(token)
+
+        assert len(res) > 0
+        assert "id" in res[0]
+
+        res = notif.view(token, id)
+
+        assert len(res) > 0
+        assert "id" in res[0]
+        assert res[0]["id"] == id
+
+        res = notif.delete(token, id)
