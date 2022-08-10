@@ -20,6 +20,8 @@ __all__ = [
 
 
 class _BearerAuth(requests.auth.AuthBase):
+    """Handles setting the ADS token in http requests"""
+
     def __init__(self, token: str) -> None:
         self.token = token
 
@@ -46,6 +48,8 @@ Payload_t = t.Union[
 
 @dataclass
 class ADSLimits:
+    """Stores the last set of ADS limits received"""
+
     limit: int = -1
     remaining: int = -1
     reset: int = -1
@@ -69,6 +73,17 @@ class HttpResponse:
 def get(
     token: str, url: str, data: Payload_t = None, json: bool = True
 ) -> HttpResponse:
+    """Perform a HTTP Get request
+
+    Args:
+        token (str): ADS Token
+        url (str): URL to get. This should usually include some sort of extra identifier
+        data (Payload_t, optional): Any additional data being passed, thats not in the URL. Defaults to None.
+        json (bool, optional): Whether to return the data in a JSON compatible format. Defaults to True.
+
+    Returns:
+        HttpResponse:
+    """
     if data is None:
         data = {}  # type:ignore
 
@@ -93,6 +108,18 @@ def post(
     params: t.Any = None,
     json: bool = True,
 ) -> HttpResponse:
+    """Perform a HTTP Post request
+
+    Args:
+        token (str): ADS Token
+        url (str): URL to post to
+        data (Payload_t, optional): Data being sent. Defaults to None.
+        params (Payload_t, optional): Data being sent via the url and not the post dict. Defaults to None.
+        json (bool, optional): Whether to return the data in a JSON compatible format. Defaults to True.
+
+    Returns:
+        HttpResponse:
+    """
 
     args = {}  # type:ignore
     args["auth"] = _BearerAuth(token)
@@ -117,7 +144,18 @@ def post(
         return HttpResponse(r.text, response_code, ADSLimits(r.headers))
 
 
-def put(url: str, token: str, data: Payload_t) -> HttpResponse:
+def put(token: str, url: str, data: Payload_t) -> HttpResponse:
+    """Perform a HTTP Put request
+
+    Args:
+        token (str): ADS Token
+        url (str): URL to post to
+        data (Payload_t, optional): Data being sent. Defaults to None.
+
+    Returns:
+        HttpResponse:
+    """
+
     r = requests.put(
         url,
         auth=_BearerAuth(token),
@@ -131,6 +169,15 @@ def put(url: str, token: str, data: Payload_t) -> HttpResponse:
 
 
 def delete(token: str, url: str) -> HttpResponse:
+    """Perform a HTTP Delete request
+
+    Args:
+        token (str): ADS Token
+        url (str): URL to post to
+
+    Returns:
+        HttpResponse:
+    """
     r = requests.delete(
         url,
         auth=_BearerAuth(token),
@@ -144,6 +191,17 @@ def delete(token: str, url: str) -> HttpResponse:
 def post_bibcodes(
     token: str, url: str, bibcodes: t.Union[str, t.List[str]], multi_bibs: bool = True
 ) -> HttpResponse:
+    """Perform a HTTP Post request with a list of bibcodes
+
+    Args:
+        token (str): ADS Token
+        url (str): URL to post to
+        bibcodes (t.Union[str, t.List[str]]): Either a single bibcode or a list of bibcodes
+        multi_bibs (bool): Some end points care whether you use bibcode or bibcodes and thats not consistent with the actual number of bibcodes used
+    Returns:
+        HttpResponse:
+    """
+
     if isinstance(bibcodes, list):
         if multi_bibs:
             data = {"bibcodes": bibcodes}
@@ -162,6 +220,17 @@ def bigquery_bibcodes(
     bibcodes: t.Union[str, t.List[str]],
     params: t.Any,
 ) -> HttpResponse:
+    """Perform a ADS Big query with a list of bibcodes
+
+    Args:
+        token (str): ADS Token
+        url (str): URL to post to
+        bibcodes (t.Union[str, t.List[str]]): Either a single bibcode or a list of bibcodes
+        params (dict) : Extra params sent
+    Returns:
+        HttpResponse:
+    """
+
     data = "bibcode\n" + "\n".join(utils.ensure_list(bibcodes))
 
     r = requests.post(
@@ -176,7 +245,19 @@ def bigquery_bibcodes(
     return HttpResponse(r.json(), response_code, ADSLimits(r.headers))
 
 
-def download_file(url, filename):
+def download_file(url: str, filename: str):
+    """Download a file to filename
+
+    On return you should check if the file exists to see if it succeeded.
+
+    Args:
+        url (str): URL to download from
+        filename (str): Filename to save file to.
+
+    Raises:
+        FileDownloadFailed: _description_
+    """
+
     headers = {
         "User-Agent": "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0",
         "DNT": "1",
