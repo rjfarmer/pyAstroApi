@@ -9,6 +9,20 @@ __all__ = ["author", "paper", "word_cloud"]
 
 
 def author(token: str, bibcode: str):
+    """Returns author-network data
+
+    https://ui.adsabs.harvard.edu/help/api/api-docs.html#post-/vis/author-network
+
+    Args:
+        token (str): ADS token
+        bibcode (str): Single bibcode
+
+    Raises:
+        e.AdsApiError: _description_
+
+    Returns:
+        dict
+    """
 
     url = urls.make_url(urls.urls["visual"]["author"])
     payload = {"bibcodes": utils.ensure_list(bibcode)}
@@ -21,7 +35,20 @@ def author(token: str, bibcode: str):
 
 
 def paper(token: str, bibcode: str):
+    """Returns paper-network data
 
+    https://ui.adsabs.harvard.edu/help/api/api-docs.html#post-/vis/paper-network
+
+    Args:
+        token (str): ADS token
+        bibcode (str): Single bibcode
+
+    Raises:
+        e.AdsApiError: _description_
+
+    Returns:
+        dict
+    """
     url = urls.make_url(urls.urls["visual"]["paper"])
     payload = {"bibcodes": utils.ensure_list(bibcode)}
     r = http.post(token, url, payload)
@@ -33,6 +60,19 @@ def paper(token: str, bibcode: str):
 
 
 def word_cloud(token: str, query: str, rows: str = 50):
+    """Returns a word cloud
+
+    Args:
+        token (str): ADS token
+        query (str): Standard ADS query string
+        rows (str, optional): Max number of rows to return. Defaults to 50.
+
+    Raises:
+        e.AdsApiError: _description_
+
+    Returns:
+
+    """
     url = urls.make_url(urls.urls["visual"]["word-cloud"])
 
     payload = {
