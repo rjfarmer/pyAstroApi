@@ -104,7 +104,6 @@ def bigquery(token: str, bibcodes: t.List[str], limit: int = 10, q="*:*", fields
     if fields is None:
         fields = "id,bibcode,title"
 
-    # Broken for now
     terms = {"q": q, "fl": fields, "rows": limit}
 
     url = urls.make_url(urls.urls["search"]["bigquery"])

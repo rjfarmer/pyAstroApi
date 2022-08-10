@@ -11,6 +11,8 @@ import pyastroapi.api.resolver as resolve
 import pyastroapi.api.visualization as visual
 import pyastroapi.api.recommender as recommend
 import pyastroapi.api.classic as classic
+import pyastroapi.api.stored as stored
+
 
 import pyastroapi.api.urls as urls
 import pyastroapi.api.http as http
@@ -620,3 +622,28 @@ class TestAPIToken:
         os.remove(tp)
 
         assert t3 == t2
+
+
+@pytest.mark.vcr()
+class TestAPIStored:
+    def test_all(self):
+        # Run as one large test as we need to do several steps in one go
+
+        res = stored.save(token, query="^farmer year:2020", fields="bibcode,title")
+
+        assert "qid" in res
+
+        qid = res["qid"]
+
+        res = stored.query(token, qid)
+
+        assert "query" in res
+        assert "numfound" in res
+
+        res = stored.query2svg(token, qid)
+        assert "<svg xmlns" in res
+
+        res = stored.search(token, qid)
+
+        assert "numFound" in res
+        assert "docs" in res
