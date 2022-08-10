@@ -144,10 +144,14 @@ paper.visual.author()
 
 Return the author network visualization for the paper.
 
+## API
 
-## Implemented end points
+Functions and classes inside the pyastroapi namespace are provided to provide convenient wrappers around the output of ADSABS API. 
+Though at this time not ever endpoint has a wrapper.
 
-Which of the [ADSABS API's](https://ui.adsabs.harvard.edu/help/api/api-docs.html#overview) are currently implemented inside the pyastroapi.api namespace
+However, inside the pyastroapi.api namespace we provide a low-level API that handles setting all the arguments necessary for each of the API end points.
+
+List of the [ADSABS API's](https://ui.adsabs.harvard.edu/help/api/api-docs.html#overview) are currently implemented inside the pyastroapi.api namespace
 
 - [X] Search
 - [X] Stored Search
