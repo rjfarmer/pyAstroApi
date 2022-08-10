@@ -13,10 +13,10 @@
 
    .. autosummary::
    
+      bigquery_bibcodes
       delete
       download_file
       get
-      get_bibcodes
       post
       post_bibcodes
       put
