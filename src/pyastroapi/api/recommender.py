@@ -38,7 +38,7 @@ def matchdoc(
 def _recommend(
     token,
     function="similar",
-    sort="first_author desc",
+    sort="first_author",
     num_docs=20,
     top_n_reads=50,
     cutoff_days=7,
@@ -63,7 +63,7 @@ def _recommend(
 
 def similar(
     token,
-    sort="first_author desc",
+    sort="first_author",
     num_docs=20,
     top_n_reads=50,
     cutoff_days=7,
@@ -73,7 +73,7 @@ def similar(
 
 def trending(
     token,
-    sort="first_author desc",
+    sort="first_author",
     num_docs=20,
     top_n_reads=50,
     cutoff_days=7,
@@ -83,7 +83,7 @@ def trending(
 
 def reviews(
     token,
-    sort="first_author desc",
+    sort="first_author",
     num_docs=20,
     top_n_reads=50,
     cutoff_days=7,
@@ -93,7 +93,7 @@ def reviews(
 
 def useful(
     token,
-    sort="first_author desc",
+    sort="first_author",
     num_docs=20,
     top_n_reads=50,
     cutoff_days=7,

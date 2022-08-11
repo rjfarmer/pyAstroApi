@@ -589,6 +589,30 @@ class TestAPIRecommend:
             }
         ]
 
+    @pytest.mark.skip(reason="Broken")
+    def test_reviews(self):
+        res = recommend.reviews(token, num_docs=10)
+
+        assert len(res) == 10
+
+    @pytest.mark.skip(reason="Broken")
+    def test_similar(self):
+        res = recommend.similar(token, num_docs=10)
+
+        assert len(res) == 10
+
+    @pytest.mark.skip(reason="Broken")
+    def test_trending(self):
+        res = recommend.trending(token, num_docs=10)
+
+        assert len(res) == 10
+
+    @pytest.mark.skip(reason="Broken")
+    def test_useful(self):
+        res = recommend.useful(token, num_docs=10)
+
+        assert len(res) == 10
+
 
 @pytest.mark.vcr()
 class TestAPIClassic:
