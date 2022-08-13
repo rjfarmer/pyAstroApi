@@ -21,6 +21,17 @@ __all__ = [
 
 
 def list_all(token: str):
+    """List all libraries the user has
+
+    Args:
+        token (str): ADSABS token
+
+    Raises:
+        e.AdsApiError: _description_
+
+    Returns:
+        _type_: _description_
+    """
 
     url = urls.make_url(urls.urls["libraries"]["view"])
 
@@ -33,6 +44,7 @@ def list_all(token: str):
 
 
 def get_permissions(token: str, lib: str):
+
     url = urls.make_url(urls.urls["libraries"]["permission"], lib)
 
     r = http.get(token, url)

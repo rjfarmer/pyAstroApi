@@ -8,10 +8,8 @@ import pyastroapi.api.utils as utils
 __all__ = ["libraries", "library"]
 
 
-class libraries(object):
-    """
-    This is a collection of ADS libraries that supports iteration
-    """
+class libraries:
+    """This is a collection of ADS libraries that supports iteration"""
 
     def __init__(self):
         self._data = {}
@@ -68,10 +66,8 @@ class libraries(object):
             self._data[l["name"]] = library(l["id"])
 
 
-class library(object):
-    """
-    An instance of a single ADS library
-    """
+class library:
+    """An instance of a single ADS library"""
 
     def __init__(self, lid):
         self.lid = lid

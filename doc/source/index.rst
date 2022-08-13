@@ -15,7 +15,8 @@ Welcome to pyAstroApi's documentation!
    :caption: Contents
 
    installation
-   quickstart
+   examples
+   development
    highlevelref
    lowlevelref
    extrasref

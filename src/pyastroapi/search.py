@@ -19,7 +19,7 @@ __all__ = [
 
 
 def search(query: str, limit: int = -1, fields: t.List[str] = None, dbg: bool = False):
-    """Performs a ADS search
+    """Performs an ADS search
 
     Args:
         query (str): Search query
@@ -88,7 +88,7 @@ def orcid(orcid: str, limit: int = -1, fields: t.List[str] = None, dbg: bool = F
 def bibcode(
     bibcode: str, limit: int = -1, fields: t.List[str] = None, dbg: bool = False
 ):
-    """Searchs for a given bibcode
+    """Searches for a given bibcode
 
     Args:
         bibcode (str): Bibcode

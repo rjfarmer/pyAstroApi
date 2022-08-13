@@ -7,3 +7,4 @@ types-requests
 vcrpy
 pytest-vcr
 black==22.6.0
+sphinx

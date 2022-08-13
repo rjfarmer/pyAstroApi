@@ -15,21 +15,29 @@ to install the dependencies. Then to build and install software ::
 
     pip install .
 
+Documentation can be built locally with ::
 
-Development
-~~~~~~~~~~~
-
-If developing then you'll need additional dependencies ::
-
-    pip install -r requirements_dev.txt
+    cd doc
+    make html
+    firefox build/html/index.html
 
 
-then the test suite can be ran with ::
+ADS key
+~~~~~~~
 
-    pytest
+You will need your own ADS api key: https://ui.adsabs.harvard.edu/user/settings/token
 
-to test one python version. Or, ::
+This can be saved to the file ::
 
-    tox
+    ~/.ads/dev_key
 
-to run over all supported python versions.
+
+This location was chosen to be consistent with Andy Cassey's package.
+
+ORCID Key
+~~~~~~~~~
+
+You can saved your ORCID to ::
+
+    ~/.dev/orcid
+
