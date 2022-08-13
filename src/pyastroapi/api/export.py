@@ -3,6 +3,7 @@
 from . import exceptions as e
 from . import urls
 from . import http
+from . import utils
 import typing as t
 
 _exportType = t.List[str]
@@ -354,7 +355,7 @@ def ieee(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:
 
 def csl(
     token: str,
-    bibcode: t.Union[str, t.List[str]],
+    bibcodes: t.Union[str, t.List[str]],
     style: str = "aastex",
     format: str = "latex",
     journal: str = "aastex",
@@ -373,20 +374,20 @@ def csl(
     if journal not in _journal:
         raise ValueError(f"Bad journal format must be one of {_journal}")
 
-    format = _formats.index(format)
-    journal = _journal.index(journal)
+    format = _formats.index(format) + 1
+    journal = _journal.index(journal) + 1
 
     data = {
-        "bibcode": bibcode,
+        "bibcodes": utils.ensure_list(bibcodes),
         "style": style,
-        "format": format,
-        "journalformat": journal,
+        "format": str(format),
+        "journalformat": str(journal),
         "sort": "desc",
     }
 
     url = urls.make_url(urls.urls["export"]["csl"])
 
-    r = http.post(token, url, data, True)
+    r = http.post(token, url, data, json=True)
 
     if r.status != 200:
         if r.status == 404:
