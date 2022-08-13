@@ -78,7 +78,7 @@ class article:
         """Initialize given a bibtex fragment
 
         Args:
-            bibtex (str): A bibtex document as astring
+            bibtex (str): A bibtex document as a string
         """
         bd = bib.parse_bibtex(bibtex)
         self.from_data(list(pyastroapi.search(bd[0], limit=1))[0])
@@ -96,7 +96,7 @@ class article:
         """Add article to the ADS library
 
         Args:
-            library (str): An exisiting ADS library
+            library (str): An existing ADS library
 
         Raises:
             NotImplementedError: _description_
@@ -150,6 +150,11 @@ class article:
             return f'author:^{self._data["author"][0]} year:{self._data["year"]}'
 
     def keys(self):
+        """Return all available fields
+
+        Returns:
+            _type_: _description_
+        """
         return _search._fields
 
     def items(self):
@@ -204,6 +209,11 @@ class article:
         return self._data
 
     def references(self):
+        """Get a journal of references to this paper.
+
+        Returns:
+            _type_: _description_
+        """
         if "reference" in self._data:
             if self._data["reference"] is None:
                 self._refs = journal()
@@ -216,6 +226,11 @@ class article:
         return self._refs
 
     def reference_count(self) -> int:
+        """Get a count of the references to this paper.
+
+        Returns:
+            int: _description_
+        """
         if "reference" not in self._data:
             return len(self.references())
         else:
@@ -225,6 +240,11 @@ class article:
                 return len(self._data["reference"])
 
     def citations(self):
+        """Get the citations to this paper.
+
+        Returns:
+            _type_: _description_
+        """
         if self._cites is not None:
             return self._cites
 
@@ -236,22 +256,34 @@ class article:
 
     @property
     def first_author(self) -> str:
+        """Return the first author of the paper.
+
+        Returns:
+            str: _description_
+        """
         if "author" not in self._data:
             self.__getattr__("author")
         return self.author[0]
 
     @property
     def authors(self) -> t.List[str]:
+        """Return a list of authors"""
         if "author" not in self._data:
             self.__getattr__("author")
         return self.author
 
     @property
     def name(self) -> str:
+        """Make a pretty name for the paper (First author year)"""
         return f"{self.first_author} {self.year}"
 
     @property
     def title(self) -> str:
+        """Return the paper title.
+
+        Returns:
+            str: _description_
+        """
         if "title" not in self._data:
             self.__getattr__("title")
         return self._data["title"][0]
@@ -279,7 +311,7 @@ class journal:
 
         Args:
             bibcodes (list, optional): List of bibcodes. Defaults to None.
-            data (t.Dict, optional): Initialize the journal from a list of dicts. Each dict must have at least a "bibcode" key . Defaults to None.
+            data (t.Dict, optional): Initialize the journal from a list of dicts. Each dict must have at least a "bibcode" key. Defaults to None.
             bibtex (str, optional): Initialize given a bibtex string. Must contain only one document. Defaults to None.
             search (str, optional): Initialize after performing a query of ADS with the search string. Defaults to None.
         """
@@ -296,46 +328,101 @@ class journal:
             self.from_search(search)
 
     def from_bibcodes(self, bibcodes: t.List):
+        """Initialize from a list of bibcodes
+
+        Args:
+            bibcodes (t.List):
+
+        Returns:
+            self
+        """
         self._data = {}
         for bib in bibcodes:
             self.add_bibcode(bib)
         return self
 
     def from_data(self, data: t.List):
+        """Initialize from a list of dict-like objects
+
+        Each element must have at least a "bibcode" key
+
+        Args:
+            data (t.List): List of dict-like objects
+        """
         self._data = {}
         self.add_data(data)
 
     def from_bibtex(self, bibtex: str):
+        """Initialize from a bibtex string
+
+        Args:
+            bibtex (str): A bibtex string of one or more bibtex's
+        """
         self._data = {}
-        bd = bib.parse_bibtex(bibtex)
-        for b in bd:
-            self.add_data(pyastroapi.search(b, limit=1))
+        self.add_bibtex(bibtex)
 
     def from_search(self, search: str):
+        """Initialize from an ADS search
+
+        Args:
+            search (str): ADS query string
+        """
         self._data = {}
         self.add_data(pyastroapi.search(search))
 
     def from_articles(self, data: t.List):
+        """Initialize from list of articles
+
+        Args:
+            data (t.List): List of articles
+        """
         self._data = {}
         self.add_articles(data)
 
     def add_bibcode(self, bibcode: t.List):
+        """Add papers given by bibcodes
+
+        Args:
+            bibcode (t.List): List of bibcodes
+        """
         self._data[bibcode] = article(bibcode=bibcode)
 
     def add_data(self, data: t.List):
+        """Add papers from list of dict-like objects
+
+        Args:
+            data (t.List): List of dict-like objects. Each element must have at least "bibcode" as a key
+        """
         for dd in data:
             d = article(data=dd)
             self._data[d.bibcode] = d
 
     def add_articles(self, data: t.List):
+        """Add papers from a list of articles
+
+        Args:
+            data (t.List): List of articles
+        """
         for dd in data:
             if isinstance(dd, article):
                 self._data[dd.bibcode] = dd
 
     def add_bibtex(self, bibtex: str):
-        raise NotImplementedError
+        """Add papers from bibtex
+
+        Args:
+            bibtex (str): One of more bibtex's
+        """
+        bd = bib.parse_bibtex(bibtex)
+        for b in bd:
+            self.add_data(pyastroapi.search(b, limit=1))
 
     def bibcodes(self):
+        """Returns the list of bibcodes in the journal
+
+        Returns:
+            bibcodes (list): List of bibcodes
+        """
         return list(self.keys())
 
     def __getitem__(self, bibcode):
@@ -348,12 +435,19 @@ class journal:
         return len(self._data)
 
     def keys(self):
+        """Return list of keys (bibcodes)"""
         return self._data.keys()
 
     def items(self):
+        """Returns the items (bibcode and article) for each paper."""
         return self._data.items()
 
     def values(self):
+        """Return stored values
+
+        Returns:
+            _type_: _description_
+        """
         return self._data.values()
 
     def __contains__(self, key: str):
@@ -392,6 +486,11 @@ class journal:
         return Urls(self.bibcodes())
 
     def pop(self, bibcodes):
+        """Remove one or more bibcodes
+
+        Args:
+            bibcodes (str or list[str]): One or more bibcodes to remove
+        """
         bibcodes = utils.ensure_list(bibcodes)
         for bib in bibcodes:
             if bib in self:
@@ -409,6 +508,13 @@ class journal:
         self.__dict__.update(state)
 
     def citations(self):
+        """Get the citations to all papers in journal.
+
+        This does not remove duplicates
+
+        Returns:
+            _type_: _description_
+        """
         data = {}
         for paper in self:
             data[paper.bibcode] = paper.citations
@@ -416,13 +522,28 @@ class journal:
         return data
 
     def references(self):
+        """Get the references to all papers in the journal
+
+        This does not remove duplicates
+
+        Returns:
+            _type_: _description_
+        """
         data = {}
         for paper in self:
             data[paper.references] = paper.references
 
         return data
 
-    def citation_count(self, uniq=False):
+    def citation_count(self, uniq=False) -> int:
+        """Return count of citations to all papers in journal
+
+        Args:
+            uniq (bool, optional): If true remove duplicated citations. Defaults to False.
+
+        Returns:
+            int: Count of all citations
+        """
         res = 0
         res_uniq = []
         for paper in self:
@@ -435,7 +556,15 @@ class journal:
         else:
             return res
 
-    def reference_count(self, uniq=False):
+    def reference_count(self, uniq=False) -> int:
+        """Return count of references to all papers in journal
+
+        Args:
+            uniq (bool, optional): If true remove duplicated references. Defaults to False.
+
+        Returns:
+            int: _description_
+        """
         res = 0
         res_uniq = []
         for paper in self:

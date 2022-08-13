@@ -4,15 +4,6 @@
 .. automodule:: pyastroapi.articles
 
    
-   
-   
-
-   
-   
-   
-
-   
-   
    .. rubric:: Classes
 
    .. autosummary::
