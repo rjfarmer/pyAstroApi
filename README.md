@@ -149,24 +149,29 @@ Return the author network visualization for the paper.
 Functions and classes inside the pyastroapi namespace are provided to provide convenient wrappers around the output of ADSABS API. 
 Though at this time not ever endpoint has a wrapper.
 
-However, inside the pyastroapi.api namespace we provide a low-level API that handles setting all the arguments necessary for each of the API end points.
+However, the pyastroapi.api namespace provides a low-level API that handles setting all the arguments necessary for each of the API end points.
 
 List of the [ADSABS API's](https://ui.adsabs.harvard.edu/help/api/api-docs.html#overview) are currently implemented inside the pyastroapi.api namespace
 
-- [X] Search
+- [X] Search (Including big queries)
 - [X] Stored Search
-- [X] Libraries
-- [X] Export
+- [X] Libraries (apart from editing an existing library)
+- [X] Export (everything but CSL format)
 - [X] Metrics
 - [X] Author Affiliation
 - [X] Citation Helper
 - [X] Classic import (Caveat: I don't have a classic account to test with)
 - [X] Objects
-- [X] Recommender
+- [ ] Recommender (Implemented but there is either a bug here or with ADS)
 - [X] Reference
 - [X] Notifications
 - [X] Visualizations
 
+
+## Contributing
+
+Contributions are welcome either as pull requests or as bug reports. If reporting a bug please include the exact code you used and 
+if applicable the bibcodes for any paper you where trying to access.
 
 ## Acknowledgements
 
