@@ -63,7 +63,7 @@ First you will need your own ADS api key: https://ui.adsabs.harvard.edu/user/set
 
 This can be saved to the file:
 
-````
+````bash
 ~/.ads/dev_key
 ````
 
