@@ -3,6 +3,8 @@ from . import exceptions as e
 from . import urls
 from . import http
 
+import typing as t
+
 __all__ = ["matchdoc", "similar", "trending", "reviews", "useful"]
 
 
@@ -13,8 +15,8 @@ def matchdoc(
     author: str = "",
     year: int = "",
     doctype: str = "article",
-    match_doctype=["article"],
-    must_match=False,
+    match_doctype: t.List[str] = ["article"],
+    must_match=True,
 ):
     url = urls.make_url(urls.urls["oracle"]["match"])
 
@@ -27,7 +29,9 @@ def matchdoc(
     data["match_doctype"] = match_doctype
     data["mustmatch"] = must_match
 
-    r = http.post(token, url, data=data)
+    r = http.post(token, url, data=data, json=True)
+
+    print(r)
 
     if r.status != 200:
         raise e.AdsApiError(r.response["error"])
