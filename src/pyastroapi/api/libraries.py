@@ -17,6 +17,7 @@ __all__ = [
     "delete",
     "add",
     "remove",
+    "edit",
 ]
 
 
@@ -183,3 +184,28 @@ def remove(token: str, lib: str, bibcode: str):
         raise e.AdsApiError(
             f"Bad number of bibcodes removed tried {len(bibs)} got {r.response['number_removed']}"
         )
+
+
+def edit(
+    token: str,
+    lib: str,
+    email: str,
+    read: bool = False,
+    write: bool = False,
+    admin: bool = False,
+):
+    url = urls.make_url(urls.urls["libraries"]["permission"], lib)
+
+    data = {
+        "email": email,
+        "permission": {
+            "read": read,
+            "write": write,
+            "admin": admin,
+        },
+    }
+
+    r = http.post(token, url, data)
+
+    if r.status != 200:
+        raise e.AdsApiError(r.response["error"])
