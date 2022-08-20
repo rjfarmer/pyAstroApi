@@ -156,7 +156,7 @@ List of the [ADSABS API's](https://ui.adsabs.harvard.edu/help/api/api-docs.html#
 - [X] Search (Including big queries)
 - [X] Stored Search
 - [X] Libraries (apart from editing an existing library)
-- [X] Export (everything but CSL format)
+- [X] Export 
 - [X] Metrics
 - [X] Author Affiliation
 - [X] Citation Helper

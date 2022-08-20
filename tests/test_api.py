@@ -241,15 +241,22 @@ class TestAPIExport:
         res = export.ieee(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
         assert len(res) == 2
 
-    @pytest.mark.skip(reason="Broken")
     def test_csl_1(self):
         res = export.csl(token, "2020ApJ...902L..36F")
         assert len(res) == 1
 
-    @pytest.mark.skip(reason="Broken")
     def test_csl_2(self):
         res = export.csl(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
         assert len(res) == 2
+
+    def test_custom(self):
+        res = export.custom(
+            token, "2020ApJ...902L..36F", format="%l (%Y), %j, %V, %p.\n"
+        )
+
+        assert res == [
+            "Farmer, R., Renzo, M., de Mink, S. E., Fishbach, M., & Justham, S. (2020), \\apjl, 902, L36."
+        ]
 
 
 @pytest.mark.vcr()

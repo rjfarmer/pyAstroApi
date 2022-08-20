@@ -360,6 +360,20 @@ def csl(
     format: str = "latex",
     journal: str = "aastex",
 ) -> _exportType:
+    """Export in the given style format
+
+    https://ui.adsabs.harvard.edu/help/api/api-docs.html#post-/export/csl
+
+    Args:
+        token (str): ADSABS token
+        bibcode (t.Union[str, t.List[str]]): Either a single bibcode or a list of bibcodes
+        style (str): Journal style to use must be one of aastex┃icarus┃mnras┃soph┃aspc┃apsj┃aasj┃ieee
+        format (str): Output format must be one of unicode|html|latex
+        journal (str): Format of journal name  must be one of aastex|abbev|full
+
+    Returns:
+        _exportType: Export data
+    """
 
     _styles = ["aastex", "icarus", "mnras", "soph", "aspc", "apsj", "aasj", "ieee"]
     _formats = ["unicode", "html", "latex"]
@@ -378,11 +392,11 @@ def csl(
     journal = _journal.index(journal) + 1
 
     data = {
-        "bibcodes": utils.ensure_list(bibcodes),
+        "bibcode": utils.ensure_list(bibcodes),
         "style": style,
-        "format": str(format),
-        "journalformat": str(journal),
-        "sort": "desc",
+        "format": format,
+        "journalformat": journal,
+        "sort": "first_author desc",
     }
 
     url = urls.make_url(urls.urls["export"]["csl"])
@@ -395,4 +409,43 @@ def csl(
         else:
             raise e.AdsApiError(f"Unknown error code {r.status}")
 
-    return r.response["export"]
+    e = r.response["export"].split("\n")
+
+    return [i for i in e if len(i)]
+
+
+def custom(
+    token: str,
+    bibcodes: t.Union[str, t.List[str]],
+    format: str,
+) -> _exportType:
+    """Export in a custom format
+
+    https://ui.adsabs.harvard.edu/help/api/api-docs.html#post-/export/custom
+
+    Args:
+        token (str): ADSABS token
+        bibcode (t.Union[str, t.List[str]]): Either a single bibcode or a list of bibcodes
+       format (str) : Format code to use
+
+    Returns:
+        _exportType: Export data
+    """
+    data = {
+        "bibcode": utils.ensure_list(bibcodes),
+        "format": format,
+    }
+
+    url = urls.make_url(urls.urls["export"]["custom"])
+
+    r = http.post(token, url, data, json=True)
+
+    if r.status != 200:
+        if r.status == 404:
+            raise e.NoRecordsFound(r.response["error"])
+        else:
+            raise e.AdsApiError(f"Unknown error code {r.status}")
+
+    e = r.response["export"].split("\n")
+
+    return [i for i in e if len(i)]
