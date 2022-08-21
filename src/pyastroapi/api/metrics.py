@@ -5,6 +5,8 @@ from . import urls
 from . import http
 from . import utils
 
+import typing as t
+
 __all__ = [
     "detail",
     "metrics",
@@ -16,7 +18,18 @@ __all__ = [
 ]
 
 
-def detail(token: str, bibcode: str) -> http.HttpResponse:
+def detail(token: str, bibcode: t.List[str]) -> t.Dict:
+    """Provides basic, year-by-year metrics on a per-bibcode basis.
+
+    https://ui.adsabs.harvard.edu/help/api/api-docs.html#tag--metrics
+
+    Args:
+        token (str): ADSABS token
+        bibcode (t.List[str]): List of bibcodes
+
+    Returns:
+        dict: Metric data
+    """
     url = urls.make_url(urls.urls["metrics"]["detail"])
     r = http.post_bibcodes(token, url, bibcode)
 
@@ -26,7 +39,17 @@ def detail(token: str, bibcode: str) -> http.HttpResponse:
     return r.response
 
 
-def metrics(token: str, bibcode: str):
+def metrics(token: str, bibcode: str) -> t.Dict:
+    """Provides basic, year-by-year metrics on for a single bibcode
+
+    https://ui.adsabs.harvard.edu/help/api/api-docs.html#tag--metrics
+    Args:
+        token (str): ADSABS token
+        bibcode (str): Single bibcode
+
+    Returns:
+        dict: Metric data
+    """
     url = urls.make_url(urls.urls["metrics"]["metrics"], bibcode)
 
     r = http.get(token, url)
@@ -37,7 +60,7 @@ def metrics(token: str, bibcode: str):
     return r.response
 
 
-def _metric(token: str, bibcode: str, format: str) -> str:
+def _metric(token: str, bibcode: t.List[str], format: str) -> t.Dict:
 
     url = urls.make_url(urls.urls["metrics"]["metrics"])
     payload = {"bibcodes": utils.ensure_list(bibcode), "types": [format]}
@@ -49,21 +72,66 @@ def _metric(token: str, bibcode: str, format: str) -> str:
     return r.response
 
 
-def basic(token: str, bibcode: str) -> str:
+def basic(token: str, bibcode: t.List[str]) -> t.Dict:
+    """Publication and usage stats (all papers, and just refereed papers)
+
+    Args:
+        token (str): ADSABS token
+        bibcode (t.List[str]): List of bibcodes
+
+    Returns:
+        dict: Metric data
+    """
     return _metric(token, bibcode, "basic")
 
 
-def citations(token: str, bibcode: str) -> str:
+def citations(token: str, bibcode: t.List[str]) -> t.Dict:
+    """citation stats
+
+    Args:
+        token (str): ADSABS token
+        bibcode (t.List[str]): List of bibcodes
+
+    Returns:
+        dict: Metric data
+    """
     return _metric(token, bibcode, "citations")
 
 
-def indicators(token: str, bibcode: str) -> str:
+def indicators(token: str, bibcode: t.List[str]) -> t.Dict:
+    """indicators, like the h-index, g-index, m-index, etc
+
+    Args:
+        token (str): ADSABS token
+        bibcode (t.List[str]): List of bibcodes
+
+    Returns:
+        dict: Metric data
+    """
     return _metric(token, bibcode, "indicators")
 
 
-def histograms(token: str, bibcode: str) -> str:
+def histograms(token: str, bibcode: t.List[str]) -> t.Dict:
+    """Publication, citation, reads and downloads histograms
+
+    Args:
+        token (str): ADSABS token
+        bibcode (t.List[str]): List of bibcodes
+
+    Returns:
+        dict: Metric data
+    """
     return _metric(token, bibcode, "histograms")
 
 
-def timeseries(token: str, bibcode: str) -> str:
+def timeseries(token: str, bibcode: t.List[str]) -> t.Dict:
+    """time series for a set of indicators
+
+    Args:
+        token (str): ADSABS token
+        bibcode (t.List[str]): List of bibcodes
+
+    Returns:
+        dict: Metric data
+    """
     return _metric(token, bibcode, "timeseries")
