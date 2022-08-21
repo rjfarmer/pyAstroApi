@@ -457,7 +457,7 @@ class journal:
         yield from self._data
 
     def __dir__(self):
-        return list(self.keys()) + list(self.__dict__.keys()) + _search._fields
+        return list(self.keys()) + list(self.__dict__.keys()) + list(_search._fields)
 
     def __getattr__(self, attr):
         res = {}
@@ -476,14 +476,6 @@ class journal:
     @property
     def visual(self):
         return Visualization(self.bibcodes())
-
-    @property
-    def pdf(self):
-        return PDF(self.bibcodes())
-
-    @property
-    def url(self):
-        return Urls(self.bibcodes())
 
     def pop(self, bibcodes):
         """Remove one or more bibcodes
@@ -563,7 +555,7 @@ class journal:
             uniq (bool, optional): If true remove duplicated references. Defaults to False.
 
         Returns:
-            int: _description_
+            int: Count of all references
         """
         res = 0
         res_uniq = []
