@@ -18,6 +18,7 @@
       bibtex
       bibtexabs
       csl
+      custom
       dcxml
       endnote
       icarus

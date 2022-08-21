@@ -15,6 +15,7 @@
    
       add
       delete
+      edit
       get
       get_permissions
       list_all
