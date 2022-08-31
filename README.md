@@ -78,6 +78,13 @@ a = articles.journal(search="^farmer year:2020")
 ````
 
 The `search` field can be any standard ADS query. The object `a` is now a `journal` which is a dict-like object of `article`'s.
+
+You can also constrcut a `journal` from a list of bibcodes:
+
+````python
+a = articles.journal(bibcodes=["2020ApJ...902L..36F","2021ApJ...923..214F"])
+````
+
 A `journal` can be accessed either by specifying the bibcode:
 
 ````python
