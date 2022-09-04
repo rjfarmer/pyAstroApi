@@ -58,5 +58,3 @@ html_theme = "sphinx_rtd_theme"
 html_static_path = []
 
 autodoc_mock_imports = ["requests", "setuptools_scm", "feedparser", "bibtexparser"]
-
-autosummary_generate = True
