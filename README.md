@@ -95,7 +95,7 @@ or iterated over like a list (or accessed with an index, e.g., `a[0]`)
 
 ````python
 for paper in a:
-    print(a.title)
+    print(paper.title)
 ````
 
 The object `paper` is an `article` which encapsulates all the methods needed to access the information ADS has on a paper. The initial search (Either via access through a `journal` or by creating an article with: `articles.article("2020ApJ...902L..36F")`) will fetch a set of standard fields from ADS.
