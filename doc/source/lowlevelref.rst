@@ -3,9 +3,10 @@ Low-level API Reference
 
 .. autosummary::
    :toctree: _autosummary
+   :recursive:
 
    pyastroapi.api.citation_helper
-   pyastropai.api.classic
+   .. pyastropai.api.classic
    pyastroapi.api.export
    pyastroapi.api.libraries
    pyastroapi.api.metrics
