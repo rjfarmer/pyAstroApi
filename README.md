@@ -169,7 +169,7 @@ List of the [ADSABS API's](https://ui.adsabs.harvard.edu/help/api/api-docs.html#
 - [X] Citation Helper
 - [X] Classic import (Caveat: I don't have a classic account to test with)
 - [X] Objects
-- [ ] Recommender (Implemented but there is either a bug here or with ADS)
+- [X] Recommender (Except matchdoc)
 - [X] Reference
 - [X] Notifications
 - [X] Visualizations

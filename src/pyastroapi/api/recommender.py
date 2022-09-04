@@ -61,7 +61,12 @@ def _recommend(
     r = http.post(token, url, data=data, json=True)
 
     if r.status != 200:
-        raise e.AdsApiError(r.response["error"])
+        if r.response["error"] == "no result from solr with status code=200":
+            # Skip as things worked but theres no results
+            # https://github.com/adsabs/oracle_service/issues/45
+            return []
+        else:
+            raise e.AdsApiError(r.response["error"])
 
     return r.response["bibcodes"]
 
@@ -73,6 +78,23 @@ def similar(
     top_n_reads=50,
     cutoff_days=7,
 ):
+    """Find papers similar to what the user reads
+
+    Note for this to work you must be "active" that is logged in ADS, and in the past 90
+    days active for at least 5 days.
+
+    https://github.com/adsabs/oracle_service/issues/45#issuecomment-1235830947
+
+    Args:
+        token (_type_): ADS token
+        sort (str, optional): Sort order, note this does not take a direction. Defaults to "first_author".
+        num_docs (int, optional): Maximum number of docs to return. Defaults to 20.
+        top_n_reads (int, optional): Number of records to use. Defaults to 50.
+        cutoff_days (int, optional): Days back to use for recommedations. Defaults to 7.
+
+    Returns:
+        _type_: _description_
+    """
     return _recommend(token, "similar", sort, num_docs, top_n_reads, cutoff_days)
 
 
@@ -83,6 +105,23 @@ def trending(
     top_n_reads=50,
     cutoff_days=7,
 ):
+    """Find trending papers based on what the user reads
+
+    Note for this to work you must be "active" that is logged in ADS, and in the past 90
+    days active for at least 5 days.
+
+    https://github.com/adsabs/oracle_service/issues/45#issuecomment-1235830947
+
+    Args:
+        token (_type_): ADS token
+        sort (str, optional): Sort order, note this does not take a direction. Defaults to "first_author".
+        num_docs (int, optional): Maximum number of docs to return. Defaults to 20.
+        top_n_reads (int, optional): Number of records to use. Defaults to 50.
+        cutoff_days (int, optional): Days back to use for recommedations. Defaults to 7.
+
+    Returns:
+        _type_: _description_
+    """
     return _recommend(token, "trending", sort, num_docs, top_n_reads, cutoff_days)
 
 
@@ -93,6 +132,23 @@ def reviews(
     top_n_reads=50,
     cutoff_days=7,
 ):
+    """Find reviews based on what the user reads
+
+    Note for this to work you must be "active" that is logged in ADS, and in the past 90
+    days active for at least 5 days.
+
+    https://github.com/adsabs/oracle_service/issues/45#issuecomment-1235830947
+
+    Args:
+        token (_type_): ADS token
+        sort (str, optional): Sort order, note this does not take a direction. Defaults to "first_author".
+        num_docs (int, optional): Maximum number of docs to return. Defaults to 20.
+        top_n_reads (int, optional): Number of records to use. Defaults to 50.
+        cutoff_days (int, optional): Days back to use for recommedations. Defaults to 7.
+
+    Returns:
+        _type_: _description_
+    """
     return _recommend(token, "reviews", sort, num_docs, top_n_reads, cutoff_days)
 
 
@@ -103,4 +159,21 @@ def useful(
     top_n_reads=50,
     cutoff_days=7,
 ):
+    """Find "usefull" papers based on what the user reads
+
+    Note for this to work you must be "active" that is logged in ADS, and in the past 90
+    days active for at least 5 days.
+
+    https://github.com/adsabs/oracle_service/issues/45#issuecomment-1235830947
+
+    Args:
+        token (_type_): ADS token
+        sort (str, optional): Sort order, note this does not take a direction. Defaults to "first_author".
+        num_docs (int, optional): Maximum number of docs to return. Defaults to 20.
+        top_n_reads (int, optional): Number of records to use. Defaults to 50.
+        cutoff_days (int, optional): Days back to use for recommedations. Defaults to 7.
+
+    Returns:
+        _type_: _description_
+    """
     return _recommend(token, "useful", sort, num_docs, top_n_reads, cutoff_days)
