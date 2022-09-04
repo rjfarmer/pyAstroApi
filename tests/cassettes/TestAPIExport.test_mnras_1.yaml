@@ -1,26 +1,29 @@
 interactions:
 - request:
-    body: null
+    body: '{"bibcode": ["2020ApJ...902L..36F"]}'
     headers:
       Accept:
-      - '*/*'
+      - application/json
       Accept-Encoding:
       - gzip, deflate, br
       Connection:
       - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
-    method: GET
-    uri: https://api.adsabs.harvard.edu/v1//export/mnras/2020ApJ...902L..36F
+    method: POST
+    uri: https://api.adsabs.harvard.edu/v1//export/mnras
   response:
     body:
-      string: '\bibitem[\protect\citeauthoryear{Farmer et al.}{2020}]{2020ApJ...902L..36F}
+      string: '{"msg": "Retrieved 1 abstracts, starting with number 1.", "export":
+        "\\bibitem[\\protect\\citeauthoryear{Farmer et al.}{2020}]{2020ApJ...902L..36F}
         Farmer R., Renzo M., de Mink S.~E., Fishbach M., Justham S., 2020, ApJL, 902,
-        L36. doi:10.3847/2041-8213/abbadd
-
-        '
+        L36. doi:10.3847/2041-8213/abbadd\n"}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -39,22 +42,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '188'
+      - '263'
       Content-Type:
-      - text/plain
+      - application/json
       Date:
-      - Sat, 06 Aug 2022 23:52:22 GMT
+      - Sun, 04 Sep 2022 15:28:28 GMT
       Retry-After:
-      - '84677'
+      - '84788'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4974'
+      - '4978'
       X-RateLimit-Reset:
-      - '1659914620'
+      - '1662390097'
     status:
       code: 200
       message: OK

@@ -51,24 +51,14 @@ def _export(token: str, bibcode: t.Union[str, t.List[str]], format: str) -> str:
     Returns:
         str: Export data
     """
-    if isinstance(bibcode, list):
-        url = urls.make_url(urls.urls["export"][format])
-        data = {"bibcode": bibcode}
-        r = http.post(token, url, data)
-
-    else:
-        url = urls.make_url(urls.urls["export"][format], bibcode)
-        r = http.get(token, url, json=False)
+    url = urls.make_url(urls.urls["export"][format])
+    data = {"bibcode": utils.ensure_list(bibcode)}
+    r = http.post(token, url, data)
 
     if r.status != 200:
         raise e.AdsApiError(r.response["error"])
 
-    if isinstance(bibcode, list):
-        result = r.response["export"]
-    else:
-        result = r.response
-
-    return result
+    return r.response["export"]
 
 
 def ads(token: str, bibcode: t.Union[str, t.List[str]]) -> _exportType:

@@ -1,37 +1,42 @@
 interactions:
 - request:
-    body: null
+    body: '{"bibcode": ["2020ApJ...902L..36F"]}'
     headers:
       Accept:
-      - '*/*'
+      - application/json
       Accept-Encoding:
       - gzip, deflate, br
       Connection:
       - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
-    method: GET
-    uri: https://api.adsabs.harvard.edu/v1//export/procite/2020ApJ...902L..36F
+    method: POST
+    uri: https://api.adsabs.harvard.edu/v1//export/procite
   response:
     body:
-      string: "TY  - Journal\nTI  - Constraints from Gravitational-wave Detections
-        of Binary Black Hole Mergers on the <SUP>12</SUP>C(\u03B1, \u03B3)<SUP>16</SUP>O
-        Rate\nAU  - Farmer, R.\nAU  - Renzo, M.\nAU  - de Mink, S. E.\nAU  - Fishbach,
-        M.\nAU  - Justham, S.\nAD  - AA(University of Amsterdam, Anton Pannekoek Institute
-        for Astronomy; Harvard Smithsonian Center for Astrophysics), AB(Center for
-        Computational Astrophysics, Flatiron Institute, New York), AC(University of
-        Amsterdam, Anton Pannekoek Institute for Astronomy; Harvard Smithsonian Center
-        for Astrophysics), AD(University of Chicago, Department of Astronomy and Astrophysics),
-        AE(University of Amsterdam, Anton Pannekoek Institute for Astronomy; University
-        of the Chinese Academy of Sciences, Beijing; CAS, National Astronomical Observatories)\nJO
-        \ - The Astrophysical Journal\nVL  - 902\nY1  - 2020/10/1\nSP  - L36\nKW  -
-        Stellar evolution/ Supernovae/ Core-collapse supernovae/ Nuclear\nastrophysics/
-        Stellar mass black holes/ Astrophysical black holes/\nMassive stars/ Late
-        stellar evolution/ 1599/ 1668/ 304/ 1129/ 1611/ 98/\n732/ 911/ Astrophysics
-        - High Energy Astrophysical Phenomena\nUR  - https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F\nN2
-        \ - Gravitational-wave detections are starting to allow us to probe the physical
+      string: '{"msg": "Retrieved 1 abstracts, starting with number 1.", "export":
+        "TY  - Journal\nTI  - Constraints from Gravitational-wave Detections of Binary
+        Black Hole Mergers on the <SUP>12</SUP>C(\u03b1, \u03b3)<SUP>16</SUP>O Rate\nAU  -
+        Farmer, R.\nAU  - Renzo, M.\nAU  - de Mink, S. E.\nAU  - Fishbach, M.\nAU  -
+        Justham, S.\nAD  - AA(University of Amsterdam, Anton Pannekoek Institute for
+        Astronomy; Harvard Smithsonian Center for Astrophysics), AB(Center for Computational
+        Astrophysics, Flatiron Institute, New York), AC(University of Amsterdam, Anton
+        Pannekoek Institute for Astronomy; Harvard Smithsonian Center for Astrophysics),
+        AD(University of Chicago, Department of Astronomy and Astrophysics), AE(University
+        of Amsterdam, Anton Pannekoek Institute for Astronomy; University of the Chinese
+        Academy of Sciences, Beijing; CAS, National Astronomical Observatories)\nJO  -
+        The Astrophysical Journal\nVL  - 902\nY1  - 2020/10/1\nSP  - L36\nKW  - Stellar
+        evolution/ Supernovae/ Core-collapse supernovae/ Nuclear\nastrophysics/ Stellar
+        mass black holes/ Astrophysical black holes/\nMassive stars/ Late stellar
+        evolution/ 1599/ 1668/ 304/ 1129/ 1611/ 98/\n732/ 911/ Astrophysics - High
+        Energy Astrophysical Phenomena\nUR  - https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F\nN2  -
+        Gravitational-wave detections are starting to allow us to probe the physical
         processes in the evolution of very massive stars through the imprints they
         leave on their final remnants. Stellar evolution theory predicts the existence
         of a gap in the black hole mass distribution at high mass due to the effects
@@ -47,14 +52,14 @@ interactions:
         detections of black holes, we constrain the astrophysical S-factor for ${}^{12}{\\rm{C}}{(\\alpha
         ,\\gamma )}^{16}{\\rm{O}}$ , at $300\\,\\mathrm{keV}$ , to ${S}_{300} 175\\,\\,{\\rm{keV}}\\,{\\rm{b}}$
         at 68% confidence. With ${ \\mathcal O }(50)$ detected binary black hole mergers,
-        we expect to constrain the S-factor to within \xB110-30 ${\\rm{keV}}\\,{\\rm{b}}$
+        we expect to constrain the S-factor to within \u00b110-30 ${\\rm{keV}}\\,{\\rm{b}}$
         . We also highlight a role for independent constraints from electromagnetic
         transient surveys. The unambiguous detection of pulsational pair-instability
         supernovae would imply that ${S}_{300} 79\\,{\\rm{keV}}\\,{\\rm{b}}$ . Degeneracies
         with other model uncertainties need to be investigated further, but probing
         nuclear stellar astrophysics poses a promising science case for the future
         gravitational-wave detectors.\nDO  - 10.3847/2041-8213/abbadd\nC1  - eprint:
-        arXiv:2006.06678\nSN  - 0004-637X\nER  -\n\n\n"
+        arXiv:2006.06678\nSN  - 0004-637X\nER  -\n\n\n"}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -73,22 +78,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '3050'
+      - '3188'
       Content-Type:
-      - text/plain
+      - application/json
       Date:
-      - Sat, 06 Aug 2022 23:52:16 GMT
+      - Sun, 04 Sep 2022 15:28:23 GMT
       Retry-After:
-      - '84683'
+      - '84794'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4984'
+      - '4988'
       X-RateLimit-Reset:
-      - '1659914620'
+      - '1662390098'
     status:
       code: 200
       message: OK

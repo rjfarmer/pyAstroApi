@@ -1,22 +1,27 @@
 interactions:
 - request:
-    body: null
+    body: '{"bibcode": ["2020ApJ...902L..36F"]}'
     headers:
       Accept:
-      - '*/*'
+      - application/json
       Accept-Encoding:
       - gzip, deflate, br
       Connection:
       - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
-    method: GET
-    uri: https://api.adsabs.harvard.edu/v1//export/votable/2020ApJ...902L..36F
+    method: POST
+    uri: https://api.adsabs.harvard.edu/v1//export/votable
   response:
     body:
-      string: "<?xml version='1.0' encoding='utf8'?>\n<!DOCTYPE VOTABLE SYSTEM \"http://cdsweb.u-strasbg.fr/xml/VOTable.dtd\"
+      string: '{"msg": "Retrieved 1 abstracts, starting with number 1.", "export":
+        "<?xml version=''1.0'' encoding=''utf8''?>\n<!DOCTYPE VOTABLE SYSTEM \"http://cdsweb.u-strasbg.fr/xml/VOTable.dtd\"
         >\n<VOTABLE version=\"1.1\">\n<DESCRIPTION>\n   Results generated from the
         NASA Astrophysics Data System: https://ui.adsabs.harvard.edu\n   For more
         information and support please contact ads@cfa.harvard.edu\n</DESCRIPTION>\n<RESOURCE
@@ -30,10 +35,10 @@ interactions:
         ID=\"date\" datatype=\"char\" arraysize=\"10\">\n<DESCRIPTION>Publication
         Date</DESCRIPTION>\n</FIELD>\n<FIELD ID=\"url\" datatype=\"char\" arraysize=\"*\">\n<DESCRIPTION>Resource
         URL</DESCRIPTION>\n</FIELD>\n<DATA>\n<TABLEDATA>\n<TR>\n<TD>2020ApJ...902L..36F</TD>\n<TD>Constraints
-        from Gravitational-wave Detections of Binary Black Hole Mergers on the &lt;SUP&gt;12&lt;/SUP&gt;C(\u03B1,
-        \u03B3)&lt;SUP&gt;16&lt;/SUP&gt;O Rate</TD>\n<TD>Farmer, R.; Renzo, M.; de
+        from Gravitational-wave Detections of Binary Black Hole Mergers on the &lt;SUP&gt;12&lt;/SUP&gt;C(\u03b1,
+        \u03b3)&lt;SUP&gt;16&lt;/SUP&gt;O Rate</TD>\n<TD>Farmer, R.; Renzo, M.; de
         Mink, S. E.; Fishbach, M.; Justham, S.</TD>\n<TD>The Astrophysical Journal
-        Letters, Volume 902, Issue 2, id.L36, 14 pp.</TD>\n<TD>2020-10-1</TD>\n<TD>https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F</TD>\n</TR>\n\n</TABLEDATA>\n</DATA>\n</TABLE>\n</RESOURCE>\n</VOTABLE>"
+        Letters, Volume 902, Issue 2, id.L36, 14 pp.</TD>\n<TD>2020-10-1</TD>\n<TD>https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F</TD>\n</TR>\n\n</TABLEDATA>\n</DATA>\n</TABLE>\n</RESOURCE>\n</VOTABLE>"}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -52,22 +57,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '1595'
+      - '1762'
       Content-Type:
-      - text/plain
+      - application/json
       Date:
-      - Sat, 06 Aug 2022 23:52:27 GMT
+      - Sun, 04 Sep 2022 15:28:35 GMT
       Retry-After:
-      - '84671'
+      - '84782'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4962'
+      - '4966'
       X-RateLimit-Reset:
-      - '1659914619'
+      - '1662390098'
     status:
       code: 200
       message: OK

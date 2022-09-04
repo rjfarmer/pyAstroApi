@@ -1,23 +1,28 @@
 interactions:
 - request:
-    body: null
+    body: '{"bibcode": ["2020ApJ...902L..36F"]}'
     headers:
       Accept:
-      - '*/*'
+      - application/json
       Accept-Encoding:
       - gzip, deflate, br
       Connection:
       - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
-    method: GET
-    uri: https://api.adsabs.harvard.edu/v1//export/endnote/2020ApJ...902L..36F
+    method: POST
+    uri: https://api.adsabs.harvard.edu/v1//export/endnote
   response:
     body:
-      string: "%0 Journal Article\n%T Constraints from Gravitational-wave Detections
-        of Binary Black Hole Mergers on the <SUP>12</SUP>C(\u03B1, \u03B3)<SUP>16</SUP>O
+      string: '{"msg": "Retrieved 1 abstracts, starting with number 1.", "export":
+        "%0 Journal Article\n%T Constraints from Gravitational-wave Detections of
+        Binary Black Hole Mergers on the <SUP>12</SUP>C(\u03b1, \u03b3)<SUP>16</SUP>O
         Rate\n%A Farmer, R.\n%A Renzo, M.\n%A de Mink, S. E.\n%A Fishbach, M.\n%A
         Justham, S.\n%+ AA(University of Amsterdam, Anton Pannekoek Institute for
         Astronomy; Harvard Smithsonian Center for Astrophysics), AB(Center for Computational
@@ -47,14 +52,14 @@ interactions:
         detections of black holes, we constrain the astrophysical S-factor for ${}^{12}{\\rm{C}}{(\\alpha
         ,\\gamma )}^{16}{\\rm{O}}$ , at $300\\,\\mathrm{keV}$ , to ${S}_{300} 175\\,\\,{\\rm{keV}}\\,{\\rm{b}}$
         at 68% confidence. With ${ \\mathcal O }(50)$ detected binary black hole mergers,
-        we expect to constrain the S-factor to within \xB110-30 ${\\rm{keV}}\\,{\\rm{b}}$
+        we expect to constrain the S-factor to within \u00b110-30 ${\\rm{keV}}\\,{\\rm{b}}$
         . We also highlight a role for independent constraints from electromagnetic
         transient surveys. The unambiguous detection of pulsational pair-instability
         supernovae would imply that ${S}_{300} 79\\,{\\rm{keV}}\\,{\\rm{b}}$ . Degeneracies
         with other model uncertainties need to be investigated further, but probing
         nuclear stellar astrophysics poses a promising science case for the future
         gravitational-wave detectors.\n%R 10.3847/2041-8213/abbadd\n%= eprint: arXiv:2006.06678\n%@
-        0004-637X\n\n\n"
+        0004-637X\n\n\n"}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -73,22 +78,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '3013'
+      - '3151'
       Content-Type:
-      - text/plain
+      - application/json
       Date:
-      - Sat, 06 Aug 2022 23:52:14 GMT
+      - Sun, 04 Sep 2022 15:28:21 GMT
       Retry-After:
-      - '84684'
+      - '84796'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4988'
+      - '4992'
       X-RateLimit-Reset:
-      - '1659914619'
+      - '1662390098'
     status:
       code: 200
       message: OK

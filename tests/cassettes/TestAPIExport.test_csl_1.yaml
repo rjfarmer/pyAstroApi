@@ -46,18 +46,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 20 Aug 2022 16:42:06 GMT
+      - Sun, 04 Sep 2022 15:28:37 GMT
       Retry-After:
-      - '83892'
+      - '84780'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4978'
+      - '4962'
       X-RateLimit-Reset:
-      - '1661097619'
+      - '1662390098'
     status:
       code: 200
       message: OK
