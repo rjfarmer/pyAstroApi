@@ -427,7 +427,7 @@ def custom(
     Args:
         token (str): ADSABS token
         bibcode (t.Union[str, t.List[str]]): Either a single bibcode or a list of bibcodes
-       format (str) : Format code to use
+        format (str) : Format code to use
 
     Returns:
         _exportType: Export data

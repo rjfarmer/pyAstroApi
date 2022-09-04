@@ -20,14 +20,15 @@ def matchdoc(
 ):
     url = urls.make_url(urls.urls["oracle"]["match"])
 
-    data = {}
-    data["abstract"] = abstract
-    data["title"] = title
-    data["author"] = author
-    data["year"] = year
-    data["doctype"] = doctype
-    data["match_doctype"] = match_doctype
-    data["mustmatch"] = must_match
+    data = {
+        "abstract": abstract,
+        "title": title,
+        "author": author,
+        "year": year,
+        "doctype": doctype,
+        "match_doctype": match_doctype,
+        "mustmatch": must_match,
+    }
 
     r = http.post(token, url, data=data, json=True)
 
