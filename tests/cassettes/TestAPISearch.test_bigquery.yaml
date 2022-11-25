@@ -22,9 +22,9 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//search/bigquery?q=%2A%3A%2A&fl=id%2Cbibcode%2Ctitle&rows=10
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":2,\n    \"params\":{\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":27,\n    \"params\":{\n
         \     \"q\":\"*:*\",\n      \"fl\":\"id,bibcode,title\",\n      \"start\":\"0\",\n
-        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62f3e6b8-7803402170bfb73e6646132e\",\n
+        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6380c548-114d30ac4263241071f6c3c3\",\n
         \     \"fq\":\"{!bitset}\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n
         \ \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n      {\n        \"bibcode\":\"2020ApJ...902L..36F\",\n
         \       \"id\":\"19493342\",\n        \"title\":[\"Constraints from Gravitational-wave
@@ -49,11 +49,11 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '689'
+      - '690'
       Content-Type:
       - application/json
       Date:
-      - Wed, 10 Aug 2022 17:11:20 GMT
+      - Fri, 25 Nov 2022 13:38:16 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin

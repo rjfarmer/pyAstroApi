@@ -41,18 +41,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 06 Aug 2022 22:37:15 GMT
+      - Fri, 25 Nov 2022 13:39:17 GMT
       Retry-After:
-      - '85973'
+      - '86399'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '500'
       X-RateLimit-Remaining:
-      - '496'
+      - '498'
       X-RateLimit-Reset:
-      - '1659911409'
+      - '1669469957'
     status:
       code: 400
       message: BAD REQUEST

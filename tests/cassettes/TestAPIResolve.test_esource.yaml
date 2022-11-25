@@ -5,11 +5,11 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.27.1
       authorization:
       - DUMMY
     method: GET
@@ -22,9 +22,9 @@ interactions:
         {"title": "https://arxiv.org/pdf/2006.06678", "url": "https://arxiv.org/pdf/2006.06678",
         "link_type": "ESOURCE|EPRINT_PDF"}, {"title": "https://doi.org/10.3847%2F2041-8213%2Fabbadd",
         "url": "https://doi.org/10.3847%2F2041-8213%2Fabbadd", "link_type": "ESOURCE|PUB_HTML"},
-        {"title": "http://iopscience.iop.org/article/10.3847/2041-8213/abbadd/pdf",
-        "url": "http://iopscience.iop.org/article/10.3847/2041-8213/abbadd/pdf", "link_type":
-        "ESOURCE|PUB_PDF"}]}}'
+        {"title": "https://iopscience.iop.org/article/10.3847/2041-8213/abbadd/pdf",
+        "url": "https://iopscience.iop.org/article/10.3847/2041-8213/abbadd/pdf",
+        "link_type": "ESOURCE|PUB_PDF"}]}}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -43,22 +43,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '710'
+      - '712'
       Content-Type:
       - application/json
       Date:
-      - Tue, 26 Jul 2022 16:38:21 GMT
+      - Fri, 25 Nov 2022 13:39:04 GMT
       Retry-After:
-      - '8'
+      - '72853'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4624'
+      - '4839'
       X-RateLimit-Reset:
-      - '1658853510'
+      - '1669456398'
     status:
       code: 200
       message: OK

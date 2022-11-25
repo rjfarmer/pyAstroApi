@@ -20,11 +20,11 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//metrics
   response:
     body:
-      string: '{"skipped bibcodes": ["2020zndo...3678482F"], "indicators": {"h": 1,
-        "g": 1, "i10": 1, "i100": 0, "m": 0.3333333333333333, "read10": 32.25581395348837,
-        "tori": 0.22456782808, "riq": 473}, "indicators refereed": {"h": 1, "g": 1,
-        "i10": 1, "i100": 0, "m": 0.3333333333333333, "read10": 32.25581395348837,
-        "tori": 0.22456782808, "riq": 473}}
+      string: '{"skipped bibcodes": [], "indicators": {"h": 2, "g": 2, "i10": 1, "i100":
+        1, "m": 0.6666666666666666, "read10": 40.161094224924014, "tori": 0.29402430428,
+        "riq": 542}, "indicators refereed": {"h": 1, "g": 1, "i10": 1, "i100": 1,
+        "m": 0.3333333333333333, "read10": 36.83282674772037, "tori": 0.25703339327999997,
+        "riq": 506}}
 
         '
     headers:
@@ -45,22 +45,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '339'
+      - '325'
       Content-Type:
       - application/json
       Date:
-      - Wed, 03 Aug 2022 00:53:22 GMT
+      - Fri, 25 Nov 2022 13:38:53 GMT
       Retry-After:
-      - '77363'
+      - '72939'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '984'
+      - '987'
       X-RateLimit-Reset:
-      - '1659565366'
+      - '1669456473'
     status:
       code: 200
       message: OK

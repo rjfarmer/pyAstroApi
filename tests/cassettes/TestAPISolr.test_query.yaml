@@ -5,7 +5,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -13,7 +13,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.27.1
       authorization:
       - DUMMY
     method: POST
@@ -45,18 +45,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 26 Jul 2022 16:38:16 GMT
+      - Fri, 25 Nov 2022 13:39:00 GMT
       Retry-After:
-      - '12'
+      - '72858'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4628'
+      - '4843'
       X-RateLimit-Reset:
-      - '1658853509'
+      - '1669456399'
     status:
       code: 200
       message: OK

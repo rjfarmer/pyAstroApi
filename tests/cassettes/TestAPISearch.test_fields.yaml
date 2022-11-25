@@ -5,20 +5,20 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.27.1
       authorization:
       - DUMMY
     method: GET
     uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:2020&fl=page,volume&fq=&start=0&rows=50
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":10,\n    \"params\":{\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":11,\n    \"params\":{\n
         \     \"q\":\"^farmer,r year:2020\",\n      \"fl\":\"page,volume\",\n      \"start\":\"0\",\n
-        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62e0185f-5a0b9ea8088956795489f6a3\",\n
+        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6380c546-4685e34174f136cc1019eff5\",\n
         \     \"fq\":\"\",\n      \"rows\":\"50\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
         \     {\n        \"page\":[\"L36\"],\n        \"volume\":\"902\"},\n      {}]\n
         \ }}\n"
@@ -44,18 +44,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 26 Jul 2022 16:37:51 GMT
+      - Fri, 25 Nov 2022 13:38:14 GMT
       Retry-After:
-      - '37'
+      - '72904'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4655'
+      - '4904'
       X-RateLimit-Reset:
-      - '1658853509'
+      - '1669456399'
     status:
       code: 200
       message: OK

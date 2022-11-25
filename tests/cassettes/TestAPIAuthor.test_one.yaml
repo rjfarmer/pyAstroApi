@@ -5,7 +5,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -13,33 +13,27 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.27.1
       authorization:
       - DUMMY
     method: POST
     uri: https://api.adsabs.harvard.edu/v1//author-affiliation/search
   response:
     body:
-      string: '{"data": [{"authorName": "Farmer, R.", "affiliations": {"name": "Anton
-        Pannekoek Institute for Astronomy and GRAPPA, University of Amsterdam, NL-1090
-        GE Amsterdam, The Netherlands; Center for Astrophysics \u2223 Harvard &amp;
-        Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA", "years": ["2020"],
-        "lastActiveDate": "2020/10"}}, {"authorName": "Fishbach, M.", "affiliations":
-        {"name": "Department of Astronomy and Astrophysics, University of Chicago,
-        Chicago, IL 60637, USA", "years": ["2020"], "lastActiveDate": "2020/10"}},
-        {"authorName": "Justham, S.", "affiliations": {"name": "Anton Pannekoek Institute
-        for Astronomy and GRAPPA, University of Amsterdam, NL-1090 GE Amsterdam, The
-        Netherlands; School of Astronomy &amp; Space Science, University of the Chinese
-        Academy of Sciences, Beijing 100012, People''s Republic of China; National
-        Astronomical Observatories, Chinese Academy of Sciences, Beijing 100012, People''s
-        Republic of China", "years": ["2020"], "lastActiveDate": "2020/10"}}, {"authorName":
-        "Renzo, M.", "affiliations": {"name": "Center for Computational Astrophysics,
-        Flatiron Institute, New York, NY 10010, USA", "years": ["2020"], "lastActiveDate":
-        "2020/10"}}, {"authorName": "de Mink, S. E.", "affiliations": {"name": "Anton
-        Pannekoek Institute for Astronomy and GRAPPA, University of Amsterdam, NL-1090
-        GE Amsterdam, The Netherlands; Center for Astrophysics \u2223 Harvard &amp;
-        Smithsonian, 60 Garden Street, Cambridge, MA 02138, USA", "years": ["2020"],
-        "lastActiveDate": "2020/10"}}]}'
+      string: '{"data": [{"authorName": "Farmer, R.", "affiliations": {"name": "University
+        of Amsterdam, Anton Pannekoek Institute for Astronomy; Harvard Smithsonian
+        Center for Astrophysics", "years": ["2020"], "lastActiveDate": "2020/10/01"}},
+        {"authorName": "Fishbach, M.", "affiliations": {"name": "University of Chicago,
+        Department of Astronomy and Astrophysics", "years": ["2020"], "lastActiveDate":
+        "2020/10/01"}}, {"authorName": "Justham, S.", "affiliations": {"name": "University
+        of Amsterdam, Anton Pannekoek Institute for Astronomy; University of the Chinese
+        Academy of Sciences, Beijing; CAS, National Astronomical Observatories", "years":
+        ["2020"], "lastActiveDate": "2020/10/01"}}, {"authorName": "Renzo, M.", "affiliations":
+        {"name": "Center for Computational Astrophysics, Flatiron Institute, New York",
+        "years": ["2020"], "lastActiveDate": "2020/10/01"}}, {"authorName": "de Mink,
+        S. E.", "affiliations": {"name": "University of Amsterdam, Anton Pannekoek
+        Institute for Astronomy; Harvard Smithsonian Center for Astrophysics", "years":
+        ["2020"], "lastActiveDate": "2020/10/01"}}]}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -58,22 +52,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '1513'
+      - '1081'
       Content-Type:
       - application/json
       Date:
-      - Tue, 26 Jul 2022 16:38:13 GMT
+      - Fri, 25 Nov 2022 13:38:56 GMT
       Retry-After:
-      - '84909'
+      - '72940'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '100'
       X-RateLimit-Remaining:
-      - '81'
+      - '94'
       X-RateLimit-Reset:
-      - '1658938403'
+      - '1669456477'
     status:
       code: 200
       message: OK

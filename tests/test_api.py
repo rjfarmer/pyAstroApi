@@ -23,6 +23,8 @@ import pyastroapi.api.exceptions as e
 import pytest
 import tempfile
 import os
+import random
+import string
 
 token = t.get_token()
 
@@ -270,36 +272,56 @@ class TestAPILib:
         assert "id" in r["libraries"][0]
 
     def test_permissions(self):
-        r = lib.get_permissions(token, "qf-C6Zi-Tyad2vqJPS-I4g")
+
+        name = "".join(random.choices(string.ascii_uppercase + string.digits, k=10))
+
+        lib_new = lib.new(token, name)
+
+        r = lib.get_permissions(token, lib_new["id"])
 
         assert r == [{"robert.j.farmer37@gmail.com": ["owner"]}]
+        lib.delete(token, lib_new["id"])
 
     def test_get(self):
-        r = list(lib.get(token, "qf-C6Zi-Tyad2vqJPS-I4g"))
+
+        name = "".join(random.choices(string.ascii_uppercase + string.digits, k=10))
+
+        lib_new = lib.new(token, name)
+        lib.add(token, lib_new["id"], "2021ApJ...923..214F")
+
+        r = list(lib.get(token, lib_new["id"]))
 
         assert len(r) > 0
 
         assert len(r[0]) == 19  # Got a bibcode like string
+        lib.delete(token, lib_new["id"])
 
     def test_add_remove(self):
-        r = list(lib.get(token, "qf-C6Zi-Tyad2vqJPS-I4g"))
 
-        lib.add(token, "qf-C6Zi-Tyad2vqJPS-I4g", "2021ApJ...923..214F")
+        name = "".join(random.choices(string.ascii_uppercase + string.digits, k=10))
 
-        r2 = list(lib.get(token, "qf-C6Zi-Tyad2vqJPS-I4g"))
+        lib_new = lib.new(token, name)
+        r = list(lib.get(token, lib_new["id"]))
+
+        lib.add(token, lib_new["id"], "2021ApJ...923..214F")
+
+        r2 = list(lib.get(token, lib_new["id"]))
 
         assert len(r) == len(r2) - 1  # We added one new bibcode
 
-        lib.remove(token, "qf-C6Zi-Tyad2vqJPS-I4g", "2021ApJ...923..214F")
+        lib.remove(token, lib_new["id"], "2021ApJ...923..214F")
 
-        r3 = list(lib.get(token, "qf-C6Zi-Tyad2vqJPS-I4g"))
+        r3 = list(lib.get(token, lib_new["id"]))
 
         assert len(r) == len(r3)  # Then we removed it
+        lib.delete(token, lib_new["id"])
 
     def test_make_new_and_del(self):
         r = lib.list_all(token)
 
-        lib_new = lib.new(token, "test_123465789")
+        name = "".join(random.choices(string.ascii_uppercase + string.digits, k=10))
+
+        lib_new = lib.new(token, name)
 
         r2 = lib.list_all(token)
 
@@ -311,7 +333,7 @@ class TestAPILib:
         for i in r2["libraries"]:
             if i["id"] == lib_new["id"]:
                 in_lib = True
-            if i["name"] == "test_123465789":
+            if i["name"] == name:
                 check_name = True
 
         assert in_lib
@@ -350,7 +372,7 @@ class TestAPIMetrics:
     def test_skip(self):
         r = metrics.citations(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
 
-        assert r["skipped bibcodes"][0] == "2020zndo...3678482F"
+        assert len(r["skipped bibcodes"]) == 0
 
     def test_multi(self):
         r = metrics.basic(token, ["2020ApJ...902L..36F", "2019ApJ...887...53F"])
@@ -365,17 +387,15 @@ class TestAPIMetrics:
     def test_indicators(self):
         r = metrics.indicators(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
 
-        assert r["skipped bibcodes"] == ["2020zndo...3678482F"]
+        assert "indicators" in r
 
     def test_timseries(self):
         r = metrics.timeseries(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
 
-        assert r["skipped bibcodes"] == ["2020zndo...3678482F"]
+        assert "time series" in r
 
     def test_histogram(self):
         r = metrics.histograms(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
-
-        assert r["skipped bibcodes"] == ["2020zndo...3678482F"]
 
         assert "reads" in r["histograms"]
 
@@ -387,7 +407,8 @@ class TestAPIMetrics:
     def test_detail(self):
         r = metrics.detail(token, ["2020ApJ...902L..36F", "2020zndo...3678482F"])
 
-        assert r["skipped bibcodes"][0] == "2020zndo...3678482F"
+        assert "2020zndo...3678482F" in r
+        assert "2020ApJ...902L..36F" in r
 
 
 @pytest.mark.vcr()
@@ -402,7 +423,7 @@ class TestAPIAuthor:
     def test_multi(self):
         r = author.search(token, ["2019ApJ...887...53F", "2020ApJ...902L..36F"])
 
-        assert len(r) == 10
+        assert len(r) == 8
 
         assert "authorName" in r[0]
 

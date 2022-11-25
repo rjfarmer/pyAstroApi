@@ -5,7 +5,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -13,7 +13,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.27.1
       authorization:
       - DUMMY
     method: POST
@@ -21,14 +21,14 @@ interactions:
   response:
     body:
       string: '{"msg": {"start": 0, "rows": 2, "numFound": 2}, "data": {"fullGraph":
-        {"nodes": [{"read_count": 65, "nodeName": "2019ApJ...887...53F", "title":
+        {"nodes": [{"read_count": 43, "nodeName": "2019ApJ...887...53F", "title":
         "Mind the Gap: The Location of the Lower Edge of the Pair-instability Supernova
-        Black Hole Mass Gap", "first_author": "Farmer, R.", "citation_count": 167,
-        "year": "2019", "nodeWeight": 167}, {"read_count": 44, "nodeName": "2020ApJ...902L..36F",
+        Black Hole Mass Gap", "first_author": "Farmer, R.", "citation_count": 194,
+        "year": "2019", "nodeWeight": 194}, {"read_count": 27, "nodeName": "2020ApJ...902L..36F",
         "title": "Constraints from Gravitational-wave Detections of Binary Black Hole
         Mergers on the <SUP>12</SUP>C(\u03b1, \u03b3)<SUP>16</SUP>O Rate", "first_author":
-        "Farmer, R.", "citation_count": 96, "year": "2020", "nodeWeight": 96}], "links":
-        []}}}
+        "Farmer, R.", "citation_count": 108, "year": "2020", "nodeWeight": 108}],
+        "links": []}}}
 
         '
     headers:
@@ -49,22 +49,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '637'
+      - '639'
       Content-Type:
       - application/json
       Date:
-      - Tue, 26 Jul 2022 16:38:22 GMT
+      - Fri, 25 Nov 2022 13:39:12 GMT
       Retry-After:
-      - '84898'
+      - '72920'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '944'
+      - '981'
       X-RateLimit-Reset:
-      - '1658938401'
+      - '1669456473'
     status:
       code: 200
       message: OK

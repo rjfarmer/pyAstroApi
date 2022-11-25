@@ -5,35 +5,35 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.27.1
       authorization:
       - DUMMY
     method: GET
     uri: https://api.adsabs.harvard.edu/v1//search/query/?q=Farmer,r%20year:2021&fl=title&fq=&start=0&rows=10
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":57,\n    \"params\":{\n
-        \     \"q\":\"Farmer,r year:2021\",\n      \"fl\":\"title\",\n      \"start\":\"0\",\n
-        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62e0187e-4f81f1381ecc5bc474e653d3\",\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":397,\n
+        \   \"params\":{\n      \"q\":\"Farmer,r year:2021\",\n      \"fl\":\"title\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6380c589-36635e802f6195723c942960\",\n
         \     \"fq\":\"\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":162,\"start\":0,\"docs\":[\n
         \     {\n        \"title\":[\"The Cosmic Carbon Footprint of Massive Stars
         Stripped in Binary Systems\"]},\n      {\n        \"title\":[\"Different to
         the core: The pre-supernova structures of massive single and binary-stripped
-        stars\"]},\n      {\n        \"title\":[\"rjfarmer/mesaplot: Release: v2.0.3\"]},\n
-        \     {\n        \"title\":[\"rjfarmer/mesaplot: Release v1.1.0\"]},\n      {\n
+        stars\"]},\n      {\n        \"title\":[\"rjfarmer/mesaplot: Release v1.1.0\"]},\n
+        \     {\n        \"title\":[\"rjfarmer/mesaplot: Release: v2.0.3\"]},\n      {\n
         \       \"title\":[\"evbauer/MESA-Docker: MESA r21.12.1\"]},\n      {\n        \"title\":[\"Prevention
         Is Better Than Cure: Experimental Evidence From Milk Fever Incidence in Dairy
         Animals of Haryana, India\"]},\n      {\n        \"title\":[\"Is organic farming
-        environmentally more friendly?\"]},\n      {\n        \"title\":[\"The efficiency
-        of dryland farming in Panggang Forest KPH Yogyakarta\"]},\n      {\n        \"title\":[\"Soil
-        trace gas fluxes from secondary forest converted to small-scale vegetable
-        farms on an Andosol soil\"]},\n      {\n        \"title\":[\"The role of cooperatives
-        in marketing arabica coffee: A case study of the Benteng Alla Farmers\u2019
-        cooperative in Enrekang Regency, South Sulawesi, Indonesia\"]}]\n  }}\n"
+        environmentally more friendly?\"]},\n      {\n        \"title\":[\"Soil trace
+        gas fluxes from secondary forest converted to small-scale vegetable farms
+        on an Andosol soil\"]},\n      {\n        \"title\":[\"The efficiency of dryland
+        farming in Panggang Forest KPH Yogyakarta\"]},\n      {\n        \"title\":[\"Chili
+        double fold production technology as promising innovation for increasing farmer
+        income in Gorontalo, Indonesia\"]}]\n  }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -52,22 +52,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '1407'
+      - '1368'
       Content-Type:
       - application/json
       Date:
-      - Tue, 26 Jul 2022 16:38:22 GMT
+      - Fri, 25 Nov 2022 13:39:22 GMT
       Retry-After:
-      - '6'
+      - '72836'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4623'
+      - '4818'
       X-RateLimit-Reset:
-      - '1658853509'
+      - '1669456399'
     status:
       code: 200
       message: OK

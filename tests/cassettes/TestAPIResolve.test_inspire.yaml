@@ -39,18 +39,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 09 Aug 2022 22:56:19 GMT
+      - Fri, 25 Nov 2022 13:39:08 GMT
       Retry-After:
-      - '86066'
+      - '72850'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4991'
+      - '4832'
       X-RateLimit-Reset:
-      - '1660171846'
+      - '1669456399'
     status:
       code: 404
       message: NOT FOUND

@@ -5,7 +5,7 @@ interactions:
       Accept:
       - application/json
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -13,25 +13,25 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.27.1
       authorization:
       - DUMMY
     method: POST
     uri: https://api.adsabs.harvard.edu/v1//metrics
   response:
     body:
-      string: '{"skipped bibcodes": ["2020zndo...3678482F"], "citation stats": {"number
-        of citing papers": 96, "number of self-citations": 0, "self-citations": [],
-        "total number of citations": 96, "average number of citations": 96.0, "median
-        number of citations": 96.0, "normalized number of citations": 19.2, "total
-        number of refereed citations": 69, "average number of refereed citations":
-        69.0, "median number of refereed citations": 69.0, "normalized number of refereed
-        citations": 13.8}, "citation stats refereed": {"number of citing papers":
-        96, "number of self-citations": 0, "total number of citations": 96, "average
-        number of citations": 96.0, "median number of citations": 96.0, "normalized
-        number of citations": 19.2, "total number of refereed citations": 69, "average
-        number of refereed citations": 69.0, "median number of refereed citations":
-        69.0, "normalized number of refereed citations": 13.8}}
+      string: '{"skipped bibcodes": [], "citation stats": {"number of citing papers":
+        111, "number of self-citations": 0, "self-citations": [], "total number of
+        citations": 111, "average number of citations": 55.5, "median number of citations":
+        55.5, "normalized number of citations": 24.6, "total number of refereed citations":
+        83, "average number of refereed citations": 41.5, "median number of refereed
+        citations": 41.5, "normalized number of refereed citations": 18.2}, "citation
+        stats refereed": {"number of citing papers": 108, "number of self-citations":
+        0, "total number of citations": 108, "average number of citations": 108.0,
+        "median number of citations": 108.0, "normalized number of citations": 21.6,
+        "total number of refereed citations": 81, "average number of refereed citations":
+        81.0, "median number of refereed citations": 81.0, "normalized number of refereed
+        citations": 16.2}}
 
         '
     headers:
@@ -52,22 +52,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '897'
+      - '882'
       Content-Type:
       - application/json
       Date:
-      - Tue, 26 Jul 2022 16:38:12 GMT
+      - Fri, 25 Nov 2022 13:38:52 GMT
       Retry-After:
-      - '84907'
+      - '72940'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '947'
+      - '989'
       X-RateLimit-Reset:
-      - '1658938400'
+      - '1669456473'
     status:
       code: 200
       message: OK

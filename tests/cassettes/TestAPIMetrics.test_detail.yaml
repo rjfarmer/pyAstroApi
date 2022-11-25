@@ -20,10 +20,13 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//metrics/detail
   response:
     body:
-      string: '{"skipped bibcodes": ["2020zndo...3678482F"], "2020ApJ...902L..36F":
-        {"citations": {"2020": 15, "2021": 39, "2022": 41}, "ref_citations": {"2020":
-        13, "2021": 31, "2022": 26}, "reads": {"2020": 359, "2021": 234, "2022": 95},
-        "downloads": {"2020": 187, "2021": 117, "2022": 54}}}
+      string: '{"skipped bibcodes": [], "2020ApJ...902L..36F": {"citations": {"2020":
+        15, "2021": 36, "2022": 57}, "ref_citations": {"2020": 13, "2021": 31, "2022":
+        37}, "reads": {"2020": 359, "2021": 234, "2022": 166}, "downloads": {"2020":
+        187, "2021": 117, "2022": 94}}, "2020zndo...3678482F": {"citations": {"2020":
+        3, "2021": 0, "2022": 0}, "ref_citations": {"2020": 2, "2021": 0, "2022":
+        0}, "reads": {"2020": 9, "2021": 8, "2022": 3}, "downloads": {"2020": 3, "2021":
+        3, "2022": 2}}}
 
         '
     headers:
@@ -44,22 +47,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '279'
+      - '476'
       Content-Type:
       - application/json
       Date:
-      - Wed, 03 Aug 2022 00:58:31 GMT
+      - Fri, 25 Nov 2022 13:38:55 GMT
       Retry-After:
-      - '77054'
+      - '72937'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '978'
+      - '983'
       X-RateLimit-Reset:
-      - '1659565366'
+      - '1669456473'
     status:
       code: 200
       message: OK

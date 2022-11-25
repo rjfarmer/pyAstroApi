@@ -5,11 +5,11 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.1
+      - python-requests/2.27.1
       authorization:
       - DUMMY
     method: GET
@@ -18,7 +18,7 @@ interactions:
     body:
       string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":1,\n    \"params\":{\n
         \     \"q\":\"identifier:2021ApJ...923..214F\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62e01884-238770076cc5e6cf395c3bcf\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6380c58f-06434f9f221bfb6c54dae46d\",\n
         \     \"fq\":\"\",\n      \"rows\":\"1\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":1,\"start\":0,\"docs\":[\n
         \     {\n        \"bibcode\":\"2021ApJ...923..214F\",\n        \"abstract\":\"The
         cosmic origin of carbon, a fundamental building block of life, is still uncertain.
@@ -92,7 +92,7 @@ interactions:
         \         \"2020MNRAS.492.2578S\",\n          \"2020MNRAS.499..873S\",\n          \"2021A&A...645A...5S\",\n
         \         \"2021A&A...656A..58L\",\n          \"2021A&A...656L..19Z\",\n          \"2021ApJ...916L...5V\",\n
         \         \"2021ApJ...921...73G\",\n          \"2021MNRAS.501.2745M\",\n          \"2022ApJ...931...85B\"],\n
-        \       \"citation_count\":2}]\n  }}\n"
+        \       \"citation_count\":6}]\n  }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -115,18 +115,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 26 Jul 2022 16:38:28 GMT
+      - Fri, 25 Nov 2022 13:39:27 GMT
       Retry-After:
-      - '0'
+      - '72830'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4614'
+      - '4810'
       X-RateLimit-Reset:
-      - '1658853509'
+      - '1669456398'
     status:
       code: 200
       message: OK

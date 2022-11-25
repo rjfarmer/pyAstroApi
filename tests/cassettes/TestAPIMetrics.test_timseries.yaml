@@ -20,11 +20,11 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//metrics
   response:
     body:
-      string: '{"skipped bibcodes": ["2020zndo...3678482F"], "time series": {"i10":
-        {"2020": 1, "2021": 1, "2022": 1}, "i100": {"2020": 0, "2021": 0, "2022":
-        0}, "h": {"2020": 1, "2021": 1, "2022": 1}, "g": {"2020": 1, "2021": 1, "2022":
-        1}, "read10": {"2020": 71.8, "2021": 46.8, "2022": 32.25581395348837}, "tori":
-        {"2020": 0.05664579458000001, "2021": 0.12677851082, "2022": 0.22456782808}}}
+      string: '{"skipped bibcodes": [], "time series": {"i10": {"2020": 1, "2021":
+        1, "2022": 1}, "i100": {"2020": 0, "2021": 0, "2022": 1}, "h": {"2020": 2,
+        "2021": 2, "2022": 2}, "g": {"2020": 2, "2021": 2, "2022": 2}, "read10": {"2020":
+        80.8, "2021": 54.8, "2022": 40.161094224924014}, "tori": {"2020": 0.09358191498,
+        "2021": 0.15907031752, "2022": 0.29402430428}}}
 
         '
     headers:
@@ -45,22 +45,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '380'
+      - '354'
       Content-Type:
       - application/json
       Date:
-      - Wed, 03 Aug 2022 00:53:22 GMT
+      - Fri, 25 Nov 2022 13:38:54 GMT
       Retry-After:
-      - '77363'
+      - '72938'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '983'
+      - '986'
       X-RateLimit-Reset:
-      - '1659565366'
+      - '1669456473'
     status:
       code: 200
       message: OK

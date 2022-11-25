@@ -16,9 +16,9 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//search/query/?q=bibcode:2021ApJ...923..214F&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0&rows=1
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":3,\n    \"params\":{\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":1,\n    \"params\":{\n
         \     \"q\":\"bibcode:2021ApJ...923..214F\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-62f01a05-0d6ceb8673476b5e72b4e573\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6380c590-1650f3250c08b2ef5bcd9183\",\n
         \     \"fq\":\"\",\n      \"rows\":\"1\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":1,\"start\":0,\"docs\":[\n
         \     {\n        \"bibcode\":\"2021ApJ...923..214F\",\n        \"abstract\":\"The
         cosmic origin of carbon, a fundamental building block of life, is still uncertain.
@@ -92,7 +92,7 @@ interactions:
         \         \"2020MNRAS.492.2578S\",\n          \"2020MNRAS.499..873S\",\n          \"2021A&A...645A...5S\",\n
         \         \"2021A&A...656A..58L\",\n          \"2021A&A...656L..19Z\",\n          \"2021ApJ...916L...5V\",\n
         \         \"2021ApJ...921...73G\",\n          \"2021MNRAS.501.2745M\",\n          \"2022ApJ...931...85B\"],\n
-        \       \"citation_count\":2}]\n  }}\n"
+        \       \"citation_count\":6}]\n  }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -115,18 +115,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 07 Aug 2022 20:01:09 GMT
+      - Fri, 25 Nov 2022 13:39:28 GMT
       Retry-After:
-      - '12149'
+      - '72830'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4955'
+      - '4809'
       X-RateLimit-Reset:
-      - '1659914619'
+      - '1669456399'
     status:
       code: 200
       message: OK
