@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: GET
@@ -109,7 +109,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:53:49 GMT
+      - Sun, 27 Nov 2022 10:02:34 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -117,7 +117,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"name": "VP27UJTD8Y"}'
+    body: '{"name": "30HVQWBMP6"}'
     headers:
       Accept:
       - application/json
@@ -130,14 +130,14 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: POST
     uri: https://api.adsabs.harvard.edu/v1//biblib/libraries
   response:
     body:
-      string: '{"name": "VP27UJTD8Y", "id": "nbgu_3j0RcWRMknNS-S_aQ", "description":
+      string: '{"name": "30HVQWBMP6", "id": "nOCn5J6wRsqBzpz3DBNc4Q", "description":
         "My ADS library"}
 
         '
@@ -163,7 +163,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:53:50 GMT
+      - Sun, 27 Nov 2022 10:02:35 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -180,7 +180,7 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: GET
@@ -238,16 +238,16 @@ interactions:
         {"name": "ccsn2", "id": "uPlJy8NwSXa15RFsba2dSQ", "description": "My ADS library",
         "num_documents": 25, "date_created": "2021-08-11T14:25:35.242268", "date_last_modified":
         "2022-01-19T12:33:59.985104", "permission": "owner", "public": false, "num_users":
-        1, "owner": "robert.j.farmer37"}, {"name": "VP27UJTD8Y", "id": "nbgu_3j0RcWRMknNS-S_aQ",
-        "description": "My ADS library", "num_documents": 0, "date_created": "2022-11-25T13:53:50.084858",
-        "date_last_modified": "2022-11-25T13:53:50.084865", "permission": "owner",
-        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "97DI73GH3E",
-        "id": "SmIpeqeKRBOND-Ixq1MKbw", "description": "My ADS library", "num_documents":
-        0, "date_created": "2022-11-25T13:51:55.812778", "date_last_modified": "2022-11-25T13:51:55.812784",
+        1, "owner": "robert.j.farmer37"}, {"name": "97DI73GH3E", "id": "SmIpeqeKRBOND-Ixq1MKbw",
+        "description": "My ADS library", "num_documents": 0, "date_created": "2022-11-25T13:51:55.812778",
+        "date_last_modified": "2022-11-25T13:51:55.812784", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "64CMMUKT68",
+        "id": "lIlbzEukRhmhOpX5zrvnfQ", "description": "My ADS library", "num_documents":
+        1, "date_created": "2022-11-25T13:50:38.395176", "date_last_modified": "2022-11-25T13:50:38.957229",
         "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
-        {"name": "64CMMUKT68", "id": "lIlbzEukRhmhOpX5zrvnfQ", "description": "My
-        ADS library", "num_documents": 1, "date_created": "2022-11-25T13:50:38.395176",
-        "date_last_modified": "2022-11-25T13:50:38.957229", "permission": "owner",
+        {"name": "30HVQWBMP6", "id": "nOCn5J6wRsqBzpz3DBNc4Q", "description": "My
+        ADS library", "num_documents": 0, "date_created": "2022-11-27T10:02:35.356448",
+        "date_last_modified": "2022-11-27T10:02:35.356453", "permission": "owner",
         "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "Untitled
         Library 1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library",
         "num_documents": 52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified":
@@ -283,7 +283,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:53:51 GMT
+      - Sun, 27 Nov 2022 10:02:36 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -302,11 +302,11 @@ interactions:
       Content-Length:
       - '0'
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: DELETE
-    uri: https://api.adsabs.harvard.edu/v1//biblib/documents/nbgu_3j0RcWRMknNS-S_aQ
+    uri: https://api.adsabs.harvard.edu/v1//biblib/documents/nOCn5J6wRsqBzpz3DBNc4Q
   response:
     body:
       string: '{}
@@ -334,7 +334,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:53:51 GMT
+      - Sun, 27 Nov 2022 10:02:37 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -351,7 +351,7 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: GET
@@ -451,7 +451,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:53:53 GMT
+      - Sun, 27 Nov 2022 10:02:38 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
