@@ -120,7 +120,7 @@ class article:
 
                 x = list(
                     pyastroapi.search(
-                        query=f"bibcode:{self.bibcode}",
+                        query=f"identifier:{self.bibcode}",
                         limit=1,
                         fields=fields,
                     )
@@ -134,8 +134,8 @@ class article:
         if self.bibcode is not None:
             return f"identifier:{self.bibcode}"
 
-        if "indentifier" in self._data:
-            return f"identifier:{self.self._data['indentifier']}"
+        if "identifier" in self._data:
+            return f"identifier:{self.self._data['identifier']}"
 
         if "alternate_bibcode" in self._data:
             return f"identifier:{self.self._data['alternate_bibcode']}"
@@ -454,7 +454,7 @@ class journal:
         return key in self._data
 
     def __iter__(self):
-        yield from self._data
+        yield from self.values()
 
     def __dir__(self):
         return list(self.keys()) + list(self.__dict__.keys()) + list(_search._fields)

@@ -13,7 +13,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: POST
@@ -21,17 +21,17 @@ interactions:
   response:
     body:
       string: '{"skipped bibcodes": [], "citation stats": {"number of citing papers":
-        108, "number of self-citations": 0, "self-citations": [], "total number of
-        citations": 108, "average number of citations": 108.0, "median number of citations":
-        108.0, "normalized number of citations": 21.6, "total number of refereed citations":
-        81, "average number of refereed citations": 81.0, "median number of refereed
-        citations": 81.0, "normalized number of refereed citations": 16.2}, "citation
-        stats refereed": {"number of citing papers": 108, "number of self-citations":
-        0, "total number of citations": 108, "average number of citations": 108.0,
-        "median number of citations": 108.0, "normalized number of citations": 21.6,
-        "total number of refereed citations": 81, "average number of refereed citations":
-        81.0, "median number of refereed citations": 81.0, "normalized number of refereed
-        citations": 16.2}}
+        109, "number of self-citations": 0, "self-citations": [], "total number of
+        citations": 109, "average number of citations": 109.0, "median number of citations":
+        109.0, "normalized number of citations": 21.8, "total number of refereed citations":
+        82, "average number of refereed citations": 82.0, "median number of refereed
+        citations": 82.0, "normalized number of refereed citations": 16.4}, "citation
+        stats refereed": {"number of citing papers": 109, "number of self-citations":
+        0, "total number of citations": 109, "average number of citations": 109.0,
+        "median number of citations": 109.0, "normalized number of citations": 21.8,
+        "total number of refereed citations": 82, "average number of refereed citations":
+        82.0, "median number of refereed citations": 82.0, "normalized number of refereed
+        citations": 16.4}}
 
         '
     headers:
@@ -56,18 +56,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:38:51 GMT
+      - Sun, 27 Nov 2022 10:44:43 GMT
       Retry-After:
-      - '72941'
+      - '85456'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '991'
+      - '985'
       X-RateLimit-Reset:
-      - '1669456473'
+      - '1669631340'
     status:
       code: 200
       message: OK

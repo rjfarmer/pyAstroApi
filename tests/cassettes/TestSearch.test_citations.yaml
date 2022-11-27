@@ -9,16 +9,16 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=citations(2021ApJ...923..214F)&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0&rows=50
+    uri: https://api.adsabs.harvard.edu/v1//search/query?q=citations%282021ApJ...923..214F%29&fl=abstract%2Cauthor%2Cbibcode%2Cpubdate%2Ctitle%2Cpub%2Cyear%2Ccitation_count&fq=&start=0&rows=50
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":36,\n    \"params\":{\n
-        \     \"q\":\"citations(2021ApJ...923..214F)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6380c58a-48d9829a0c9891e06cf167ab\",\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":45,\n    \"params\":{\n
+        \     \"q\":\"citations(2021ApJ...923..214F)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63833fbb-18868c3f69d5aa7e2a063964\",\n
         \     \"fq\":\"\",\n      \"rows\":\"50\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":6,\"start\":0,\"docs\":[\n
         \     {\n        \"bibcode\":\"2022A&ARv..30....7R\",\n        \"abstract\":\"After
         hydrogen and helium, oxygen, carbon, and nitrogen\u2014hereinafter, the CNO
@@ -42,173 +42,6 @@ interactions:
         more direct estimates from the starlight are unfeasible.\",\n        \"author\":[\"Romano,
         Donatella\"],\n        \"pub\":\"Astronomy and Astrophysics Review\",\n        \"pubdate\":\"2022-12-00\",\n
         \       \"title\":[\"The evolution of CNO elements in galaxies\"],\n        \"year\":\"2022\",\n
-        \       \"reference\":[\"1939PhRv...55..434B\",\n          \"1952ApJ...115..326S\",\n
-        \         \"1954ApJS....1..121H\",\n          \"1955ApJ...121..161S\",\n          \"1955ApJ...122..271F\",\n
-        \         \"1955PhRv...97.1237S\",\n          \"1957IAUS....3...77G\",\n          \"1957RvMP...29..547B\",\n
-        \         \"1958ApJ...128..348S\",\n          \"1965MNRAS.130..223R\",\n          \"1970ApJ...160..641M\",\n
-        \         \"1971Ap&SS..10..340C\",\n          \"1971Ap&SS..14..179T\",\n          \"1972ApJ...176..169S\",\n
-        \         \"1973ApJ...184..493A\",\n          \"1974ApJ...189..493S\",\n          \"1974ApJ...194L..67D\",\n
-        \         \"1975A&A....43...71A\",\n          \"1975ApJ...199..591S\",\n          \"1976A&A....52....1V\",\n
-        \         \"1976MNRAS.176...31L\",\n          \"1978ApJ...219..595F\",\n          \"1978ApJ...220..516P\",\n
-        \         \"1978ApJ...223..557D\",\n          \"1978ApJ...226..186S\",\n          \"1978MNRAS.182..249L\",\n
-        \         \"1978MNRAS.183..341W\",\n          \"1978MNRAS.183..515B\",\n          \"1978MNRAS.185P..77E\",\n
-        \         \"1979A&A....78L...1E\",\n          \"1979ApJ...229.1046T\",\n          \"1982ApJ...254..699T\",\n
-        \         \"1983A&A...123....1B\",\n          \"1983A&A...123..121M\",\n          \"1983ApJ...272...99W\",\n
-        \         \"1984ARNPS..34...53T\",\n          \"1985A&A...145..179L\",\n          \"1985ApJ...290..154L\",\n
-        \         \"1985ApJ...291..812K\",\n          \"1985MNRAS.217..391M\",\n          \"1986ApJ...310..222P\",\n
-        \         \"1986MNRAS.221..911M\",\n          \"1987A&A...188...49R\",\n          \"1988A&A...197...33T\",\n
-        \         \"1989GeCoA..53..197A\",\n          \"1989MNRAS.239..885M\",\n          \"1990ApJ...363..142G\",\n
-        \         \"1991A&A...247L..37M\",\n          \"1991A&A...249..323A\",\n          \"1991A&ARv...3....1T\",\n
-        \         \"1991AJ....102..951T\",\n          \"1992A&A...260...58P\",\n          \"1992A&A...264...55C\",\n
-        \         \"1992A&A...264..105M\",\n          \"1993A&A...274..730H\",\n          \"1993A&A...277...42P\",\n
-        \         \"1993ApJ...413..641V\",\n          \"1993MNRAS.263..817C\",\n          \"1994A&A...285..132P\",\n
-        \         \"1994A&A...288...57M\",\n          \"1994ARA&A..32..191W\",\n          \"1994ApJ...434..306G\",\n
-        \         \"1994MNRAS.270...35M\",\n          \"1995A&A...295..715V\",\n          \"1995A&A...300..369A\",\n
-        \         \"1995AJ....109..173M\",\n          \"1995ApJ...442L..21B\",\n          \"1995ApJ...444..318M\",\n
-        \         \"1995ApJ...445...98C\",\n          \"1995ApJS..101..181W\",\n          \"1996A&A...309..760P\",\n
-        \         \"1996A&AS..117..113G\",\n          \"1996ASPC...92..307G\",\n          \"1996ApJ...460..408T\",\n
-        \         \"1997A&AS..123..305V\",\n          \"1997ApJ...475..754G\",\n          \"1997ApJ...477..765C\",\n
-        \         \"1997MNRAS.285..403G\",\n          \"1997PASP..109..226C\",\n          \"1997RvMP...69..995W\",\n
-        \         \"1997nceg.book.....P\",\n          \"1998A&A...332..493H\",\n          \"1998A&A...334..953V\",\n
-        \         \"1998A&A...338..161F\",\n          \"1998ApJ...494..680J\",\n          \"1998ApJ...494L..45P\",\n
-        \         \"1998ApJ...507..805I\",\n          \"1999A&A...346..428P\",\n          \"1999A&A...352..117R\",\n
-        \         \"1999AJ....117..492B\",\n          \"1999ApJ...511..639I\",\n          \"1999ApJ...516..114P\",\n
-        \         \"1999MNRAS.303..157H\",\n          \"1999MNRAS.307..857B\",\n          \"2000A&A...353..349B\",\n
-        \         \"2000A&A...355..929P\",\n          \"2000A&A...358..433M\",\n          \"2000AJ....120.1579Y\",\n
-        \         \"2000ARA&A..38..143M\",\n          \"2000ApJ...541..660H\",\n          \"2000MNRAS.313..338P\",\n
-        \         \"2000SPIE.4008..534D\",\n          \"2001A&A...367..457C\",\n          \"2001A&A...369..339P\",\n
-        \         \"2001A&A...370..194M\",\n          \"2001AIPC..598...23H\",\n          \"2001ApJ...551..687M\",\n
-        \         \"2001ApJ...551..833I\",\n          \"2001ApJ...554.1044C\",\n          \"2001MNRAS.322..800R\",\n
-        \         \"2002A&A...381L..25M\",\n          \"2002A&A...387..507M\",\n          \"2002A&A...390..561M\",\n
-        \         \"2002ARA&A..40..487F\",\n          \"2002ApJ...567..643K\",\n          \"2002ApJ...578..855U\",\n
-        \         \"2003ARA&A..41...57L\",\n          \"2003ApJ...591..288H\",\n          \"2003ApJ...594L.123L\",\n
-        \         \"2003MNRAS.339...63C\",\n          \"2003MNRAS.342..185R\",\n          \"2003Msngr.114...20M\",\n
-        \         \"2004A&A...414..931A\",\n          \"2004A&A...415..103P\",\n          \"2004A&A...417..751A\",\n
-        \         \"2004A&A...420..625I\",\n          \"2004AJ....127.2069M\",\n          \"2004ApJ...612.1044P\",\n
-        \         \"2004MNRAS.350..407I\",\n          \"2004NewAR..48..861D\",\n          \"2005A&A...430..655S\",\n
-        \         \"2005A&A...431..693A\",\n          \"2005A&A...432..861G\",\n          \"2005A&A...433.1013H\",\n
-        \         \"2005A&A...437..957P\",\n          \"2005A&A...442..587V\",\n          \"2005AJ....129.2692W\",\n
-        \         \"2005ARA&A..43..387G\",\n          \"2005ARA&A..43..531B\",\n          \"2005ARA&A..43..769V\",\n
-        \         \"2005ApJ...623..398Y\",\n          \"2005ApJ...634.1126M\",\n          \"2005sao..conf..203K\",\n
-        \         \"2006A&A...447L..21L\",\n          \"2006A&A...449L..27C\",\n          \"2006A&A...450..345K\",\n
-        \         \"2006A&A...455..291S\",\n          \"2006A&A...458..417M\",\n          \"2006A&A...459..125S\",\n
-        \         \"2006ApJ...639..897A\",\n          \"2006ApJ...647..483L\",\n          \"2006ApJS..162..346R\",\n
-        \         \"2006ApJS..165..618A\",\n          \"2006MNRAS.365..759R\",\n          \"2006MNRAS.367.1181B\",\n
-        \         \"2006NewA...11..306B\",\n          \"2006NuPhA.777..254B\",\n          \"2006PASP..118.1494G\",\n
-        \         \"2006PhRvC..73b5802H\",\n          \"2007A&A...461..571H\",\n          \"2007A&A...464..667G\",\n
-        \         \"2007A&A...467L..15C\",\n          \"2007A&A...475L..19L\",\n          \"2007A&A...476..841R\",\n
-        \         \"2007A&A...476L..29C\",\n          \"2007ApJ...655..492A\",\n          \"2007ApJ...660..516T\",\n
-        \         \"2007ApJ...661L..25L\",\n          \"2007ApJ...664..416B\",\n          \"2007ApJ...671..802B\",\n
-        \         \"2007MNRAS.375.1280S\",\n          \"2007PASA...24..103K\",\n          \"2007PhR...442..269W\",\n
-        \         \"2008A&A...479L...9C\",\n          \"2008A&A...480..379P\",\n          \"2008A&A...487..237W\",\n
-        \         \"2008A&A...488..463M\",\n          \"2008A&A...488.1031C\",\n          \"2008A&A...489..685E\",\n
-        \         \"2008ApJ...675..281M\",\n          \"2008ApJ...675..614P\",\n          \"2008ApJ...677..581E\",\n
-        \         \"2008ApJ...685..508J\",\n          \"2009A&A...498..877C\",\n          \"2009A&A...505..497Y\",\n
-        \         \"2009A&A...505..605C\",\n          \"2009ARA&A..47...63S\",\n          \"2009ARA&A..47..371T\",\n
-        \         \"2009ApJ...690..580W\",\n          \"2009ApJ...692.1532S\",\n          \"2009ApJ...695..208W\",\n
-        \         \"2009ApJ...696..797C\",\n          \"2009ApJ...696.1823D\",\n          \"2009ApJ...699...66C\",\n
-        \         \"2009ApJ...704.1174P\",\n          \"2009ApJ...704L..66M\",\n          \"2009MNRAS.396.2313S\",\n
-        \         \"2009MNRAS.399.1191C\",\n          \"2009Natur.461...66M\",\n          \"2009pfer.book.....M\",\n
-        \         \"2010A&A...511L..10N\",\n          \"2010A&A...512A..10S\",\n          \"2010A&A...513L...5C\",\n
-        \         \"2010A&A...514A..92C\",\n          \"2010A&A...515A..68M\",\n          \"2010A&A...516A.111H\",\n
-        \         \"2010A&A...520A..35M\",\n          \"2010A&A...520A..55Y\",\n          \"2010A&A...521A...9C\",\n
-        \         \"2010A&A...522A..32R\",\n          \"2010A&A...522A..62M\",\n          \"2010ARA&A..48..339B\",\n
-        \         \"2010ARNPS..60..381W\",\n          \"2010AdAst2010E...3C\",\n          \"2010ApJ...713..374K\",\n
-        \         \"2010ApJ...720..666E\",\n          \"2010ApJ...723..563D\",\n          \"2010ApJ...723.1255R\",\n
-        \         \"2010ApJ...724..341H\",\n          \"2010ApJS..190....1R\",\n          \"2010MNRAS.403.1413K\",\n
-        \         \"2010MNRAS.408.2476V\",\n          \"2011A&A...527A..36M\",\n          \"2011A&A...528A..30C\",\n
-        \         \"2011A&A...531A..72S\",\n          \"2011ApJ...729....3P\",\n          \"2011ApJS..192....3P\",\n
-        \         \"2011ApJS..197...17C\",\n          \"2011MNRAS.410.2760V\",\n          \"2011MNRAS.414.3231K\",\n
-        \         \"2011Natur.477...67C\",\n          \"2011RAA....11..787T\",\n          \"2011Sci...332.1533M\",\n
-        \         \"2011SoPh..268..255C\",\n          \"2012A&A...541A...4G\",\n          \"2012A&ARv..20...56C\",\n
-        \         \"2012ARA&A..50..107L\",\n          \"2012ApJ...747....2L\",\n          \"2012ApJ...761...33L\",\n
-        \         \"2012ApJS..199...38L\",\n          \"2012M&PS...47.2031N\",\n          \"2012MNRAS.421.1908J\",\n
-        \         \"2012MNRAS.425.1934F\",\n          \"2012MNRAS.427.1463Z\",\n          \"2012Natur.486..375B\",\n
-        \         \"2012RAA....12..723Z\",\n          \"2012Sci...337..444S\",\n          \"2013A&A...553A...1M\",\n
-        \         \"2013A&A...554A.126C\",\n          \"2013A&ARv..21...63T\",\n          \"2013AJ....146....3S\",\n
-        \         \"2013ARA&A..51..457N\",\n          \"2013ApJ...762...27Y\",\n          \"2013ApJ...764...21C\",\n
-        \         \"2013ApJ...765...46A\",\n          \"2013ApJ...774L..10K\",\n          \"2013ApJ...777..126S\",\n
-        \         \"2013MNRAS.431.3642V\",\n          \"2013MNRAS.433.1114Y\",\n          \"2013MNRAS.436.2793D\",\n
-        \         \"2013Msngr.154...47R\",\n          \"2013RvMP...85..809K\",\n          \"2014A&A...562A..71B\",\n
-        \         \"2014A&A...562A.146I\",\n          \"2014A&A...563A..67L\",\n          \"2014A&A...564L..15A\",\n
-        \         \"2014A&A...565A...3H\",\n          \"2014A&A...567A...5R\",\n          \"2014A&A...568A..25N\",\n
-        \         \"2014A&A...568A.122Z\",\n          \"2014A&A...572A..33M\",\n          \"2014ARA&A..52..487S\",\n
-        \         \"2014ApJ...780...33C\",\n          \"2014ApJ...782...68T\",\n          \"2014ApJ...785...98T\",\n
-        \         \"2014ApJ...785..149S\",\n          \"2014ApJ...788....4W\",\n          \"2014ApJ...788..153P\",\n
-        \         \"2014ApJ...788L..37G\",\n          \"2014ApJ...795..107M\",\n          \"2014ApJ...796...38N\",\n
-        \         \"2014ApJ...796L..15S\",\n          \"2014ApJ...797...44F\",\n          \"2014MNRAS.437..195D\",\n
-        \         \"2014MNRAS.437.3274V\",\n          \"2014MNRAS.441..582D\",\n          \"2014MNRAS.445.2378D\",\n
-        \         \"2014PASA...31...30K\",\n          \"2014PrPNP..78....1F\",\n          \"2014RMxAA..50..271R\",\n
-        \         \"2014mcp..book..181Z\",\n          \"2015A&A...574A.129S\",\n          \"2015A&A...576A..89B\",\n
-        \         \"2015A&A...576A..99R\",\n          \"2015A&A...579A..28B\",\n          \"2015A&A...582A..91C\",\n
-        \         \"2015A&A...583A..87S\",\n          \"2015ARA&A..53..631F\",\n          \"2015ApJ...801..125K\",\n
-        \         \"2015ApJ...807..184F\",\n          \"2015ApJ...808..132H\",\n          \"2015ApJ...808L..43P\",\n
-        \         \"2015ApJ...810...34W\",\n          \"2015ApJ...815L..17M\",\n          \"2015ApJS..219...40C\",\n
-        \         \"2015MNRAS.446.2599D\",\n          \"2015MNRAS.449.2604D\",\n          \"2015MNRAS.454.1320S\",\n
-        \         \"2015NatGe...8..515F\",\n          \"2015Natur.522..455C\",\n          \"2015ads..book.....M\",\n
-        \         \"2016A&A...585A..70L\",\n          \"2016A&A...585A.120S\",\n          \"2016A&A...586A..45S\",\n
-        \         \"2016A&A...588A..37H\",\n          \"2016A&A...590A..74B\",\n          \"2016A&A...591A..69S\",\n
-        \         \"2016A&A...594A..70K\",\n          \"2016A&A...595A...1G\",\n          \"2016A&A...595A..28C\",\n
-        \         \"2016A&A...595A..96W\",\n          \"2016ARA&A..54...53N\",\n          \"2016ApJ...825...26K\",\n
-        \         \"2016ApJ...826L..27A\",\n          \"2016ApJ...829...94N\",\n          \"2016ApJS..225...24P\",\n
-        \         \"2016MNRAS.458.3466V\",\n          \"2016MNRAS.463.3461S\",\n          \"2016PASJ...68...89M\",\n
-        \         \"2016PhRvL.117n2502B\",\n          \"2016RAA....16...47L\",\n          \"2016SPIE.9908E..84R\",\n
-        \         \"2017A&A...597A..82N\",\n          \"2017A&A...598A.128S\",\n          \"2017A&A...599A..96S\",\n
-        \         \"2017A&A...599L...5G\",\n          \"2017A&A...600A..71D\",\n          \"2017A&A...607A.126Y\",\n
-        \         \"2017A&A...608A..94S\",\n          \"2017AJ....154...94M\",\n          \"2017ApJ...835..128C\",\n
-        \         \"2017ApJ...844...98M\",\n          \"2017ApJ...848...85J\",\n          \"2017ApJS..230...15M\",\n
-        \         \"2017LRCA....3....1K\",\n          \"2017MNRAS.470..401R\",\n          \"2017MNRAS.472.3637G\",\n
-        \         \"2017NatAs...1E..27L\",\n          \"2017PASA...34....1D\",\n          \"2017PASA...34...56D\",\n
-        \         \"2017RSOS....470192S\",\n          \"2018A&A...610L..16V\",\n          \"2018A&A...618A..78H\",\n
-        \         \"2018A&A...618A.102M\",\n          \"2018A&A...620A..39J\",\n          \"2018A&ARv..26....1H\",\n
-        \         \"2018A&ARv..26....5C\",\n          \"2018A&ARv..26....6N\",\n          \"2018AJ....156...58B\",\n
-        \         \"2018AJ....156..171L\",\n          \"2018ApJ...860..159T\",\n          \"2018ApJ...861..146Y\",\n
-        \         \"2018ApJ...862...45S\",\n          \"2018ApJ...868..117S\",\n          \"2018ApJS..234...19F\",\n
-        \         \"2018ApJS..237...13L\",\n          \"2018MNRAS.474.3629G\",\n          \"2018MNRAS.475.2282V\",\n
-        \         \"2018MNRAS.476.3432P\",\n          \"2018MNRAS.477..421K\",\n          \"2018MNRAS.477.5072M\",\n
-        \         \"2018MNRAS.478..155V\",\n          \"2018MNRAS.478.2315E\",\n          \"2018MNRAS.478.3693C\",\n
-        \         \"2018MNRAS.479.2202H\",\n          \"2018MNRAS.480..538R\",\n          \"2018MNRAS.481.2570G\",\n
-        \         \"2018NatAs...2..176C\",\n          \"2018Natur.558..260Z\",\n          \"2018Natur.563...85H\",\n
-        \         \"2018PASA...35...39H\",\n          \"2018PASA...35...46B\",\n          \"2019A&A...621A..24L\",\n
-        \         \"2019A&A...622A..74J\",\n          \"2019A&A...623A..60S\",\n          \"2019A&A...623A..99G\",\n
-        \         \"2019A&A...625A.120B\",\n          \"2019A&A...629A..62C\",\n          \"2019A&A...630A.104A\",\n
-        \         \"2019A&A...630A.140R\",\n          \"2019A&ARv..27....3M\",\n          \"2019ARA&A..57..375S\",\n
-        \         \"2019ARA&A..57..571J\",\n          \"2019ApJ...871L...3C\",\n          \"2019ApJ...874...93B\",\n
-        \         \"2019ApJ...878...49W\",\n          \"2019ApJ...879...17B\",\n          \"2019ApJ...881L..35S\",\n
-        \         \"2019ApJ...882...18A\",\n          \"2019ApJ...883...19A\",\n          \"2019ApJ...886...74M\",\n
-        \         \"2019ApJ...886...84G\",\n          \"2019ApJ...887...72L\",\n          \"2019ApJS..245...34X\",\n
-        \         \"2019MNRAS.482.3892A\",\n          \"2019MNRAS.485.5543C\",\n          \"2019MNRAS.486.4671M\",\n
-        \         \"2019MNRAS.487.4261S\",\n          \"2019MNRAS.487.5363M\",\n          \"2019MNRAS.489.1082B\",\n
-        \         \"2019MNRAS.490.2838R\",\n          \"2019NatAs...3..717M\",\n          \"2019NatAs...3..932G\",\n
-        \         \"2019RMxAA..55..255P\",\n          \"2019arXiv191200844L\",\n          \"2020A&A...633A..23D\",\n
-        \         \"2020A&A...634A...5J\",\n          \"2020A&A...637A..68Y\",\n          \"2020A&A...639A..37R\",\n
-        \         \"2020A&A...641A.103V\",\n          \"2020AJ....159..199D\",\n          \"2020ARA&A..58..577S\",\n
-        \         \"2020ApJ...888...55F\",\n          \"2020ApJ...889...34L\",\n          \"2020ApJ...890...66K\",\n
-        \         \"2020ApJ...890..155E\",\n          \"2020ApJ...895...70S\",\n          \"2020ApJ...895...88N\",\n
-        \         \"2020ApJ...898...58W\",\n          \"2020ApJ...898...97B\",\n          \"2020ApJ...900..179K\",\n
-        \         \"2020ApJS..249....6Z\",\n          \"2020MNRAS.495.3636M\",\n          \"2020MNRAS.496.1051A\",\n
-        \         \"2020MNRAS.498.1710P\",\n          \"2020MNRAS.499.2196B\",\n          \"2020PhRvL.125r2701K\",\n
-        \         \"2020RSOS....700556H\",\n          \"2021A&A...645A...5S\",\n          \"2021A&A...645A..10G\",\n
-        \         \"2021A&A...650A.203G\",\n          \"2021A&A...652A..97S\",\n          \"2021A&A...653A..72R\",\n
-        \         \"2021A&A...653A.141A\",\n          \"2021A&A...655A...6V\",\n          \"2021A&A...655A..19Y\",\n
-        \         \"2021A&A...655A..99D\",\n          \"2021A&A...655A.117B\",\n          \"2021A&A...656A..76Z\",\n
-        \         \"2021A&A...656A.156Q\",\n          \"2021A&ARv..29....5M\",\n          \"2021AJ....161....9F\",\n
-        \         \"2021ARA&A..59..337D\",\n          \"2021ApJ...912...19D\",\n          \"2021ApJ...912..106Y\",\n
-        \         \"2021ApJ...915L..30S\",\n          \"2021ApJ...922...55B\",\n          \"2021ApJ...923..214F\",\n
-        \         \"2021ExA....51..963M\",\n          \"2021FrASS...8....6R\",\n          \"2021MNRAS.501.5176K\",\n
-        \         \"2021MNRAS.502....1J\",\n          \"2021MNRAS.502..225A\",\n          \"2021MNRAS.503.5826A\",\n
-        \         \"2021MNRAS.504.1657K\",\n          \"2021MNRAS.504.4400O\",\n          \"2021MNRAS.507.5882S\",\n
-        \         \"2021MNRAS.508..719G\",\n          \"2021NatAs...5..903H\",\n          \"2021Natur.589...29B\",\n
-        \         \"2021Univ....7...25B\",\n          \"2021Univ....8....4A\",\n          \"2022A&A...657A..28Y\",\n
-        \         \"2022A&A...657A.136E\",\n          \"2022A&A...660A..76F\",\n          \"2022A&A...661A.140M\",\n
-        \         \"2022A&A...666A.120G\",\n          \"2022A&A...666A.121R\",\n          \"2022ARA&A..60..203V\",\n
-        \         \"2022ApJ...926...70W\",\n          \"2022ApJ...929..134X\",\n          \"2022ApJ...931...92E\",\n
-        \         \"2022ApJ...936..117R\",\n          \"2022ApJ...937...64K\",\n          \"2022JPhG...49a0501A\",\n
-        \         \"2022MNRAS.509.1175K\",\n          \"2022MNRAS.509.2940P\",\n          \"2022MNRAS.509.4430K\",\n
-        \         \"2022MNRAS.510..373A\",\n          \"2022MNRAS.510.1557C\",\n          \"2022MNRAS.510.4436M\",\n
-        \         \"2022MNRAS.510.4689V\",\n          \"2022MNRAS.512.2867H\",\n          \"2022MNRAS.513.1317Z\",\n
-        \         \"2022MNRAS.517..582E\",\n          \"2022MNRAS.517.2343B\",\n          \"2022NatAs...6...48A\",\n
-        \         \"2022arXiv220301980K\",\n          \"2022arXiv220605534G\"],\n
         \       \"citation_count\":1},\n      {\n        \"bibcode\":\"2021A&A...656A..58L\",\n
         \       \"abstract\":\"The majority of massive stars live in binary or multiple
         systems and will interact with a companion during their lifetimes, which helps
@@ -241,51 +74,6 @@ interactions:
         Mink, S. E.\"],\n        \"pub\":\"Astronomy and Astrophysics\",\n        \"pubdate\":\"2021-12-00\",\n
         \       \"title\":[\"Different to the core: The pre-supernova structures of
         massive single and binary-stripped stars\"],\n        \"year\":\"2021\",\n
-        \       \"reference\":[\"1957RvMP...29..547B\",\n          \"1958ZA.....46..108B\",\n
-        \         \"1967ZA.....65..251K\",\n          \"1968Ap&SS...2...96F\",\n          \"1968pss..book.....C\",\n
-        \         \"1973NInfo..27....3T\",\n          \"1985ApJ...294L..17W\",\n          \"1985ApJ...295..604T\",\n
-        \         \"1986A&A...165...95H\",\n          \"1987A&A...188...49R\",\n          \"1988A&AS...72..259D\",\n
-        \         \"1989A&A...210...93L\",\n          \"1989A&A...220..135L\",\n          \"1991A&A...248..531L\",\n
-        \         \"1991A&A...252..669L\",\n          \"1991PhR...203....1B\",\n          \"1992ApJ...391..246P\",\n
-        \         \"1993ApJ...411..823W\",\n          \"1993ApJ...412..752I\",\n          \"1993PhR...227...65W\",\n
-        \         \"1994ApJ...433L..41B\",\n          \"1995ApJ...448..315W\",\n          \"1995MNRAS.274..964P\",\n
-        \         \"1996ApJ...460..869H\",\n          \"1996ApJ...463..297B\",\n          \"1996ApJ...464..943I\",\n
-        \         \"1996MNRAS.281..257T\",\n          \"1998ApJ...496..316B\",\n          \"1998MNRAS.298..525P\",\n
-        \         \"1999A&A...350..148W\",\n          \"1999ApJS..124..241T\",\n          \"1999NewA....4..313B\",\n
-        \         \"1999NuPhA.656....3A\",\n          \"2000A&A...360..227N\",\n          \"2000ApJS..129..377T\",\n
-        \         \"2000MNRAS.315..543H\",\n          \"2001A&A...369..574V\",\n          \"2001NewA....6..457B\",\n
-        \         \"2002ApJ...576..323R\",\n          \"2002MNRAS.329..897H\",\n          \"2002PASA...19..233P\",\n
-        \         \"2002RvMP...74.1015W\",\n          \"2003MNRAS.344..629D\",\n          \"2004ApJ...612.1044P\",\n
-        \         \"2005ApJ...623..585F\",\n          \"2006A&A...452..295E\",\n          \"2006MNRAS.368.1742D\",\n
-        \         \"2007PhR...442..269W\",\n          \"2008A&A...485..245G\",\n          \"2008AIPC..990..230D\",\n
-        \         \"2008ApJ...675..614P\",\n          \"2008SerAJ.176....1I\",\n          \"2009ARA&A..47..481A\",\n
-        \         \"2010ApJ...725..940Y\",\n          \"2011A&A...530A.115B\",\n          \"2011ApJ...730...70O\",\n
-        \         \"2011ApJS..192....3P\",\n          \"2012ApJ...749...91F\",\n          \"2012ApJ...749...98T\",\n
-        \         \"2012ApJ...757...69U\",\n          \"2012MNRAS.423.3397S\",\n          \"2012Sci...337..444S\",\n
-        \         \"2013ApJ...772..150J\",\n          \"2013ApJ...778L...7C\",\n          \"2013ApJS..208....4P\",\n
-        \         \"2014ARA&A..52..487S\",\n          \"2014ApJ...783...10S\",\n          \"2015ApJ...801L..24M\",\n
-        \         \"2015ApJ...807L..31L\",\n          \"2015ApJ...809...30A\",\n          \"2015ApJ...813...74J\",\n
-        \         \"2015ApJS..220...15P\",\n          \"2015MNRAS.451.2123T\",\n          \"2015MNRAS.453..287M\",\n
-        \         \"2015PASA...32...15Y\",\n          \"2016ApJ...818....3K\",\n          \"2016ApJ...818..124E\",\n
-        \         \"2016ApJ...831...98R\",\n          \"2016ApJ...833..133T\",\n          \"2016ApJS..227...22F\",\n
-        \         \"2016PhRvL.116f1102A\",\n          \"2017A&A...603A.118R\",\n          \"2017A&A...607L...8V\",\n
-        \         \"2017A&A...608A..11G\",\n          \"2017ApJ...840...10Y\",\n          \"2017MNRAS.470.1642F\",\n
-        \         \"2017PASP..129j4502K\",\n          \"2017PhRvL.119p1101A\",\n          \"2018ApJ...852...28S\",\n
-        \         \"2018ApJ...853...62T\",\n          \"2018ApJ...855L...3O\",\n          \"2018ApJ...860...93S\",\n
-        \         \"2018ApJS..234...34P\",\n          \"2018MNRAS.473.1695C\",\n          \"2018MNRAS.474L...1R\",\n
-        \         \"2018MNRAS.476.1853F\",\n          \"2018MNRAS.477.3091V\",\n          \"2018MNRAS.477L..80K\",\n
-        \         \"2018MNRAS.481.1908K\",\n          \"2018Natur.561..498J\",\n          \"2018PASA...35...49E\",\n
-        \         \"2019A&A...625A.132S\",\n          \"2019ApJ...878...49W\",\n          \"2019ApJ...881...16Y\",\n
-        \         \"2019ApJ...882...36M\",\n          \"2019ApJ...887...53F\",\n          \"2019ApJS..243...10P\",\n
-        \         \"2019MNRAS.482..351V\",\n          \"2019MNRAS.484.3307M\",\n          \"2019MNRAS.486.4451G\",\n
-        \         \"2019NatAs...3..717M\",\n          \"2019PASP..131a8002B\",\n          \"2020A&A...637A...6L\",\n
-        \         \"2020A&A...642A..33D\",\n          \"2020ApJ...890...43C\",\n          \"2020ApJ...890...51E\",\n
-        \         \"2020ApJ...890...94Y\",\n          \"2020ApJ...901...33F\",\n          \"2020ApJ...901..114A\",\n
-        \         \"2020ApJ...902L..36F\",\n          \"2020MNRAS.491..972A\",\n          \"2020MNRAS.491.2715B\",\n
-        \         \"2020MNRAS.497.4644M\",\n          \"2020MNRAS.499..873S\",\n          \"2020MNRAS.499.2803P\",\n
-        \         \"2020MNRAS.499.3214M\",\n          \"2021A&A...645A...5S\",\n          \"2021ApJ...908...44Y\",\n
-        \         \"2021ApJ...916L...5V\",\n          \"2021ApJ...923..214F\",\n          \"2021MNRAS.500.1380M\",\n
-        \         \"2021Natur.589...29B\",\n          \"2022A&C....3800516L\"],\n
         \       \"citation_count\":35},\n      {\n        \"bibcode\":\"2022ApJ...932...26T\",\n
         \       \"abstract\":\"We present a study of the Galactic supernova remnant
         (SNR) G292.0+1.8, a classic example of a core-collapse SNR that contains oxygen-rich
@@ -313,59 +101,27 @@ interactions:
         \         \"Renzo, Mathieu\",\n          \"Jacovich, Taylor\"],\n        \"pub\":\"The
         Astrophysical Journal\",\n        \"pubdate\":\"2022-06-00\",\n        \"title\":[\"SNR
         G292.0+1.8: A Remnant of a Low-mass Progenitor Stripped-envelope Supernova\"],\n
-        \       \"year\":\"2022\",\n        \"reference\":[\"1979MNRAS.188..357G\",\n
-        \         \"1979MNRAS.189..501M\",\n          \"1981PASJ...33....1I\",\n          \"1981PASJ...33..521I\",\n
-        \         \"1984ApJ...282..142D\",\n          \"1986PASJ...38..717I\",\n          \"1990ApJ...348..169B\",\n
-        \         \"1993ApJS...88..589B\",\n          \"1994ApJ...420..213K\",\n          \"1994ApJ...422..126H\",\n
-        \         \"1995ApJ...439..381S\",\n          \"1996ApJ...460..869H\",\n          \"1996ApJ...471..352K\",\n
-        \         \"1998A&A...330.1047T\",\n          \"1999ApJS..120..299T\",\n          \"2000ApJ...537..667B\",\n
-        \         \"2000ApJS..126..501T\",\n          \"2001ApJ...559L.153H\",\n          \"2001ApJ...563..806B\",\n
-        \         \"2002ApJ...567..314P\",\n          \"2002ApJ...567L..71C\",\n          \"2003ApJ...583L..91G\",\n
-        \         \"2003ApJ...594..326G\",\n          \"2004ApJ...610..275P\",\n          \"2004ApJ...612.1044P\",\n
-        \         \"2005ApJ...619..839C\",\n          \"2005ApJ...635..365G\",\n          \"2006AJ....132..360W\",\n
-        \         \"2006ApJ...640..891Y\",\n          \"2006NuPhA.777..424N\",\n          \"2007ApJ...670L.121P\",\n
-        \         \"2007Sci...315.1103M\",\n          \"2008Sci...320.1195K\",\n          \"2009ApJ...692.1489W\",\n
-        \         \"2009ApJ...696.1307G\",\n          \"2009ApJ...703.2051G\",\n          \"2009ApJ...706..441L\",\n
-        \         \"2009MNRAS.399..515M\",\n          \"2009PhDT.........1E\",\n          \"2010A&A...509A..59D\",\n
-        \         \"2010ApJ...711..861L\",\n          \"2011ApJ...741...97D\",\n          \"2012ApJ...750...39G\",\n
-        \         \"2012Sci...337..444S\",\n          \"2013MNRAS.429.1324S\",\n          \"2013Sci...342.1346K\",\n
-        \         \"2014ARA&A..52..487S\",\n          \"2014PASJ...66...64K\",\n          \"2014RAA....14.1279Y\",\n
-        \         \"2015A&A...574A..60T\",\n          \"2015A&A...582A..56D\",\n          \"2015ApJ...800...65B\",\n
-        \         \"2015ApJ...803..101P\",\n          \"2015ApJ...806..153Y\",\n          \"2015ApJ...808..100T\",\n
-        \         \"2015ApJ...814...63M\",\n          \"2015MNRAS.448L...6T\",\n          \"2015MNRAS.453..287M\",\n
-        \         \"2016ApJ...819..160B\",\n          \"2016ApJ...821...38S\",\n          \"2016ApJ...831..188G\",\n
-        \         \"2016ApJS..227...22F\",\n          \"2016JKAS...49..109K\",\n          \"2016MNRAS.457..328L\",\n
-        \         \"2016MNRAS.461.3747B\",\n          \"2017A&A...603A.118R\",\n          \"2017ApJ...837...84J\",\n
-        \         \"2017ApJ...842..125Z\",\n          \"2017ApJ...844....1K\",\n          \"2017ApJ...844...84H\",\n
-        \         \"2017ApJ...849..109P\",\n          \"2018A&A...609A.136T\",\n          \"2018ApJ...856...18K\",\n
-        \         \"2018ApJ...861...92D\",\n          \"2018ApJ...863..127K\",\n          \"2018SSRv..214...28R\",\n
-        \         \"2019A&A...623A..34K\",\n          \"2019A&A...624A..66R\",\n          \"2019ApJ...871...64A\",\n
-        \         \"2019ApJ...872...31B\",\n          \"2019ApJ...878L..19T\",\n          \"2019ApJ...881...54W\",\n
-        \         \"2019MNRAS.484.3307M\",\n          \"2019MNRAS.485.1559P\",\n          \"2019MNRAS.485.5394K\",\n
-        \         \"2020MNRAS.497.5344E\",\n          \"2020MNRAS.499.3214M\",\n          \"2021A&A...645A...5S\",\n
-        \         \"2021A&A...656A..58L\",\n          \"2021A&A...656L..19Z\",\n          \"2021ApJ...914...41J\",\n
-        \         \"2021ApJ...916L...5V\",\n          \"2021ApJ...923..214F\",\n          \"2021Natur.589...29B\",\n
-        \         \"2022ApJ...932..117L\"],\n        \"citation_count\":3},\n      {\n
-        \       \"bibcode\":\"2022MNRAS.tmp.3020I\",\n        \"abstract\":\"Thermal
-        bombs are a widely used method to artificially trigger explosions of core-collapse
-        supernovae (CCSNe) to determine their nucleosynthesis or ejecta and remnant
-        properties. Recently, their use in spherically symmetric (1D) hydrodynamic
-        simulations led to the result that <SUP>56, 57</SUP>Ni and <SUP>44</SUP>Ti
-        are massively underproduced compared to observational estimates for Supernova
-        1987A, if the explosions are slow, i.e., if the explosion mechanism of CCSNe
-        releases the explosion energy on long timescales. It was concluded that rapid
-        explosions are required to match observed abundances, i.e., the explosion
-        mechanism must provide the CCSN energy nearly instantaneously on timescales
-        of some ten to order 100 ms. This result, if valid, would disfavor the neutrino-heating
-        mechanism, which releases the CCSN energy on timescales of seconds. Here,
-        we demonstrate by 1D hydrodynamic simulations and nucleosynthetic post-processing
-        that these conclusions are a consequence of disregarding the initial collapse
-        of the stellar core in the thermal-bomb modelling before the bomb releases
-        the explosion energy. We demonstrate that the anti-correlation of <SUP>56</SUP>Ni
-        yield and energy-injection timescale vanishes when the initial collapse is
-        included and that it can even be reversed, i.e., more <SUP>56</SUP>Ni is made
-        by slower explosions, when the collapse proceeds to small radii similar to
-        those where neutrino heating takes place in CCSNe. We also show that the <SUP>56</SUP>Ni
+        \       \"year\":\"2022\",\n        \"citation_count\":3},\n      {\n        \"bibcode\":\"2022MNRAS.tmp.3020I\",\n
+        \       \"citation_count\":1,\n        \"abstract\":\"Thermal bombs are a
+        widely used method to artificially trigger explosions of core-collapse supernovae
+        (CCSNe) to determine their nucleosynthesis or ejecta and remnant properties.
+        Recently, their use in spherically symmetric (1D) hydrodynamic simulations
+        led to the result that <SUP>56, 57</SUP>Ni and <SUP>44</SUP>Ti are massively
+        underproduced compared to observational estimates for Supernova 1987A, if
+        the explosions are slow, i.e., if the explosion mechanism of CCSNe releases
+        the explosion energy on long timescales. It was concluded that rapid explosions
+        are required to match observed abundances, i.e., the explosion mechanism must
+        provide the CCSN energy nearly instantaneously on timescales of some ten to
+        order 100 ms. This result, if valid, would disfavor the neutrino-heating mechanism,
+        which releases the CCSN energy on timescales of seconds. Here, we demonstrate
+        by 1D hydrodynamic simulations and nucleosynthetic post-processing that these
+        conclusions are a consequence of disregarding the initial collapse of the
+        stellar core in the thermal-bomb modelling before the bomb releases the explosion
+        energy. We demonstrate that the anti-correlation of <SUP>56</SUP>Ni yield
+        and energy-injection timescale vanishes when the initial collapse is included
+        and that it can even be reversed, i.e., more <SUP>56</SUP>Ni is made by slower
+        explosions, when the collapse proceeds to small radii similar to those where
+        neutrino heating takes place in CCSNe. We also show that the <SUP>56</SUP>Ni
         production in thermal-bomb explosions is sensitive to the chosen mass cut
         and that a fixed mass layer or fixed volume for the energy deposition cause
         only secondary differences. Moreover, we propose a most appropriate setup
@@ -373,121 +129,54 @@ interactions:
         Hans-Thomas\",\n          \"Weiss, Achim\"],\n        \"pub\":\"Monthly Notices
         of the Royal Astronomical Society\",\n        \"pubdate\":\"2022-11-00\",\n
         \       \"title\":[\"Parameterisations of thermal bomb explosions for core-collapse
-        supernovae and <SUP>56</SUP>Ni production\"],\n        \"year\":\"2022\",\n
-        \       \"reference\":[\"1978ApJ...225.1021W\",\n          \"1986A&A...162..103M\",\n
-        \         \"1988A&A...196..141S\",\n          \"1988ApJ...330..218W\",\n          \"1989A&A...210L...5H\",\n
-        \         \"1989ARA&A..27..629A\",\n          \"1990ApJ...349..222T\",\n          \"1991ApJ...370..630A\",\n
-        \         \"1992ApJ...395..202W\",\n          \"1994ApJ...437L.115I\",\n          \"1995ApJS...98..617T\",\n
-        \         \"1995ApJS..101..181W\",\n          \"1996A&A...306..167J\",\n          \"1996ApJ...460..408T\",\n
-        \         \"1997ApJ...486.1026N\",\n          \"1999ApJ...524..262M\",\n          \"1999ApJ...524L.107K\",\n
-        \         \"2000ApJ...531L.119A\",\n          \"2000ApJ...531L.123K\",\n          \"2001AIPC..561...21K\",\n
-        \         \"2001ApJ...552..756S\",\n          \"2001ApJ...555..880N\",\n          \"2002RvMP...74.1015W\",\n
-        \         \"2003A&A...408..621K\",\n          \"2003Ap&SS.284..539M\",\n          \"2003ApJ...592..404L\",\n
-        \         \"2003ApJ...596..401N\",\n          \"2003ApJ...598.1163M\",\n          \"2005ARNPS..55..467M\",\n
-        \         \"2005NatPh...1..147W\",\n          \"2006A&A...453..661K\",\n          \"2006A&A...457..963S\",\n
-        \         \"2006ApJ...647..483L\",\n          \"2006ApJ...647.1255N\",\n          \"2006NuPhA.777..424N\",\n
-        \         \"2007A&A...467.1227A\",\n          \"2007ApJ...664.1033Y\",\n          \"2007CSE.....9...90H\",\n
-        \         \"2007PhR...442...38J\",\n          \"2007PhR...442..269W\",\n          \"2008ApJ...673.1014U\",\n
-        \         \"2008ApJ...679..639Z\",\n          \"2010ApJ...719.1445M\",\n          \"2010ApJ...725L.106W\",\n
-        \         \"2011ApJ...729...61B\",\n          \"2011ApJ...730...70O\",\n          \"2011ApJS..192....3P\",\n
-        \         \"2012ARNPS..62..407J\",\n          \"2012ApJ...757...69U\",\n          \"2012ApJS..199...38L\",\n
-        \         \"2013A&A...552A.126W\",\n          \"2013ApJ...764...21C\",\n          \"2013ApJ...771...27Y\",\n
-        \         \"2014AIPA....4d1013H\",\n          \"2014ApJ...783...10S\",\n          \"2015A&A...577A..48W\",\n
-        \         \"2015ApJ...801...90P\",\n          \"2015ApJ...806..275P\",\n          \"2015ApJ...807..110J\",\n
-        \         \"2015ApJ...808..132H\",\n          \"2015ApJ...814...63M\",\n          \"2015ApJS..220...15P\",\n
-        \         \"2016ARNPS..66..341J\",\n          \"2016ApJ...818..123B\",\n          \"2016ApJ...818..124E\",\n
-        \         \"2016ApJ...821...38S\",\n          \"2016MNRAS.460..742M\",\n          \"2016PASA...33...48M\",\n
-        \         \"2017ApJ...841..127M\",\n          \"2017ApJ...842...13W\",\n          \"2017ApJS..233...18L\",\n
-        \         \"2017MNRAS.472..491M\",\n          \"2017RSPTA.37560271C\",\n          \"2018ApJS..237...13L\",\n
-        \         \"2019ApJ...870....1E\",\n          \"2019ApJ...870....2C\",\n          \"2019ApJ...880...59R\",\n
-        \         \"2019ApJ...886...47S\",\n          \"2019MNRAS.483.3607S\",\n          \"2019Natur.569..241S\",\n
-        \         \"2020A&A...636A..22O\",\n          \"2020ApJ...888...91E\",\n          \"2020ApJ...888..111O\",\n
-        \         \"2020ApJ...890...51E\",\n          \"2020ApJ...890..127C\",\n          \"2020ApJ...896...56W\",\n
-        \         \"2020ApJ...900..179K\",\n          \"2020LRCA....6....3M\",\n          \"2021A&A...645A...5S\",\n
-        \         \"2021A&A...652A..64D\",\n          \"2021A&A...655A..90Y\",\n          \"2021A&A...656A..61D\",\n
-        \         \"2021ApJ...913L...7A\",\n          \"2021ApJ...915...28B\",\n          \"2021ApJ...921..113S\",\n
-        \         \"2021ApJ...921..143C\",\n          \"2021ApJ...923..214F\",\n          \"2021MNRAS.506.4131W\",\n
-        \         \"2021Natur.589...29B\",\n          \"2021PASA...38...62D\",\n          \"2021RvMP...93a5002C\",\n
-        \         \"2021arXiv211103606T\",\n          \"2022ApJ...932L...3M\",\n          \"2022ApJ...934...67B\",\n
-        \         \"2022MNRAS.513.4983V\",\n          \"2022arXiv220400025A\"],\n
-        \       \"citation_count\":1},\n      {\n        \"bibcode\":\"2022arXiv221104482W\",\n
-        \       \"abstract\":\"With the advent of high cadence, all-sky automated
-        surveys, supernovae (SNe) are now discovered closer than ever to their dates
-        of explosion. However, young pre-maximum light follow-up spectra of Type Ic
-        supernovae (SNe Ic), probably arising from the most stripped massive stars,
-        remain rare despite their importance. In this paper we present a set of 49
-        optical spectra observed with the Las Cumbres Observatory through the Global
-        Supernova Project for 6 SNe Ic, including a total of 17 pre-maximum spectra,
-        of which 8 are observed more than a week before V-band maximum light. This
-        dataset increases the total number of publicly available pre-maximum light
-        SN Ic spectra by 25% and we provide publicly available SNID templates that
-        will significantly aid in the fast identification of young SNe Ic in the future.
-        We present detailed analysis of these spectra, including Fe II 5169 velocity
-        measurements, O I 7774 line strengths, and continuum shapes. We compare our
-        results to published samples of stripped supernovae in the literature and
-        find one SN in our sample that stands out. SN 2019ewu has a unique combination
-        of features for a SN Ic: an extremely blue continuum, high absorption velocities,
-        a P-cygni shaped feature almost 2 weeks before maximum light that TARDIS radiative
-        transfer modeling attributes to C II rather than H$\\\\alpha$, and weak or
-        non-existent O I 7774 absorption feature until maximum light.\",\n        \"author\":[\"Williamson,
-        Marc\",\n          \"Vogl, Christian\",\n          \"Modjaz, Maryam\",\n          \"Kerzendorf,
-        Wolfgang\",\n          \"Singhal, Jaladh\",\n          \"Boland, Teresa\",\n
-        \         \"Burke, Jamison\",\n          \"Chen, Zhihao\",\n          \"Hiramatsu,
-        Daichi\",\n          \"Galbany, Lluis\",\n          \"Padilla Gonzalez, Estefania\",\n
-        \         \"Howell, D. Andrew\",\n          \"Jha, Saurabh W.\",\n          \"Kwok,
-        Lindsey A.\",\n          \"McCully, Curtis\",\n          \"Newsome, Megan\",\n
-        \         \"Pellegrino, Craig\",\n          \"Rho, Jeonghee\",\n          \"Terreran,
-        Giacomo\",\n          \"Wang, Xiaofeng\"],\n        \"pub\":\"arXiv e-prints\",\n
-        \       \"pubdate\":\"2022-11-00\",\n        \"title\":[\"SN 2019ewu: A Peculiar
-        Supernova with Early Strong Carbon and Weak Oxygen Features from a New Sample
-        of Young SN Ic Spectra\"],\n        \"year\":\"2022\",\n        \"reference\":[\"1992ApJ...391..246P\",\n
-        \         \"1993A&A...279..447M\",\n          \"1993ApJ...415L.103F\",\n          \"1994ApJ...437L.115I\",\n
-        \         \"1997ApJ...483..675C\",\n          \"1999PASP..111...63F\",\n          \"2000A&A...363..705M\",\n
-        \         \"2001AJ....121.1648M\",\n          \"2005ATel..451....1A\",\n          \"2005ApJ...634.1190H\",\n
-        \         \"2005IAUC.8503....1Q\",\n          \"2006AJ....131.1648B\",\n          \"2006MNRAS.371.1459T\",\n
-        \         \"2007ARA&A..45..177C\",\n          \"2007ApJ...666.1024B\",\n          \"2008ApJ...673L.155V\",\n
-        \         \"2009ARA&A..47...63S\",\n          \"2009PASP..121.1334R\",\n          \"2009PASP..121.1395L\",\n
-        \         \"2010MNRAS.408...87M\",\n          \"2011A&A...526A..81B\",\n          \"2011ApJ...737..103S\",\n
-        \         \"2011Natur.474..487Q\",\n          \"2012ApJ...760L..33B\",\n          \"2012MNRAS.422...70H\",\n
-        \         \"2012MNRAS.424.2139D\",\n          \"2012MNRAS.425.1819S\",\n          \"2012PASP..124..140B\",\n
-        \         \"2012Sci...337..927G\",\n          \"2013PASP..125.1031B\",\n          \"2014AJ....147...99M\",\n
-        \         \"2014ApJ...797...24V\",\n          \"2014ApJS..213...19B\",\n          \"2014MNRAS.440..387K\",\n
-        \         \"2014MNRAS.444.2096N\",\n          \"2014Natur.509..471G\",\n          \"2015A&A...579A..40S\",\n
-        \         \"2015MNRAS.452.3869N\",\n          \"2015MNRAS.453.2189D\",\n          \"2015PASA...32...15Y\",\n
-        \         \"2016ApJ...820...75P\",\n          \"2016ApJ...827...90L\",\n          \"2016ApJ...832..108M\",\n
-        \         \"2016MNRAS.458.2973P\",\n          \"2016MNRAS.458.3455M\",\n          \"2016PASP..128k5005F\",\n
-        \         \"2017A&A...599A..46B\",\n          \"2017ApJ...845...85L\",\n          \"2017MNRAS.470.3970Y\",\n
-        \         \"2018A&A...618A..37F\",\n          \"2018ApJ...860...90V\",\n          \"2018ApJ...867...23H\",\n
-        \         \"2018MNRAS.480.2072K\",\n          \"2019A&A...621A..29V\",\n          \"2019A&A...621A..71T\",\n
-        \         \"2019ApJ...880L..22W\",\n          \"2019MNRAS.482.1545S\",\n          \"2019MNRAS.483.3762K\",\n
-        \         \"2019MNRAS.485.1559P\",\n          \"2019MNRAS.487.5824A\",\n          \"2019NatAs...3..697I\",\n
-        \         \"2019NatAs...3..717M\",\n          \"2019RNAAS...3...26S\",\n          \"2019TNSCR..71....1B\",\n
-        \         \"2019TNSCR.738....1H\",\n          \"2019TNSCR2020....1B\",\n          \"2019TNSTR...3....1T\",\n
-        \         \"2019TNSTR...6....1F\",\n          \"2019TNSTR.434....1L\",\n          \"2020A&A...633A..88V\",\n
-        \         \"2020A&A...642A.106D\",\n          \"2020ApJ...892..153M\",\n          \"2021A&A...645A...5S\",\n
-        \         \"2021A&A...651A..81B\",\n          \"2021A&A...656A..58L\",\n          \"2021ApJ...908..150W\",\n
-        \         \"2021ApJ...908..232R\",\n          \"2021ApJ...913..145W\",\n          \"2021ApJ...915..121P\",\n
-        \         \"2021ApJ...923..214F\",\n          \"2021TNSCR..51....1V\",\n          \"2021TNSCR2178....1P\",\n
-        \         \"2021TNSTR...1....1F\",\n          \"2022ApJ...924...55G\",\n          \"2022ApJ...925..175S\",\n
-        \         \"2022ApJ...934..134V\",\n          \"2022ApJ...937...40K\",\n          \"2022arXiv221002554I\",\n
-        \         \"2022arXiv221100205R\"],\n        \"citation_count\":0},\n      {\n
-        \       \"bibcode\":\"2022Msngr.186....3B\",\n        \"abstract\":\"While
-        the number of stellar-mass black holes detected in X-rays or as gravitational
-        wave sources is steadily increasing, the known population remains orders of
-        magnitude smaller than predicted by stellar evolution theory. A significant
-        fraction of stellar-mass black holes is expected to hide in X-ray-quiet binaries
-        where they are paired with a \\\"normal\\\" star. Although a handful of such
-        quiescent black hole candidates have been proposed, the majority have been
-        challenged by follow-up investigations. A confusion that emerged recently
-        concerns binary systems that appear to contain a normal B-type star with an
-        unseen companion, believed to be a black hole. On closer inspection, some
-        of these seemingly normal B-type stars instead turn out to be stars stripped
-        of most of their mass through an interaction with their binary companion,
-        which in at least two cases is a rapidly rotating star rather than a compact
-        object. These contaminants in the search for quiescent black holes are themselves
-        extremely interesting objects as they represent a rare phase of binary evolution,
-        and should be given special attention when searching for binaries hosting
-        black holes in large spectroscopic studies.\",\n        \"author\":[\"Bodensteiner,
+        supernovae and <SUP>56</SUP>Ni production\"],\n        \"year\":\"2022\"},\n
+        \     {\n        \"bibcode\":\"2022arXiv221104482W\",\n        \"abstract\":\"With
+        the advent of high cadence, all-sky automated surveys, supernovae (SNe) are
+        now discovered closer than ever to their dates of explosion. However, young
+        pre-maximum light follow-up spectra of Type Ic supernovae (SNe Ic), probably
+        arising from the most stripped massive stars, remain rare despite their importance.
+        In this paper we present a set of 49 optical spectra observed with the Las
+        Cumbres Observatory through the Global Supernova Project for 6 SNe Ic, including
+        a total of 17 pre-maximum spectra, of which 8 are observed more than a week
+        before V-band maximum light. This dataset increases the total number of publicly
+        available pre-maximum light SN Ic spectra by 25% and we provide publicly available
+        SNID templates that will significantly aid in the fast identification of young
+        SNe Ic in the future. We present detailed analysis of these spectra, including
+        Fe II 5169 velocity measurements, O I 7774 line strengths, and continuum shapes.
+        We compare our results to published samples of stripped supernovae in the
+        literature and find one SN in our sample that stands out. SN 2019ewu has a
+        unique combination of features for a SN Ic: an extremely blue continuum, high
+        absorption velocities, a P-cygni shaped feature almost 2 weeks before maximum
+        light that TARDIS radiative transfer modeling attributes to C II rather than
+        H$\\\\alpha$, and weak or non-existent O I 7774 absorption feature until maximum
+        light.\",\n        \"author\":[\"Williamson, Marc\",\n          \"Vogl, Christian\",\n
+        \         \"Modjaz, Maryam\",\n          \"Kerzendorf, Wolfgang\",\n          \"Singhal,
+        Jaladh\",\n          \"Boland, Teresa\",\n          \"Burke, Jamison\",\n
+        \         \"Chen, Zhihao\",\n          \"Hiramatsu, Daichi\",\n          \"Galbany,
+        Lluis\",\n          \"Padilla Gonzalez, Estefania\",\n          \"Howell,
+        D. Andrew\",\n          \"Jha, Saurabh W.\",\n          \"Kwok, Lindsey A.\",\n
+        \         \"McCully, Curtis\",\n          \"Newsome, Megan\",\n          \"Pellegrino,
+        Craig\",\n          \"Rho, Jeonghee\",\n          \"Terreran, Giacomo\",\n
+        \         \"Wang, Xiaofeng\"],\n        \"pub\":\"arXiv e-prints\",\n        \"pubdate\":\"2022-11-00\",\n
+        \       \"title\":[\"SN 2019ewu: A Peculiar Supernova with Early Strong Carbon
+        and Weak Oxygen Features from a New Sample of Young SN Ic Spectra\"],\n        \"year\":\"2022\",\n
+        \       \"citation_count\":0},\n      {\n        \"bibcode\":\"2022Msngr.186....3B\",\n
+        \       \"abstract\":\"While the number of stellar-mass black holes detected
+        in X-rays or as gravitational wave sources is steadily increasing, the known
+        population remains orders of magnitude smaller than predicted by stellar evolution
+        theory. A significant fraction of stellar-mass black holes is expected to
+        hide in X-ray-quiet binaries where they are paired with a \\\"normal\\\" star.
+        Although a handful of such quiescent black hole candidates have been proposed,
+        the majority have been challenged by follow-up investigations. A confusion
+        that emerged recently concerns binary systems that appear to contain a normal
+        B-type star with an unseen companion, believed to be a black hole. On closer
+        inspection, some of these seemingly normal B-type stars instead turn out to
+        be stars stripped of most of their mass through an interaction with their
+        binary companion, which in at least two cases is a rapidly rotating star rather
+        than a compact object. These contaminants in the search for quiescent black
+        holes are themselves extremely interesting objects as they represent a rare
+        phase of binary evolution, and should be given special attention when searching
+        for binaries hosting black holes in large spectroscopic studies.\",\n        \"author\":[\"Bodensteiner,
         J.\",\n          \"Heida, M.\",\n          \"Abdul-Masih, M.\",\n          \"Baade,
         D.\",\n          \"Banyard, G.\",\n          \"Bowman, D. M.\",\n          \"Fabry,
         M.\",\n          \"Frost, A.\",\n          \"Mahy, L.\",\n          \"Marchant,
@@ -495,31 +184,8 @@ interactions:
         T.\",\n          \"Sana, H.\",\n          \"Selman, F.\",\n          \"Shenar,
         T.\"],\n        \"pub\":\"The Messenger\",\n        \"pubdate\":\"2022-03-00\",\n
         \       \"title\":[\"Detecting Stripped Stars While Searching for Quiescent
-        Black Holes\"],\n        \"year\":\"2022\",\n        \"reference\":[\"1981A&AS...43..427D\",\n
-        \         \"1982ApJS...50...55S\",\n          \"1986ApJ...304....1P\",\n          \"1992ApJ...391..246P\",\n
-        \         \"1992eocm.rept...29V\",\n          \"1999A&AS..137..117B\",\n          \"2000AJ....120.1579Y\",\n
-        \         \"2001A&A...369..939W\",\n          \"2003ApJ...591..288H\",\n          \"2003PhDT.......315M\",\n
-        \         \"2007ARA&A..45..177C\",\n          \"2008A&ARv..16..209P\",\n          \"2008ApJ...687..466Q\",\n
-        \         \"2009ARA&A..47..211H\",\n          \"2010PASJ...62.1109L\",\n          \"2012RAA....12.1197C\",\n
-        \         \"2013A&ARv..21...69R\",\n          \"2014ApJ...786L..11M\",\n          \"2014Natur.505..378C\",\n
-        \         \"2014SSRv..183..223C\",\n          \"2015A&A...580L...6D\",\n          \"2015JATIS...1a4003R\",\n
-        \         \"2016A&A...587A..61C\",\n          \"2016A&A...595A...1G\",\n          \"2016ApJ...821...38S\",\n
-        \         \"2017A&A...608A..11G\",\n          \"2017ApJ...850L..13B\",\n          \"2018MNRAS.475L..15G\",\n
-        \         \"2019A&A...632A...3G\",\n          \"2019ApJ...872L..20G\",\n          \"2019ApJ...886...97Y\",\n
-        \         \"2019Natur.575..618L\",\n          \"2020A&A...633L...5I\",\n          \"2020A&A...634A..79S\",\n
-        \         \"2020A&A...634L...7S\",\n          \"2020A&A...636A..20W\",\n          \"2020A&A...637L...3R\",\n
-        \         \"2020A&A...639L...6S\",\n          \"2020A&A...641A..43B\",\n          \"2020ApJ...897L..29S\",\n
-        \         \"2020ApJ...898L..44G\",\n          \"2020ApJ...900...42L\",\n          \"2020ApJ...901..116S\",\n
-        \         \"2020ApJ...902...25G\",\n          \"2020MNRAS.493L..22E\",\n          \"2020MNRAS.495.2786E\",\n
-        \         \"2020MNRAS.498L..58M\",\n          \"2020Sci...368.3282V\",\n          \"2020Sci...368.4356T\",\n
-        \         \"2021A&A...645A..72C\",\n          \"2021A&A...645A..96P\",\n          \"2021A&A...656A..58L\",\n
-        \         \"2021AJ....161..248W\",\n          \"2021ATel14340....1K\",\n          \"2021ApJ...910L..17M\",\n
-        \         \"2021ApJ...913...48G\",\n          \"2021ApJ...923..214F\",\n          \"2021MNRAS.502.3436E\",\n
-        \         \"2021MNRAS.504.2577J\",\n          \"2021MNRAS.506.2269E\",\n          \"2021MNRAS.507.2804W\",\n
-        \         \"2022A&A...658A.129J\",\n          \"2022A&A...665A.180L\",\n          \"2022MNRAS.511.2914S\",\n
-        \         \"2022MNRAS.511.3089E\",\n          \"2022MNRAS.511L..24E\",\n          \"2022MNRAS.511L..77S\",\n
-        \         \"2022MNRAS.516.3602E\",\n          \"2022MNRAS.516.5945J\"],\n
-        \       \"citation_count\":1}]\n  }}\n"
+        Black Holes\"],\n        \"year\":\"2022\",\n        \"citation_count\":1}]\n
+        \ }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -538,22 +204,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '45951'
+      - '13166'
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:39:22 GMT
+      - Sun, 27 Nov 2022 10:45:15 GMT
       Retry-After:
-      - '72835'
+      - '83838'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4817'
+      - '4773'
       X-RateLimit-Reset:
-      - '1669456398'
+      - '1669629754'
     status:
       code: 200
       message: OK

@@ -9,16 +9,16 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:2020&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0&rows=1
+    uri: https://api.adsabs.harvard.edu/v1//search/query?q=%5Efarmer%2Cr+year%3A2020&fl=abstract%2Cauthor%2Cbibcode%2Cpubdate%2Ctitle%2Cpub%2Cyear%2Ccitation_count&fq=&start=0&rows=1
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":11,\n    \"params\":{\n
-        \     \"q\":\"^farmer,r year:2020\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6380c547-25a3e0a6488d05c01ef41b28\",\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":12,\n    \"params\":{\n
+        \     \"q\":\"^farmer,r year:2020\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63833f72-02767cef2bf3a25b74fdf518\",\n
         \     \"fq\":\"\",\n      \"rows\":\"1\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
         \     {\n        \"bibcode\":\"2020ApJ...902L..36F\",\n        \"abstract\":\"Gravitational-wave
         detections are starting to allow us to probe the physical processes in the
@@ -49,64 +49,7 @@ interactions:
         S.\"],\n        \"pub\":\"The Astrophysical Journal\",\n        \"pubdate\":\"2020-10-00\",\n
         \       \"title\":[\"Constraints from Gravitational-wave Detections of Binary
         Black Hole Mergers on the <SUP>12</SUP>C(\u03B1, \u03B3)<SUP>16</SUP>O Rate\"],\n
-        \       \"year\":\"2020\",\n        \"reference\":[\"1957RvMP...29..547B\",\n
-        \         \"1964ApJS....9..201F\",\n          \"1967ApJ...148..803R\",\n          \"1967PhRvL..18..379B\",\n
-        \         \"1968Ap&SS...2...96F\",\n          \"1969ApJ...157..339A\",\n          \"1976ApJ...210..440B\",\n
-        \         \"1980Ap&SS..69..115N\",\n          \"1982A&A...116..273H\",\n          \"1984ApJ...280..825B\",\n
-        \         \"1985ApJ...293....1F\",\n          \"1986Natur.323..310S\",\n          \"1988ADNDT..40..283C\",\n
-        \         \"1988ApJ...328..653B\",\n          \"1993ApJ...412..752I\",\n          \"1993JPhG...19S.183W\",\n
-        \         \"1993MNRAS.260..675T\",\n          \"1993Natur.364..421K\",\n          \"1993PhR...227...65W\",\n
-        \         \"1994ADNDT..56..231O\",\n          \"1994ShWav...4...25T\",\n          \"1995A&A...299..151H\",\n
-        \         \"1995ApJS...99..713S\",\n          \"1995MNRAS.274..964P\",\n          \"1996ApJ...460..408T\",\n
-        \         \"1996ApJ...464..943I\",\n          \"1996ApJS..102..411I\",\n          \"1997ApJ...486..413S\",\n
-        \         \"1998A&A...335.1003H\",\n          \"1999ApJ...521..735H\",\n          \"1999ApJ...522..413F\",\n
-        \         \"1999MNRAS.305..365S\",\n          \"1999NuPhA.656....3A\",\n          \"2000ADNDT..75....1R\",\n
-        \         \"2000ApJ...528L..17P\",\n          \"2000ApJS..126..501T\",\n          \"2000NuPhA.673..481L\",\n
-        \         \"2001ApJ...550..372F\",\n          \"2001ApJ...557.1021M\",\n          \"2001NewA....6..457B\",\n
-        \         \"2002ApJ...567..532H\",\n          \"2002ApJ...567..643K\",\n          \"2002ApJ...573..803M\",\n
-        \         \"2002ApJ...576.1064R\",\n          \"2002ApJS..142..105I\",\n          \"2002NewAR..46..463H\",\n
-        \         \"2002RvMP...74.1015W\",\n          \"2003ApJ...583..878S\",\n          \"2003ApJ...587L..43M\",\n
-        \         \"2003ApJ...591..288H\",\n          \"2004ApJ...601..391F\",\n          \"2005ApJ...623..585F\",\n
-        \         \"2005ApJ...626..350H\",\n          \"2005ApJ...629...15H\",\n          \"2005NuPhA.752..514H\",\n
-        \         \"2006astro.ph..8028R\",\n          \"2007ApJ...661.1094C\",\n          \"2007ApJ...671..821T\",\n
-        \         \"2007CSE.....9...90H\",\n          \"2007CSE.....9c..21P\",\n          \"2007Natur.447..829P\",\n
-        \         \"2007Natur.450..390W\",\n          \"2007PhR...442..269W\",\n          \"2007PhRvD..76b5028C\",\n
-        \         \"2008A&A...489..359Y\",\n          \"2010ApJS..189..240C\",\n          \"2010CoPP...50...82P\",\n
-        \         \"2010NuPhA.841....1L\",\n          \"2010NuPhA.841...31I\",\n          \"2010NuPhA.841..251I\",\n
-        \         \"2010PhRvD..81h4029M\",\n          \"2011ApJS..192....3P\",\n          \"2011CSE....13b..22V\",\n
-        \         \"2012ApJ...749...91F\",\n          \"2012ApJ...755...72H\",\n          \"2012ApJ...759...52D\",\n
-        \         \"2013ApJ...762L...6W\",\n          \"2013ApJ...769....2W\",\n          \"2013ApJ...769..109L\",\n
-        \         \"2013ApJ...777..110W\",\n          \"2013ApJS..207...18S\",\n          \"2013ApJS..208....4P\",\n
-        \         \"2014ApJ...792...28C\",\n          \"2015ApJ...807..184F\",\n          \"2015ApJS..220...15P\",\n
-        \         \"2015CQGra..32b4001A\",\n          \"2015CQGra..32k5012A\",\n          \"2015PhRvC..92d5802A\",\n
-        \         \"2016A&A...588A..50M\",\n          \"2016A&A...594A..97B\",\n          \"2016ApJ...817L...5A\",\n
-        \         \"2016ApJ...823...46F\",\n          \"2016ApJ...826..178G\",\n          \"2016ApJS..227...22F\",\n
-        \         \"2016JPhCS.665a2007H\",\n          \"2016MNRAS.457..351Y\",\n          \"2016MNRAS.458.2634M\",\n
-        \         \"2016MNRAS.460.3545D\",\n          \"2016MNRAS.463.4153R\",\n          \"2016Natur.534..512B\",\n
-        \         \"2016PhRvD..93h4029R\",\n          \"2016PhRvD..94h3504C\",\n          \"2016ascl.soft10016S\",\n
-        \         \"2017ApJ...836..244W\",\n          \"2017ApJ...840L..24F\",\n          \"2017ApJ...846L..15B\",\n
-        \         \"2017ApJ...851L..25F\",\n          \"2017ApJS..233...18L\",\n          \"2017MNRAS.464..946S\",\n
-        \         \"2017Natur.551...64A\",\n          \"2017PhRvD..95f4053V\",\n          \"2017PhRvD..95l4046G\",\n
-        \         \"2017PhRvD..96l3523A\",\n          \"2017RvMP...89c5007D\",\n          \"2018ApJ...863..105W\",\n
-        \         \"2018ApJ...863..153T\",\n          \"2018ApJ...866...66M\",\n          \"2018ApJ...869..166V\",\n
-        \         \"2018ApJS..234...19F\",\n          \"2018ApJS..234...34P\",\n          \"2018EPJWC.17801008B\",\n
-        \         \"2018LRR....21....3A\",\n          \"2018MNRAS.476.2366F\",\n          \"2018NatAs...2..887L\",\n
-        \         \"2018Natur.557..687T\",\n          \"2018PhRvD..98l3005R\",\n          \"2018PhRvL.121p1103F\",\n
-        \         \"2018arXiv180910176H\",\n          \"2019A&A...632L...8R\",\n          \"2019ApJ...876L..29V\",\n
-        \         \"2019ApJ...878...49W\",\n          \"2019ApJ...881...87G\",\n          \"2019ApJ...882...36M\",\n
-        \         \"2019ApJ...882L..24A\",\n          \"2019ApJ...883L..27M\",\n          \"2019ApJ...883L..42F\",\n
-        \         \"2019ApJ...886...25B\",\n          \"2019ApJ...887...53F\",\n          \"2019ApJ...887...72L\",\n
-        \         \"2019ApJS..243...10P\",\n          \"2019MNRAS.485..889S\",\n          \"2019MNRAS.485L..83Q\",\n
-        \         \"2019MNRAS.486.1086M\",\n          \"2019MNRAS.487.2947D\",\n          \"2019PhRvC..99e5802H\",\n
-        \         \"2019PhRvC.100b5804F\",\n          \"2019PhRvD.100d1301G\",\n          \"2019PhRvD.100d3027R\",\n
-        \         \"2019PhRvL.123r1101Y\",\n          \"2019PhRvX...9c1040A\",\n          \"2020A&A...640A..56R\",\n
-        \         \"2020ApJ...891..123N\",\n          \"2020ApJ...891L..31F\",\n          \"2020ApJ...894...94R\",\n
-        \         \"2020ApJ...894..133A\",\n          \"2020ApJ...897..100V\",\n          \"2020ApJ...900...80U\",\n
-        \         \"2020ApJ...900..177K\",\n          \"2020ApJ...900L..13A\",\n          \"2020MNRAS.492.2578S\",\n
-        \         \"2020MNRAS.493.4333R\",\n          \"2020MNRAS.497.1043D\",\n          \"2020MNRAS.498..495D\",\n
-        \         \"2020NatAs...4..893N\",\n          \"2020PhRvL.124p2701S\",\n          \"2020PhRvL.124s2701F\",\n
-        \         \"2020PhRvL.124s2702T\",\n          \"2020PhRvL.124y1102G\",\n          \"2020PhRvL.125j1102A\"],\n
-        \       \"citation_count\":108}]\n  }}\n"
+        \       \"year\":\"2020\",\n        \"citation_count\":109}]\n  }}\n"
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -125,22 +68,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '8292'
+      - '2693'
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:38:15 GMT
+      - Sun, 27 Nov 2022 10:44:02 GMT
       Retry-After:
-      - '72903'
+      - '83912'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4902'
+      - '4852'
       X-RateLimit-Reset:
-      - '1669456399'
+      - '1669629755'
     status:
       code: 200
       message: OK

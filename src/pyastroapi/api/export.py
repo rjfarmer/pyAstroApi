@@ -37,8 +37,6 @@ def _export(token: str, bibcode: t.Union[str, t.List[str]], format: str) -> str:
 
     Users should not call this directly.
 
-
-
     Args:
         token (str): ADSABS token
         bibcode (t.Union[str, t.List[str]]): Either a single bibcode or a list of bibcodes

@@ -319,7 +319,9 @@ class TestAPILib:
     def test_make_new_and_del(self):
         r = lib.list_all(token)
 
-        name = "".join(random.choices(string.ascii_uppercase + string.digits, k=10))
+        name = (
+            "J8O0OPGS08"  # Use a fixed string otherwise the test breaks when repeated
+        )
 
         lib_new = lib.new(token, name)
 

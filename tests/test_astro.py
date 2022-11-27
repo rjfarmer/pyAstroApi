@@ -67,7 +67,7 @@ class TestArticle:
         assert len(a.citations())
         assert a.citation_count == len(a.citations())
 
-        assert a.reference_count() == 136
+        assert a.reference_count() == 99
         assert len(a.references())
         assert len(a.references()) == a.reference_count()
         assert a.pdf.filename() == "2021ApJ...923..214F.pdf"
@@ -127,3 +127,23 @@ class TestArticle:
         assert len(a) == len(b)
         assert x == b["2021ApJ...923..214F"].title
         os.remove(tp)
+
+
+@pytest.mark.vcr()
+class TestJournal:
+    def test_bibcodes(self):
+        # Bug: https://github.com/rjfarmer/pyAstroApi/issues/1
+        journal = pyastroapi.journal(
+            bibcodes=["2018araa.book.....P", "2013A&A...557A..84P"]
+        )
+
+        titles = [
+            "Astrophysical Recipes; The art of AMUSE",
+            "The Astrophysical Multipurpose Software Environment",
+        ]
+        refs = [549, 68]
+
+        for paper, title, ref in zip(journal, titles, refs):
+            assert type(paper) == pyastroapi.article
+            assert paper.title == title
+            assert paper.reference_count() == ref

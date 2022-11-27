@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: GET
@@ -47,18 +47,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:39:04 GMT
+      - Sun, 27 Nov 2022 10:44:56 GMT
       Retry-After:
-      - '72853'
+      - '83857'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4839'
+      - '4795'
       X-RateLimit-Reset:
-      - '1669456398'
+      - '1669629754'
     status:
       code: 200
       message: OK

@@ -13,7 +13,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: POST
@@ -24,7 +24,7 @@ interactions:
         "<?xml version=''1.0'' encoding=''utf8''?>\n<records xmlns=\"http://ads.harvard.edu/schema/abs/1.1/abstracts\"
         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://ads.harvard.edu/schema/abs/1.1/abstracts
         http://ads.harvard.edu/schema/abs/1.1/abstracts.xsd\" retrieved=\"1\" start=\"1\"
-        selected=\"1\" citations=\"108\">\n<record refereed=\"true\" article=\"true\"
+        selected=\"1\" citations=\"109\">\n<record refereed=\"true\" article=\"true\"
         type=\"article\">\n<bibcode>2020ApJ...902L..36F</bibcode>\n<title>Constraints
         from Gravitational-wave Detections of Binary Black Hole Mergers on the &lt;SUP&gt;12&lt;/SUP&gt;C(\u03b1,
         \u03b3)&lt;SUP&gt;16&lt;/SUP&gt;O Rate</title>\n<author>Farmer, R.</author>\n<author>Renzo,
@@ -42,14 +42,14 @@ interactions:
         mass black holes</keyword>\n<keyword>Astrophysical black holes</keyword>\n<keyword>Massive
         stars</keyword>\n<keyword>Late stellar evolution</keyword>\n<keyword>1599</keyword>\n<keyword>1668</keyword>\n<keyword>304</keyword>\n<keyword>1129</keyword>\n<keyword>1611</keyword>\n<keyword>98</keyword>\n<keyword>732</keyword>\n<keyword>911</keyword>\n<keyword>Astrophysics
         - High Energy Astrophysical Phenomena</keyword>\n</keywords>\n<link type=\"abstract\">\n<name>abstract</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/abstract</url>\n</link>\n<link
-        type=\"citations\">\n<name>Citations to the Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/citations</url>\n<count>108</count>\n</link>\n<link
+        type=\"citations\">\n<name>Citations to the Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/citations</url>\n<count>109</count>\n</link>\n<link
         type=\"reference\">\n<name>References in the Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/reference</url>\n<count>172</count>\n</link>\n<link
         type=\"coreads\">\n<name>Co-Reads</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/coreads</url>\n</link>\n<link
         type=\"EPRINT_HTML\">\n<name>arXiv Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/EPRINT_HTML</url>\n</link>\n<link
         type=\"PUB_HTML\">\n<name>Publisher Article</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/PUB_HTML</url>\n</link>\n<link
         type=\"EPRINT_PDF\" access=\"open\">\n<name>arXiv PDF</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/EPRINT_PDF</url>\n</link>\n<link
         type=\"PUB_PDF\" access=\"open\">\n<name>Publisher PDF</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/PUB_PDF</url>\n</link>\n<link
-        type=\"SIMBAD\">\n<name>SIMBAD Database at the CDS</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/SIMBAD</url>\n<count>10</count>\n</link>\n<url>https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F</url>\n<citations>108</citations>\n<abstract>Gravitational-wave
+        type=\"SIMBAD\">\n<name>SIMBAD Database at the CDS</name>\n<url>https://ui.adsabs.harvard.edu/link_gateway/2020ApJ...902L..36F/SIMBAD</url>\n<count>10</count>\n</link>\n<url>https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F</url>\n<citations>109</citations>\n<abstract>Gravitational-wave
         detections are starting to allow us to probe the physical processes in the
         evolution of very massive stars through the imprints they leave on their final
         remnants. Stellar evolution theory predicts the existence of a gap in the
@@ -95,18 +95,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:38:32 GMT
+      - Sun, 27 Nov 2022 10:44:19 GMT
       Retry-After:
-      - '72886'
+      - '83894'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4872'
+      - '4822'
       X-RateLimit-Reset:
-      - '1669456399'
+      - '1669629754'
     status:
       code: 200
       message: OK

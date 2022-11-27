@@ -9,16 +9,16 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer,r%20year:1600&fl=abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference&fq=&start=0&rows=50
+    uri: https://api.adsabs.harvard.edu/v1//search/query?q=%5Efarmer%2Cr+year%3A1600&fl=abstract%2Cauthor%2Cbibcode%2Cpubdate%2Ctitle%2Cpub%2Cyear%2Ccitation_count&fq=&start=0&rows=50
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":97,\n    \"params\":{\n
-        \     \"q\":\"^farmer,r year:1600\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6380c546-0ec75d2166e561d3403aac20\",\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":83,\n    \"params\":{\n
+        \     \"q\":\"^farmer,r year:1600\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63833f71-279e609c6ccb28b354c171c4\",\n
         \     \"fq\":\"\",\n      \"rows\":\"50\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":0,\"start\":0,\"docs\":[]\n
         \ }}\n"
     headers:
@@ -39,22 +39,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '407'
+      - '397'
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:38:14 GMT
+      - Sun, 27 Nov 2022 10:44:01 GMT
       Retry-After:
-      - '72903'
+      - '83912'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4903'
+      - '4853'
       X-RateLimit-Reset:
-      - '1669456398'
+      - '1669629754'
     status:
       code: 200
       message: OK

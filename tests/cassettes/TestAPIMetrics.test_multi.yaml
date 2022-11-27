@@ -13,7 +13,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: POST
@@ -21,15 +21,15 @@ interactions:
   response:
     body:
       string: '{"skipped bibcodes": [], "basic stats": {"number of papers": 2, "normalized
-        paper count": 0.4, "total number of reads": 1998, "average number of reads":
-        999.0, "median number of reads": 999.0, "recent number of reads": 409, "total
-        number of downloads": 918, "average number of downloads": 459.0, "median number
-        of downloads": 459.0, "recent number of downloads": 212}, "basic stats refereed":
+        paper count": 0.4, "total number of reads": 2005, "average number of reads":
+        1002.5, "median number of reads": 1002.5, "recent number of reads": 416, "total
+        number of downloads": 919, "average number of downloads": 459.5, "median number
+        of downloads": 459.5, "recent number of downloads": 213}, "basic stats refereed":
         {"number of papers": 2, "normalized paper count": 0.4, "total number of reads":
-        1998, "average number of reads": 999.0, "median number of reads": 999.0, "recent
-        number of reads": 409, "total number of downloads": 918, "average number of
-        downloads": 459.0, "median number of downloads": 459.0, "recent number of
-        downloads": 212}}
+        2005, "average number of reads": 1002.5, "median number of reads": 1002.5,
+        "recent number of reads": 416, "total number of downloads": 919, "average
+        number of downloads": 459.5, "median number of downloads": 459.5, "recent
+        number of downloads": 213}}
 
         '
     headers:
@@ -50,22 +50,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '722'
+      - '726'
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:38:53 GMT
+      - Sun, 27 Nov 2022 10:44:45 GMT
       Retry-After:
-      - '72939'
+      - '85455'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '988'
+      - '982'
       X-RateLimit-Reset:
-      - '1669456473'
+      - '1669631341'
     status:
       code: 200
       message: OK

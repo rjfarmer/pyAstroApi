@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: GET
@@ -67,8 +67,15 @@ interactions:
         {"name": "ccsn2", "id": "uPlJy8NwSXa15RFsba2dSQ", "description": "My ADS library",
         "num_documents": 25, "date_created": "2021-08-11T14:25:35.242268", "date_last_modified":
         "2022-01-19T12:33:59.985104", "permission": "owner", "public": false, "num_users":
-        1, "owner": "robert.j.farmer37"}, {"name": "Untitled Library 1", "id": "qf-C6Zi-Tyad2vqJPS-I4g",
-        "description": "My ADS library", "num_documents": 52, "date_created": "2021-04-02T13:17:09.757542",
+        1, "owner": "robert.j.farmer37"}, {"name": "97DI73GH3E", "id": "SmIpeqeKRBOND-Ixq1MKbw",
+        "description": "My ADS library", "num_documents": 0, "date_created": "2022-11-25T13:51:55.812778",
+        "date_last_modified": "2022-11-25T13:51:55.812784", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "64CMMUKT68",
+        "id": "lIlbzEukRhmhOpX5zrvnfQ", "description": "My ADS library", "num_documents":
+        1, "date_created": "2022-11-25T13:50:38.395176", "date_last_modified": "2022-11-25T13:50:38.957229",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
+        {"name": "Untitled Library 1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description":
+        "My ADS library", "num_documents": 52, "date_created": "2021-04-02T13:17:09.757542",
         "date_last_modified": "2022-11-25T13:38:46.806780", "permission": "owner",
         "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "new2",
         "id": "tczEasuXTpmaBjDlqj5xGQ", "description": "My ADS library", "num_documents":
@@ -98,11 +105,11 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '5257'
+      - '5843'
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:50:33 GMT
+      - Sun, 27 Nov 2022 10:44:29 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin

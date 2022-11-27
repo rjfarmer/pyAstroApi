@@ -14,7 +14,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: POST
@@ -45,18 +45,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:39:14 GMT
+      - Sun, 27 Nov 2022 10:45:07 GMT
       Retry-After:
-      - '72930'
+      - '85445'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '100'
       X-RateLimit-Remaining:
-      - '94'
+      - '90'
       X-RateLimit-Reset:
-      - '1669456485'
+      - '1669631353'
     status:
       code: 404
       message: NOT FOUND

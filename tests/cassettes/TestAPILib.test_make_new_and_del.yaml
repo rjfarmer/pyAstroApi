@@ -109,7 +109,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:02:34 GMT
+      - Sun, 27 Nov 2022 10:44:39 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -117,7 +117,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"name": "30HVQWBMP6"}'
+    body: '{"name": "J8O0OPGS08"}'
     headers:
       Accept:
       - application/json
@@ -137,7 +137,7 @@ interactions:
     uri: https://api.adsabs.harvard.edu/v1//biblib/libraries
   response:
     body:
-      string: '{"name": "30HVQWBMP6", "id": "nOCn5J6wRsqBzpz3DBNc4Q", "description":
+      string: '{"name": "J8O0OPGS08", "id": "C-lUzfv0R32uOlN1JmZc-A", "description":
         "My ADS library"}
 
         '
@@ -163,7 +163,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:02:35 GMT
+      - Sun, 27 Nov 2022 10:44:39 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -245,9 +245,9 @@ interactions:
         "id": "lIlbzEukRhmhOpX5zrvnfQ", "description": "My ADS library", "num_documents":
         1, "date_created": "2022-11-25T13:50:38.395176", "date_last_modified": "2022-11-25T13:50:38.957229",
         "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
-        {"name": "30HVQWBMP6", "id": "nOCn5J6wRsqBzpz3DBNc4Q", "description": "My
-        ADS library", "num_documents": 0, "date_created": "2022-11-27T10:02:35.356448",
-        "date_last_modified": "2022-11-27T10:02:35.356453", "permission": "owner",
+        {"name": "J8O0OPGS08", "id": "C-lUzfv0R32uOlN1JmZc-A", "description": "My
+        ADS library", "num_documents": 0, "date_created": "2022-11-27T10:44:39.907514",
+        "date_last_modified": "2022-11-27T10:44:39.907520", "permission": "owner",
         "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "Untitled
         Library 1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library",
         "num_documents": 52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified":
@@ -283,7 +283,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:02:36 GMT
+      - Sun, 27 Nov 2022 10:44:41 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -306,7 +306,7 @@ interactions:
       authorization:
       - DUMMY
     method: DELETE
-    uri: https://api.adsabs.harvard.edu/v1//biblib/documents/nOCn5J6wRsqBzpz3DBNc4Q
+    uri: https://api.adsabs.harvard.edu/v1//biblib/documents/C-lUzfv0R32uOlN1JmZc-A
   response:
     body:
       string: '{}
@@ -334,7 +334,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:02:37 GMT
+      - Sun, 27 Nov 2022 10:44:41 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -451,7 +451,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:02:38 GMT
+      - Sun, 27 Nov 2022 10:44:42 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin

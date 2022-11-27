@@ -9,16 +9,16 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//search/query/?q=%5Efarmer&fl=bibcode&fq=&start=0&rows=100
+    uri: https://api.adsabs.harvard.edu/v1//search/query?q=%5Efarmer&fl=bibcode&fq=&start=0&rows=100
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":21,\n    \"params\":{\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":24,\n    \"params\":{\n
         \     \"q\":\"^farmer\",\n      \"fl\":\"bibcode\",\n      \"start\":\"0\",\n
-        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-6380c547-3331a0580c715b422f745662\",\n
+        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63833f72-4a0ec305409ce97e133972d5\",\n
         \     \"fq\":\"\",\n      \"rows\":\"100\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":998,\"start\":0,\"docs\":[\n
         \     {\n        \"bibcode\":\"2019ApJ...887...53F\"},\n      {\n        \"bibcode\":\"1987PhRvL..59..845F\"},\n
         \     {\n        \"bibcode\":\"1983PhyD....7..153F\"},\n      {\n        \"bibcode\":\"2020ApJ...902L..36F\"},\n
@@ -34,8 +34,8 @@ interactions:
         \     {\n        \"bibcode\":\"1999JGR...10426977F\"},\n      {\n        \"bibcode\":\"1977JGR....82.4225F\"},\n
         \     {\n        \"bibcode\":\"1980DSRA...27..239F\"},\n      {\n        \"bibcode\":\"2009Natur.460..685F\"},\n
         \     {\n        \"bibcode\":\"1988PrOce..21....1F\"},\n      {\n        \"bibcode\":\"2009NanoL...9.4474F\"},\n
-        \     {\n        \"bibcode\":\"2010Sci...329..933F\"},\n      {\n        \"bibcode\":\"1983PrOce..12..147F\"},\n
-        \     {\n        \"bibcode\":\"1964AcSpe..20.1149F\"},\n      {\n        \"bibcode\":\"1982ZNatA..37.1304F\"},\n
+        \     {\n        \"bibcode\":\"1983PrOce..12..147F\"},\n      {\n        \"bibcode\":\"1964AcSpe..20.1149F\"},\n
+        \     {\n        \"bibcode\":\"2010Sci...329..933F\"},\n      {\n        \"bibcode\":\"1982ZNatA..37.1304F\"},\n
         \     {\n        \"bibcode\":\"1989hra2.book.....F\"},\n      {\n        \"bibcode\":\"1999RSPSA.455.3221F\"},\n
         \     {\n        \"bibcode\":\"1976Sci...194.1339F\"},\n      {\n        \"bibcode\":\"2003WRR....39.1035F\"},\n
         \     {\n        \"bibcode\":\"1986PhyD...22..187F\"},\n      {\n        \"bibcode\":\"1985PhRvL..55..351F\"},\n
@@ -44,8 +44,8 @@ interactions:
         \     {\n        \"bibcode\":\"2003E&PSL.209..227F\"},\n      {\n        \"bibcode\":\"1987PhRvL..58.2255F\"},\n
         \     {\n        \"bibcode\":\"2006NanoL...6..699F\"},\n      {\n        \"bibcode\":\"1984JGR....8910141F\"},\n
         \     {\n        \"bibcode\":\"1996EnST...30.3080F\"},\n      {\n        \"bibcode\":\"1993Natur.361..620F\"},\n
-        \     {\n        \"bibcode\":\"2007PalOc..22.3205F\"},\n      {\n        \"bibcode\":\"2003TrGeo...3...85F\"},\n
-        \     {\n        \"bibcode\":\"1972ApOpt..11.2603F\"},\n      {\n        \"bibcode\":\"1989ASAJ...86.1897F\"},\n
+        \     {\n        \"bibcode\":\"2003TrGeo...3...85F\"},\n      {\n        \"bibcode\":\"1972ApOpt..11.2603F\"},\n
+        \     {\n        \"bibcode\":\"2007PalOc..22.3205F\"},\n      {\n        \"bibcode\":\"1989ASAJ...86.1897F\"},\n
         \     {\n        \"bibcode\":\"1976GeoRL...3...13F\"},\n      {\n        \"bibcode\":\"2002IJNMF..40...63F\"},\n
         \     {\n        \"bibcode\":\"1996JElS..143..159F\"},\n      {\n        \"bibcode\":\"1976Icar...28..279F\"},\n
         \     {\n        \"bibcode\":\"1980NYASA.357..453F\"},\n      {\n        \"bibcode\":\"2005PalOc..20.2018F\"},\n
@@ -93,18 +93,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:38:15 GMT
+      - Sun, 27 Nov 2022 10:44:02 GMT
       Retry-After:
-      - '72902'
+      - '83911'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4901'
+      - '4851'
       X-RateLimit-Reset:
-      - '1669456398'
+      - '1669629754'
     status:
       code: 200
       message: OK

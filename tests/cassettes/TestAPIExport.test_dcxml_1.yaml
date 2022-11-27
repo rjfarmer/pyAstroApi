@@ -13,7 +13,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: POST
@@ -24,7 +24,7 @@ interactions:
         "<?xml version=''1.0'' encoding=''utf8''?>\n<records xmlns=\"http://ads.harvard.edu/schema/abs/1.1/dc\"
         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
         xsi:schemaLocation=\"http://ads.harvard.edu/schema/abs/1.1/dc http://ads.harvard.edu/schema/abs/1.1/dc.xsd\"
-        retrieved=\"1\" start=\"1\" selected=\"1\" citations=\"108\">\n<record>\n<dc:identifier>2020ApJ...902L..36F</dc:identifier>\n<dc:title>Constraints
+        retrieved=\"1\" start=\"1\" selected=\"1\" citations=\"109\">\n<record>\n<dc:identifier>2020ApJ...902L..36F</dc:identifier>\n<dc:title>Constraints
         from Gravitational-wave Detections of Binary Black Hole Mergers on the &lt;SUP&gt;12&lt;/SUP&gt;C(\u03b1,
         \u03b3)&lt;SUP&gt;16&lt;/SUP&gt;O Rate</dc:title>\n<dc:creator>Farmer, R.</dc:creator>\n<dc:creator>Renzo,
         M.</dc:creator>\n<dc:creator>de Mink, S. E.</dc:creator>\n<dc:creator>Fishbach,
@@ -33,7 +33,7 @@ interactions:
         evolution, Supernovae, Core-collapse supernovae, Nuclear astrophysics, Stellar
         mass black holes, Astrophysical black holes, Massive stars, Late stellar evolution,
         1599, 1668, 304, 1129, 1611, 98, 732, 911, Astrophysics - High Energy Astrophysical
-        Phenomena</dc:subject>\n<dc:relation>https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F</dc:relation>\n<dc:relation>citations:108</dc:relation>\n<dc:description>Gravitational-wave
+        Phenomena</dc:subject>\n<dc:relation>https://ui.adsabs.harvard.edu/abs/2020ApJ...902L..36F</dc:relation>\n<dc:relation>citations:109</dc:relation>\n<dc:description>Gravitational-wave
         detections are starting to allow us to probe the physical processes in the
         evolution of very massive stars through the imprints they leave on their final
         remnants. Stellar evolution theory predicts the existence of a gap in the
@@ -79,18 +79,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:38:30 GMT
+      - Sun, 27 Nov 2022 10:44:17 GMT
       Retry-After:
-      - '72888'
+      - '83897'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4876'
+      - '4826'
       X-RateLimit-Reset:
-      - '1669456399'
+      - '1669629755'
     status:
       code: 200
       message: OK

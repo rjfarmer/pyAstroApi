@@ -31,7 +31,7 @@ _fields = set(
     """.split()
 )
 
-_short_fl = "abstract,author,bibcode,pubdate,title,pub,year,citation_count,reference"
+_short_fl = "abstract,author,bibcode,pubdate,title,pub,year,citation_count"
 
 
 def search(
@@ -55,25 +55,25 @@ def search(
     start = 0
     count = 0
     while True:
-        terms = [
-            f"?q={query}",
-            f"fl={fields}",
-            f"fq={fq}",
-            f"start={start}",
-        ]
+        data = {
+            "q": f"{query}",
+            "fl": f"{fields}",
+            "fq": f"{fq}",
+            "start": f"{start}",
+        }
 
         if limit > 0:
-            terms.append(f"rows={limit}")
+            data["rows"] = f"{limit}"
         else:
-            terms.append(f"rows=50")
+            data["rows"] = "50"
 
-        search_term = "&".join(terms)
-
-        url = urls.make_url(urls.urls["search"]["search"], search_term)
+        url = urls.make_url(urls.urls["search"]["search"])
 
         if dbg:
             print(url)
-        r = http.get(token, url)
+            print(data)
+
+        r = http.get(token, url, data=data)
 
         if r.status != 200:
             raise e.AdsApiError(r.response["error"])

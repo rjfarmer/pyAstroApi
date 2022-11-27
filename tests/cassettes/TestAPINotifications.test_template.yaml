@@ -14,17 +14,17 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: POST
     uri: https://api.adsabs.harvard.edu/v1//vault/notifications
   response:
     body:
-      string: '{"id": 10723, "name": "Recent Papers", "qid": null, "type": "template",
+      string: '{"id": 10733, "name": "Recent Papers", "qid": null, "type": "template",
         "active": true, "stateful": false, "frequency": "daily", "template": "arxiv",
-        "classes": ["astro-ph"], "data": null, "created": "2022-11-25T13:39:19.742847+00:00",
-        "updated": "2022-11-25T13:39:19.742860+00:00"}'
+        "classes": ["astro-ph"], "data": null, "created": "2022-11-27T10:45:12.341520+00:00",
+        "updated": "2022-11-27T10:45:12.341533+00:00"}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -47,7 +47,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:39:19 GMT
+      - Sun, 27 Nov 2022 10:45:12 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -64,16 +64,16 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: GET
     uri: https://api.adsabs.harvard.edu/v1//vault/notifications
   response:
     body:
-      string: '[{"id": 10723, "name": "Recent Papers", "type": "template", "active":
+      string: '[{"id": 10733, "name": "Recent Papers", "type": "template", "active":
         true, "frequency": "daily", "template": "arxiv", "data": null, "created":
-        "2022-11-25T13:39:19.742847+00:00", "updated": "2022-11-25T13:39:19.742860+00:00"}]'
+        "2022-11-27T10:45:12.341520+00:00", "updated": "2022-11-27T10:45:12.341533+00:00"}]'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -96,7 +96,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:39:20 GMT
+      - Sun, 27 Nov 2022 10:45:12 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -113,17 +113,17 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//vault/notifications/10723
+    uri: https://api.adsabs.harvard.edu/v1//vault/notifications/10733
   response:
     body:
-      string: '[{"id": 10723, "name": "Recent Papers", "qid": null, "type": "template",
+      string: '[{"id": 10733, "name": "Recent Papers", "qid": null, "type": "template",
         "active": true, "stateful": false, "frequency": "daily", "template": "arxiv",
-        "classes": ["astro-ph"], "data": null, "created": "2022-11-25T13:39:19.742847+00:00",
-        "updated": "2022-11-25T13:39:19.742860+00:00"}]'
+        "classes": ["astro-ph"], "data": null, "created": "2022-11-27T10:45:12.341520+00:00",
+        "updated": "2022-11-27T10:45:12.341533+00:00"}]'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -146,7 +146,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:39:20 GMT
+      - Sun, 27 Nov 2022 10:45:13 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -165,11 +165,11 @@ interactions:
       Content-Length:
       - '0'
       User-Agent:
-      - python-requests/2.27.1
+      - python-requests/2.28.0
       authorization:
       - DUMMY
     method: DELETE
-    uri: https://api.adsabs.harvard.edu/v1//vault/notifications/10723
+    uri: https://api.adsabs.harvard.edu/v1//vault/notifications/10733
   response:
     body:
       string: ''
@@ -193,7 +193,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Nov 2022 13:39:21 GMT
+      - Sun, 27 Nov 2022 10:45:13 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
