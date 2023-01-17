@@ -502,28 +502,33 @@ class journal:
     def citations(self):
         """Get the citations to all papers in journal.
 
-        This does not remove duplicates
+        This does remove duplicates
 
         Returns:
             _type_: _description_
         """
         data = {}
         for paper in self:
-            data[paper.bibcode] = paper.citations
+            cites = paper.citations()
+            for cite in cites:
+                data[cite.bibcode] = cite
 
         return data
 
     def references(self):
         """Get the references to all papers in the journal
 
-        This does not remove duplicates
+        This does remove duplicates
 
         Returns:
             _type_: _description_
         """
         data = {}
+        # Loads data
         for paper in self:
-            data[paper.references] = paper.references
+            refs = paper.references()
+            for ref in refs:
+                data[ref.bibcode] = ref
 
         return data
 
@@ -541,7 +546,7 @@ class journal:
         for paper in self:
             res += paper.citation_count()
             if uniq:
-                res_uniq.extend(paper.citations)
+                res_uniq.extend(paper.citations())
 
         if uniq:
             return len(set(res_uniq))
@@ -562,7 +567,7 @@ class journal:
         for paper in self:
             res += paper.reference_count()
             if uniq:
-                res_uniq.extend(paper.references)
+                res_uniq.extend(paper.references())
 
         if uniq:
             return len(set(res_uniq))

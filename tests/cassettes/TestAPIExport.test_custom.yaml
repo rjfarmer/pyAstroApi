@@ -13,7 +13,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: POST
@@ -45,18 +45,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:28 GMT
+      - Tue, 17 Jan 2023 14:16:44 GMT
       Retry-After:
-      - '83885'
+      - '85356'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4812'
+      - '4792'
       X-RateLimit-Reset:
-      - '1669629754'
+      - '1674050361'
     status:
       code: 200
       message: OK

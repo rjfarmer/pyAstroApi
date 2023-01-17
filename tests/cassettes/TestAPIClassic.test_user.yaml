@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
@@ -41,18 +41,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:45:09 GMT
+      - Tue, 17 Jan 2023 14:17:51 GMT
       Retry-After:
-      - '85456'
+      - '86399'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '500'
       X-RateLimit-Remaining:
-      - '496'
+      - '498'
       X-RateLimit-Reset:
-      - '1669631366'
+      - '1674051471'
     status:
       code: 400
       message: BAD REQUEST

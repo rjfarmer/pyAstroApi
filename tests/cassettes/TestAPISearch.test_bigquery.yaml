@@ -15,16 +15,16 @@ interactions:
       Content-Length:
       - '47'
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: POST
     uri: https://api.adsabs.harvard.edu/v1//search/bigquery?q=%2A%3A%2A&fl=id%2Cbibcode%2Ctitle&rows=10
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":32,\n    \"params\":{\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":33,\n    \"params\":{\n
         \     \"q\":\"*:*\",\n      \"fl\":\"id,bibcode,title\",\n      \"start\":\"0\",\n
-        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63833f73-58f49dbe085e8feb286c02de\",\n
+        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63c6adae-0f0084a7748ec2d00a7e30f8\",\n
         \     \"fq\":\"{!bitset}\",\n      \"rows\":\"10\",\n      \"wt\":\"json\"}},\n
         \ \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n      {\n        \"bibcode\":\"2020ApJ...902L..36F\",\n
         \       \"id\":\"19493342\",\n        \"title\":[\"Constraints from Gravitational-wave
@@ -53,7 +53,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:03 GMT
+      - Tue, 17 Jan 2023 14:16:14 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin

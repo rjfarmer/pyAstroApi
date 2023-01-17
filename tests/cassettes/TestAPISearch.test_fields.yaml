@@ -9,16 +9,16 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
     uri: https://api.adsabs.harvard.edu/v1//search/query?q=%5Efarmer%2Cr+year%3A2020&fl=page%2Cvolume&fq=&start=0&rows=50
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":11,\n    \"params\":{\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":10,\n    \"params\":{\n
         \     \"q\":\"^farmer,r year:2020\",\n      \"fl\":\"page,volume\",\n      \"start\":\"0\",\n
-        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63833f70-4ac6f4b74e3944b10cfb96cf\",\n
+        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63c6adab-44de318c0a05384f33866e72\",\n
         \     \"fq\":\"\",\n      \"rows\":\"50\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
         \     {\n        \"page\":[\"L36\"],\n        \"volume\":\"902\"},\n      {}]\n
         \ }}\n"
@@ -44,18 +44,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:00 GMT
+      - Tue, 17 Jan 2023 14:16:11 GMT
       Retry-After:
-      - '83913'
+      - '85390'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4854'
+      - '4834'
       X-RateLimit-Reset:
-      - '1669629754'
+      - '1674050362'
     status:
       code: 200
       message: OK

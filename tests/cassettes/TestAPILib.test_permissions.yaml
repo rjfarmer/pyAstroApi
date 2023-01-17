@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"name": "NXMC9K0HJJ"}'
+    body: '{"name": "J8O0OPGS08_4"}'
     headers:
       Accept:
       - application/json
@@ -9,18 +9,18 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '22'
+      - '24'
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: POST
     uri: https://api.adsabs.harvard.edu/v1//biblib/libraries
   response:
     body:
-      string: '{"name": "NXMC9K0HJJ", "id": "iEz1f12jRO-bMORPvyISBg", "description":
+      string: '{"name": "J8O0OPGS08_4", "id": "mc3IhsmiQT-okyRwCxiYUg", "description":
         "My ADS library"}
 
         '
@@ -42,11 +42,11 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '88'
+      - '90'
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:30 GMT
+      - Tue, 17 Jan 2023 14:25:52 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -63,11 +63,11 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//biblib/permissions/iEz1f12jRO-bMORPvyISBg
+    uri: https://api.adsabs.harvard.edu/v1//biblib/permissions/mc3IhsmiQT-okyRwCxiYUg
   response:
     body:
       string: '[{"robert.j.farmer37@gmail.com": ["owner"]}]
@@ -95,7 +95,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:30 GMT
+      - Tue, 17 Jan 2023 14:25:53 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -114,11 +114,11 @@ interactions:
       Content-Length:
       - '0'
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: DELETE
-    uri: https://api.adsabs.harvard.edu/v1//biblib/documents/iEz1f12jRO-bMORPvyISBg
+    uri: https://api.adsabs.harvard.edu/v1//biblib/documents/mc3IhsmiQT-okyRwCxiYUg
   response:
     body:
       string: '{}
@@ -146,7 +146,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:31 GMT
+      - Tue, 17 Jan 2023 14:25:53 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin

@@ -13,7 +13,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: POST
@@ -21,13 +21,13 @@ interactions:
   response:
     body:
       string: '{"msg": {"start": 0, "rows": 2, "numFound": 2}, "data": {"fullGraph":
-        {"nodes": [{"read_count": 44, "nodeName": "2019ApJ...887...53F", "title":
+        {"nodes": [{"read_count": 73, "nodeName": "2019ApJ...887...53F", "title":
         "Mind the Gap: The Location of the Lower Edge of the Pair-instability Supernova
-        Black Hole Mass Gap", "first_author": "Farmer, R.", "citation_count": 194,
-        "year": "2019", "nodeWeight": 194}, {"read_count": 29, "nodeName": "2020ApJ...902L..36F",
+        Black Hole Mass Gap", "first_author": "Farmer, R.", "citation_count": 199,
+        "year": "2019", "nodeWeight": 199}, {"read_count": 50, "nodeName": "2020ApJ...902L..36F",
         "title": "Constraints from Gravitational-wave Detections of Binary Black Hole
         Mergers on the <SUP>12</SUP>C(\u03b1, \u03b3)<SUP>16</SUP>O Rate", "first_author":
-        "Farmer, R.", "citation_count": 109, "year": "2020", "nodeWeight": 109}],
+        "Farmer, R.", "citation_count": 114, "year": "2020", "nodeWeight": 114}],
         "links": []}}}
 
         '
@@ -53,18 +53,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:45:05 GMT
+      - Tue, 17 Jan 2023 14:17:45 GMT
       Retry-After:
-      - '85435'
+      - '86370'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '975'
+      - '988'
       X-RateLimit-Reset:
-      - '1669631341'
+      - '1674051436'
     status:
       code: 200
       message: OK

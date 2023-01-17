@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
@@ -31,7 +31,7 @@ interactions:
         "date_last_modified": "2016-08-23T22:24:34.654495", "permission": "owner",
         "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "tzo",
         "id": "0DF3Mqm9TCq9Xs80qD-BcA", "description": "My ADS library", "num_documents":
-        93, "date_created": "2016-10-14T19:42:19.862621", "date_last_modified": "2022-11-24T13:14:23.239300",
+        94, "date_created": "2016-10-14T19:42:19.862621", "date_last_modified": "2022-12-23T17:49:10.198658",
         "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
         {"name": "rot_mass_stars", "id": "btHPtB5RQSOeO-tcNNmemw", "description":
         "My ADS library", "num_documents": 54, "date_created": "2017-02-24T17:34:44.585637",
@@ -67,191 +67,6 @@ interactions:
         {"name": "ccsn2", "id": "uPlJy8NwSXa15RFsba2dSQ", "description": "My ADS library",
         "num_documents": 25, "date_created": "2021-08-11T14:25:35.242268", "date_last_modified":
         "2022-01-19T12:33:59.985104", "permission": "owner", "public": false, "num_users":
-        1, "owner": "robert.j.farmer37"}, {"name": "97DI73GH3E", "id": "SmIpeqeKRBOND-Ixq1MKbw",
-        "description": "My ADS library", "num_documents": 0, "date_created": "2022-11-25T13:51:55.812778",
-        "date_last_modified": "2022-11-25T13:51:55.812784", "permission": "owner",
-        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "64CMMUKT68",
-        "id": "lIlbzEukRhmhOpX5zrvnfQ", "description": "My ADS library", "num_documents":
-        1, "date_created": "2022-11-25T13:50:38.395176", "date_last_modified": "2022-11-25T13:50:38.957229",
-        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
-        {"name": "Untitled Library 1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description":
-        "My ADS library", "num_documents": 52, "date_created": "2021-04-02T13:17:09.757542",
-        "date_last_modified": "2022-11-25T13:38:46.806780", "permission": "owner",
-        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "new2",
-        "id": "tczEasuXTpmaBjDlqj5xGQ", "description": "My ADS library", "num_documents":
-        0, "date_created": "2021-04-02T14:59:06.913337", "date_last_modified": "2021-09-05T10:30:12.298428",
-        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
-        {"name": "new lib2", "id": "XLyNKQmbTkmLNE8Onr2fFA", "description": "My ADS
-        library", "num_documents": 0, "date_created": "2021-04-02T14:59:38.048357",
-        "date_last_modified": "2021-04-02T14:59:38.048363", "permission": "owner",
-        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}]}
-
-        '
-    headers:
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Headers:
-      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
-        X-CSRFToken
-      Access-Control-Allow-Methods:
-      - DELETE, GET, OPTIONS, POST, PUT
-      Access-Control-Allow-Origin:
-      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
-        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
-        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
-        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
-        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
-        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '5843'
-      Content-Type:
-      - application/json
-      Date:
-      - Sun, 27 Nov 2022 10:44:39 GMT
-      Set-Cookie: DUMMY
-      Vary:
-      - Origin
-    status:
-      code: 200
-      message: OK
-- request:
-    body: '{"name": "J8O0OPGS08"}'
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate, br
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '22'
-      Content-Type:
-      - application/json
-      User-Agent:
-      - python-requests/2.28.0
-      authorization:
-      - DUMMY
-    method: POST
-    uri: https://api.adsabs.harvard.edu/v1//biblib/libraries
-  response:
-    body:
-      string: '{"name": "J8O0OPGS08", "id": "C-lUzfv0R32uOlN1JmZc-A", "description":
-        "My ADS library"}
-
-        '
-    headers:
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Headers:
-      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
-        X-CSRFToken
-      Access-Control-Allow-Methods:
-      - DELETE, GET, OPTIONS, POST, PUT
-      Access-Control-Allow-Origin:
-      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
-        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
-        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
-        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
-        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
-        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '88'
-      Content-Type:
-      - application/json
-      Date:
-      - Sun, 27 Nov 2022 10:44:39 GMT
-      Set-Cookie: DUMMY
-      Vary:
-      - Origin
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate, br
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.28.0
-      authorization:
-      - DUMMY
-    method: GET
-    uri: https://api.adsabs.harvard.edu/v1//biblib/libraries
-  response:
-    body:
-      string: '{"libraries": [{"name": "massive_star_yields", "id": "JmbSgnh_R9yBjz7OaqV2AQ",
-        "description": "My ADS library", "num_documents": 8, "date_created": "2016-03-17T20:31:40.809547",
-        "date_last_modified": "2016-04-15T23:44:20.066299", "permission": "owner",
-        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "atmo",
-        "id": "EFxIuXn8TjO9kOOHCWOtnw", "description": "My ADS library", "num_documents":
-        7, "date_created": "2016-04-01T21:55:57.499567", "date_last_modified": "2021-11-12T14:23:31.820973",
-        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
-        {"name": "mesa", "id": "28DoWuUTSQal9JedceRR8A", "description": "My ADS library",
-        "num_documents": 5, "date_created": "2016-04-04T18:35:57.073574", "date_last_modified":
-        "2016-04-04T18:36:07.194600", "permission": "owner", "public": false, "num_users":
-        1, "owner": "robert.j.farmer37"}, {"name": "sn", "id": "zjrNfQQDQnqdp0wxeJeZFg",
-        "description": "My ADS library", "num_documents": 19, "date_created": "2016-08-23T22:19:09.498561",
-        "date_last_modified": "2016-08-23T22:24:34.654495", "permission": "owner",
-        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "tzo",
-        "id": "0DF3Mqm9TCq9Xs80qD-BcA", "description": "My ADS library", "num_documents":
-        93, "date_created": "2016-10-14T19:42:19.862621", "date_last_modified": "2022-11-24T13:14:23.239300",
-        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
-        {"name": "rot_mass_stars", "id": "btHPtB5RQSOeO-tcNNmemw", "description":
-        "My ADS library", "num_documents": 54, "date_created": "2017-02-24T17:34:44.585637",
-        "date_last_modified": "2017-02-24T17:35:16.254802", "permission": "owner",
-        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "ppisn",
-        "id": "4k38I5NuQ32sh-v-NypMaw", "description": "My ADS library", "num_documents":
-        46, "date_created": "2017-09-08T12:56:48.740567", "date_last_modified": "2018-05-02T15:32:18.266531",
-        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
-        {"name": "cmfgen", "id": "E00SecqoRxKb91c8XUp0Ow", "description": "My ADS
-        library", "num_documents": 29, "date_created": "2017-12-01T16:07:13.419818",
-        "date_last_modified": "2018-02-09T16:16:07.716430", "permission": "owner",
-        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "sms",
-        "id": "H5ZP_sZQRoSGUb4brra5xQ", "description": "My ADS library", "num_documents":
-        3, "date_created": "2018-03-06T14:37:15.235206", "date_last_modified": "2018-03-07T13:59:29.928272",
-        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
-        {"name": "libenew", "id": "MhDUg8saTaOkysTRIVIKIw", "description": "My ADS
-        library", "num_documents": 21, "date_created": "2021-09-05T13:16:18.429725",
-        "date_last_modified": "2021-09-05T13:29:34.298846", "permission": "owner",
-        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "mach_learn_net",
-        "id": "x2NZWyefSs6i3D2y7wmCdQ", "description": "My ADS library", "num_documents":
-        1, "date_created": "2022-05-24T14:44:13.749022", "date_last_modified": "2022-05-24T14:44:13.749029",
-        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
-        {"name": "LIGO", "id": "jNAGBrl8RuWE-QTWkXhFZQ", "description": "My ADS library",
-        "num_documents": 2, "date_created": "2021-11-12T14:23:19.017164", "date_last_modified":
-        "2021-11-12T14:23:28.707211", "permission": "owner", "public": false, "num_users":
-        1, "owner": "robert.j.farmer37"}, {"name": "ccsn", "id": "I87WdQEHTcOl49WfnVBv2g",
-        "description": "My ADS library", "num_documents": 19, "date_created": "2020-07-08T09:44:15.513087",
-        "date_last_modified": "2021-04-02T13:21:18.975363", "permission": "owner",
-        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "test_123465789",
-        "id": "EPh11s2vS62C5kD_sBcwmQ", "description": "My ADS library", "num_documents":
-        0, "date_created": "2022-08-02T22:22:05.421790", "date_last_modified": "2022-08-02T22:22:05.421802",
-        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
-        {"name": "ccsn2", "id": "uPlJy8NwSXa15RFsba2dSQ", "description": "My ADS library",
-        "num_documents": 25, "date_created": "2021-08-11T14:25:35.242268", "date_last_modified":
-        "2022-01-19T12:33:59.985104", "permission": "owner", "public": false, "num_users":
-        1, "owner": "robert.j.farmer37"}, {"name": "97DI73GH3E", "id": "SmIpeqeKRBOND-Ixq1MKbw",
-        "description": "My ADS library", "num_documents": 0, "date_created": "2022-11-25T13:51:55.812778",
-        "date_last_modified": "2022-11-25T13:51:55.812784", "permission": "owner",
-        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "64CMMUKT68",
-        "id": "lIlbzEukRhmhOpX5zrvnfQ", "description": "My ADS library", "num_documents":
-        1, "date_created": "2022-11-25T13:50:38.395176", "date_last_modified": "2022-11-25T13:50:38.957229",
-        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
-        {"name": "J8O0OPGS08", "id": "C-lUzfv0R32uOlN1JmZc-A", "description": "My
-        ADS library", "num_documents": 0, "date_created": "2022-11-27T10:44:39.907514",
-        "date_last_modified": "2022-11-27T10:44:39.907520", "permission": "owner",
-        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "Untitled
-        Library 1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description": "My ADS library",
-        "num_documents": 52, "date_created": "2021-04-02T13:17:09.757542", "date_last_modified":
-        "2022-11-25T13:38:46.806780", "permission": "owner", "public": false, "num_users":
         1, "owner": "robert.j.farmer37"}, {"name": "new2", "id": "tczEasuXTpmaBjDlqj5xGQ",
         "description": "My ADS library", "num_documents": 0, "date_created": "2021-04-02T14:59:06.913337",
         "date_last_modified": "2021-09-05T10:30:12.298428", "permission": "owner",
@@ -279,11 +94,11 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '6136'
+      - '4955'
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:41 GMT
+      - Tue, 17 Jan 2023 14:26:42 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -291,25 +106,28 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: null
+    body: '{"name": "J8O0OPGS08_1"}'
     headers:
       Accept:
-      - '*/*'
+      - application/json
       Accept-Encoding:
       - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
-      - '0'
+      - '24'
+      Content-Type:
+      - application/json
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
-    method: DELETE
-    uri: https://api.adsabs.harvard.edu/v1//biblib/documents/C-lUzfv0R32uOlN1JmZc-A
+    method: POST
+    uri: https://api.adsabs.harvard.edu/v1//biblib/libraries
   response:
     body:
-      string: '{}
+      string: '{"name": "J8O0OPGS08_1", "id": "zghVfWRTR_G8OkT2Jkbihg", "description":
+        "My ADS library"}
 
         '
     headers:
@@ -330,11 +148,11 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '3'
+      - '90'
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:41 GMT
+      - Tue, 17 Jan 2023 14:26:43 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -351,7 +169,7 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
@@ -373,7 +191,7 @@ interactions:
         "date_last_modified": "2016-08-23T22:24:34.654495", "permission": "owner",
         "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "tzo",
         "id": "0DF3Mqm9TCq9Xs80qD-BcA", "description": "My ADS library", "num_documents":
-        93, "date_created": "2016-10-14T19:42:19.862621", "date_last_modified": "2022-11-24T13:14:23.239300",
+        94, "date_created": "2016-10-14T19:42:19.862621", "date_last_modified": "2022-12-23T17:49:10.198658",
         "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
         {"name": "rot_mass_stars", "id": "btHPtB5RQSOeO-tcNNmemw", "description":
         "My ADS library", "num_documents": 54, "date_created": "2017-02-24T17:34:44.585637",
@@ -409,16 +227,9 @@ interactions:
         {"name": "ccsn2", "id": "uPlJy8NwSXa15RFsba2dSQ", "description": "My ADS library",
         "num_documents": 25, "date_created": "2021-08-11T14:25:35.242268", "date_last_modified":
         "2022-01-19T12:33:59.985104", "permission": "owner", "public": false, "num_users":
-        1, "owner": "robert.j.farmer37"}, {"name": "97DI73GH3E", "id": "SmIpeqeKRBOND-Ixq1MKbw",
-        "description": "My ADS library", "num_documents": 0, "date_created": "2022-11-25T13:51:55.812778",
-        "date_last_modified": "2022-11-25T13:51:55.812784", "permission": "owner",
-        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "64CMMUKT68",
-        "id": "lIlbzEukRhmhOpX5zrvnfQ", "description": "My ADS library", "num_documents":
-        1, "date_created": "2022-11-25T13:50:38.395176", "date_last_modified": "2022-11-25T13:50:38.957229",
-        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
-        {"name": "Untitled Library 1", "id": "qf-C6Zi-Tyad2vqJPS-I4g", "description":
-        "My ADS library", "num_documents": 52, "date_created": "2021-04-02T13:17:09.757542",
-        "date_last_modified": "2022-11-25T13:38:46.806780", "permission": "owner",
+        1, "owner": "robert.j.farmer37"}, {"name": "J8O0OPGS08_1", "id": "zghVfWRTR_G8OkT2Jkbihg",
+        "description": "My ADS library", "num_documents": 0, "date_created": "2023-01-17T14:26:43.738664",
+        "date_last_modified": "2023-01-17T14:26:43.738671", "permission": "owner",
         "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "new2",
         "id": "tczEasuXTpmaBjDlqj5xGQ", "description": "My ADS library", "num_documents":
         0, "date_created": "2021-04-02T14:59:06.913337", "date_last_modified": "2021-09-05T10:30:12.298428",
@@ -447,11 +258,168 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '5843'
+      - '5250'
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:42 GMT
+      - Tue, 17 Jan 2023 14:26:45 GMT
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-requests/2.28.1
+      authorization:
+      - DUMMY
+    method: DELETE
+    uri: https://api.adsabs.harvard.edu/v1//biblib/documents/zghVfWRTR_G8OkT2Jkbihg
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 17 Jan 2023 14:26:45 GMT
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+      authorization:
+      - DUMMY
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//biblib/libraries
+  response:
+    body:
+      string: '{"libraries": [{"name": "massive_star_yields", "id": "JmbSgnh_R9yBjz7OaqV2AQ",
+        "description": "My ADS library", "num_documents": 8, "date_created": "2016-03-17T20:31:40.809547",
+        "date_last_modified": "2016-04-15T23:44:20.066299", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "atmo",
+        "id": "EFxIuXn8TjO9kOOHCWOtnw", "description": "My ADS library", "num_documents":
+        7, "date_created": "2016-04-01T21:55:57.499567", "date_last_modified": "2021-11-12T14:23:31.820973",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
+        {"name": "mesa", "id": "28DoWuUTSQal9JedceRR8A", "description": "My ADS library",
+        "num_documents": 5, "date_created": "2016-04-04T18:35:57.073574", "date_last_modified":
+        "2016-04-04T18:36:07.194600", "permission": "owner", "public": false, "num_users":
+        1, "owner": "robert.j.farmer37"}, {"name": "sn", "id": "zjrNfQQDQnqdp0wxeJeZFg",
+        "description": "My ADS library", "num_documents": 19, "date_created": "2016-08-23T22:19:09.498561",
+        "date_last_modified": "2016-08-23T22:24:34.654495", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "tzo",
+        "id": "0DF3Mqm9TCq9Xs80qD-BcA", "description": "My ADS library", "num_documents":
+        94, "date_created": "2016-10-14T19:42:19.862621", "date_last_modified": "2022-12-23T17:49:10.198658",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
+        {"name": "rot_mass_stars", "id": "btHPtB5RQSOeO-tcNNmemw", "description":
+        "My ADS library", "num_documents": 54, "date_created": "2017-02-24T17:34:44.585637",
+        "date_last_modified": "2017-02-24T17:35:16.254802", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "ppisn",
+        "id": "4k38I5NuQ32sh-v-NypMaw", "description": "My ADS library", "num_documents":
+        46, "date_created": "2017-09-08T12:56:48.740567", "date_last_modified": "2018-05-02T15:32:18.266531",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
+        {"name": "cmfgen", "id": "E00SecqoRxKb91c8XUp0Ow", "description": "My ADS
+        library", "num_documents": 29, "date_created": "2017-12-01T16:07:13.419818",
+        "date_last_modified": "2018-02-09T16:16:07.716430", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "sms",
+        "id": "H5ZP_sZQRoSGUb4brra5xQ", "description": "My ADS library", "num_documents":
+        3, "date_created": "2018-03-06T14:37:15.235206", "date_last_modified": "2018-03-07T13:59:29.928272",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
+        {"name": "libenew", "id": "MhDUg8saTaOkysTRIVIKIw", "description": "My ADS
+        library", "num_documents": 21, "date_created": "2021-09-05T13:16:18.429725",
+        "date_last_modified": "2021-09-05T13:29:34.298846", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "mach_learn_net",
+        "id": "x2NZWyefSs6i3D2y7wmCdQ", "description": "My ADS library", "num_documents":
+        1, "date_created": "2022-05-24T14:44:13.749022", "date_last_modified": "2022-05-24T14:44:13.749029",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
+        {"name": "LIGO", "id": "jNAGBrl8RuWE-QTWkXhFZQ", "description": "My ADS library",
+        "num_documents": 2, "date_created": "2021-11-12T14:23:19.017164", "date_last_modified":
+        "2021-11-12T14:23:28.707211", "permission": "owner", "public": false, "num_users":
+        1, "owner": "robert.j.farmer37"}, {"name": "ccsn", "id": "I87WdQEHTcOl49WfnVBv2g",
+        "description": "My ADS library", "num_documents": 19, "date_created": "2020-07-08T09:44:15.513087",
+        "date_last_modified": "2021-04-02T13:21:18.975363", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "test_123465789",
+        "id": "EPh11s2vS62C5kD_sBcwmQ", "description": "My ADS library", "num_documents":
+        0, "date_created": "2022-08-02T22:22:05.421790", "date_last_modified": "2022-08-02T22:22:05.421802",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
+        {"name": "ccsn2", "id": "uPlJy8NwSXa15RFsba2dSQ", "description": "My ADS library",
+        "num_documents": 25, "date_created": "2021-08-11T14:25:35.242268", "date_last_modified":
+        "2022-01-19T12:33:59.985104", "permission": "owner", "public": false, "num_users":
+        1, "owner": "robert.j.farmer37"}, {"name": "new2", "id": "tczEasuXTpmaBjDlqj5xGQ",
+        "description": "My ADS library", "num_documents": 0, "date_created": "2021-04-02T14:59:06.913337",
+        "date_last_modified": "2021-09-05T10:30:12.298428", "permission": "owner",
+        "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, {"name": "new
+        lib2", "id": "XLyNKQmbTkmLNE8Onr2fFA", "description": "My ADS library", "num_documents":
+        0, "date_created": "2021-04-02T14:59:38.048357", "date_last_modified": "2021-04-02T14:59:38.048363",
+        "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"}]}
+
+        '
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4955'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 17 Jan 2023 14:26:47 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin

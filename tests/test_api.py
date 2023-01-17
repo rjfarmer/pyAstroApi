@@ -273,7 +273,9 @@ class TestAPILib:
 
     def test_permissions(self):
 
-        name = "".join(random.choices(string.ascii_uppercase + string.digits, k=10))
+        name = (
+            "J8O0OPGS08_4"  # Use a fixed string otherwise the test breaks when repeated
+        )
 
         lib_new = lib.new(token, name)
 
@@ -284,7 +286,9 @@ class TestAPILib:
 
     def test_get(self):
 
-        name = "".join(random.choices(string.ascii_uppercase + string.digits, k=10))
+        name = (
+            "J8O0OPGS08_3"  # Use a fixed string otherwise the test breaks when repeated
+        )
 
         lib_new = lib.new(token, name)
         lib.add(token, lib_new["id"], "2021ApJ...923..214F")
@@ -298,7 +302,9 @@ class TestAPILib:
 
     def test_add_remove(self):
 
-        name = "".join(random.choices(string.ascii_uppercase + string.digits, k=10))
+        name = (
+            "J8O0OPGS08_2"  # Use a fixed string otherwise the test breaks when repeated
+        )
 
         lib_new = lib.new(token, name)
         r = list(lib.get(token, lib_new["id"]))
@@ -320,9 +326,8 @@ class TestAPILib:
         r = lib.list_all(token)
 
         name = (
-            "J8O0OPGS08"  # Use a fixed string otherwise the test breaks when repeated
+            "J8O0OPGS08_1"  # Use a fixed string otherwise the test breaks when repeated
         )
-
         lib_new = lib.new(token, name)
 
         r2 = lib.list_all(token)
@@ -577,8 +582,8 @@ class TestAPIVisual:
     def test_word_cloud(self):
         r = visual.word_cloud(token, query='author:"huchra, john"', rows=1)
 
-        assert "available" in r
-        assert "record_count" in r["available"]
+        assert len(r) > 10
+        assert "record_count" in r[list(r.keys())[0]]
 
 
 @pytest.mark.vcr()

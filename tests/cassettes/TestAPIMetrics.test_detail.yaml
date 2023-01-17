@@ -13,7 +13,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: POST
@@ -21,12 +21,13 @@ interactions:
   response:
     body:
       string: '{"skipped bibcodes": [], "2020ApJ...902L..36F": {"citations": {"2020":
-        15, "2021": 36, "2022": 58}, "ref_citations": {"2020": 13, "2021": 31, "2022":
-        38}, "reads": {"2020": 359, "2021": 234, "2022": 167}, "downloads": {"2020":
-        187, "2021": 117, "2022": 94}}, "2020zndo...3678482F": {"citations": {"2020":
-        3, "2021": 0, "2022": 0}, "ref_citations": {"2020": 2, "2021": 0, "2022":
-        0}, "reads": {"2020": 9, "2021": 8, "2022": 3}, "downloads": {"2020": 3, "2021":
-        3, "2022": 2}}}
+        16, "2021": 35, "2022": 61, "2023": 2}, "ref_citations": {"2020": 13, "2021":
+        31, "2022": 43, "2023": 1}, "reads": {"2020": 359, "2021": 234, "2022": 186,
+        "2023": 8}, "downloads": {"2020": 187, "2021": 117, "2022": 105, "2023": 4}},
+        "2020zndo...3678482F": {"citations": {"2020": 3, "2021": 0, "2022": 0, "2023":
+        0}, "ref_citations": {"2020": 2, "2021": 0, "2022": 0, "2023": 0}, "reads":
+        {"2020": 9, "2021": 8, "2022": 4, "2023": 0}, "downloads": {"2020": 3, "2021":
+        3, "2022": 2, "2023": 0}}}
 
         '
     headers:
@@ -47,22 +48,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '476'
+      - '565'
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:48 GMT
+      - Tue, 17 Jan 2023 14:17:22 GMT
       Retry-After:
-      - '85452'
+      - '86393'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '977'
+      - '990'
       X-RateLimit-Reset:
-      - '1669631341'
+      - '1674051436'
     status:
       code: 200
       message: OK

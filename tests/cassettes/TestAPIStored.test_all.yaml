@@ -14,7 +14,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: POST
@@ -44,18 +44,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:45:10 GMT
+      - Tue, 17 Jan 2023 14:17:52 GMT
       Retry-After:
-      - '83844'
+      - '85289'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4779'
+      - '4760'
       X-RateLimit-Reset:
-      - '1669629755'
+      - '1674050362'
     status:
       code: 200
       message: OK
@@ -69,7 +69,7 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
@@ -100,18 +100,18 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:45:10 GMT
+      - Tue, 17 Jan 2023 14:17:52 GMT
       Retry-After:
-      - '83843'
+      - '85288'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4778'
+      - '4759'
       X-RateLimit-Reset:
-      - '1669629754'
+      - '1674050361'
     status:
       code: 200
       message: OK
@@ -125,7 +125,7 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
@@ -176,18 +176,18 @@ interactions:
       Content-Type:
       - image/svg+xml
       Date:
-      - Sun, 27 Nov 2022 10:45:11 GMT
+      - Tue, 17 Jan 2023 14:17:53 GMT
       Retry-After:
-      - '83843'
+      - '85287'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4777'
+      - '4758'
       X-RateLimit-Reset:
-      - '1669629755'
+      - '1674050361'
     status:
       code: 200
       message: OK
@@ -201,16 +201,16 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
     uri: https://api.adsabs.harvard.edu/v1//vault/execute_query/a3312b76101f29d62355db0562e9dbb0
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":10,\n    \"params\":{\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":9,\n    \"params\":{\n
         \     \"q\":\"^farmer year:2020\",\n      \"fl\":\"id\",\n      \"start\":\"0\",\n
-        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63833fb7-02758fee00a142a635bd933f\",\n
+        \     \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63c6ae12-55348a37615217100f00528a\",\n
         \     \"fq\":\"{!bitset}\",\n      \"sort\":\"\",\n      \"rows\":\"10\",\n
         \     \"wt\":\"json\"}},\n  \"response\":{\"numFound\":0,\"start\":0,\"docs\":[]\n
         \ }}\n"
@@ -232,22 +232,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '362'
+      - '361'
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:45:11 GMT
+      - Tue, 17 Jan 2023 14:17:54 GMT
       Retry-After:
-      - '83842'
+      - '85286'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4775'
+      - '4756'
       X-RateLimit-Reset:
-      - '1669629754'
+      - '1674050361'
     status:
       code: 200
       message: OK

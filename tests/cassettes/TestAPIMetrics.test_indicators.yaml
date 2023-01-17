@@ -13,7 +13,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: POST
@@ -21,10 +21,9 @@ interactions:
   response:
     body:
       string: '{"skipped bibcodes": [], "indicators": {"h": 2, "g": 2, "i10": 1, "i100":
-        1, "m": 0.6666666666666666, "read10": 40.13897280966767, "tori": 0.29436991726000006,
-        "riq": 542}, "indicators refereed": {"h": 1, "g": 1, "i10": 1, "i100": 1,
-        "m": 0.3333333333333333, "read10": 36.83081570996979, "tori": 0.25737900626,
-        "riq": 507}}
+        1, "m": 0.5, "read10": 34.35294117647059, "tori": 0.31054459788000005, "riq":
+        557}, "indicators refereed": {"h": 1, "g": 1, "i10": 1, "i100": 1, "m": 0.25,
+        "read10": 34.35294117647059, "tori": 0.27355368688000004, "riq": 523}}
 
         '
     headers:
@@ -45,22 +44,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '324'
+      - '301'
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:46 GMT
+      - Tue, 17 Jan 2023 14:17:20 GMT
       Retry-After:
-      - '85454'
+      - '86395'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '980'
+      - '993'
       X-RateLimit-Reset:
-      - '1669631341'
+      - '1674051436'
     status:
       code: 200
       message: OK

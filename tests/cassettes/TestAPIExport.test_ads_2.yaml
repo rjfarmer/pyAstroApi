@@ -13,7 +13,7 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: POST
@@ -64,11 +64,12 @@ interactions:
         gravitational-wave detectors.\n%Y DOI: 10.3847/2041-8213/abbadd\n%Y eprintid:
         arXiv:2006.06678\n\n\n%R 2020zndo...3678482F\n%T rjfarmer/mesaplot: Bug fixes\n%A
         Farmer, Robert\n%J Zenodo\n%D 02/2020\n%I ABSTRACT: Abstract;\n%I CITATIONS:
-        Citations to the Article;\n%I PUB_HTML: Publisher Article;\n%U https://ui.adsabs.harvard.edu/abs/2020zndo...3678482F\n%B
-        history and profile data are saved saved after the first time they are loaded
-        as a python pickle file. This allows much faster re-reading in of the file
-        and takes up much less space. Kippenhan plots have had some bug fixes for
-        colorbars\n%Y DOI: 10.5281/zenodo.3678482\n\n\n"}'
+        Citations to the Article;\n%I Co-Reads: Co-Reads;\n%I PUB_HTML: Publisher
+        Article;\n%U https://ui.adsabs.harvard.edu/abs/2020zndo...3678482F\n%B history
+        and profile data are saved saved after the first time they are loaded as a
+        python pickle file. This allows much faster re-reading in of the file and
+        takes up much less space. Kippenhan plots have had some bug fixes for colorbars\n%Y
+        DOI: 10.5281/zenodo.3678482\n\n\n"}'
     headers:
       Access-Control-Allow-Credentials:
       - 'true'
@@ -87,22 +88,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '3949'
+      - '3973'
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:04 GMT
+      - Tue, 17 Jan 2023 14:16:16 GMT
       Retry-After:
-      - '83910'
+      - '85385'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4849'
+      - '4829'
       X-RateLimit-Reset:
-      - '1669629755'
+      - '1674050362'
     status:
       code: 200
       message: OK

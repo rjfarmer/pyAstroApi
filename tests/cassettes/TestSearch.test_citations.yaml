@@ -9,17 +9,17 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
     uri: https://api.adsabs.harvard.edu/v1//search/query?q=citations%282021ApJ...923..214F%29&fl=abstract%2Cauthor%2Cbibcode%2Cpubdate%2Ctitle%2Cpub%2Cyear%2Ccitation_count&fq=&start=0&rows=50
   response:
     body:
-      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":45,\n    \"params\":{\n
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":34,\n    \"params\":{\n
         \     \"q\":\"citations(2021ApJ...923..214F)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count\",\n
-        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63833fbb-18868c3f69d5aa7e2a063964\",\n
-        \     \"fq\":\"\",\n      \"rows\":\"50\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":6,\"start\":0,\"docs\":[\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63c6ae17-1cc7d68345790b962d535b6c\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"50\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":7,\"start\":0,\"docs\":[\n
         \     {\n        \"bibcode\":\"2022A&ARv..30....7R\",\n        \"abstract\":\"After
         hydrogen and helium, oxygen, carbon, and nitrogen\u2014hereinafter, the CNO
         elements\u2014are the most abundant species in the universe. They are observed
@@ -42,7 +42,38 @@ interactions:
         more direct estimates from the starlight are unfeasible.\",\n        \"author\":[\"Romano,
         Donatella\"],\n        \"pub\":\"Astronomy and Astrophysics Review\",\n        \"pubdate\":\"2022-12-00\",\n
         \       \"title\":[\"The evolution of CNO elements in galaxies\"],\n        \"year\":\"2022\",\n
-        \       \"citation_count\":1},\n      {\n        \"bibcode\":\"2021A&A...656A..58L\",\n
+        \       \"citation_count\":2},\n      {\n        \"bibcode\":\"2023arXiv230101785S\",\n
+        \       \"abstract\":\"CONTEXT: The mass loss of He-burning stars, which are
+        partially or completely stripped of their outer hydrogen envelope, is a catalyst
+        of the cosmic matter cycle and decisive ingredient of massive star evolution.
+        Yet, its theoretical fundament is only starting to emerge with major dependencies
+        still to be uncovered. AIMS: A temperature or radius dependence is usually
+        not included in descriptions for the mass loss of classical Wolf-Rayet (cWR)
+        stars, despite being crucial for other hot star wind domains. We thus aim
+        to determine whether such a dependency will also be necessary for a comprehensive
+        description of mass loss in the cWR regime. METHODS: Sequences of dynamically
+        consistent atmosphere models were calculated with the hydrodynamic branch
+        of the PoWR code along the temperature domain, using different choices for
+        luminosity, mass, and surface abundances. For the first time, we allowed nonmonotonic
+        velocity fields when solving the equation of motion. The resulting velocity
+        structures were then interpolated for the comoving-frame radiative transfer,
+        ensuring that the main wind characteristics were preserved. RESULTS: We find
+        a strong dependence of the mass-loss rate with the temperature of the critical/sonic
+        point which mainly reflects the different radii and resulting gravitational
+        accelerations. Moreover, we obtain a relation between the observed effective
+        temperature and the transformed mass-loss rate which seems to be largely independent
+        of the underlying stellar parameters. The relation shifts for different clumping
+        factors in the outer wind. Below a characteristic value of -4.5, the slope
+        of this relation changes and the winds become transparent for He II ionizing
+        photons. CONCLUSIONS: The mass loss of cWR stars is a high-dimensional problem
+        but also shows inherent scalings which can be used to obtain an approximation
+        of the observed effective temperature. (...)\",\n        \"author\":[\"Sander,
+        A. A. C.\",\n          \"Lefever, R. R.\",\n          \"Poniatowski, L. G.\",\n
+        \         \"Ramachandran, V.\",\n          \"Sabhahit, G. N.\",\n          \"Vink,
+        J. S.\"],\n        \"pub\":\"arXiv e-prints\",\n        \"pubdate\":\"2023-01-00\",\n
+        \       \"title\":[\"The temperature dependency of Wolf-Rayet-type mass loss:
+        An exploratory study for winds launched by the hot iron bump\"],\n        \"year\":\"2023\",\n
+        \       \"citation_count\":0},\n      {\n        \"bibcode\":\"2021A&A...656A..58L\",\n
         \       \"abstract\":\"The majority of massive stars live in binary or multiple
         systems and will interact with a companion during their lifetimes, which helps
         to explain the observed diversity of core-collapse supernovae. Donor stars
@@ -74,7 +105,35 @@ interactions:
         Mink, S. E.\"],\n        \"pub\":\"Astronomy and Astrophysics\",\n        \"pubdate\":\"2021-12-00\",\n
         \       \"title\":[\"Different to the core: The pre-supernova structures of
         massive single and binary-stripped stars\"],\n        \"year\":\"2021\",\n
-        \       \"citation_count\":35},\n      {\n        \"bibcode\":\"2022ApJ...932...26T\",\n
+        \       \"citation_count\":36},\n      {\n        \"bibcode\":\"2023MNRAS.518.1818I\",\n
+        \       \"abstract\":\"Thermal bombs are a widely used method to artificially
+        trigger explosions of core-collapse supernovae (CCSNe) to determine their
+        nucleosynthesis or ejecta and remnant properties. Recently, their use in spherically
+        symmetric (1D) hydrodynamic simulations led to the result that <SUP>56,57</SUP>Ni
+        and <SUP>44</SUP>Ti are massively underproduced compared to observational
+        estimates for Supernova 1987A, if the explosions are slow, i.e. if the explosion
+        mechanism of CCSNe releases the explosion energy on long time-scales. It was
+        concluded that rapid explosions are required to match observed abundances,
+        i.e. the explosion mechanism must provide the CCSN energy nearly instantaneously
+        on time-scales of some ten to order 100 ms. This result, if valid, would disfavour
+        the neutrino-heating mechanism, which releases the CCSN energy on time-scales
+        of seconds. Here, we demonstrate by 1D hydrodynamic simulations and nucleosynthetic
+        post-processing that these conclusions are a consequence of disregarding the
+        initial collapse of the stellar core in the thermal-bomb modelling before
+        the bomb releases the explosion energy. We demonstrate that the anticorrelation
+        of <SUP>56</SUP>Ni yield and energy-injection time-scale vanishes when the
+        initial collapse is included and that it can even be reversed, i.e. more <SUP>56</SUP>Ni
+        is made by slower explosions, when the collapse proceeds to small radii similar
+        to those where neutrino heating takes place in CCSNe. We also show that the
+        <SUP>56</SUP>Ni production in thermal-bomb explosions is sensitive to the
+        chosen mass cut and that a fixed mass layer or fixed volume for the energy
+        deposition cause only secondary differences. Moreover, we propose a most appropriate
+        setup for thermal bombs.\",\n        \"author\":[\"Imasheva, Liliya\",\n          \"Janka,
+        Hans-Thomas\",\n          \"Weiss, Achim\"],\n        \"pub\":\"Monthly Notices
+        of the Royal Astronomical Society\",\n        \"pubdate\":\"2023-01-00\",\n
+        \       \"title\":[\"Parametrizations of thermal bomb explosions for core-collapse
+        supernovae and <SUP>56</SUP>Ni production\"],\n        \"year\":\"2023\",\n
+        \       \"citation_count\":2},\n      {\n        \"bibcode\":\"2022ApJ...932...26T\",\n
         \       \"abstract\":\"We present a study of the Galactic supernova remnant
         (SNR) G292.0+1.8, a classic example of a core-collapse SNR that contains oxygen-rich
         ejecta, circumstellar material, a rapidly moving pulsar, and a pulsar wind
@@ -101,82 +160,54 @@ interactions:
         \         \"Renzo, Mathieu\",\n          \"Jacovich, Taylor\"],\n        \"pub\":\"The
         Astrophysical Journal\",\n        \"pubdate\":\"2022-06-00\",\n        \"title\":[\"SNR
         G292.0+1.8: A Remnant of a Low-mass Progenitor Stripped-envelope Supernova\"],\n
-        \       \"year\":\"2022\",\n        \"citation_count\":3},\n      {\n        \"bibcode\":\"2022MNRAS.tmp.3020I\",\n
-        \       \"citation_count\":1,\n        \"abstract\":\"Thermal bombs are a
-        widely used method to artificially trigger explosions of core-collapse supernovae
-        (CCSNe) to determine their nucleosynthesis or ejecta and remnant properties.
-        Recently, their use in spherically symmetric (1D) hydrodynamic simulations
-        led to the result that <SUP>56, 57</SUP>Ni and <SUP>44</SUP>Ti are massively
-        underproduced compared to observational estimates for Supernova 1987A, if
-        the explosions are slow, i.e., if the explosion mechanism of CCSNe releases
-        the explosion energy on long timescales. It was concluded that rapid explosions
-        are required to match observed abundances, i.e., the explosion mechanism must
-        provide the CCSN energy nearly instantaneously on timescales of some ten to
-        order 100 ms. This result, if valid, would disfavor the neutrino-heating mechanism,
-        which releases the CCSN energy on timescales of seconds. Here, we demonstrate
-        by 1D hydrodynamic simulations and nucleosynthetic post-processing that these
-        conclusions are a consequence of disregarding the initial collapse of the
-        stellar core in the thermal-bomb modelling before the bomb releases the explosion
-        energy. We demonstrate that the anti-correlation of <SUP>56</SUP>Ni yield
-        and energy-injection timescale vanishes when the initial collapse is included
-        and that it can even be reversed, i.e., more <SUP>56</SUP>Ni is made by slower
-        explosions, when the collapse proceeds to small radii similar to those where
-        neutrino heating takes place in CCSNe. We also show that the <SUP>56</SUP>Ni
-        production in thermal-bomb explosions is sensitive to the chosen mass cut
-        and that a fixed mass layer or fixed volume for the energy deposition cause
-        only secondary differences. Moreover, we propose a most appropriate setup
-        for thermal bombs.\",\n        \"author\":[\"Imasheva, Liliya\",\n          \"Janka,
-        Hans-Thomas\",\n          \"Weiss, Achim\"],\n        \"pub\":\"Monthly Notices
-        of the Royal Astronomical Society\",\n        \"pubdate\":\"2022-11-00\",\n
-        \       \"title\":[\"Parameterisations of thermal bomb explosions for core-collapse
-        supernovae and <SUP>56</SUP>Ni production\"],\n        \"year\":\"2022\"},\n
-        \     {\n        \"bibcode\":\"2022arXiv221104482W\",\n        \"abstract\":\"With
-        the advent of high cadence, all-sky automated surveys, supernovae (SNe) are
-        now discovered closer than ever to their dates of explosion. However, young
-        pre-maximum light follow-up spectra of Type Ic supernovae (SNe Ic), probably
-        arising from the most stripped massive stars, remain rare despite their importance.
-        In this paper we present a set of 49 optical spectra observed with the Las
-        Cumbres Observatory through the Global Supernova Project for 6 SNe Ic, including
-        a total of 17 pre-maximum spectra, of which 8 are observed more than a week
-        before V-band maximum light. This dataset increases the total number of publicly
-        available pre-maximum light SN Ic spectra by 25% and we provide publicly available
-        SNID templates that will significantly aid in the fast identification of young
-        SNe Ic in the future. We present detailed analysis of these spectra, including
-        Fe II 5169 velocity measurements, O I 7774 line strengths, and continuum shapes.
-        We compare our results to published samples of stripped supernovae in the
-        literature and find one SN in our sample that stands out. SN 2019ewu has a
-        unique combination of features for a SN Ic: an extremely blue continuum, high
-        absorption velocities, a P-cygni shaped feature almost 2 weeks before maximum
-        light that TARDIS radiative transfer modeling attributes to C II rather than
-        H$\\\\alpha$, and weak or non-existent O I 7774 absorption feature until maximum
-        light.\",\n        \"author\":[\"Williamson, Marc\",\n          \"Vogl, Christian\",\n
-        \         \"Modjaz, Maryam\",\n          \"Kerzendorf, Wolfgang\",\n          \"Singhal,
-        Jaladh\",\n          \"Boland, Teresa\",\n          \"Burke, Jamison\",\n
-        \         \"Chen, Zhihao\",\n          \"Hiramatsu, Daichi\",\n          \"Galbany,
-        Lluis\",\n          \"Padilla Gonzalez, Estefania\",\n          \"Howell,
-        D. Andrew\",\n          \"Jha, Saurabh W.\",\n          \"Kwok, Lindsey A.\",\n
-        \         \"McCully, Curtis\",\n          \"Newsome, Megan\",\n          \"Pellegrino,
-        Craig\",\n          \"Rho, Jeonghee\",\n          \"Terreran, Giacomo\",\n
-        \         \"Wang, Xiaofeng\"],\n        \"pub\":\"arXiv e-prints\",\n        \"pubdate\":\"2022-11-00\",\n
-        \       \"title\":[\"SN 2019ewu: A Peculiar Supernova with Early Strong Carbon
-        and Weak Oxygen Features from a New Sample of Young SN Ic Spectra\"],\n        \"year\":\"2022\",\n
-        \       \"citation_count\":0},\n      {\n        \"bibcode\":\"2022Msngr.186....3B\",\n
-        \       \"abstract\":\"While the number of stellar-mass black holes detected
-        in X-rays or as gravitational wave sources is steadily increasing, the known
-        population remains orders of magnitude smaller than predicted by stellar evolution
-        theory. A significant fraction of stellar-mass black holes is expected to
-        hide in X-ray-quiet binaries where they are paired with a \\\"normal\\\" star.
-        Although a handful of such quiescent black hole candidates have been proposed,
-        the majority have been challenged by follow-up investigations. A confusion
-        that emerged recently concerns binary systems that appear to contain a normal
-        B-type star with an unseen companion, believed to be a black hole. On closer
-        inspection, some of these seemingly normal B-type stars instead turn out to
-        be stars stripped of most of their mass through an interaction with their
-        binary companion, which in at least two cases is a rapidly rotating star rather
-        than a compact object. These contaminants in the search for quiescent black
-        holes are themselves extremely interesting objects as they represent a rare
-        phase of binary evolution, and should be given special attention when searching
-        for binaries hosting black holes in large spectroscopic studies.\",\n        \"author\":[\"Bodensteiner,
+        \       \"year\":\"2022\",\n        \"citation_count\":4},\n      {\n        \"bibcode\":\"2022arXiv221104482W\",\n
+        \       \"abstract\":\"With the advent of high cadence, all-sky automated
+        surveys, supernovae (SNe) are now discovered closer than ever to their dates
+        of explosion. However, young pre-maximum light follow-up spectra of Type Ic
+        supernovae (SNe Ic), probably arising from the most stripped massive stars,
+        remain rare despite their importance. In this paper we present a set of 49
+        optical spectra observed with the Las Cumbres Observatory through the Global
+        Supernova Project for 6 SNe Ic, including a total of 17 pre-maximum spectra,
+        of which 8 are observed more than a week before V-band maximum light. This
+        dataset increases the total number of publicly available pre-maximum light
+        SN Ic spectra by 25% and we provide publicly available SNID templates that
+        will significantly aid in the fast identification of young SNe Ic in the future.
+        We present detailed analysis of these spectra, including Fe II 5169 velocity
+        measurements, O I 7774 line strengths, and continuum shapes. We compare our
+        results to published samples of stripped supernovae in the literature and
+        find one SN in our sample that stands out. SN 2019ewu has a unique combination
+        of features for a SN Ic: an extremely blue continuum, high absorption velocities,
+        a P-cygni shaped feature almost 2 weeks before maximum light that TARDIS radiative
+        transfer modeling attributes to C II rather than H$\\\\alpha$, and weak or
+        non-existent O I 7774 absorption feature until maximum light.\",\n        \"author\":[\"Williamson,
+        Marc\",\n          \"Vogl, Christian\",\n          \"Modjaz, Maryam\",\n          \"Kerzendorf,
+        Wolfgang\",\n          \"Singhal, Jaladh\",\n          \"Boland, Teresa\",\n
+        \         \"Burke, Jamison\",\n          \"Chen, Zhihao\",\n          \"Hiramatsu,
+        Daichi\",\n          \"Galbany, Lluis\",\n          \"Padilla Gonzalez, Estefania\",\n
+        \         \"Howell, D. Andrew\",\n          \"Jha, Saurabh W.\",\n          \"Kwok,
+        Lindsey A.\",\n          \"McCully, Curtis\",\n          \"Newsome, Megan\",\n
+        \         \"Pellegrino, Craig\",\n          \"Rho, Jeonghee\",\n          \"Terreran,
+        Giacomo\",\n          \"Wang, Xiaofeng\"],\n        \"pub\":\"arXiv e-prints\",\n
+        \       \"pubdate\":\"2022-11-00\",\n        \"title\":[\"SN 2019ewu: A Peculiar
+        Supernova with Early Strong Carbon and Weak Oxygen Features from a New Sample
+        of Young SN Ic Spectra\"],\n        \"year\":\"2022\",\n        \"citation_count\":0},\n
+        \     {\n        \"bibcode\":\"2022Msngr.186....3B\",\n        \"abstract\":\"While
+        the number of stellar-mass black holes detected in X-rays or as gravitational
+        wave sources is steadily increasing, the known population remains orders of
+        magnitude smaller than predicted by stellar evolution theory. A significant
+        fraction of stellar-mass black holes is expected to hide in X-ray-quiet binaries
+        where they are paired with a \\\"normal\\\" star. Although a handful of such
+        quiescent black hole candidates have been proposed, the majority have been
+        challenged by follow-up investigations. A confusion that emerged recently
+        concerns binary systems that appear to contain a normal B-type star with an
+        unseen companion, believed to be a black hole. On closer inspection, some
+        of these seemingly normal B-type stars instead turn out to be stars stripped
+        of most of their mass through an interaction with their binary companion,
+        which in at least two cases is a rapidly rotating star rather than a compact
+        object. These contaminants in the search for quiescent black holes are themselves
+        extremely interesting objects as they represent a rare phase of binary evolution,
+        and should be given special attention when searching for binaries hosting
+        black holes in large spectroscopic studies.\",\n        \"author\":[\"Bodensteiner,
         J.\",\n          \"Heida, M.\",\n          \"Abdul-Masih, M.\",\n          \"Baade,
         D.\",\n          \"Banyard, G.\",\n          \"Bowman, D. M.\",\n          \"Fabry,
         M.\",\n          \"Frost, A.\",\n          \"Mahy, L.\",\n          \"Marchant,
@@ -204,22 +235,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '13166'
+      - '15578'
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:45:15 GMT
+      - Tue, 17 Jan 2023 14:17:59 GMT
       Retry-After:
-      - '83838'
+      - '85281'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4773'
+      - '4754'
       X-RateLimit-Reset:
-      - '1669629754'
+      - '1674050361'
     status:
       code: 200
       message: OK

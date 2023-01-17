@@ -1,0 +1,916 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+      authorization:
+      - DUMMY
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//search/query?q=references%282015arXiv151102820P%29&fl=abstract%2Cauthor%2Cbibcode%2Cpubdate%2Ctitle%2Cpub%2Cyear%2Ccitation_count&fq=&start=0&rows=50
+  response:
+    body:
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":44,\n    \"params\":{\n
+        \     \"q\":\"references(2015arXiv151102820P)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63c6ae3f-0a69119c7e412ee10eccf107\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"50\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":41,\"start\":0,\"docs\":[\n
+        \     {\n        \"bibcode\":\"2011ApJS..192....3P\",\n        \"abstract\":\"Stellar
+        physics and evolution calculations enable a broad range of research in astrophysics.
+        Modules for Experiments in Stellar Astrophysics (MESA) is a suite of open
+        source, robust, efficient, thread-safe libraries for a wide range of applications
+        in computational stellar astrophysics. A one-dimensional stellar evolution
+        module, MESAstar, combines many of the numerical and physics modules for simulations
+        of a wide range of stellar evolution scenarios ranging from very low mass
+        to massive stars, including advanced evolutionary phases. MESAstar solves
+        the fully coupled structure and composition equations simultaneously. It uses
+        adaptive mesh refinement and sophisticated timestep controls, and supports
+        shared memory parallelism based on OpenMP. State-of-the-art modules provide
+        equation of state, opacity, nuclear reaction rates, element diffusion data,
+        and atmosphere boundary conditions. Each module is constructed as a separate
+        Fortran 95 library with its own explicitly defined public interface to facilitate
+        independent development. Several detailed examples indicate the extensive
+        verification and testing that is continuously performed and demonstrate the
+        wide range of capabilities that MESA possesses. These examples include evolutionary
+        tracks of very low mass stars, brown dwarfs, and gas giant planets to very
+        old ages; the complete evolutionary track of a 1 M <SUB>sun</SUB> star from
+        the pre-main sequence (PMS) to a cooling white dwarf; the solar sound speed
+        profile; the evolution of intermediate-mass stars through the He-core burning
+        phase and thermal pulses on the He-shell burning asymptotic giant branch phase;
+        the interior structure of slowly pulsating B Stars and Beta Cepheids; the
+        complete evolutionary tracks of massive stars from the PMS to the onset of
+        core collapse; mass transfer from stars undergoing Roche lobe overflow; and
+        the evolution of helium accretion onto a neutron star. MESA can be downloaded
+        from the project Web site (<A href=\\\"http://mesa.sourceforge.net/\\\">http://mesa.sourceforge.net/</A>).\",\n
+        \       \"author\":[\"Paxton, Bill\",\n          \"Bildsten, Lars\",\n          \"Dotter,
+        Aaron\",\n          \"Herwig, Falk\",\n          \"Lesaffre, Pierre\",\n          \"Timmes,
+        Frank\"],\n        \"pub\":\"The Astrophysical Journal Supplement Series\",\n
+        \       \"pubdate\":\"2011-01-00\",\n        \"title\":[\"Modules for Experiments
+        in Stellar Astrophysics (MESA)\"],\n        \"year\":\"2011\",\n        \"citation_count\":2620},\n
+        \     {\n        \"bibcode\":\"2013ApJS..208....4P\",\n        \"abstract\":\"We
+        substantially update the capabilities of the open source software package
+        Modules for Experiments in Stellar Astrophysics (MESA), and its one-dimensional
+        stellar evolution module, MESA star. Improvements in MESA star's ability to
+        model the evolution of giant planets now extends its applicability down to
+        masses as low as one-tenth that of Jupiter. The dramatic improvement in asteroseismology
+        enabled by the space-based Kepler and CoRoT missions motivates our full coupling
+        of the ADIPLS adiabatic pulsation code with MESA star. This also motivates
+        a numerical recasting of the Ledoux criterion that is more easily implemented
+        when many nuclei are present at non-negligible abundances. This impacts the
+        way in which MESA star calculates semi-convective and thermohaline mixing.
+        We exhibit the evolution of 3-8 M <SUB>\u2299</SUB> stars through the end
+        of core He burning, the onset of He thermal pulses, and arrival on the white
+        dwarf cooling sequence. We implement diffusion of angular momentum and chemical
+        abundances that enable calculations of rotating-star models, which we compare
+        thoroughly with earlier work. We introduce a new treatment of radiation-dominated
+        envelopes that allows the uninterrupted evolution of massive stars to core
+        collapse. This enables the generation of new sets of supernovae, long gamma-ray
+        burst, and pair-instability progenitor models. We substantially modify the
+        way in which MESA star solves the fully coupled stellar structure and composition
+        equations, and we show how this has improved the scaling of MESA's calculational
+        speed on multi-core processors. Updates to the modules for equation of state,
+        opacity, nuclear reaction rates, and atmospheric boundary conditions are also
+        provided. We describe the MESA Software Development Kit that packages all
+        the required components needed to form a unified, maintained, and well-validated
+        build environment for MESA. We also highlight a few tools developed by the
+        community for rapid visualization of MESA star results.\",\n        \"author\":[\"Paxton,
+        Bill\",\n          \"Cantiello, Matteo\",\n          \"Arras, Phil\",\n          \"Bildsten,
+        Lars\",\n          \"Brown, Edward F.\",\n          \"Dotter, Aaron\",\n          \"Mankovich,
+        Christopher\",\n          \"Montgomery, M. H.\",\n          \"Stello, Dennis\",\n
+        \         \"Timmes, F. X.\",\n          \"Townsend, Richard\"],\n        \"pub\":\"The
+        Astrophysical Journal Supplement Series\",\n        \"pubdate\":\"2013-09-00\",\n
+        \       \"title\":[\"Modules for Experiments in Stellar Astrophysics (MESA):
+        Planets, Oscillations, Rotation, and Massive Stars\"],\n        \"year\":\"2013\",\n
+        \       \"citation_count\":1996},\n      {\n        \"bibcode\":\"2015ApJS..220...15P\",\n
+        \       \"abstract\":\"We substantially update the capabilities of the open-source
+        software instrument Modules for Experiments in Stellar Astrophysics (MESA).
+        MESA can now simultaneously evolve an interacting pair of differentially rotating
+        stars undergoing transfer and loss of mass and angular momentum, greatly enhancing
+        the prior ability to model binary evolution. New MESA capabilities in fully
+        coupled calculation of nuclear networks with hundreds of isotopes now allow
+        MESA to accurately simulate the advanced burning stages needed to construct
+        supernova progenitor models. Implicit hydrodynamics with shocks can now be
+        treated with MESA, enabling modeling of the entire massive star lifecycle,
+        from pre-main-sequence evolution to the onset of core collapse and nucleosynthesis
+        from the resulting explosion. Coupling of the GYRE non-adiabatic pulsation
+        instrument with MESA allows for new explorations of the instability strips
+        for massive stars while also accelerating the astrophysical use of asteroseismology
+        data. We improve the treatment of mass accretion, giving more accurate and
+        robust near-surface profiles. A new MESA capability to calculate weak reaction
+        rates \u201Con-the-fly\u201D from input nuclear data allows better simulation
+        of accretion induced collapse of massive white dwarfs and the fate of some
+        massive stars. We discuss the ongoing challenge of chemical diffusion in the
+        strongly coupled plasma regime, and exhibit improvements in MESA that now
+        allow for the simulation of radiative levitation of heavy elements in hot
+        stars. We close by noting that the MESA software infrastructure provides bit-for-bit
+        consistency for all results across all the supported platforms, a profound
+        enabling capability for accelerating MESA's development.\",\n        \"author\":[\"Paxton,
+        Bill\",\n          \"Marchant, Pablo\",\n          \"Schwab, Josiah\",\n          \"Bauer,
+        Evan B.\",\n          \"Bildsten, Lars\",\n          \"Cantiello, Matteo\",\n
+        \         \"Dessart, Luc\",\n          \"Farmer, R.\",\n          \"Hu, H.\",\n
+        \         \"Langer, N.\",\n          \"Townsend, R. H. D.\",\n          \"Townsley,
+        Dean M.\",\n          \"Timmes, F. X.\"],\n        \"pub\":\"The Astrophysical
+        Journal Supplement Series\",\n        \"pubdate\":\"2015-09-00\",\n        \"title\":[\"Modules
+        for Experiments in Stellar Astrophysics (MESA): Binaries, Pulsations, and
+        Explosions\"],\n        \"year\":\"2015\",\n        \"citation_count\":1714},\n
+        \     {\n        \"bibcode\":\"1978PhRvD..17.2369W\",\n        \"abstract\":\"The
+        effect of coherent forward scattering must be taken into account when considering
+        the oscillations of neutrinos traveling through matter. In particular, for
+        the case of massless neutrinos for which vacuum oscillations cannot occur,
+        oscillations can occur in matter if the neutral current has an off-diagonal
+        piece connecting different neutrino types. Applications discussed are solar
+        neutrinos and a proposed experiment involving transmission of neutrinos through
+        1000 km of rock.\",\n        \"author\":[\"Wolfenstein, L.\"],\n        \"pub\":\"Physical
+        Review D\",\n        \"pubdate\":\"1978-05-00\",\n        \"title\":[\"Neutrino
+        oscillations in matter\"],\n        \"year\":\"1978\",\n        \"citation_count\":3423},\n
+        \     {\n        \"bibcode\":\"2002RvMP...74.1015W\",\n        \"abstract\":\"Like
+        all true stars, massive stars are gravitationally confined thermonuclear reactors
+        whose composition evolves as energy is lost to radiation and neutrinos. Unlike
+        lower-mass stars (M&lt;~8M<SUB>solar</SUB>), however, no point is ever reached
+        at which a massive star can be fully supported by electron degeneracy. Instead,
+        the center evolves to ever higher temperatures, fusing ever heavier elements
+        until a core of iron is produced. The collapse of this iron core to a neutron
+        star releases an enormous amount of energy, a tiny fraction of which is sufficient
+        to explode the star as a supernova. The authors examine our current understanding
+        of the lives and deaths of massive stars, with special attention to the relevant
+        nuclear and stellar physics. Emphasis is placed upon their post-helium-burning
+        evolution. Current views regarding the supernova explosion mechanism are reviewed,
+        and the hydrodynamics of supernova shock propagation and ``fallback'' is discussed.
+        The calculated neutron star masses, supernova light curves, and spectra from
+        these model stars are shown to be consistent with observations. During all
+        phases, particular attention is paid to the nucleosynthesis of heavy elements.
+        Such stars are capable of producing, with few exceptions, the isotopes between
+        mass 16 and 88 as well as a large fraction of still heavier elements made
+        by the r and p processes.\",\n        \"author\":[\"Woosley, S. E.\",\n          \"Heger,
+        A.\",\n          \"Weaver, T. A.\"],\n        \"pub\":\"Reviews of Modern
+        Physics\",\n        \"pubdate\":\"2002-11-00\",\n        \"title\":[\"The
+        evolution and explosion of massive stars\"],\n        \"year\":\"2002\",\n
+        \       \"citation_count\":1565},\n      {\n        \"bibcode\":\"1987PhRvL..58.1490H\",\n
+        \       \"abstract\":\"A neutrino burst was observed in the Kamiokande II
+        detector on 23 February, 7:35:35 UT (+/-1 min) during a time interval of 13
+        sec. The signal consisted of 11 electron events of energy 7.5 to 36 MeV, of
+        which the first two point back to the Large Magellanic Cloud with angles 18\xB0+/-18\xB0
+        and 15\xB0+/-27\xB0.\",\n        \"author\":[\"Hirata, K.\",\n          \"Kajita,
+        T.\",\n          \"Koshiba, M.\",\n          \"Nakahata, M.\",\n          \"Oyama,
+        Y.\",\n          \"Sato, N.\",\n          \"Suzuki, A.\",\n          \"Takita,
+        M.\",\n          \"Totsuka, Y.\",\n          \"Kifune, T.\",\n          \"Suda,
+        T.\",\n          \"Takahashi, K.\",\n          \"Tanimori, T.\",\n          \"Miyano,
+        K.\",\n          \"Yamada, M.\",\n          \"Beier, E. W.\",\n          \"Feldscher,
+        L. R.\",\n          \"Kim, S. B.\",\n          \"Mann, A. K.\",\n          \"Newcomer,
+        F. M.\",\n          \"van, R.\",\n          \"Zhang, W.\",\n          \"Cortez,
+        B. G.\"],\n        \"pub\":\"Physical Review Letters\",\n        \"pubdate\":\"1987-04-00\",\n
+        \       \"title\":[\"Observation of a neutrino burst from the supernova SN1987A\"],\n
+        \       \"year\":\"1987\",\n        \"citation_count\":1638},\n      {\n        \"bibcode\":\"1987PhRvL..58.1494B\",\n
+        \       \"abstract\":\"A burst of eight neutrino events preceding the optical
+        detection of the supernova in the Large Magellanic cloud has been observed
+        in a large underground water Cherenkov detector. The events span an interval
+        of six seconds and have visible energies in the range 20-40 MeV.\",\n        \"author\":[\"Bionta,
+        R. M.\",\n          \"Blewitt, G.\",\n          \"Bratton, C. B.\",\n          \"Casper,
+        D.\",\n          \"Ciocio, A.\",\n          \"Claus, R.\",\n          \"Cortez,
+        B.\",\n          \"Crouch, M.\",\n          \"Dye, S. T.\",\n          \"Errede,
+        S.\",\n          \"Foster, G. W.\",\n          \"Gajewski, W.\",\n          \"Ganezer,
+        K. S.\",\n          \"Goldhaber, M.\",\n          \"Haines, T. J.\",\n          \"Jones,
+        T. W.\",\n          \"Kielczewska, D.\",\n          \"Kropp, W. R.\",\n          \"Learned,
+        J. G.\",\n          \"Losecco, J. M.\",\n          \"Matthews, J.\",\n          \"Miller,
+        R.\",\n          \"Mudan, M. S.\",\n          \"Park, H. S.\",\n          \"Price,
+        L. R.\",\n          \"Reines, F.\",\n          \"Schultz, J.\",\n          \"Seidel,
+        S.\",\n          \"Shumard, E.\",\n          \"Sinclair, D.\",\n          \"Sobel,
+        H. W.\",\n          \"Stone, J. L.\",\n          \"Sulak, L. R.\",\n          \"Svoboda,
+        R.\",\n          \"Thornton, G.\",\n          \"van der Velde, J. C.\",\n
+        \         \"Wuest, C.\"],\n        \"pub\":\"Physical Review Letters\",\n
+        \       \"pubdate\":\"1987-04-00\",\n        \"title\":[\"Observation of a
+        neutrino burst in coincidence with supernova 1987A in the Large Magellanic
+        Cloud\"],\n        \"year\":\"1987\",\n        \"citation_count\":1390},\n
+        \     {\n        \"bibcode\":\"1986NCimC...9...17M\",\n        \"abstract\":\"Various
+        resonant neutrino oscillation mechanisms are discussed analytically. Attention
+        is given to resonant oscillation amplification due to modification by the
+        presence of matter. The oscillation depth is shown to depend on the ratio
+        between the oscillation length in a vacuum and the rest oscillation length,
+        which is in turn controlled by the resonance characteristics. The conditions
+        under which resonance is maximum are delineated. The analysis is extended
+        to the case of matter with varying density, and thereby to the consideration
+        of resonant oscillations in the sun and in the envelopes of massive collapsing
+        stars. Resonance conditions are demonstrated to exist in specific layers of
+        the sun and to induce significant oscillations when any neutrinos pass through.
+        The locations of the resonance enhancements are dependent on the energy levels
+        of neutrinos. Conditions which would suppress the neutrino flux near the earth
+        are analyzed. It is shown that even weak resonance regions will cause strong
+        oscillations in the neutrino flux. Many neutrinos are not able to pass through
+        the resonance layers of the sun to reach the earth.\",\n        \"author\":[\"Mikheev,
+        S. P.\",\n          \"Smirnov, A. Iu.\"],\n        \"pub\":\"Nuovo Cimento
+        C Geophysics Space Physics C\",\n        \"pubdate\":\"1986-02-00\",\n        \"title\":[\"Resonant
+        amplification of \u03BD oscillations in matter and solar-neutrino spectroscopy.\"],\n
+        \       \"year\":\"1986\",\n        \"citation_count\":1320},\n      {\n        \"bibcode\":\"1996ApJS..102..411I\",\n
+        \       \"abstract\":\"The results of the calculations of the neutrino energy-loss
+        rates resulting from pair, photo-, plasma, bremsstrahlung, and recombination
+        neutrino processes are summarized in the form of analytic fitting formulae
+        and tables. Care has been taken in order to serve the convenience of the users
+        of these results. We have tried to make the present paper as as possible.
+        The contents of the present paper are intended to serve as useful physical
+        input data for stellar evolution computations. We intend to publish the numerical
+        data and the FORTRAN codes for the results of the neutrino energy-loss rates
+        in the CD-ROM series of the American Astronomical Society. in the CD-ROM,
+        we intend to give three options for the FORTRAN codes. The first option comprises
+        the results with analytic fitting formulae only. The second option comprises
+        the results with analytic fitting formulae for the bremsstrahlung and recombination
+        neutrino processes, and the numerical tables for the pair, photo-, and plasma
+        neutrino processes with a standard quadratic interpolation procedure. In this
+        option, the grid of log T for the pair neutrino energy-loss rate is 0.2. The
+        third option is a variant of the second option, with the replacement of the
+        grid of log T for the pair neutrino energy-loss rate to be 0.05.\",\n        \"author\":[\"Itoh,
+        Naoki\",\n          \"Hayashi, Hiroshi\",\n          \"Nishikawa, Akinori\",\n
+        \         \"Kohyama, Yasuharu\"],\n        \"pub\":\"The Astrophysical Journal
+        Supplement Series\",\n        \"pubdate\":\"1996-02-00\",\n        \"title\":[\"Neutrino
+        Energy Loss in Stellar Interiors. VII. Pair, Photo-, Plasma, Bremsstrahlung,
+        and Recombination Neutrino Processes\"],\n        \"year\":\"1996\",\n        \"citation_count\":439},\n
+        \     {\n        \"bibcode\":\"2016NCimR..39....1M\",\n        \"abstract\":\"Neutrinos
+        play a crucial role in the collapse and explosion of massive stars, governing
+        the infall dynamics of the stellar core, triggering and fueling the explosion
+        and driving the cooling and deleptonization of the newly formed neutron star.
+        Due to their role neutrinos carry information from the heart of the explosion
+        and, due to their weakly interacting nature, offer the only direct probe of
+        the dynamics and thermodynamics at the center of a supernova. In this paper,
+        we review the present status of modelling the neutrino physics and signal
+        formation in collapsing and exploding stars. We assess the capability of current
+        and planned large underground neutrino detectors to yield faithful information
+        of the time and flavor-dependent neutrino signal from a future Galactic supernova.
+        We show how the observable neutrino burst would provide a benchmark for fundamental
+        supernova physics with unprecedented richness of detail. Exploiting the treasure
+        of the measured neutrino events requires a careful discrimination of source-generated
+        properties from signal features that originate on the way to the detector.
+        As for the latter, we discuss self-induced flavor conversions associated with
+        neutrino-neutrino interactions that occur in the deepest stellar regions;
+        matter effects that modify the pattern of flavor conversions in the dynamical
+        stellar envelope; neutrino-oscillation signatures that result from structural
+        features associated with the shock-wave propagation as well as turbulent mass
+        motions in post-shock layers. Finally, we highlight our current understanding
+        of the formation of the diffuse supernova neutrino background and we analyse
+        the perspectives for a detection of this relic signal that integrates the
+        contributions from all past core-collapse supernovae in the Universe.\",\n
+        \       \"author\":[\"Mirizzi, A.\",\n          \"Tamborra, I.\",\n          \"Janka,
+        H. -Th.\",\n          \"Saviano, N.\",\n          \"Scholberg, K.\",\n          \"Bollig,
+        R.\",\n          \"H\xFCdepohl, L.\",\n          \"Chakraborty, S.\"],\n        \"pub\":\"Nuovo
+        Cimento Rivista Serie\",\n        \"pubdate\":\"2016-02-00\",\n        \"title\":[\"Supernova
+        neutrinos: production, oscillations and detection\"],\n        \"year\":\"2016\",\n
+        \       \"citation_count\":358},\n      {\n        \"bibcode\":\"1982ApJS...48..279F\",\n
+        \       \"abstract\":\"Stellar electron and positron emission rates and continuum
+        electron and positron capture rates, as well as the associated neutrino energy
+        loss rates, are tabulated for the free nucleons and 226 nuclei with masses
+        between A =21 and 60. These rates were calculated in accordance with the procedure
+        described in Papers I and II of this series and are presented here in tabular
+        form on an abbreviated temperature and density grid. Results of these calculations
+        on a detailed temperature and density grid are available in computer readable
+        form on magnetic tape upon request to MJN. The stellar weak rate calculation
+        procedure is reviewed, and the results are discussed. Comparison of the stellar
+        weak rates to terrestrial decay rates are made where possible.\",\n        \"author\":[\"Fuller,
+        G. M.\",\n          \"Fowler, W. A.\",\n          \"Newman, M. J.\"],\n        \"pub\":\"The
+        Astrophysical Journal Supplement Series\",\n        \"pubdate\":\"1982-03-00\",\n
+        \       \"title\":[\"Stellar weak interaction rates for intermediate mass
+        nuclei. III - Rate tables for the free nucleons and nuclei with A = 21 to
+        A = 60\"],\n        \"year\":\"1982\",\n        \"citation_count\":432},\n
+        \     {\n        \"bibcode\":\"2011arXiv1109.3262A\",\n        \"abstract\":\"We
+        propose the Hyper-Kamiokande (Hyper-K) detector as a next generation underground
+        water Cherenkov detector. It will serve as a far detector of a long baseline
+        neutrino oscillation experiment envisioned for the upgraded J-PARC, and as
+        a detector capable of observing -- far beyond the sensitivity of the Super-Kamiokande
+        (Super-K) detector -- proton decays, atmospheric neutrinos, and neutrinos
+        from astronomical origins. The baseline design of Hyper-K is based on the
+        highly successful Super-K, taking full advantage of a well-proven technology.
+        (to be continued)\",\n        \"author\":[\"Abe, K.\",\n          \"Abe, T.\",\n
+        \         \"Aihara, H.\",\n          \"Fukuda, Y.\",\n          \"Hayato,
+        Y.\",\n          \"Huang, K.\",\n          \"Ichikawa, A. K.\",\n          \"Ikeda,
+        M.\",\n          \"Inoue, K.\",\n          \"Ishino, H.\",\n          \"Itow,
+        Y.\",\n          \"Kajita, T.\",\n          \"Kameda, J.\",\n          \"Kishimoto,
+        Y.\",\n          \"Koga, M.\",\n          \"Koshio, Y.\",\n          \"Lee,
+        K. P.\",\n          \"Minamino, A.\",\n          \"Miura, M.\",\n          \"Moriyama,
+        S.\",\n          \"Nakahata, M.\",\n          \"Nakamura, K.\",\n          \"Nakaya,
+        T.\",\n          \"Nakayama, S.\",\n          \"Nishijima, K.\",\n          \"Nishimura,
+        Y.\",\n          \"Obayashi, Y.\",\n          \"Okumura, K.\",\n          \"Sakuda,
+        M.\",\n          \"Sekiya, H.\",\n          \"Shiozawa, M.\",\n          \"Suzuki,
+        A. T.\",\n          \"Suzuki, Y.\",\n          \"Takeda, A.\",\n          \"Takeuchi,
+        Y.\",\n          \"Tanaka, H. K. M.\",\n          \"Tasaka, S.\",\n          \"Tomura,
+        T.\",\n          \"Vagins, M. R.\",\n          \"Wang, J.\",\n          \"Yokoyama,
+        M.\"],\n        \"pub\":\"arXiv e-prints\",\n        \"pubdate\":\"2011-09-00\",\n
+        \       \"title\":[\"Letter of Intent: The Hyper-Kamiokande Experiment ---
+        Detector Design and Physics Potential ---\"],\n        \"year\":\"2011\",\n
+        \       \"citation_count\":523},\n      {\n        \"bibcode\":\"1985ApJ...293....1F\",\n
+        \       \"abstract\":\"Simple expressions for continuum electron and positron
+        capture phase space factors and the associated neutrino energy loss integrals
+        are presented in terms of standard Fermi integrals. Continuous approximations
+        to the relevant Fermi integrals and their first derivatives are made. These
+        allow the computation of effective log (ft)-values, at each temperature and
+        density point, for the continuum lepton capture rates considered in the earlier
+        papers in this series. Since the effective log (ft)-values have most of the
+        rapid temperature and density dependence associated with the phase space integrals
+        removed, interpolation in temperature and density to obtain stellar rates
+        is greatly facilitated in speed and accuracy. Computer simulations of stellar
+        evolution will be able to implement more accurately the calculations of the
+        stellar nuclear weak interaction rates of intermediate-mass nuclei. Generalization
+        of the Fermi integral expressions for the lepton continuum capture phase space
+        factors are given for astrophysical environments where there exists an equilibrium
+        distribution of electron-type neutrinos. These allow rough estimates of the
+        effect of neutrino blocking on the tabulated rates and estimates of total
+        neutrino capture rates.\",\n        \"author\":[\"Fuller, G. M.\",\n          \"Fowler,
+        W. A.\",\n          \"Newman, M. J.\"],\n        \"pub\":\"The Astrophysical
+        Journal\",\n        \"pubdate\":\"1985-06-00\",\n        \"title\":[\"Stellar
+        weak interaction rates for intermediate-mass nuclei. IV - Interpolation procedures
+        for rapidly varying lepton capture rates using effective log (ft)-values\"],\n
+        \       \"year\":\"1985\",\n        \"citation_count\":422},\n      {\n        \"bibcode\":\"1982ApJ...252..715F\",\n
+        \       \"abstract\":\"Astrophysical electron and positron emission, continuum
+        electron and positron capture rates, and associated neutrino energy loss rates
+        are calculated for free nucleons and 226 nuclei with masses between A = 21
+        and 60. Where available, measured nuclear level information and matrix elements
+        are used. Simple shell model arguments are used in estimating Gamow-Teller
+        sum rules and collective state resonance excitation energies. The discrete
+        state contribution to the rates, dominated by experimental information and
+        the Fermi transitions, determines the nuclear rates in the regime of temperatures
+        and densities that is characteristic of the hydrostatic phases of presupernova
+        stellar evolution. At the higher temperatures and densities characteristic
+        of the supernova collapse phase, the nuclear rates are dominated by the Gamow-Teller
+        and Fermi collective resonance contributions. Also included is the effect
+        of neutron shell closure blocking of electron capture on neutron-rich nuclei.\",\n
+        \       \"author\":[\"Fuller, G. M.\",\n          \"Fowler, W. A.\",\n          \"Newman,
+        M. J.\"],\n        \"pub\":\"The Astrophysical Journal\",\n        \"pubdate\":\"1982-01-00\",\n
+        \       \"title\":[\"Stellar weak interaction rates for intermediate-mass
+        nuclei. II - A = 21 to A = 60\"],\n        \"year\":\"1982\",\n        \"citation_count\":407},\n
+        \     {\n        \"bibcode\":\"2010ARNPS..60..569D\",\n        \"abstract\":\"We
+        review the rich phenomena associated with neutrino flavor transformation in
+        the presence of neutrino self-coupling. Our exposition centers on three collective
+        neutrino oscillation scenarios: (a) a simple bipolar neutrino system that
+        initially consists of monoenergetic \u03BD<SUB>e</SUB> and [Formula: see text],
+        (b) a homogeneous and isotropic neutrino gas with multiple neutrino/antineutrino
+        species and continuous energy spectra, and (c) a generic neutrino gas in an
+        anisotropic environment. We use each of these scenarios to illustrate key
+        facets of collective neutrino oscillations. We discuss the implications of
+        collective neutrino flavor oscillations for core-collapse supernova physics
+        and for the prospects of obtaining and/or constraining fundamental neutrino
+        properties, such as the neutrino mass hierarchy and \u03B8<SUB>13</SUB> from
+        a future observed supernova neutrino signal.\",\n        \"author\":[\"Duan,
+        Huaiyu\",\n          \"Fuller, George M.\",\n          \"Qian, Yong-Zhong\"],\n
+        \       \"pub\":\"Annual Review of Nuclear and Particle Science\",\n        \"pubdate\":\"2010-11-00\",\n
+        \       \"title\":[\"Collective Neutrino Oscillations\"],\n        \"year\":\"2010\",\n
+        \       \"citation_count\":449},\n      {\n        \"bibcode\":\"1980ApJS...42..447F\",\n
+        \       \"abstract\":\"Astrophysical positron emission, continuum electron
+        capture, and neutrino energy loss rates are calculated for <SUP>26</SUP>Al
+        \u2192 <SUP>26</SUP>Mg, <SUP>30</SUP>P \u2192 <SUP>30</SUP>Si;, <SUP>31</SUP>S
+        \u2192 <SUP>31</SUP>P, <SUP>32</SUP>S \u2192 <SUP>32</SUP>P <SUP>33</SUP>S
+        \u2192 <SUP>33</SUP>P, and <SUP>35</SUP>Cl \u2192 <SUP>35</SUP>S. Measured
+        nuclear level information and matrix elements are used where available. Unmeasured
+        matrix elements for allowed transitions are assigned on the basis of simple
+        shell model arguments and the results of detailed large-scale shell model
+        calculations by Wildenthal and his collaborators. The experimentally determined
+        matrix elements are found to dominate the rates over most of the range of
+        temperatures and densities considered. The uncertainties in the rates are
+        estimated. Appropriate average matrix elements for unmeasured Gamow-Teller
+        transitions are estimated for use in other sd-shell nuclei. The rates presented
+        agree roughly with those of Hansen over a wide range of conditions, but potentially
+        important differences in the rates exist at temperatures and densities relevant
+        for the production and destruction of <SUP>26</SUP>Al and for neutronization
+        and neutrino loss in the late stages of presupernova evolution.\",\n        \"author\":[\"Fuller,
+        G. M.\",\n          \"Fowler, W. A.\",\n          \"Newman, M. J.\"],\n        \"pub\":\"The
+        Astrophysical Journal Supplement Series\",\n        \"pubdate\":\"1980-03-00\",\n
+        \       \"title\":[\"Stellar weak-interaction rates for sd-shell nuclei. I
+        - Nuclear matrix element systematics with application to Al-26 and selected
+        nuclei of importance to the supernova problem\"],\n        \"year\":\"1980\",\n
+        \       \"citation_count\":397},\n      {\n        \"bibcode\":\"2006PhRvD..74j5010H\",\n
+        \       \"abstract\":\"Neutrino-neutrino interactions can lead to collective
+        flavor conversion effects in supernovae and in the early universe. We demonstrate
+        that the case of bipolar oscillations, where a dense gas of neutrinos and
+        antineutrinos in equal numbers completely converts from one flavor to another
+        even if the mixing angle is small, is equivalent to a pendulum in flavor space.
+        Bipolar flavor conversion corresponds to the swinging of the pendulum, which
+        begins in an unstable upright position (the initial flavor), and passes through
+        momentarily the vertically downward position (the other flavor) in the course
+        of its motion. The time scale to complete one cycle of oscillation depends
+        logarithmically on the vacuum mixing angle. Likewise, the presence of an ordinary
+        medium can be shown analytically to contribute to a logarithmic increase in
+        the bipolar conversion period. We further find that a more complex (and realistic)
+        system of unequal numbers of neutrinos and antineutrinos is analogous to a
+        spinning top subject to a torque. This analogy easily explains how such a
+        system can oscillate in both the bipolar and the synchronized mode, depending
+        on the neutrino density and the size of the neutrino-antineutrino asymmetry.
+        Our simple model applies strictly only to isotropic neutrino gasses. In more
+        general cases, and especially for neutrinos streaming from a supernova core,
+        different modes couple to each other with unequal strength, an effect that
+        can lead to kinematical decoherence in flavor space rather than collective
+        oscillations. The exact circumstances under which collective oscillations
+        occur in nonisotropic media remain to be understood.\",\n        \"author\":[\"Hannestad,
+        Steen\",\n          \"Raffelt, Georg G.\",\n          \"Sigl, G\xFCnter\",\n
+        \         \"Wong, Yvonne Y. Y.\"],\n        \"pub\":\"Physical Review D\",\n
+        \       \"pubdate\":\"2006-11-00\",\n        \"title\":[\"Self-induced conversion
+        in dense neutrino gases: Pendulum in flavor space\"],\n        \"year\":\"2006\",\n
+        \       \"citation_count\":296},\n      {\n        \"bibcode\":\"1994ADNDT..56..231O\",\n
+        \       \"abstract\":\"The weak interaction rates in stellar matter are calculated
+        for the sd-shell nuclei in the full-shell model configurations using the effective
+        interaction of Wildenthal, taking into account the recent extensive compilations
+        of experimental energy levels and Gamow-Teller \u03B2 decay rates. Based on
+        comparisons between the present calculation and that of Fuller, Fowler, and
+        Newman (FFN), it is pointed out that correct treatment of nuclear structure
+        effects is decisive in attaining reliable weak interaction rates in stellar
+        matter. The weak rates are tabulated at the same grid points of density and
+        temperature as those of FFN, for the ranges 10 &lt;= \u03C1Y<SUB>e</SUB> (g.cm<SUP>-3</SUP>)
+        &lt;= 10<SUP>11</SUP> and 0.01 \xD7 10<SUP>9</SUP> &lt;= T (K) &lt;= 30 \xD7
+        10<SUP>9</SUP>.\",\n        \"author\":[\"Oda, T.\",\n          \"Hino, M.\",\n
+        \         \"Muto, K.\",\n          \"Takahara, M.\",\n          \"Sato, K.\"],\n
+        \       \"pub\":\"Atomic Data and Nuclear Data Tables\",\n        \"pubdate\":\"1994-03-00\",\n
+        \       \"title\":[\"Rate Tables for the Weak Processes of sd-Shell Nuclei
+        in Stellar Matter\"],\n        \"year\":\"1994\",\n        \"citation_count\":247},\n
+        \     {\n        \"bibcode\":\"1989ApJ...339..354I\",\n        \"abstract\":\"Detailed
+        results of the calculation of the neutrino energy-loss rates due to pair,
+        photo-, plasma, and bremsstrahlung processes corresponding to the density-temperature
+        regime 1-10 to the 14th g/cu cm, 10 to the 7th - 10 to the 11th K are presented.
+        The calculation is based on the Weinberg-Salam theory. The present calculation
+        is the most accurate calculation to date covering the widest density-temperature
+        regime. The discrepancies with the previous works are carefully examined.
+        Extensive tables are prepared to show the detailed results of the photo-neutrino
+        energy-loss rate.\",\n        \"author\":[\"Itoh, Naoki\",\n          \"Adachi,
+        Tomoo\",\n          \"Nakagawa, Masayuki\",\n          \"Kohyama, Yasuharu\",\n
+        \         \"Munakata, Hiroharu\"],\n        \"pub\":\"The Astrophysical Journal\",\n
+        \       \"pubdate\":\"1989-04-00\",\n        \"title\":[\"Neutrino Energy
+        Loss in Stellar Interiors. III. Pair, Photo-, Plasma, and Bremsstrahlung Processes\"],\n
+        \       \"year\":\"1989\",\n        \"citation_count\":209},\n      {\n        \"bibcode\":\"2001ADNDT..79....1L\",\n
+        \       \"abstract\":\"The weak interaction rates in stellar environments
+        are computed for pf-shell nuclei in the mass range A=45-65 using large-scale
+        shell-model calculations. The calculated capture and decay rates take into
+        consideration the latest experimental energy levels and log ft-values. The
+        rates are tabulated at the same grid points of density and temperature as
+        those used by Fuller, Fowler, and Newman for densities \u03C1Y<SUB>e</SUB>=10-10<SUP>11</SUP>
+        g/cm<SUP>3</SUP> and temperatures T=10<SUP>7</SUP>-10<SUP>11</SUP> K, and
+        hence are relevant for both types of supernovae (Type Ia and Type II). Effective
+        &lt;ft&gt; values for capture rates and average neutrino (antineutrino) energies
+        are also given to facilitate the use of interpolated rates in stellar evolution
+        codes.\",\n        \"author\":[\"Langanke, K.\",\n          \"Mart\xEDnez-Pinedo,
+        G.\"],\n        \"pub\":\"Atomic Data and Nuclear Data Tables\",\n        \"pubdate\":\"2001-09-00\",\n
+        \       \"title\":[\"Rate Tables for the Weak Processes of pf-SHELL Nuclei
+        in Stellar Environments\"],\n        \"year\":\"2001\",\n        \"citation_count\":199},\n
+        \     {\n        \"bibcode\":\"1994ApJS...91..389A\",\n        \"abstract\":\"A
+        search is made for the most important electron captures and beta-decays after
+        core silicon burning in massive stars. A nuclear statistical equilibrium code
+        is used to compute isotopic abundances. Electron capture and beta-decay rates
+        are estimated for the 150 most abundant isotopes in a simplified fashion which
+        generally includes the strongest transitions. These estimates are made for
+        nuclei in the fp-shell and use techniques similar to Fuller, Fowler, &amp;
+        Newman (1982a), and are compared to them. The general behavior of the rate
+        of change of Y<SUB>e</SUB> is examined. These methods are then used to follow
+        a typical stellar trajectory, seeking the most important weak interactions
+        during the formation of the iron core. Ranked lists of nuclei are given, to
+        prioritize more detailed studies on individual nuclei. Beta-decays are found
+        to ben an important modification to the evolution below the rate of change
+        of Y<SUB>e</SUB> approx. = 0.46 as the core approaches a state of dynamic
+        equilibrium between electron captures and beta-decays.\",\n        \"author\":[\"Aufderheide,
+        Maurice B.\",\n          \"Fushiki, Ikko\",\n          \"Woosley, Stanford
+        E.\",\n          \"Hartmann, Dieter H.\"],\n        \"pub\":\"The Astrophysical
+        Journal Supplement Series\",\n        \"pubdate\":\"1994-03-00\",\n        \"title\":[\"Search
+        for Important Weak Interaction Nuclei in Presupernova Evolution\"],\n        \"year\":\"1994\",\n
+        \       \"citation_count\":183},\n      {\n        \"bibcode\":\"1993PhRvD..48.1478B\",\n
+        \       \"abstract\":\"We present a unified approach which is accurate at
+        all temperatures and densities for calculating the energy loss from a stellar
+        plasma due to the plasma process-the decay of photons and plasmons into neutrino
+        pairs. To allow efficient numerical calculations, an analytic approximation
+        to the dispersion equations for photons and plasmons is developed. It is correct
+        to order \u03B1 in the classical, degenerate, and relativistic limits for
+        all momenta k, and is correct at small k for all temperatures and electron
+        densities. Within the same approximations, concise expressions are derived
+        for the transverse, longitudinal, and axial-vector components of the neutrino
+        emissivity.\",\n        \"author\":[\"Braaten, Eric\",\n          \"Segel,
+        Daniel\"],\n        \"pub\":\"Physical Review D\",\n        \"pubdate\":\"1993-08-00\",\n
+        \       \"title\":[\"Neutrino energy loss from the plasma process at all temperatures
+        and densities\"],\n        \"year\":\"1993\",\n        \"citation_count\":191},\n
+        \     {\n        \"bibcode\":\"2001ApJ...560..307H\",\n        \"abstract\":\"Recent
+        shell-model calculations of weak-interaction rates for nuclei in the mass
+        range A=45-65 have resulted in substantial revisions to the hitherto standard
+        set of Fuller, Fowler, &amp; Newman (FFN). In particular, key electron-capture
+        rates, such as that for <SUP>60</SUP>Co, are much smaller. We consider here
+        the effects of these revised rates on the presupernova (post-oxygen burning)
+        evolution of massive stars in the mass range 11-40 M<SUB>solar</SUB>. Moreover,
+        we include, for the first time in models by our group, the effects of modern
+        rates for beta decay in addition to electron capture and positron emission.
+        Stars of 15, 25, and 40 M<SUB>solar</SUB> are examined in detail using both
+        the full FFN rate set and the revised rates. An additional finely spaced (in
+        mass) grid of 34 models is also calculated in order to give the systematics
+        of iron core and silicon core masses. Values for the central electron mole
+        number at the time of iron core collapse in the new models are typically larger,
+        by \u0394Y<SUB>e</SUB>=0.005-0.015, than those of Woosley &amp; Weaver, with
+        a tendency for the more massive models to display larger differences. About
+        half of this change is a consequence of including beta decay; the other half,
+        the result of the smaller rates for electron capture. Unlike what might be
+        expected solely on basis of the larger Y<SUB>e</SUB> values, the new iron
+        core masses are systematically smaller owing to a decrease in the entropy
+        in the outer iron core. The changes in iron core mass range from zero to 0.1
+        M<SUB>solar</SUB> (larger changes for high-mass stars). It would be erroneous
+        however to estimate the facility of exploding these new models based solely
+        upon their iron core mass since the entire core structure is altered and the
+        density change is not so different as the adjustments in composition might
+        suggest. We also observe, as predicted by Aufderheide et al., a tendency toward
+        beta equilibrium just prior to the collapse of the core, and the subsequent
+        loss of that equilibrium as core collapse proceeds. This tendency is more
+        pronounced in the 15 M<SUB>solar</SUB> model than in the heavier stars. We
+        discuss the key weak reaction rates, both beta decay and electron capture,
+        responsible for the evolution of Y<SUB>e</SUB> and make suggestions for future
+        measurements.\",\n        \"author\":[\"Heger, A.\",\n          \"Woosley,
+        S. E.\",\n          \"Mart\xEDnez-Pinedo, G.\",\n          \"Langanke, K.\"],\n
+        \       \"pub\":\"The Astrophysical Journal\",\n        \"pubdate\":\"2001-10-00\",\n
+        \       \"title\":[\"Presupernova Evolution with Improved Rates for Weak Interactions\"],\n
+        \       \"year\":\"2001\",\n        \"citation_count\":172},\n      {\n        \"bibcode\":\"1992ApJ...395..622I\",\n
+        \       \"abstract\":\"The neutrino energy-loss rates due to plasma neutrino
+        process are calculated for strongly degenerate electrons by using the accurate
+        relativistic dispersion relations for the longitudinal and transverse plasmons.
+        The calculated plasma neutrino energy loss rates are generally valid for relativistically
+        degenerate electrons as well as for nonrelativistically degenerate electrons.
+        The ratio of the result of the present calculation to that of the previous
+        calculations ranges between 0.39 and 3.22 depending upon densities and temperatures.
+        The results of the calculation are expressed by an analytical fitting formula.\",\n
+        \       \"author\":[\"Itoh, Naoki\",\n          \"Mutoh, Haruhiko\",\n          \"Hikita,
+        Atsushi\",\n          \"Kohyama, Yasuharu\"],\n        \"pub\":\"The Astrophysical
+        Journal\",\n        \"pubdate\":\"1992-08-00\",\n        \"title\":[\"Neutrino
+        Energy Loss in Stellar Interiors. IV. Plasma Neutrino Process for Strongly
+        Degenerate Electrons\"],\n        \"year\":\"1992\",\n        \"citation_count\":93},\n
+        \     {\n        \"bibcode\":\"2009JPhG...36k3201D\",\n        \"abstract\":\"Rapid
+        progress has been made during recent years in the understanding of the flavour
+        oscillations that occur as neutrinos traverse through supernova. The previous
+        paradigm has given way and it is now clear that the neutrino signals we shall
+        receive from future galactic supernovae will allow us both to peer inside
+        these extraordinary cosmic events and to probe some of the fundamental properties
+        of these elusive particles. In this review, we aim to distill the progress
+        that has been made focusing upon the effects of the dynamic density profile
+        and the emergence of collective flavour oscillations due to neutrino self-interactions.\",\n
+        \       \"author\":[\"Duan, H.\",\n          \"Kneller, J. P.\"],\n        \"pub\":\"Journal
+        of Physics G Nuclear Physics\",\n        \"pubdate\":\"2009-11-00\",\n        \"title\":[\"TOPICAL
+        REVIEW:  Neutrino flavour transformation in supernovae\"],\n        \"year\":\"2009\",\n
+        \       \"citation_count\":126},\n      {\n        \"bibcode\":\"2016ApJ...816...44S\",\n
+        \       \"abstract\":\"A weak-rate library aimed at investigating the sensitivity
+        of astrophysical environments to variations of electron-capture rates on medium-heavy
+        nuclei has been developed. With this library, the sensitivity of the core-collapse
+        and early post-bounce phases of core-collapse supernovae to nuclear electron
+        capture is examined. The rates are adjusted by factors consistent with uncertainties
+        indicated by comparing theoretical rates to those deduced from charge-exchange
+        and \u03B2-decay measurements. To ensure a model-independent assessment, sensitivity
+        studies across a comprehensive set of progenitors and equations of state are
+        performed. We find a +16/-4% range in the mass of the inner core at shock
+        formation and a \xB120% range of peak {\u03BD }<SUB>e</SUB> luminosity during
+        the deleptonization burst. These ranges are five times as large as those seen
+        from a separate progenitor study, where we evaluate the sensitivity of these
+        parameters to 32 presupernova models. Additionally, the simulations are found
+        to be more sensitive to a reduction in electron-capture rates than an enhancement,
+        and specifically to the reduction in rates for neutron-rich nuclei near the
+        N = 50 closed neutron shell. As measurements for medium-heavy (A\\\\gt 65)
+        and neutron-rich nuclei are sparse, and because accurate theoretical models
+        that account for nuclear structure considerations of individual nuclei are
+        not readily available, rates for these nuclei may be overestimated. If more
+        accurate estimates confirm this, results from this study indicate that significant
+        changes to the core-collapse trajectory are expected. For this reason, experimental
+        and theoretical efforts should focus on this region of the nuclear chart.\",\n
+        \       \"author\":[\"Sullivan, Chris\",\n          \"O'Connor, Evan\",\n
+        \         \"Zegers, Remco G. T.\",\n          \"Grubb, Thomas\",\n          \"Austin,
+        Sam M.\"],\n        \"pub\":\"The Astrophysical Journal\",\n        \"pubdate\":\"2016-01-00\",\n
+        \       \"title\":[\"The Sensitivity of Core-collapse Supernovae to Nuclear
+        Electron Capture\"],\n        \"year\":\"2016\",\n        \"citation_count\":77},\n
+        \     {\n        \"bibcode\":\"1986ZhETF..91....7M\",\n        \"abstract\":\"Under
+        certain conditions, the propagation of a beam of oscillating neutrinos in
+        a variable-density medium takes the form of an almost complete transformation
+        of the initial type of neutrino into another type. The depth of oscillations
+        is then negligible. The transformation can occur in the cores and envelopes
+        of collapsing stars.\",\n        \"author\":[\"Mikheev, S. P.\",\n          \"Smirnov,
+        A. Iu.\"],\n        \"pub\":\"Zhurnal Eksperimentalnoi i Teoreticheskoi Fiziki\",\n
+        \       \"pubdate\":\"1986-07-00\",\n        \"title\":[\"Neutrino oscillations
+        in a medium with variable density and \u03B8-flares from gravitational collapses
+        of stars.\"],\n        \"year\":\"1986\",\n        \"citation_count\":109},\n
+        \     {\n        \"bibcode\":\"1983ApJ...275..858I\",\n        \"abstract\":\"Neutrino-pair
+        bremsstrahlung rate is calculated in the framework of the Weinberg-Salam theory
+        for the dense matter relevant to the interior of white dwarfs and neutron
+        stars. The ionic correlation in the liquid state and dielectric screening
+        of the Coulomb interaction due to degenerate electrons are accurately taken
+        into account. It is found that the ionic correlation in the liquid state reduces
+        the neutrino-pair bremsstrahlung rate typically by a factor 2-20 depending
+        on the element and temperature. The results of the numerical calculation are
+        fitted by analytic formulae in order to facilitate applications.\",\n        \"author\":[\"Itoh,
+        N.\",\n          \"Kohyama, Y.\"],\n        \"pub\":\"The Astrophysical Journal\",\n
+        \       \"pubdate\":\"1983-12-00\",\n        \"title\":[\"Neutrino-pair bremsstrahlung
+        in dense stars. I. Liquid metal case.\"],\n        \"year\":\"1983\",\n        \"citation_count\":83},\n
+        \     {\n        \"bibcode\":\"2004APh....21..303O\",\n        \"abstract\":\"The
+        signal produced in neutrino observatories by the pair-annihilation neutrinos
+        emitted from a 20 M <SUB>\u2299</SUB> pre-supernova star at the silicon burning
+        phase is estimated. The spectrum of the neutrinos with an average energy \u223C2
+        MeV is calculated with the use of the Monte Carlo method. A few relevant reactions
+        for neutrinos and anti-neutrinos in modern detectors are considered. The most
+        promising results are from \u03BD\xAF<SUB>e</SUB>+ p\u2192 n+ e<SUP>+</SUP>
+        reaction. During the Si-burning phase we expect 1.27 neutrons/day/kton of
+        water to be produced by neutrinos from a star located at a distance of 1 kpc.
+        Small admixture of effective neutron-absorbers as e.g. NaCl or GdCl <SUB>3</SUB>
+        makes these neutrons easily visible because of Cherenkov light produced by
+        electrons which were hit by \u223C8 MeV photon cascade emitted by Cl or Gd
+        nuclei. The estimated rate of neutron production for SNO and Super-Kamiokande
+        is, respectively, 2.2 and 41 events per day for a star at 1 kpc. For future
+        detectors UNO and Hyper-Kamiokande we expect 5.6 and 6.9 events per day even
+        for a star 10 kpc away. This would make it possible to foresee a massive star
+        death a few days before its core collapse. Importance of such a detection
+        for theoretical astrophysics is discussed.\",\n        \"author\":[\"Odrzywolek,
+        A.\",\n          \"Misiaszek, M.\",\n          \"Kutschera, M.\"],\n        \"pub\":\"Astroparticle
+        Physics\",\n        \"pubdate\":\"2004-06-00\",\n        \"title\":[\"Detection
+        possibility of the pair-annihilation neutrinos from the neutrino-cooled pre-supernova
+        star\"],\n        \"year\":\"2004\",\n        \"citation_count\":65},\n      {\n
+        \       \"bibcode\":\"1996ApJ...470.1015I\",\n        \"abstract\":\"The accuracy
+        of the Braaten-Segel approximation for the plasma neutrino calculation is
+        quantitatively assessed by comparison with the result obtained by using the
+        Jancovici formula for the dielectric for degenerate electrons. It is found
+        that the Braaten-Segel approximation is a reasonably good one when the plasma
+        neutrino process is the most dominant process; the error is within \u223C5%
+        in this case. When the plasma neutrino process is not the most dominant, the
+        accuracy of the Braaten-Segel approximation becomes much poorer.\",\n        \"author\":[\"Itoh,
+        Naoki\",\n          \"Nishikawa, Akinori\",\n          \"Kohyama, Yasuharu\"],\n
+        \       \"pub\":\"The Astrophysical Journal\",\n        \"pubdate\":\"1996-10-00\",\n
+        \       \"title\":[\"Neutrino Energy Loss in Stellar Interiors. VIII. Braaten-Segel
+        Approximation for the Plasma Neutrino Process\"],\n        \"year\":\"1996\",\n
+        \       \"citation_count\":28},\n      {\n        \"bibcode\":\"2000ApJS..126..493M\",\n
+        \       \"abstract\":\"We calculate supernova electron capture and \u03B2-decay
+        rates for various pf-shell nuclei using large-scale shell-model techniques.
+        We show that the centroid of the Gamow-Teller strength distribution was systematically
+        misplaced in previous rate estimates. Our total electron capture rates are
+        significantly smaller than currently adopted in core collapse calculations,
+        while the total \u03B2-decay rates change less. Our calculation shows that
+        for electron-to-baryon ratios, Y<SUB>e</SUB>=0.42-0.46, \u03B2-decay rates
+        are larger than the competing electron capture rates.\",\n        \"author\":[\"Mart\xEDnez-Pinedo,
+        G.\",\n          \"Langanke, K.\",\n          \"Dean, D. J.\"],\n        \"pub\":\"The
+        Astrophysical Journal Supplement Series\",\n        \"pubdate\":\"2000-02-00\",\n
+        \       \"title\":[\"Competition of Electron Capture and Beta-Decay Rates
+        in Supernova Collapse\"],\n        \"year\":\"2000\",\n        \"citation_count\":58},\n
+        \     {\n        \"bibcode\":\"2015ApJ...808..168K\",\n        \"abstract\":\"Aiming
+        to distinguish two types of progenitors of core-collapse supernovae, i.e.,
+        one with a core composed mainly of oxygen and neon (abbreviated as ONe core)
+        and the other with an iron core (or Fe core), we calculated the luminosities
+        and spectra of neutrinos emitted from these cores prior to gravitational collapse,
+        taking neutrino oscillation into account. We found that the total energies
+        emitted as {\\\\bar{\u03BD }}<SUB>{{e</SUB>}} from the ONe core are \u2272
+        {10}<SUP>46</SUP> {erg}, which is much smaller than \u223C {10}<SUP>47</SUP>
+        {erg} for Fe cores. The average energy, on the other hand, is twice as large
+        for the ONe core as those for the Fe cores. The neutrinos produced by the
+        plasmon decays in the ONe core are more numerous than those from the electron-positron
+        annihilation in both cores, but they have much lower average energies \u2272
+        1 {MeV}. Although it is difficult to detect the pre-supernova neutrinos from
+        the ONe core even if it is located within 200 pc from Earth, we expect \u223C9-43
+        and \u223C7-61 events for Fe cores at KamLAND and Super-Kamiokande, respectively,
+        depending on the progenitor mass and neutrino-mass hierarchy. These numbers
+        might be increased by an order of magnitude if we envisage next-generation
+        detectors such as JUNO. We will hence be able to distinguish the two types
+        of progenitors by the detection or nondetection of the pre-supernova neutrinos
+        if they are close enough (\u2272 1 {kpc}).\",\n        \"author\":[\"Kato,
+        Chinami\",\n          \"Delfan Azari, Milad\",\n          \"Yamada, Shoichi\",\n
+        \         \"Takahashi, Koh\",\n          \"Umeda, Hideyuki\",\n          \"Yoshida,
+        Takashi\",\n          \"Ishidoshiro, Koji\"],\n        \"pub\":\"The Astrophysical
+        Journal\",\n        \"pubdate\":\"2015-08-00\",\n        \"title\":[\"Pre-supernova
+        Neutrino Emissions from ONe Cores in the Progenitors of Core-collapse Supernovae:
+        Are They Distinguishable from Those of Fe Cores?\"],\n        \"year\":\"2015\",\n
+        \       \"citation_count\":31},\n      {\n        \"bibcode\":\"1994ApJ...424..257A\",\n
+        \       \"abstract\":\"In the course of a general study of electron capture
+        and beta-decay rates on fp shell nuclei which are abundant after core silicon
+        burning in massive stars, we have found that the Fuller, Fowler, and Newman
+        beta-decay rates are much stronger than generally has been realized. In fact,
+        they can balance the capture rates during the conditions which are prevalent
+        after core silicon burning, resulting in a new Urca process. The strength
+        of the beta-decay rates is a result of thermal population of the Gamow-Teller
+        back resonance in the parent nucleus and the behavior of beta-decay and electron
+        capture Q-values for ensembles of nuclei in nuclear statistical equilibrium.
+        All beta-decay rate tabulations prior to Fuller, Fowler, and Newman neglected
+        the contribution of back resonances and thus drastically underestimated the
+        overall rate. We use a simple analytic model to explain this balancing. The
+        full rates are coupled to a nuclear statistical equilibrium code to demonstrate
+        the strength of the decays. One zone models are used to examine, in a self-consistent
+        fashion, how these rates could affect the presupernova evolution of the iron
+        core and hence the core collapse problem.\",\n        \"author\":[\"Aufderheide,
+        Maurice B.\",\n          \"Fushiki, Ikko\",\n          \"Fuller, George M.\",\n
+        \         \"Weaver, Thomas A.\"],\n        \"pub\":\"The Astrophysical Journal\",\n
+        \       \"pubdate\":\"1994-03-00\",\n        \"title\":[\"A New URCA Process\"],\n
+        \       \"year\":\"1994\",\n        \"citation_count\":32},\n      {\n        \"bibcode\":\"2016ApJ...818...91A\",\n
+        \       \"abstract\":\"In the late stages of nuclear burning for massive stars
+        (M &gt; 8 M<SUB>\u2299</SUB>), the production of neutrino-antineutrino pairs
+        through various processes becomes the dominant stellar cooling mechanism.
+        As the star evolves, the energy of these neutrinos increases and in the days
+        preceding the supernova a significant fraction of emitted electron anti-neutrinos
+        exceeds the energy threshold for inverse beta decay on free hydrogen. This
+        is the golden channel for liquid scintillator detectors because the coincidence
+        signature allows for significant reductions in background signals. We find
+        that the kiloton-scale liquid scintillator detector KamLAND can detect these
+        pre-supernova neutrinos from a star with a mass of 25 M<SUB>\u2299</SUB> at
+        a distance less than 690 pc with 3\u03C3 significance before the supernova.
+        This limit is dependent on the neutrino mass ordering and background levels.
+        KamLAND takes data continuously and can provide a supernova alert to the community.\",\n
+        \       \"author\":[\"Asakura, K.\",\n          \"Gando, A.\",\n          \"Gando,
+        Y.\",\n          \"Hachiya, T.\",\n          \"Hayashida, S.\",\n          \"Ikeda,
+        H.\",\n          \"Inoue, K.\",\n          \"Ishidoshiro, K.\",\n          \"Ishikawa,
+        T.\",\n          \"Ishio, S.\",\n          \"Koga, M.\",\n          \"Matsuda,
+        S.\",\n          \"Mitsui, T.\",\n          \"Motoki, D.\",\n          \"Nakamura,
+        K.\",\n          \"Obara, S.\",\n          \"Oura, T.\",\n          \"Shimizu,
+        I.\",\n          \"Shirahata, Y.\",\n          \"Shirai, J.\",\n          \"Suzuki,
+        A.\",\n          \"Tachibana, H.\",\n          \"Tamae, K.\",\n          \"Ueshima,
+        K.\",\n          \"Watanabe, H.\",\n          \"Xu, B. D.\",\n          \"Kozlov,
+        A.\",\n          \"Takemoto, Y.\",\n          \"Yoshida, S.\",\n          \"Fushimi,
+        K.\",\n          \"Piepke, A.\",\n          \"Banks, T. I.\",\n          \"Berger,
+        B. E.\",\n          \"Fujikawa, B. K.\",\n          \"O'Donnell, T.\",\n          \"Learned,
+        J. G.\",\n          \"Maricic, J.\",\n          \"Matsuno, S.\",\n          \"Sakai,
+        M.\",\n          \"Winslow, L. A.\",\n          \"Efremenko, Y.\",\n          \"Karwowski,
+        H. J.\",\n          \"Markoff, D. M.\",\n          \"Tornow, W.\",\n          \"Detwiler,
+        J. A.\",\n          \"Enomoto, S.\",\n          \"Decowski, M. P.\",\n          \"KamLAND
+        Collaboration\"],\n        \"pub\":\"The Astrophysical Journal\",\n        \"pubdate\":\"2016-02-00\",\n
+        \       \"title\":[\"KamLAND Sensitivity to Neutrinos from Pre-supernova Stars\"],\n
+        \       \"year\":\"2016\",\n        \"citation_count\":51},\n      {\n        \"bibcode\":\"2001PhRvC..64e5801L\",\n
+        \       \"abstract\":\"Using the recent shell-model evaluation of stellar
+        weak interaction rates, we have calculated the neutrino spectra arising from
+        electron capture on pf-shell nuclei under presupernova conditions. We present
+        a simple parametrization of the spectra that allows for an easy implementation
+        into collapse simulations. We discuss that the explicit consideration of thermal
+        ensembles in the parent nucleus broadens the neutrino spectra and results
+        in larger average neutrino energies. The capture rates and neutrino spectra
+        can be easily modified to account for phase space blocking by neutrinos, which
+        becomes increasingly important during the final stellar collapse.\",\n        \"author\":[\"Langanke,
+        K.\",\n          \"Mart\xEDnez-Pinedo, G.\",\n          \"Sampaio, J. M.\"],\n
+        \       \"pub\":\"Physical Review C\",\n        \"pubdate\":\"2001-11-00\",\n
+        \       \"title\":[\"Neutrino spectra from stellar electron capture\"],\n
+        \       \"year\":\"2001\",\n        \"citation_count\":30},\n      {\n        \"bibcode\":\"2006PhRvD..74d3006M\",\n
+        \       \"abstract\":\"A new method of calculating the energy spectrum of
+        neutrinos and antineutrinos produced in the electron-positron annihilation
+        processes in hot stellar plasma is presented. Detection of these neutrinos,
+        produced copiously in the presupernova, which is an evolutionary advanced
+        neutrino-cooled star, may serve in the future as a trigger of a precollapse
+        early warning system. Also, observation of neutrinos will probe final stages
+        of thermonuclear burning in the presupernova. The spectra obtained with the
+        new method are compared to Monte Carlo simulations. To achieve high accuracy
+        in the energy range of interest, determined by neutrino detector thresholds,
+        a differential cross section for production of the antineutrino, previously
+        unknown in an explicit form, is calculated as a function of energy in the
+        plasma rest frame. The neutrino spectrum is obtained as a 3-dimensional integral,
+        computed with the use of the Cuhre algorithm of at least 5% accuracy. Formulas
+        for the mean neutrino energy and its dispersion are given as a combination
+        of Fermi-Dirac integrals. Also, useful analytical approximations of the whole
+        spectrum are shown.\",\n        \"author\":[\"Misiaszek, M.\",\n          \"Odrzywo\u0142ek,
+        A.\",\n          \"Kutschera, M.\"],\n        \"pub\":\"Physical Review D\",\n
+        \       \"pubdate\":\"2006-08-00\",\n        \"title\":[\"Neutrino spectrum
+        from the pair-annihilation process in the hot stellar plasma\"],\n        \"year\":\"2006\",\n
+        \       \"citation_count\":25},\n      {\n        \"bibcode\":\"2009PhRvC..80d5801O\",\n
+        \       \"abstract\":\"The spectral emission of neutrinos from a plasma in
+        nuclear statistical equilibrium (NSE) is investigated. Particular attention
+        is paid to the possible emission of high-energy (&gt;10 MeV) neutrinos or
+        antineutrinos. A newly developed numerical approach for describing the abundances
+        of nuclei in NSE is presented. Neutrino emission spectra, resulting from general
+        Fuller-Fowler-Newman conditions, are analyzed. Regions of T-\u03C1-Y<SUB>e</SUB>
+        space favoring detectability are selected. The importance of critical Y<SUB>e</SUB>
+        values with zero net rate of neutronization (Y\u02D9<SUB>e</SUB>) is discussed.
+        Results are provided for the processing of matter under conditions typical
+        for thermonuclear and core-collapse supernovae, presupernova stars, and neutron
+        star mergers.\",\n        \"author\":[\"Odrzywolek, Andrzej\"],\n        \"pub\":\"Physical
+        Review C\",\n        \"pubdate\":\"2009-10-00\",\n        \"title\":[\"Nuclear
+        statistical equilibrium neutrino spectrum\"],\n        \"year\":\"2009\",\n
+        \       \"citation_count\":20},\n      {\n        \"bibcode\":\"2004PhRvD..69b3005D\",\n
+        \       \"abstract\":\"Explicit expressions for the differential and total
+        rates and emissivities of neutrino pairs from the photoneutrino process e<SUP>\xB1</SUP>+\u03B3\u2192e<SUP>\xB1</SUP>+\u03BD+\u03BD\xAF
+        in hot and dense matter are derived. Full information about the emitted neutrinos
+        is retained by evaluating the squared matrix elements for this process which
+        was hitherto bypassed through the use of Lenard\u2019s identity in obtaining
+        the total neutrino emissivities. Accurate numerical results are presented
+        for widely varying conditions of temperature and density. Analytical results
+        helpful in understanding the qualitative behaviors of the rates and emissivities
+        in limiting situations are derived. The corresponding production and absorption
+        kernels in the source term of the Boltzmann equation for neutrino transport
+        are developed. The appropriate Legendre coefficients of these kernels, in
+        forms suitable for multigroup flux-limited diffusion schemes, are also provided.\",\n
+        \       \"author\":[\"Dutta, Sharada Iyer\",\n          \"Ratkovi\u0107, Sa\u0161a\",\n
+        \         \"Prakash, Madappa\"],\n        \"pub\":\"Physical Review D\",\n
+        \       \"pubdate\":\"2004-01-00\",\n        \"title\":[\"Photoneutrino process
+        in astrophysical systems\"],\n        \"year\":\"2004\",\n        \"citation_count\":22},\n
+        \     {\n        \"bibcode\":\"2003PhRvD..67l3002R\",\n        \"abstract\":\"The
+        differential rates and emissivities of neutrino pairs from an equilibrium
+        plasma are calculated for the wide range of density and temperature encountered
+        in astrophysical systems. New analytical expressions are derived for the differential
+        emissivities which yield total emissivities in full agreement with those previously
+        calculated. The photon and plasmon pair production and absorption kernels
+        in the source term of the Boltzmann equation for neutrino transport are provided.
+        The appropriate Legendre coefficients of these kernels, in forms suitable
+        for multi-group flux-limited diffusion schemes are also computed.\",\n        \"author\":[\"Ratkovi\u0107,
+        Sa\u0161a\",\n          \"Iyer Dutta, Sharada\",\n          \"Prakash, Madappa\"],\n
+        \       \"pub\":\"Physical Review D\",\n        \"pubdate\":\"2003-06-00\",\n
+        \       \"title\":[\"Differential neutrino rates and emissivities from the
+        plasma process in astrophysical systems\"],\n        \"year\":\"2003\",\n
+        \       \"citation_count\":22},\n      {\n        \"bibcode\":\"2004AcPPB..35.1981O\",\n
+        \       \"abstract\":\"Analysis of the massive star properties during C, Ne,
+        O &amp; Si burning i.e. the neutrino-cooled stage, leads to the simplified
+        neutrino emission model. In the framework of this model we have simulated
+        spectrum of the antineutrinos. Flux normalized according to the massive star
+        model with explicitly given neutrino luminosity allow us to predict signal
+        produced in water Cherenkov detectors. The results are discussed from the
+        point of view of the possibility of the core-collapse supernova event prediction
+        in advance of a few days.\",\n        \"author\":[\"Odrzywolek, A.\",\n          \"Misiaszek,
+        M.\",\n          \"Kutschera, M.\"],\n        \"pub\":\"Acta Physica Polonica
+        B\",\n        \"pubdate\":\"2004-06-00\",\n        \"title\":[\"Neutrinos
+        from Pre-Supernova Star\"],\n        \"year\":\"2004\",\n        \"citation_count\":16},\n
+        \     {\n        \"bibcode\":\"2007EPJC...52..425O\",\n        \"abstract\":\"The
+        spectrum of the neutrinos produced in the massive photon and longitudinal
+        plasmon decay process has been computed with four levels of approximation
+        for the dispersion relations. Some analytical formulae in the limit cases
+        are derived. Interesting conclusions related to previous calculations of the
+        energy loss in stars are presented. The high energy tail of the neutrino spectrum
+        is shown to be proportional to exp(-E/kT), where E is the neutrino energy
+        and kT is the temperature of the plasma.\",\n        \"author\":[\"Odrzywo\u0142ek,
+        A.\"],\n        \"pub\":\"European Physical Journal C\",\n        \"pubdate\":\"2007-10-00\",\n
+        \       \"title\":[\"Plasmaneutrino spectrum\"],\n        \"year\":\"2007\",\n
+        \       \"citation_count\":14}]\n  }}\n"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '62043'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 17 Jan 2023 14:18:39 GMT
+      Retry-After:
+      - '85241'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4714'
+      X-RateLimit-Reset:
+      - '1674050361'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+      authorization:
+      - DUMMY
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//search/query?q=references%282017zndo....846305F%29&fl=abstract%2Cauthor%2Cbibcode%2Cpubdate%2Ctitle%2Cpub%2Cyear%2Ccitation_count&fq=&start=0&rows=50
+  response:
+    body:
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":28,\n    \"params\":{\n
+        \     \"q\":\"references(2017zndo....846305F)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63c6ae40-26daa20c205bb54f21568eda\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"50\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":0,\"start\":0,\"docs\":[]\n
+        \ }}\n"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '409'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 17 Jan 2023 14:18:40 GMT
+      Retry-After:
+      - '85240'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4713'
+      X-RateLimit-Reset:
+      - '1674050361'
+    status:
+      code: 200
+      message: OK
+version: 1

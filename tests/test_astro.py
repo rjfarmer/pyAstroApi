@@ -147,3 +147,27 @@ class TestJournal:
             assert type(paper) == pyastroapi.article
             assert paper.title == title
             assert paper.reference_count() == ref
+
+    def test_citations(self):
+        a = pyastroapi.journal(bibcodes=["2015arXiv151102820P", "2017zndo....846305F"])
+
+        z = a.citations()
+
+        assert len(z) > 2
+        assert "2016MNRAS.461.3296N" in z
+        assert (
+            z["2016MNRAS.461.3296N"].title
+            == "Multimessenger signals of long-term core-collapse supernova simulations: synergetic observation strategies"
+        )
+
+    def test_references(self):
+        a = pyastroapi.journal(bibcodes=["2015arXiv151102820P", "2017zndo....846305F"])
+
+        z = a.references()
+
+        assert len(z) > 2
+        assert "2011ApJS..192....3P" in z
+        assert (
+            z["2011ApJS..192....3P"].title
+            == "Modules for Experiments in Stellar Astrophysics (MESA)"
+        )

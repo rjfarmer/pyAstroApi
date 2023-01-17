@@ -14,29 +14,100 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: POST
     uri: https://api.adsabs.harvard.edu/v1//vis/word-cloud
   response:
     body:
-      string: '{"available": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
-        1}, "tully": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
-        1}, "bands": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
-        1}, "erratum": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
-        1}, "sky": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
-        1}, "discover": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
-        1}, "not": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
-        1}, "fisher": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
-        1}, "survey": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
-        1}, "result": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
-        1}, "error": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
-        1}, "need": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
-        1}, "relation": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
-        1}, "pass": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
-        1}, "huchra": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
-        1}, "micron": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+      string: '{"show": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "global": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "datum": {"idf": 0.09691001300805642, "record_count": 3, "total_occurrences":
+        1}, "responsive": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "follow": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "find": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "observational": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "depend": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "combine": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "factor": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "unprecedented": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "archival": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "saturation": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "vary": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "term": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "structural": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "reveal": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "evolution": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "specie": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "level": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "flux": {"idf": 0.07918124604762482, "record_count": 4, "total_occurrences":
+        1}, "history": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "respond": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "energy": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "existence": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "close": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "ferland": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "appear": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "broad": {"idf": 0.07918124604762482, "record_count": 4, "total_occurrences":
+        1}, "blr": {"idf": 0.09691001300805642, "record_count": 3, "total_occurrences":
+        1}, "new": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "component": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "proxy": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "offset": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "active": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "change": {"idf": 0.09691001300805642, "record_count": 3, "total_occurrences":
+        1}, "comparison": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "region": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "mkn": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "contribution": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "narrow": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "responsivity": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "presence": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "period": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "linearly": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "kinematic": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "indicate": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "addition": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "positive": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "negative": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "long": {"idf": 0.09691001300805642, "record_count": 3, "total_occurrences":
+        1}, "width": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "low": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "inner": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "emission": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "optical": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "line": {"idf": 0.03476210625921191, "record_count": 11, "total_occurrences":
+        1}, "fuv": {"idf": 0.07918124604762482, "record_count": 4, "total_occurrences":
+        1}, "match": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "continuum": {"idf": 0.09691001300805642, "record_count": 3, "total_occurrences":
+        1}, "strongly": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "compare": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "saturate": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "galactic": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "spectrum": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "high": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "examine": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "note": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "epoch": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "complex": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "profile": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "multiple": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "excitation": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "correlation": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "nucleus": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "significant": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "variable": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "extremely": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "response": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "agn": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "clear": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "spectra": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "cover": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "analysis": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "pattern": {"idf": 0.12493873660829992, "record_count": 2, "total_occurrences":
+        1}, "velocity": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
+        1}, "model": {"idf": 0.17609125905568124, "record_count": 1, "total_occurrences":
         1}}
 
         '
@@ -58,22 +129,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '1324'
+      - '7295'
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:45:05 GMT
+      - Tue, 17 Jan 2023 14:22:43 GMT
       Retry-After:
-      - '85434'
+      - '86072'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '1000'
       X-RateLimit-Remaining:
-      - '974'
+      - '985'
       X-RateLimit-Reset:
-      - '1669631340'
+      - '1674051436'
     status:
       code: 200
       message: OK

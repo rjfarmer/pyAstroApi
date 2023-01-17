@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"name": "S7I0BJKIRW"}'
+    body: '{"name": "J8O0OPGS08_2"}'
     headers:
       Accept:
       - application/json
@@ -9,18 +9,18 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '22'
+      - '24'
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: POST
     uri: https://api.adsabs.harvard.edu/v1//biblib/libraries
   response:
     body:
-      string: '{"name": "S7I0BJKIRW", "id": "mrcN4uC0QOixFKmlHtpkag", "description":
+      string: '{"name": "J8O0OPGS08_2", "id": "XUj58USqRhGqKqn6JdTNaQ", "description":
         "My ADS library"}
 
         '
@@ -42,11 +42,11 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '88'
+      - '90'
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:34 GMT
+      - Tue, 17 Jan 2023 14:25:58 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -63,20 +63,20 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//biblib/libraries/mrcN4uC0QOixFKmlHtpkag/?start=0
+    uri: https://api.adsabs.harvard.edu/v1//biblib/libraries/XUj58USqRhGqKqn6JdTNaQ/?start=0
   response:
     body:
       string: '{"documents": [], "solr": {"responseHeader": {"status": 0, "QTime":
         0, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start": "0",
-        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-63833f92-19910d152facb3141492c35d",
+        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-63c6aff6-55ee6cfc45e4e7900903f141",
         "fq": "{!bitset}", "sort": "date desc", "rows": "20", "wt": "json"}}, "response":
-        {"numFound": 0, "start": 0, "docs": []}}, "metadata": {"name": "S7I0BJKIRW",
-        "id": "mrcN4uC0QOixFKmlHtpkag", "description": "My ADS library", "num_documents":
-        0, "date_created": "2022-11-27T10:44:34.404739", "date_last_modified": "2022-11-27T10:44:34.404745",
+        {"numFound": 0, "start": 0, "docs": []}}, "metadata": {"name": "J8O0OPGS08_2",
+        "id": "XUj58USqRhGqKqn6JdTNaQ", "description": "My ADS library", "num_documents":
+        0, "date_created": "2023-01-17T14:25:58.161108", "date_last_modified": "2023-01-17T14:25:58.161114",
         "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
         "updates": {"num_updated": 0, "duplicates_removed": 0, "update_list": []}}
 
@@ -99,22 +99,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '734'
+      - '736'
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:35 GMT
+      - Tue, 17 Jan 2023 14:26:02 GMT
       Retry-After:
-      - '83879'
+      - '84799'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4807'
+      - '4708'
       X-RateLimit-Reset:
-      - '1669629755'
+      - '1674050362'
     status:
       code: 200
       message: OK
@@ -132,11 +132,11 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: POST
-    uri: https://api.adsabs.harvard.edu/v1//biblib/documents/mrcN4uC0QOixFKmlHtpkag
+    uri: https://api.adsabs.harvard.edu/v1//biblib/documents/XUj58USqRhGqKqn6JdTNaQ
   response:
     body:
       string: '{"number_added": 1}
@@ -164,7 +164,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:35 GMT
+      - Tue, 17 Jan 2023 14:26:02 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -181,21 +181,21 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//biblib/libraries/mrcN4uC0QOixFKmlHtpkag/?start=0
+    uri: https://api.adsabs.harvard.edu/v1//biblib/libraries/XUj58USqRhGqKqn6JdTNaQ/?start=0
   response:
     body:
       string: '{"documents": ["2021ApJ...923..214F"], "solr": {"responseHeader": {"status":
-        0, "QTime": 1, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start":
-        "0", "internal_logging_params": "X-Amzn-Trace-Id=Root=1-63833f94-49fbb91728231cad15038f86",
+        0, "QTime": 2, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start":
+        "0", "internal_logging_params": "X-Amzn-Trace-Id=Root=1-63c6affb-3b55ccb11f9a88df5cfa8e3e",
         "fq": "{!bitset}", "sort": "date desc", "rows": "20", "wt": "json"}}, "response":
         {"numFound": 1, "start": 0, "docs": [{"bibcode": "2021ApJ...923..214F", "alternate_bibcode":
-        ["2021arXiv211004131F"]}]}}, "metadata": {"name": "S7I0BJKIRW", "id": "mrcN4uC0QOixFKmlHtpkag",
-        "description": "My ADS library", "num_documents": 1, "date_created": "2022-11-27T10:44:34.404739",
-        "date_last_modified": "2022-11-27T10:44:35.662298", "permission": "owner",
+        ["2021arXiv211004131F"]}]}}, "metadata": {"name": "J8O0OPGS08_2", "id": "XUj58USqRhGqKqn6JdTNaQ",
+        "description": "My ADS library", "num_documents": 1, "date_created": "2023-01-17T14:25:58.161108",
+        "date_last_modified": "2023-01-17T14:26:02.747541", "permission": "owner",
         "public": false, "num_users": 1, "owner": "robert.j.farmer37"}, "updates":
         {"num_updated": 0, "duplicates_removed": 0, "update_list": []}}
 
@@ -218,22 +218,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '835'
+      - '837'
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:36 GMT
+      - Tue, 17 Jan 2023 14:26:03 GMT
       Retry-After:
-      - '83878'
+      - '84797'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4806'
+      - '4707'
       X-RateLimit-Reset:
-      - '1669629755'
+      - '1674050361'
     status:
       code: 200
       message: OK
@@ -251,11 +251,11 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: POST
-    uri: https://api.adsabs.harvard.edu/v1//biblib/documents/mrcN4uC0QOixFKmlHtpkag
+    uri: https://api.adsabs.harvard.edu/v1//biblib/documents/XUj58USqRhGqKqn6JdTNaQ
   response:
     body:
       string: '{"number_removed": 1}
@@ -283,7 +283,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:36 GMT
+      - Tue, 17 Jan 2023 14:26:04 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin
@@ -300,20 +300,20 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: GET
-    uri: https://api.adsabs.harvard.edu/v1//biblib/libraries/mrcN4uC0QOixFKmlHtpkag/?start=0
+    uri: https://api.adsabs.harvard.edu/v1//biblib/libraries/XUj58USqRhGqKqn6JdTNaQ/?start=0
   response:
     body:
       string: '{"documents": [], "solr": {"responseHeader": {"status": 0, "QTime":
         0, "params": {"q": "*:*", "fl": "bibcode,alternate_bibcode", "start": "0",
-        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-63833f95-663222aa463023377e4965b6",
+        "internal_logging_params": "X-Amzn-Trace-Id=Root=1-63c6affc-7fb8bf7402e444da582bb51b",
         "fq": "{!bitset}", "sort": "date desc", "rows": "20", "wt": "json"}}, "response":
-        {"numFound": 0, "start": 0, "docs": []}}, "metadata": {"name": "S7I0BJKIRW",
-        "id": "mrcN4uC0QOixFKmlHtpkag", "description": "My ADS library", "num_documents":
-        0, "date_created": "2022-11-27T10:44:34.404739", "date_last_modified": "2022-11-27T10:44:36.911289",
+        {"numFound": 0, "start": 0, "docs": []}}, "metadata": {"name": "J8O0OPGS08_2",
+        "id": "XUj58USqRhGqKqn6JdTNaQ", "description": "My ADS library", "num_documents":
+        0, "date_created": "2023-01-17T14:25:58.161108", "date_last_modified": "2023-01-17T14:26:04.491126",
         "permission": "owner", "public": false, "num_users": 1, "owner": "robert.j.farmer37"},
         "updates": {"num_updated": 0, "duplicates_removed": 0, "update_list": []}}
 
@@ -336,22 +336,22 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '734'
+      - '736'
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:37 GMT
+      - Tue, 17 Jan 2023 14:26:05 GMT
       Retry-After:
-      - '83876'
+      - '84796'
       Set-Cookie: DUMMY
       Vary:
       - Origin
       X-RateLimit-Limit:
       - '5000'
       X-RateLimit-Remaining:
-      - '4805'
+      - '4706'
       X-RateLimit-Reset:
-      - '1669629754'
+      - '1674050362'
     status:
       code: 200
       message: OK
@@ -367,11 +367,11 @@ interactions:
       Content-Length:
       - '0'
       User-Agent:
-      - python-requests/2.28.0
+      - python-requests/2.28.1
       authorization:
       - DUMMY
     method: DELETE
-    uri: https://api.adsabs.harvard.edu/v1//biblib/documents/mrcN4uC0QOixFKmlHtpkag
+    uri: https://api.adsabs.harvard.edu/v1//biblib/documents/XUj58USqRhGqKqn6JdTNaQ
   response:
     body:
       string: '{}
@@ -399,7 +399,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 27 Nov 2022 10:44:38 GMT
+      - Tue, 17 Jan 2023 14:26:05 GMT
       Set-Cookie: DUMMY
       Vary:
       - Origin

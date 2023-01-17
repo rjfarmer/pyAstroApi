@@ -1,0 +1,306 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+      authorization:
+      - DUMMY
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//search/query?q=citations%282015arXiv151102820P%29&fl=abstract%2Cauthor%2Cbibcode%2Cpubdate%2Ctitle%2Cpub%2Cyear%2Ccitation_count&fq=&start=0&rows=50
+  response:
+    body:
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":26,\n    \"params\":{\n
+        \     \"q\":\"citations(2015arXiv151102820P)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63c6ae3e-4a81deff5efa39ce73f73202\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"50\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":6,\"start\":0,\"docs\":[\n
+        \     {\n        \"bibcode\":\"2016MNRAS.461.3296N\",\n        \"abstract\":\"The
+        next Galactic supernova is expected to bring great opportunities for the direct
+        detection of gravitational waves (GW), full flavour neutrinos, and multiwavelength
+        photons. To maximize the science return from such a rare event, it is essential
+        to have established classes of possible situations and preparations for appropriate
+        observations. To this end, we use a long-term numerical simulation of the
+        core-collapse supernova (CCSN) of a 17 M<SUB>\u2299</SUB> red supergiant progenitor
+        to self-consistently model the multimessenger signals expected in GW, neutrino,
+        and electromagnetic messengers. This supernova model takes into account the
+        formation and evolution of a protoneutron star, neutrino-matter interaction,
+        and neutrino transport, all within a two-dimensional shock hydrodynamics simulation.
+        With this, we separately discuss three situations: (I) a CCSN at the Galactic
+        Center, (II) an extremely nearby CCSN within hundreds of parsecs, and (III)
+        a CCSN in nearby galaxies within several Mpc. These distance regimes necessitate
+        different strategies for synergistic observations. In a Galactic CCSN, neutrinos
+        provide strategic timing and pointing information. We explore how these in
+        turn deliver an improvement in the sensitivity of GW analyses and help to
+        guarantee observations of early electromagnetic signals. To facilitate the
+        detection of multimessenger signals of CCSNe in extremely nearby and extragalactic
+        distances, we compile a list of nearby red supergiant candidates and a list
+        of nearby galaxies with their expected CCSN rates. By exploring the sequential
+        multimessenger signals of a nearby CCSN, we discuss preparations for maximizing
+        successful studies of such an unprecedented stirring event.\",\n        \"author\":[\"Nakamura,
+        Ko\",\n          \"Horiuchi, Shunsaku\",\n          \"Tanaka, Masaomi\",\n
+        \         \"Hayama, Kazuhiro\",\n          \"Takiwaki, Tomoya\",\n          \"Kotake,
+        Kei\"],\n        \"pub\":\"Monthly Notices of the Royal Astronomical Society\",\n
+        \       \"pubdate\":\"2016-09-00\",\n        \"title\":[\"Multimessenger signals
+        of long-term core-collapse supernova simulations: synergetic observation strategies\"],\n
+        \       \"year\":\"2016\",\n        \"citation_count\":89},\n      {\n        \"bibcode\":\"2017ApJ...848...48K\",\n
+        \       \"abstract\":\"This paper is a sequel to our 2015 paper, Kato et al.,
+        which calculated the luminosities and spectra of electron-type anti-neutrinos
+        ({\\\\bar{\u03BD }}<SUB>e</SUB>) from the progenitors of core-collapse supernovae.
+        Expecting that the capability to detect electron-type neutrinos ({\u03BD }<SUB>e</SUB>)
+        will increase dramatically with the emergence of liquid-argon detectors such
+        as DUNE, we broaden the scope in this study to include all flavors of neutrinos
+        emitted from the pre-bounce phase. We pick up three progenitor models of electron
+        capture supernovae (ECSNe) and iron-core collapse supernovae (FeCCSNe). We
+        find that the number luminosities reach \u223C10<SUP>57</SUP> s<SUP>-1</SUP>
+        and \u223C10<SUP>53</SUP> s<SUP>-1 </SUP>at maximum for {\u03BD }<SUB>e</SUB>
+        and {\\\\bar{\u03BD }}<SUB>e</SUB>, respectively. We also estimate the numbers
+        of detection events at terrestrial neutrino detectors including DUNE, taking
+        flavor oscillations into account and assuming the distance to the progenitors
+        to be 200 pc. It is demonstrated that {\\\\bar{\u03BD }}<SUB>e</SUB> from
+        the ECSN progenitor will be undetected at almost all detectors, whereas we
+        will be able to observe \u227315,900 {\u03BD }<SUB>e</SUB> at DUNE for the
+        inverted mass hierarchy. From the FeCCSN progenitors, the number of {\\\\bar{\u03BD
+        }}<SUB>e</SUB> events will be largest for JUNO, 200-900 {\\\\bar{\u03BD }}<SUB>e</SUB>,
+        depending on the mass hierarchy, whereas the number of {\u03BD }<SUB>e</SUB>
+        events at DUNE is \u2273 2100 for the inverted mass hierarchy. These results
+        imply that the detection of {\\\\bar{\u03BD }}<SUB>e</SUB> is useful to distinguish
+        progenitors of FeCCSNe from those of ECSNe, while {\u03BD }<SUB>e</SUB> will
+        provide us with detailed information on the collapse phase regardless of the
+        type and mass of the progenitor.\",\n        \"author\":[\"Kato, Chinami\",\n
+        \         \"Nagakura, Hiroki\",\n          \"Furusawa, Shun\",\n          \"Takahashi,
+        Koh\",\n          \"Umeda, Hideyuki\",\n          \"Yoshida, Takashi\",\n
+        \         \"Ishidoshiro, Koji\",\n          \"Yamada, Shoichi\"],\n        \"pub\":\"The
+        Astrophysical Journal\",\n        \"pubdate\":\"2017-10-00\",\n        \"title\":[\"Neutrino
+        Emissions in All Flavors up to the Pre-bounce of Massive Stars and the Possibility
+        of Their Detections\"],\n        \"year\":\"2017\",\n        \"citation_count\":28},\n
+        \     {\n        \"bibcode\":\"2016PhRvD..93l3012Y\",\n        \"abstract\":\"When
+        a supernova explosion occurs in neighbors around hundreds pc, current and
+        future neutrino detectors are expected to observe neutrinos from the presupernova
+        star before the explosion. We show a possibility for obtaining the evidence
+        for burning processes in the central region of presupernova stars though the
+        observations of neutrino signals by current and future neutrino detectors
+        such as KamLAND, JUNO, and Hyper-Kamiokande. We also investigate supernova
+        alarms using neutrinos from presupernova stars in neighbors. If a supernova
+        explodes at \u223C200 pc , future 20 kton size liquid scintillation detectors
+        are expected to observe hundreds neutrino events. We also propose a possibility
+        of the detection of neutrino events by Gd-loaded Hyper-Kamiokande using delayed
+        \u03B3 -ray signals. These detectors could observe detailed time variation
+        of neutrino events. The neutrino emission rate increases by the core contraction
+        in the final evolution stage. However, the O and Si shell burnings suppress
+        the neutrino emission for a moment. The observed decrease in the neutrino
+        event rate before hours to the explosion is possibly evidence for the shell
+        burnings. The observations of detailed time evolution of presupernova neutrino
+        events could reveal properties of burning processes in the central region
+        of presupernova stars.\",\n        \"author\":[\"Yoshida, Takashi\",\n          \"Takahashi,
+        Koh\",\n          \"Umeda, Hideyuki\",\n          \"Ishidoshiro, Koji\"],\n
+        \       \"pub\":\"Physical Review D\",\n        \"pubdate\":\"2016-06-00\",\n
+        \       \"title\":[\"Presupernova neutrino events relating to the final evolution
+        of massive stars\"],\n        \"year\":\"2016\",\n        \"citation_count\":29},\n
+        \     {\n        \"bibcode\":\"2022arXiv220904298K\",\n        \"abstract\":\"This
+        is the final report from the Snowmass 2021 Neutrino Frontier Topical Group
+        on Neutrinos from Natural Sources. It covers a broad range of neutrino sources,
+        from low-energy neutrinos from the early universe to ultra high-energy sources.
+        We divide this report by source, and discuss the motivations for pursuing
+        searches in each case, the current state of the field, and the prospects for
+        future theoretical and experimental developments. We consider neutrinos produced
+        in the early universe; solar neutrinos; geoneutrinos; supernova neutrinos,
+        including the diffuse supernova neutrino background (DSNB); neutrinos produced
+        in the atmosphere; and high-energy astrophysical neutrinos.\",\n        \"author\":[\"Koshio,
+        Yusuke\",\n          \"Orebi Gann, Gabriel D.\",\n          \"O'Sullivan,
+        Erin\",\n          \"Tamborra, Irene\"],\n        \"pub\":\"arXiv e-prints\",\n
+        \       \"pubdate\":\"2022-09-00\",\n        \"title\":[\"Snowmass 2021 topical
+        group report: Neutrinos from Natural Sources\"],\n        \"year\":\"2022\",\n
+        \       \"citation_count\":2},\n      {\n        \"bibcode\":\"2016PhRvC..94e5808M\",\n
+        \       \"abstract\":\"Astrophysical environments that reach temperatures
+        greater than \u223C100 keV can have significant neutrino energy loss via both
+        plasma processes and nuclear weak interactions. We find that nuclear processes
+        likely produce the highest-energy neutrinos. The important weak nuclear interactions
+        include both charged current channels (electron capture and emission and positron
+        capture and emission) and neutral current channels (deexcitation of nuclei
+        via neutrino pair emission). We show that, in order to make a realistic prediction
+        of the nuclear neutrino spectrum, one must take nuclear structure into account;
+        in some cases, the most important transitions may involve excited states,
+        possibly in both parent and daughter nuclei. We find that the standard technique
+        of producing a neutrino energy spectrum by using a single transition with
+        a Q value and matrix element chosen to fit published neutrino production rates
+        and energy losses will not accurately capture important spectral features.\",\n
+        \       \"author\":[\"Misch, G. Wendell\",\n          \"Fuller, George M.\"],\n
+        \       \"pub\":\"Physical Review C\",\n        \"pubdate\":\"2016-11-00\",\n
+        \       \"title\":[\"Nuclear neutrino energy spectra in high temperature astrophysical
+        environments\"],\n        \"year\":\"2016\",\n        \"citation_count\":10},\n
+        \     {\n        \"bibcode\":\"2016PhRvD..94d3005G\",\n        \"abstract\":\"We
+        calculate the energy-differential rate for neutrino emission from electron-nucleus
+        bremsstrahlung in stellar interiors taking into account the effects of electron
+        screening and ionic correlations. We compare the energy-differential and the
+        net rates, as well as the average \u03BD<SUB>\xAFe</SUB> and \u03BD<SUB>\xAFx</SUB>(x
+        =\u03BC ,\u03C4 ) energies, for this process with those for e<SUP>\xB1</SUP>
+        pair annihilation, plasmon decay, and photoneutrino emission over a wide range
+        of temperature and density. We also compare our updated energy loss rates
+        for the above thermal neutrino emission processes with the fitting formulas
+        widely used in stellar evolution models and determine the temperature and
+        density domain in which each process dominates. We discuss the implications
+        of our results for detection of \u03BD<SUB>\xAFe</SUB> from massive stars
+        during their presupernova evolution and find that pair annihilation makes
+        the predominant contribution to the signal from the thermal emission processes.\",\n
+        \       \"author\":[\"Guo, Gang\",\n          \"Qian, Yong-Zhong\"],\n        \"pub\":\"Physical
+        Review D\",\n        \"pubdate\":\"2016-08-00\",\n        \"title\":[\"Spectra
+        and rates of bremsstrahlung neutrino emission in stars\"],\n        \"year\":\"2016\",\n
+        \       \"citation_count\":9}]\n  }}\n"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '10508'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 17 Jan 2023 14:18:38 GMT
+      Retry-After:
+      - '85243'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4716'
+      X-RateLimit-Reset:
+      - '1674050362'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+      authorization:
+      - DUMMY
+    method: GET
+    uri: https://api.adsabs.harvard.edu/v1//search/query?q=citations%282017zndo....846305F%29&fl=abstract%2Cauthor%2Cbibcode%2Cpubdate%2Ctitle%2Cpub%2Cyear%2Ccitation_count&fq=&start=0&rows=50
+  response:
+    body:
+      string: "{\n  \"responseHeader\":{\n    \"status\":0,\n    \"QTime\":29,\n    \"params\":{\n
+        \     \"q\":\"citations(2017zndo....846305F)\",\n      \"fl\":\"abstract,author,bibcode,pubdate,title,pub,year,citation_count\",\n
+        \     \"start\":\"0\",\n      \"internal_logging_params\":\"X-Amzn-Trace-Id=Root=1-63c6ae3f-4e2b44185d013f30628d47a1\",\n
+        \     \"fq\":\"\",\n      \"rows\":\"50\",\n      \"wt\":\"json\"}},\n  \"response\":{\"numFound\":2,\"start\":0,\"docs\":[\n
+        \     {\n        \"bibcode\":\"2018ApJS..234...34P\",\n        \"abstract\":\"We
+        update the capabilities of the software instrument Modules for Experiments
+        in Stellar Astrophysics (MESA) and enhance its ease of use and availability.
+        Our new approach to locating convective boundaries is consistent with the
+        physics of convection, and yields reliable values of the convective-core mass
+        during both hydrogen- and helium-burning phases. Stars with M&lt; 8 M<SUB>\u2299</SUB>
+        become white dwarfs and cool to the point where the electrons are degenerate
+        and the ions are strongly coupled, a realm now available to study with MESA
+        due to improved treatments of element diffusion, latent heat release, and
+        blending of equations of state. Studies of the final fates of massive stars
+        are extended in MESA by our addition of an approximate Riemann solver that
+        captures shocks and conserves energy to high accuracy during dynamic epochs.
+        We also introduce a 1D capability for modeling the effects of Rayleigh-Taylor
+        instabilities that, in combination with the coupling to a public version of
+        the STELLA radiation transfer instrument, creates new avenues for exploring
+        Type II supernova properties. These capabilities are exhibited with exploratory
+        models of pair-instability supernovae, pulsational pair-instability supernovae,
+        and the formation of stellar-mass black holes. The applicability of MESA is
+        now widened by the capability to import multidimensional hydrodynamic models
+        into MESA. We close by introducing software modules for handling floating
+        point exceptions and stellar model optimization, as well as four new software
+        tools - MESA-Web, MESA-Docker, pyMESA, and mesastar.org - to enhance MESA's
+        education and research impact.\",\n        \"author\":[\"Paxton, Bill\",\n
+        \         \"Schwab, Josiah\",\n          \"Bauer, Evan B.\",\n          \"Bildsten,
+        Lars\",\n          \"Blinnikov, Sergei\",\n          \"Duffell, Paul\",\n
+        \         \"Farmer, R.\",\n          \"Goldberg, Jared A.\",\n          \"Marchant,
+        Pablo\",\n          \"Sorokina, Elena\",\n          \"Thoul, Anne\",\n          \"Townsend,
+        Richard H. D.\",\n          \"Timmes, F. X.\"],\n        \"pub\":\"The Astrophysical
+        Journal Supplement Series\",\n        \"pubdate\":\"2018-02-00\",\n        \"title\":[\"Modules
+        for Experiments in Stellar Astrophysics (MESA): Convective Boundaries, Element
+        Diffusion, and Massive Star Explosions\"],\n        \"year\":\"2018\",\n        \"citation_count\":975},\n
+        \     {\n        \"bibcode\":\"2017ApJ...850..197P\",\n        \"abstract\":\"We
+        present the first detailed study of the Electron Capture Supernova Channel
+        (ECSN Channel) for a primary star in a close binary star system. Progenitors
+        of ECSN occupy the lower end of the mass spectrum of supernova progenitors
+        and are thought to form the transition between white dwarf progenitors and
+        core-collapse progenitors. The mass range for ECSN from close binary systems
+        is thought to be wider than the range for single stars, because of the effects
+        of mass transfer on the helium core. Using the MESA stellar evolution code,
+        we explored the parameter space of initial primary masses between 8 and 17
+        {M}<SUB>\u2299 </SUB>, using a large grid of models. We find that the initial
+        primary mass and the mass transfer evolution are important factors in the
+        final fate of stars in this mass range. Mass transfer due to Roche lobe overflow
+        during and after carbon burning causes the core to cool down so that it avoids
+        neon ignition, even in helium-free cores with masses up to 1.52 {M}<SUB>\u2299
+        </SUB>, which in single stars would ignite neon. If the core is able to contract
+        to high enough densities for electron captures to commence, we find that,
+        for the adopted Ledoux convection criterion, the initial mass range for the
+        primary to evolve into an ECSN is between 13.5 and 17.6 {M}<SUB>\u2299 </SUB>.
+        The mass ratio, initial period, and mass-loss efficiency only marginally affect
+        the predicted ranges.\",\n        \"author\":[\"Poelarends, Arend J. T.\",\n
+        \         \"Wurtz, Scott\",\n          \"Tarka, James\",\n          \"Cole
+        Adams, L.\",\n          \"Hills, Spencer T.\"],\n        \"pub\":\"The Astrophysical
+        Journal\",\n        \"pubdate\":\"2017-12-00\",\n        \"title\":[\"Electron
+        Capture Supernovae from Close Binary Systems\"],\n        \"year\":\"2017\",\n
+        \       \"citation_count\":33}]\n  }}\n"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, Orcid-Authorization, X-BB-Api-Client-Version,
+        X-CSRFToken
+      Access-Control-Allow-Methods:
+      - DELETE, GET, OPTIONS, POST, PUT
+      Access-Control-Allow-Origin:
+      - http://0.0.0.0:8000, http://adsabs.harvard.edu, http://adsx.cfa.harvard.edu:8888,
+        http://hourly.adslabs.org, http://localhost:8000, http://ui.adsabs.harvard.edu,
+        http://ui.adslabs.org, https://arxiv.org, https://beta.arxiv.org, https://demo.adsabs.harvard.edu,
+        https://dev.adsabs.harvard.edu, https://devui.adsabs.harvard.edu, https://experimental-bumblebee.us-east-1.elasticbeanstalk.com,
+        https://prod.adsabs.harvard.edu, https://staging-bumblebee.elasticbeanstalk.com,
+        https://staging-bumblebee.us-east-1.elasticbeanstalk.com, https://ui.adsabs.harvard.edu
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4637'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 17 Jan 2023 14:18:39 GMT
+      Retry-After:
+      - '85242'
+      Set-Cookie: DUMMY
+      Vary:
+      - Origin
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4715'
+      X-RateLimit-Reset:
+      - '1674050362'
+    status:
+      code: 200
+      message: OK
+version: 1
