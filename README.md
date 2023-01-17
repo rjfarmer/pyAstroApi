@@ -1,7 +1,6 @@
 ![Test suite status](https://github.com/rjfarmer/pyAstroApi/actions/workflows/test.yml/badge.svg)
 [![codecov](https://codecov.io/gh/rjfarmer/pyAstroApi/branch/main/graph/badge.svg?token=4VQNTPZYMZ)](https://codecov.io/gh/rjfarmer/pyAstroApi)
 [![Documentation Status](https://readthedocs.org/projects/pyastroapi/badge/?version=latest)](https://pyastroapi.readthedocs.io/en/latest/?badge=latest)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/rjfarmer/pyAstroApi.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/rjfarmer/pyAstroApi/context:python)
 
 # pyAstroApi
 
