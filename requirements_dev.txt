@@ -6,5 +6,5 @@ pre-commit
 types-requests
 vcrpy
 pytest-vcr
-black == 22.6.0
+black == 24.3.0
 sphinx
