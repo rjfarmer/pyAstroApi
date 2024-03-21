@@ -1,5 +1,6 @@
 [build-system]
-requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+requires = ["setuptools>=64", "wheel", "setuptools_scm[toml]>=7.1.0"]
+# Python 3.7 doesnt go above 7.1.0
 
 build-backend = "setuptools.build_meta"
 
@@ -7,20 +8,42 @@ build-backend = "setuptools.build_meta"
 testpaths = [
     "tests",
 ]
-
-[tool.mypy]
-mypy_path = "pyadsapi"
-check_untyped_defs = true
-disallow_any_generics = true
-ignore_missing_imports = true
-no_implicit_optional = true
-show_error_codes = true
-strict_equality = true
-warn_redundant_casts = true
-warn_return_any = true
-warn_unreachable = true
-warn_unused_configs = true
-no_implicit_reexport = true
-
+addopts = "-s"
 
 [tool.setuptools_scm]
+
+[project]
+name = "pyastroapi"
+authors = [
+    {name="Robert Farmer", email="robert.j.farmer37@gmail.com"}
+]
+description = "Low level library interfacing with NASA's ADSABS api"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "BSD 3-Clause License"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Intended Audience :: Science/Research",
+]
+
+dependencies = [
+    "requests",
+    "setuptools_scm",
+    "feedparser",
+    "bibtexparser",
+]
+
+dynamic = ["version"]
+
+
+[project.optional-dependencies]
+test = ['pytest','pytest-vcr','vcrpy']
+dev = ['pre-commit','black']
